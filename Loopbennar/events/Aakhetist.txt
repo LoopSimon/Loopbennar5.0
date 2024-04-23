@@ -12,6 +12,8 @@ namespace = aakhetist
 ### System ###
 ################################
 
+#Aakhet
+
 #Aakhet arrives
 country_event = {
 	id = aakhetist.01
