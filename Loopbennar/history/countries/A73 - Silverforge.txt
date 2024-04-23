@@ -1,0 +1,36 @@
+
+setup_vision = yes
+government = republic
+add_government_reform = dwarovar_elected_clans_reform
+government_rank = 1
+primary_culture = silver_dwarf
+religion = regent_court
+technology_group = tech_dwarven
+
+capital = 912
+
+historical_friend = A81 #Giberd
+
+elector = yes
+
+1000.1.1 = { 
+	set_estate_privilege = estate_mages_organization_magisterium 
+	set_country_flag = new_imperial_candidate_gain_magisterium
+}
+
+1422.1.1 = { set_country_flag = lilac_wars_moon_party }
+
+1425.2.23 = {
+	monarch = {
+		name = "Foldan III"
+		dynasty = "Silverhammer"
+		birth_date = 1379.1.3
+		adm = 4
+		dip = 2
+		mil = 2
+	}
+	
+	add_ruler_personality = just_personality
+	add_ruler_personality = malevolent_personality
+	set_ruler_flag = long_lived_ruler
+}

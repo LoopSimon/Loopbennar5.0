@@ -1,0 +1,210 @@
+
+harpy_seek_powerful_egg_aspect = {
+	sprite = "GFX_birth_new_daughter"
+	cost = 100
+	
+	trigger = {
+		custom_trigger_tooltip = {
+			tooltip = harpy_egg_cooldown_tt
+			NOT = { has_country_flag = open_harpy_egg_menu }
+			NOT = { has_country_flag = harpy_egg_ongoing }
+		}	
+	}
+	
+	effect = {
+		tooltip = { country_event = { id = the_hunt_events.4 } }
+		hidden_effect = {
+			country_event = { id = the_hunt_events.5 }
+			set_country_flag = open_harpy_egg_menu
+		}
+	}
+	
+	ai_will_do = {
+		factor = 10
+	}
+}
+
+harpy_fair_winds_aspect = {
+	sprite = "GFX_invoke_the_winds"
+	cost = 100
+	
+	effect = {
+		country_event = { id = the_hunt_events.1 }
+	}
+	
+	ai_will_do = {
+		factor = 1000
+		modifier = {
+			factor = 0
+			is_at_war = no
+		}
+	}
+}
+
+harpy_gain_siege_aspect = {
+	sprite = "GFX_aerial_assault"
+	cost = 50
+	
+	potential = {
+		ai = no #cause any_province is shit for perf
+	}
+	
+	trigger = {
+		is_at_war = yes
+		any_province = {
+			sieged_by = ROOT
+			fort_level = 1
+		}
+	}
+	
+	effect = {
+		custom_tooltip = aerial_assault_effect_tt
+		hidden_effect = {
+			random_province = {
+				limit = { sieged_by = ROOT fort_level = 1 }
+				change_siege = 1
+			}
+		}
+	}
+	
+	ai_will_do = {
+		factor = 0
+	}
+}
+
+
+#Regular hunt abilities
+
+harpy_move_pop_aspect = {
+	sprite = "GFX_gather_breeding_mates"
+	cost = 100
+	
+	potential = {
+		NOT = { has_country_flag = no_longer_monstrous }
+	}
+	
+	trigger = {
+		NOT = { has_country_flag = open_harpy_take_pop_menu }
+		any_owned_province = {
+			is_city = yes
+			is_capital = no
+			development = 4
+			OR = {	#compatible races
+				has_human_majority_trigger = yes
+				has_elven_majority_trigger = yes
+				has_goblin_majority_trigger = yes
+				has_hobgoblin_majority_trigger = yes
+				has_orcish_majority_trigger = yes
+				has_ruinborn_majority_trigger = yes
+			}
+		}
+	}
+	
+	effect = {
+		country_event = { id = the_hunt_events.2 }
+		hidden_effect = { set_country_flag = open_harpy_take_pop_menu }
+	}
+	
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+			is_at_war = yes
+		}
+	}
+}
+
+harpy_raid_neighbour_aspect = {
+	sprite = "GFX_winged_raid"
+	cost = 50
+	
+	potential = {
+		NOT = { has_country_flag = no_longer_monstrous }
+	}
+	
+	trigger = {
+		NOT = { has_country_flag = open_harpy_raid_menu }
+		# any_neighbor_country = {
+		# 	NOT = {
+		# 		is_subject_of = ROOT
+		# 		alliance_with = ROOT
+		# 	}
+		# }
+	}
+	
+	effect = {
+		country_event = { id = the_hunt_events.3 }
+		hidden_effect = { set_country_flag = open_harpy_raid_menu }
+	}
+	
+	ai_will_do = {
+		factor = 20
+		modifier = {
+			factor = 0
+			is_at_war = yes
+		}
+	}
+}
+
+
+#Demonsterised hunt abilities
+
+harpy_entice_immigration_aspect = {
+	sprite = "GFX_gather_breeding_mates"
+	cost = 100
+	
+	potential = {
+		has_country_flag = no_longer_monstrous
+	}
+	
+	trigger = {
+		NOT = { has_country_flag = open_harpy_take_pop_menu }
+		any_owned_province = {
+			is_city = yes
+			is_capital = no
+			development = 4
+			OR = {	#compatible races
+				has_human_majority_trigger = yes
+				has_elven_majority_trigger = yes
+				has_goblin_majority_trigger = yes
+				has_hobgoblin_majority_trigger = yes
+				has_orcish_majority_trigger = yes
+				has_ruinborn_majority_trigger = yes
+			}
+		}
+	}
+	
+	effect = {
+		country_event = { id = the_hunt_events.8 }
+		hidden_effect = { set_country_flag = open_harpy_take_pop_menu }
+	}
+	
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+			is_at_war = yes
+		}
+	}
+}
+
+harpy_the_odd_hunt_aspect = {
+	sprite = "GFX_winged_raid"
+	cost = 100
+	
+	potential = {
+		has_country_flag = no_longer_monstrous
+	}
+	
+	effect = {
+		country_event = { id = the_hunt_events.9 }
+	}
+	
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+			is_at_war = yes
+		}
+	}
+}

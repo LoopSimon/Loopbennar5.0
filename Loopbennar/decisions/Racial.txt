@@ -1,0 +1,26 @@
+
+country_decisions = {
+	#AI ONLY, PLAYERS USE THE BUTTON
+	racial_pop_menu = {
+		potential = { ai = yes }
+		allow = {
+			NOT = { has_country_modifier = racial_pop_menu_cooldown }
+		}
+		effect = {
+			country_event = { id = racial_pop_misc.1 }
+			set_country_flag = racial_pop_menu_opened
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				OR = {
+					has_country_modifier = racial_pop_menu_cooldown
+					NOT = { adm_power = 100 }
+					NOT = { has_low_tolerance_of_any_race_trigger = yes }
+					# NOT = { stability = 2 }
+				}
+			}
+		}
+	}
+}

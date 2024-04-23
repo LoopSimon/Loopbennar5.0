@@ -1,0 +1,32 @@
+
+setup_vision = yes
+government = republic
+add_government_reform = merchants_reform
+government_rank = 1
+mercantilism = 25
+primary_culture = blue_reachman
+add_accepted_culture = white_reachman
+religion = regent_court
+technology_group = tech_gerudian
+capital = 723
+add_historical_rival = Z26 #Adshaw
+add_historical_rival = Z22 #Celmaldor
+
+fixed_capital = 723
+
+1000.1.1 = { set_estate_privilege = estate_mages_organization_guilds }
+
+1442.6.2 = {
+	monarch = {
+		name = "Valeran"
+		dynasty = "Crownswright"
+		birth_date = 1402.11.24
+		adm = 5
+		dip = 4
+		mil = 2
+	}
+	add_ruler_personality = industrious_personality
+	add_ruler_personality = loose_lips_personality
+}
+
+#Worked as a merchant for his family from a young age, became a workaholic and profited so much from the last war between Bayvic and Reachspier that his family earned the name of Crownswright after becoming the richest family in Bayvic.

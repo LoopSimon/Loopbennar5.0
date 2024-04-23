@@ -1,0 +1,253 @@
+
+country_decisions = {
+
+#	change_magic_organization_decentralized = {
+#		potential = {
+#			has_estate = estate_mages
+#			NOT = { has_country_modifier = mage_organization_decentralized }
+#			NOT = { has_country_flag = banned_magic }
+#		}
+#		allow = {
+#			is_at_war = no
+#			stability = 2
+#			NOT = {
+#				estate_influence = {
+#					estate = estate_mages
+#					influence = 40
+#				}
+#			}
+#			adm_power = 100
+#		}
+#		effect = {
+#			add_adm_power = -100
+#			clear_mage_organization_effect = yes
+#			add_country_modifier = { 
+#				name = mage_organization_decentralized 
+#				duration = -1 
+#			}
+#			add_estate_loyalty = {
+#				estate = estate_mages
+#				loyalty = 20
+#			}
+#			if = {
+#				limit = {
+#					exists = A85
+#					has_country_modifier = mage_organization_magisterium
+#				}
+#				A85 = {
+#					add_opinion = {
+#						who = ROOT
+#						modifier = expelled_the_magisterium
+#						years = 20
+#					}
+#				}
+#			}
+#		}
+#		ai_will_do = {
+#			factor = 1
+#			modifier = {
+#				factor = 0
+#				estate_loyalty = {	#dont do it if they're neutral or above
+#						estate = estate_mages
+#						loyalty = 40
+#				}
+#			}
+#		}
+#	}
+#	
+#	change_magic_organization_centralized = {
+#		potential = {
+#			has_estate = estate_mages
+#			NOT = { has_country_modifier = mage_organization_centralized }
+#			NOT = { has_country_modifier = mage_organization_magisterium }
+#			NOT = { has_country_flag = banned_magic }
+#		}
+#		allow = {
+#			is_at_war = no
+#			stability = 2
+#			NOT = {
+#				estate_influence = {
+#					estate = estate_mages
+#					influence = 30
+#				}
+#			}
+#			adm_power = 200
+#		}
+#		effect = {
+#			add_adm_power = -200
+#			clear_mage_organization_effect = yes
+#			add_country_modifier = { 
+#				name = mage_organization_centralized 
+#				duration = -1 
+#			}
+#			add_estate_loyalty = {
+#				estate = estate_mages
+#				loyalty = -20
+#			}
+#		}
+#		ai_will_do = {
+#			factor = 1
+#			modifier = {
+#				factor = 0
+#				estate_loyalty = {	#dont do it if they're neutral or above
+#						estate = estate_mages
+#						loyalty = 40
+#				}
+#			}
+#		}
+#	}
+#	
+#	change_magic_organization_magisterium = {
+#		potential = {
+#			has_estate = estate_mages
+#			NOT = { has_country_modifier = mage_organization_centralized }
+#			NOT = { has_country_modifier = mage_organization_magisterium }
+#			NOT = { has_country_flag = banned_magic }
+#		}
+#		allow = {
+#			is_at_war = no
+#			stability = 2
+#			NOT = {
+#				estate_influence = {
+#					estate = estate_mages
+#					influence = 20
+#				}
+#			}
+#			adm_power = 200
+#			if = {
+#				limit = {
+#					exists = A85
+#				}
+#				A85 = {
+#					has_opinion = {
+#						who = ROOT
+#						value = 150
+#					}
+#				}
+#			}
+#		}
+#		effect = {
+#			add_adm_power = -200
+#			clear_mage_organization_effect = yes
+#			add_country_modifier = { 
+#				name = mage_organization_magisterium 
+#				duration = -1 
+#			}
+#			add_estate_loyalty = {
+#				estate = estate_mages
+#				loyalty = -20
+#			}
+#			if = {
+#				limit = {
+#					exists = A85
+#				}
+#				A85 = {
+#					add_opinion = {
+#						who = ROOT
+#						modifier = welcomed_the_magisterium
+#						years = 20
+#					}
+#				}
+#			}
+#		}
+#		ai_will_do = {
+#			factor = 1
+#			modifier = {
+#				factor = 0
+#				estate_loyalty = {	#dont do it if they're neutral or above
+#						estate = estate_mages
+#						loyalty = 40
+#				}
+#			}
+#		}
+#	}
+
+	welcome_the_mages = {
+		potential = {
+			has_country_flag = banned_magic
+			NOT = { has_country_modifier = expelled_mages }
+			NOT = { has_estate = estate_mages }
+			NOT = { has_country_modifier = monstrous_nation }
+			NOT = { has_reform = hobgoblin_stratocracy_reform }
+			NOT = { has_reform = pilgrims_of_effelai }
+			NOT = { has_country_flag = magic_artificery_artificery_only }
+			NOT = { 
+				AND = {
+					culture_group = bulwari
+					is_vassal = yes
+				}
+			}
+		}
+		allow = {
+			stability = 3
+		}
+		effect = {
+			clr_country_flag = banned_magic
+			country_event = { id = estate_organization.3 days = 35 } #Delay so mage estate appears
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				ruler_has_personality = cruel_personality
+			}
+			modifier = {
+				factor = 0
+				ruler_has_personality = greedy_personality
+			}
+			modifier = {
+				factor = 0
+				ruler_has_personality = malevolent_personality
+			}
+			modifier = {
+				factor = 0
+				ruler_has_personality = zealot_personality
+			}
+			modifier = {
+				factor = 0
+				estate_influence = {
+					estate = estate_artificers
+					influence = 50
+				}
+			}
+			modifier = {
+				factor = 0
+				current_age = age_of_revolutions
+			}
+			modifier = {
+				factor = 0
+				tag = H35 #Corinsfield
+			}
+		}
+	}
+
+
+	# Fixed for crash for Linux. AI now use the estate privilege like players would
+	# ai_spellcasting = {
+		# potential = {
+			# NOT = {
+				# has_country_modifier = ai_spellcasting_cooldown
+			# }
+			# has_estate = estate_mages
+			# ai = yes
+		# }
+		# allow = {
+			# estate_influence = {
+				# estate = estate_mages
+				# influence = 5
+			# }
+		# }
+		# effect = {
+			# country_event = {
+				# id = magic_estate.1
+			# }
+			# add_country_modifier = {
+				# name = ai_spellcasting_cooldown
+				# duration = 3650
+			# }
+		# }
+		# ai_will_do = {
+			# factor = 10
+		# }
+	# }
+}

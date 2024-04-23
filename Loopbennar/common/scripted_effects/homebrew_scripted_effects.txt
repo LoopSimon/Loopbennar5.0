@@ -1,0 +1,12 @@
+hb_fort_update = {
+	hidden_effect = { province_event = { id = new_events.8 days = 1 } }
+	every_neighbor_province = {
+		hidden_effect = { province_event = { id = new_events.8 days = 1 } }
+	}
+}
+hb_fort_removed = {
+	hidden_effect = { 
+		province_event = { id = new_events.8 days = 1 }
+		every_neighbor_province = { province_event = { id = new_events.8 days = 1 } }
+	}
+}

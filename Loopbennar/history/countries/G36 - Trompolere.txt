@@ -1,0 +1,61 @@
+
+setup_vision = yes
+government = monarchy
+add_government_reform = ynnic_feudalism
+government_rank = 1
+primary_culture = sarda
+religion = ynn_river_worship
+technology_group = tech_ynnic
+capital = 2859
+
+historical_friend = U24 #Arvezl
+
+1000.1.1 = {
+	set_estate_privilege = estate_mages_organization_guilds
+	set_country_flag = ynn_river_worship_flag
+	add_country_modifier = {
+		name = ynn_diplo
+		duration = -1
+	}
+}
+
+1443.3.7 = {
+	monarch = {
+		name = "Alaran I"
+		dynasty = "yen Cestor"
+		birth_date = 1427.3.7
+		death_date = 1446.5.1
+		adm = 2
+		dip = 1
+		mil = 4
+		female = no #fix to genderbent Alaran glitch
+		regent = no
+		
+		leader = {
+			name = "Alaran yen Cestor"	 # Name of the leader
+			type = general	   # Type of leader: general, admiral, explorer, conquistidor
+			fire = 0
+			shock = 4
+			manuever = 3
+			siege = 3
+		}
+	}
+	set_ai_personality = {
+		personality = ai_militarist
+		locked = yes
+	}
+	add_ruler_personality = conqueror_personality
+	add_ruler_personality = bold_fighter_personality
+	add_ruler_personality = fierce_negotiator_personality
+	set_ruler_flag = alaran
+	add_ruler_modifier = {
+		name = ynn_zodiac_ruler_2
+		duration = -1
+	}
+	change_personal_deity = ynn_zodiac_deity_7
+}
+
+1444.7.1 = {
+	add_stability = -1
+	add_war_exhaustion = 3
+}

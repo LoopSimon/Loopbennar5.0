@@ -1,0 +1,688 @@
+
+defined_text = {
+	name = getArtificeryBreakdownFull
+	random = no
+	
+	text = {
+        localisation_key = artifice_breakdown
+        trigger = {
+			always = yes
+        }
+    }
+}
+defined_text = {
+	name = getArtificeryBreakdownShort
+	random = no
+	
+	text = {
+        localisation_key = artifice_breakdown_short
+        trigger = {
+			always = yes
+        }
+    }
+}
+
+defined_text = {
+	name = getArtificeMultipliers
+	random = no
+	
+	text = {
+        localisation_key = artifice_multipliers_mixed_mode
+        trigger = {
+			has_country_flag = magic_artificery_mixed
+        }
+    }
+
+	text = {
+        localisation_key = artifice_multipliers_mage_ruler
+        trigger = {
+			has_country_flag = magic_artificery_artificery_only 
+			has_ruler_flag = mage_personality_flag
+        }
+    }
+
+	text = {
+        localisation_key = artifice_mode_none
+        trigger = {
+			always = yes
+		}
+    }
+}
+
+defined_text = {
+	name = getArtificeGlobal
+	random = no
+	text = {
+		localisation_key = artifice_capacity_global
+		trigger = {
+			check_variable = {
+				which = GlobalArtificeLimit
+				value = 1
+			}
+		}
+	}
+	text = {
+		localisation_key = artifice_capacity_global_none
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+defined_text = {
+	name = getInventionsActive
+	random = no
+	text = {
+		localisation_key = artifice_invention_active_max
+		trigger = {
+			check_variable = {
+				which = artifice_inventions_currently_used
+				which = artifice_max_invention_slots
+			}
+		}
+	}
+	text = {
+		localisation_key = artifice_invention_active
+		trigger = {
+			check_variable = {
+				which = artifice_inventions_currently_used
+				value = 1
+			}
+		}
+	}
+	text = {
+		localisation_key = artifice_invention_active_none
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+defined_text = {
+	name = getInventionsMax
+	random = no
+	text = {
+		localisation_key = artifice_invention_max
+		trigger = {
+			check_variable = {
+				which = artifice_max_invention_slots
+				value = 1
+			}
+		}
+	}
+	text = {
+		localisation_key = artifice_invention_max_none
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+defined_text = {
+	name = getInventionsUpkeep
+	random = no
+	text = {
+		localisation_key = artifice_inventions_upkeep_at_max
+		trigger = {
+			check_variable = {
+				which = ArtificeUpkeep
+				which = MaxArtificePoints
+			}
+		}
+	}
+	text = {
+		localisation_key = artifice_inventions_upkeep
+		trigger = {
+			check_variable = {
+				which = ArtificeUpkeep
+				value = 1
+			}
+		}
+	}
+	text = {
+		localisation_key = artifice_inventions_upkeep_none
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+defined_text = {
+	name = getCapacityMax
+	random = no
+	text = {
+		localisation_key = artifice_capacity_max
+		trigger = {
+			check_variable = {
+				which = MaxArtificePoints
+				value = 1
+			}
+		}
+	}
+	text = {
+		localisation_key = artifice_capacity_max_none
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+defined_text = {
+	name = getArtificeryLevelProgress
+	random = no
+	text = {
+		localisation_key = get_artificery_progress_slow_1
+		trigger = {
+			has_country_flag = artifice_research_slow
+			NOT = { has_country_flag = artifice_unlocked_expert }
+			check_variable = {
+				which = artifice_level_progress
+				value = 1
+			}
+		}
+	}
+	text = {
+		localisation_key = get_artificery_Progress_slow_2
+		trigger = {
+			has_country_flag = artifice_research_slow
+			NOT = { has_country_flag = artifice_unlocked_expert }
+		}
+	}
+	text = {
+		localisation_key = get_artificery_progress_normal_1
+		trigger = {
+			has_country_flag = artifice_research_normal
+			NOT = { has_country_flag = artifice_unlocked_expert }
+			check_variable = {
+				which = artifice_level_progress
+				value = 1
+			}
+		}
+	}
+	text = {
+		localisation_key = get_artificery_progress_normal_2
+		trigger = {
+			has_country_flag = artifice_research_normal
+			NOT = { has_country_flag = artifice_unlocked_expert }
+		}
+	}
+	text = {
+		localisation_key = get_artificery_progress_fast_1
+		trigger = {
+			NOT = { has_country_flag = artifice_unlocked_expert }
+			OR = {
+				has_country_flag = artifice_research_fast
+				has_country_flag = artifice_research_random
+			}
+			check_variable = {
+				which = artifice_level_progress
+				value = 1
+			}
+		}
+	}
+	text = {
+		localisation_key = get_artificery_progress_fast_2
+		trigger = {
+			OR = {
+				has_country_flag = artifice_research_fast
+				has_country_flag = artifice_research_random
+			}
+			NOT = { has_country_flag = artifice_unlocked_expert }
+		}
+	}
+	text = {
+		localisation_key = get_artificery_progress_expert
+		trigger = {
+			has_country_flag = artifice_unlocked_expert 
+		}
+	}
+}
+
+defined_text = {
+	name = getArtificeryLevel
+	random = no
+	text = {
+		localisation_key = get_artificery_level_basic
+		trigger = {
+			has_country_flag = artifice_unlocked_basic
+		}
+	}
+	text = {
+		localisation_key = get_artificery_level_advanced
+		trigger = {
+			has_country_flag = artifice_unlocked_advanced
+		}
+	}
+	text = {
+		localisation_key = get_artificery_level_expert
+		trigger = {
+			has_country_flag = artifice_unlocked_expert
+		}
+	}
+	text = {
+		localisation_key = get_artificery_level_none
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+
+defined_text = {
+	name = getEarlyArtificeBonus
+	random = no
+	text = {
+		localisation_key = early_artifice_bonus
+		trigger = {
+			check_variable = {
+				which = ResearchArtificePoints
+				value = 1
+			}
+		}
+	}
+	text = {
+		localisation_key = early_artifice_bonus_none
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+defined_text = {
+	name = getArtificeHolds
+	random = no
+	
+	text = {
+		localisation_key = artifice_hold_wonder_yes
+		trigger = {
+			any_owned_province = {
+				has_province_modifier = artificier_hall
+			}
+		}
+	}
+	text = {
+		localisation_key = artifice_hold_wonder_none
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+defined_text = {
+	name = getArtificeDungeons
+	random = no
+	
+	text = {
+		localisation_key = artifice_dungeons_yes
+		trigger = {
+			has_dlc = "Leviathan"
+			any_owned_province = {
+				has_great_project = { type = dd_leforn tier = 3 }
+				owner = {
+					OR = {
+						culture_group = dwarven
+						culture_group = goblin
+						culture_group = kobold
+						culture = black_orc
+						culture = mossmouth_ogre
+					}
+				}
+			}
+		}
+	}
+	text = {
+		localisation_key = artifice_dungeons_none
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+
+defined_text = {
+	name = getArtificeRelics
+	random = no
+	text = {
+		localisation_key = artifice_relics_points
+		trigger = {
+			check_variable = {
+				which = ArtificePointsRelics
+				value = 1
+			}
+		}
+	}
+	text = {
+		localisation_key = artifice_relics_points_none
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+defined_text = {
+	name = getArtificeDamestear
+	random = no
+	
+	text = {
+		localisation_key = artifice_damestear_points
+		trigger = {
+			check_variable = {
+				which = ArtificePointsDamestear
+				value = 1
+			}
+		}
+	}
+	text = {
+		localisation_key = artifice_damestear_points_none
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+defined_text = {
+	name = getArtificeMissions
+	random = no
+	
+	text = {
+		localisation_key = artifice_mission_points
+		trigger = {
+			check_variable = {
+				which = StaticArtificePoints
+				value = 1
+			}
+		}
+	}
+}
+
+defined_text = {
+	name = getArtificeHasMultipliers
+	random = no
+	
+	text = {
+        localisation_key = artifice_multipliers
+        trigger = {
+			OR = {
+				has_country_flag = magic_artificery_mixed
+				AND = {
+					has_country_flag = magic_artificery_artificery_only 
+					has_ruler_flag = mage_personality_flag
+				}
+			}
+        }
+    }
+	
+	text = {
+        localisation_key = artifice_no_multpliers
+        trigger = {
+			always = yes
+		}
+	}
+}
+
+# Feiten stuff
+defined_text = {
+	name = getArtificeFeitenLightningShuimuHired
+	random = no
+	
+	text = {
+        localisation_key = FeitenLightningShuimuHired
+        trigger = {
+			any_hired_mercenary_company = { template = merc_feiten_lightning_jellyfish }
+        }
+    }
+	
+	text = {
+        localisation_key = feitenEmpty
+        trigger = {
+			always = yes
+		}
+	}
+}
+
+defined_text = {
+	name = getArtificeFeitenStasisShuimuHired
+	random = no
+	
+	text = {
+        localisation_key = FeitenStasisShuimuHired
+        trigger = {
+			any_hired_mercenary_company = { template = merc_feiten_stasis }
+        }
+    }
+	
+	text = {
+        localisation_key = feitenEmpty
+        trigger = {
+			always = yes
+		}
+	}
+}
+
+defined_text = {
+	name = getArtificeFeitenFirestormShuimuHired
+	random = no
+	
+	text = {
+        localisation_key = FeitenFirestormShuimuHired
+        trigger = {
+			any_hired_mercenary_company = { template = merc_feiten_firestorm }
+        }
+    }
+	
+	text = {
+        localisation_key = feitenEmpty
+        trigger = {
+			always = yes
+		}
+	}
+}
+
+defined_text = {
+	name = getArtificeFeitenSkyFactoryShuimuHired
+	random = no
+	
+	text = {
+        localisation_key = FeitenSkyFactoryShuimuHired
+        trigger = {
+			any_hired_mercenary_company = { template = merc_feiten_sky_factory }
+        }
+    }
+	
+	text = {
+        localisation_key = feitenEmpty
+        trigger = {
+			always = yes
+		}
+	}
+}
+
+defined_text = {
+	name = getArtificeFeitenActiveFirestorm
+	random = no
+	
+	text = {
+        localisation_key = FeitenActiveFirestorm
+        trigger = {
+			has_country_flag = feiten_firestorm_active
+        }
+    }
+	
+	text = {
+        localisation_key = feitenEmpty
+        trigger = {
+			always = yes
+		}
+	}
+}
+
+defined_text = {
+	name = getArtificeFeitenActiveStasis
+	random = no
+	
+	text = {
+        localisation_key = FeitenActiveStasis
+        trigger = {
+			has_country_flag = feiten_stasis_field_active
+        }
+    }
+	
+	text = {
+        localisation_key = feitenEmpty
+        trigger = {
+			always = yes
+		}
+	}
+}
+
+defined_text = {
+	name = getArtificeFeitenActiveSkyFactory
+	random = no
+	
+	text = {
+        localisation_key = FeitenActiveSkyFactory
+        trigger = {
+			has_country_flag = feiten_skyfactory_active
+        }
+    }
+	
+	text = {
+        localisation_key = feitenEmpty
+        trigger = {
+			always = yes
+		}
+	}
+}
+
+defined_text = {
+	name = getArtificeFeitenTotalInvestments
+	random = no
+	
+	text = {
+        localisation_key = FeitenTotalInvestments
+        trigger = {
+			check_variable = {
+				which = feiten_number_of_shuimu_engineering_cadre_facilities_investments
+				value = 1
+			}
+        }
+    }
+	
+	text = {
+        localisation_key = feitenEmpty
+        trigger = {
+			always = yes
+		}
+	}
+}
+
+defined_text = {
+	name = getArtificeVaraineAllies
+	random = no
+	
+	text = {
+        localisation_key = artifice_varaine_allies_points
+        trigger = {
+			has_government_attribute = is_varaine_alchemical_corps
+			OR = {
+				any_ally = {
+					capital_scope = {
+						same_continent = ROOT
+					}
+				}
+				any_subject_country = {
+					capital_scope = {
+						same_continent = ROOT
+					}
+				}
+			}
+        }
+    }
+}
+
+defined_text = {
+	name = getArtificeVaraineForeignAllies
+	random = no
+	
+	text = {
+        localisation_key = artifice_varaine_foreign_allies_points
+        trigger = {
+			has_government_attribute = is_varaine_alchemical_corps
+			OR = {
+				any_ally = {
+					capital_scope = {
+						NOT = {same_continent = ROOT}
+					}
+				}
+				any_subject_country = {
+					capital_scope = {
+						NOT = {same_continent = ROOT}
+					}
+				}
+			}
+        }
+    }
+}
+
+defined_text = {
+	name = getArtificeBrelarWatermillBuild
+	random = no
+	text = {
+		localisation_key = getArtifice_Brelar_Watermill_Build
+		trigger = {
+			OR = {
+				any_owned_province = {
+					OR = {
+						has_province_modifier = g27_watermill_progress_1
+						has_province_modifier = g27_watermill_progress_2
+						has_province_modifier = g27_watermill_progress_3
+					}
+				}
+				any_subject_country = {
+					any_owned_province = {
+						OR = {
+							has_province_modifier = g27_watermill_progress_1
+							has_province_modifier = g27_watermill_progress_2
+							has_province_modifier = g27_watermill_progress_3
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+defined_text = {
+	name = getArtificeBrelarWatermillPoints
+	random = no
+	text = {
+		localisation_key = getArtifice_Brelar_Watermill_Num
+		trigger = {
+			OR = {
+				any_owned_province = {
+					has_province_modifier = g27_clockwork_watermill
+				}
+				any_subject_country = {
+					any_owned_province = {
+						has_province_modifier = g27_clockwork_watermill
+					}
+				}
+			}
+		}
+	}
+}
+
+defined_text = {
+	name = getArtificeBrelarRiverwayBuild
+	text = {
+		localisation_key = getArtifice_Brelar_Waterway_Build
+		trigger = {
+			OR = {
+				has_country_flag = g27_building_brelynn
+				has_country_flag = g27_building_rzenta
+				has_country_flag = g27_building_north_ynn
+				has_country_flag = g27_building_dalaire
+			}
+		}
+	}
+}

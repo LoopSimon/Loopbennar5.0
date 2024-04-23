@@ -1,0 +1,56 @@
+#This file is for the temporary effects granted by some monuments.
+
+guhe_discovery_of_precursor_relics {
+	trade_goods_size = 0.5
+	trade_goods_size_modifier = 0.1
+}
+
+aoshan_hanging_temple_hokuto_shinken {
+	shock_damage = 0.15
+	shock_damage_received = -0.05
+}
+
+vels_bacar_scol_mecynn_like_water {
+	shock_damage = 0.05
+	movement_speed = 0.15
+}
+
+nakar_koraim_discovery_of_precursor_relics {
+	trade_goods_size = 0.5
+	trade_goods_size_modifier = 0.1
+}
+
+gundhaghidur_library_of_insight_library_research {
+	mages_loyalty_modifier = 0.15
+	idea_cost = -0.10
+}
+
+malacnar_city_of_warriors_greatest_warriors_of_all_the_ynn {
+	army_tradition = 1
+	infantry_power = 0.1
+}
+
+yinquan_the_conquerors_hotspring_soaked_men_tell_no_tales {
+	spy_offence = 0.2
+}
+
+hubao_the_tiger_fortress_invincible_fortress {
+	local_defensiveness = 0.33
+	local_hostile_attrition = 1
+	local_defender_dice_roll_bonus = 1
+}
+
+eranils_oddities_eranil_summons_a_damestear_meteor {
+	trade_goods_size = 0.5
+	trade_goods_size_modifier = 0.1
+}
+
+azjakuma_ajgriijarul_the_bright_claw_fearsome_oni_warriors {
+	shock_damage = 0.1
+	morale_damage = 0.1
+}
+
+azjakuma_chumijemoya_the_silent_mist_expand_the_shadow_path {
+	diplomats = 1
+	spy_offence = 0.33
+}

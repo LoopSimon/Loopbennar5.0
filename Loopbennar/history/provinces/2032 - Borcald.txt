@@ -1,0 +1,17 @@
+
+# No previous file for Borcald
+owner = H08
+controller = H08
+add_core = H08
+culture = selphereg
+religion = spring_court
+capital = "Borcald"
+
+hre = no
+
+base_tax = 2
+base_production = 2
+base_manpower = 1
+
+trade_goods = grain
+

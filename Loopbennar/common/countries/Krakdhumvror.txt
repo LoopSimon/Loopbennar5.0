@@ -1,0 +1,235 @@
+
+#Country Name: Please see filename.
+
+graphical_culture = westerngfx
+
+color = { 148 201  230 }
+
+
+
+historical_idea_groups = {
+	expansion_ideas
+	exploration_ideas
+	quantity_ideas
+	diplomatic_ideas	
+	offensive_ideas
+	defensive_ideas
+	economic_ideas	
+	innovativeness_ideas
+}
+
+historical_units = {
+
+}
+monarch_names = {
+
+	#Generic Dwarf Names
+	
+	"Thorar #6" = 100	
+	"Garlim #6" = 100
+	"Urist #6" = 100	
+	"Grimmar #5" = 50
+	"Thingrim #5" = 50
+	"Ungrim #5" = 50 
+	"Grim #4" = 50 
+	"Thorgrim #3" = 50
+	"Grimmun #2" = 50	
+	"Grimma #1" = -55 
+	"Thorin #6" = 10
+	"Thrain #6" = 10
+	"Thrair #3" = 10
+	"Thror #2" = 10
+	
+	"Adar #2" = 10
+	"Adranbur #1" = 10
+	"Adûn #2" = 10
+	"Balgor #3" = 10
+	"Balin #3" = 10
+	"Bardin #4" = 10
+	"Bardur #4" = 10
+	"Beldûn #3" = 10
+	"Belgar #2" = 10
+	"Bofur #3" = 10
+	"Bolin #1" = 10
+	"Bombur #1" = 10
+	"Borin #3" = 10
+	"Brann #4" = 10
+	"Brok #2" = 10
+	"Bruenor #2" = 10
+	"Calin #3" = 10
+	"Cûn #5" = 10
+	"Dagran #3" = 10
+	"Dain #3" = 10
+	"Dalbaran #1" = 10
+	"Dalmund #2" = 10
+	"Dolin #2" = 10
+	"Dorin #1" = 10
+	"Dorri #3" = 10
+	"Durbûr #3" = 10
+	"Duran #0" = 10
+	"Dwalin #2" = 10
+	"Dwarin #3" = 10
+	"Edûn #3" = 10
+	"Falstad #3" = 10
+	"Farûn #0" = 10
+	"Fimbur #0" = 10
+	"Flondi #3" = 10
+	"Foldan #4" = 10
+	"Gorar #0" = 10
+	"Goren #1" = 10
+	"Gotrek #2" = 10
+	"Gromar #3" = 10
+	"Gronmar #0" = 10
+	"Grûaim #4" = 10
+	"Grûar #4" = 10
+	"Grûn #2" = 10
+	"Gundobad #6" = 10
+	"Gundobar #6" = 10
+	"Gundobin #6" = 10
+	"Gundomar #6" = 10
+	"Hardûn #2" = 10
+	"Harlûn #2" = 10
+	"Harrûk #2" = 10
+	"Hjal #2" = 10
+	"Hjalmar #3" = 10
+	"Karrom #4" = 10
+	"Kazadûr #5" = 10
+	"Khadan #3" = 10
+	"Kildan #3" = 10
+	"Kildar #2" = 10
+	"Kildûm #1" = 10
+	"Kûrgûm #1" = 10
+	"Lodûn #2" = 10
+	"Lorek #3" = 10
+	"Lorimbur #3" = 10
+	"Madarûn #3" = 10
+	"Magar #3" = 10
+	"Magni #3" = 10
+	"Magnus #2" = 10
+	"Magûn #2" = 10
+	"Morzad #0" = 10
+	"Muradin #0" = 10
+	"Nali #1" = 10
+	"Nalin #1" = 10
+	"Norbûn #2" = 10
+	"Norbûr #4" = 10
+	"Nori #4" = 10
+	"Norimbur #0" = 10
+	"Norin #1" = 10
+	"Odar #3" = 10
+	"Odur #2" = 10
+	"Odûn #2" = 10
+	"Okar #4" = 10
+	"Olin #5" = 10
+	"Orim #5" = 10
+	"Orin #5" = 10
+	"Ragun #4" = 10
+	"Ragund #2" = 10
+	"Runmar #0" = 10
+	"Rûnimûr #0" = 10
+	"Sevrund #1" = 10
+	"Simbûr #1" = 10
+	"Simur #5" = 10
+	"Simûn #5" = 10
+	"Sindri #4" = 10
+	"Snorri #4" = 10
+	"Storin #3" = 10
+	"Storlin #2" = 10
+	"Storum #4" = 10
+	"Thargas #3" = 10
+	"Thargor #4" = 10
+	"Thinbur #2" = 10
+	"Thindobar #0" = 10
+	"Thindri #2" = 10
+	"Thinobad #4" = 10
+	"Thorin #6" = 10
+	"Thrain #6" = 10
+	"Thrair #3" = 10
+	"Thror #2" = 10
+	"Thrûn #2" = 10
+	"Thrûr #2" = 10
+	"Thudri #2" = 10
+	"Tungdil #4" = 10
+	"Urûr #0" = 10
+
+	
+	"Adala #0" = -15
+	"Aira #0" = -15
+	"Anvi #0" = -15
+	"Auci #0" = -15
+	"Balga #1" = -15
+	"Barila #0" = -15
+	"Barra #0" = -15
+	"Belga #0" = -15
+	"Belgia #0" = -15
+	"Bella #0" = -15
+	"Branma #0" = -15
+	"Brenla #0" = -15
+	"Brenleil #0" = -15
+	"Brenlel #0" = -15
+	"Brina #0" = -15
+	"Broga #0" = -15
+	"Bronis #0" = -15
+	"Cala #0" = -15
+	"Dalina #1" = -15
+	"Dwalra #0" = -15
+	"Edeth #0" = -15
+	"Etta #0" = -15
+	"Grelba #0" = -15
+	"Groria #0" = -15
+	"Gruia #0" = -15
+	"Isondi #0" = -15
+	"Lahgi #0" = -15
+	"Lisban #0" = -15
+	"Magda #0" = -15
+	"Mistri #0" = -15
+	"Moira #0" = -15
+	"Mori #0" = -15
+	"Moria #0" = -15
+	"Naim #0" = -15
+	"Ovondi #1" = -15
+	"Ronla #0" = -15
+	"Sivondi #0" = -15
+	"Tharkuni #0" = -15
+	"Thohga #0" = -15
+	"Ungi #0" = -15
+}
+
+leader_names = {
+
+	Battlehammer Axehammer Ettinkiller Minesmiter Minesmith Hammersmith Forgehammer Bloodsteel Earthfist Bronzebeard Goldbeard Stonebeard Hammerbeard Frostbeard Whitebeard
+	Breakbeard Ringbeard Gembeard Ogreslayer Orcslayer Spiderslayer Goblinslayer Graybeard Greybeard Redbeard Warhorn Gemhorn Longbeard Truebellow Blackbellow Strongbellow
+	Shalesmith Shaleaxe Shalehammer Shaleforger Shalebeard Heavyaxe Skullaxe Gemcraver Goodanvil Blackanvil Shaleanvil Forgeanvil Axeanvil Trueanvil Bloodanvil 
+	Thunderfist Thunderhammer Thunderaxe Stormfist Stormhammer Stormaxe Stormanvil Stormbeard Stromanvil Thundersteel Stormsteel Elderbeard Oldbeard Copperbeard Gritaxe
+	Flameforge Flameaxe Flamehammer Flamefist Hammerkeeper Stormkeeper Beardfist Hornfist Battlebeard Hardaxe Hardhammer Hammerhand Forgebar Ironbar Goldbar Bronzebar Steelbar
+	Ironstar Ironaxe Ironsteel Ironhammer Ironfist Ironhelm Shalebeard Trollslayer Earthstriker Iceheart Frozenforge
+	
+}
+ship_names = {
+	#Generic Cannorian
+	Adamant Advantage Adventure Advice Answer Ardent Armada Arrogant Assistance Association Assurance Atlas Audacious 
+	Bear Beaver "Black Galley" "Black Pinnace" "Black Prince" "Black Blood" Captain Centurion Coronation Courage Crocodile Crown
+	Daisy Defence Defiance Devastation Diamond Director Dolphin Dragon Drake Dreadnaught Duke Duchess Eagle Elephant Excellent Exchange Expedition Experiment
+	Falcon Fame Favourite Fellowship Fleetwood Flight Flirt Formidable Forrester Fortitude Fortune Gillyflower Globe "Golden Horse" "Golden Lion" "Golden Phoenix" Goliath Goodgrace Governor
+	"Grand Mistress" "Great Bark" "Great Charity" "Great Galley" "Great Gift"  "Great Pinnace" "Great Zebra" "Green Dragon" Greyhound Griffin Guide "Half Moon" Hare Harpy Hawke Hazardous Heart
+	Hero Hope "Hope Bark" "Hopeful Adventure" Humble Hunter Illustrious Impregnable Increase Indefatigable Inflexible Intrepid Invincible "Less Bark" "Less Pinnace" "Less Zebra"
+	Lively Lizard Lion Magnanime Magnificent Majestic Makeshift Medusa Minotaur Moderate Monarch Moon Moor "New Bark" Ocean 
+	Pansy Panther Parrot Porcupine Powerful President Prince "Prince Consort" "Prince Royal"
+	Redoubtable Reformation Regent Renown Repulse Research Reserve Resistance Resolution Restoration Revenge 
+	Salamander Sandwich Sapphire Satisfaction Seahorse Search Sheerness Speaker Speedwell Sphinx Splendid Sprite Stag Standard Stately Success Sunlight Sunbeam Superb Swan Sweepstake Swift Swiftsure
+	Terrible Terror Thunderer Tiger Tremendous Trident Trinity Triumph Trusty
+	Unicorn Union Unity Valiant Vanguard Venerable Vestal Veteran Victor Vindictive Virtue Violet
+	Warrior Warspite "Young Prince" Zealous
+
+	#Dwarven
+	Grudgebearer Axefather Axeson Axemother Grudgehammer Grudgebeard Axebeard Anchor Permanent Permanence Tenacious Dependable
+	Stalwart Strong Sturdy Hard Hardaxe Stability Durable Solitude Reliable Secure Fortress Castle Hold Gate Door Steady Steadfast  
+}
+
+army_names = {
+	"Quartz Army" "Army of $PROVINCE$" "$PROVINCE$ Legion"
+}
+
+fleet_names = {
+	"Quartz Fleet" "Axe Squadron" "Shield Squadron" "Beard Squadron" "Hammer Squadron"
+}

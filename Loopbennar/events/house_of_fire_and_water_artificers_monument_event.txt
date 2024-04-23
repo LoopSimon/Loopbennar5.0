@@ -1,0 +1,48 @@
+#T3 House of Fire and Water upgrade event, allows you to potentially unlock artificers early, as long as you're not monstrous.
+
+namespace = halessi_monuments_house_of_fire_and_water_artificers
+country_event = {
+	id = halessi_monuments_house_of_fire_and_water_artificers.1
+	title = halessi_monuments_house_of_fire_and_water_artificers.t
+	desc = halessi_monuments_house_of_fire_and_water_artificers.d
+	picture = HOUSE_OF_FIRE_AND_WATER_eventPicture
+	goto = 4949
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+
+	option = {
+		name = halessi_monuments_house_of_fire_and_water_artificers.a #gain the artificers estate
+		trigger = {
+			NOT = { has_estate = estate_artificers }
+			NOT = { has_country_modifier = monstrous_nation }
+		} 
+		set_country_flag = supporting_artificers
+		custom_tooltip = supporting_artificers_tt
+		change_innovativeness = 5
+		mission_reward_artifice_points_5 = yes
+		add_estate_loyalty = {
+			estate = estate_mages
+			loyalty = -5
+		}
+	}
+	option = {
+		name = halessi_monuments_house_of_fire_and_water_artificers.b #reject the offer of the artificers estate
+		ai_chance = { 
+			factor = 100
+		}
+		add_adm_power = 50
+		add_dip_power = 50
+		add_mil_power = 50
+	}
+	option = {
+		name = halessi_monuments_house_of_fire_and_water_artificers.c #we've already got artifiers!
+		highlight = yes
+		trigger = {
+			has_estate = estate_artificers
+		}
+		mission_reward_artifice_points_5 = yes
+	}
+}

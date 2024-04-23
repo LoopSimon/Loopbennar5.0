@@ -1,0 +1,31 @@
+
+setup_vision = yes
+government = republic
+add_government_reform = free_city
+government_rank = 1
+mercantilism = 25
+primary_culture = arannese
+religion = regent_court
+technology_group = tech_cannorian
+capital = 417
+
+
+1000.1.1 = { 
+	set_estate_privilege = estate_mages_organization_magisterium 
+	set_country_flag = new_imperial_candidate_gain_magisterium
+}
+#TELLUM
+1440.1.1 = {
+	monarch = {
+		name = "Teagan"
+		dynasty = "síl na Tíl"
+		#this one is fun so it's going in Tellum's namelist too
+		adm = 6
+		dip = 6
+		mil = 6
+		female = yes
+		birth_date = 1405.5.5
+	}
+	add_ruler_personality = intricate_web_weaver_personality
+	add_ruler_personality = embezzler_personality
+}

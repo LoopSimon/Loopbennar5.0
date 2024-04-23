@@ -1,0 +1,61 @@
+#T3 Vaulthold upgrade, allows you to potentially unlock artificers early, as long as you're not monstrous
+
+namespace = dwarven_monuments_vaulthold
+country_event = {
+	id = dwarven_monuments_vaulthold.1
+	title = dwarven_monuments_vaulthold.1.t
+	desc = dwarven_monuments_vaulthold.1.d
+	picture = THE_VAULTHOLD_eventPicture
+	goto = 4217
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+
+	option = {
+		name = dwarven_monuments_vaulthold.1.a #gain the artificers estate
+		trigger = {
+			NOT = { has_estate = estate_artificers }
+			NOT = { has_country_modifier = monstrous_nation }
+		} 
+		set_country_flag = supporting_artificers
+		custom_tooltip = supporting_artificers_tt
+		change_innovativeness = 5
+		mission_reward_artifice_points_5 = yes
+		add_estate_loyalty = {
+			estate = estate_mages
+			loyalty = -5
+		}
+	}
+	option = {
+		name = dwarven_monuments_vaulthold.1.b #reject the offer of the artificers estate
+		ai_chance = { 
+			factor = 100
+		}
+		add_adm_power = 50
+		add_dip_power = 50
+		add_mil_power = 50
+	}
+	option = {
+		name = dwarven_monuments_vaulthold.1.c #we've already got artifiers!
+		highlight = yes
+		trigger = {
+			has_estate = estate_artificers
+		}
+		add_adm_power = 100
+		add_dip_power = 100
+		add_mil_power = 100
+	}
+	option = {
+		name = dwarven_monuments_vaulthold.1.e #not only do we have artificers, but my ruler is smart as well
+		highlight = yes
+		trigger = {
+			AND = {
+				ruler_has_personality = scholar_personality
+				has_estate = estate_artificers
+			}
+		}
+		mission_reward_artifice_points_5 = yes
+	}
+}

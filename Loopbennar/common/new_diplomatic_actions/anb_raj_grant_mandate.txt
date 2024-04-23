@@ -1,0 +1,58 @@
+
+# Create new diplomatic actions like this. AI will currently never send them.
+raj_grant_mandate = {
+	category = influence
+	
+	alert_index = 40
+	alert_tooltip = demand_dummy_alert_tooltip
+	
+	require_acceptance = no # Whether the recipient gets an option to decline
+	
+	is_visible = {
+		has_government_attribute = is_raja
+		FROM = {
+			is_subject_of = ROOT
+		}
+	}
+	is_allowed = {
+		hidden_trigger = {
+			has_government_attribute = is_raja
+			FROM = {
+				is_subject_of = ROOT
+			}
+		}
+		adm_power = 10
+		# FROM = { NOT = { has_raj_mandate = yes } }
+		hidden_trigger = { FROM = { NOT = { has_country_flag = raj_requested_mandate } } }
+	}
+	on_accept = {
+		add_adm_power = -10
+		FROM = { country_event = { id = rahenraj.1005 } }
+	}
+	on_decline = {
+	}
+	
+	ai_acceptance = { # This works similarly to variable_arithmetic_trigger, but does not support triggers generally. Instead, "limit" will be evaluated first and the rest ignored if it isn't passed.
+	}
+
+	ai_will_do = { # this is a trigger
+		OR = {
+			adm_power = 900
+			AND = {
+				FROM = {
+					total_development = 100
+					overextension_percentage = 0.01
+					NOT = { has_country_modifier = raj_mandate_sactioned_conquest }
+					NOT = { has_country_modifier = raj_mandate_territorial_limits }
+					NOT = { has_country_flag = raj_vizier }
+				}
+				NOT = {
+					has_opinion = {
+						who = FROM
+						value = 160
+					}
+				}
+			}
+		}
+	}
+}

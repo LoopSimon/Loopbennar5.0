@@ -1,0 +1,1230 @@
+namespace = magic_study_events_good
+
+#Help from Mages Estate
+country_event = {
+	id = magic_study_events_good.1
+	title = magic_study_events_good.1.t	
+	desc = magic_study_events_good.1.d
+	picture = CHURCH_ESTATE_eventPicture
+	
+	trigger = {
+		has_ruler_modifier = ruler_studying_magic
+		has_estate = estate_mages
+		estate_influence = {
+			estate = estate_mages
+			influence = 10
+		}
+		NOT = {
+			has_estate_influence_modifier = {
+				estate = estate_mages
+				modifier = EST_VAL_HELPING_RULER_STUDY
+			}
+		}
+		
+		NOT = { has_ruler_flag = ruler_studying_help_from_mages_estate }
+		
+		NOT = {
+			tag = Y85 
+			has_ruler_flag = ruler_studying_divination
+		} #Balrijin gets divination study help from the Knowing Eye faction
+	}
+	
+	mean_time_to_happen = {
+		days = 7300
+		modifier = {
+			factor = 0.5
+			estate_loyalty = {
+				estate = estate_mages
+				loyalty = 60
+			}
+		}
+		modifier = {
+			factor = 0.5
+			estate_influence = {
+				estate = estate_mages
+				influence = 50
+			}
+		}
+		#tower of muhaqaar monument
+		modifier = {
+			factor = 0.9
+			owns = 5483
+			5483 = { has_great_project = { type = tower_of_muhaqaar tier = 2 } }
+			religion_group = khetist
+			
+		}
+
+	}
+	
+	#Accept Help
+	option = {	
+		name = magic_study_events_good.1.a
+		ai_chance = {
+			factor = 90
+			modifier = {
+				factor = 0
+				estate_influence = {
+					estate = estate_mages
+					influence = 80
+				}
+			}
+		}
+		
+		add_estate_influence_modifier = {
+			estate = estate_mages
+			desc = EST_VAL_HELPING_RULER_STUDY
+			influence = 10
+			duration = 1825
+		}
+		
+		set_ruler_flag = ruler_studying_help_from_mages_estate
+		# custom_tooltip = tooltip_ruler_studying_increase
+		increase_study_experience = {
+			experience = 100
+		}
+	}
+	
+	#Nah
+	option = {
+		name = magic_study_events_good.1.b
+		ai_chance = {
+			factor = 10
+		}
+		
+		reduce_estate_mages_loyalty_effect = yes
+	}
+}
+
+# Help from Advisor (Court Mage)
+country_event = {
+	id = magic_study_events_good.2
+	title = magic_study_events_good.2.t	
+	desc = magic_study_events_good.2.d
+	picture = ADVISOR_eventPicture
+	
+	trigger = {
+		has_ruler_modifier = ruler_studying_magic
+		advisor = court_mage
+		
+		NOT = { has_ruler_flag = ruler_studying_help_from_advisor }
+	}
+	
+	mean_time_to_happen = {
+		days = 7300
+		modifier = {
+			factor = 0.8
+			stability = 1
+		}
+		modifier = {
+			factor = 0.5
+			court_mage = 3	#If you have a high level court mage its way more likely to fire
+		}
+		modifier = {
+			factor = 0.8
+			ruler_has_personality = well_advised_personality
+		}
+	}
+	
+	#Accept Help
+	option = {	
+		name = magic_study_events_good.2.a
+		ai_chance = {
+			factor = 90
+		}
+		
+		add_prestige = -20
+		
+		set_ruler_flag = ruler_studying_help_from_advisor
+		# custom_tooltip = tooltip_ruler_studying_increase
+		increase_study_experience = {
+			experience = 100
+		}
+	}
+	
+	#Nah
+	option = {
+		name = magic_study_events_good.2.b
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 100
+				NOT = { prestige = 20 }
+			}
+		}
+	}
+}
+
+# Library Research - yeah so this should be expanded where you ask the owners of the provinces below for permission but Magic 2.0!
+country_event = {
+	id = magic_study_events_good.3
+	title = magic_study_events_good.3.t	
+	desc = magic_study_events_good.3.d
+	picture = MAGIC_STUDY_AND_RELAX_eventPicture
+	
+	trigger = {
+		has_ruler_modifier = ruler_studying_magic
+		
+		NOT = { has_ruler_flag = ruler_studying_library_archives }
+	}
+	
+	mean_time_to_happen = {
+		days = 7300
+		modifier = {
+			factor = 0.6
+			OR = {
+				owns_or_subject_of = 8	#Great Library of Anbenncost
+				owns_or_subject_of = 275	#Konwell Institute
+			}
+		}
+		modifier = {
+			factor = 0.8
+			any_owned_province = {
+				has_building = university
+			}
+		}
+		modifier = {
+			factor = 0.8
+			ruler_has_personality = scholar_personality
+		}
+		#tower of muhaqaar monument
+		modifier = {
+			factor = 0.9
+			owns = 5483
+			5483 = { has_great_project = { type = tower_of_muhaqaar tier = 2 } }
+			religion_group = khetist
+			}
+	}
+	
+	option = {	
+		name = magic_study_events_good.3.a
+		ai_chance = {
+			factor = 100
+		}
+		set_ruler_flag = ruler_studying_library_archives
+		# custom_tooltip = tooltip_ruler_studying_increase
+		increase_study_experience = {
+			experience = 100
+		}
+	}
+}
+
+# Ancient Tome Located!
+country_event = {
+	id = magic_study_events_good.4
+	title = magic_study_events_good.4.t	
+	desc = magic_study_events_good.4.d
+	picture = BIG_BOOK_eventPicture
+	
+	trigger = {
+		has_ruler_modifier = ruler_studying_magic
+		
+		NOT = { has_ruler_flag = ruler_studying_ancient_tome_found }
+		
+		NOT = {
+			has_estate_influence_modifier = {
+				estate = estate_adventurers
+				modifier = EST_VAL_PROCURING_MAGICAL_ARTIFACTS_FOR_RULER_STUDY
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 7300
+		modifier = {
+			factor = 0.8
+			ruler_has_personality = intricate_web_weaver_personality
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			export_to_variable = {
+				which = yearly_income_mage
+				value = monthly_income
+				who = ROOT
+			}
+			multiply_variable = {
+				which = yearly_income_mage
+				value = 1.8
+			}
+		}
+	}
+	
+	#Hire some adventurers to retrieve it
+	option = {	
+		name = magic_study_events_good.4.a
+		trigger = {
+			has_estate = estate_adventurers
+		}
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+					estate_influence = {
+						estate = estate_adventurers
+						influence = 80
+					}
+			}
+		}
+		
+		if = {
+			limit = {
+				check_variable = {
+					which = yearly_income_mage
+					value = 50
+				}
+			}
+			add_years_of_income = -0.15
+		}
+		else = {
+			add_treasury = -50
+		}
+		
+		add_estate_influence_modifier = {
+			estate = estate_adventurers
+			desc = EST_VAL_PROCURING_MAGICAL_ARTIFACTS_FOR_RULER_STUDY
+			influence = 10
+			duration = 1825
+		}
+		
+		set_ruler_flag = ruler_studying_ancient_tome_found
+		# custom_tooltip = tooltip_ruler_studying_increase
+		increase_study_experience = {
+			experience = 100
+		}
+	}
+	
+	#I'll get it myself!
+	option = {	
+		name = magic_study_events_good.4.b
+		ai_chance = {
+			factor = 50
+		}
+		
+		add_adm_power = -10
+		add_dip_power = -10
+		add_mil_power = -25
+		
+		set_ruler_flag = ruler_studying_ancient_tome_found
+		# custom_tooltip = tooltip_ruler_studying_increase
+		increase_study_experience = {
+			experience = 100
+		}
+	}
+}
+
+# Magical Relic
+country_event = {
+	id = magic_study_events_good.5
+	title = magic_study_events_good.5.t	
+	desc = magic_study_events_good.5.d
+	picture = BIG_BOOK_eventPicture
+	
+	trigger = {
+		has_ruler_modifier = ruler_studying_magic
+		
+		NOT = { has_ruler_flag = ruler_studying_magic_relic }
+		
+		NOT = {
+			has_estate_influence_modifier = {
+				estate = estate_adventurers
+				modifier = EST_VAL_PROCURING_MAGICAL_ARTIFACTS_FOR_RULER_STUDY
+			}
+		}
+		
+		
+	}
+	
+	mean_time_to_happen = {
+		days = 7300
+		modifier = {
+			factor = 0.8
+			ruler_has_personality = intricate_web_weaver_personality
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			export_to_variable = {
+				which = yearly_income_mage
+				value = monthly_income
+				who = ROOT
+			}
+			multiply_variable = {
+				which = yearly_income_mage
+				value = 1.8
+			}
+		}
+	}
+	
+	#Hire some adventurers to retrieve it
+	option = {	
+		name = magic_study_events_good.5.a
+		trigger = {
+			has_estate = estate_adventurers
+		}
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+					estate_influence = {
+						estate = estate_adventurers
+						influence = 80
+					}
+			}
+		}
+		
+		if = {
+			limit = {
+				check_variable = {
+					which = yearly_income_mage
+					value = 50
+				}
+			}
+			add_years_of_income = -0.15
+		}
+		else = {
+			add_treasury = -50
+		}
+		
+		add_estate_influence_modifier = {
+			estate = estate_adventurers
+			desc = EST_VAL_PROCURING_MAGICAL_ARTIFACTS_FOR_RULER_STUDY
+			influence = 10
+			duration = 1825
+		}
+		
+		set_ruler_flag = ruler_studying_magic_relic
+		# custom_tooltip = tooltip_ruler_studying_increase
+		increase_study_experience = {
+			experience = 100
+		}
+	}
+	
+	#I'll get it myself!
+	option = {	
+		name = magic_study_events_good.5.b
+		ai_chance = {
+			factor = 50
+		}
+		
+		add_adm_power = -10
+		add_dip_power = -10
+		add_mil_power = -25
+		
+		set_ruler_flag = ruler_studying_magic_relic
+		# custom_tooltip = tooltip_ruler_studying_increase
+		increase_study_experience = {
+			experience = 100
+		}
+	}
+}
+
+# Precursor Knowledge - needs to be more specific
+country_event = {
+	id = magic_study_events_good.6
+	title = magic_study_events_good.6.t	
+	desc = magic_study_events_good.6.d
+	picture = AZTEC_PYRAMID_eventPicture
+	
+	trigger = {
+		has_ruler_modifier = ruler_studying_magic
+		
+		NOT = { has_ruler_flag = ruler_studying_magic_precursor_knowledge }
+		
+		
+		OR = {
+			any_subject_country = {
+				vassal_of = ROOT
+				any_owned_province = {
+					trade_goods = precursor_relics 
+				}
+			}
+		
+			ROOT = {
+				any_owned_province = {
+					trade_goods = precursor_relics 
+					#owned_by = ROOT
+				}
+			}
+		}
+		
+	}
+	
+	mean_time_to_happen = {
+		days = 7300
+		modifier = {
+			factor = 0.8
+			ruler_has_personality = expansionist_personality
+		}
+		modifier = {
+			factor = 0.9
+			has_idea_group = exploration_ideas
+		}
+		modifier = {
+			factor = 0.75
+			trading_bonus = {
+				trade_goods = precursor_relics
+				value = yes
+			}
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			export_to_variable = {
+				which = yearly_income_mage
+				value = monthly_income
+				who = ROOT
+			}
+			multiply_variable = {
+				which = yearly_income_mage
+				value = 1.8
+			}
+		}
+	}
+	
+	#Hire some adventurers to retrieve it
+	option = {	
+		name = magic_study_events_good.6.a
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+					estate_influence = {
+						estate = estate_adventurers
+						influence = 80
+					}
+			}
+		}
+		
+		if = {
+			limit = {
+				check_variable = {
+					which = yearly_income_mage
+					value = 50
+				}
+			}
+			add_years_of_income = -0.15
+		}
+		else = {
+			add_treasury = -50
+		}
+		
+		add_estate_influence_modifier = {
+			estate = estate_adventurers
+			desc = EST_VAL_PROCURING_MAGICAL_ARTIFACTS_FOR_RULER_STUDY
+			influence = 10
+			duration = 1825
+		}
+		
+		set_ruler_flag = ruler_studying_magic_precursor_knowledge
+		# custom_tooltip = tooltip_ruler_studying_increase
+		increase_study_experience = {
+			experience = 100
+		}
+	}
+	
+	#Send an expeditionary force
+	option = {	
+		name = magic_study_events_good.6.b
+		ai_chance = {
+			factor = 50
+		}
+		
+		add_mil_power = -50
+		
+		set_ruler_flag = ruler_studying_magic_precursor_knowledge
+		# custom_tooltip = tooltip_ruler_studying_increase
+		increase_study_experience = {
+			experience = 100
+		}
+	}
+}
+
+#Help from Mages Estate (Magisters)
+country_event = {
+	id = magic_study_events_good.7
+	title = magic_study_events_good.7.t	
+	desc = magic_study_events_good.7.d
+	picture = DHIMMI_ESTATE_eventPicture
+	
+	trigger = {
+		has_ruler_modifier = ruler_studying_magic
+		has_estate = estate_mages
+		has_estate_privilege = estate_mages_organization_magisterium
+		estate_influence = {
+			estate = estate_mages
+			influence = 10
+		}
+		NOT = {
+			has_estate_influence_modifier = {
+				estate = estate_mages
+				modifier = EST_VAL_HELPING_RULER_STUDY
+			}
+		}
+		
+		NOT = { has_ruler_flag = ruler_studying_magisterial_support }
+	}
+	
+	mean_time_to_happen = {
+		days = 7300
+		modifier = {
+			factor = 0.5
+			estate_loyalty = {
+				estate = estate_mages
+				loyalty = 60
+			}
+		}
+		modifier = {
+			factor = 0.5
+			estate_influence = {
+				estate = estate_mages
+				influence = 60
+			}
+		}
+	}
+	
+	#Accept Help
+	option = {	
+		name = magic_study_events_good.7.a
+		ai_chance = {
+			factor = 90
+			modifier = {
+				factor = 0
+				estate_influence = {
+					estate = estate_mages
+					influence = 60
+				}
+			}
+		}
+		
+		add_prestige = -10
+		
+		add_estate_influence_modifier = {
+			estate = estate_mages
+			desc = EST_VAL_HELPING_RULER_STUDY
+			influence = 20
+			duration = 1825
+		}
+		
+		set_ruler_flag = ruler_studying_magisterial_support
+		# custom_tooltip = tooltip_ruler_studying_increase
+		increase_study_experience = {
+			experience = 100
+		}
+	}
+	
+	#Nah
+	option = {
+		name = magic_study_events_good.7.b
+		ai_chance = {
+			factor = 10
+		}
+		
+		reduce_estate_mages_loyalty_effect = yes
+	}
+}
+
+#Mana
+country_event = {
+	id = magic_study_events_good.8
+	title = magic_study_events_good.8.t	
+	desc = magic_study_events_good.8.d
+	picture = OVEREXTENSION_eventPicture
+	
+	trigger = {
+		has_ruler_modifier = ruler_studying_magic
+		
+		NOT = { has_ruler_flag = ruler_studying_magisterial_support }
+		
+		NOT = { has_ruler_flag = ruler_studying_mana_3 }
+	}
+	
+	mean_time_to_happen = {
+		days = 7300
+		modifier = {
+			factor = 0.8
+			ruler_has_personality = scholar_personality
+		}
+		modifier = {
+			factor = 0.8
+			ruler_has_personality = free_thinker_personality
+		}
+		modifier = {
+			factor = 0.8
+			ruler_has_personality = naive_personality
+		}
+		modifier = {
+			factor = 0.8
+			OR = {
+				adm_power = 100
+				dip_power = 100
+				mil_power = 100
+			}
+		}
+		modifier = {
+			factor = 1.1
+			has_ruler_flag = ruler_studying_mana_1
+		}
+		modifier = {
+			factor = 1.2
+			has_ruler_flag = ruler_studying_mana_2
+		}
+	}
+	
+	#Rigorous Study
+	option = {	
+		name = magic_study_events_good.8.a
+		ai_chance = {
+			factor = 90
+		}
+		
+		if = {
+			limit = {
+				NOT = { has_ruler_flag = ruler_studying_mana_1 }
+				NOT = { has_ruler_flag = ruler_studying_mana_2 }
+				NOT = { has_ruler_flag = ruler_studying_mana_3 }
+			}
+			add_adm_power = -25
+			add_dip_power = -25
+			add_mil_power = -25
+		}
+		if = {
+			limit = {
+				has_ruler_flag = ruler_studying_mana_1
+				NOT = { has_ruler_flag = ruler_studying_mana_2 }
+				NOT = { has_ruler_flag = ruler_studying_mana_3 }
+			}
+			add_adm_power = -50
+			add_dip_power = -50
+			add_mil_power = -50
+		}
+		if = {
+			limit = {
+				has_ruler_flag = ruler_studying_mana_2
+				NOT = { has_ruler_flag = ruler_studying_mana_3 }
+			}
+			add_adm_power = -100
+			add_dip_power = -100
+			add_mil_power = -100
+		}
+		
+
+		magic_study_level_up_mana = yes
+		# custom_tooltip = tooltip_ruler_studying_increase
+		increase_study_experience = {
+			experience = 100
+		}
+	}
+	
+	#Nah
+	option = {
+		name = magic_study_events_good.8.b
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 100
+				NOT = { adm_power = 50 }
+				NOT = { dip_power = 50 }
+				NOT = { mil_power = 50 }
+			}
+		}
+		
+	}
+	
+	#Free Thinker
+	option = {
+		name = magic_study_events_good.8.c
+		trigger = {
+			ruler_has_personality = free_thinker_personality
+		}
+		highlight = yes
+		ai_chance = {
+			factor = 1000
+		}
+		
+		if = {
+			limit = {
+				NOT = { has_ruler_flag = ruler_studying_mana_1 }
+				NOT = { has_ruler_flag = ruler_studying_mana_2 }
+				NOT = { has_ruler_flag = ruler_studying_mana_3 }
+			}
+			add_adm_power = -10
+			add_dip_power = -10
+			add_mil_power = -10
+		}
+		if = {
+			limit = {
+				has_ruler_flag = ruler_studying_mana_1
+				NOT = { has_ruler_flag = ruler_studying_mana_2 }
+				NOT = { has_ruler_flag = ruler_studying_mana_3 }
+			}
+			add_adm_power = -25
+			add_dip_power = -25
+			add_mil_power = -25
+		}
+		if = {
+			limit = {
+				has_ruler_flag = ruler_studying_mana_2
+				NOT = { has_ruler_flag = ruler_studying_mana_3 }
+			}
+			add_adm_power = -50
+			add_dip_power = -50
+			add_mil_power = -50
+		}
+		increase_study_experience = {
+			experience = 100
+		}
+		magic_study_level_up_mana = yes
+		# custom_tooltip = tooltip_ruler_studying_increase
+	}
+}
+
+#Gold
+country_event = {
+	id = magic_study_events_good.9
+	title = magic_study_events_good.9.t	
+	desc = magic_study_events_good.9.d
+	picture = BANKRUPTCY_eventPicture
+	
+	trigger = {
+		has_ruler_modifier = ruler_studying_magic
+		
+		NOT = { has_ruler_flag = ruler_studying_magisterial_support }
+		
+		NOT = { has_ruler_flag = ruler_studying_gold_3 }
+	}
+	
+	mean_time_to_happen = {
+		days = 7300
+		modifier = {
+			factor = 0.8
+			ruler_has_personality = scholar_personality
+		}
+		modifier = {
+			factor = 0.8
+			ruler_has_personality = free_thinker_personality
+		}
+		modifier = {
+			factor = 0.8
+			ruler_has_personality = naive_personality
+		}
+		modifier = {
+			factor = 0.8
+			OR = {
+				adm_power = 100
+				dip_power = 100
+				mil_power = 100
+			}
+		}
+		modifier = {
+			factor = 1.1
+			has_ruler_flag = ruler_studying_gold_1
+		}
+		modifier = {
+			factor = 1.2
+			has_ruler_flag = ruler_studying_gold_2
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			export_to_variable = {
+				which = yearly_income_mage
+				value = monthly_income
+				who = ROOT
+			}
+			if = {
+				limit = {
+					NOT = { has_ruler_flag = ruler_studying_gold_1 }
+					NOT = { has_ruler_flag = ruler_studying_gold_2 }
+					NOT = { has_ruler_flag = ruler_studying_gold_3 }
+				}
+				if = {
+					limit = {
+						OR = {
+							ruler_has_personality = greedy_personality
+							ruler_has_personality = midas_touched_personality
+						}
+					}
+					multiply_variable = {
+						which = yearly_income_mage
+						value = 1.8
+					}
+				}
+				else = {
+					multiply_variable = {
+						which = yearly_income_mage
+						value = 3.6
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_ruler_flag = ruler_studying_gold_1
+					NOT = { has_ruler_flag = ruler_studying_gold_2 }
+					NOT = { has_ruler_flag = ruler_studying_gold_3 }
+				}
+				if = {
+					limit = {
+						OR = {
+							ruler_has_personality = greedy_personality
+							ruler_has_personality = midas_touched_personality
+						}
+					}
+					multiply_variable = {
+						which = yearly_income_mage
+						value = 3.6
+					}
+				}
+				else = {
+					multiply_variable = {
+						which = yearly_income_mage
+						value = 7.2
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_ruler_flag = ruler_studying_gold_2
+					NOT = { has_ruler_flag = ruler_studying_gold_3 }
+				}
+				if = {
+					limit = {
+						OR = {
+							ruler_has_personality = greedy_personality
+							ruler_has_personality = midas_touched_personality
+						}
+					}
+					multiply_variable = {
+						which = yearly_income_mage
+						value = 5.4
+					}
+				}
+				else = {
+					multiply_variable = {
+						which = yearly_income_mage
+						value = 10.8
+					}
+				}
+			}
+		}
+	}
+	
+	#Rigorous Study
+	option = {	
+		name = magic_study_events_good.9.a
+		ai_chance = {
+			factor = 90
+		}
+		
+		if = {
+			limit = {
+				NOT = { has_ruler_flag = ruler_studying_gold_1 }
+				NOT = { has_ruler_flag = ruler_studying_gold_2 }
+				NOT = { has_ruler_flag = ruler_studying_gold_3 }
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = yearly_income_mage
+						value = 100
+					}
+				}
+				add_years_of_income = -0.3
+			}
+			else = {
+				add_treasury = -100
+			}
+		}
+		if = {
+			limit = {
+				has_ruler_flag = ruler_studying_gold_1
+				NOT = { has_ruler_flag = ruler_studying_gold_2 }
+				NOT = { has_ruler_flag = ruler_studying_gold_3 }
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = yearly_income_mage
+						value = 200
+					}
+				}
+				add_years_of_income = -0.6
+			}
+			else = {
+				add_treasury = -200
+			}
+		}
+		if = {
+			limit = {
+				has_ruler_flag = ruler_studying_gold_2
+				NOT = { has_ruler_flag = ruler_studying_gold_3 }
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = yearly_income_mage
+						value = 300
+					}
+				}
+				add_years_of_income = -0.9
+			}
+			else = {
+				add_treasury = -300
+			}
+		}
+		increase_study_experience = {
+			experience = 100
+		}
+		magic_study_level_up_gold = yes
+		# custom_tooltip = tooltip_ruler_studying_increase
+	}
+	
+	#Nah
+	option = {
+		name = magic_study_events_good.9.b
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 100
+				NOT = { has_ruler_flag = ruler_studying_gold_1 }
+				NOT = { has_ruler_flag = ruler_studying_gold_2 }
+				NOT = { has_ruler_flag = ruler_studying_gold_3 }
+				NOT = { years_of_income = 0.75 }
+			}
+			modifier = {
+				factor = 100
+				has_ruler_flag = ruler_studying_gold_1
+				NOT = { has_ruler_flag = ruler_studying_gold_2 }
+				NOT = { has_ruler_flag = ruler_studying_gold_3 }
+				NOT = { years_of_income = 1.5 }
+			}
+			modifier = {
+				factor = 100
+				has_ruler_flag = ruler_studying_gold_2
+				NOT = { has_ruler_flag = ruler_studying_gold_3 }
+				NOT = { years_of_income = 2.5 }
+			}
+		}
+		
+	}
+	
+	#Greedy
+	option = {
+		name = magic_study_events_good.9.c
+		trigger = {
+			OR = {
+				ruler_has_personality = greedy_personality
+				ruler_has_personality = midas_touched_personality
+			}
+		}
+		highlight = yes
+		ai_chance = {
+			factor = 1000
+		}
+		
+		if = {
+			limit = {
+				NOT = { has_ruler_flag = ruler_studying_gold_1 }
+				NOT = { has_ruler_flag = ruler_studying_gold_2 }
+				NOT = { has_ruler_flag = ruler_studying_gold_3 }
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = yearly_income_mage
+						value = 50
+					}
+				}
+				add_years_of_income = -0.15
+			}
+			else = {
+				add_treasury = -50
+			}
+		}
+		if = {
+			limit = {
+				has_ruler_flag = ruler_studying_gold_1
+				NOT = { has_ruler_flag = ruler_studying_gold_2 }
+				NOT = { has_ruler_flag = ruler_studying_gold_3 }
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = yearly_income_mage
+						value = 100
+					}
+				}
+				add_years_of_income = -0.3
+			}
+			else = {
+				add_treasury = -100
+			}
+		}
+		if = {
+			limit = {
+				has_ruler_flag = ruler_studying_gold_2
+				NOT = { has_ruler_flag = ruler_studying_gold_3 }
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = yearly_income_mage
+						value = 150
+					}
+				}
+				add_years_of_income = -0.45
+			}
+			else = {
+				add_treasury = -150
+			}
+		}
+		increase_study_experience = {
+			experience = 100
+		}
+		
+		magic_study_level_up_gold = yes
+		# custom_tooltip = tooltip_ruler_studying_increase
+		
+		increase_witch_king_points_small = yes
+	}
+}
+
+# Generic progress event
+country_event = {
+	id = magic_study_events_good.10
+	title = magic_study_events_good.10.t	
+	desc = magic_study_events_good.10.d
+	picture = MAGIC_STUDY_AND_RELAX_eventPicture
+	
+	trigger = {
+		has_ruler_flag = ruler_studying_magic_flag
+	}
+	
+	mean_time_to_happen = {
+		years = 3
+		# Lazy studying
+		modifier = {
+			factor = 1.25
+			has_ruler_flag = money_magic_study
+		}
+		# Homonculus helps with study
+		modifier = {
+			factor = 0.75
+			has_country_flag = ruler_studying_homunculus_familiar
+		}
+		# Resources
+		modifier = {
+			factor = 0.9
+			precursor_relics = 1
+		}
+		modifier = {
+			factor = 0.75
+			trading_bonus = {
+				trade_goods = precursor_relics
+				value = yes
+			}
+		}
+		modifier = {
+			factor = 0.9
+			damestear = 1
+		}
+		modifier = {
+			factor = 0.75
+			trading_bonus = {
+				trade_goods = damestear
+				value = yes
+			}
+		}
+		#Personality  
+		modifier = {
+			factor = 0.75
+			ruler_has_personality = scholar_personality 
+		}
+		#tower of muhaqaar monument
+		modifier = {
+			factor = 0.9
+			owns = 5483
+			5483 = { has_great_project = { type = tower_of_muhaqaar tier = 2 } }
+			religion_group = khetist
+			}
+		}
+	
+	option = {
+		name = magic_study_events_good.10.a
+		increase_study_experience = {
+			experience = 200
+		}
+	}
+}
+
+# Study Drags on
+country_event = {
+	id = magic_study_events_good.11
+	title = magic_study_events_good.11.t	
+	desc = magic_study_events_good.11.d
+	picture = BIG_BOOK_eventPicture
+	
+	trigger = {
+		had_ruler_flag = {
+			flag = ruler_studying_magic_flag
+			days = 3650
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	immediate = {
+		hidden_effect = {
+			export_to_variable = {
+				which = yearly_income_mage
+				value = monthly_income
+				who = ROOT
+			}
+			multiply_variable = {
+				which = yearly_income_mage
+				value = 3.6
+			}
+		}
+	}
+	
+	# Work Harder
+	option = {
+		name = magic_study_events_good.11.a
+		set_ruler_flag = money_magic_study
+		if = {
+			limit = {
+				check_variable = {
+					which = yearly_income_mage
+					value = 100
+				}
+			}
+			add_years_of_income = -0.3
+		}
+		else = {
+			add_treasury = -100
+		}
+		clr_ruler_flag = ruler_studying_magic_flag
+		set_ruler_flag = ruler_studying_magic_flag
+	}
+	
+	# Invest More Resources
+	option = {
+		name = magic_study_events_good.11.b
+		clr_ruler_flag = money_magic_study
+		add_adm_power = -25
+		add_dip_power = -25
+		clr_ruler_flag = ruler_studying_magic_flag
+		set_ruler_flag = ruler_studying_magic_flag
+	}
+	
+	# Give Up
+	option = {
+		name = magic_study_events_good.11.c
+		magic_study_clear_study_effects = yes
+	}
+}

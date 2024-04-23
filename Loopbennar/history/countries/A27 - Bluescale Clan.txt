@@ -1,0 +1,26 @@
+
+setup_vision = yes
+government = tribal
+add_government_reform = settled_horde
+government_rank = 1
+primary_culture = bluescale_kobold
+religion = kobold_dragon_cult
+technology_group = tech_kobold
+
+capital = 185
+
+1000.1.1 = { set_estate_privilege = estate_mages_organization_guilds }
+
+1440.2.9 = {
+	monarch = {
+		name = "Tayekar"
+		dynasty = "Crozamor"
+		birth_date = 1425.2.9
+		adm = 3
+		dip = 3
+		mil = 4
+	}
+	add_ruler_personality = tactical_genius_personality
+	
+	add_church_aspect = blue_dragon_1
+}

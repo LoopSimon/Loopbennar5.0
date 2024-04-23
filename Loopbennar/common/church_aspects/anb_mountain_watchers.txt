@@ -1,0 +1,142 @@
+blessing_jormir = {
+	is_blessing = yes
+	
+	potential = {
+		NOT = { has_country_flag = obrtrol_upgraded_aspects }
+	}
+
+	
+	modifier = {
+		global_missionary_strength = 0.02
+	}
+	ai_will_do = {
+		factor = 10
+	}
+}
+blessing_balmir = {
+	is_blessing = yes
+
+	potential = {
+		NOT = { has_country_flag = obrtrol_upgraded_aspects }
+	}
+
+	modifier = {
+		infantry_power = 0.1
+	}
+	ai_will_do = {
+		factor = 10
+	}
+}
+blessing_kranmas = {
+	is_blessing = yes
+
+	potential = {
+		NOT = { has_country_flag = obrtrol_upgraded_aspects }
+	}
+
+	modifier = {
+		build_cost = -0.1
+	}
+	ai_will_do = {
+		factor = 10
+	}
+}
+blessing_valerid = {
+	is_blessing = yes
+
+	potential = {
+		NOT = { has_country_flag = obrtrol_upgraded_aspects }
+	}
+
+	modifier = {
+		development_cost = -0.1
+	}
+	ai_will_do = {
+		factor = 10
+	}
+}
+blessing_ofanttlir = {
+	is_blessing = yes
+
+	potential = {
+		NOT = { has_country_flag = obrtrol_upgraded_aspects }
+	}
+
+	modifier = {
+		core_creation = -0.1
+	}
+	ai_will_do = {
+		factor = 10
+	}
+}
+blessing_jormir_upgraded = {
+	is_blessing = yes
+	
+	potential = {
+		has_country_flag = obrtrol_upgraded_aspects
+	}
+
+	
+	modifier = {
+		global_missionary_strength = 0.03
+	}
+	ai_will_do = {
+		factor = 10
+	}
+}
+blessing_balmir_upgraded = {
+	is_blessing = yes
+
+	potential = {
+		has_country_flag = obrtrol_upgraded_aspects
+	}
+
+	modifier = {
+		infantry_power = 0.15
+	}
+	ai_will_do = {
+		factor = 10
+	}
+}
+blessing_kranmas_upgraded = {
+	is_blessing = yes
+
+	potential = {
+		has_country_flag = obrtrol_upgraded_aspects
+	}
+
+	modifier = {
+		build_cost = -0.15
+	}
+	ai_will_do = {
+		factor = 10
+	}
+}
+blessing_valerid_upgraded = {
+	is_blessing = yes
+
+	potential = {
+		has_country_flag = obrtrol_upgraded_aspects
+	}
+
+	modifier = {
+		development_cost = -0.15
+	}
+	ai_will_do = {
+		factor = 10
+	}
+}
+blessing_ofanttlir_upgraded = {
+	is_blessing = yes
+
+	potential = {
+		has_country_flag = obrtrol_upgraded_aspects
+	}
+
+	modifier = {
+		core_creation = -0.15
+	}
+	ai_will_do = {
+		factor = 10
+	}
+}

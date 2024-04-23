@@ -1,0 +1,26 @@
+
+setup_vision = yes
+government = tribal
+add_government_reform = greentide_horde
+government_rank = 1
+primary_culture = green_orc
+religion = great_dookan
+technology_group = tech_orcish
+capital = 754
+
+#autocrat who reorients orcish society the clan's society to bolster his own power.
+
+1444.11.11 = {
+	monarch = {
+		name = "Garm"
+		dynasty = "Severed Ear"
+		birth_date = 1415.4.1
+		adm = 5
+		dip = 2
+		mil = 4
+	}
+	
+	add_ruler_personality = cruel_personality
+	add_ruler_personality = lawgiver_personality
+	
+}

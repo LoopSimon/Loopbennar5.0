@@ -1,0 +1,2892 @@
+
+# A province can only belong to one region!
+
+# random_new_world_region is used for RNW. Must be first in this list.
+random_new_world_region = {
+}
+
+########################################
+# AELANTIR		                       #
+########################################
+
+# North Aelantir 
+
+tor_nayyi_region = {
+	areas = {
+		scattered_islands_area
+		torn_isles_area
+		west_vanburia_area
+		north_vanburia_area
+		east_vanburia_area
+		guardian_islands_area
+	}
+}
+
+epednan_expanse_region = {
+	areas = {
+		pomvasonn_area
+		boruleed_area
+		paihubi_area
+		wohya_area
+		ciodsibh_area
+		kehtauk_area
+		
+		uruksokh_area
+		yanudahna_area
+		enasumpa_area
+		moyquin_area
+	}
+}
+
+ekyunimoy_region = {
+	areas = {
+		mokumoy_area
+		aiyudopan_area
+		cialeed_area
+		tamsokh_area
+	}
+}
+
+haraf_region = {
+	areas = {
+		xochibarcel_quixo_area
+		tameter_area
+		mtzacuala_yolli_area
+		cuecuaden_area
+		tumbatin_xochibar_area
+		auvultadih_area
+		naftlachilar_area
+		manquitencos_area
+		kinn_rondi_area
+		manguchtec_area
+		pontuzex_area
+		mikidaxepi_area
+		eekinahi_area
+		zurzumexia_area
+		the_tokal_area
+		mestikardu_area
+		koonbepa_area
+		tilsikabahn_area
+		taldoud_kaysa_area
+		gommiochand_area
+		drabs_cambann_area
+	}
+}
+
+mushroom_forest_region = {
+	areas = {
+		sporeglade_area
+		mushroom_depths_area
+		sky_cap_range_area
+	}
+}
+
+amadia_region = {
+	areas = {
+		silvegor_area
+		borawid_area
+		chaka_nelir_area
+		oomu_nelir_area
+		claltrun_area
+		culefchas_area
+		upper_munasin_area
+		trichas_area
+		chamguin_area
+		bronrin_area
+		lower_munasin_area
+		candoos_area
+		nur_damenath_area
+		wertunbe_area
+		cymbeahn_area
+		cherimreit_area
+		chuesnel_area
+		paiss_siqum_area
+		siquoomul_area
+		chaiwafmul_area
+		harenaine_area
+	}
+}
+
+larankarha_highlands_region = {
+	areas = {
+		airoa_naditari_area
+		sedregenhi_area
+		ethanamara_area
+		urvand_area
+		enlarmai_area
+		clematar_area
+		ahartadyam_area
+	}
+}
+
+yodhanchend_region = {
+	areas = {
+		banderuttai_area
+		kattisangamar_area
+		sibisimra_area
+		tirsin_area
+		gophira_kendram_area
+		darkalyndar_area
+		marhed_rayodana_area
+		imarchend_area
+	}
+}
+
+southern_coast_region = {
+	areas = {
+		ameionavil_area
+		nagarchend_area
+		korrimutren_area
+		vul_tenvach_area
+		sthanan_ith_vussam_area
+	}
+}
+
+kalavend_region = {
+	areas = {
+		vettakaramai_area
+		parahechend_area
+		nanru_nakar_area
+		varamraya_area
+		royakottar_area
+		uesrennu_area
+		orenkoraim_area
+		katalperai_area
+	}
+}
+
+chendhya_region = {	#the middle lands
+	areas = {
+		gaenbyst_area
+		auraden_area
+		asdzaeg_area
+		asov_area
+		haeunov_area
+		moxbudar_area
+		donkalyn_area
+		samidryzand_area
+	}
+}
+
+gauraddhi_region = { #The Border
+	areas = {
+		oremvand_area
+		zaernmaera_area
+		rakkabuttai_area
+		caergaraen_area
+		sarihaddu_area
+	}
+}
+
+severed_coast_region = {
+	areas = {
+		rezailan_area
+		fishtail_woods_area
+		timberneck_area
+		greencrest_area
+		jester_point_area
+	}
+}
+
+mteibas_valley_region = {
+	areas = {
+		dalktash_area
+		bzhaernaer_area
+		jarrelaban_area
+		zhazn_al_dalk_area
+		mteibhara_area
+		hsamazh_area
+	}
+}
+
+west_effelai_region = {
+	areas = {
+		silver_banks_area
+		hungry_jungle_area
+		the_twins_area
+		silent_expanse_area
+	}
+}
+
+andic_reach_region = {
+	areas = {
+		ameion_area
+		kankotrund_area
+		takothein_area
+		deyeion_area
+		sotophadi_area
+		eiongremos_area
+		idziydir_area
+		amgremos_area
+		bzor_al_swrul_area
+	}
+}
+
+devand_region = {	#the boys cleaved each other
+	areas = {
+		msaghyan_area
+		apikhoxi_area
+		besolaki_area
+		denabatha_area
+		eneion_area
+		keyolion_area
+		empkeios_area
+		elokos_area
+		vothelisi_area
+		anisikheion_area
+		soreion_area
+		dtsiaerh_area
+		ktwaena_area
+	}
+}
+
+alecand_region = {
+	areas = {
+		geneltik_area
+		lokegentia_area
+		lokemeion_area
+		ormam_area
+		kherka_area
+		eltikan_area
+		degakheion_area
+		kimanis_area
+		oktikheion_area
+		mtelian_area
+		arpedifer_area
+		arpenisi_area
+		kheinos_area
+	}
+}
+
+
+east_effelai_region = {
+	areas = {
+		thamusaine_area
+		ksimaine_area
+		tamidand_area
+		voauuam_area
+		kiindtir_arbu_area
+		voioon_area
+		taaine_area
+		uoriitswohvo_area
+		tskeobor_area
+		arbukesthi_area
+		truaine_area
+		tsilust_area
+		muuduam_area
+		soaring_forest_area
+	}
+	monsoon = {
+		00.01.01
+		00.04.30
+	}
+}
+
+south_effelai_region = {
+	areas = {
+		mistwood_area
+		central_effelai_area
+		rockfall_jungle_area
+		junglemouth_area
+	}
+	monsoon = {
+		00.01.01
+		00.05.30
+	}
+}
+
+dry_coast_region = {
+	areas = {
+		borand_area
+		oronvio_area
+		muudoron_aelu_area
+		ordovio_area
+		rezanoan_area
+		muudoron_aisu_area
+		aisuust_area
+	}
+}
+
+leechdens_region = {
+	areas = {
+		serpenthome_area
+		spider_coast_area
+		screaming_jungle_area
+		middans_area
+		edgewoods_area
+		ungoths_trail_area
+		red_isle_area
+		leechdens_maw_area
+	}
+	monsoon = {
+		00.12.01
+		00.12.30
+	}
+	monsoon = {
+		00.01.01
+		00.04.30
+	}
+}
+
+turtleback_isle_region = {
+	areas = {
+		turtlerear_area
+		turtlefeet_area
+		turtlehead_area
+	}
+}
+
+north_ruined_isles_region = {
+	areas = {
+		silsenald_isles_area
+		fiorgram_island_area
+	}
+}
+
+endralliande_region = {
+	areas = {
+		northern_bluff_area
+		dancing_sisters_area
+		hibiscus_vale_area
+		cape_of_endral_area
+		lastsight_islands_area
+		north_obaithail_area
+		south_obaithail_area
+		seaway_corridor_area
+		red_harbor_area
+		endralvar_area
+		hazelands_area
+		silent_fields_area
+		arca_falaine_area
+		vestige_coast_area
+	}
+}
+
+ravenous_isle_region = {
+	areas = {
+		faliltcost_area
+		sanctuary_fields_area
+		varionail_area
+		silvertennar_area
+	}
+}
+
+ruined_isles_region = {
+	areas = {
+		mykx_isles_area
+		breccia_peaks_area
+		verten_area
+		the_bend_area
+		isles_of_plenty_area
+		wet_trickster_isle_area
+		dry_trickster_isle_area
+		unstill_waters_area	#these four should be changed when we do the south bit of that place
+		saamirses_area
+		great_tussock_area
+		wanderers_gate_area
+		pirendral_area
+		torrisheah_area
+	}
+}
+
+soruin_region = {
+	areas = {
+		galindas_point_area
+		overgrown_area
+		lovers_coast_area
+		obscured_approach_area
+		greenfort_area
+		respite_coast_area
+		green_river_area
+		trisfersland_area
+	}
+}
+
+trollsbay_region = {
+	areas = {
+		valorpoint_area
+		laneksfield_area
+		coast_of_isobel_area
+		boek_river_area
+		zanlib_area
+		ynnsmouth_area
+		marlliande_area
+		vincenton_area
+		cestirmark_area
+		tahaneksom_area
+		umuhit_area
+		new_varlosen_area
+		trollhair_woods_area
+		yanekin_area
+		trollsmaw_swamp_area
+		spoorland_area
+		greywood_area
+		okhiboli_area
+		thilvis_area
+	}
+}
+
+reapers_coast_region = {
+	areas = {
+		dihen_jungle_area
+		the_graveroads_area
+		cheshosh_area
+		maskport_area
+		deathweights_area
+	}
+}
+
+dalaire_region = {
+	areas = {
+		stalwart_outpost_area
+		teirawood_border_area
+		flottnord_area
+		glowing_eye_wood_area
+		casnallin_area
+		fionveren_area
+		eabhagahm_area
+		sjavarrust_area
+		klakutleg_area
+		throngrpuntur_area
+		frondvagr_area
+		baidhvar_area
+		arbcost_area
+		molbrotio_area
+		nyhofn_area
+	}
+}
+
+sarda_region = {
+	areas = {
+		nizelynn_area
+		atawakitsu_area
+		fenisokhna_area
+		hradavezl_area
+		adbrabohvi_area
+		ynnluka_area
+		hradapolere_area
+		ynncytr_area
+		tukhpud_area
+		kaztakri_area
+		arverynn_area
+		hor_velenynn_area
+	}
+}
+
+dolindha_region = {
+	areas = {
+		ebenmas_area
+		arganjuzorn_area
+		malacnar_area
+		trojvare_area
+		
+		amacimst_area
+		mocvare_area
+		drevonsred_area
+		brelar_area
+		
+		bosancovac_area
+		
+		grebniesth_area
+	}
+}
+
+rzenta_region = {
+	areas = {
+		juzondezan_area
+		munapeim_area
+		svemel_area
+		drozmajaivn_area
+		arkchgozhar_area
+		azodsengha_area
+	}
+}
+
+veykoda_region = {
+	areas = {
+		favesrinn_area
+		corinsfield_area
+		argezvale_area
+		atarylnn_area
+
+		aryamer_area
+		kestadan_area
+		osindain_area
+	}
+}
+
+forest_of_the_cursed_ones_region = {
+	areas = {
+		kewdhemr_area
+		zemshogen_area
+		arrzreth_area
+		dewkeanebl_area
+		hehadepar_area
+		whetjul_area
+		baschykha_area
+	}
+}
+
+bloodgroves_region = {
+	areas = {
+		south_dalairey_coast_area
+		moonblood_forest_area
+		middle_sella_area
+		bloodbrook_area
+		red_coast_area
+		nurthannkost_area
+		south_dalaire_area
+		inner_groves_area
+	}
+}
+
+randrunnse_region = {
+	areas = {
+		tamharcroc_area
+		fogharbac_area
+		fardach_area
+		dartir_area
+		medhan_area
+		trimgarb_area
+		galbhan_area
+		anholtir_area
+		armonadh_area
+		jhorgashirr_area
+		gemradcurt_area
+		earegasach_area
+	}
+}
+
+glorelthir_region = {
+	areas = {
+		darhan_area
+		monkast_area
+		trasand_area
+		drisleak_area
+		iadth_area
+		ruigfar_area
+		sglolad_area
+		raithlos_area
+	}
+}
+
+sarmadfar_region = {
+	areas = {
+		serakriok_area
+		trimthir_area
+		fogracleak_area
+		anracmur_area
+		murdkather_area
+		sidmargbal_area
+		dearktir_area
+		paskala_area
+		gathgob_area
+		pelodard_area
+		eorwestislands_area
+		ardrealt_area
+		saregasach_area
+	}
+}
+
+domandrod_region = {
+	areas = {
+		domandrod_portal_area
+		domandrod_central_glade_area
+		domandrod_gladeway_1_area
+		domandrod_gladeway_2_area
+		domandrod_gladeway_3_area
+		domandrod_gladeway_4_area
+	}
+}
+
+broken_isles_region = {
+	areas = {
+		ledtocin_area
+		zamrobst_area
+		themaria_area
+		reithemar_area
+		cymailean_area
+		morail_area
+	}
+}
+########################################
+# GERUDIA		                       #
+########################################
+
+olavlund_region = {
+	areas = {
+		southern_giants_tears_area
+		northern_giants_tears_area
+		esfjall_area
+		naugsvol_area
+		nyrford_area
+		olavslund_area
+		elkaesals_slumber_area
+	}
+}
+
+gerudian_frontier_region = {
+	areas = {
+		gullmork_area
+		vaengrheim_area
+		gerudian_area
+		gerudia1_area
+		gifrbygd_area
+		zeindalr_area
+	}
+}
+
+dalr_region = {
+	areas = {
+		frostbridges_area
+		bjarnland_area
+		revrland_area
+		varheim_area
+		ismark_area
+		sidaett_area
+		dalrfjall_area
+		blodfjell_area
+		allt_area
+		wastes_area
+	}
+}
+
+########################################
+# WESTERN CANNOR                       #
+########################################
+
+lencenor_region = {
+	areas = {
+		venail_area
+		upper_bloodwine_area
+		lower_bloodwine_area
+		sorncost_vines_area
+		sornhills_area
+		shrouded_coast_area
+		ionnidar_area
+		redglades_area
+		west_ruby_mountains_area
+		east_ruby_mountains_area
+		deranne_area
+		northern_flats_area
+		southern_flats_area
+		darom_area
+		eastern_winebay_area
+		upper_winebay_area
+		lower_winebay_area
+		southroy_area
+	}
+}
+
+small_country_region = {
+	areas = {
+		viswall_area
+		roysfort_area
+		the_borders_area
+		thomsbridge_area
+		applefields_area
+		lorenans_reach_area
+		lorentish_approach_area
+		pearpoint_area
+		norley_area
+	}
+}
+
+dragon_coast_region = {
+	areas = {
+		gnomish_pass_area
+		nimscodd_area
+		dragonpoint_area
+		dragondowns_area
+		dragonspine_area
+		dragonheights_area
+		dragondepth_area
+		storm_isles_area
+		iochand_area
+		reaver_coast_area
+		dragonhills_area
+		lonely_isle_area
+	}
+}
+
+west_dameshead_region = {
+	areas = {
+		wesdam_area
+		neckcliffe_area
+		damespearl_area
+		pearlywine_area
+		carneteria_area
+		windtower_area
+		tretunica_area
+		exwes_area
+		woodwell_area
+	}
+}
+
+east_dameshead_region = {
+	areas = {
+		west_damesear_area
+		east_damesear_area
+		eastneck_area
+		damerian_dales_area
+		silverwoods_area
+		menibor_loop_area
+		middle_luna_area
+		the_commons_area
+		upper_luna_area
+		verne_area
+		wyvernmark_area
+		galeinn_area
+		heartlands_area
+	}
+}
+
+the_borders_region = {
+	areas = {
+		wexhills_area
+		east_bisan_area
+		west_bisan_area
+		ottocam_area
+		greater_bardswood_area
+		eastborders_area
+		gnollsgate_area
+		gisden_area
+		arannen_area
+		rhinmond_area
+		hawkfields_area
+		antir_drop_area
+		highcliff_area
+	}
+}
+
+forlorn_vale_region = {
+	areas = {
+		north_ibevar_area
+		south_ibevar_area
+		teagansfield_area
+		cursewood_area
+		rotwall_area
+		whistlevale_area
+	}
+}
+
+esmaria_region = {
+	areas = {
+		konwell_area
+		ryalanar_area
+		high_esmar_area
+		low_esmar_area
+		hearthswood_area
+		bennonhill_area
+		cann_esmar_area
+		songbarges_area
+		ashfields_area
+	}
+}
+
+businor_region = {
+	areas = {
+		lorbet_area
+		mountainway_area
+		busilar_area
+		busilari_straits_area
+		hapiande_area
+		khenak_area
+		isle_of_tef_area
+	}
+}
+
+alenic_frontier_region = {
+	areas = {
+		westmoor_proper_area
+		moorhills_area
+		beronmoor_area
+		westmounts_area
+		alenic_expanse_area
+		gawed_area
+		south_alen_area
+		alenvord_area
+		balvord_area
+		jonsway_area
+		arbaran_area
+		golden_plains_area
+		cestir_area
+		coddorran_heights_area
+	}
+}
+
+alenic_reach_region = {
+	areas = {
+		mawriver_area
+		serpentshead_area
+		northern_greatwoods_area
+		dinesck_area
+		west_chillsbay_area
+		east_chillsbay_area
+		wudhal_area
+		sondaar_area
+		vrorenwall_area
+		cedesck_area
+		gulletpeak_area
+		vrorenmarch_area
+	}
+}
+
+damescrown_region = {
+	areas = {
+		damescrown_area
+		floodmarches_area
+		vertesk_area
+		uelaire_area
+		beepeck_area
+		derwing_area
+		heartland_borders_area
+	}
+}
+
+dostanor_region = {
+	areas = {
+		corvurian_plains_area
+		baldostan_area
+		central_corvuria_area
+		blackwoods_area
+	}
+}
+
+daravans_folly_region = {
+	areas = {
+		central_dreadmire_area
+		north_dreadmire_area
+		flooded_coast_area
+	}
+}
+
+inner_castanor_region = {
+	areas = {
+		castonath_area
+		upper_nath_area
+		lower_nath_area
+		westgate_area
+		southgate_area
+		trialmount_area
+		steelhyl_area
+		nortmere_area
+		northyl_area
+		serpentsmarck_area
+		bradescker_area
+		ardent_glade_area
+		oldhaven_area
+		clouded_wood_area
+		sarwood_area
+		nortessord_area
+		esshyl_area
+		coalwoud_area
+	}
+}
+
+south_castanor_region = {
+	areas = {
+		burnoll_area
+		dostans_way_area
+		marrhold_area
+		oudmerewood_area
+		catelsvord_area
+		devaced_area
+		vernham_area
+		oudeben_area
+		beastgrave_area
+		clovenwood_area
+		banesfork_area
+		blademarch_area
+		swapstoke_area
+		hornwood_area
+		doewood_area
+		themin_area
+		humacvord_area
+		dryadsdale_area
+		medirleigh_area
+		escerfork_area
+	}
+}
+
+west_castanor_region = {
+	areas = {
+		balmire_area
+		westwall_approach_area
+		middle_alen_area
+		athfork_area
+		ebonmarck_area
+		cannwood_area
+		falsemire_area
+		silvervord_area
+		adenica_area
+		upcreek_area
+		rohibon_area
+		valefort_area
+		taran_plains_area
+		verteben_area
+		merescker_area
+		nortmerewood_area
+	}
+}
+
+#########################################
+# Sarhal						  		#
+#########################################
+
+akasik_region = {
+	areas = {
+		deshak_area
+		ekha_area
+		middle_akasik_area
+		akasik_mountains_area
+		akarat_area
+		oris_area
+	}
+}
+
+west_salahad_region = {
+	areas = {
+		garpix_brrtekuh_area
+		salahad_islands_area
+		coastal_krahway_area
+		western_krahway_area
+	}
+}
+
+kheterata_region = {
+	areas = {
+		ohitsopot_area
+		coast_of_tears_area
+		mothers_delta_area
+		hitputtiushesh_area
+		lower_sorrow_area
+		kheterat_proper_area
+		upper_sorrow_area
+		awaashesh_area
+		ibtat_axast_area
+		elizna_area
+		masusopot_area
+	}
+}
+
+gol_region = {
+	areas = {
+		golkora_stretch_area
+		hapmot_area
+		gnollakaz_area
+		gnolltauz_area
+		zeewix_area
+		saymas_area
+		krahilyn_area
+		grixzakr_area
+		argazeen_area
+		siniwix_area
+		garpix_rakkaz_area
+		saqraxat_area
+		kaxatan_area
+	}
+}
+
+kubaci_region = {
+	areas = {
+		mokatanga_area
+		arrakan_ghaman_area
+		xoruku_xugu_area
+		franxhaz_area
+		gharr_marr_area
+		fanghasba_area
+		keneya_pipi_area
+		biakata_area
+		farirarge_area
+		baghan_area
+	}
+}
+
+janama_region = {
+	areas = {
+		sitane_kogojida_area
+		mojobaa_kulan_area
+		arojana_area
+		cikela_jigin_area
+		tamasada_area
+		kaino_binni_area
+		janfanciso_area
+		warabani_area
+		misinson_area
+	}
+}
+
+dao_nako_region = {
+	areas = {
+		dao_nako_coast_area
+		masirijiri_area
+		ninki_nanka_bada_area
+		asanbosom_tu_area
+		azziza_tu_area
+		dogo_babolo_area
+		narawan_jigin_area
+		negetu_area
+		falenfenw_area
+		kunolo_area
+		samishesha_area
+		bernalia_area
+		kumsdat_area
+	}
+}
+
+horashesh_region = {
+	areas = {
+		ahw_ssap_area
+		zuvavim_area
+		lubinga_area
+		zugvuma_area
+		iqhekabi_area
+		chibuswa_area
+		zenavuma_area
+		kumashet_area
+		gomuvuri_area
+		zuvaziva_area
+		imivama_area
+		unior_area
+		samspar_area
+		tabbanor_area
+		khawit_area
+		imdrashid_area
+		lath_kungaff_area
+		bivirir_area
+		porhonozy_area
+	}
+}
+
+khetapera_region = {
+	areas = {
+		imidkis_area
+		ordanus_area
+		zerkis_area
+		aramoole_area
+		asparimu_area
+		duwarkani_area
+		leta_muhaqaar_area
+		shena_muhaqaar_area
+		mattabo_area
+	}
+}
+
+yezel_mora_region = {
+	areas = {
+		dilgir_sigr_area 
+		kagdilgir_area 
+		# areash197_area
+		svitvillan_area
+		mypodaud_area
+		sketaimypo_area
+		tazoine_area
+		# areash202_area
+		krumkrmura_area
+		arukomirun_area
+		kumkrheshu_area
+		svitvi_area
+		elbe_nama_area
+		aakeiritki_area
+		tovchiheshu_area
+	}
+}
+
+
+fahvanosy_region = {
+	areas = {
+		havafonosy_area
+		tanfandoro_area
+		nafalofimapo_area
+		ibidelibe_area
+		havoamihipha_area
+		oronsafa_area
+		onkelynofi_area
+		mapotibokbo_area
+		rambavatra_area
+		tebajik_area
+		zohejirofo_area
+		tebolelmasi_area
+		ibibakely_area
+		far_uelos_isles_area
+		sil_berkhens_land_area
+		bavabetsaro_area
+		pikakely_area
+		velanynosy_area
+	}
+}
+
+throden_gokad_region = {
+	areas = {
+		ninu_ra_kyik_area
+		karassk_tara_area
+		zesipas_tara_area
+		narasad_area
+		khugra_tara_area
+		nepa_tressik_area
+		nazhni_tara_area
+		nazhni_tressik_area
+		zatsuti_tara_area
+		naga_ra_atsla_area
+		tressik_isles_area
+		inner_rankaty_islands_area
+		outer_rankaty_islands_area
+	}
+}
+
+katala_raz_region = {
+	areas = {
+		khulgulkin_area
+		kakhaz_pton_bnal_area
+		noor_zerat_area
+		rakirap_srap_area
+		pshorkitsa_area
+		katalatslamatakh_area
+		rakshas_area
+		adgur_area
+		kapashan_area
+		teranak_area
+		kakhaz_raktata_area
+		yassa_tara_area
+		karach_area
+		batal_area
+		gasha_area
+		ishyaga_area
+		peta_ra_thusk_area
+	}
+}
+
+odu_kherass_region = {
+	areas = {
+		zulbur_area
+		kannepa_area
+		ssippansek_area
+		yospath_area
+		tiki_shalazar_area
+		tiki_ra_shaga_area
+		yok_ra_shaga_area
+		sut_ra_thon_area
+	}
+}
+
+jasiir_jadid_region = {
+	areas = {
+		dhal_tanizuud_area
+		juritaqa_area
+		ashamad_bariga_area
+		dhebij_shar_area
+		dhebij_dhekha_area
+		qasriyingi_area
+		dhal_nikhuvad_area
+		dhebij_janab_area
+		baashi_badda_area
+		suhratba_yaj_area
+		suhratba_yahin_area
+		ashamad_mabeed_area
+		qasri_abeesooyinka_area
+		dhal_baeidag_area
+	}
+}
+
+ardimya_region = {
+	areas = {
+		mnemba_ziidan_area
+		old_djinnakah_area
+		bariga_vumb_area
+		ardimyas_path_area
+		new_armanhal_area
+		the_ohits_area
+		samaania_area
+		bankaa_ya_awliyo_area
+		tajalme_plains_area
+		qaynsland_area
+		merfolk_tip_area
+		muudeyneen_heartlands_area
+		daagalkauva_area
+		lasadaicha_area
+		visage_isles_area
+		fobunaicha_area
+	}
+}
+
+bamaliwuni_region = {
+	areas = {
+		iburengampakad_area
+		hejukazira_area
+		rimvuawuni_area
+		mojakilima_area
+		chunsikazira_area
+		kahuwabonde_area
+		juumsozi_area
+		wakoopakad_area
+		umsozandin_area
+		kukihombe_area	
+		igerya_isles_area
+	}
+}
+
+guifa_guyamva_region = {
+	areas = {
+		guinyaswa_area
+		mpaka_area
+		ishmajyepfo_area
+		datakh_area
+		bongo_area
+		okapi_area
+		rindukubunza_area
+		gakeigiti_area
+	}
+}
+
+yetefesefi_region = {
+	areas = {
+		yetmesira_area
+		yakrae_area
+		sedarachit_area
+		tilcakan_area
+		berfan_area
+		melakfan_area
+		fetengaben_area
+		werikafan_area
+	}
+}
+
+telekenid_region = {
+	areas = {
+		berihrica_area
+		pegosi_area
+		bedaphire_area
+		medifat_area
+		dakmender_area
+		irkan_eparta_area
+		riyiwedeb_area
+		emot_nepas_area
+		telekenid_islands_area
+		maikelok_area
+		sedarfan_area
+		keychashow_area
+	}
+}
+
+denibari_region = {
+	areas = {
+		kvathagis_area
+		simegesfan_area
+		merekawi_area
+		wezingoni_area
+		tsudhagis_area
+		pechuketema_area
+		yezelshaff_area
+		kidfan_area
+		kadamuu_area
+		kirksanlashan_area
+		saposon_area
+
+	}
+}
+
+dreksaret_region = {
+	areas = {
+		vresywaz_area
+		yaikehaad_area
+		dmettid_area
+		beri_gnidi_area
+		biribitid_area
+		gizan_area
+	}
+}
+
+gazraak_region = {
+	areas = {
+		kvangraak_area
+		tzilkazin_grum_area
+		pyazada_area
+		kogzalla_area
+	}
+}
+
+########################################
+# Bulwar				  		#
+########################################
+
+ourdia_region = {
+	areas = {
+		west_overmarch_area
+		east_overmarch_area
+		south_overmarch_area
+	}
+}
+
+bahar_region = {
+	areas = {
+		crathanor_area
+		reuyel_area
+		medbahar_area
+		zagnabad_area
+		tungr_mountains_area
+		aqatbahar_area
+		azka_evran_area
+		bahar_szel_uak_area
+		birsartenslib_area
+		fajabahar_area
+	}
+}
+
+bulwar_proper_region = {
+	areas = {
+		inner_drolas_area
+		outer_drolas_area
+		lower_brasan_area
+		upper_brasan_area
+		medurubar_area
+		anzabad_area
+		irrliam_area
+		sur_mountains_area
+		garpix_tluukt_area
+		grixekyr_area
+		zansap_area
+		anzarzax_area
+		kumarkand_area
+		bulwar_area
+		harklum_area
+		south_naza_area
+		traz_buranun_area
+		north_naza_area
+		east_naza_area
+		jixobix_area
+	}
+}
+
+harpy_hills_region = {
+	areas = {
+		imuluses_area
+		ur_monkande_area
+		kuz_mountains_area
+		kuzak_area
+		lawassar_area
+		gelkalis_area
+		firanyalen_area
+		siffiraeri_area
+		kharfiraeri_area
+		nansalen_area
+		misharallen_area
+	}
+}
+
+far_bulwar_region = {
+	areas = {
+		avamezan_area
+		eduz_vacyn_area
+		panuses_area
+		upper_suran_area
+		azka_sur_area
+		grixek_area
+		garpix_zokka_area
+		jikarzax_area
+		sareyand_area
+		xhurgrum_area
+		eastern_krahway_area
+	}
+}
+
+far_salahad_region = {
+	areas = {
+		baganash_area
+		sad_siadan_area
+		far_east_salahad_area
+		gold_road_area
+		mulenue_area
+		arrtukerr_area
+		keruhar_area
+		saranza_area
+		lerfiror_area
+		zallirkor_area
+		dasmatus_area
+	}
+}
+
+###########################################
+#Forbidden Lands
+###########################################
+
+yyl_moista_region = {
+	areas = {
+		yyl_moitsa_west_area
+		far_moitsa_area
+		yyl_moitsa_east_area
+		central_moitsa_area
+		eternal_winter_area
+		moitsa_siiv_area
+		moitsahdi_area
+		moitsaresta_area
+		moitsraj_area
+		sochuleag_area
+	}
+}
+
+ogre_valley_region = {
+	areas = {
+		ovto_kigval_area
+		kvakeinolba_area
+		ghavatalur_area
+		krotavatsvi_area
+		dzimokli_area
+		shevrmorzgh_area
+		skurkha_kyard_area
+	}
+}
+
+west_forbidden_plains_region = {
+	areas = {
+		ugheabar_area
+		caubheameas_area
+		codormalul_area
+		naglaibar_area
+		foirakhian_area
+		cahuteaghud_area
+		alrodgaersp_area
+		salrun_goilust_area
+		taegansegh_area
+		adoi_filaenan_area
+	}
+}
+
+east_forbidden_plains_region = {
+	areas = {
+		inaer_taizamh_area
+		danorbar_area
+		ghaneersp_area
+		aporlaen_area
+		itorlan_area
+		shaenerlin_area
+		irdu_ageeneas_area
+		godairzumh_area
+		domn_filaenan_area
+		orchekh_area
+	}
+}
+
+serpent_gift_region = {
+	areas = {
+		nac_magthaal_area
+		eamschemb_area
+		egoirnasgh_area
+		itorelgea_area
+		irgheabomar_area
+		domchashing_area
+	}
+}
+
+south_yarikhoi_region = {
+	areas = {
+		bocenvokin_area
+		prikoyol_area
+		yukaron_area
+		qermaqan_area
+		peenadhi_area
+		yuurarila_area
+		kuskemua_area
+		gadhlumo_area
+		doynuya_area
+		yukaroyol_area
+	}
+}
+
+north_yarikhoi_region = {
+	areas = {
+		doykilraj_area
+		tomoryon_area
+		qushyil_area
+		tolgalsui_area
+		qarshtuluu_area
+		kesh_golkhin_area
+		sarts_neisar_area
+		zoi_khorkhiin_area
+		keshkoi_area
+		shikenkhiin_area
+		onrek_area
+		shik_dozein_area
+		shik_dazar_area
+	}
+}
+
+nuzurbokh_region = {
+	areas = {
+		jaratish_area
+		pasktisk_area
+		zarmiklon_area
+		priktisk_area
+		akan_dzor_area
+		akandhil_area
+		enkayiin_area
+		tarbokh_area
+		bulrekayig_area
+		kalgazuur_area
+		zoital_area
+		baizoi_area
+		zurkalga_area
+		zuurzoi_area
+		tozgonrek_area
+		zurenkhiin_area
+		area_1_area #Ilabomar
+	}
+}
+
+#Sea Regions
+north_aelantir_coast_region = {
+	areas = {
+		north_aelantir_coast_area
+	}
+}
+
+southeast_aelantir_coast_region = {
+	areas = {
+		leechdens_area
+		coast_of_the_effelai_area
+		gleaming_sea_area
+		radiant_sea_area
+		sea_of_ameion_area
+	}
+}
+
+north_uelos_lament_ocean_region = {
+	areas = {
+		edillions_relief_area
+		far_sea_area
+		the_great_expanse_area
+		banished_sea_area
+		coast_of_endrallian_area
+	}
+}
+
+south_uelos_lament_ocean_region = {
+	areas = {
+		south_uelos_lament_sea_area
+		far_uelos_lament_sea_area
+	}
+}
+
+south_sarhal_coast_region = {
+	areas = {
+		fahvanosy_sea_area
+		mabeedi_sea_area
+	}
+}
+
+west_salahad_coast_region = {
+	areas = {
+		west_salahad_sea_area
+	}
+}
+
+cleaved_sea_coast_region = {
+	areas = {
+		kaydhano_coast_area
+		cleaved_sea_area
+	}
+}
+
+north_ocean_of_the_lost_region = {
+	areas = {
+		north_ocean_of_the_lost_area
+		bay_of_insyaa_area
+		barrier_islands_area
+	}
+}
+
+south_ocean_of_the_lost_region = {
+	areas = {
+		south_ocean_of_the_lost_area
+	}
+}
+
+punctured_coast_region = {
+	areas = {
+		punctured_coast_area
+	}
+}
+
+west_aelantir_coast_region = {
+	areas = {
+		west_aelantir_coast_area
+	}
+}
+
+torn_sea_region = {
+	areas = {
+		torn_sea_area
+	}
+}
+
+outer_torn_sea_region = {
+	areas = {
+		outer_torn_sea_area
+	}
+}
+
+
+northern_sea_region = {
+	areas = {
+		northern_pass_area
+		yukelqur_sea_area
+		zernuuk_sea_area
+		kodarve_sea_area
+		outer_sea_area
+	}
+}
+
+ringlet_sea_region = {
+	areas = {
+		ringlet_sea_area
+		the_bridge_area
+	}
+}
+
+gulf_of_rahen_region = {
+	areas = {
+		gulf_of_rahen_area
+	}
+}
+
+northeast_haless_coast_region = {
+	areas = {
+		northeast_haless_coast_area
+	}
+}
+
+kedwali_gulf_region = {
+	areas = {
+		kedwali_gulf_area 
+		yarbadda_sea_area 
+	}
+}
+
+dameshead_sea_region = {
+	areas = {
+		damesneck_sea_area
+		dameshead_sea_area
+	}
+}
+
+giants_grave_sea_region = {
+	areas = {
+		giants_grave_sea_area
+		bay_of_chills_area
+	}
+}
+
+divenhal_sea_region = {
+	areas = {
+		bay_of_wines_sea_area
+		west_diven_area
+		coast_of_akasik_area
+		east_diven_area
+		sea_of_follies_area
+		sea_of_stone_area
+		gulf_of_glass_area
+		brasanni_sea_area
+	}
+}
+
+westcoast_region = {
+	areas = {
+		southcoast_area
+		westcoast_area
+		bay_of_dragons_area
+	}
+}
+
+northern_thaw_region = {
+	areas = {
+		reaversea_area
+		far_thaw_area
+		lonely_sea_area
+	}
+}
+
+broken_sea_region = {
+	areas = {
+		broken_sea_approach_area
+		broken_sea_area
+	}
+}
+
+western_broken_sea_region = {
+	areas = {
+		western_broken_sea_area
+	}
+}
+
+ruined_sea_region = {
+	areas = {
+		trollsbay_coast_area
+		ruined_sea_area
+		east_ruin_sea_area
+		western_respite_sea_area
+		reapers_coast_area
+	}
+}
+
+calamity_pass_region = {
+	areas = {
+		calamity_pass_area
+	}
+}
+
+
+########################################
+# SERPENTSPINE                         #
+########################################
+
+
+serpents_vale_region = {
+	areas = {
+		royal_terrace_area
+		common_terrace_area
+		assembly_terrace_area
+		castle_hill_area
+	}
+}
+
+northern_pass_region = {
+	areas = {
+		the_copperwood_area
+		upper_logr_area
+		tanning_valley_area
+		middle_logr_area
+		hidden_respite_area
+		lonely_mountains_area
+		lower_logr_area
+		dwaroval_area
+		hjyrtsikki_area
+		fyllstyn_area
+	}
+}
+
+west_dwarovar_region = {
+	areas = {
+		amldihr_area
+		anvils_horn_area
+		krakdhum_area
+		dead_end_tunnel_area
+		khugdihr_area
+		dwarovrod_1_3_area
+		snotslair_area
+		orldhum_area
+		dwarfbreak_area
+		dark_depths_area
+		dwarovrod_4_6_area
+		fallen_asra_area
+		chainlink_mines_area
+		riftway_area
+		dwarovrod_7_9_area
+		mithradhum_area
+		dwarovrod_10_12_area
+		dagrite_depths_area
+		zokkorna_caverns_area
+		railyard_exchange_area
+		railyard_area
+		skulkers_lair_area
+		goblins_bypass_area
+		dagrinrod_4_6_area
+		broken_dagger_pass_area
+		dagrinrod_7_9_area
+		orlazam_area
+		old_dagrinrod_area
+		dagrinrod_13_15_area
+		vazhatun_area
+		stunad_kozenad_area
+		travelers_refuge_area
+		westnest_area
+		eastnest_area
+		dwarovrod_15_17_area
+		azmak_area
+		jorkad_junction_area
+		dwarovrod_21_24_area
+	}
+}
+
+middle_dwarovar_region = {
+	areas = {
+		vazumbrog_area
+		dwarovrod_27_29_area
+		misty_cave_trail_area
+		hehos_legacy_area
+		dwarovrod_30_32_area
+		deep_ones_lair_area
+		diggers_road_area
+		dwarovrod_33_35_area
+		seghdihr_area
+		steamsource_area
+		stunad_kradoz_area
+		goblin_grotto_area
+		greatcavern_area
+		verkal_gulan_area
+		xazor_area
+		dwarovrod_38_41_area
+		ulagom_area
+		ozumbrog_area
+	}
+}
+
+serpentreach_region = {
+	areas = {
+		gor_burad_area
+		buradforge_area
+		argrod_14_16_area
+		zarn_area
+		still_caverns_area
+		argrod_junction_area
+		shroomfissure_area
+		argrod_9_11_area
+		argrod_6_8_area
+		ovdal_lodhum_area
+		thievesbane_area
+		shazstundihr_area
+		stunad_skomdihr_area
+		kings_caverns_area
+		arg_ordstun_area
+		argrod_origin_area
+		north_altar_area
+		south_altar_area
+		orlghelovar_area
+	}
+}
+
+tree_of_stone_region = {
+	areas = {
+		dwarovrod_45_48_area
+		kanzad_area
+		dwarovrod_51_53_area
+		grozumdihr_area
+		ovdal_az_an_area
+		dwarovrod_57_59_area
+		hul_az_krakazol_area
+		dwarovrod_63_65_area
+		anduz_area
+		ambermine_alley_area
+		earthseed_area
+		the_kariats_area
+		hovezan_pass_area
+		ibran_pass_area
+		sulimak_area
+		drunken_pass_area
+	}
+}
+
+jade_mines_region = {
+	areas = {
+		dwarovrod_66_68_area
+		tuwad_area
+		dwarovrod_71_74_area
+		gronstunad_area
+		dwarovrod_75_78_area
+		dwarovrod_79_81_area
+		dromak_area
+		tuwad_pass_area
+		jadeforges_area
+		the_back_tunnels_area
+		jazka_area
+		dromak_pass_area
+		the_flank_area
+		blastcrack_area
+		goblinwarrens_area
+	}
+}
+
+
+###########################################
+#Deepwood
+###########################################
+
+west_deepwoods_region = {
+	areas = {
+		sawelear_area
+		sawallar_area
+		clirypriah_area
+		prehnryn_area
+		drennen_area
+		dennesayrn_area
+		cenag_area
+		ciranhofonn_area
+		volnudu_area
+		lebkadu_area
+		ciranmyna_area
+		faedayr_area
+	}
+}
+
+east_deepwoods_region = {
+	areas = {
+		ayeth_area
+		lonfarch_area
+		coryllann_area
+		fealmyraeth_area
+		scothalar_area
+		scothaear_area
+		criodharka_area
+		yfelorr_area
+		arsydpydru_area
+		ghul_area
+		gozyest_area
+		dywyael_area
+		krazho_area
+	}
+}
+
+deepwoods_portal_region = {
+	areas = {
+		deepwoods_portal_area
+	}
+}
+
+
+########################################
+# RAHEN			                       #
+########################################
+
+
+rahen_coast_region = {
+	areas = {
+		satarsaya_area
+		avhavubhiya_area
+		sarkhashabid_area
+		ascension_cape_area
+		shenral_area
+		harimars_cradle_area
+		bharagha_area
+		tujgal_area
+		dhenbasana_estuary_area
+		kharunyana_estuary_area
+		lower_dhenbasana_area
+		rhamirta_area
+		middle_dhenbasana_area
+		inner_rahen_area
+		reanthung_area
+		li_btei_area
+		lower_telebei_area
+		cmor_krueng_area
+		khindi_area
+	}
+	monsoon = {
+		00.07.01
+		00.08.30
+	}
+}
+
+rakhadesh_region = {
+	areas = {
+		setabura_area
+		upper_dhenbasana_area
+		pasiragha_area
+		south_marutha_area
+		south_ghankedhen_area
+		middle_ghankedhen_area
+		north_ghankedhen_area
+		babhagama_area
+		ghattub_area
+	}
+	monsoon = {
+		00.07.01
+		00.08.30
+	}
+}
+
+shamakhad_region = {
+	areas = {
+		west_rajnadhaga_area
+		khadirnadi_area
+		east_rajnadhaga_area
+		tiltaghar_area
+		middle_nadimraj_area
+		bidhilar_area
+		khadisrapur_area
+		munlanan_area
+		kradhungur_area
+		tamvihar_area
+		khamarutar_area
+		ghatasak_area
+		khasardul_area
+		marudhoj_area
+		nadida_area
+		pharata_area
+		sir_area
+		nakara_area
+		tilathi_area
+		raghajandi_area
+		yodhilakra_area
+	}
+	monsoon = {
+		00.07.01
+		00.08.30
+	}
+}
+
+dhujat_region = {
+	areas = {
+		kramitra_area
+		maharaaja_area
+		khiraspid_area
+		tughayasa_area
+		buhaanjirgal_area
+		ghavaghuundakhan_area
+		maldeelakhan_area
+		banjisbid_area
+		banjiraal_area
+		khirnadhiman_area
+		thadarsaghol_area
+		semphrerong_area
+		sarisung_area
+		phangban_area
+		rangadevi_area
+		dhurajaghan_area
+	}
+	monsoon = {
+		00.07.01
+		00.08.30
+	}
+}
+
+
+########################################
+# Haless			                   #
+########################################
+
+
+bomdan_region = {
+	areas = {
+		phaemtuek_area
+		khabtei_teleni_area
+		khangleu_thuing_area
+		sramolbei_area
+		bim_lau_area
+		taiver_area
+		middle_telebei_area
+		khung_btei_area
+		dekphre_area
+		banhlubei_area
+	}
+	monsoon = {
+		00.07.01
+		00.08.30
+	}
+}
+
+lupulan_rainforest_region = {
+	areas = {
+		hoangdesinh_area
+		sawuladan_area
+		harumbasai_area
+		rewirang_area
+		tlagukit_area
+		agluwadai_area
+		lembiahar_area
+		pingurnsai_area
+		arawkelin_area
+		mesatulek_area
+		gobusoa_area
+		brenulan_area
+		thuongidut_area
+		amkamsek_area
+		gehamteg_area
+		non_chien_area
+	}
+	monsoon = {
+		00.05.01
+		00.08.30
+	}
+}
+
+lower_yanshen_region = {
+	areas = {
+		wanglam_area
+		hungngon_area
+		hongnguan_area
+		gungi_area
+		xiyun_area
+		iongsim_area
+		luoyip_area
+		mulim_area
+		tianlou_area
+		jinjiang_area
+		erluxi_area
+	}
+	monsoon = {
+		00.05.01
+		00.06.30
+	}
+}
+
+north_yanshen_region = {
+	areas = {
+		liuminxiang_area
+		linghui_area
+		beidugang_area
+		xuanbing_area
+		beikyuan_area
+		jianzhong_area
+		yiguan_area
+		jiantsiang_area
+	}
+	monsoon = {
+		00.05.01
+		00.06.30
+	}
+}
+
+upper_yanshen_region = {
+	areas = {
+		jinqiu_area
+		bianfang_area
+		jiangszun_area
+		bianyuan_area
+		jyutsai_area
+		lamzung_area
+		tianszi_area
+		anjiang_area
+		balrijin_area
+		linyuan_area
+		yanzhong_area
+	}
+	monsoon = {
+		00.05.01
+		00.06.30
+	}
+}
+
+demon_hills_region = {
+	areas = {
+		yambioka_area
+		sugroltona_area
+		unbeksu_area
+		mogutian_area 
+		moryokang_area
+	}
+	monsoon = {
+		00.05.01
+		00.06.30
+	}
+}
+
+xianjie_region = {
+	areas = {
+		pevyirer_area
+		jiezhong_area
+		shanyutian_area
+		qianzhaolin_area
+		tietyuan_area
+		tzingyuan_area
+		wangqiu_area
+		aoshan_area
+		zhonglin_area
+		dekaipnam_area
+		jilin_anb_area # Has to be this cause there's a jilin_area in vanilla
+	}
+	monsoon = {
+		00.05.01
+		00.06.30
+	}
+}
+
+thidinkai_region = {
+	areas = {
+		nagon_area
+		nui_phom_area
+		khom_ma_area
+		loratana_area
+		sirtan_area
+		binhrunghin_area
+		yemakaibo_area
+		kasainam_area
+		ngaopho_area
+		phonan_area
+		phaktai_area
+		ananhu_area
+		thirabnir_area
+		hinphat_area
+		phakphon_area
+		ngoen_area
+		kaiden_area
+	}
+	monsoon = {
+		00.05.01
+		00.06.30
+	}
+}
+
+ringlet_isles_region = {
+	areas = {
+		kiubang_area
+		lungdou_area
+		leoihoin_area
+		ginhyut_area
+		ringlet_isles_1_area
+		ringlet_isles_2_area
+	}
+	monsoon = {
+		00.05.01
+		00.06.30
+	}
+}
+
+shuvuushudi_region = {
+	areas = {
+		choogiaza_area
+		yunghuun_area
+		kheizavho_area
+		zunkazhad_area
+		zirariik_area
+		joolgimudi_area
+		chegorgtai_area
+		zhunmudi_area
+		baztazhad_area
+	}
+}
+
+odheongu_region = {
+	areas = {
+		somyonghon_area
+		ondeog_area
+		segang_area
+		jibojagi_area
+		chiluyonan_area
+		jongsijae_area
+		suppiu_area
+	}
+}
+
+khaashalg_region = {
+	areas = {
+		churgyund_area
+		yulunshoon_area
+		hekuudengan_area
+		area_3_area #Rushing River
+		area_4_area #Four Peaks
+		area_5_area #Chunguvho
+		area_6_area #Huujoolgin
+		area_2_area #Chaneuusk
+		iron_gate_area #Iron Gate
+		west_plateau_area #Bazuniezar
+		north_wall_area #Northern Peaks
+		south_wall_area #Southern Shield
+	}
+}
+
+moduk_region = {
+	areas = {
+		bagdagerin_area
+		tuusbulak_area
+		mogomorin_area
+		dolshob_area
+		kokevdan_area
+		nurboesig_area
+		area_7_area #Red Vale
+	}
+}
+
+nomsyulhan_region = {
+	areas = {
+		west_pass_area #Sand Gate
+		southside_lake_area #Loch Tormscith
+		northside_lake_area #Desolate Plains
+		anti_command_area #Ascension Plateau
+		three_mountains_valley_area
+		portal_east_area #Portal East
+		portal_west_area #Portal West
+		valley_west_lower_area #Sanctuary
+		valley_west_mid_area #Iona Saothar
+		valley_west_upper_area #Overgrowth
+		nomsyulhan_portal_area #Nomsyulhan
+	}
+}
+
+debug_region = {
+	areas = {
+		debug_area
+	}
+}
+
+
+
+
+
+# Deprecated Stuff to prevent [triggerimplementation.cpp:15371]: Unknown region used in a trigger horn_of_africa_region crashes
+
+########################################
+# EUROPE                               #
+########################################
+
+france_region = {
+	areas = {
+
+	}
+}
+
+scandinavia_region = {
+	areas = {
+
+	}
+}
+
+
+low_countries_region = {
+	areas = {
+
+	}
+
+}
+
+italy_region = {
+	areas = {
+
+	}
+}
+
+
+north_german_region = {
+	areas = { 
+
+	}
+}
+
+
+
+
+south_german_region = {
+	areas = { 
+
+	}
+}
+
+russia_region = {
+	areas = {
+
+	}
+}
+
+
+ural_region = {
+	areas = {
+
+	}
+}
+
+iberia_region = {
+	areas = {
+
+	}
+}
+
+
+
+british_isles_region = {
+	areas = {
+
+	}
+}
+
+baltic_region = {
+	areas = {
+
+	}
+}
+
+poland_region = {
+	areas = {
+		
+	}
+}
+
+ruthenia_region = {
+	areas = {
+
+	}
+}
+
+crimea_region = {
+	areas = {
+
+	}
+}
+
+balkan_region = {
+	areas = {
+
+	}
+}
+
+carpathia_region = {
+	areas = {
+
+	}
+}
+
+egypt_region = {
+	areas = {
+
+	}
+}
+
+maghreb_region = {
+	areas = {
+
+	}
+}
+
+mashriq_region = {
+	areas = {
+
+	}
+}
+
+anatolia_region = {
+	areas = {
+
+	}
+}
+
+persia_region = {
+	areas = {
+
+	}
+}
+
+khorasan_region = {
+	areas = {
+
+	}
+}
+
+
+caucasia_region = {
+	areas = {
+
+	}
+}
+
+arabia_region = {
+	areas = {
+
+	}
+}
+
+niger_region = {
+	areas = {
+
+	}
+}
+
+guinea_region = {
+	areas = {
+
+	}
+}
+
+
+sahel_region = {
+	areas = {
+
+	}
+}
+
+horn_of_africa_region = {
+	areas = {
+
+	}
+}
+
+east_africa_region = {
+	areas = {
+
+	}
+}
+
+central_africa_region = {
+	areas = {
+
+	}
+}
+
+kongo_region = {
+	areas = {
+
+	}
+}
+
+central_asia_region = {
+	areas = {
+
+	}
+}
+
+south_africa_region = {
+	areas = {
+
+	}
+}
+
+west_siberia_region = {
+	areas = {
+
+	}
+}
+
+east_siberia_region = {
+	areas = {
+
+	}
+}
+
+mongolia_region = {
+	areas = {
+
+	}
+}
+
+manchuria_region = {
+	areas = {
+
+	}
+}
+
+korea_region = {
+	areas = {
+
+	}
+}
+
+tibet_region = {
+	areas = {
+
+	}
+}
+
+hindusthan_region = {
+	areas = {
+
+	}
+}
+
+bengal_region = {
+	areas = {
+
+	}
+}
+
+west_india_region = {
+	areas = {
+		
+	}
+}
+
+deccan_region = {
+	areas = {
+
+	}
+}
+
+coromandel_region = {
+	areas = {
+
+	}
+}
+
+
+burma_region = {
+	areas = {
+
+	}
+}
+
+japan_region = {
+	areas = {
+
+	}
+}
+
+australia_region = {
+	areas = {
+
+	}
+}
+
+
+south_china_region = {
+	areas = {
+
+	}
+}
+
+xinan_region = {
+	areas = {
+
+	}
+}
+
+north_china_region = {
+	
+	areas = {
+
+	}
+}
+
+brazil_region = {
+	
+	areas = {
+
+	}
+}
+
+la_plata_region = {
+	areas = {
+
+	}
+}
+
+
+colombia_region = {
+	areas = {
+	
+	}
+}
+
+peru_region = {
+	areas = {
+
+	}
+}
+
+upper_peru_region = {
+	areas = {
+
+	}
+}
+
+malaya_region = {	#Western Indonesia Malaya.
+	areas = {
+
+	}
+}
+
+
+moluccas_region = {
+	areas = {
+
+	}
+}
+
+
+
+indonesia_region = { #Eastern Indonesian/Malayan Islands.
+	areas = {
+
+	}
+}
+
+
+oceanea_region = {
+	areas = {
+
+	}
+}
+
+indo_china_region = {
+	areas = {
+
+	}
+}
+
+canada_region = {
+	areas = {
+
+	}
+}
+
+great_lakes_region = {
+	areas = {
+
+	}
+}
+
+northeast_america_region = {
+	areas = {
+
+	}
+}
+
+southeast_america_region =  {
+	areas = {
+
+	}
+}
+
+mississippi_region = {
+	areas = {
+
+	}
+}
+
+rio_grande_region = {
+	areas = {
+	
+	}
+}
+
+great_plains_region = {
+	areas = {
+
+	}
+}
+
+california_region = {
+	areas = {
+
+	}
+}
+
+cascadia_region = {
+	areas = {
+
+	}
+}
+
+hudson_bay_region = {
+	areas = {
+
+	}
+}
+
+mexico_region = {
+	areas = {
+
+	}
+}
+
+central_america_region = {
+	areas = {
+
+	}
+}
+
+carribeans_region = {
+	areas = {
+
+	}
+}
+
+#Sea Regions
+baltic_sea_region = {
+	areas = {
+
+	}
+}
+
+north_atlantic_region = {
+	areas = {
+
+	}
+}
+
+american_east_coast_region = {
+	areas = {
+
+	}
+}
+
+mediterrenean_region = {
+	areas = {
+
+	}
+}
+
+caribbean_sea_region = {
+	areas = {
+
+	}
+}
+
+
+west_african_sea_region = {
+	areas = {
+
+	}
+}
+
+west_indian_ocean_region = {
+	areas = {
+
+	}
+}
+
+arabian_sea_region = {
+	areas = {
+
+	}
+}
+
+east_indian_ocean_region = {
+	areas = {
+
+	}
+}
+
+south_indian_ocean_region = {
+	areas = {
+
+	}
+}
+
+south_china_sea_region = {
+	areas = {
+
+	}
+}
+
+east_china_sea_region = {
+	areas = {
+
+	}
+}
+
+north_west_pacific_region = {
+	areas = {
+
+	}
+}
+
+south_west_pacific_region = {
+	areas = {
+
+	}
+}
+
+south_east_pacific_region = {
+	areas = {
+
+	}
+}
+
+north_east_pacific_region = {
+	areas = {
+
+	}
+}
+
+pacific_south_america_region = {
+	areas = {
+
+	}
+}
+
+atlantic_south_america_region = {
+	areas = {
+
+	}
+}
+
+south_atlantic_region = {
+	areas = {
+
+	}
+}

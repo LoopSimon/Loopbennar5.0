@@ -1,0 +1,40 @@
+
+# Gnomish Hierarchy
+A79 = {
+	always = no
+}
+
+# Phoenix Empire
+F38 = {
+	always = no
+}
+
+# Empire of Anbennar
+Z01 = {
+	always = no
+}
+
+# Castanor
+B32 = {
+	always = no
+}
+
+# Greentide
+B01 = {
+	always = no
+}
+
+# Dameria
+A58 = {
+	OR = {
+		culture = west_damerian
+		culture = east_damerian
+	}
+	is_core = A58
+}
+
+#Damoh Yangla
+Z64 = {
+	culture_group = yanglam
+	is_core = Z64
+}

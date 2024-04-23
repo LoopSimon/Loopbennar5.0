@@ -1,0 +1,29 @@
+
+# No previous file for Jotunskol
+owner = Z09
+controller = Z09
+add_core = Z09
+culture = olavish
+religion = skaldhyrric_faith
+
+hre = no
+
+base_tax = 1
+base_production = 1
+base_manpower = 1
+
+trade_goods = naval_supplies
+
+capital = ""
+
+is_city = yes
+
+
+
+
+
+
+add_permanent_province_modifier = {
+	name = harpy_minority_coexisting_large
+	duration = -1
+}

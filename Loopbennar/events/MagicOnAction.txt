@@ -1,0 +1,171 @@
+
+namespace = magic_on_action
+
+# Necromancy - on_battle_won - gain manpower
+country_event = {
+	id =  magic_on_action.1
+	title =  magic_on_action.1.t
+	desc =  magic_on_action.1.d
+	picture = FAMINE_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { has_ruler_flag = hide_necromancy_on_battle_won }
+		check_variable = { raiseUndeadBase = 1 }
+	}
+	
+	immediate = {
+		hidden_effect = {
+			# Move to other variable to prevent immediate from firing multiple times while keeping tooltip
+			set_variable = { which = raiseUndead which = raiseUndeadBase }
+			set_variable = { raiseUndeadBase = 0 }
+		
+			#Extra calculation
+			if = {
+				limit = {
+					NOT = { has_ruler_flag = necromancy_1 }
+					NOT = { has_ruler_flag = necromancy_2 }
+					NOT = { has_ruler_flag = necromancy_3 }
+				}
+				multiply_variable = { raiseUndead = 0.15 }
+			}
+			else_if = {
+				limit = { has_ruler_flag = necromancy_3 }
+				multiply_variable = { raiseUndead = 0.3 }
+			}
+			else_if = {
+				limit = { has_ruler_flag = necromancy_2 }
+				multiply_variable = { raiseUndead = 0.25 }
+			}
+			else_if = {
+				limit = { has_ruler_flag = necromancy_1 }
+				multiply_variable = { raiseUndead = 0.2 }
+			}
+			raise_undead = yes
+		}
+	}
+	
+	after = {
+		hidden_effect = { set_variable = { raiseUndead = 0 } }
+	}
+
+	
+	option = {	#Rise!
+		name = magic_on_action.1.a
+		
+		tooltip = { raise_undead = yes }
+		
+		# ROOT = {
+			# infantry = ROOT
+		# }
+		
+	}
+	
+	option = {	#Rise! (But hide these pop-ups from now on)
+		name = magic_on_action.1.b
+		
+		tooltip = { raise_undead = yes }
+		
+		# ROOT = {
+			# infantry = ROOT
+		# }
+		
+		hidden_effect = { set_ruler_flag = hide_necromancy_on_battle_won }
+	}
+}
+
+# Necromancy - on_battle_won - gain manpower
+country_event = {
+	id =  magic_on_action.2
+	title =  magic_on_action.1.t
+	desc =  magic_on_action.1.d
+	picture = FAMINE_eventPicture
+	
+	hidden = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		has_ruler_flag = hide_necromancy_on_battle_won
+		check_variable = { raiseUndeadBase = 1 }
+	}
+	
+	immediate = {
+		hidden_effect = {
+			# Move to other variable to prevent immediate from firing multiple times while keeping tooltip
+			set_variable = { which = raiseUndead which = raiseUndeadBase }
+			set_variable = { raiseUndeadBase = 0 }
+			
+			#Extra calculation
+			if = {
+				limit = {
+					NOT = { has_ruler_flag = necromancy_1 }
+					NOT = { has_ruler_flag = necromancy_2 }
+					NOT = { has_ruler_flag = necromancy_3 }
+				}
+				multiply_variable = { raiseUndead = 0.15 }
+			}
+			else_if = {
+				limit = { has_ruler_flag = necromancy_3 }
+				multiply_variable = { raiseUndead = 0.3 }
+			}
+			else_if = {
+				limit = { has_ruler_flag = necromancy_2 }
+				multiply_variable = { raiseUndead = 0.25 }
+			}
+			else_if = {
+				limit = { has_ruler_flag = necromancy_1 }
+				multiply_variable = { raiseUndead = 0.2 }
+			}
+			raise_undead = yes
+		}
+	}
+	
+	after = {
+		hidden_effect = { set_variable = { raiseUndead = 0 } }
+	}
+
+	
+	option = {	#Rise!
+		name = magic_on_action.1.a
+		
+		tooltip = { raise_undead = yes }
+		
+		# ROOT = {
+			# infantry = ROOT
+		# }
+		
+	}
+}
+
+# Debug. To allow for the effect to happen in the proper order
+country_event = {
+	id =  magic_on_action.3
+	title =  magic_on_action.1.t
+	desc =  magic_on_action.1.d
+	picture = FAMINE_eventPicture
+	
+	hidden = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		check_variable = { raiseUndeadBase = 1 }
+	}
+	
+	option = {	#Rise!
+		name = magic_on_action.1.a
+		
+		if = {
+			limit = { has_ruler_flag = hide_necromancy_on_battle_won }
+			country_event = { id = magic_on_action.2 }
+		}
+		else = {
+			country_event = { id = magic_on_action.1 }
+		}
+		
+		# ROOT = {
+			# infantry = ROOT
+		# }
+		
+	}
+}

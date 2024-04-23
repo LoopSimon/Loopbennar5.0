@@ -1,0 +1,396 @@
+namespace = precursor_relics
+
+# Adding a relics
+country_event = {
+	id = precursor_relics.1
+	title = precursor_relics.1.t
+	desc = precursor_relics.1.d
+	picture = TRADEGOODS_eventPicture
+	goto = target_province
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen  = {
+		days = 1
+		#modifier = {
+		#	factor = 0.3
+		#	OR = {
+		#		continent = north_america
+		#		continent = south_america
+		#	}
+		#}
+		
+		#modifier = {
+		#	factor = 1.25
+		#	has_port = yes
+		#	OR = {
+		#		continent = europe
+		#		continent = africa
+		#	}
+		#}
+		
+		#modifier = {
+		#	factor = 0.6
+		#	has_port = no
+		#	OR = {
+		#		continent = europe
+		#		continent = africa
+		#	}
+		#} TODO these are all province scope in country scope, event needs to be rewritten to work in a pulse action properly
+	}
+	
+	trigger = {
+		num_of_cities = 2
+		precursor_relics_can_spawn = yes
+		any_owned_province = {
+			is_city = yes
+			NOT = {
+				continent = serpentspine
+				superregion = bulwar_superregion
+				trade_goods = precursor_relics
+				trade_goods = damestear
+				trade_goods = gold
+				trade_goods = gems
+				trade_goods = mithril
+				trade_goods = coal
+				has_province_flag = relics_no_spawn
+				has_terrain = dwarven_hold
+				has_terrain = dwarven_hold_surface
+			}
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					is_city = yes
+					NOT = {
+						continent = serpentspine
+						superregion = bulwar_superregion
+						trade_goods = precursor_relics
+						trade_goods = damestear
+						trade_goods = gold
+						trade_goods = gems
+						trade_goods = mithril
+						trade_goods = coal
+						has_province_flag = relics_no_spawn
+						has_terrain = dwarven_hold
+						has_terrain = dwarven_hold_surface
+					}
+				}
+				save_event_target_as = target_province
+			}
+		}
+	}
+	
+	option = {
+        name = precursor_relics.1.a
+        ai_chance = { factor = 100 }
+		event_target:target_province = {
+			save_trade_goods = yes
+			change_trade_goods = precursor_relics
+			add_devastation = 10
+			if = {
+				limit = {
+					NOT = { has_province_modifier = eordan_expedition_site }
+					NOT = { has_province_modifier = pr_great_ruin }
+					NOT = { has_province_flag = no_precursor_ruin }
+					NOT = { REB = { check_variable = { num_ruin = 5 } } }
+				}
+				random = {
+					chance = 10
+					add_permanent_province_modifier = {
+						name = pr_great_ruin
+						duration = -1
+					}
+					set_add_ruin_count = yes
+				}
+			}
+		}
+		set_add_relics_count = yes
+	}
+	
+	option = {
+        name = precursor_relics.1.b
+        ai_chance = { factor = 0 }
+		add_prestige = 10
+	}
+}
+
+# Dwindling Relics
+country_event = {
+	id = precursor_relics.2
+	title = precursor_relics.2.t
+	desc = precursor_relics.2.d
+	picture = ARTWORK_eventPicture
+	goto = target_province
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+		modifier = {
+			factor = 2
+			num_of_owned_provinces_with = {
+				value = 2
+				trade_goods = precursor_relics
+			}
+		}
+		modifier = {
+			factor = 2
+			num_of_owned_provinces_with = {
+				value = 4
+				trade_goods = precursor_relics
+			}
+		}
+		modifier = {
+			factor = 2
+			num_of_owned_provinces_with = {
+				value = 8
+				trade_goods = precursor_relics
+			}
+		}
+		
+		# Some spirit temples have fewer relics
+		#modifier = {
+		#	factor = 4
+		#	has_province_flag = small_temple_relics
+		#}
+		#modifier = {
+		#	factor = 0.3
+		#	has_province_modifier = eordan_expedition_site
+		#} TODO these are province in country scope, event needs to be rewritten to work in a pulse action properly
+	}
+	
+	trigger = {
+		has_global_flag = max_precursor_relics
+		any_owned_province = {
+			trade_goods = precursor_relics
+			NOT = {
+				has_province_modifier = pr_great_ruin
+				has_province_modifier = mag_big_laboratory
+				has_province_modifier = mage_stash
+				has_province_modifier = dwindling_resources
+				has_province_modifier = aelnar_exclusive_trade
+				has_province_modifier = H33_containment_mod
+				has_province_flag = permanent_precursor_relics
+			}
+		}
+		REB = { check_variable = { num_precursor_relics = 5 } }
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					trade_goods = precursor_relics
+					NOT = {
+						has_province_modifier = pr_great_ruin
+						has_province_modifier = mag_big_laboratory
+						has_province_modifier = mage_stash
+						has_province_modifier = dwindling_resources
+						has_province_modifier = aelnar_exclusive_trade
+						has_province_modifier = H33_containment_mod
+						has_province_flag = permanent_precursor_relics
+					}
+				}
+				save_event_target_as = target_province
+			}
+		}
+	}
+	
+	option = {
+		name = precursor_relics.2.a
+		ai_chance = { factor = 100 }
+		event_target:target_province = {
+			add_permanent_province_modifier = {
+				name = dwindling_resources
+				duration = -1
+			}
+			hidden_effect = { province_event = { id = precursor_relics.3 days = 1825 random = 3650 } }
+		}
+	}
+}
+
+#Removing a Relics
+province_event = {
+	id = precursor_relics.3
+	title = precursor_relics.3.t
+	desc = precursor_relics.3.d
+	picture = ARTWORK_eventPicture
+	goto = root
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		OR = {
+			trade_goods = precursor_relics
+			has_province_modifier = dwindling_resources
+		}
+		REB = { check_variable = { num_precursor_relics = 10 } }
+	}
+	
+	option = {
+		name = precursor_relics.3.a
+		ai_chance = { factor = 100 }
+		remove_province_modifier = dwindling_resources
+		if = {
+			limit = { trade_goods = precursor_relics }
+			set_from_saved_trade_goods = yes
+		}
+		if = {
+			limit = { NOT = { has_province_modifier = eordan_expedition_site } }
+			hidden_effect = { REB = { subtract_variable = { num_precursor_relics = 1 } } }
+		}
+	}
+}
+
+
+
+#First rise in price, when there is between 18 and 22 relics => 7.5gold
+country_event = {
+	id = precursor_relics.4
+	title = precursor_relics.4.t
+	desc = precursor_relics.4.d
+	picture = ELECTION_REPUBLICAN_eventPicture
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	major = yes
+	
+	trigger = {
+		has_global_flag = max_precursor_relics
+		production_leader = { trade_goods = precursor_relics }
+		REB = {
+			NOT = {
+				check_variable = {
+					which = num_precursor_relics
+					value = 40
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = precursor_relics.4.a
+		ai_chance = { factor = 100 }
+		
+		change_price = {
+			trade_goods = precursor_relics
+			key = initial_precursor_relics_shortage
+			
+			value = 1
+			duration = -1
+		}
+		hidden_effect = { set_global_flag = initial_precursor_relics_shortage }
+	}
+}
+
+#Second Rise in price, when there is between 15 and 10 => 8.5gold
+country_event = {
+	id = precursor_relics.5
+	title = precursor_relics.5.t
+	desc = precursor_relics.5.d
+	picture = TRADE_GOODS_PLANTATION_GOODS_IN_WAREHOUSE_eventPicture
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	major = yes
+	
+	trigger = {
+		has_global_flag = max_precursor_relics
+		production_leader = { trade_goods = precursor_relics }
+		REB = {
+			NOT = {
+				check_variable = {
+					which = num_precursor_relics
+					value = 25
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = precursor_relics.5.a
+		ai_chance = { factor = 100 }
+		change_price = {
+			trade_goods = precursor_relics
+			key = second_precursor_relics_shortage
+			
+			value = 1
+			duration = -1
+		}
+		hidden_effect = { set_global_flag = second_precursor_relics_shortage }
+	}
+}
+
+#Last rise, when between 8 and 1 => 12.5gold
+country_event = {
+	id = precursor_relics.6
+	title = precursor_relics.6.t
+	desc = precursor_relics.6.d
+	picture = TRADE_GOODS_PLANTATION_GOODS_IN_WAREHOUSE_eventPicture
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	major = yes
+	
+	trigger = {
+		has_global_flag = max_precursor_relics
+		production_leader = { trade_goods = precursor_relics }
+		REB = {
+			NOT = {
+				check_variable = {
+					which = num_precursor_relics
+					value = 15
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = precursor_relics.6.a
+		ai_chance = { factor = 100 }
+		change_price = {
+			trade_goods = precursor_relics
+			key = last_precursor_relics_shortage
+			
+			value = 1
+			duration = -1
+		}
+		hidden_effect = { set_global_flag = last_precursor_relics_shortage }
+	}
+}
+
+#Rise in age of unravelling => 5gold
+country_event = {
+	id = precursor_relics.9
+	title = precursor_relics.9.t
+	desc = precursor_relics.9.d
+	picture = TRADE_GOODS_PLANTATION_GOODS_IN_WAREHOUSE_eventPicture
+	
+	fire_only_once = yes
+	major = yes
+	mean_time_to_happen = {
+		years = 10
+	}
+	
+	trigger = {
+		current_age = age_of_reformation
+	}
+	
+	option = {
+		name = precursor_relics.9.a
+		ai_chance = { factor = 100 }
+		
+		set_global_flag = relics_value
+		change_price = {
+			trade_goods = precursor_relics
+			key = relics_value_tooltip
+			
+			value = 1
+			duration = -1
+		}
+	}
+}

@@ -1,0 +1,330 @@
+
+# Triggers and effects will be given the Actor's scope, with the Recipient's as FROM
+
+# Create new diplomatic actions like this. AI will currently never send them.
+make_castanorian_dominion_vassal = {
+	category = influence
+	
+	alert_index = 40
+	alert_tooltip = demand_dummy_alert_tooltip
+	
+	require_acceptance = no # Whether the recipient gets an option to decline
+	
+	is_visible = {
+		tag = B32
+		OR = {
+			has_country_flag = castanor_can_make_dominions
+			FROM = { tag = Z45 } # Vrorenmarch
+			FROM = { tag = Z07 } # Dostanor
+		}
+		is_subject = no
+		FROM = {
+			OR = {
+				is_subject_of_type = vassal
+				is_subject_of_type = march
+				is_client_nation_of = ROOT
+			}
+			is_subject_of = ROOT
+			culture_is_human = yes
+		}
+	}
+	is_allowed = {
+		hidden_trigger = {
+			is_subject = no
+			FROM = {
+				OR = {
+					is_subject_of_type = vassal
+					is_subject_of_type = march
+					is_client_nation_of = ROOT
+				}
+				is_subject_of = ROOT
+				culture_is_human = yes
+			}
+			tag = B32
+			OR = {
+				has_country_flag = castanor_can_make_dominions
+				FROM = { tag = Z45 } # Vrorenmarch
+				FROM = { tag = Z07 } # Dostanor
+			}
+		}
+		reverse_has_opinion = {
+			who = FROM
+			value = 0
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = maxAllowedDominions
+					value = 16
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = castanor_current_max_allowed_dominions
+				NOT = { castanor_dominion = 16 }
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = maxAllowedDominions
+					value = 15
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = castanor_current_max_allowed_dominions
+				NOT = { castanor_dominion = 15 }
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = maxAllowedDominions
+					value = 14
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = castanor_current_max_allowed_dominions
+				NOT = { castanor_dominion = 14 }
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = maxAllowedDominions
+					value = 13
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = castanor_current_max_allowed_dominions
+				NOT = { castanor_dominion = 13 }
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = maxAllowedDominions
+					value = 12
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = castanor_current_max_allowed_dominions
+				NOT = { castanor_dominion = 12 }
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = maxAllowedDominions
+					value = 11
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = castanor_current_max_allowed_dominions
+				NOT = { castanor_dominion = 11 }
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = maxAllowedDominions
+					value = 10
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = castanor_current_max_allowed_dominions
+				NOT = { castanor_dominion = 10 }
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = maxAllowedDominions
+					value = 9
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = castanor_current_max_allowed_dominions
+				NOT = { castanor_dominion = 9 }
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = maxAllowedDominions
+					value = 8
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = castanor_current_max_allowed_dominions
+				NOT = { castanor_dominion = 8 }
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = maxAllowedDominions
+					value = 7
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = castanor_current_max_allowed_dominions
+				NOT = { castanor_dominion = 7 }
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = maxAllowedDominions
+					value = 6
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = castanor_current_max_allowed_dominions
+				NOT = { castanor_dominion = 6 }
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = maxAllowedDominions
+					value = 5
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = castanor_current_max_allowed_dominions
+				NOT = { castanor_dominion = 5 }
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = maxAllowedDominions
+					value = 4
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = castanor_current_max_allowed_dominions
+				NOT = { castanor_dominion = 4 }
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = maxAllowedDominions
+					value = 3
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = castanor_current_max_allowed_dominions
+				NOT = { castanor_dominion = 3 }
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = maxAllowedDominions
+					value = 2
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = castanor_current_max_allowed_dominions
+				NOT = { castanor_dominion = 2 }
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = maxAllowedDominions
+					value = 1
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = castanor_current_max_allowed_dominions
+				NOT = { castanor_dominion = 1 }
+			}
+		}
+		# variable_arithmetic_trigger = {
+		# 	export_to_variable = {
+		# 		which = numOfDominions
+		# 		value = trigger_value:castanor_dominion
+		# 	}
+		# 	check_variable = {
+		# 		which = maxAllowedDominions
+		# 		which = numOfDominions
+		# 	}
+		# }
+	}
+	on_accept = {
+		add_trust = {
+			who = FROM
+			value = 10
+			mutual = yes
+		}
+		create_subject = {
+			subject_type = castanor_dominion
+			subject = FROM 
+		}
+	}
+	on_decline = 	{
+	}
+	
+	ai_acceptance = { # This works similarly to variable_arithmetic_trigger, but does not support triggers generally. Instead, "limit" will be evaluated first and the rest ignored if it isn't passed.
+	}
+
+	ai_will_do = { # this is a trigger
+		always = no
+	}
+}
+
+cancel_castanorian_dominion =  {
+	category = influence
+	require_acceptance = no
+	is_visible = {
+		overlord_of = FROM
+		FROM = {
+			is_subject_of_type = castanor_dominion
+		}
+	}
+	
+	is_allowed = {
+		hidden_trigger = {
+			overlord_of = FROM
+			FROM = {
+				is_subject_of_type = castanor_dominion
+			}
+		}
+		FROM = {
+			NOT = { liberty_desire = 50 }
+		}
+		reverse_has_opinion = {
+			who = FROM
+			value = 0
+		}
+		FROM = {
+			is_subject_of_type = castanor_dominion
+			is_subject_of = ROOT		
+		}
+		stability = 0
+	}
+	
+	on_accept = {
+		add_trust = {
+			who = FROM
+			value = -20
+			mutual = yes
+		}
+		create_subject = {
+			subject_type = vassal
+			subject = FROM  # dk check
+		}
+		FROM = {
+			add_liberty_desire = 65
+		}
+		add_stability = -1
+
+	}
+	
+	ai_will_do = {
+		always = no
+	}
+}

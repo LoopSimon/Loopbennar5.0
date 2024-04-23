@@ -1,0 +1,69 @@
+
+# Create new diplomatic actions like this. AI will currently never send them.
+federation_denounce_leader_policy = {
+	category = influence
+
+	alert_index = 42
+	alert_tooltip = demand_dummy_alert_tooltip
+
+	require_acceptance = no # Whether the recipient gets an option to decline
+
+	is_visible = {
+		has_country_modifier = lake_federation_member
+		has_global_flag = federation_assembly_house_build
+		FROM = {
+			has_country_modifier = lake_federation_member
+		}
+	}
+	is_allowed = {
+		hidden_trigger = {
+			has_country_modifier = lake_federation_member
+			has_global_flag = federation_assembly_house_build
+			FROM = {
+				has_country_modifier = lake_federation_member
+			}
+		}
+		need_2_politics = yes
+		no_recent_federation_politics = yes
+		adm_power = 50
+		if = {
+			limit = { ai = no }
+			NOT = { num_of_loans = 2 }
+		}
+		FROM = {
+			NOT = { has_country_modifier = fed_pol_leader_denounced }
+			OR = {
+				NOT = { republican_tradition = 50 }
+				NOT = { government = republic }
+			}
+		}
+	}
+	on_accept = {
+		REB = { change_variable = { denounceLead = 1 } }
+		add_adm_power = -50
+		lake_federation_lose_2_politics = yes
+		FROM = { lake_federation_lose_2_points = yes }
+		FROM = {
+			add_country_modifier = {
+				name = fed_pol_leader_denounced
+				duration = 365
+				hidden = yes
+			}
+			random = {
+				chance = 50
+				add_opinion = {
+					who = ROOT
+					modifier = federation_neg_intrigue
+				}
+			}
+		}
+		hidden_effect = { set_country_flag = recent_federation_politic }
+	}
+
+	ai_acceptance = { # This works similarly to variable_arithmetic_trigger, but does not support triggers generally. Instead, "limit" will be evaluated first and the rest ignored if it isn't passed.
+	}
+
+	ai_will_do = { # this is a trigger
+		from_has_higher_standing = yes
+	}
+}

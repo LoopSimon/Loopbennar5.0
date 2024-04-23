@@ -1,0 +1,27 @@
+
+setup_vision = yes
+government = republic
+add_government_reform = merchants_reform
+government_rank = 1
+mercantilism = 25
+primary_culture = blue_reachman
+religion = regent_court
+technology_group = tech_gerudian
+capital = 704
+
+
+1000.1.1 = { set_estate_privilege = estate_mages_organization_guilds }
+
+1443.12.26 = {
+	monarch = {
+		name = "Ricard"
+		dynasty = "Frostgard"
+		birth_date = 1407.6.15
+		adm = 1
+		dip = 4
+		mil = 5
+	}
+	add_ruler_personality = tactical_genius_personality
+}
+
+#After defending the drowned giant isles for months against Bayvic Ricard gained the respect of the people and the title of frostgard, he got in power by gaining the support of several merchant families convincing them that he would reclaim the lands lost in the Bayvic war.

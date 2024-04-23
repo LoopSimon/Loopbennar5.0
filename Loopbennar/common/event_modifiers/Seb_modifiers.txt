@@ -1,0 +1,6 @@
+adjacent_fort_penalty = {
+    local_defensiveness = -2.50
+}
+Loopbuff_modifier = {
+    infantry_power = 0.1
+}

@@ -1,0 +1,474 @@
+
+colonial_country_boost_big = {
+	colonists = 1
+	global_colonial_growth = 200
+}
+
+dont_colonize_but_migrate = {
+	colonists = -10
+}
+
+dont_colonize_temp = {
+	colonists = -10
+}
+
+warband_attrition_fix = {
+	global_supply_limit_modifier = 10
+}
+
+dwarovar_hold_bankruptcy_fix = { #five years of eco help to prevent the ai nuking its eco with hold repairs
+	global_tax_income = 24 # 2 income per year, offsets colonization costs.
+	interest = -2 #interest reduced loans
+	inflation_reduction = 0.5 #no inflation from the loans
+}
+
+acolytes_small_cabal = {
+
+}
+
+acolytes_medium_cabal = {
+
+}
+
+acolytes_large_cabal = {
+
+}
+
+homunculus_ruler = {
+	heir_chance = -100
+	#royal_marriage_acceptance = -50
+}
+
+lich_ruler = {
+	heir_chance = -100
+	#royal_marriage_acceptance = -50
+}
+
+entef_ruler = {
+	heir_chance = -100
+	#royal_marriage_acceptance = -50
+}
+
+vampire_ruler = {
+	heir_chance = -100
+}
+
+cannot_produce_heir = {
+	heir_chance = -100
+}
+
+diplomatic_pariah = {
+	diplomatic_reputation = -5
+	improve_relation_modifier = -0.5
+	
+	global_unrest = -1
+	enemy_core_creation = 0.25
+	
+	unjustified_demands = -0.5
+	ae_impact = -0.25
+}
+
+evil_nation = {
+	diplomatic_reputation = -3
+	unjustified_demands = -0.5
+	hostile_attrition = 1
+	
+	global_unrest = -1
+	
+	land_morale = 0.15
+	naval_morale = 0.15
+		
+	
+	ae_impact = -0.2
+	
+	manpower_recovery_speed = 0.25
+	global_manpower_modifier = 0.25
+	land_forcelimit_modifier = 0.5
+	land_maintenance_modifier = -0.25
+	
+	sailors_recovery_speed = 0.25
+	naval_forcelimit_modifier = 0.25
+	naval_maintenance_modifier = -0.25
+}
+
+wielding_calindal = {
+	land_morale = 0.1
+	shock_damage = 0.1
+	fire_damage = -0.1
+	legitimacy = 1
+	prestige = 1
+	may_recruit_female_generals = yes
+}
+
+has_bladechosen = {
+	legitimacy = -1
+	shock_damage = 0.1
+}
+
+blinded_by_the_sword = {
+	legitimacy = -2
+	prestige = -1
+	stability_cost_modifier = 0.5
+	diplomatic_reputation = -1
+}
+
+in_training_calindal_casual = {
+	diplomatic_reputation = -1
+	administrative_efficiency = -0.2
+}
+
+in_training_calindal_normal = {
+	diplomatic_reputation = -1
+	administrative_efficiency = -0.2
+	yearly_corruption = 0.05
+	heir_chance = -0.5
+	yearly_absolutism = -0.5
+}
+
+in_training_calindal_monastic = {
+	diplomatic_reputation = -1
+	administrative_efficiency = -0.2
+	yearly_corruption = 0.05
+	heir_chance = -1
+	yearly_absolutism = -1
+}
+
+adventurers_hired_mercs = {
+	merc_maintenance_modifier = -0.1
+}
+
+adventurers_city_development = {
+	local_development_cost = -0.1
+}
+
+
+beast_muzzled = {
+	land_morale = -0.1
+	shock_damage = -0.1
+}
+
+unleash_the_beast = {
+	shock_damage = 0.1
+}
+
+protocol_of_conquest = {
+	unjustified_demands = 0.5
+}
+
+diplomatic_cabinet = {
+	diplomatic_reputation = 1
+}
+
+undergoing_reform = {
+	stability_cost_modifier = 0.5
+}
+
+vampire_hideout = {
+	picture = "vampire_hideout"
+	trade_goods_size = 0.1
+	local_defensiveness = 0.2
+}
+
+purged_army = {
+	land_morale = -0.1
+}
+
+broken_masquerade = {
+	global_unrest = 2
+	land_morale = -0.1
+	diplomatic_reputation = -1
+	vampires_influence_modifier = 0.3
+	vampires_loyalty_modifier = 0.3
+}
+
+restored_masquerade = {
+	global_unrest = -1
+	vampires_influence_modifier = 0.15
+	vampires_loyalty_modifier = 0.15
+}
+
+vampire_thrall = {
+	prestige = -1
+	monarch_lifespan = 0.5
+}
+
+wounded_ruler = {
+	country_admin_power = -1
+	country_diplomatic_power = -1
+	country_military_power = -1
+	monarch_lifespan = -0.1
+}
+
+elder_pact_broken = {
+	diplomatic_reputation = -2
+	imperial_authority = -0.1
+}
+
+monstrous_beast_muzzled = {
+	land_morale = -0.05
+	shock_damage = -0.05
+}
+
+monstrous_unleash_the_beast = {
+	shock_damage = 0.05
+}
+
+monstrous_protocols_of_conquest = {
+	unjustified_demands = 0.25
+}
+
+monstrous_newfound_decorum = {
+	diplomatic_reputation = 1
+}
+
+monstrous_undergoing_reform = {
+	stability_cost_modifier = 0.5
+}
+
+monstrous_interest = {
+	interest = 1
+}
+
+monstrous_societal_reforms = {
+	idea_cost = 0.15
+}
+
+ruler_incoherent_orders = {
+	discipline = -0.05
+}
+
+ruler_complecent_ruler = {
+	yearly_corruption = 0.05
+	global_tax_modifier = -0.2
+}
+
+ruler_antagonized_advisor = {
+	advisor_cost = 0.25
+}
+
+ruler_stupid_administration_reform = {
+	state_maintenance_modifier = 1
+}
+
+city_of_ideas_brasan = {
+	local_institution_spread = 0.05
+}
+
+city_of_ideas_port_jaher = {
+	local_institution_spread = 0.05
+}
+
+city_of_ideas_davharral = {
+	local_institution_spread = 0.05
+}
+
+city_of_ideas_sareyand = {
+	local_institution_spread = 0.05
+}
+
+ai_spellcasting_cooldown = {
+	#does nothing
+}
+
+owns_anbenncost = {
+	diplomatic_upkeep = 1
+}
+
+corveld_regional_capitol = {
+	local_development_cost = -0.20
+	local_state_maintenance_modifier = -0.50
+	statewide_governing_cost = -0.50
+	local_autonomy = -0.15
+	allowed_num_of_buildings = 1
+	picture = "statewide_governing_cost"
+}
+
+vampire_infiltration = {
+	defensiveness = -0.33
+	stability_cost_modifier = 0.25
+	global_unrest = 1
+}
+
+giant_shroom = {
+	trade_goods_size = 5
+}
+
+mythical_conqueror_modifier = {
+	#Mana
+	country_admin_power = 1
+	country_diplomatic_power = 1
+	country_military_power = 1
+	all_power_cost = -0.2
+	
+	#Dip
+	ae_impact = -0.5
+	diplomatic_annexation_cost = -0.5
+	imperial_authority = 0.2
+	
+	#Army
+	land_forcelimit_modifier = 0.33
+	global_regiment_cost = -0.25
+	land_maintenance_modifier = -0.33
+	manpower_recovery_speed = 0.66
+	siege_ability = 0.33
+	defensiveness = 0.2
+	
+	#Leader
+	monarch_lifespan = 1.5
+	free_leader_pool = 2
+	leader_siege = 2
+	leader_land_shock = 2
+	leader_land_manuever = 2
+	leader_land_fire = 2
+	
+	#Economy
+	interest = -3
+	development_cost = -0.15
+	build_cost = -0.5
+	build_time = -0.5
+	global_tax_modifier = 0.25
+	global_autonomy = -0.2
+	
+	#Conquest
+	core_creation = -0.5
+	war_exhaustion = -0.07
+	fabricate_claims_cost = -0.66
+	province_warscore_cost = -0.33
+	administrative_efficiency = 0.20
+	overextension_impact_modifier = -0.25
+}
+
+great_conqueror_modifier = {
+	#Mana
+	country_admin_power = 1
+	country_diplomatic_power = 1
+	country_military_power = 1
+	all_power_cost = -0.1
+	
+	#Dip
+	ae_impact = -0.2
+	diplomatic_annexation_cost = -0.33
+	imperial_authority = 0.1
+	
+	#Army
+	land_forcelimit_modifier = 0.25
+	global_regiment_cost = -0.25
+	manpower_recovery_speed = 0.66
+	siege_ability = 0.2
+	defensiveness = 0.2
+	
+	#Leader
+	monarch_lifespan = 0.5
+	free_leader_pool = 1
+	leader_siege = 1
+	leader_land_shock = 1
+	leader_land_manuever = 1
+	leader_land_fire = 1
+	
+	#Economy
+	interest = -2
+	development_cost = -0.15
+	build_cost = -0.2
+	global_tax_modifier = 0.25
+	global_autonomy = -0.2
+	
+	#Conquest
+	province_warscore_cost = -0.20
+	overextension_impact_modifier = -0.1
+	core_creation = -0.33
+	
+}
+
+legacy_of_great_conqueror = {
+	#Mana
+	all_power_cost = -0.1
+	
+	#Economy
+	interest = -1
+	development_cost = -0.1
+	build_cost = -0.25
+	global_autonomy = -0.2
+	global_unrest = -1
+}
+
+genie_relics = {
+	picture = "genie_relic"
+	trade_value = 2
+	trade_efficiency = 0.025
+}
+
+
+dwindling_resources = {
+	trade_goods_size_modifier = -0.5
+}
+
+eunuchs_purged = {
+	administrative_efficiency = -0.05
+}
+
+honderaak_incident_colonization = {
+	global_colonial_growth = 15
+}
+honderaak_incident_mercs = {
+	mercenary_cost = -0.25
+}
+honderaak_incident_prestige = {
+	diplomatic_reputation = 1
+	prestige = 1
+}
+honderaak_incident_reformation = {
+	reform_progress_growth = 0.75
+}
+
+lower_gov_cost_in_home_region_modifier = {
+	local_governing_cost = -0.5
+}
+
+cant_colonize = {
+	picture = "icon_cant_colonize"
+}
+
+anb_defense_of_empire = {
+	war_taxes_cost_modifier = -1.0
+}
+
+melkibet_gold_mine = {
+	trade_goods_size = 0.5 #when making the MT probably remove this, and make it a monument or something, or a event to remove the buff.
+	monthly_gold_inflation_modifier = -0.25
+}
+
+protection_of_foreign_traders_reform_modifier = {
+	province_trade_power_modifier = 0.5
+	trade_value_modifier = 0.1
+}
+
+clstc_autonomy = {
+	global_trade_goods_size_modifier = 0.1
+	liberty_desire = -10
+}
+
+clstc_benefits = {
+	global_tariffs = -0.1
+	trade_efficiency = 0.1
+}
+
+livestock_boost_frontier = {
+	local_production_efficiency = 0.5
+}
+
+frontier_republic_steppe_expansion = {
+	local_development_cost = -0.125
+}
+
+war_artificery = {
+	is_rajput_modifier = yes
+	shock_damage_received = -0.05
+	fire_damage_received = -0.05
+	infantry_power = 0.15
+}
+
+lizardfolk_marines = {
+	is_marine_modifier = yes
+	shock_damage_received = -0.1
+	regiment_manpower_usage = -0.2
+}

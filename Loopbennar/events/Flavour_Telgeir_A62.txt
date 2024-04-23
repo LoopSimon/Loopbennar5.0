@@ -1,0 +1,170 @@
+
+
+namespace = flavor_telgeir
+
+# The Vanbury Dynasty
+country_event = {
+	id = flavor_telgeir.1
+	title = flavor_telgeir.1.t
+	desc = flavor_telgeir.1.d
+	picture = COURT_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = A62
+		government = monarchy
+		has_government_attribute = heir
+		is_free_or_tributary_trigger = yes
+		NOT = { dynasty = "of Vanbury" }
+		has_new_dynasty = yes
+	}
+	
+	#Vanbury accepted
+	option = {
+		name = flavor_telgeir.1.a
+		ai_chance = {
+			factor = 100
+		}
+		define_ruler = {
+			dynasty = "of Vanbury"
+			claim = 80
+		}
+	}
+
+	#Vanbury refused
+	option = {
+		name = flavor_telgeir.1.b
+		ai_chance = {
+			factor = 0
+		}
+		capital_scope = {
+			spawn_rebels = {
+				type = pretender_rebels
+				size = 2
+				leader_dynasty = "of Vanbury"
+			}
+		}
+	}
+}
+
+# Name Change Event
+country_event = {
+	id = flavor_telgeir.2
+	title = flavor_telgeir.2.t
+	desc = flavor_telgeir.2.d
+	picture = COURT_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		or = { 
+			tag = A62 #Telgeir
+			was_tag = A62 #Telgeir
+		}
+	}
+	
+	#Gawed
+	option = {
+		name = flavor_telgeir.2.a
+		ai_chance = {
+			factor = 0
+		}
+		
+		override_country_name = TELGEIR_GAWED
+		hidden_effect = {
+			every_core_province = { 
+				limit = {
+					OR = {
+						culture = esmari
+						AND = {
+							culture = gawedi
+							OR = {
+								area = gawed_area
+								area = south_alen_area
+							}
+						}
+					}
+				}
+				change_culture = telgeiran
+			}
+		}
+		primary_and_ruler_culture_change = { race = human new_culture = telgeiran }
+		remove_non_electors_emperors_from_empire_effect = yes
+		if = {
+			limit = {
+				NOT = { government_rank = 2 }
+			}
+			set_government_rank = 2
+		}
+	}
+
+	#Vanbury
+	option = {
+		name = flavor_telgeir.2.b
+		ai_chance = {
+			factor = 0
+		}
+		
+		override_country_name = TELGEIR_VANBURY
+		hidden_effect = {
+			every_core_province = { 
+				limit = {
+					OR = {
+						culture = esmari
+						AND = {
+							culture = gawedi
+							OR = {
+								area = gawed_area
+								area = south_alen_area
+							}
+						}
+					}
+				}
+				change_culture = telgeiran
+			}
+		}
+		primary_and_ruler_culture_change = { race = human new_culture = telgeiran }
+		remove_non_electors_emperors_from_empire_effect = yes
+		if = {
+			limit = {
+				NOT = { government_rank = 2 }
+			}
+			set_government_rank = 2
+		}
+	}
+
+	#Telgeir
+	option = {
+		name = flavor_telgeir.2.c
+		ai_chance = {
+			factor = 1
+		}
+		add_prestige_excess_to_splendour_effect = { VAL = 10 }
+		hidden_effect = {
+			every_core_province = { 
+				limit = {
+					OR = {
+						culture = esmari
+						AND = {
+							culture = gawedi
+							OR = {
+								area = gawed_area
+								area = south_alen_area
+							}
+						}
+					}
+				}
+				change_culture = telgeiran
+			}
+		}
+		primary_and_ruler_culture_change = { race = human new_culture = telgeiran }
+		remove_non_electors_emperors_from_empire_effect = yes
+		if = {
+			limit = {
+				NOT = { government_rank = 2 }
+			}
+			set_government_rank = 2
+		}
+	}
+}

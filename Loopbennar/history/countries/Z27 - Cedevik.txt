@@ -1,0 +1,28 @@
+
+setup_vision = yes
+government = republic
+add_government_reform = merchants_reform
+government_rank = 1
+mercantilism = 25
+primary_culture = white_reachman
+religion = regent_court
+technology_group = tech_gerudian
+capital = 717
+
+
+1000.1.1 = { set_estate_privilege = estate_mages_organization_guilds }
+
+1421.4.3 = {
+	monarch = {
+		name = "Sandor"
+		dynasty = "Shipguide"
+		birth_date = 1391.10.24
+		adm = 3
+		dip = 5
+		mil = 0
+	}
+	add_ruler_personality = silver_tongue_personality
+	add_ruler_personality = craven_personality
+}
+
+#Sandor Shipguide: Main conspirator of the Cedevik surrender to Frozenmaw during the siege of the city 24 years before the starting date. He has been holding power since the conspiracy thanks to his family getting rich due to controlling most trade between humans and orcs in the region.

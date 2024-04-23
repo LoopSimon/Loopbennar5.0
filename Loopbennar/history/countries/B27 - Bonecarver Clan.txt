@@ -1,0 +1,26 @@
+
+setup_vision = yes
+government = tribal
+add_government_reform = greentide_horde
+government_rank = 1
+primary_culture = green_orc
+religion = great_dookan
+technology_group = tech_orcish
+capital = 730
+
+#lore: artist obsessed with finding his father's corpse and properly memorializing him.
+
+1444.11.11 = {
+	monarch = {
+		name = "Azukor"
+		dynasty = "Bonecarver"
+		birth_date = 1414.5.3
+		adm = 2
+		dip = 1
+		mil = 3
+	}
+	
+	add_ruler_personality = patron_of_arts_personality
+	add_ruler_personality = obsessive_perfectionist_personality
+	
+}

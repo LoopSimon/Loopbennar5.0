@@ -1,0 +1,27 @@
+
+setup_vision = yes
+government = theocracy
+add_government_reform = leading_clergy_reform
+government_rank = 1
+primary_culture = hapremiti
+religion = nirakhetist
+technology_group = tech_salahadesi
+
+capital = 473
+
+1000.1.1 = { set_estate_privilege = estate_mages_organization_guilds }
+
+1444.1.1 = {
+	monarch = {
+		name = "Nahab the Defiant"
+		birth_date = 1413.7.3
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+	add_ruler_personality = zealot_personality
+	set_country_flag  = in_khet_civil_war
+	kheterat_proper_area = { add_core = ROOT }
+	upper_sorrow_area = { add_core = ROOT }
+	mothers_delta_area = { add_permanent_claim = ROOT }
+}
