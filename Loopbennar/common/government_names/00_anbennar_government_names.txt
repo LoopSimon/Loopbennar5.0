@@ -3798,9 +3798,9 @@ traveling_cheqhanate_reform = {
 }
 appease_khet = {
 	rank = {
-		1 = ELIZNA
-		2 = ELIZNA
-		3 = ELIZNA
+		1 = DUCHY
+		2 = KINGDOM
+		3 = EMPIRE
 	}
 
 	ruler_male = {
@@ -3817,5 +3817,28 @@ appease_khet = {
 
 	trigger = {
 		has_reform = appease_khet
+	}
+}
+BIRZATANSES = {
+	rank = {
+		1 = DUCHY
+		2 = KINGDOM
+		3 = EMPIRE
+	}
+	
+	ruler_male = {
+		1 = BIRZATANSES
+		2 = BIRZATANSES
+		3 = BIRZATANSES
+	}
+
+	ruler_female = {
+		1 = BIRZATANSES
+		2 = BIRZATANSES
+		3 = BIRZATANSES
+	}
+
+	trigger = {
+		tag = F21
 	}
 }
