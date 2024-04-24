@@ -3796,3 +3796,26 @@ traveling_cheqhanate_reform = {
 		has_reform = traveling_cheqhanate_reform
 	}
 }
+appease_khet = {
+	rank = {
+		1 = ELIZNA
+		2 = ELIZNA
+		3 = ELIZNA
+	}
+
+	ruler_male = {
+		1 = ELIZNA
+		2 = ELIZNA
+		3 = ELIZNA
+	}
+
+	ruler_female = {
+		1 = ELIZNA
+		2 = ELIZNA
+		3 = ELIZNA
+	}
+
+	trigger = {
+		has_reform = appease_khet
+	}
+}
