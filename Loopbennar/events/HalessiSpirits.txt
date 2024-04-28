@@ -13746,6 +13746,18 @@ country_event = {
 				}
 				set_country_flag = rending_ward_flag
 			}
+			else_if = {
+				limit = {
+					NOT = { religion = high_philosophy } # righteous path gets an event to choose
+				}
+				set_country_flag = rending_ward_flag
+			}
+			else_if = {
+				limit = {
+					NOT = { religion = suhans_praxis } # righteous path gets an event to choose
+				}
+				set_country_flag = rending_ward_flag
+			}
 			4559 = {
 				set_variable = {
 					which = rendingMonthsLeft
@@ -13803,6 +13815,7 @@ country_event = {
 		trigger = { has_country_flag = rending_ward_flag }
 
 		custom_tooltip = stop_rending_ward
+		country_event = { id = spirits.704 }
 
 		custom_tooltip = spirits_bork_temple_tt
 		custom_tooltip = spirits_break_temple_tt
@@ -13841,6 +13854,24 @@ country_event = {
 		custom_tooltip = spirits_bork_temple_tt
 		custom_tooltip = spirits_break_temple_tt
 		country_event = { id = spirits.704 }
+	}	
+	option = { #high philosophy
+		name = spirits.703.c
+		ai_chance = { factor = 100 }
+		trigger = { religion = high_philosophy }
+
+		custom_tooltip = spirits_bork_temple_tt
+		custom_tooltip = spirits_break_temple_tt
+		country_event = { id = spirits.704 }
+	}	
+	option = { #suhans praxis
+		name = spirits.703.c
+		ai_chance = { factor = 100 }
+		trigger = { religion = suhans_praxis }
+
+		custom_tooltip = spirits_bork_temple_tt
+		custom_tooltip = spirits_break_temple_tt
+		country_event = { id = spirits.704 }
 	}
 	option = { #lefthand path
 		name = spirits.703.e
@@ -13870,9 +13901,149 @@ country_event = {
 
 	is_triggered_only = yes
 
+	# suppress
+	option = {
+		name = spirits.704.a
+		ai_chance = { factor = 100 }
+		custom_tooltip = rp_ward_suppress_tt
+
+		add_country_modifier = {
+			name = rending_severe_global
+			duration = -1
+		}
+
+		hidden_effect = { set_country_flag = rending_ward_flag }
+		hidden_effect = { country_event = { id = spirits.705 days = 30 } }
+	}
+
+	# appease
+	option = {
+		name = spirits.704.b
+		ai_chance = { factor = 100 }
+		custom_tooltip = rp_accord_appease_tt
+
+		add_country_modifier = {
+			name = rending_medium_global
+			duration = -1
+		}
+
+		hidden_effect = { set_country_flag = rending_appease_flag }
+		hidden_effect = { 		
+			country_event = { 
+				id = rending.300 
+				days = 20
+			} 
+		}
+	}
+
+	# appease + go MA
+	option = {
+		name = spirits.704.c
+		ai_chance = { factor = 100 }
+		custom_tooltip = rp_flip_ma_tt
+		change_religion = mystic_accord
+
+		add_country_modifier = {
+			name = rending_medium_global
+			duration = -1
+		}
+
+		add_country_modifier = {
+			name = rending_ma_conversion
+			duration = 3650
+		}
+
+		hidden_effect = { set_country_flag = rending_appease_flag }
+		hidden_effect = { 		
+			country_event = { 
+				id = rending.300 
+				days = 20
+			} 
+		}
+	}
+}
+country_event = {
+	id = spirits.704
+	title = spirits.704.t
+	desc = spirits.704.d
+	picture = BIG_BOOK_eventPicture
+
+	is_triggered_only = yes
+
 	trigger = {
-		religion = righteous_path
-		religion = high_philosophy
+		religion = mystic_accord
+	}
+
+	# suppress
+	option = {
+		name = spirits.704.a
+		ai_chance = { factor = 100 }
+		custom_tooltip = rp_ward_suppress_tt
+
+		add_country_modifier = {
+			name = rending_severe_global
+			duration = -1
+		}
+
+		hidden_effect = { set_country_flag = rending_ward_flag }
+		hidden_effect = { country_event = { id = spirits.705 days = 30 } }
+	}
+
+	# appease
+	option = {
+		name = spirits.704.b
+		ai_chance = { factor = 100 }
+		custom_tooltip = rp_accord_appease_tt
+
+		add_country_modifier = {
+			name = rending_medium_global
+			duration = -1
+		}
+
+		hidden_effect = { set_country_flag = rending_appease_flag }
+		hidden_effect = { 		
+			country_event = { 
+				id = rending.300 
+				days = 20
+			} 
+		}
+	}
+
+	# appease + go MA
+	option = {
+		name = spirits.704.c
+		ai_chance = { factor = 100 }
+		custom_tooltip = rp_flip_ma_tt
+		change_religion = high_philosophy
+
+		add_country_modifier = {
+			name = rending_medium_global
+			duration = -1
+		}
+
+		add_country_modifier = {
+			name = rending_ma_conversion
+			duration = 3650
+		}
+
+		hidden_effect = { set_country_flag = rending_appease_flag }
+		hidden_effect = { 		
+			country_event = { 
+				id = rending.300 
+				days = 20
+			} 
+		}
+	}
+}
+country_event = {
+	id = spirits.704
+	title = spirits.704.t
+	desc = spirits.704.d
+	picture = BIG_BOOK_eventPicture
+
+	is_triggered_only = yes
+
+	trigger = {
 		religion = suhans_praxis
 	}
 
@@ -13937,7 +14108,6 @@ country_event = {
 		}
 	}
 }
-
 # manager for which great spirit appears in your capital
 country_event = {
 	id = spirits.705
