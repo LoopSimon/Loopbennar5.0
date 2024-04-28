@@ -5874,3 +5874,39 @@ cerisian_sisterhood_random_favors = {
 		remove_province_triggered_modifier = cerisian_sisterhood_random_favors
 	}
 }
+rubyzover_rail_modifier = {
+	potential = {
+		always = yes
+	}
+
+	trigger = {
+		if = {
+			owner = {
+				OR = {
+					religion = yudunyovi
+					religion_group = dwarven
+				}
+			}
+			OR = {
+				religion = yudunyovi
+				religion_group = dwarven
+			}
+		}
+		else = {
+			owner = {
+				religion_group = dwarven
+			}
+			religion_group = dwarven
+		}
+	}
+	picture = "ziggurat_of_surakel_modifier"
+		local_friendly_movement_speed = 2
+		local_hostile_movement_speed = 2
+
+	#Province scope
+	on_activation = {
+	}
+
+	on_deactivation = {
+	}
+}
