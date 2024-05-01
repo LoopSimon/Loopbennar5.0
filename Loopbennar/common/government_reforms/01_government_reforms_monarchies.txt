@@ -5436,10 +5436,14 @@ phoenix_akalate = {
 	allow_normal_conversion = yes
 	lock_level_when_selected = yes
 	potential = {
-		primary_culture = sun_elf
 		OR = {
+			primary_culture = sun_elf
+			primary_culture = sea_elf
+			
+			OR = {
 			religion = bulwari_sun_cult
 			has_country_flag = updating_isolationism_window
+			}
 		}
 	}
 	valid_for_nation_designer = yes
