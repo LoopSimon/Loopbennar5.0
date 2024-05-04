@@ -534,7 +534,7 @@ huszien_modifier = {
 }
 
 rending_ma_conversion = {
-	global_missionary_strength = 10
+	global_missionary_strength = 0.1
 	missionaries = 4
 }
 
