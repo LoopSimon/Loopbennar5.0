@@ -533,7 +533,6 @@ lapnam_amrik_teplinbasiet_arena = {
 		}
 		country_modifiers = {
 			land_maintenance_modifier = -0.025
-			merc_leader_army_tradition = 0.15
 			army_tradition_from_battle = 0.25
 		}
 		on_upgraded = {
@@ -553,7 +552,6 @@ lapnam_amrik_teplinbasiet_arena = {
 			local_manpower_modifier = 0.2
 		}
 		country_modifiers = {
-			merc_leader_army_tradition = 0.3
 			army_tradition_from_battle = 0.5
 			land_maintenance_modifier = -0.05
 		}
@@ -574,7 +572,6 @@ lapnam_amrik_teplinbasiet_arena = {
 			local_manpower_modifier = 0.33
 		}
 		country_modifiers = {
-			merc_leader_army_tradition = 0.5
 			army_tradition_from_battle = 1
 			land_maintenance_modifier = -0.1
 		}
