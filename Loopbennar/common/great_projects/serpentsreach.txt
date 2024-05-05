@@ -524,7 +524,7 @@ arg_ordstun_great_clast_shafts = {
 		area_modifier = {		
 		}
 		region_modifier = {
-			local_development_cost = -0.6
+			local_development_cost = -0.06
 		}
 		country_modifiers = {
 			production_efficiency = 0.1
