@@ -975,6 +975,7 @@ nsc_bulwar_under_threat = {
 	global_unrest = 5
 	stability_cost_modifier = 0.6
 	land_morale = -0.10
+	reduced_liberty_desire = -20
 	advisor_pool = -1
 	advisor_cost = 3
 }
