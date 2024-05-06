@@ -973,11 +973,10 @@ nsc_burgher_deal_modifier = {
 
 nsc_bulwar_under_threat = {
 	global_unrest = 5
-	stability_cost_modifier = 0.5
+	stability_cost_modifier = 0.6
 	land_morale = -0.10
-	reduced_liberty_desire = -50
 	advisor_pool = -1
-	advisor_cost = 2.5
+	advisor_cost = 3
 }
 
 nsc_bulwar_under_threat_ai = {
