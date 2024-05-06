@@ -7929,7 +7929,8 @@ country_event = {
 	option = {
 		name = new_sun_cult.173.c
 		trigger = { has_country_flag = nsc_far_from_explosion }
-		reduce_stability_or_adm_power = yes
+		add_prestige = 10
+		reduce_stability_or_adm_power = no
 	}
 	
 	after = {
@@ -8693,7 +8694,7 @@ country_event = {
 	option = {
 		name = new_sun_cult.186.a
 		ai_chance = { factor = 1 }
-		add_legitimacy = -10
+		add_legitimacy = -5
 		add_country_modifier = { name = nsc_intrusive_investigators duration = 9125 }
 		add_opinion = { who = FROM modifier = nsc_nosy_investigators }
 	}
@@ -8751,7 +8752,8 @@ country_event = {
 		name = new_sun_cult.187.a
 		ai_chance = { factor = 0.75 }
 		reduce_stability_or_adm_power = yes
-		add_legitimacy = -15
+		add_legitimacy = -5
+		add_prestige = -5
 		add_country_modifier = { name = nsc_disrespected_by_investigators duration = 9125 }
 		add_opinion = { who = FROM modifier = nsc_disrespectful_investigators }
 	}
