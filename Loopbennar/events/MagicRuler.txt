@@ -13652,7 +13652,7 @@ country_event = {
 			}
 			define_ruler_to_general = {
 				fire = 2
-				shock = 7
+				shock = 6
 				manuever = 0
 				siege = 3
 			}
@@ -13671,9 +13671,9 @@ country_event = {
 			}
 			define_ruler_to_general = {
 				fire = 2
-				shock = 7
-				manuever = 1
-				siege = 4
+				shock = 6
+				manuever = 0
+				siege = 3
 				#
 			}
 			if = {
@@ -13691,9 +13691,9 @@ country_event = {
 			}
 			define_ruler_to_general = {
 				fire = 2
-				shock = 8
+				shock = 6
 				manuever = 1
-				siege = 5
+				siege = 3
 			}
 			if = {
 				limit = {
@@ -13710,9 +13710,9 @@ country_event = {
 			}
 			define_ruler_to_general = {
 				fire = 3
-				shock = 9
+				shock = 7
 				manuever = 1
-				siege = 6
+				siege = 4
 				#
 			}
 			if = {
@@ -13730,9 +13730,9 @@ country_event = {
 			}
 			define_ruler_to_general = {
 				fire = 3
-				shock = 10
+				shock = 7
 				manuever = 2
-				siege = 7
+				siege = 5
 				#
 			}
 			if = {
@@ -13749,9 +13749,9 @@ country_event = {
 			}
 			define_ruler_to_general = {
 				fire = 4
-				shock = 11
+				shock = 8
 				manuever = 3
-				siege = 8
+				siege = 6
 			}
 			if = {
 				limit = {
