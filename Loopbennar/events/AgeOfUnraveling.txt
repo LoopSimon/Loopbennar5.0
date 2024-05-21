@@ -34,10 +34,10 @@ country_event = {
 	immediate = {
 		set_global_flag = new_world_discovered
 		hidden_effect = {
-			169 = { #Nimscodd
+			62 = { #Nimscodd
 				province_event = {
 					id = aelantirspawnables.1 #Gommoport
-					days = 16425 #45 years
+					days = 6425 #45 years
 					random = 365
 				}
 			}
