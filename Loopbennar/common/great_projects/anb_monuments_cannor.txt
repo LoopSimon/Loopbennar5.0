@@ -929,7 +929,6 @@ bal_mire = {
 		province_modifiers = {
 			local_defensiveness = 0.5
 			local_hostile_attrition = 1
-			local_defender_dice_roll_bonus = 1
 		}
 		area_modifier = {
 			local_manpower_modifier = 0.33
