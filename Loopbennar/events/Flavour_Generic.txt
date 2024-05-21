@@ -175,6 +175,15 @@ country_event = { #Economic Direction
 			
 	}
 	option = { #
+			name = "flavor_generic.5.b"
+			add_adm_power = 100
+			add_country_modifier = {
+				name = advisors_g
+				duration = -1
+			}
+			
+	}
+	option = { #
 			name = "flavor_generic.5.c"
 			add_adm_power = 100
 			add_country_modifier = {
