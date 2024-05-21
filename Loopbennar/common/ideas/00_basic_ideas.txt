@@ -591,13 +591,14 @@ diplomatic_ideas = {
 	category = DIP
 	bonus = {
 		reduced_stab_impacts = yes
+		free_policy = 1
 	}
 	
 	grand_banquets = {
 		diplomats = 1
 	}
 	foreign_embassies = { #1.35
-		dip_advisor_cost = -0.25
+		advisor_cost = -0.2
 	}
 	cabinet = {
 		diplomatic_upkeep = 1
@@ -610,7 +611,7 @@ diplomatic_ideas = {
 		diplomatic_reputation = 2
 	}
 	flexible_negotiation = {
-		province_warscore_cost = -0.2
+		province_warscore_cost = -0.25
 	}
 	diplomatic_corps = {
 		dip_tech_cost_modifier = -0.1
@@ -1750,12 +1751,14 @@ humanist_ideas = {
 	}
 	indirect_rule = {
 		years_of_nationalism = -10
+		core_creation = -0.15
 	}
 	ecumenism = { #1.35
 		tolerance_heretic = 2
 	}
 	cultural_ties = {
 		num_accepted_cultures = 2
+		advisor_cost = -0.2
 	}
 	humanist_tolerance = { #1.35
 		tolerance_heathen = 2

@@ -813,8 +813,9 @@ multilingual_diplomats = {
 		full_idea_group = diplomatic_ideas
 	}	
 	
-	num_accepted_cultures = 1
-	improve_relation_modifier = 0.2
+	global_trade_goods_size_modifier = 0.1
+	development_cost = -0.1
+	
 	
 	effect = {}
 	removed_effect = {}
@@ -1250,7 +1251,7 @@ diplomatic_defence_act = {
 	}
 
 	diplomats = 1
-	improve_relation_modifier = 0.2
+	infantry_power = 0.075
 	
 	effect = {}
 	removed_effect = {}
