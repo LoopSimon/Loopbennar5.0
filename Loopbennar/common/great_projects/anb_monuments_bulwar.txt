@@ -18,7 +18,8 @@ queens_throne = {
 	#project type
 	type = monument
 
-	build_trigger = { NOT = { has_province_flag = queens_throne_skewered_drake_can_build } }
+	build_trigger = {
+	}
 
 	on_built = {
 	}
@@ -33,11 +34,13 @@ queens_throne = {
 			has_owner_culture = yes
 		}
 		OR = {
-			has_owner_religion = yes
-            has_owner_secondary_religion = yes
-        }
+		    has_owner_religion = yes
+            secondary_religion = ROOT
+         }
 		owner = {
-			culture_group = harpy
+		    culture_group = harpy
+		}
+		owner = {
 			num_of_subjects = 1
 		}
 	}
@@ -49,11 +52,13 @@ queens_throne = {
 			has_owner_culture = yes
 		}
 		OR = {
-			has_owner_religion = yes
-            has_owner_secondary_religion = yes
-        }
+		    has_owner_religion = yes
+            secondary_religion = ROOT
+         }
 		owner = {
-			culture_group = harpy
+		    culture_group = harpy
+		}
+		owner = {
 			num_of_subjects = 1
 		}
 	}
@@ -155,7 +160,7 @@ queens_throne = {
 		}
 		
 		cost_to_upgrade = {
-			factor = 5000
+			factor = 9000
 		}
 		
 		province_modifiers = {
