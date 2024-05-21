@@ -762,15 +762,7 @@ ogre_tribe_two = {
 		
 		trigger = {
 			OR = {
-				mil = 4
-				OR = {
-					employed_advisor = {
-						type = grand_captain
-					}
-					employed_advisor = {
-						type = recruitmaster
-					}
-				}
+				mil = 2
 			}
 			custom_trigger_tooltip = {
 				tooltip =  not_skurkokli_tooltip
@@ -2791,7 +2783,7 @@ skurkokli_horde_marches_three = {
 					add_permanent_claim = ROOT
 					discover_country = ROOT
 				}
-				yyl_moitsa_west_area = {
+				yyl_moitsa_deep_area = {
 					add_base_manpower = -20
 					add_base_tax = -20
 					add_base_production = -20
@@ -4646,7 +4638,7 @@ skurkokli_fed_war_a_five = {
 						NOT = {
 							OR = {
 								region = ogre_valley_region
-								area = yyl_moitsa_west_area
+								area = yyl_moitsa_deep_area
 								area = far_moitsa_area
 							}
 						}

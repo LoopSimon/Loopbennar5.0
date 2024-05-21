@@ -602,6 +602,42 @@ country_event = {
 	}
 }
 
+#Aakhet's Conquest
+country_event = {
+	id = aakhetist.29
+	title = aakhetist.29.t
+	desc = aakhetist.29.d
+	picture = KOBOLD_BALRIS_eventPicture
+	
+	is_triggered_only = yes
+	trigger = {  religion = aakhetist }
+
+	option = {
+		name = aakhetist.29.a
+		random_neighbor_country = {
+			limit = {
+				NOT = {
+					is_subject_of = ROOT
+					alliance_with = ROOT
+					war_with = ROOT
+				}
+				if = {
+					limit = { ROOT = { government_rank = 3 } }
+					NOT = { total_development = 500 }
+				}
+				else_if = {
+					limit = { ROOT = { government_rank = 2 } }
+					NOT = { total_development = 300 }
+				}
+				else = {
+					NOT = { total_development = 200 }
+				}
+			}
+			reverse_add_casus_belli = { type = cb_vassalize_mission target = ROOT months = 60 }
+		}
+	}
+}
+
 #Aakhet's Wisdom
 country_event = {
 	id = aakhetist.30
@@ -1188,6 +1224,12 @@ country_event = {
 			NOT = {
 				is_subject_of = ROOT
 				alliance_with = ROOT
+				AND = {
+					is_subject_of_type = medasi_subject
+					overlord = {
+						overlord_of = ROOT
+					}
+				}
 			}
 		}
 	}
@@ -1203,6 +1245,12 @@ country_event = {
 				NOT = {
 					is_subject_of = ROOT
 					alliance_with = ROOT
+					AND = {
+						is_subject_of_type = medasi_subject
+						overlord = {
+							overlord_of = ROOT
+						}
+					}
 				}
 			}
 			save_event_target_as = event_country
@@ -1276,6 +1324,12 @@ country_event = {
 				truce_with = ROOT
 				is_subject_of = ROOT
 				alliance_with = ROOT
+				AND = {
+					is_subject_of_type = medasi_subject
+					overlord = {
+						overlord_of = ROOT
+					}
+				}
 			}
 		}
 	}
@@ -1289,15 +1343,23 @@ country_event = {
 	}
 
 	immediate = {
-		random_neighbor_country = {
-			limit = { 
-				NOT = { 
-					truce_with = ROOT
-					is_subject_of = ROOT
-					alliance_with = ROOT
+		hidden_effect = {
+			random_neighbor_country = {
+				limit = { 
+					NOT = { 
+						truce_with = ROOT
+						is_subject_of = ROOT
+						alliance_with = ROOT
+						AND = {
+							is_subject_of_type = medasi_subject
+							overlord = {
+								overlord_of = ROOT
+							}
+						}
+					}
 				}
+				save_event_target_as = event_country
 			}
-			save_event_target_as = event_country
 		}
 	}
 

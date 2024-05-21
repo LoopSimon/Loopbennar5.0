@@ -68,7 +68,7 @@ artificer_research_bonus_machinery_society = {
 artifice_sparkdrive_rifles = {
 	is_rajput_modifier = yes
 
-	fire_damage = 0.10
+	fire_damage = 0.20
 }
 
 artifice_exo_arms = {
@@ -98,7 +98,7 @@ artifice_war_golems_asra = {
 artifice_wandlocks = {
 	is_rajput_modifier = yes
 
-	land_morale = 0.1
+	land_morale = 0.15
 
 	#reinforce_speed = -0.05
 	#reinforce_cost_modifier = 1
@@ -108,19 +108,19 @@ artifice_mechanim_soldiers = {
 	is_rajput_modifier = yes
 
 	fire_damage_received = -0.1
-	morale_damage_received = -0.15
+	morale_damage_received = -0.25
 }
 
 artifice_personal_mageshields = {
 	is_rajput_modifier = yes
 
-	shock_damage_received = -0.25
+	shock_damage_received = -0.35
 }
 
 artifice_portable_turrets = {
 	is_rajput_modifier = yes
 
-	shock_damage_received = -0.10
+	shock_damage_received = -0.20
 }
 
 artifice_arcane_blaster = {
@@ -134,7 +134,7 @@ artifice_arcane_blaster = {
 
 artifice_chi_cultivation_charm = {
 	is_rajput_modifier = yes
-	morale_damage = 0.1
+	morale_damage = 0.2
 
 	#reinforce_speed = -0.075
 	#reinforce_cost_modifier = 1.5
@@ -151,7 +151,7 @@ artifice_artifice_hunting_masks = {
 
 artifice_avatar_serum = {
 	is_rajput_modifier = yes
-	infantry_power = 0.15
+	infantry_power = 0.2
 
 	#reinforce_speed = -0.075
 	#reinforce_cost_modifier = 1.5
@@ -159,12 +159,12 @@ artifice_avatar_serum = {
 
 artifice_demonflame_throwers = {
 	is_rajput_modifier = yes
-	fire_damage = 0.1
+	fire_damage = 0.15
 }
 
 artifice_scrap_mechs = {
 	is_rajput_modifier = yes
-	infantry_shock = 0.2
+	infantry_shock = 0.3
 }
 
 artifice_predator_exoskeleton = {
@@ -217,7 +217,7 @@ artifice_dragonblood_gene_warriors = {
 
 artifice_elemental_gunpowder = {
 	is_rajput_modifier = yes
-	fire_damage = 0.12
+	fire_damage = 0.2
 
 	#reinforce_speed = -0.05
 	#reinforce_cost_modifier = 1
@@ -226,12 +226,12 @@ artifice_elemental_gunpowder = {
 artifice_codorran_powered_exoskeleton = {
 	is_rajput_modifier = yes
 
-	infantry_power = 0.15
+	infantry_power = 0.2
 }
 
 artifice_controlled_rage_serum = {
 	is_rajput_modifier = yes
-	land_morale = 0.1
+	land_morale = 0.15
 }
 
 artifice_ageifier_bonus = {

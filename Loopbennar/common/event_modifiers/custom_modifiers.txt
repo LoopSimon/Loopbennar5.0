@@ -1,3 +1,0 @@
-    nowarsforyou = {
-        can_not_declare_war = yes
-    }

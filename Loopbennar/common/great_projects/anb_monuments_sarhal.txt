@@ -75,7 +75,7 @@ elikhet_pyramid = {
 
 	tier_3 = {
 		upgrade_time = { months = 480 }
-		cost_to_upgrade = { factor = 9000 }
+		cost_to_upgrade = { factor = 5000 }
 		province_modifiers = {}
 		area_modifier = {}
 		region_modifier = { 
@@ -164,7 +164,7 @@ bronze_dragon_academy = {
 
 	tier_3 = {
 		upgrade_time = { months = 480 }
-		cost_to_upgrade = { factor = 9000 }
+		cost_to_upgrade = { factor = 5000 }
 		province_modifiers = {}
 		area_modifier = {
 			local_manpower_modifier = 0.2
@@ -253,7 +253,7 @@ decadence_statues = {
 
 	tier_3 = {
 		upgrade_time = { months = 480 }
-		cost_to_upgrade = { factor = 9000 }
+		cost_to_upgrade = { factor = 5000 }
 		province_modifiers = {
 			trade_value_modifier = 0.5
 		}
@@ -416,7 +416,7 @@ shadowroot_matriarch = {
 		}
 
 		cost_to_upgrade = {
-			factor = 9000
+			factor = 5000
 		}
 
 		province_modifiers = {
@@ -588,7 +588,7 @@ shadowroot_matriarch_purified = {
 		}
 
 		cost_to_upgrade = {
-			factor = 9000
+			factor = 5000
 		}
 
 		province_modifiers = {
@@ -789,7 +789,7 @@ lizzardfolk_port = {
 		}
 
 		cost_to_upgrade = {
-			factor = 9000
+			factor = 5000
 		}
 
 		province_modifiers = {
@@ -993,7 +993,7 @@ first_mihipha_college = {
 		}
 
 		cost_to_upgrade = {
-			factor = 9000
+			factor = 5000
 		}
 
 		province_modifiers = {
@@ -1147,7 +1147,7 @@ esuvrem = {
 		}
 
 		cost_to_upgrade = {
-			factor = 9000
+			factor = 5000
 		}
 
 		province_modifiers = {
@@ -1273,7 +1273,7 @@ tower_of_muhaqaar = {
 	tier_3 = {
 		upgrade_time = { months = 120 }
 
-		cost_to_upgrade = { factor = 9000 }
+		cost_to_upgrade = { factor = 5000 }
 
 		province_modifiers = {
 			local_unrest = -5
@@ -1419,7 +1419,7 @@ kuiika_gamyi = {
 	tier_3 = {
 		upgrade_time = { months = 120 }
 
-		cost_to_upgrade = { factor = 9000 }
+		cost_to_upgrade = { factor = 5000 }
 
 		province_modifiers = {
 			local_tax_modifier = 0.5
@@ -1537,7 +1537,7 @@ koroshesh_library = {
 	tier_3 = {
 		upgrade_time = { months = 120 }
 
-		cost_to_upgrade = { factor = 9000 }
+		cost_to_upgrade = { factor = 5000 }
 
 		province_modifiers = { 
 			institution_growth = 8

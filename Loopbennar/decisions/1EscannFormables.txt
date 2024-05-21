@@ -376,7 +376,6 @@ country_decisions = {
 			NOT = { tag = Z45 } #Vrorenmarch
 			NOT = { tag = B58 } #Adenica
 			NOT = { tag = B60 } #Farranean
-			NOT = { tag = B79 }
 		}
 		
 		provinces_to_highlight = {

@@ -1,8 +1,0 @@
-
-if = {
-        limit = {
-            fort_level = 2
-        }
-        hb_fort_update = yes
-    }
-	on_conquest = { hb_fort_update = yes}

@@ -8197,7 +8197,8 @@ country_event = {
 
 		if = { limit = { NOT = { has_country_modifier = undead_military } }
 			clear_racial_military = yes
-			add_country_modifier = { name = undead_military duration = -1 }
+			tooltip = { add_country_modifier = { name = undead_military duration = -1 } }
+			add_country_modifier = { name = undead_military duration = -1 hidden = yes }
 		}
 		if = {
 			limit = {
@@ -8385,7 +8386,8 @@ country_event = {
 
 		if = { limit = { NOT = { has_country_modifier = undead_military } }
 			clear_racial_military = yes
-			add_country_modifier = { name = undead_military duration = -1 }
+			tooltip = { add_country_modifier = { name = undead_military duration = -1 } }
+			add_country_modifier = { name = undead_military duration = -1 hidden = yes }
 		}
 		if = {
 			limit = {
@@ -11457,7 +11459,7 @@ country_event = {
 		}
 
 		magic_casted_spell = yes
-		add_ruler_modifier = { name = magic_drain_cooldown duration = 3650 hidden = yes }
+		add_ruler_modifier = { name = magic_drain_cooldown duration = 365 hidden = yes }
 
 		set_country_flag = spell_4
 		tooltip = {
@@ -11538,7 +11540,7 @@ country_event = {
 		}
 
 		magic_casted_spell = yes
-		add_ruler_modifier = { name = magic_drain_cooldown duration = 3650 hidden = yes }
+		add_ruler_modifier = { name = magic_drain_cooldown duration = 365 hidden = yes }
 
 		set_country_flag = spell_5
 		tooltip = {
@@ -11610,7 +11612,7 @@ country_event = {
 		}
 
 		magic_casted_spell = yes
-		add_ruler_modifier = { name = magic_drain_cooldown duration = 3650 hidden = yes }
+		add_ruler_modifier = { name = magic_drain_cooldown duration = 365 hidden = yes }
 
 		set_country_flag = spell_6
 		tooltip = {
@@ -11690,7 +11692,7 @@ country_event = {
 		}
 
 		magic_casted_spell = yes
-		add_ruler_modifier = { name = magic_drain_cooldown duration = 3650 hidden = yes }
+		add_ruler_modifier = { name = magic_drain_cooldown duration = 365 hidden = yes }
 
 		random_owned_province = {
 			limit = {

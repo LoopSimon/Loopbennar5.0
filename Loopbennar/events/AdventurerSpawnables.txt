@@ -372,7 +372,7 @@ province_event = {
 					days = 7
 				}
 				define_ruler = {
-					name = "Kerstin"
+					name = "Cela"
 					dynasty = "Silverlocks"
 					adm = 5
 					dip = 4
@@ -410,7 +410,7 @@ province_event = {
 					days = 7
 				}
 				define_ruler = {
-					name = "Kerstin"
+					name = "Cela"
 					dynasty = "Silverlocks"
 					adm = 5
 					dip = 4
@@ -728,6 +728,177 @@ province_event = {
 }
 
 
+#Varbuks Freemen - Forest of the Cursed Ones
+country_event = {
+	id = adventurerspawnables.6
+	title = adventurerspawnables.6.t
+	desc = adventurerspawnables.6.d
+	picture = CARIBBEAN_PIRATE_FORT_eventPicture
+	goto = spawn_province
+	
+	fire_only_once = yes
+	
+	trigger = {
+		has_country_modifier = orcish_slaves_in_colonies
+		num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+			value = 3
+			region = dalaire_region
+		}
+		is_subject = no
+		has_global_flag = new_world_discovered
+		is_year = 1520
+		NOT = { has_global_flag = delete_north_aelantir_region }
+		forest_of_the_cursed_ones_region = {
+			is_empty = yes
+			#has_discovered = ROOT
+			has_empty_adjacent_province = yes
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 300
+		
+		modifier = {
+			factor = 0.05
+			OR = {
+				veykoda_region = {
+					is_colony = yes
+				}
+				broken_isles_region = {
+					is_colony = yes
+				}
+			}
+		}
+		
+		modifier = {
+			factor = 0.01
+			forest_of_the_cursed_ones_region = {
+				is_colony = yes
+			}
+		}
+
+		modifier = {
+			factor = 0.01
+			1165 = { owner = { mission_completed = bosancovac_knights_aboard } }
+		}
+		
+		modifier = {
+			factor = 0.5
+			ai = no
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = { is_religion_enabled = corinite }
+				H50 = { change_religion = corinite }
+			}
+			random_province = {
+				limit = {
+					region = forest_of_the_cursed_ones_region
+					is_empty = yes
+					has_empty_adjacent_province = yes
+				}
+				save_event_target_as = spawn_province
+			}
+			random_province = {
+				limit = {
+					OR = {
+						area = kewdhemr_area
+						area = zemshogen_area
+					}
+					is_empty = yes
+					has_empty_adjacent_province = yes
+				}
+				save_event_target_as = spawn_province
+			}
+			random_province = {
+				limit = {
+					province_id = 1178 #Bekhet
+					is_empty = yes
+					has_empty_adjacent_province = yes
+				}
+				save_event_target_as = spawn_province
+			}
+		}
+	}
+	
+	option = {
+		name = adventurerspawnables.1.a 
+		
+		H50 = {
+			event_target:spawn_province = {
+				create_colony = 1000
+				add_core = H50
+			}
+		}
+		
+		hidden_effect = {
+			H50 = {
+				country_event = { 
+					id = anb_miscevents.8
+					days = 7
+				}
+				define_ruler = {
+					name = "Varbuk"
+					adm = 4
+					dip = 3
+					mil = 5
+					age = 37
+					claim = 95
+				}
+
+				country_event = { id = anb_miscevents.22 } # new country setup
+			}
+
+			1133 = { owner = { country_event = { id = ynn_events.22 } } } #Cannorian traders in Adbrabohvi
+		}
+		
+		adventurer_spawnable_starting_bonus = { tag = H50 }
+	}
+	
+	option = { # play as the adventurers
+		name = adventurerspawnables.1.b
+		trigger = {
+			ai = no
+		}
+		H50 = {
+			event_target:spawn_province = {
+				create_colony = 1000
+				add_core = H50
+			}
+		}
+		
+		hidden_effect = {
+			H50 = {
+				country_event = { 
+					id = anb_miscevents.8
+					days = 7
+				}
+				define_ruler = {
+					name = "Varbuk"
+					adm = 4
+					dip = 3
+					mil = 5
+					age = 37
+					claim = 95
+				}
+
+				country_event = { id = anb_miscevents.22 } # new country setup
+			}
+
+			1133 = { owner = { country_event = { id = ynn_events.22 } } } #Cannorian traders in Adbrabohvi
+		}
+		
+		adventurer_spawnable_starting_bonus = { tag = H50 }
+		switch_tag = H50
+	}
+
+	after = { 
+		hidden_effect = { country_event = { id = anb_price.53 days = 15 } }
+	}
+}
 
 #House of Reflection - Ynn west
 province_event = {
@@ -993,6 +1164,168 @@ province_event = {
 		owner = { 
 			adventurer_spawnable_starting_bonus = { tag = H54 }
 			switch_tag = H54
+		}
+	}
+	
+	after = { 
+		hidden_effect = { owner = { country_event = { id = anb_price.53 days = 15 } } }
+	}
+}
+
+#Havoral Band - Ynn east
+province_event = {
+	id = adventurerspawnables.9
+	title = adventurerspawnables.9.t
+	desc = adventurerspawnables.9.d
+	picture = CARIBBEAN_PIRATE_FORT_eventPicture
+	goto = spawn_province
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		has_global_flag = new_world_discovered
+		current_age = age_of_reformation
+		NOT = { has_global_flag = delete_north_aelantir_region }
+		OR = {
+			veykoda_region = {
+				is_empty = yes
+				#has_discovered = ROOT
+				has_empty_adjacent_province = yes
+			}
+			sarda_eastern_lands = {
+				is_empty = yes
+				#has_discovered = ROOT
+				has_empty_adjacent_province = yes
+			}
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_province = {
+				limit = {
+					OR = {
+						region = veykoda_region
+						province_group = sarda_eastern_lands
+					}
+					is_empty = yes
+					has_empty_adjacent_province = yes
+				}
+				save_event_target_as = spawn_province
+			}
+			random_province = {
+				limit = {
+					OR = { 
+						area = osindain_area
+						area = kestadan_area
+						area = aryamer_area
+					}
+					OR = { 
+						has_terrain = woods #for bandit flavor
+						has_terrain = hills
+					}
+					is_empty = yes
+					has_empty_adjacent_province = yes
+				}
+				save_event_target_as = spawn_province
+			}
+			random_province = {
+				limit = {
+					province_id = 1154 #Idsetdain
+					is_empty = yes
+					has_empty_adjacent_province = yes
+				}
+				save_event_target_as = spawn_province
+			}
+			set_global_flag = remove_merc_havoral_band
+		}
+	}
+	
+	option = {
+		name = adventurerspawnables.1.a 
+		
+		H56 = {
+			event_target:spawn_province = {
+				create_colony = 1000
+				add_core = H56
+			}
+		}
+		
+		hidden_effect = {
+			H56 = {
+				country_event = { 
+					id = anb_miscevents.8
+					days = 7
+				}
+				define_ruler = {
+					name = "Emil"
+					dynasty = "of Goatsrock"
+					adm = 0
+					dip = 0
+					mil = 2
+					age = 31
+					claim = 95
+					culture = havoric
+				}
+				add_ruler_personality = cruel_personality
+				add_ruler_personality = craven_personality
+				
+				country_event = {
+					id = flavor_newhavoral.11
+					days = 3
+				}
+
+				country_event = { id = anb_miscevents.22 } # new country setup
+			}
+
+			1133 = { owner = { country_event = { id = ynn_events.22 } } } #Cannorian traders in Adbrabohvi
+		}
+		
+		owner = { adventurer_spawnable_starting_bonus = { tag = H56 } }
+	}
+	
+	option = { # play as the adventurers
+		name = adventurerspawnables.1.b
+		H56 = {
+			event_target:spawn_province = {
+				create_colony = 1000
+				add_core = H56
+			}
+		}
+		
+		hidden_effect = {
+			H56 = {
+				country_event = { 
+					id = anb_miscevents.8
+					days = 7
+				}
+				define_ruler = {
+					name = "Emil"
+					dynasty = "of Goatsrock"
+					adm = 0
+					dip = 0
+					mil = 2
+					age = 31
+					claim = 95
+					culture = esmari
+				}
+				add_ruler_personality = cruel_personality
+				add_ruler_personality = craven_personality
+				country_event = {
+					id = flavor_newhavoral.11
+					days = 3
+				}
+
+				country_event = { id = anb_miscevents.22 } # new country setup
+			}
+
+			1133 = { owner = { country_event = { id = ynn_events.22 } } } #Cannorian traders in Adbrabohvi
+		}
+		
+		owner = { 
+			adventurer_spawnable_starting_bonus = { tag = H56 }
+			switch_tag = H56
 		}
 	}
 	

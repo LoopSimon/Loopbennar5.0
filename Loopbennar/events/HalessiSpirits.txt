@@ -2237,12 +2237,20 @@ province_event = { #Heart Discovery
 				owner = { religion_group = halessi }
 			}
 			modifier = {
+				factor = 20
+				owner = { religion_group = supreme_spirit }
+			}
+			modifier = {
 				factor = 100
 				owner = { religion_group = raheni }
 			}
 			modifier = {
 				factor = 0
-				NOT = { owner = { religion_group = halessi } }
+				NOT = { 
+					owner = { religion_group = halessi }
+					owner = { religion_group = supreme_spirit }
+					owner = { religion_group = raheni }
+				}
 			}
 		}
 	}
@@ -2339,6 +2347,13 @@ country_event = { #Pulse event to fire the following event
 		OR = {
 			has_estate = estate_artificers
 			has_estate = estate_dragon_command
+			AND = {
+				is_year = 1610
+				4871 = {
+					owned_by = ROOT
+					has_province_modifier = gnomish_institute_gommo
+				}
+			}
 		}
 		any_owned_province = {
 			OR = {
@@ -7621,10 +7636,12 @@ country_event = {
 			factor = 1
 		}
 		add_treasury = -200
-		country_event = {
-			id = spirits.424
-			days = 15
-			random = 10
+		FROM = {
+			country_event = {
+				id = spirits.424
+				days = 15
+				random = 10
+			}
 		}
 	}
 
@@ -13561,28 +13578,28 @@ country_event = {
 		}
 	}
 
-	after = {
-		hidden_effect = {
-			if = {
-				limit = {
-					NOT = {
-						4533 = {
-							has_great_project = {
-								type = godswall_tunnel
-							}
-						}
-					}
-				}
-				set_global_flag = rending_happened
-				4533 = {
-					add_great_project = {
-						type = godswall_tunnel
-						instant = yes
-					}
-				}
-			}
-		}
-	}
+#	after = {
+#		hidden_effect = {
+#			if = {
+#				limit = {
+#					NOT = {
+#						4533 = {
+#							has_great_project = {
+#								type = godswall_tunnel
+#							}
+#						}
+#					}
+#				}
+#				set_global_flag = rending_happened
+#				4533 = {
+#					add_great_project = {
+#						type = godswall_tunnel
+#						instant = yes
+#					}
+#				}
+#			}
+#		}
+#	}
 }
 
 # something is awry, damaged temple ver
@@ -13746,18 +13763,6 @@ country_event = {
 				}
 				set_country_flag = rending_ward_flag
 			}
-			else_if = {
-				limit = {
-					NOT = { religion = high_philosophy } # righteous path gets an event to choose
-				}
-				set_country_flag = rending_ward_flag
-			}
-			else_if = {
-				limit = {
-					NOT = { religion = suhans_praxis } # righteous path gets an event to choose
-				}
-				set_country_flag = rending_ward_flag
-			}
 			4559 = {
 				set_variable = {
 					which = rendingMonthsLeft
@@ -13806,6 +13811,11 @@ country_event = {
 
 			tughayasa_spirit_area = { add_permanent_province_modifier = { name = rending_domain_helper duration = -1 } }
 			
+			
+			country_event = {
+				id = spirits.1002
+				days = 30
+			}
 		}
 	}
 
@@ -13815,7 +13825,6 @@ country_event = {
 		trigger = { has_country_flag = rending_ward_flag }
 
 		custom_tooltip = stop_rending_ward
-		country_event = { id = spirits.704 }
 
 		custom_tooltip = spirits_bork_temple_tt
 		custom_tooltip = spirits_break_temple_tt
@@ -13823,6 +13832,17 @@ country_event = {
 		add_country_modifier = {
 			name = rending_severe_global
 			duration = -1
+		}
+
+		if = {
+			limit = { has_estate_privilege = estate_church_guaranteed_autonomy }
+			custom_tooltip = estate_church_guaranteed_autonomy_no_ma_tooltip
+			hidden_effect = {
+				every_owned_province = {
+					limit = { religion = mystic_accord }
+					remove_province_modifier = estate_church_guaranteed_autonomy_mod
+				}
+			}
 		}
 
 		hidden_effect = { country_event = { id = spirits.705 days = 30 } }
@@ -13850,24 +13870,6 @@ country_event = {
 		name = spirits.703.c
 		ai_chance = { factor = 100 }
 		trigger = { religion = righteous_path }
-
-		custom_tooltip = spirits_bork_temple_tt
-		custom_tooltip = spirits_break_temple_tt
-		country_event = { id = spirits.704 }
-	}	
-	option = { #high philosophy
-		name = spirits.703.c
-		ai_chance = { factor = 100 }
-		trigger = { religion = high_philosophy }
-
-		custom_tooltip = spirits_bork_temple_tt
-		custom_tooltip = spirits_break_temple_tt
-		country_event = { id = spirits.704 }
-	}	
-	option = { #suhans praxis
-		name = spirits.703.c
-		ai_chance = { factor = 100 }
-		trigger = { religion = suhans_praxis }
 
 		custom_tooltip = spirits_bork_temple_tt
 		custom_tooltip = spirits_break_temple_tt
@@ -13901,150 +13903,8 @@ country_event = {
 
 	is_triggered_only = yes
 
-	# suppress
-	option = {
-		name = spirits.704.a
-		ai_chance = { factor = 100 }
-		custom_tooltip = rp_ward_suppress_tt
-
-		add_country_modifier = {
-			name = rending_severe_global
-			duration = -1
-		}
-
-		hidden_effect = { set_country_flag = rending_ward_flag }
-		hidden_effect = { country_event = { id = spirits.705 days = 30 } }
-	}
-
-	# appease
-	option = {
-		name = spirits.704.b
-		ai_chance = { factor = 100 }
-		custom_tooltip = rp_accord_appease_tt
-
-		add_country_modifier = {
-			name = rending_medium_global
-			duration = -1
-		}
-
-		hidden_effect = { set_country_flag = rending_appease_flag }
-		hidden_effect = { 		
-			country_event = { 
-				id = rending.300 
-				days = 20
-			} 
-		}
-	}
-
-	# appease + go MA
-	option = {
-		name = spirits.704.c
-		ai_chance = { factor = 100 }
-		custom_tooltip = rp_flip_ma_tt
-		change_religion = mystic_accord
-
-		add_country_modifier = {
-			name = rending_medium_global
-			duration = -1
-		}
-
-		add_country_modifier = {
-			name = rending_ma_conversion
-			duration = 3650
-		}
-
-		hidden_effect = { set_country_flag = rending_appease_flag }
-		hidden_effect = { 		
-			country_event = { 
-				id = rending.300 
-				days = 20
-			} 
-		}
-	}
-}
-country_event = {
-	id = spirits.704
-	title = spirits.704.t
-	desc = spirits.704.d
-	picture = BIG_BOOK_eventPicture
-
-	is_triggered_only = yes
-
 	trigger = {
-		religion = mystic_accord
-	}
-
-	# suppress
-	option = {
-		name = spirits.704.a
-		ai_chance = { factor = 100 }
-		custom_tooltip = rp_ward_suppress_tt
-
-		add_country_modifier = {
-			name = rending_severe_global
-			duration = -1
-		}
-
-		hidden_effect = { set_country_flag = rending_ward_flag }
-		hidden_effect = { country_event = { id = spirits.705 days = 30 } }
-	}
-
-	# appease
-	option = {
-		name = spirits.704.b
-		ai_chance = { factor = 100 }
-		custom_tooltip = rp_accord_appease_tt
-
-		add_country_modifier = {
-			name = rending_medium_global
-			duration = -1
-		}
-
-		hidden_effect = { set_country_flag = rending_appease_flag }
-		hidden_effect = { 		
-			country_event = { 
-				id = rending.300 
-				days = 20
-			} 
-		}
-	}
-
-	# appease + go MA
-	option = {
-		name = spirits.704.c
-		ai_chance = { factor = 100 }
-		custom_tooltip = rp_flip_ma_tt
-		change_religion = high_philosophy
-
-		add_country_modifier = {
-			name = rending_medium_global
-			duration = -1
-		}
-
-		add_country_modifier = {
-			name = rending_ma_conversion
-			duration = 3650
-		}
-
-		hidden_effect = { set_country_flag = rending_appease_flag }
-		hidden_effect = { 		
-			country_event = { 
-				id = rending.300 
-				days = 20
-			} 
-		}
-	}
-}
-country_event = {
-	id = spirits.704
-	title = spirits.704.t
-	desc = spirits.704.d
-	picture = BIG_BOOK_eventPicture
-
-	is_triggered_only = yes
-
-	trigger = {
-		religion = suhans_praxis
+		religion = righteous_path
 	}
 
 	# suppress
@@ -14108,6 +13968,7 @@ country_event = {
 		}
 	}
 }
+
 # manager for which great spirit appears in your capital
 country_event = {
 	id = spirits.705
@@ -17972,6 +17833,153 @@ province_event = {
 			shuvuushudi_region = {
 				clr_province_flag = damaged_wards
 				set_province_flag = pristine_wards
+			}
+		}
+	}
+}
+
+country_event = { #Kharunyana destroys the Godswall
+	id = spirits.1002
+	title = spirits.1002.t
+	desc = spirits.1002.desc
+	picture = GREAT_SPIRIT_KHARUNYANA_eventPicture
+
+	is_triggered_only = yes
+	#major = yes
+
+	immediate = {
+		hidden_effect = {
+			kharunyana_spirit_area = {
+				add_devastation = 30
+				add_base_tax = -1
+				add_base_production = -2
+				add_base_manpower = -2
+			}
+		}
+	}
+
+	option = {
+		name = spirits.1002.a
+		ai_chance = {
+			factor = 1
+		}
+		trigger = {
+			AND = {
+				capital_scope = {
+					OR = {
+						region = shamakhad_region
+						region = xianjie_region
+						region = dhujat_region
+						region = rahen_coast_region
+					}
+				}
+				OR = {
+					religion = high_philosophy
+					religion = suhans_praxis
+				}
+			}
+		}
+		add_stability = -1
+		custom_tooltip = kharunyana_makes_waves_tt
+	}
+	option = {
+		name = spirits.1002.b
+		ai_chance = { factor = 20 }
+		trigger = {
+			culture = eagle_command
+			AND = {
+				religion = eagle_worship
+				NOT = { religion = mystic_accord }
+			}
+		}
+
+		change_religion = mystic_accord
+		add_stability = -4
+		
+		hidden_effect = {
+			clr_country_flag = rending_ward_flag
+			add_country_modifier = {
+				name = rending_medium_global
+				duration = -1
+			}
+			set_country_flag = rending_appease_flag
+			set_country_flag = appeasement_in_progress
+			set_country_flag = kharunyana_appeasement
+			set_country_flag = kharunyana_primary
+			remove_country_modifier = rending_severe_global
+		}
+		custom_tooltip = kharunyana_makes_waves_tt
+	}
+
+	option = {
+		name = spirits.1002.c
+		highlight = yes
+		ai_chance = { factor = 80 }
+		trigger = {
+			culture = eagle_command
+			AND = {
+				religion = eagle_worship
+				NOT = { religion = mystic_accord }
+			}
+		}
+		add_stability = 1
+		custom_tooltip = kharunyana_makes_waves_tt
+	}
+
+	option = {
+		name = spirits.1002.d
+		trigger = {
+			AND = {
+				NOT = {
+					AND = {
+						culture = eagle_command
+						AND = {
+							religion = eagle_worship
+							NOT = { religion = mystic_accord }
+						}
+					}
+				}
+				NOT = {
+					AND = {
+						capital_scope = {
+							OR = {
+								region = shamakhad_region
+								region = xianjie_region
+								region = dhujat_region
+								region = rahen_coast_region
+							}
+						}
+						OR = {
+							religion = high_philosophy
+							religion = suhans_praxis
+						}
+					}
+				}
+			}
+		}
+		add_prestige = -1
+		custom_tooltip = kharunyana_makes_waves_tt
+	}
+
+	after = {
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						4533 = {
+							has_great_project = {
+								type = godswall_tunnel
+							}
+						}
+					}
+				}
+#				set_global_flag = rending_happened
+				4533 = {
+					add_great_project = {
+						type = godswall_tunnel
+						instant = yes
+					}
+				}
 			}
 		}
 	}
