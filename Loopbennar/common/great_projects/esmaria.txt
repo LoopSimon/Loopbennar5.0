@@ -143,7 +143,7 @@ giberd_academy_of_engineering = {
 			local_development_cost = -0.05
 		}
 		country_modifiers = {
-			build_cost = -0.5
+			build_cost = -0.1
 			build_time = -0.15
 		}
 		on_upgraded = {
