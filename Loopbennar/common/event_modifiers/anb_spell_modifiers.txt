@@ -186,13 +186,13 @@ magic_realm_divination_scrying_neighbours = {
 }
 
 magic_realm_divination_scrying_affairs = {
-	all_power_cost = -0.1
+	all_power_cost = -0.05
 
 	diplomatic_reputation = -1
 }
 
 magic_realm_divination_foresight = {
-	all_power_cost = -0.33
+	all_power_cost = -0.2
 	migration_cost = 0.33 # To remove infinite mana migration exploit
 }
 
