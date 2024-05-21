@@ -288,7 +288,7 @@ magic_realm_evocation_war_magic_2 = {
 magic_realm_evocation_war_magic_3 = {
 	land_morale = 0.1
 	shock_damage = 0.15
-	fire_damage_received = -0.5
+	fire_damage_received = -0.05
 }
 
 #Illusion
