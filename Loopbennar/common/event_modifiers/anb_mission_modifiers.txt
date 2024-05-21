@@ -4791,12 +4791,12 @@ the_dragon_gift = {
 }
 
 kobold_dragon_will = {
-	land_morale = 0.2
-	infantry_shock = 0.2
+	land_morale = 0.1
+	infantry_shock = 0.1
 }
 
 kobold_dragon_fire = {
-	fire_damage = 0.25
+	fire_damage = 0.1
 }
 
 kobold_rejuvenate_capital = {
@@ -4804,7 +4804,6 @@ kobold_rejuvenate_capital = {
 }
 
 kobold_dragon_heart = {
-	infantry_power = 0.1
 	land_morale = 0.1
 }
 
@@ -4819,7 +4818,6 @@ kobold_aftermath_of_the_dragon_roar = {
 
 kobold_fire_touched = {
 	fire_damage_received = -0.1
-	shock_damage_received = -0.1
 }
 
 kobold_hoard_timer = {
