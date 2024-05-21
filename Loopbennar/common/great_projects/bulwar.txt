@@ -618,7 +618,7 @@ sun_dial = {
 		country_modifiers = {
 			warscore_cost_vs_other_religion = -0.05
 			prestige_per_development_from_conversion = 0.1
-			fire_damage = 0.025
+			moral_damage = 0.025
 		}
 		on_upgraded = {
 		}
@@ -637,7 +637,7 @@ sun_dial = {
 		country_modifiers = {
 			warscore_cost_vs_other_religion = -0.1
 			prestige_per_development_from_conversion = 0.3
-			fire_damage = 0.05
+			moral_damage = 0.05
 		}
 		on_upgraded = {
 		}
@@ -656,7 +656,7 @@ sun_dial = {
 		country_modifiers = {
 			warscore_cost_vs_other_religion = -0.15
 			prestige_per_development_from_conversion = 0.5
-			fire_damage = 0.075
+			moral_damage = 0.075
 		}
 		on_upgraded = {
 		}
@@ -1476,7 +1476,6 @@ stone_palace = {
 		province_modifiers = {
 			local_defensiveness = 0.33
 			local_garrison_size = 1
-			local_defender_dice_roll_bonus = 1
 		}
 		area_modifier = {
 		}
