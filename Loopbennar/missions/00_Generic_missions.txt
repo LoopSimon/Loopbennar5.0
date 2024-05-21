@@ -45,17 +45,11 @@ generic_column_2 = {
 			grown_by_development = 100
 		}
 		effect = {
-			capital_scope = {
-				region = {
-					limit = {
-						NOT = {
-						owned_by = ROOT
-						is_core = ROOT
-					}
-				}
-			add_permanent_claim = ROOT
+			ROOT = {
+			add_adm_power = 100
+			add_dip_power = 100
+			add_mil_power = 100
 			}
-		}
 
 	}
 }
@@ -76,8 +70,7 @@ generic_column_2 = {
 		}
 		effect = {
 			ROOT = {
-			add_prestige = 25
-			set_government_rank = 3
+			add_prestige = 60
 			}
 		}
 	}
@@ -226,6 +219,7 @@ generic_column_3 = {
 			##PROVINCESHIGHLIGHTCODE
 		}
 		trigger = {
+			AI = no
 			treasury = 500
 			dip_power = 100
 			dip_tech = 5
