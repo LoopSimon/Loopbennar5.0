@@ -2016,24 +2016,22 @@ mercenary_ideas = { #1.35
 	}
 	war_council = {
 		mil_advisor_cost = -0.25
-		merc_independent_from_trade_range = yes
 	}
 	expanded_contracts = {
-		merc_maintenance_modifier = -0.25
+		merc_maintenance_modifier = -0.10
 	}
 	nation_of_war = {
 		mil_tech_cost_modifier = -0.1
 	}
 	benefits_for_mercenaries = {
 		war_taxes_cost_modifier = -0.5
-		merc_leader_army_tradition = 0.5
+		merc_leader_army_tradition = 0.25
 	}
 	seasoned_veterans = {
 		infantry_power = 0.1
 	}
 	organised_mercenary_recruitment = { 
-		mercenary_manpower = 0.3
-		allow_mercenary_drill = yes
+		mercenary_manpower = 0.15
 		#Anbennar
 		effect = { increase_legitimacy_equivalent_absolutism_from_idea_groups_mod = yes }
 		removed_effect = { decrease_legitimacy_equivalent_absolutism_from_idea_groups_mod = yes }
