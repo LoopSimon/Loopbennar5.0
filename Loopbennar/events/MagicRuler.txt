@@ -13483,7 +13483,7 @@ country_event = {
 			}
 			define_ruler_to_general = {
 				fire = 1
-				shock = 6
+				shock = 4
 				manuever = 0
 				siege = 1
 				trait = war_wizard_personality
@@ -13496,7 +13496,7 @@ country_event = {
 			}
 			define_ruler_to_general = {
 				fire = 1
-				shock = 7
+				shock = 4
 				manuever = 0
 				siege = 2
 				trait = war_wizard_personality
@@ -13509,7 +13509,7 @@ country_event = {
 			}
 			define_ruler_to_general = {
 				fire = 2
-				shock = 7
+				shock = 5
 				manuever = 1
 				siege = 3
 				trait = war_wizard_personality
@@ -13522,9 +13522,9 @@ country_event = {
 			}
 			define_ruler_to_general = {
 				fire = 2
-				shock = 8
+				shock = 6
 				manuever = 1
-				siege = 4
+				siege = 3
 				trait = war_wizard_personality
 			}
 		}
@@ -13535,9 +13535,9 @@ country_event = {
 			}
 			define_ruler_to_general = {
 				fire = 2
-				shock = 9
+				shock = 7
 				manuever = 2
-				siege = 5
+				siege = 4
 				trait = war_wizard_personality
 			}
 		}
@@ -13548,9 +13548,9 @@ country_event = {
 			}
 			define_ruler_to_general = {
 				fire = 3
-				shock = 10
+				shock = 8
 				manuever = 3
-				siege = 6
+				siege = 4
 				trait = war_wizard_personality
 			}
 		}
@@ -13560,9 +13560,9 @@ country_event = {
 			}
 			define_ruler_to_general = {
 				fire = 3
-				shock = 11
+				shock = 9
 				manuever = 4
-				siege = 7
+				siege = 5
 				trait = war_wizard_personality
 			}
 		}
