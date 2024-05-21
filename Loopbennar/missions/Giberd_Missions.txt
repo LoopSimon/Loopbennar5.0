@@ -618,7 +618,7 @@ giberd_mercantile_shipping = {
 		effect = {
 			add_country_modifier = {
 				name = giberd_transhavoral_trade_mod
-				duration = 7300 #20 years
+				duration = -1
 			}
 		}
 	}
