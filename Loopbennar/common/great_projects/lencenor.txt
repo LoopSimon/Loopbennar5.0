@@ -185,11 +185,6 @@ lorent_new_adea_naval_school = {
 			religion = regent_court
 			custom_trigger_tooltip = {
 				tooltip = cannorian_monuments_can_use_tooltip_lencenor
-					OR = {
-						culture_group = lencori
-						culture = moon_elf
-						culture = castanorian
-					}
 			}
 			province_is_or_accepts_culture = yes
 		}
@@ -200,11 +195,6 @@ lorent_new_adea_naval_school = {
 			religion = regent_court
 			custom_trigger_tooltip = {
 				tooltip = cannorian_monuments_can_use_tooltip_lencenor
-					OR = {
-						culture_group = lencori
-						culture = moon_elf
-						culture = castanorian
-					}
 			}
 			province_is_or_accepts_culture = yes
 		}
@@ -236,7 +226,6 @@ lorent_new_adea_naval_school = {
 		}
 		province_modifiers = {
 			local_development_cost = -0.05
-			local_sailors_modifier = 0.25
 		}
 		area_modifier = {
 		}
@@ -257,7 +246,6 @@ lorent_new_adea_naval_school = {
 		}
 		province_modifiers = {
 			local_development_cost = -0.1
-			local_sailors_modifier = 0.5
 		}
 		area_modifier = {
 		}
@@ -277,7 +265,6 @@ lorent_new_adea_naval_school = {
 		}
 		province_modifiers = {
 			local_development_cost = -0.15
-			local_sailors_modifier = 1
 		}
 		area_modifier = {
 		}
