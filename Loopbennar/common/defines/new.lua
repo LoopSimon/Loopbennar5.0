@@ -1,0 +1,1 @@
+NDefines.NDiplomacy.MIN_RELATIONS_TO_ALLY = -200 
