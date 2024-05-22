@@ -139,12 +139,12 @@ country_event = {
 		name = "flavor_corintar.1.a"
 		ai_chance = { factor = 40 }	
 		define_heir = {
-		dynasty = "síl Corin"
+		dynasty = "sÃ­l Corin"
 			age = 16
 			male = yes
-			adm = 1
-			dip = 1
-			mil = 1
+			change_adm = 1
+			change_dip = 1
+			change_mil = 1
 			hide_skills = yes
 		}
 	}
@@ -157,9 +157,9 @@ country_event = {
 			dynasty = "Corintar"
 			age = 24
 			male = yes
-			adm = 2
-			dip = 2
-			mil = 2
+			change_adm = 1
+			change_dip = 1
+			change_mil = 1
 			hide_skills = yes
 		}
 	}
@@ -172,9 +172,9 @@ country_event = {
 			dynasty = ROOT
 			age = 16
 			male = yes
-			adm = 1
-			dip = 1
-			mil = 1
+			change_adm = 1
+			change_dip = 1
+			change_mil = 1
 			hide_skills = yes
 		}
 	}
