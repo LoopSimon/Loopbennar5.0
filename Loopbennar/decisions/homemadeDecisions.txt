@@ -1,0 +1,11 @@
+country_decisions = {
+	warsforyou = {
+		potential= {
+			has_country_modifier = nowarsforyou
+			AI = no
+		}
+		effect = {
+			remove_country_modifier = nowarsforyou
+		}
+	}	
+}
