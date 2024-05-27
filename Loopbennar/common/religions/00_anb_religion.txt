@@ -1601,7 +1601,7 @@ khetist = {
 
 			aakhetist_aakhet_blessing
 			aakhetist_aakhet_retinue
-			aakhetist_aakhet_rage
+			aakhetist_aakhet_wrath
 			aakhetist_aakhet_wisdom
 			aakhetist_aakhet_glory
 		}
