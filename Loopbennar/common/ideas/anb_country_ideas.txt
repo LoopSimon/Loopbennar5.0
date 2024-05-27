@@ -14731,7 +14731,7 @@ H33_ideas = {
 		production_efficiency = 0.1
 	}
 	bonus = {
-		dip_tech_cost_modifier = -0.1
+		land_morale = 0.1
 	}
 	trigger = {
 		tag = H33
