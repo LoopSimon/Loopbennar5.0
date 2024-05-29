@@ -1457,8 +1457,8 @@ diplomatic_cooperation_act = {
 	}
 
 
-	advisor_cost = -0.15
-	diplomatic_reputation = 1
+	advisor_cost = -0.05
+	land_morale  = -0.05
 
 
 	effect = {}
@@ -2219,6 +2219,7 @@ humanitarian_administration_act = {
 	}
 	
 	num_accepted_cultures = 2
+	state_maintenance_modifier = -0.3
 
 	effect = {}
 	removed_effect = {}

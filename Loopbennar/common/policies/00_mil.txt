@@ -716,6 +716,7 @@ inspirational_leaders = {
 	}	
 	
 	leader_land_shock = 1
+	leader_land_fire = 1
 	
 	effect = {}
 	removed_effect = {}
