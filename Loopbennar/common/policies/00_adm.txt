@@ -974,7 +974,7 @@ the_liberation_act = {
 		full_idea_group = offensive_ideas
 	}	
 	
-	land_moral = 0.1
+	land_morale = 0.1
 	
 	
 	effect = {}
