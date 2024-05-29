@@ -685,10 +685,6 @@ isagumze_missions_5 = {
 		}
 
 		trigger = {
-			calc_true_if = {
-				all_ally = { culture_is_human = yes }
-				amount = 3
-			}
 			has_dip_advisor_2 = yes
 			num_of_owned_provinces_with = {
 						value = 20
