@@ -27252,3 +27252,10 @@ L03_favorite_in_power = {
 prestige = 1
 land_morale = 0.05
 }
+ 
+Ynn_LoopFix = {
+years_of_nationalism = -5
+vassal_forcelimit_bonus = 1.0
+shock_damage = 0.05
+warscore_cost_vs_other_religion = -0.15
+}
