@@ -68,6 +68,7 @@ yrw_has_settled_first_debate = {
 		OR = {
 			has_country_modifier = yrw_1a
 			has_country_modifier = yrw_1b 
+			has_country_modifier = Ynn_LoopFix
 		}
 	}
 }
@@ -78,6 +79,7 @@ yrw_has_settled_second_debate = {
 		OR = {
 			has_country_modifier = yrw_2a
 			has_country_modifier = yrw_2b 
+			has_country_modifier = Ynn_LoopFix
 		}
 	}
 }
@@ -88,6 +90,7 @@ yrw_has_settled_third_debate = {
 		OR = {
 			has_country_modifier = yrw_3a
 			has_country_modifier = yrw_3b 
+			has_country_modifier = Ynn_LoopFix
 		}
 	}
 }
@@ -98,6 +101,7 @@ yrw_has_settled_fourth_debate = {
 		OR = {
 			has_country_modifier = yrw_4a
 			has_country_modifier = yrw_4b 
+			has_country_modifier = Ynn_LoopFix
 		}
 	}
 }
