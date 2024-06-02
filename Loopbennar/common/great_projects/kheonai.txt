@@ -22,6 +22,7 @@ warded_city_deg = {
 			OR = {
 				culture_group = kheionai_ruinborn_elf
 				culture_group = elven
+				culture_group = eltibhari_ruinborn_elf
 			}
 		}
 	}	
@@ -31,6 +32,7 @@ warded_city_deg = {
 			OR = {
 				culture_group = kheionai_ruinborn_elf
 				culture_group = elven
+				culture_group = eltibhari_ruinborn_elf
 			}
 		}
 	}	
@@ -144,6 +146,7 @@ warded_city_orm = {
 			OR = {
 				culture_group = kheionai_ruinborn_elf
 				culture_group = elven
+				culture_group = eltibhari_ruinborn_elf
 			}
 		}
 	}	
@@ -153,6 +156,7 @@ warded_city_orm = {
 			OR = {
 				culture_group = kheionai_ruinborn_elf
 				culture_group = elven
+				culture_group = eltibhari_ruinborn_elf
 			}
 		}
 	}	
@@ -263,6 +267,7 @@ warded_city_khe = {
 			OR = {
 				culture_group = kheionai_ruinborn_elf
 				culture_group = elven
+				culture_group = eltibhari_ruinborn_elf
 			}
 		}
 	}	
@@ -272,6 +277,7 @@ warded_city_khe = {
 			OR = {
 				culture_group = kheionai_ruinborn_elf
 				culture_group = elven
+				culture_group = eltibhari_ruinborn_elf
 			}
 		}
 	}	
@@ -381,6 +387,7 @@ warded_city_lok = {
 			OR = {
 				culture_group = kheionai_ruinborn_elf
 				culture_group = elven
+				culture_group = eltibhari_ruinborn_elf
 			}
 		}
 	}	
@@ -390,6 +397,7 @@ warded_city_lok = {
 			OR = {
 				culture_group = kheionai_ruinborn_elf
 				culture_group = elven
+				culture_group = eltibhari_ruinborn_elf
 			}
 		}
 	}	
@@ -501,6 +509,7 @@ warded_city_okt = {
 			OR = {
 				culture_group = kheionai_ruinborn_elf
 				culture_group = elven
+				culture_group = eltibhari_ruinborn_elf
 			}
 		}
 	}	
@@ -510,6 +519,7 @@ warded_city_okt = {
 			OR = {
 				culture_group = kheionai_ruinborn_elf
 				culture_group = elven
+				culture_group = eltibhari_ruinborn_elf
 			}
 		}
 	}	
@@ -619,6 +629,7 @@ warded_city_arp = {
 			OR = {
 				culture_group = kheionai_ruinborn_elf
 				culture_group = elven
+				culture_group = eltibhari_ruinborn_elf
 			}
 		}
 	}	
@@ -628,6 +639,7 @@ warded_city_arp = {
 			OR = {
 				culture_group = kheionai_ruinborn_elf
 				culture_group = elven
+				culture_group = eltibhari_ruinborn_elf
 			}
 		}
 	}	
