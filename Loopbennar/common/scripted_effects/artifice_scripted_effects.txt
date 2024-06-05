@@ -642,7 +642,7 @@ set_up_artifice_system = {
 	}
 	if = { #Artificery start general
 		limit = {
-			has_institution = manufactories
+			has_institution = global_trade
 			NOT = {
 				has_country_flag = artificery_unlocked
 			}
