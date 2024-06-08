@@ -678,7 +678,7 @@ war_of_last_resort = {
 }
 
 morale_g = { 
-	land_morale = 0.075
+	land_morale = 0.05
 }
 
 shock_g = {
