@@ -692,29 +692,6 @@ mandatory_service = {
 }
 
 
-professional_diplomatic_corps = {
-	monarch_power = DIP
-	potential = {
-		has_idea_group = diplomatic_ideas
-		has_idea_group = quality_ideas
-	}
-	
-	allow = {
-		full_idea_group = diplomatic_ideas
-		full_idea_group = quality_ideas
-	}
-	
-	land_forcelimit_modifier = 0.15
-	war_exhaustion = -0.05
-
-	effect = {}
-	removed_effect = {}
-	ai_will_do = {
-		factor = 0.7
-	}
-
-}
-
 
 
 colonial_companies_act = {
