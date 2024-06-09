@@ -1831,7 +1831,7 @@ conscription_center = {
 #	}
 
 	modifier = {
-		land_forcelimit = 2
+		land_forcelimit = 1.5
 	}
 	on_built = {
 		add_development_from_upgrading_or_building = {
