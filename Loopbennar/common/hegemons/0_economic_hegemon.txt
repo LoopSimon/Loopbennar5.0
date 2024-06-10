@@ -1,6 +1,5 @@
 economic_hegemon = {
 	allow = {
-		is_great_power = yes
 		if = {
 			limit = {
 				NOT = { has_country_flag = halve_hegemony_requirements }
