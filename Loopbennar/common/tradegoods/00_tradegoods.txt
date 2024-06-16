@@ -2277,7 +2277,7 @@ coal = {
 			}
 			owner = {
 				has_institution = manufactories
-				adm_tech = 23
+				adm_tech = 21
 			}
 		}
 	}
