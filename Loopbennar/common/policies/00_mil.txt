@@ -436,7 +436,7 @@ pen_rely_on_sword_act = {
 	}
 	
 	diplomatic_reputation = 1
-	land_forcelimit_modifier = 0.2
+	global_manpower_modifier = 0.1
 
 	
 	effect = {}
