@@ -591,16 +591,18 @@ diplomatic_ideas = {
 	category = DIP
 	bonus = {
 		reduced_stab_impacts = yes
+		free_policy = 1
 	}
 	
 	grand_banquets = {
 		diplomats = 1
 	}
 	foreign_embassies = { #1.35
-		dip_advisor_cost = -0.25
+		advisor_cost = -0.1
 	}
 	cabinet = {
 		diplomatic_upkeep = 1
+		all_estate_loyalty_equilibrium = 0.1
 	}
 	benign_diplomats = {
 		improve_relation_modifier = 0.25
@@ -1751,19 +1753,21 @@ humanist_ideas = {
 	}
 	indirect_rule = {
 		years_of_nationalism = -10
+		core_creation = -0.15
 	}
 	ecumenism = { #1.35
 		tolerance_heretic = 2
 	}
 	cultural_ties = {
 		num_accepted_cultures = 2
+		advisor_cost = 0.1
 	}
 	humanist_tolerance = { #1.35
 		tolerance_heathen = 2
 		religious_unity = 0.2
 	}
 	benevolence = {
-		improve_relation_modifier = 0.3
+		stability_cost_modifier -0.2
 	}
 	tolerance_idea = { #1.35
 		tolerance_of_heretics_capacity = 1 
@@ -2017,24 +2021,22 @@ mercenary_ideas = { #1.35
 	}
 	war_council = {
 		mil_advisor_cost = -0.25
-		merc_independent_from_trade_range = yes
 	}
 	expanded_contracts = {
-		merc_maintenance_modifier = -0.25
+		merc_maintenance_modifier = -0.1
 	}
 	nation_of_war = {
 		mil_tech_cost_modifier = -0.1
 	}
 	benefits_for_mercenaries = {
 		war_taxes_cost_modifier = -0.5
-		merc_leader_army_tradition = 0.5
+		merc_leader_army_tradition = 0.25
 	}
 	seasoned_veterans = {
 		infantry_power = 0.1
 	}
 	organised_mercenary_recruitment = { 
-		mercenary_manpower = 0.3
-		allow_mercenary_drill = yes
+		mercenary_manpower = 0.15
 		#Anbennar
 		effect = { increase_legitimacy_equivalent_absolutism_from_idea_groups_mod = yes }
 		removed_effect = { decrease_legitimacy_equivalent_absolutism_from_idea_groups_mod = yes }
