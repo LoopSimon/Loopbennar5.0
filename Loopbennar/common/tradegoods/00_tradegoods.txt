@@ -2267,10 +2267,10 @@ coal = {
 				}
 			}
 			provincial_institution_progress = {
-				which = enlightenment
+				which = manufactories
 				value = 100
 			}
-			owner = { has_institution = enlightenment }
+			owner = { has_institution = manufactories }
 		}
 		else_if = {
 			limit = { owner = { has_country_flag = even_earlier_coal_available } }
@@ -2290,7 +2290,7 @@ coal = {
 			}
 			owner = {
 				has_institution = manufactories
-				adm_tech = 23
+				adm_tech = 21
 			}
 		}
 	}
