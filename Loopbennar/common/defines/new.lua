@@ -1,0 +1,2 @@
+NDefines.NDiplomacy.MIN_RELATIONS_TO_ALLY = -200 
+NDefines.NCountry.DISINHERIT_PRESTIGE_HIT = -25
