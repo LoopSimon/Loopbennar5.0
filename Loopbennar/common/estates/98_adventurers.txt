@@ -40,14 +40,12 @@ estate_adventurers = {
 	# These scale with loyalty & power
 	country_modifier_happy = {
 		mercenary_cost = -0.2
-		mercenary_discipline = 0.1
 	}
 	country_modifier_neutral = {
 		mercenary_cost = -0.2
 	}	
 	country_modifier_angry = {
 		mercenary_cost = 0.2
-		mercenary_discipline = -0.1
 	}
 	land_ownership_modifier = {
 		adventurers_loyalty_modifier = 0.2
