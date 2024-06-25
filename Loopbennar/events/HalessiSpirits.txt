@@ -13574,7 +13574,7 @@ country_event = {
 	}
 
 	mean_time_to_happen = {
-		years = 50
+		years = 1
 		modifier = {
 			factor = 0.95
 			NOT = {
