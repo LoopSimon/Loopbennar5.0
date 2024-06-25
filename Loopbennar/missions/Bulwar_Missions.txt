@@ -454,6 +454,7 @@ bulwar_quarters_1 = {
 				was_tag = F39
 			}
 		}
+		is_incident_happened = incident_naqtazan
 	}
 	has_country_shield = yes
 	
@@ -465,6 +466,10 @@ bulwar_quarters_1 = {
 		position = 2
 		
 		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = fula_in_government_tt
+				has_country_flag = fula_in_government
+			}
 			601 = { base_tax = 12 }
 			treasury = 100
 		}

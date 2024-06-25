@@ -762,7 +762,15 @@ ogre_tribe_two = {
 		
 		trigger = {
 			OR = {
-				mil = 2
+				mil = 4
+				OR = {
+					employed_advisor = {
+						type = grand_captain
+					}
+					employed_advisor = {
+						type = recruitmaster
+					}
+				}
 			}
 			custom_trigger_tooltip = {
 				tooltip =  not_skurkokli_tooltip

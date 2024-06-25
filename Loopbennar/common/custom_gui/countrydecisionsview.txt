@@ -6271,6 +6271,7 @@ custom_button = {
 			religion = ancestor_worship
 			religion_group = bulwari
 			religion_group = cannorian
+			religion = feast_of_the_gods
 			religion = reformed_feast_of_the_gods
 			religion_group = fey_religion
 			religion = irdaeos_worship
@@ -6484,7 +6485,10 @@ custom_button = {
 		}
 		else_if = {
 			limit = {
-				religion = reformed_feast_of_the_gods
+				OR = {
+					religion = feast_of_the_gods
+					religion = reformed_feast_of_the_gods
+				}
 			}
 			if = {
 				limit = {

@@ -4948,6 +4948,57 @@ country_event = {
 
 	#3 - Dominate to Surrender
 	option = {
+		name = magic_ruler.4.m	#available
+		trigger = {
+			has_ruler_flag = enchantment_3
+			is_at_war = yes
+			is_lesser_in_union = no
+			any_army = {
+				location = {
+					fort_level = 1
+					sieged_by = ROOT
+					unit_has_leader = yes
+				}
+			}
+			NOT = { has_ruler_modifier = magic_siege_cooldown }
+		}
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				OR = {
+					NOT = { adm_power = 20 }
+					NOT = { dip_power = 20 }
+				}
+			}
+		}
+
+		random_province = {
+			limit = {
+				fort_level = 1
+				sieged_by = ROOT
+				unit_has_leader = yes
+				num_of_units_in_province = {
+					who = ROOT
+					amount = 1
+				}
+			}
+			hidden_effect = {
+				save_event_target_as = spell_target_province	#this works yo
+			}
+		}
+		country_event = { id = magic_siege.5 }
+		if = {
+			limit = { has_ruler_flag = baku_patron }
+			custom_tooltip = magic_booster_by_patron_tt
+		}
+		custom_tooltip = magic_if_siege_magic_succeeds_tt
+		tooltip = {
+			change_controller = ROOT
+		}
+		custom_tooltip = magic_dominate_desc_tt
+	}
+	option = {
 		name = magic_ruler.4.mm	#unavailable - low mastery
 		trigger = {
 			ai = no
@@ -9482,6 +9533,63 @@ country_event = {
 
 	#2 - Shapechange into a Giant
 	option = {
+		name = magic_ruler.8.f	#available
+		trigger = {
+			has_ruler_flag = transmutation_2
+			is_at_war = yes
+			is_lesser_in_union = no
+			any_army = {
+				location = {
+					fort_level = 1
+					sieged_by = ROOT
+					unit_has_leader = yes
+				}
+			}
+			NOT = { has_ruler_modifier = magic_siege_cooldown }
+		}
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				current_age = age_of_revolutions
+			}
+		}
+
+		random_province = {
+			limit = {
+				fort_level = 1
+				sieged_by = ROOT
+				unit_has_leader = yes
+				num_of_units_in_province = {
+					who = ROOT
+					amount = 1
+				}
+			}
+			hidden_effect = {
+				save_event_target_as = spell_target_province	#this works yo
+			}
+		}
+		country_event = { id = magic_siege.20 }
+		custom_tooltip = magic_if_siege_magic_succeeds_tt
+		random_list = {
+			30 = {
+				tooltip = {
+					change_controller = ROOT
+					add_devastation = 5
+				}
+			}
+			70 = {
+				tooltip = {
+					add_province_modifier = {
+						name = siege_magic_giant_besieger
+						duration = 14
+					}
+				}
+			}
+		}
+		custom_tooltip = magic_giant_desc_tt
+	}
+	option = {
 		name = magic_ruler.8.fm	#unavailable - low mastery
 		trigger = {
 			ai = no
@@ -10023,8 +10131,8 @@ country_event = {
 						hidden = yes
 					}
 					set_heir_mage_effect = yes
-					}
 				}
+			}
 			else_if = { limit = { has_consort = no }
 				set_country_flag = spell_3
 				tooltip = {
@@ -10217,6 +10325,59 @@ country_event = {
 	}
 
 	#3 - Shapechange into a Dragon
+	option = {
+		name = magic_ruler.8.j	#available
+		trigger = {
+			has_ruler_flag = transmutation_3
+			is_at_war = yes
+			is_lesser_in_union = no
+			any_army = {
+				location = {
+					fort_level = 1
+					sieged_by = ROOT
+					unit_has_leader = yes
+				}
+			}
+			NOT = { has_ruler_modifier = magic_siege_cooldown }
+		}
+		ai_chance = {
+			factor = 50
+		}
+
+		random_province = {
+			limit = {
+				fort_level = 1
+				sieged_by = ROOT
+				unit_has_leader = yes
+				num_of_units_in_province = {
+					who = ROOT
+					amount = 1
+				}
+			}
+			hidden_effect = {
+				save_event_target_as = spell_target_province	#this works yo
+			}
+		}
+		country_event = { id = magic_siege.23 }
+		custom_tooltip = magic_if_siege_magic_succeeds_tt
+		random_list = {
+			30 = {
+				tooltip = {
+					change_controller = ROOT
+					add_devastation = 10
+				}
+			}
+			70 = {
+				tooltip = {
+					add_province_modifier = {
+						name = siege_magic_dragon_besieger
+						duration = 14
+					}
+				}
+			}
+		}
+		custom_tooltip = magic_dragon_desc_tt
+	}
 	option = {
 		name = magic_ruler.8.jm	#unavailable - low mastery
 		trigger = {
@@ -13322,7 +13483,7 @@ country_event = {
 			}
 			define_ruler_to_general = {
 				fire = 1
-				shock = 4
+				shock = 6
 				manuever = 0
 				siege = 1
 				trait = war_wizard_personality
@@ -13335,7 +13496,7 @@ country_event = {
 			}
 			define_ruler_to_general = {
 				fire = 1
-				shock = 4
+				shock = 7
 				manuever = 0
 				siege = 2
 				trait = war_wizard_personality
@@ -13348,7 +13509,7 @@ country_event = {
 			}
 			define_ruler_to_general = {
 				fire = 2
-				shock = 5
+				shock = 7
 				manuever = 1
 				siege = 3
 				trait = war_wizard_personality
@@ -13361,9 +13522,9 @@ country_event = {
 			}
 			define_ruler_to_general = {
 				fire = 2
-				shock = 6
+				shock = 8
 				manuever = 1
-				siege = 3
+				siege = 4
 				trait = war_wizard_personality
 			}
 		}
@@ -13374,9 +13535,9 @@ country_event = {
 			}
 			define_ruler_to_general = {
 				fire = 2
-				shock = 7
+				shock = 9
 				manuever = 2
-				siege = 4
+				siege = 5
 				trait = war_wizard_personality
 			}
 		}
@@ -13387,9 +13548,9 @@ country_event = {
 			}
 			define_ruler_to_general = {
 				fire = 3
-				shock = 8
+				shock = 10
 				manuever = 3
-				siege = 4
+				siege = 6
 				trait = war_wizard_personality
 			}
 		}
@@ -13399,9 +13560,9 @@ country_event = {
 			}
 			define_ruler_to_general = {
 				fire = 3
-				shock = 9
+				shock = 11
 				manuever = 4
-				siege = 5
+				siege = 7
 				trait = war_wizard_personality
 			}
 		}
@@ -13660,6 +13821,7 @@ country_event = {
 		if = {
 			limit = {
 				NOT = { has_ruler_flag = initialized_magic_flags }
+				NOT = { has_government_attribute = inherits_magic }
 			}
 			magic_ruler_initialize_schools = yes
 		}
@@ -13690,6 +13852,12 @@ country_event = {
 		NOT = { ruler_is_immortal = yes }
 		NOT = { ruler_age = 60 }
 		NOT = { has_country_flag = command_slave_state_flag } # Hopefully should block brorcs from getting mage rulers
+		NOT = { # NSC humans havet ot unlock / legalize mages first.
+			AND = {
+				religion = bulwari_sun_cult
+				has_country_flag = nsc_human_country_magic_prohibition
+			}
+		}
 		NOT = { has_country_flag = disabled_heir_events }
 		NOT = { has_country_flag = anti_homunculus_cheese } #Anti homunculus cheese with magical heir
 	}
@@ -13780,6 +13948,12 @@ country_event = {
 		NOT = { ruler_has_personality = kind_hearted_personality }
 		NOT = { has_country_flag = anti_homunculus_cheese } #Anti homunculus cheese with magical heir
 		NOT = { has_country_flag = command_slave_state_flag } # Hopefully should block brorcs from getting mage rulers
+		NOT = { # NSC humans havet ot unlock / legalize mages first.
+			AND = {
+				religion = bulwari_sun_cult
+				has_country_flag = nsc_human_country_magic_prohibition
+			}
+		}
 		NOT = { has_country_flag = disabled_heir_events }
 	}
 
@@ -14100,6 +14274,12 @@ country_event = {
 		NOT = { has_country_flag = anti_homunculus_cheese } #Anti homunculus cheese with magical heir
 		NOT = { has_country_flag = command_slave_state_flag } # Hopefully should block brorcs from getting mage rulers
 		# NOT = { has_country_flag = banned_magic } # not sure about this one
+		NOT = { # NSC humans havet ot legalize mages first.
+			AND = {
+				religion = bulwari_sun_cult
+				has_country_flag = nsc_human_country_magic_prohibition
+			}
+		}
 	}
 
 	mean_time_to_happen = {
@@ -14228,5 +14408,26 @@ country_event = {
 		name = magic_ruler.110.a
 		add_ruler_personality = mage_personality
 		country_event = { id = magic_ruler.102 } # set up schools
+	}
+}
+
+
+country_event = {
+	id = magic_ruler.111
+	title = magic_ruler.111.t
+	desc =  magic_ruler.111.d
+	picture = WAR_OF_THE_ROSES_eventPicture
+
+	hidden = yes
+
+	trigger = {
+		has_government_attribute = inherits_magic
+	}
+	# fired from the on_new_monarch on_action
+	is_triggered_only = yes
+
+	option = {
+		name = magic_ruler.111.a
+		ruler_give_saved_spell_schools = yes
 	}
 }

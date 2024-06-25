@@ -136,7 +136,7 @@ coal = {
 }
 
 cloves = {
-	base_price = 6
+	base_price = 8
 }
 
 unknown = {

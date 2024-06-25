@@ -692,6 +692,29 @@ mandatory_service = {
 }
 
 
+professional_diplomatic_corps = {
+	monarch_power = DIP
+	potential = {
+		has_idea_group = diplomatic_ideas
+		has_idea_group = quality_ideas
+	}
+	
+	allow = {
+		full_idea_group = diplomatic_ideas
+		full_idea_group = quality_ideas
+	}
+	
+	diplomatic_reputation = 1
+	war_exhaustion = -0.05
+
+	effect = {}
+	removed_effect = {}
+	ai_will_do = {
+		factor = 0.7
+	}
+
+}
+
 
 
 colonial_companies_act = {
@@ -790,9 +813,8 @@ multilingual_diplomats = {
 		full_idea_group = diplomatic_ideas
 	}	
 	
-	global_trade_goods_size_modifier = 0.1
-	development_cost = -0.1
-	
+	num_accepted_cultures = 1
+	improve_relation_modifier = 0.2
 	
 	effect = {}
 	removed_effect = {}
@@ -1228,7 +1250,7 @@ diplomatic_defence_act = {
 	}
 
 	diplomats = 1
-	infantry_power = 0.075
+	improve_relation_modifier = 0.2
 	
 	effect = {}
 	removed_effect = {}
@@ -1882,8 +1904,7 @@ diplomatic_arms_act = {
 		full_idea_group = diplomatic_ideas 
 	}
 	
-	diplomatic_upkeep = 1
-	global_trade_power = 0.1
+	diplomatic_upkeep = 2
 	
 	effect = {}
 	removed_effect = {}

@@ -1,6 +1,0 @@
-267 = {
-add_province_modifier = { 
-name = adjacent_fort_penalty
-duration = -1
-}
-}

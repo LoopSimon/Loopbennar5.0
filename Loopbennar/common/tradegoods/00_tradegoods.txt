@@ -2242,6 +2242,7 @@ gems = {
 					has_country_flag = H76_increased_gem_chance
 				}
 			}
+			continent = serpentspine
 		}
 	}
 }
@@ -2262,6 +2263,7 @@ coal = {
 			limit = {
 				owner = {
 					NOT = { has_country_flag = earlier_coal_available }
+					NOT = { has_country_flag = even_earlier_coal_available }
 				}
 			}
 			provincial_institution_progress = {
@@ -2270,6 +2272,17 @@ coal = {
 			}
 			owner = { has_institution = enlightenment }
 		}
+		else_if = {
+			limit = { owner = { has_country_flag = even_earlier_coal_available } }
+			provincial_institution_progress = {
+				which = global_trade
+				value = 100
+			}
+			owner = {
+				has_institution = global_trade
+				innovativeness = 50
+			}
+		}
 		else = {
 			provincial_institution_progress = {
 				which = manufactories
@@ -2277,7 +2290,7 @@ coal = {
 			}
 			owner = {
 				has_institution = manufactories
-				adm_tech = 21
+				adm_tech = 23
 			}
 		}
 	}
