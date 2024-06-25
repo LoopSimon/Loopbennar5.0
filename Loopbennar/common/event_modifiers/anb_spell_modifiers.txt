@@ -52,22 +52,15 @@ witch_king_modifier = {	#the witch king event should also give a ruler_flag, so 
 	
 	legitimacy = 1
 	global_unrest = 2
-	stability_cost_modifier = -0.5
-	unjustified_demands = -0.33
 	
 	max_absolutism = 10
 	
 	land_morale = 0.1
 	naval_morale = 0.1
-	discipline = 0.075
+	discipline = 0.05
 	
 	ae_impact = 0.10
-	
-	manpower_recovery_speed = 0.25
-	global_manpower_modifier = 0.25
-	land_forcelimit_modifier = 0.5
-	land_maintenance_modifier = -0.1
-	
+
 	republican_tradition = -1
 
 	yearly_karma_decay = 0.05 #subverts the corinite faith. they are might makes right and cult of personality around them
@@ -142,7 +135,7 @@ magic_realm_abjuration_field_of_freedom = {
 }
 
 magic_realm_abjuration_field_of_forbiddance = {
-	local_hostile_movement_speed = -0.75
+	local_hostile_movement_speed = -0.25
 	local_hostile_attrition = 5
 }
 
@@ -193,13 +186,13 @@ magic_realm_divination_scrying_neighbours = {
 }
 
 magic_realm_divination_scrying_affairs = {
-	all_power_cost = -0.1
+	all_power_cost = -0.05
 
 	diplomatic_reputation = -1
 }
 
 magic_realm_divination_foresight = {
-	all_power_cost = -0.33
+	all_power_cost = -0.2
 	migration_cost = 0.33 # To remove infinite mana migration exploit
 }
 
@@ -283,20 +276,19 @@ magic_realm_enchantment_modify_memories_forget_atrocities = {
 
 magic_realm_evocation_war_magic_1 = {
 	land_morale = 0.05
-	shock_damage = 0.2
+	shock_damage = 0.05
 }
 
 magic_realm_evocation_war_magic_2 = {
-	land_morale = 0.1
-	shock_damage = 0.2
-	fire_damage_received = -0.1
+	land_morale = 0.05
+	shock_damage = 0.1
 }
 	
 
 magic_realm_evocation_war_magic_3 = {
 	land_morale = 0.1
-	shock_damage = 0.3
-	fire_damage_received = -0.2
+	shock_damage = 0.15
+	fire_damage_received = -0.05
 }
 
 #Illusion
