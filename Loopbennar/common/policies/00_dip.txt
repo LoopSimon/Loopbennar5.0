@@ -1250,7 +1250,7 @@ diplomatic_defence_act = {
 	}
 
 	diplomats = 1
-	infantry_power = 0.75
+	infantry_power = 0.075
 	
 	effect = {}
 	removed_effect = {}
