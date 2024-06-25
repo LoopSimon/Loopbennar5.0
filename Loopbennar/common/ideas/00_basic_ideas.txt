@@ -1424,7 +1424,7 @@ quantity_ideas = {
 	category = MIL
 
 	bonus = {
-		land_forcelimit_modifier  = 0.33 #1.35
+		land_forcelimit_modifier  = 0.2 #1.35
 		num_of_pronoiars = 1
 	}
 	mass_army = {
