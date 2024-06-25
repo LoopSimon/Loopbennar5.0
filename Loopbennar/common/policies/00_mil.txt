@@ -413,7 +413,7 @@ pen_rely_on_sword_act = {
 	}
 	
 	diplomatic_reputation = 1
-	land_forcelimit_modifier = 0.1
+	global_regiment_cost = -0.15
 
 	
 	effect = {}
@@ -477,7 +477,7 @@ underhanded_diplomacy_act = {
 		full_idea_group = offensive_ideas
 	}
 	
-	spy_offence = 0.33
+	land_morale = 0.075
 	diplomatic_reputation = 1
 
 	effect = {}
@@ -552,7 +552,7 @@ colonial_garrisons = {
 		full_idea_group = expansion_ideas
 	}
 
-	land_forcelimit_modifier = 0.1
+	global_manpower_modifier = 0.1
 	global_colonial_growth = 10
 
 	effect = {}
@@ -714,7 +714,7 @@ inspirational_leaders = {
 		full_idea_group = humanist_ideas
 		full_idea_group = quantity_ideas
 	}	
-	
+	leader_land_fire = 1
 	leader_land_shock = 1
 	
 	effect = {}
@@ -769,7 +769,7 @@ the_preparation_act = {
 	}	
 	
 	land_attrition = -0.25
-	war_exhaustion = -0.05
+	war_exhaustion = -0.2
 	
 	effect = {}
 	removed_effect = {}
