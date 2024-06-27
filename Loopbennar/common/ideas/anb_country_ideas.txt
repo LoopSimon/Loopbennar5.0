@@ -3728,7 +3728,7 @@ Z36_ideas = {
 		mil_tech_cost_modifier = -0.1
 	}
 	Z36_the_surface_highway = {	#becomes the railway
-		movement_speed = 0.15
+		land_morale = 0.1
 	}
 	Z36_regent_court_tolerance = {
 		tolerance_heretic = 2
@@ -6638,6 +6638,7 @@ I07_ideas = {
 	I07_home_of_balgar = {
 		tolerance_heathen = 2
 		religious_unity = 0.25
+		infantry_power = 0.1
 	}
 	I07_the_many_falls_of_khugdihr = {
 		army_tradition = 0.5
@@ -9965,7 +9966,7 @@ A57_ideas = {
 		garrison_size = 0.1
 	}
 	A57_toarnen_black = {
-		prestige = 1
+		discipline = 0.05
 	}
 	A57_masters_of_chess = {
 		leader_land_manuever = 1
@@ -21754,7 +21755,7 @@ U05_ideas = {
 		trade_efficiency = 0.1
 	}
 	U05_eliznan_sunrise = { #Eliznan sunrise is a special tea found and grown in Elizna exlcusively
-		prestige = 1
+		land_morale = 0.1
 	}
 	U05_jahers_claim = { #Jaher was made heir to Khetarata, but he died too soon. Elizna argues that his claim extended to all sun elves, not just Jaher, and as such they are rightful claimants to Kheterata.
 		imperial_mandate = 0.025
