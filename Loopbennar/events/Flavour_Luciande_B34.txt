@@ -1068,49 +1068,6 @@ country_event = {
 }
 
 #end event
-country_event = {
-	id = flavor_luciande.38
-	title = flavor_luciande.38.t
-	desc = flavor_luciande.38.d
-	picture = BAD_WITH_MONARCH_eventPicture
-	
-	fire_only_once = yes
-	is_triggered_only = yes
-
-	trigger = {
-		tag = B34
-		NOT = { has_country_flag = vampire_ruler_has_coffin }
-		ai = no
-	}
-	
-	option = {
-		name = flavor_luciande.38.a
-		
-		clr_country_flag = B34_lucian
-		hidden_effect = {
-			every_province = {
-				limit = {
-					is_core = B34
-					NOT = { owned_by = B34 }
-				}
-				remove_core = B34
-			}
-			random_neighbor_country = {
-				save_event_target_as = target_country
-				B34 = {
-					every_owned_province = {
-						cede_province = event_target:target_country
-					}
-				}
-				country_event = {
-					id = flavor_luciande.50
-					days = 1
-				}
-			}
-			swap_non_generic_missions = yes			
-		}
-	}
-}
 
 #terror knights merc
 country_event = {
