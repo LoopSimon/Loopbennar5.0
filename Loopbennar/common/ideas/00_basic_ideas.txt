@@ -1767,7 +1767,7 @@ humanist_ideas = {
 		religious_unity = 0.2
 	}
 	benevolence = {
-		stability_cost_modifier -0.2
+		stability_cost_modifier = -0.2
 	}
 	tolerance_idea = { #1.35
 		tolerance_of_heretics_capacity = 1 
