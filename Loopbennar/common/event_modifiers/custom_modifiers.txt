@@ -1,3 +1,6 @@
     nowarsforyou = {
         can_not_declare_war = yes
+		can_not_build_colonies = yes
+		diplomats = 0
+		diplomatic_reputation = -8
     }
