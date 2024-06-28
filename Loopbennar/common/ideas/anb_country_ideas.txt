@@ -20107,7 +20107,7 @@ A31_ideas = {
 		range = 0.25
 	}
 	A31_silverwoods = { #Moonhaven is located in Silverwoods, a forest in eastern Dameshead. Having access to its rich supply of wood allows Moonhaveners to build new ships easier and cheaper
-		global_ship_cost = -0.10
+		land_morale = 0.10
 	}
 	A31_cannorian_homeland = { #Moonhaveners consider themselves fully Cannorian, being satisfied with their current position in the empire. As they recently became the last autonomous elven region in Anbennar the population became more willing to defend their homeland till the last man
 		defensiveness = 0.20
