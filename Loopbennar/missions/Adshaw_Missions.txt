@@ -1721,6 +1721,10 @@ adshaw_3_missions_s = {
 				name = adshaw_return_of_the_king_m
 				duration = 18250
 			}
+			add_country_modifier = {
+				name = Z26_saviors_of_the_vroren
+				duration = -1
+			}
 			western_alenic_reach = {
 				limit = {
 					NOT = { is_core = ROOT }
@@ -2709,11 +2713,6 @@ adshaw_4_missions_m = {
 				set_government_rank = 1
 			}
 			add_prestige = 20
-			effect = {
-			add_country_modifier = {
-				name = Z26_saviors_of_the_vroren
-				duration = -1
-			}
 			custom_tooltip = adshaw_gawed_burns
 			hidden_effect = {
 				every_owned_province = {
@@ -3677,6 +3676,7 @@ adshaw_5_missions_mcd = {
 			}
 		}
 		
+		effect = {
 			add_prestige = 20
 			vrorenmarch_area = {
 				change_culture = white_reachman
