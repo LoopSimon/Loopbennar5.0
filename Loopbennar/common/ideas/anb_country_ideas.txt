@@ -22739,6 +22739,7 @@ Y85_ideas = {
 		legitimacy = 0.5
 		republican_tradition = 0.15
 		horde_unity = 0.5
+		morale_damage = 0.10
 	}
 	Y85_dragon_dances = { #Martial arts duels help keep soldiers ready for combat situations
 		army_tradition_decay = -0.01
