@@ -1760,7 +1760,7 @@ humanist_ideas = {
 	}
 	cultural_ties = {
 		num_accepted_cultures = 2
-		advisor_cost = 0.1
+		advisor_cost = -0.1
 	}
 	humanist_tolerance = { #1.35
 		tolerance_heathen = 2
