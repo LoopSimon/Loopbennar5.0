@@ -85,7 +85,6 @@ gor_burad_fireglass_forge = {
 				limit = {
 					AND = {
 						NOT = { trade_goods = glass }
-						NOT = { trade_goods = gold }
 						NOT = { trade_goods = mithril }
 						NOT = { trade_goods = damestear }
 						NOT = { trade_goods = precursor_relics }
