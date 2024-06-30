@@ -15408,7 +15408,7 @@ H75_ideas = {
 		defensiveness = 0.2
 	}
 	H75_idea_4 = {
-		movement_speed = 0.2
+		land_morale = 0.1
 	}
 	H75_idea_5 = {
 		technology_cost = -0.05
