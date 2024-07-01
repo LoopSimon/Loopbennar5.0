@@ -14,7 +14,7 @@ province_event = {
 	
 	trigger = {
 		has_global_flag = new_world_discovered
-		#is_year = 1500
+		is_year = 1800
 		NOT = { has_global_flag = delete_north_aelantir_region }
 		bloodgroves_region = {
 			is_empty = yes
@@ -135,7 +135,7 @@ province_event = {
 	
 	trigger = {
 		has_global_flag = new_world_discovered
-		#is_year = 1500
+		is_year = 1800
 		NOT = { has_global_flag = delete_north_aelantir_region }
 		reapers_coast_region = {
 			is_empty = yes
@@ -303,7 +303,7 @@ province_event = {
 	
 	trigger = {
 		has_global_flag = new_world_discovered
-		current_age = age_of_reformation
+		is_year = 1800
 		NOT = { has_global_flag = delete_north_aelantir_region }
 		OR = {
 			epednan_expanse_region = {
@@ -748,7 +748,7 @@ country_event = {
 		}
 		is_subject = no
 		has_global_flag = new_world_discovered
-		is_year = 1520
+		is_year = 1800
 		NOT = { has_global_flag = delete_north_aelantir_region }
 		forest_of_the_cursed_ones_region = {
 			is_empty = yes
@@ -914,7 +914,7 @@ province_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		has_global_flag = new_world_discovered
+		is_year = 1800
 		current_age = age_of_reformation
 		NOT = { has_global_flag = delete_north_aelantir_region }
 		epednan_expanse_region = {
@@ -1032,7 +1032,7 @@ province_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		has_global_flag = new_world_discovered
+		is_year = 1800
 		current_age = age_of_reformation
 		NOT = { has_global_flag = delete_north_aelantir_region }
 		# OR = {
@@ -1176,7 +1176,7 @@ province_event = {
 
 #Havoral Band - Ynn east
 province_event = {
-	id = adventurerspawnables.9
+	is_year = 1800
 	title = adventurerspawnables.9.t
 	desc = adventurerspawnables.9.d
 	picture = CARIBBEAN_PIRATE_FORT_eventPicture
@@ -1349,7 +1349,7 @@ province_event = {
 	
 	trigger = {
 		has_global_flag = new_world_discovered
-		current_age = age_of_reformation
+		is_year = 1800
 		is_religion_enabled = corinite
 		NOT = { has_global_flag = delete_north_aelantir_region }
 		OR = {
@@ -1493,7 +1493,7 @@ province_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		has_global_flag = new_world_discovered
+		is_year = 1800
 		current_age = age_of_reformation
 		NOT = { has_global_flag = delete_north_aelantir_region }
 		OR = {
@@ -1642,7 +1642,7 @@ province_event = {
 	
 	trigger = {
 		#religion = corinite
-		has_global_flag = new_world_discovered
+		is_year = 1800
 		current_age = age_of_reformation
 		is_religion_enabled = corinite
 		NOT = { has_global_flag = delete_south_aelantir_region }
@@ -1767,7 +1767,7 @@ province_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		has_global_flag = new_world_discovered
+		is_year = 1800
 		current_age = age_of_reformation
 		NOT = { has_global_flag = delete_north_aelantir_region }
 		epednan_expanse_region = {
@@ -1907,7 +1907,7 @@ province_event = {
 	
 	trigger = {
 		has_global_flag = new_world_discovered
-		#is_year = 1500
+		is_year = 1800
 		NOT = { has_global_flag = delete_south_aelantir_region }
 		dry_coast_region = {
 			is_empty = yes
@@ -2070,7 +2070,7 @@ province_event = {
 		NOT = { has_global_flag = delete_south_aelantir_region }
 		NOT = { exists = U67 }
 		NOT = { exists = U68 }
-		#is_year = 1500
+		is_year = 1800
 		east_effelai_region = {
 			is_empty = yes
 			
