@@ -15023,7 +15023,7 @@ G95_ideas = {
 		global_supply_limit_modifier = 0.25
 	}
 	bonus = {
-		global_regiment_cost = -0.1
+		artillery_power = 0.1
 	}
 
 	trigger = {
@@ -15039,14 +15039,14 @@ G95_ideas = {
 		global_unrest = -1.5
 	}
 	G95_marlliander_hospitality = { #Marllianders are known for being charismatic and unaturally enrapturing
-		diplomatic_reputation = 1
+		land_morale = 0.1 
 	}
 	G95_regent_belt = { #Fervent supporters of Adean
 		tolerance_own = 2
 		global_missionary_strength = 0.01
 	}
 	G95_uelos_route = { #Trade route bringing indentured servants and orc slaves to Marlliande while sending back crops and exotics to Cannor
-		global_trade_power = 0.1
+		global_trade_power = 0.15
 	}
 	G95_great_plantations = { #Marlliande is dotted with massive and opulent plantation houses and farms
 		global_trade_goods_size_modifier = 0.1
@@ -15133,7 +15133,7 @@ G91_ideas = {
 		global_tax_modifier = 0.1
 	}
 	G91_the_commissioners_act_of_1780 = {
-		build_time = -0.15
+		land_morale = 0.05
 	}
 }
 
