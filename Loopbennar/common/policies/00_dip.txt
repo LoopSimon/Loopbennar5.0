@@ -1249,8 +1249,9 @@ diplomatic_defence_act = {
 		full_idea_group = defensive_ideas
 	}
 
-	diplomats = 1
-	infantry_power = 0.075
+	state_maintenance_modifier = -0.1
+	global_regiment_cost = -0.05
+	fort_maintenance_modifier = -0.15
 	
 	effect = {}
 	removed_effect = {}
