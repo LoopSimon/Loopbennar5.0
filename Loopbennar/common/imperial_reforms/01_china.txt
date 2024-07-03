@@ -40,7 +40,6 @@ lessons_aakhet_reform = {
 			limit = { NOT = { empire_of_china_reform_passed = establish_ahati_reform } }
 			empire_of_china_reform_passed = establish_ahati_reform
 		}
-		religion_group = khetist
 		if = {
 			limit = { ai = yes }
 			ai_mandate_reform_reqs = yes
@@ -382,7 +381,6 @@ starfall_reform = {
 empower_priesthood_reform = {
 	empire = celestial_empire
 	trigger = {
-		religion_group = khetist
 		if = {
 			limit = { ai = yes }
 			ai_mandate_reform_reqs = yes
@@ -652,7 +650,6 @@ build_pyramid_reform = {
 			has_dlc = "Leviathan"
 		}
 		is_at_war = no
-		religion_group = khetist
 		475 = {
 			owned_by = ROOT
 			NOT = { has_construction = any }
