@@ -975,7 +975,7 @@ the_liberation_act = {
 	}	
 	
 	state_maintenance_modifier = -0.15 
-	years_of_nationalism = -5
+	global_regiment_cost = -0.1
 	
 	effect = {}
 	removed_effect = {}

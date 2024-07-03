@@ -477,7 +477,7 @@ underhanded_diplomacy_act = {
 		full_idea_group = offensive_ideas
 	}
 	
-	land_morale = 0.075
+	land_morale = 0.05
 	diplomatic_reputation = 1
 
 	effect = {}
