@@ -1824,12 +1824,6 @@ feiten_missions_3_early = {
 		trigger = {
 			republican_tradition = 95
 			stability = 1
-			1372 = { # Tianlou
-				trade_share = {
-					country = ROOT
-					share = 20
-				}
-			}
 		}
 		
 		effect = {
