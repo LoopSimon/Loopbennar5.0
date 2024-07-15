@@ -2062,7 +2062,7 @@ feiten_missions_3_established = {
 		provinces_to_highlight = {
 			OR = {
 				AND = {
-					province_id = 1371
+					province_id = 1448
 					NOT = {
 						trade_share = {
 							country = ROOT
@@ -2071,7 +2071,7 @@ feiten_missions_3_established = {
 					}
 				}
 				AND = {
-					province_id = 4879
+					province_id = 6052
 					NOT = { light_ships_in_province = 1 }
 				}
 			}
@@ -3250,16 +3250,9 @@ feiten_missions_4_established = {
 			}
 			else = {
 				custom_trigger_tooltip = { tooltip = feiten_house_of_fire_and_water_trigger_tt_2 }
-				luoyip_area = {
-					type = all
-					is_core = ROOT
-				}
 				4949 = {
 					has_tax_building_trigger = yes
 				}
-			}
-			4879 = {
-				NOT = { has_construction = building }
 			}
 		}
 		
@@ -3295,10 +3288,6 @@ feiten_missions_4_established = {
 		
 		trigger = {
 			treasury = 400
-			if = {
-				limit = { has_estate = estate_mages }
-				4879 = { has_building = mage_tower }
-			}
 		}
 		
 		effect = {
