@@ -3257,7 +3257,7 @@ feiten_missions_4_established = {
 		}
 		
 		effect = {
-			4879 = {
+			6052 = {
 				add_building_construction = {
 					building = university
 					speed = 0.5
