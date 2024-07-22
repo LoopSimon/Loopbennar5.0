@@ -19,15 +19,21 @@ elikhet_pyramid = {
 	on_destroyed = {}
 	keep_trigger = { always = yes }
 
-	can_use_modifiers_trigger = {
-		owner = { 
+	can_use_modifiers_trigger = { 
+		AND = { 
+			owner = { 
 			is_emperor_of_china = yes
+			
+			}
 			religion_group = khetist
 		}
 	}
 	can_upgrade_trigger = { 
-		owner = { 
+		AND = { 
+			owner = { 
 			is_emperor_of_china = yes
+			
+			}
 			religion_group = khetist
 		}
 	}
