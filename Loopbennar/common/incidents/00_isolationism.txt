@@ -636,38 +636,7 @@ incident_aelantir_7_placeholder = {
 }
 
 #UI spot 8
-incident_rise_of_artificery = {
 
-	frame = 20
-	variable_initial = 0
-
-	potential = {
-		has_dlc = "Mandate of Heaven"
-		religion = bulwari_sun_cult
-		is_chosen_country = yes
-	}
-
-	trigger = {
-		has_institution = manufactories
-		is_incident_active = no
-		custom_trigger_tooltip = {
-			tooltip = nsc_5_years_since_last_incident_tt
-			OR = {
-				NOT = { has_country_flag = had_nsc_incident_flag }
-				had_country_flag = { flag = had_nsc_incident_flag days = 1825 }
-			}
-		}
-	}
-
-	mean_time_to_happen = {
-		months = 6
-	}
-
-	immediate_effect = {
-		country_event = { id = new_sun_cult.195 }
-		set_country_flag = active_nsc_incident_flag
-	}
-}
 
 incident_spread_of_ravelianism = {
 
