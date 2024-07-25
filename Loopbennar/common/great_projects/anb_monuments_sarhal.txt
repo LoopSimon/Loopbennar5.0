@@ -22,13 +22,11 @@ elikhet_pyramid = {
 	can_use_modifiers_trigger = {
 		owner = { 
 			is_emperor_of_china = yes
-			religion_group = khetist
 		}
 	}
 	can_upgrade_trigger = { 
 		owner = { 
 			is_emperor_of_china = yes
-			religion_group = khetist
 		}
 	}
 
