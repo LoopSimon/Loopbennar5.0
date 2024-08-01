@@ -529,11 +529,11 @@ feiten_missions_1_world = {
 						}
 						total_development = 150
 						NOT = { liberty_desire = 25 }
-					}
-					capital_scope = {
-						OR = {
-							continent = south_america
-							continent = north_america
+						capital_scope = {
+							OR = {
+								continent = south_america
+								continent = north_america
+							}
 						}
 					}
 				}
@@ -1824,6 +1824,12 @@ feiten_missions_3_early = {
 		trigger = {
 			republican_tradition = 95
 			stability = 1
+			1372 = { # Tianlou
+				trade_share = {
+					country = ROOT
+					share = 20
+				}
+			}
 		}
 		
 		effect = {
@@ -2062,7 +2068,7 @@ feiten_missions_3_established = {
 		provinces_to_highlight = {
 			OR = {
 				AND = {
-					province_id = 1448
+					province_id = 1371
 					NOT = {
 						trade_share = {
 							country = ROOT
@@ -2071,7 +2077,7 @@ feiten_missions_3_established = {
 					}
 				}
 				AND = {
-					province_id = 6052
+					province_id = 4879
 					NOT = { light_ships_in_province = 1 }
 				}
 			}
@@ -3250,14 +3256,21 @@ feiten_missions_4_established = {
 			}
 			else = {
 				custom_trigger_tooltip = { tooltip = feiten_house_of_fire_and_water_trigger_tt_2 }
+				luoyip_area = {
+					type = all
+					is_core = ROOT
+				}
 				4949 = {
 					has_tax_building_trigger = yes
 				}
 			}
+			4879 = {
+				NOT = { has_construction = building }
+			}
 		}
 		
 		effect = {
-			6052 = {
+			4879 = {
 				add_building_construction = {
 					building = university
 					speed = 0.5
@@ -3288,6 +3301,10 @@ feiten_missions_4_established = {
 		
 		trigger = {
 			treasury = 400
+			if = {
+				limit = { has_estate = estate_mages }
+				4879 = { has_building = mage_tower }
+			}
 		}
 		
 		effect = {
@@ -3425,7 +3442,7 @@ feiten_missions_4_world = {
 					AND = {
 						num_of_heavy_ship = 30
 						variable_arithmetic_trigger = {
-							export_to_variable = { which = heavyCount value = 0 }
+							export_to_variable = { which = heavyCount value = trigger_value:always }
 							northern_sea_region = {
 								type = all
 								if = {
@@ -3442,7 +3459,7 @@ feiten_missions_4_world = {
 					AND = {
 						num_of_light_ship = 30
 						variable_arithmetic_trigger = {
-							export_to_variable = { which = lightShipCount value = 0 }
+							export_to_variable = { which = lightShipCount value = trigger_value:always }
 							northern_sea_region = {
 								type = all
 								if = {

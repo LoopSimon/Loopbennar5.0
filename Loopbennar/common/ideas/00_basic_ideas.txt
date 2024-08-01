@@ -591,18 +591,16 @@ diplomatic_ideas = {
 	category = DIP
 	bonus = {
 		reduced_stab_impacts = yes
-		free_policy = 1
 	}
 	
 	grand_banquets = {
 		diplomats = 1
 	}
 	foreign_embassies = { #1.35
-		advisor_cost = -0.1
+		dip_advisor_cost = -0.25
 	}
 	cabinet = {
 		diplomatic_upkeep = 1
-		all_estate_loyalty_equilibrium = 0.1
 	}
 	benign_diplomats = {
 		improve_relation_modifier = 0.25
@@ -1424,7 +1422,7 @@ quantity_ideas = {
 	category = MIL
 
 	bonus = {
-		land_forcelimit_modifier  = 0.2 #1.35
+		land_forcelimit_modifier  = 0.33 #1.35
 		num_of_pronoiars = 1
 	}
 	mass_army = {
@@ -1547,19 +1545,6 @@ expansion_ideas = {
 			}
 		}
 		modifier = {
-			factor = 10	#Boys who wanna settle the Dreadmire and in the future, the Serpentspine
-			OR = {
-				any_owned_province = {
-					OR = {
-						region = ourdia_region
-						region = dostanor_region
-						region = the_borders_region
-					}
-					has_empty_adjacent_province = yes
-				}
-			}
-		}
-		modifier = {
 			factor = 0	#Serpentspine starts alread get colonists
 			capital_scope = {
 				continent = serpentspine
@@ -1636,9 +1621,20 @@ expansion_ideas = {
 			factor = 0
 			NOT = { has_idea_group = exploration_ideas }
 			NOT = { is_colonial_nation = yes }
-			NOT = {
-				any_owned_province = {
-					has_empty_adjacent_province = yes
+			OR = {
+				NOT = {
+					any_owned_province = {
+						has_empty_adjacent_province = yes
+					}
+				}
+				AND = {
+					capital_scope = {
+						OR = {
+							superregion = western_cannor_superregion
+							superregion = escann_superregion
+						}
+					}
+					NOT = { is_year = 1500 }
 				}
 			}
 		}
@@ -1753,21 +1749,19 @@ humanist_ideas = {
 	}
 	indirect_rule = {
 		years_of_nationalism = -10
-		core_creation = -0.15
 	}
 	ecumenism = { #1.35
 		tolerance_heretic = 2
 	}
 	cultural_ties = {
 		num_accepted_cultures = 2
-		advisor_cost = -0.1
 	}
 	humanist_tolerance = { #1.35
 		tolerance_heathen = 2
 		religious_unity = 0.2
 	}
 	benevolence = {
-		stability_cost_modifier = -0.2
+		improve_relation_modifier = 0.3
 	}
 	tolerance_idea = { #1.35
 		tolerance_of_heretics_capacity = 1 
@@ -2021,22 +2015,24 @@ mercenary_ideas = { #1.35
 	}
 	war_council = {
 		mil_advisor_cost = -0.25
+		merc_independent_from_trade_range = yes
 	}
 	expanded_contracts = {
-		merc_maintenance_modifier = -0.1
+		merc_maintenance_modifier = -0.25
 	}
 	nation_of_war = {
 		mil_tech_cost_modifier = -0.1
 	}
 	benefits_for_mercenaries = {
 		war_taxes_cost_modifier = -0.5
-		merc_leader_army_tradition = 0.25
+		merc_leader_army_tradition = 0.5
 	}
 	seasoned_veterans = {
 		infantry_power = 0.1
 	}
 	organised_mercenary_recruitment = { 
-		mercenary_manpower = 0.15
+		mercenary_manpower = 0.3
+		allow_mercenary_drill = yes
 		#Anbennar
 		effect = { increase_legitimacy_equivalent_absolutism_from_idea_groups_mod = yes }
 		removed_effect = { decrease_legitimacy_equivalent_absolutism_from_idea_groups_mod = yes }
