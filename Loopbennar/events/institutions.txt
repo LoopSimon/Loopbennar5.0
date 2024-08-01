@@ -815,6 +815,7 @@ country_event = {
 	immediate = {
 		hidden_effect = {
 			from = { save_event_target_as = institution_origin }
+			set_country_flag = earlier_coal_available
 		}
 	}
 
@@ -883,7 +884,11 @@ country_event = {
 	mean_time_to_happen = {
 		days = 1
 	}
-
+		immediate = {
+		hidden_effect = {
+			set_country_flag = earlier_coal_available
+		}
+	}
 	option = {
 		name = institution_events.6.a
 		custom_tooltip = institution_events.6.a.tt
