@@ -4947,60 +4947,7 @@ country_event = {
 	}
 
 	#3 - Dominate to Surrender
-	option = {
-		name = magic_ruler.4.m	#available
-		trigger = {
-			has_ruler_flag = enchantment_3
-			is_at_war = yes
-			is_lesser_in_union = no
-			any_army = {
-				location = {
-					fort_level = 1
-					sieged_by = ROOT
-					unit_has_leader = yes
-				}
-			}
-			NOT = { has_ruler_modifier = magic_siege_cooldown }
-		}
-		ai_chance = {
-			factor = 50
-			modifier = {
-				factor = 0
-				OR = {
-					NOT = { adm_power = 20 }
-					NOT = { dip_power = 20 }
-				}
-			}
-		}
 
-		random_province = {
-			limit = {
-				fort_level = 1
-				sieged_by = ROOT
-				unit_has_leader = yes
-				num_of_units_in_province = {
-					who = ROOT
-					amount = 1
-				}
-			}
-			hidden_effect = {
-				save_event_target_as = spell_target_province	#this works yo
-			}
-		}
-		country_event = { id = magic_siege.5 }
-		if = {
-			limit = { has_ruler_flag = baku_patron }
-			custom_tooltip = magic_booster_by_patron_tt
-		}
-		custom_tooltip = magic_if_siege_magic_succeeds_tt
-		tooltip = {
-			add_province_modifier = {
-				name = siege_magic_instant_siege
-				duration = 3
-			}
-		}
-		custom_tooltip = magic_dominate_desc_tt
-	}
 	option = {
 		name = magic_ruler.4.mm	#unavailable - low mastery
 		trigger = {
@@ -9541,66 +9488,7 @@ country_event = {
 	}
 
 	#2 - Shapechange into a Giant
-	option = {
-		name = magic_ruler.8.f	#available
-		trigger = {
-			has_ruler_flag = transmutation_2
-			is_at_war = yes
-			is_lesser_in_union = no
-			any_army = {
-				location = {
-					fort_level = 1
-					sieged_by = ROOT
-					unit_has_leader = yes
-				}
-			}
-			NOT = { has_ruler_modifier = magic_siege_cooldown }
-		}
-		ai_chance = {
-			factor = 50
-			modifier = {
-				factor = 0
-				current_age = age_of_revolutions
-			}
-		}
-
-		random_province = {
-			limit = {
-				fort_level = 1
-				sieged_by = ROOT
-				unit_has_leader = yes
-				num_of_units_in_province = {
-					who = ROOT
-					amount = 1
-				}
-			}
-			hidden_effect = {
-				save_event_target_as = spell_target_province	#this works yo
-			}
-		}
-		country_event = { id = magic_siege.20 }
-		custom_tooltip = magic_if_siege_magic_succeeds_tt
-		random_list = {
-			30 = {
-				tooltip = {
-					add_province_modifier = {
-						name = siege_magic_instant_siege
-						duration = 3
-					}
-					add_devastation = 5
-				}
-			}
-			70 = {
-				tooltip = {
-					add_province_modifier = {
-						name = siege_magic_giant_besieger
-						duration = 14
-					}
-				}
-			}
-		}
-		custom_tooltip = magic_giant_desc_tt
-	}
+	
 	option = {
 		name = magic_ruler.8.fm	#unavailable - low mastery
 		trigger = {
@@ -10343,62 +10231,7 @@ country_event = {
 	}
 
 	#3 - Shapechange into a Dragon
-	option = {
-		name = magic_ruler.8.j	#available
-		trigger = {
-			has_ruler_flag = transmutation_3
-			is_at_war = yes
-			is_lesser_in_union = no
-			any_army = {
-				location = {
-					fort_level = 1
-					sieged_by = ROOT
-					unit_has_leader = yes
-				}
-			}
-			NOT = { has_ruler_modifier = magic_siege_cooldown }
-		}
-		ai_chance = {
-			factor = 50
-		}
-
-		random_province = {
-			limit = {
-				fort_level = 1
-				sieged_by = ROOT
-				unit_has_leader = yes
-				num_of_units_in_province = {
-					who = ROOT
-					amount = 1
-				}
-			}
-			hidden_effect = {
-				save_event_target_as = spell_target_province	#this works yo
-			}
-		}
-		country_event = { id = magic_siege.23 }
-		custom_tooltip = magic_if_siege_magic_succeeds_tt
-		random_list = {
-			30 = {
-				tooltip = {
-					add_province_modifier = {
-						name = siege_magic_instant_siege
-						duration = 3
-					}
-					add_devastation = 10
-				}
-			}
-			70 = {
-				tooltip = {
-					add_province_modifier = {
-						name = siege_magic_dragon_besieger
-						duration = 14
-					}
-				}
-			}
-		}
-		custom_tooltip = magic_dragon_desc_tt
-	}
+	
 	option = {
 		name = magic_ruler.8.jm	#unavailable - low mastery
 		trigger = {
