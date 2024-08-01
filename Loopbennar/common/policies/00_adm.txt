@@ -1082,7 +1082,7 @@ harbour_administration = {
 	}
 
 	embracement_cost = -0.2
-	global_ship_recruit_speed = -0.1
+	build_cost = -0.1
 	
 	effect = {}
 	removed_effect = {}
