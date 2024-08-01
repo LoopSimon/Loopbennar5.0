@@ -1,0 +1,164 @@
+####################
+#Forlorn Vale
+####################
+#Temple of Munas (Ibevar)
+ibevar_temple_of_munas = {
+	start = 352
+	date = 01.01.01
+	time = {
+		months = 0
+	}
+	build_cost = 0
+	can_be_moved = no
+	move_days_per_unit_distance = 1
+	starting_tier = 0
+	type = monument
+	build_trigger = {	
+	}
+	on_built = {		
+	}
+	on_destroyed = {	
+	}
+	can_use_modifiers_trigger = {
+		has_owner_religion = yes
+			OR = {
+				religion = regent_court
+				religion = elven_forebears
+			}
+		AND = {
+			custom_trigger_tooltip = {
+				tooltip = cannorian_monuments_can_use_tooltip_empire_of_anbennar
+					OR = {
+						culture_group = anbennarian
+						culture = imperial_halfling
+						culture = imperial_gnome
+						culture = moon_elf
+						culture = silver_dwarf
+						culture = wexonard
+						culture = vertesker
+						culture = roilsardi
+						culture = castanorian
+					}
+			}
+			province_is_or_accepts_culture = yes
+		}
+	}
+	can_upgrade_trigger = {
+		has_owner_religion = yes
+			OR = {
+				religion = regent_court
+				religion = elven_forebears
+			}
+		AND = {
+			custom_trigger_tooltip = {
+				tooltip = cannorian_monuments_can_use_tooltip_empire_of_anbennar
+					OR = {
+						culture_group = anbennarian
+						culture = imperial_halfling
+						culture = imperial_gnome
+						culture = moon_elf
+						culture = silver_dwarf
+						culture = wexonard
+						culture = vertesker
+						culture = roilsardi
+						culture = castanorian
+					}
+			}
+			province_is_or_accepts_culture = yes
+		}
+	}	
+	keep_trigger = {
+	}
+	tier_0 = {
+		upgrade_time = {
+			months = 0
+		}
+		cost_to_upgrade = {
+			factor = 0
+		}
+		province_modifiers = {
+		}
+		area_modifier = {
+		}
+		country_modifiers = {	
+		}
+		on_upgraded = {
+		}
+	}
+	tier_1 = {
+		upgrade_time = {
+			months = 120
+		}
+		cost_to_upgrade = {
+			factor = 1000
+		}
+		province_modifiers = {
+			local_development_cost = -0.05
+		}
+		area_modifier = {
+			local_unrest = -1
+			local_tax_modifier = 0.1
+		}
+		country_modifiers = {
+			religious_unity = 0.05
+			tolerance_own = 0.25
+		}
+		on_upgraded = {
+		}
+	}
+	tier_2 = {
+		upgrade_time = {
+			months = 240
+		}
+		cost_to_upgrade = {
+			factor = 2500
+		}
+		province_modifiers = {
+			local_development_cost = -0.1
+		}
+		area_modifier = {
+			local_unrest = -3
+			local_tax_modifier = 0.2
+		}
+		country_modifiers = {
+			religious_unity = 0.1
+			tolerance_own = 0.5
+			tolerance_heathen = 0.5
+		}
+		on_upgraded = {
+			add_permanent_province_modifier = {
+			name = religious_center
+			duration = -1
+			}
+		}
+	}
+	tier_3 = {
+		upgrade_time = {
+			months = 480
+		}
+		cost_to_upgrade = {
+			factor = 5000
+		}
+		province_modifiers = {
+			local_development_cost = -0.15
+		}
+		area_modifier = {
+			local_unrest = -5
+			local_tax_modifier = 0.33
+		}
+		country_modifiers = {
+			religious_unity = 0.15
+			tolerance_own = 1
+			tolerance_heathen = 1
+			tolerance_of_heathens_capacity = 1
+		}
+		on_upgraded = {
+			owner = {
+				add_country_modifier = {
+					name = ibevar_temple_of_munas_boon
+					duration = 7300
+				}
+			}
+		}
+	}
+}
