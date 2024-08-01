@@ -109,7 +109,7 @@ temple = {
 	cost = 100
 	time = 12
 	modifier = {
-		local_tax_modifier = 0.4
+		local_tax_modifier = 0.5
 	}
 	on_built = {
 		on_built_tax_building_effect = yes
@@ -754,7 +754,7 @@ regimental_camp = {
 	cost = 200
 	time = 12
 	modifier = {
-		land_forcelimit = 1
+		land_forcelimit = 0.5
 	}
 
 #	# THIS = Province, FROM = Builder(not nessecairly owner, can be overlord)
@@ -1843,7 +1843,7 @@ conscription_center = {
 #	}
 
 	modifier = {
-		land_forcelimit = 2
+		land_forcelimit = 1
 	}
 	on_built = {
 		add_development_from_upgrading_or_building = {
@@ -2036,7 +2036,7 @@ manufactory = {
 	cost = 500
 	time = 60
 	modifier = {
-		trade_goods_size = 1.0
+		trade_goods_size = 0.75
 	}
 }
 
