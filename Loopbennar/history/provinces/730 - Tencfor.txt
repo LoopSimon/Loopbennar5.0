@@ -21,3 +21,5 @@ native_hostileness = 10
 latent_trade_goods = {
 	coal
 }
+
+set_province_flag = escann_fur_province

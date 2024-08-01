@@ -21,7 +21,7 @@ native_size = 36
 native_ferocity = 5
 native_hostileness = 10
 
-
+set_province_flag = escann_fur_province
 
 
 
