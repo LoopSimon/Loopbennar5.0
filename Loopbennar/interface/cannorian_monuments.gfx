@@ -1,0 +1,324 @@
+spriteTypes = {
+
+####################
+#Event Pictures
+####################
+
+	spriteType = {
+		name = "HAMMERHOME_ARTIFICERS_eventPicture"
+		texturefile = "gfx/event_pictures/HAMMERHOME_ARTIFICERS_eventPicture.dds"
+	}
+
+	spriteType = {
+		name = "NIMSCODD_ARTIFICERS_eventPicture"
+		texturefile = "gfx/event_pictures/NIMSCODD_ARTIFICERS_eventPicture.dds"
+	}
+	
+	spriteType = {
+		name = "GIBERD_ARTIFICERS_eventPicture"
+		texturefile = "gfx/event_pictures/GIBERD_ARTIFICERS_eventPicture.dds"
+	}
+
+
+####################
+#Alenic Frontier
+####################
+
+spriteType = {
+        name = "GFX_great_project_freecestir_mustering_grounds"	
+        texturefile = "gfx//interface//great_projects//great_project_freecestir_mustering_grounds.dds"
+    }
+
+spriteType = {
+        name = "GFX_great_project_gawed_castle_gaweton"	
+        texturefile = "gfx//interface//great_projects//great_project_gawed_castle_gaweton.dds"
+    }
+
+####################
+#Alenic Reach
+####################
+
+spriteType = {
+        name = "GFX_great_project_bayvic_grandest_city_of_the_reach"	
+        texturefile = "gfx//interface//great_projects//great_project_bayvic_grandest_city_of_the_reach.dds"
+    }
+
+spriteType = {
+        name = "GFX_great_project_celmaldor_icewind_palace_of_commerce"	
+        texturefile = "gfx//interface//great_projects//great_project_celmaldor_icewind_palace_of_commerce.dds"
+    }
+
+####################
+#Businor
+####################
+
+spriteType = {
+        name = "GFX_great_project_eborthil_toref_citadel"	
+        texturefile = "gfx//interface//great_projects//great_project_eborthil_toref_citadel.dds"
+    }
+
+####################
+#Dalr
+####################
+
+spriteType = {
+        name = "GFX_great_project_bjarnrik_staple_port_of_konungrhavn"	
+        texturefile = "gfx//interface//great_projects//great_project_bjarnrik_staple_port_of_konungrhavn.dds"
+    }
+
+####################
+#Damescrown
+####################
+
+spriteType = {
+        name = "GFX_great_project_damescrown_grand_exchange"	
+        texturefile = "gfx//interface//great_projects//great_project_damescrown_grand_exchange.dds"
+    }
+
+spriteType = {
+        name = "GFX_great_project_beepeck_the_largest_small_city"	
+        texturefile = "gfx//interface//great_projects//great_project_beepeck_the_largest_small_city.dds"
+    }
+
+spriteType = {
+        name = "GFX_great_project_ara_temple"	
+        texturefile = "gfx//interface//great_projects//great_project_ara_temple.dds"
+    }
+
+####################
+#Daravan's Folly
+####################
+
+spriteType = {
+        name = "GFX_great_project_nathalaire_city_of_pirates"	
+        texturefile = "gfx//interface//great_projects//great_project_nathalaire_city_of_pirates.dds"
+    }
+
+####################
+#Dragon Coast
+####################
+
+spriteType = {
+		name = "GFX_great_project_nimscodd_academy"
+		texturefile = "gfx//interface//great_projects//great_project_nimscodd_academy.dds"
+	}
+
+spriteType = {
+        name = "GFX_great_project_portnamm_portroy_merchants_guild"	
+        texturefile = "gfx//interface//great_projects//great_project_portnamm_portroy_merchants_guild.dds"
+    }
+
+spriteType = {
+        name = "GFX_great_project_kobildzan_kobildzex_guild_of_trapsmiths"	
+        texturefile = "gfx//interface//great_projects//great_project_kobildzan_kobildzex_guild_of_trapsmiths.dds"
+    }
+
+spriteType = {
+        name = "GFX_great_project_the_dragonhoard"	
+        texturefile = "gfx//interface//great_projects//great_project_the_dragonhoard.dds"
+    }
+####################
+#East Dameshead
+####################
+
+spriteType = {
+        name = "GFX_great_project_anbenncost_imperial_palace"	
+        texturefile = "gfx//interface//great_projects//great_project_anbenncost_imperial_palace.dds"
+    }
+
+spriteType = {
+        name = "GFX_great_project_moonhaven_port_munas"	
+        texturefile = "gfx//interface//great_projects//great_project_moonhaven_port_munas.dds"
+    }
+
+spriteType = {
+        name = "GFX_great_project_silvelar_silver_spires"	
+        texturefile = "gfx//interface//great_projects//great_project_silvelar_silver_spires.dds"
+    }
+
+spriteType = {
+        name = "GFX_great_project_menibor_hall_of_the_gallant"	
+        texturefile = "gfx//interface//great_projects//great_project_menibor_hall_of_the_gallant.dds"
+    }
+
+spriteType = {
+        name = "GFX_great_project_damish_temple_moonmount_library"	
+        texturefile = "gfx//interface//great_projects//great_project_damish_temple_moonmount_library.dds"
+    }
+
+spriteType = {
+        name = "GFX_great_project_damish_temple_temple_of_the_highest_moon"	
+        texturefile = "gfx//interface//great_projects//great_project_damish_temple_temple_of_the_highest_moon.dds"
+    }
+
+####################
+#Esmaria
+####################
+
+	spriteType = {
+        name = "GFX_great_project_telgeir_vanbury_steel_foundry"	
+        texturefile = "gfx//interface//great_projects//great_project_telgeir_vanbury_steel_foundry.dds"
+    }
+
+spriteType = {
+        name = "GFX_great_project_giberd_academy_of_engineering"	
+        texturefile = "gfx//interface//great_projects//great_project_giberd_academy_of_engineering.dds"
+    }
+
+spriteType = {
+        name = "GFX_great_project_temple_of_ryala"	
+        texturefile = "gfx//interface//great_projects//great_project_temple_of_ryala.dds"
+    }
+
+spriteType = {
+        name = "GFX_great_project_konwell_the_imperial_archives"	
+        texturefile = "gfx//interface//great_projects//great_project_konwell_the_imperial_archives.dds"
+    }
+
+spriteType = {
+        name = "GFX_great_project_seinathil_institute_of_song"	
+        texturefile = "gfx//interface//great_projects//great_project_seinathil_institute_of_song.dds"
+    }
+	
+####################
+#Forlorn Vale
+####################
+
+spriteType = {
+        name = "GFX_great_project_ibevar_temple_of_munas"	
+        texturefile = "gfx//interface//great_projects//great_project_ibevar_temple_of_munas.dds"
+    }
+
+####################
+#Gerudian Coast
+####################
+
+	spriteType = {
+        name = "GFX_great_project_urviksten_ebonsteel_armory"	
+        texturefile = "gfx//interface//great_projects//great_project_urviksten_ebonsteel_armory.dds"
+    }
+
+####################
+#Inner Castanor
+####################
+
+spriteType = {
+        name = "GFX_great_project_hammerhome_artificers_guild"	
+        texturefile = "gfx//interface//great_projects//great_project_hammerhome_artificers_guild.dds"
+    }
+
+spriteType = {
+		name = "GFX_great_project_draculas_throne"
+		texturefile = "gfx//interface//great_projects//great_project_draculas_throne.dds"
+	}
+
+####################
+#Lencenor
+####################
+
+spriteType = {
+        name = "GFX_great_project_lorentaine_mage_academy"	
+        texturefile = "gfx//interface//great_projects//great_project_lorentaine_mage_academy.dds"
+    }
+
+spriteType = {
+        name = "GFX_great_project_lorent_new_adea_naval_school"	
+        texturefile = "gfx//interface//great_projects//great_project_lorent_new_adea_naval_school.dds"
+    }
+
+spriteType = {
+        name = "GFX_great_project_deranne_westport_gateway_to_aelantir"	
+        texturefile = "gfx//interface//great_projects//great_project_deranne_westport_gateway_to_aelantir.dds"
+    }
+
+spriteType = {
+        name = "GFX_great_project_minara_temple"	
+        texturefile = "gfx//interface//great_projects//great_project_minara_temple.dds"
+    }
+
+####################
+#Not Cannorian
+####################
+
+spriteType = {
+        name = "GFX_great_project_koroshesh_grain_port"	
+        texturefile = "gfx//interface//great_projects//great_project_koroshesh_grain_port.dds"
+    }
+
+spriteType = {
+        name = "GFX_great_project_zornartakel_naval_harbor"	
+        texturefile = "gfx//interface//great_projects//great_project_zornartakel_naval_harbor.dds"
+    }
+
+spriteType = {
+        name = "GFX_great_project_deshak_temple_of_the_elements"	
+        texturefile = "gfx//interface//great_projects//great_project_deshak_temple_of_the_elements.dds"
+    }
+
+spriteType = {
+        name = "GFX_great_project_aquatbar_great_library"	
+        texturefile = "gfx//interface//great_projects//great_project_aquatbar_great_library.dds"
+    }
+
+spriteType = {
+        name = "GFX_great_project_ekha_harbor"	
+        texturefile = "gfx//interface//great_projects//great_project_ekha_harbor.dds"
+    }
+
+spriteType = {
+        name = "GFX_great_project_dasmati_halls_of_reverence"	
+        texturefile = "gfx//interface//great_projects//great_project_dasmati_halls_of_reverence.dds"
+    }	
+
+####################
+#South Castanor
+####################
+
+spriteType = {
+        name = "GFX_great_project_marrhold_the_feather_academy"	
+        texturefile = "gfx//interface//great_projects//great_project_marrhold_the_feather_academy.dds"
+    }
+
+spriteType = {
+        name = "GFX_great_project_esthili_academy_of_magic"	
+        texturefile = "gfx//interface//great_projects//great_project_esthili_academy_of_magic.dds"
+    }
+
+spriteType = {
+		name = "GFX_great_project_bladeskeep"
+		texturefile = "gfx//interface//great_projects//great_project_bladeskeep.dds"
+	}
+
+####################
+#The Borders
+####################
+
+spriteType = {
+        name = "GFX_great_project_sorncell_deepwater_harbor"	
+        texturefile = "gfx//interface//great_projects//great_project_sorncell_deepwater_harbor.dds"
+    }
+
+####################
+#Western Castanor
+####################
+
+spriteType = {
+        name = "GFX_great_project_ancardia_escanni_academy_of_war"	
+        texturefile = "gfx//interface//great_projects//great_project_ancardia_escanni_academy_of_war.dds"
+    }
+
+spriteType = {
+        name = "GFX_great_project_adenica_longlance_knights_academy"	
+        texturefile = "gfx//interface//great_projects//great_project_adenica_longlance_knights_academy.dds"
+    }
+
+####################
+#West Dameshead
+####################
+
+spriteType = {
+        name = "GFX_great_project_neckcliffe_the_imperial_dockyard"	
+        texturefile = "gfx//interface//great_projects//great_project_neckcliffe_the_imperial_dockyard.dds"
+    }
+
+}
