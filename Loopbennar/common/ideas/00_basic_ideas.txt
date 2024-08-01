@@ -1672,7 +1672,7 @@ administrative_ideas = {
 		adm_advisor_cost = -0.25  #1.35
 	}
 	local_rule = {
-		all_estate_loyalty_equilibrium = 0.5
+		all_estate_loyalty_equilibrium = 0.05
 		num_of_pronoiars = 1
 	}
 	adaptability = {
