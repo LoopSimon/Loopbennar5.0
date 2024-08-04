@@ -6,7 +6,7 @@ military_hegemon = {
 				NOT = { has_country_flag = halve_hegemony_requirements }
 				#NOT = { has_country_flag = fra_enable_mil_hegemony_flag }
 			}
-			army_size = 1000
+			army_size = 800
 		}
 		#else_if = { 
 		#	limit = { 
