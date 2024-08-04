@@ -1015,8 +1015,8 @@ visionary_thinkers = {
 		full_idea_group = quality_ideas
 	}	
 	
-	production_efficiency = 0.15 
-	army_tradition_decay = -0.01
+	production_efficiency = 0.15
+	fort_maintenance_modifier = - 0.1
 	
 	effect = {}
 	removed_effect = {}
