@@ -6661,7 +6661,7 @@ I11_ideas = {
 #Orlghelovar - Cobalt Dwarf
 I12_ideas = {
 	start = {
-		prestige_decay = -0.01
+		infantry_power = 0.1
 		embracement_cost = -0.2
 	}
 	bonus = {
