@@ -1212,14 +1212,14 @@ country_event = { #Contract Work
 		name = yingzhen.60.a
 		ai_chance = { factor = 100 }
 		
-		add_mil_power = 100
-		add_adm_power = 100
-		add_dip_power = 100
+		add_mil_power = 30
+		add_adm_power = 30
+		add_dip_power = 30
 		
 		event_target:yingzhen_contract_target = {
-			add_adm_power = -150
-			add_dip_power = -150
-			add_mil_power = -150
+			add_adm_power = -30
+			add_dip_power = -30
+			add_mil_power = -30
 			
 			kill_advisor = random
 		}	
@@ -1233,7 +1233,7 @@ country_event = { #Contract Work
 			limit = { full_idea_group = spy_ideas }
 			add_country_modifier = {
 				name = yingzhen_best_things_cd
-				duration = 1500
+				duration = 3650
 			}
 		}
 		else = {
