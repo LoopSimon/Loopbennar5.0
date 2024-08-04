@@ -1609,13 +1609,11 @@ A73_complete_hold = {
 				limit = { has_dlc = "Emperor" }
 				custom_trigger_tooltip = {
 					tooltip = silverforge_tooltip_17_tt
-					has_estate_privilege = estate_burghers_control_over_monetary_policy
 				}
 			}
 			else = {
 				custom_trigger_tooltip = {
 					tooltip = silverforge_tooltip_39_tt
-					has_estate_privilege = estate_burghers_commercial_board_of_advice
 				}
 			}
 			NOT = { legitimacy_equivalent = 80 }
@@ -1732,7 +1730,6 @@ A73_complete_hold = {
 		position = 12
 		
 		trigger = {
-			has_institution = manufactories
 			OR = {
 				estate_influence = { estate = estate_burghers influence = 80 }
 				has_country_modifier = carver_monopoly
