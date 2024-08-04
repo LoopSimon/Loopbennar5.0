@@ -7172,6 +7172,7 @@ sinistral_chamber_reform = {
 		global_unrest = -2
 		land_forcelimit_modifier = -0.15
 		yearly_corruption = +0.05
+		infantry_power = 0.1
 	}
 	custom_attributes = {
 		locked_government_type = yes
