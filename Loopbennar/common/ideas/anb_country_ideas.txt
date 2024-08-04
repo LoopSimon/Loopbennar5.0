@@ -10450,7 +10450,7 @@ Y51_ideas = {
 		trade_steering = 0.25
 	}
 	Y51_the_eternal_duty = {	# The people of Bim Lau know their obligation is to protect their land and their people from threats both physical and spiritual and this is not something they can be swayed from
-		land_morale = 0.05
+		land_morale = 0.1
 		recover_army_morale_speed = 0.10
 	}
 	Y51_wisdom_in_stone_and_plaster = { # The necropolis does not only function as drain on resources, it is also a source of knowledge for the people on many things, among them matters of governance.
@@ -17439,7 +17439,7 @@ Y10_ideas = {
 		idea_cost = -0.1
 	}
 	Y10_lunar_festival = { #A once a decade festival celebrating a major victory against Jaher fought near the city
-		prestige = 1
+		land_morale = 0.10
 	}
 	Y10_knives_in_the_dark = { #Assassins from the Fifth District hired by the city to deal with problems
 		ae_impact = -0.1
@@ -19971,7 +19971,7 @@ A31_ideas = {
 		range = 0.25
 	}
 	A31_silverwoods = { #Moonhaven is located in Silverwoods, a forest in eastern Dameshead. Having access to its rich supply of wood allows Moonhaveners to build new ships easier and cheaper
-		global_ship_cost = -0.10
+		global_ship_cost = land_morale = 0.10
 	}
 	A31_cannorian_homeland = { #Moonhaveners consider themselves fully Cannorian, being satisfied with their current position in the empire. As they recently became the last autonomous elven region in Anbennar the population became more willing to defend their homeland till the last man
 		defensiveness = 0.20
@@ -21696,7 +21696,7 @@ A73_ideas = {
 		siege_ability = 0.15
 	}
 	A73_The_Voice_of_Imperial_Dwarves = {
-		prestige = 1
+		land_morale = 0.05
 	}
 	A73_Silverforge_Hall_Drinking_Competitions = {
 		global_unrest = -1
