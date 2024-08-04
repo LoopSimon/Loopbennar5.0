@@ -29,7 +29,7 @@ country_event = {
 		hidden_effect = {
 			random_province = {
 				limit = {
-					region = serpentreach_region
+					area = shazstundihr_area
 					is_empty = yes
 					has_empty_adjacent_province = yes
 					OR = {
@@ -433,7 +433,7 @@ country_event = {
 		hidden_effect = {
 			random_province = {
 				limit = {
-					region = tree_of_stone_region
+					area = dwarovrod_45_48_area
 					is_empty = yes
 					has_empty_adjacent_province = yes
 				}
