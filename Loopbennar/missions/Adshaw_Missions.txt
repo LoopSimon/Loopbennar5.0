@@ -1721,6 +1721,10 @@ adshaw_3_missions_s = {
 				name = adshaw_return_of_the_king_m
 				duration = 18250
 			}
+			add_country_modifier = {
+				name = Z26_saviors_of_the_vroren
+				duration = -1
+			}
 			western_alenic_reach = {
 				limit = {
 					NOT = { is_core = ROOT }
@@ -3673,10 +3677,6 @@ adshaw_5_missions_mcd = {
 		}
 		
 		effect = {
-			add_country_modifier = {
-				name = Z26_saviors_of_the_vroren
-				duration = -1
-			}
 			add_prestige = 20
 			vrorenmarch_area = {
 				change_culture = white_reachman
