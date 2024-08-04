@@ -1016,7 +1016,7 @@ visionary_thinkers = {
 	}	
 	
 	production_efficiency = 0.15
-	fort_maintenance_modifier = - 0.1
+	fort_maintenance_modifier = -0.1
 	
 	effect = {}
 	removed_effect = {}
