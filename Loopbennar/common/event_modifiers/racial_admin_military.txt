@@ -1075,10 +1075,10 @@ mechanim_military = {
 }
 
 undead_military = {				#Zombies and skeletons created with necromancy
-	global_manpower_modifier = 1.5	#1.2 B
+	global_manpower_modifier = 1	#1.2 B
 	infantry_cost = -0.5 #5 A
 	mercenary_manpower = -0.25
-	land_forcelimit_modifier = 1.5 #4 S
+	land_forcelimit_modifier = 1 #4 S
 	land_attrition = -0.75	#3.3 D
 	
 	manpower_recovery_speed = 0.1 #10 A
@@ -1103,14 +1103,14 @@ undead_military = {				#Zombies and skeletons created with necromancy
 	
 	sunk_ship_morale_hit_recieved = -0.33
 	
-	recover_army_morale_speed = 0.5 #2 E
-	recover_navy_morale_speed = 0.5
+	recover_army_morale_speed = 0.25 #2 E
+	recover_navy_morale_speed = 0.25
 	
 	reserves_organisation = 4 		# 4 D Unbreakable
 	# morale_damage_received = -0.9 # 4 A Unbreakable
 	# shock_damage_received = -0.3
-	shock_damage = -0.3
-	fire_damage = -0.3
+	shock_damage = -0.2
+	fire_damage = -0.2
 	# fire_damage_received = -0.3
 	
 	war_exhaustion = -0.02	#negates attrition war exhaustion
