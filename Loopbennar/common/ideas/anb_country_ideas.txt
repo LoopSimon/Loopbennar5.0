@@ -36511,7 +36511,7 @@ V04_ideas = {
 		candidate_random_bonus = 1
 	}
 	V04_brothers_of_the_sealed_gaze = { # rogue sect of monks that decided to use enchantment, use magic to completely close off the emotions and self preservation instinct, they make great shock troops
-		discipline = 0.025
+		discipline = 0.05
 		reinforce_speed = 0.15
 	}
 	V04_boiling_beast_art = { # monks turn themselves into kungfu steam boilers, possible oni influence
