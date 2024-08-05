@@ -11,7 +11,7 @@ innovative_payment_techniques_act = {
 		full_idea_group = mercenary_ideas 
 	}
 	
-	mercenary_cost = -0.33
+	mercenary_manpower = 0.1
 
 	effect = {}
 	removed_effect = {}
@@ -1857,7 +1857,7 @@ centralization_power_act = {
 		full_idea_group = court_ideas 
 	}
 	
-	max_absolutism = 10 
+	max_absolutism = 15 
 	yearly_corruption = -0.1
 
 	effect = {}

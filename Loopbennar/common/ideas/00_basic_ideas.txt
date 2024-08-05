@@ -1949,11 +1949,12 @@ court_ideas = { #1.35
 		horde_unity = 0.5
 		meritocracy = 0.25 
 		imperial_mandate = 0.1
-		imperial_authority = 0.05
+		imperial_authority = 0.05 
 	}
 	
 	long_echo = {
 		global_unrest = -2
+		no_stability_loss_on_monarch_death = yes  
 	}
 	recognize_hierarchy = {
 		all_estate_loyalty_equilibrium = 0.1

@@ -1729,8 +1729,8 @@ plentiful_materials_act = {
 		full_idea_group = quantity_ideas 
 	}
 	
-	artillery_cost = -0.15
-	infantry_cost = -0.1
+	shock_damage_received = -0.05
+	fire_damage_received = -0.05
 
 	effect = {}
 	removed_effect = {}
