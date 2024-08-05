@@ -1953,16 +1953,14 @@ court_ideas = { #1.35
 	}
 	
 	long_echo = {
-		power_projection_from_insults = 1
-		diplomatic_reputation = 1
+		global_unrest = -2
 	}
 	recognize_hierarchy = {
 		all_estate_loyalty_equilibrium = 0.1
 		loyalty_change_on_revoked = 0.05
 	}
 	welcoming_ceremonies = {
-		prestige = 1 
-		monthly_persian_influence = 0.1
+		global_prosperity_growth = 0.25
 	}
 	tranquil_coordination = {
 		reform_progress_growth = 0.2
