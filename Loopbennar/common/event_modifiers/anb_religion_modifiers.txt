@@ -892,11 +892,11 @@ RC_withdrawn_meditation = {
 # Infernal Court Favored by the Archdevils Event Modifiers
 ##########################################################
 IC_emulant_kazraiel_1 = {
-	country_military_power = 2
+	country_military_power = 1
 	religion = yes
 }
 IC_emulant_kazraiel_2 = {
-	global_manpower_modifier = 0.15
+	global_manpower_modifier = 0.1
 	religion = yes
 }
 IC_emulant_hedine_1 = {
@@ -904,11 +904,11 @@ IC_emulant_hedine_1 = {
 	religion = yes
 }
 IC_emulant_hedine_2 = {
-	country_diplomatic_power = 2
+	country_diplomatic_power = 1
 	religion = yes
 }
 IC_emulant_forsara_1 = {
-	merchants = 2
+	merchants = 1
 	religion = yes
 }
 IC_emulant_forsara_2 = {
@@ -916,11 +916,11 @@ IC_emulant_forsara_2 = {
 	religion = yes
 }
 IC_emulant_ildran_1 = {
-	build_cost = -0.25
+	build_cost = -0.1
 	religion = yes
 }
 IC_emulant_ildran_1_alt = {
-	build_cost = -0.15
+	build_cost = -0.1
 	religion = yes
 }
 IC_emulant_ildran_2 = {
