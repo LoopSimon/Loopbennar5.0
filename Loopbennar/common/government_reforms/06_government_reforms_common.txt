@@ -3142,12 +3142,13 @@ anbennar_T5_human_army_of_halann = {
 				high_tolerance_human_race_trigger = yes
 				high_tolerance_kobold_race_trigger = yes
 				high_tolerance_lizardfolk_race_trigger = yes
-				# high_tolerance_mechanim_race_trigger = yes
+				high_tolerance_mechanim_race_trigger = yes
 				high_tolerance_ogre_race_trigger = yes
 				high_tolerance_orcish_race_trigger = yes
 				high_tolerance_ruinborn_race_trigger = yes
 				high_tolerance_troll_race_trigger = yes
 				fast_owns_num_pops_of_race = { race = centaur amount = 1 }
+				fast_owns_num_pops_of_race = { race = mechanim amount = 1 }
 				fast_owns_num_pops_of_race = { race = dwarven amount = 1 }
 				fast_owns_num_pops_of_race = { race = elven amount = 1 }
 				fast_owns_num_pops_of_race = { race = gnollish amount = 1 }
