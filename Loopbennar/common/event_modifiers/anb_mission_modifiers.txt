@@ -3992,6 +3992,8 @@ arannen_grand_developers_of_the_east = {
 
 arannen_colonizers_of_the_folly = {
 		colonists = 1
+		global_colonial_growth = 25
+		colonist_placement_chance = 0.05
 }
 
 arannen_push_into_the_folly = {
