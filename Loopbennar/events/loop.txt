@@ -13,6 +13,7 @@ country_event = {
 		ai_chance = {
 			factor = 1
 		}
-		change_religion = mystic_accord
+		change_religion = mystic_accord		
+		add_country_modifier = { name = loop_modifier_1 duration = 18250 }
 	}
 }
