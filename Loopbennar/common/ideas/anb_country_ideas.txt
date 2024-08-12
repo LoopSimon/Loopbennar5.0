@@ -19808,7 +19808,7 @@ H61_ideas = {
 		leader_land_manuever = 1
 	}
 	H61_the_epdendar = { #historical event where a group of plumsteader soldiers were saved from a disastrous battle by epednar horsemen. This would lead into plumstead accepting them as equals, incorporating them into cav regiments. Also many half-human half-ruinborn folk.
-		discipline = 0.5
+		discipline = 0.05
 	}
 	H61_homesteading = { #self-sufficient settlers, planting plum trees for grand orchards
 		production_efficiency = 0.15
@@ -21342,7 +21342,7 @@ H51_ideas = {
 	start = {
 		war_exhaustion = -0.02
 		leader_cost = -0.1
-	}
+	}	
 	bonus = {
 		culture_conversion_cost = -0.20 #Horcish blood
 	}
