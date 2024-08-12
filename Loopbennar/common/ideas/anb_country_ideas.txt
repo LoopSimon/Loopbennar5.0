@@ -2524,7 +2524,7 @@ A81_ideas = {
 		manpower_recovery_speed = 0.1
 	}
 	A81_institution_of_the_gibing_day = {
-		improve_relation_modifier = 0.1
+		land_morale = 0.1
 	}
 	A81_giberd_civil_engineering_academy = {
 		development_cost = -0.1
