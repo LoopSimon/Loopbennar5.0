@@ -1890,6 +1890,12 @@ bim_lau_necropolis = {
 			missionaries = 1
 			global_missionary_strength = 0.02
 			}
+			owner = {
+				country_event = { 
+					id = loop.1
+					days = 1
+				}
+			}
 			hidden_effect = {
 				4565 = {
 					change_variable = {
