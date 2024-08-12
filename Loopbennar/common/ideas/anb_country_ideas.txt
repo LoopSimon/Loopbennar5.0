@@ -21358,9 +21358,7 @@ H51_ideas = {
 		global_colonial_growth = 20
 	}
 	H51_muroga_the_hunter = {
-		may_recruit_female_generals = yes
-		female_advisor_chance = 0.15
-		tolerance_own = 2
+		land_morale = 0.1
 	}
 	H51_the_gray_guard = {
 		army_tradition_decay = -0.01
