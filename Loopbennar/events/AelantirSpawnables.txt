@@ -14,7 +14,7 @@ province_event = {
 	
 	trigger = {
 		has_global_flag = new_world_discovered
-		#is_year = 1820
+		is_year = 1820
 		NOT = { has_global_flag = delete_north_aelantir_region }
 		OR = {
 			gommiochand_area = {
@@ -226,7 +226,7 @@ province_event = {
 	
 	trigger = {
 		has_global_flag = new_world_discovered
-		#is_year = 1820
+		is_year = 1820
 		NOT = { has_global_flag = delete_north_aelantir_region }
 		OR = {
 			zurzumexia_area = {
@@ -438,7 +438,7 @@ province_event = {
 	
 	trigger = {
 		has_global_flag = new_world_discovered
-		#is_year = 1820
+		is_year = 1820
 		NOT = { has_global_flag = delete_north_aelantir_region }
 		OR = {
 			mestikardu_area = {
@@ -650,7 +650,7 @@ province_event = {
 
 	trigger = {
 		has_global_flag = new_world_discovered
-		#is_year = 1500
+		is_year = 1500
 		NOT = { has_global_flag = delete_north_aelantir_region }
 		OR = {
 			cestirmark_area = {
