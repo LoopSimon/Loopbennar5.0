@@ -864,6 +864,7 @@ personal_union = {
 	transfer_subjects_when_made = yes
 	can_concentrate_development = no
 	extend_trading_range = yes
+	liberty_desire_development_ratio = 0.125
 
 	liberty_desire_negative_prestige = 1.0
 	military_focus = 0.66
