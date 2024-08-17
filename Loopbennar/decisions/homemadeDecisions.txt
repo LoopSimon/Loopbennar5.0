@@ -8,10 +8,9 @@ country_decisions = {
 			remove_country_modifier = nowarsforyou
 		}
 	}	
-}
 
-country_decisions = {
-important_advisor_events = {
+
+	important_advisor_events = {
 		major = yes
 		potential = {
 			ai = no
