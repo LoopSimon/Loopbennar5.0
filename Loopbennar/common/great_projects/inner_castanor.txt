@@ -268,17 +268,6 @@ hammerhome_artificers_guild = {
 		}
 		on_upgraded = {
 			add_base_production = 3
-			owner = {
-				if = {
-					limit = {
-						NOT = { has_country_flag = artificery_unlocked }
-					}
-					country_event = {
-						id = magic_artificery_setup.1
-						days = 1
-					}
-				}
-			}
 		}
 	}
 	tier_3 = {
