@@ -29288,7 +29288,7 @@ L30_ideas = {
 		trade_steering = 0.2
 	}
 	L30_cannon_parts = {
-		artillery_cost = -0.15
+		discipline = 0.05
 	}
 	L30_vyzemby_history_day = {
 		num_accepted_cultures = 3
