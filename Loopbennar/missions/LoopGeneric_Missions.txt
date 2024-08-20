@@ -43,17 +43,11 @@ loopgeneric_column_2 = {
 			grown_by_development = 100
 		}
 		effect = {
-			capital_scope = {
-				region = {
-					limit = {
-						NOT = {
-						owned_by = ROOT
-						is_core = ROOT
-					}
-				}
-			add_permanent_claim = ROOT
+			ROOT = {
+			add_adm_power = 100
+			add_dip_power = 100
+			add_mil_power = 100
 			}
-		}
 
 	}
 }

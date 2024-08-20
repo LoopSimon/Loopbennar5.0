@@ -1,8 +1,8 @@
 namespace = flavor_loopgeneric
 country_event = { #Military Direction
 	id = flavor_loopgeneric.1
-	title = flavor_loopgeneric.1.t
-	desc = flavor_loopgeneric.1.d
+	title = flavor_generic.1.t
+	desc = flavor_generic.1.d
 	picture = DIPLOMACY_eventPicture
 	
 	is_triggered_only = yes
@@ -61,8 +61,8 @@ country_event = { #Military Direction
 
 country_event = { #General Academy
 	id = flavor_loopgeneric.2
-	title = flavor_loopgeneric.2.t
-	desc = flavor_loopgeneric.2.d
+	title = flavor_generic.2.t
+	desc = flavor_generic.2.d
 	picture = DIPLOMACY_eventPicture
 	
 	is_triggered_only = yes
@@ -95,8 +95,8 @@ country_event = { #General Academy
 
 country_event = { #New Manufactoring Centers
 	id = flavor_loopgeneric.3
-	title = flavor_loopgeneric.3.t
-	desc = flavor_loopgeneric.3.d
+	title = flavor_generic.3.t
+	desc = flavor_generic.3.d
 	picture = DIPLOMACY_eventPicture
 	
 	is_triggered_only = yes
@@ -125,8 +125,8 @@ country_event = { #New Manufactoring Centers
 
 country_event = { #New Manufactoring Centers
 	id = flavor_loopgeneric.4
-	title = flavor_loopgeneric.4.t
-	desc = flavor_loopgeneric.4.d
+	title = flavor_generic.4.t
+	desc = flavor_generic.4.d
 	picture = DIPLOMACY_eventPicture
 	
 	is_triggered_only = yes
@@ -154,8 +154,8 @@ country_event = { #New Manufactoring Centers
 }
 country_event = { #Economic Direction
 	id = flavor_loopgeneric.5
-	title = flavor_loopgeneric.5.t
-	desc = flavor_loopgeneric.5.d
+	title = flavor_generic.5.t
+	desc = flavor_generic.5.d
 	picture = DIPLOMACY_eventPicture
 	
 	is_triggered_only = yes
