@@ -444,28 +444,7 @@ anisikheion_2_missions = {
 			}
 		}
 
-		trigger = {
-			2745 = { #Lokemeion
-				owner = { is_subject_of = ROOT }
-			}
-			2773 = { #Kherka
-				owner = { is_subject_of = ROOT }
-			}
-			2738 = { #Ormam
-				owner = { is_subject_of = ROOT }
-			}	
-			2736 = { #Degakheion
-				owner = { is_subject_of = ROOT }
-			}		
-			2732 = { #Kimanis
-				owner = { is_subject_of = ROOT }
-			}		
-			2731 = { #Oktikheion
-				owner = { is_subject_of = ROOT }
-			}		
-			2728 = { #Arpedifer
-				owner = { is_subject_of = ROOT }
-			}		
+		trigger = {		
 		}
 
 		effect = {
@@ -1315,15 +1294,6 @@ anisikheion_4_missions = {
 		trigger = {
 			custom_trigger_tooltip = {
 				tooltip = G59_secure_the_coastal_mainland_effect_tt
-				calc_true_if = {
-					devand_region = {
-						type = all
-						island = no
-						has_port = yes
-						owner = { is_subject_of = ROOT }
-					}
-					amount = 19
-				}
 			}
 		}
 		effect = {
