@@ -154,20 +154,6 @@ anisikheion_1_missions = {
 		}
 
 		trigger = {
-			calc_true_if = {
-				all_known_country = { 
-					culture_group = kheionai_ruinborn_elf
-					has_opinion = {
-						who = ROOT
-						value = 50
-					}
-				}
-				amount = 3
-			}
-			has_kheionist_philosophy_advanced = { type = dip }
-			custom_trigger_tooltip = {
-				tooltip = G59_vassal_trigger_tt
-			}
 		}
 
 		effect = {
