@@ -350,15 +350,6 @@ G52_2 = {
 		}
 		
 		trigger = {
-			calc_true_if = {
-				reverse_has_opinion = { who = H23 value = 40 }
-				reverse_has_opinion = { who = H28 value = 40 }
-				reverse_has_opinion = { who = H29 value = 40 }
-				amount = 2
-			}
-			prestige = H23
-			prestige = H28
-			prestige = H29
 		}
 		
 		effect = {
@@ -399,12 +390,6 @@ G52_2 = {
 		}
 		
 		trigger = {
-			G63 = { is_subject_of = ROOT }
-			OR = {
-				H23 = { is_subject_of = ROOT }
-				H28 = { is_subject_of = ROOT }
-				H29 = { is_subject_of = ROOT }
-			}
 			treasury = 50
 		}
 		
@@ -1271,45 +1256,6 @@ G52_3 = {
 		}
 		
 		trigger = {
-			if = {
-				limit = { G56 = { is_subject_of = ROOT } }
-				G56 = { NOT = { is_subject = yes } }
-			}
-			else_if = {
-				limit = { is_enemy = G56 }
-				reverse_has_opinion = { who = G56 value = 20 }
-				dip_power = 50
-			}
-			else_if = {
-				limit = { NOT = { exists = G56 } }
-				2625 = { 
-					owner = { 
-						has_spy_network_from = { who = ROOT value = 30 }
-						NOT = { truce_with = ROOT }
-					}
-				}
-			}
-			else = {
-				reverse_has_opinion = { who = G56 value = 100 }
-			}
-			if = {
-				limit = { G62 = { is_subject = yes } }
-				G62 = { NOT = { is_subject = yes } }
-			}
-			else_if = {
-				limit = { is_enemy = G62 }
-				reverse_has_opinion = { who = G62 value = 20 }
-				dip_power = 50
-			}
-			else = {
-				reverse_has_opinion = { who = G62 value = 100 }
-			}
-			if = {
-				limit = { G56 = { is_subject = yes } }
-				is_at_war = no
-				G62 = { is_at_war = no }
-				G56 = { overlord = { NOT = { truce_with = ROOT } } }
-			}
 		}
 		
 		effect = {
@@ -1394,27 +1340,7 @@ G52_3 = {
 			has_discovered = ROOT
 		}
 		
-		trigger = {
-			G56 = { NOT = { is_subject = yes } }
-			is_at_war = no
-			G62 = { 
-				is_at_war = no
-				trust = { who = ROOT value = 60 }
-				has_opinion = { who = ROOT value = 130 }
-			}
-			G56 = { 
-				is_at_war = no
-				trust = { who = ROOT value = 60 }
-				has_opinion = { who = ROOT value = 130 }
-			}
-			calc_true_if = {
-			 	dip = 4
-				dip_power = 100
-				has_dip_advisor = yes
-				amount = 2
-			}
-			adm_power = 100
-		}
+		trigger = {}
 		
 		effect = {
 			add_adm_power = -100
@@ -1449,8 +1375,6 @@ G52_3 = {
 		}
 		
 		trigger = {
-			G62 = { trust = { who = ROOT value = 70 } }
-			G56 = { trust = { who = ROOT value = 70 } }
 			calc_true_if = {
 			 	mil = 4
 				mil_power = 100
@@ -1644,16 +1568,6 @@ G52_3 = {
 		}
 		
 		trigger = {
-			G62 = { 
-				is_at_war = no
-				trust = { who = ROOT value = 90 }
-				has_opinion = { who = ROOT value = 170 }
-			}
-			G56 = { 
-				is_at_war = no
-				trust = { who = ROOT value = 90 }
-				has_opinion = { who = ROOT value = 170 }
-			}
 			dip_power = 300
 		}
 		
