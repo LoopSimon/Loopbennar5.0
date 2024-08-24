@@ -155,3 +155,8 @@
 #Raheni heroic realm
  draft_mercenary_general_title:0 "Recruit a Hero"
  draft_mercenary_general_desc:0 "We may be able to sway one of the powerful mercenary leaders to join the army and serve the realm directly!"
+
+#Loopbennar Unique
+ portal_title:0 "Open the Gate to a new World"
+ portal_desc:0 "We have conquered one Forest, but beyond the Feywild lies another, ripe for the taking!"
+ important_advisor_events_title:0 "Possible Important Advisor Events"
