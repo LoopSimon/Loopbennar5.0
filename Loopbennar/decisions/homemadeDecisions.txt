@@ -40,4 +40,42 @@ country_decisions = {
 		effect = {
 		}
 	}
+	portal = {
+		major = yes
+		potential = {
+			capital_scope = { superregion = deepwoods_superregion }
+			NOT = { has_country_flag = portal_opener }
+		}
+		provinces_to_highlight = {
+			superregion = deepwoods_superregion
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			NOT = {
+				ROOT = { 
+					num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+						value = 30
+						superregion = deepwoods_superregion
+					}
+				}
+			}
+		}
+		allow = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 99
+				superregion = deepwoods_superregion
+			}
+			dip_tech = 16
+			dip_power = 200
+		}
+		trigger = {
+			dip_power = 200
+			dip_tech = 16
+		}
+		
+		effect = {
+			custom_tooltip = to_another_forest_tooltip
+			add_dip_power = -200
+			hidden_effect = { country_event = { id = cyranvar.7 days = 10 } }
+			hidden_effect = { set_country_flag = portal_opener }
+		}
+	}
 }
