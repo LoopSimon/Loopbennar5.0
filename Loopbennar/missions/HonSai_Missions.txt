@@ -797,9 +797,6 @@ HonSai_2 = {
 			Y66_the_vassal_act
 		}
 		position = 12
-		trigger = {
-			Y58 = { is_subject_of = ROOT }
-		}
 		effect = {
 			lupulan_rainforest_region  = {
 				limit = {
