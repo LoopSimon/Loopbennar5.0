@@ -145,9 +145,6 @@ corin = {
 			religion = regent_court
 		}
 		has_global_flag = corins_ascension #Requires 1445 Pantheonic Council event
-		OR = {
-			has_global_flag = upgraded_adean_admin # Adenica MT re-enable it
-		}
 	}
 	
 	sprite = 3
