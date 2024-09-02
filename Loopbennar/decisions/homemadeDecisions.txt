@@ -78,4 +78,67 @@ country_decisions = {
 			hidden_effect = { set_country_flag = portal_opener }
 		}
 	}
+	add_all_provinces_to_seats = {
+        color = { 166  0  0 }
+		potential = {
+			ai = no 
+			has_parliament = yes
+		}
+		allow = {
+			ai = no 
+			NOT = {
+				all_owned_province = { has_seat_in_parliament = yes }
+			}
+		}
+		effect = {
+			if = {
+				limit = {any_owned_province = { development = 40 has_seat_in_parliament = no }}
+				custom_tooltip = add_all_40_development_provinces_parliament_seats_tt
+				hidden_effect = {
+					every_owned_province = {
+						limit = { development = 40 has_seat_in_parliament = no }
+						set_seat_in_parliament = yes
+					}
+				}
+			}
+			else_if = {
+				limit = {any_owned_province = { development = 30 has_seat_in_parliament = no }}
+				custom_tooltip = add_all_30_development_provinces_parliament_seats_tt
+				hidden_effect = {
+					every_owned_province = {
+						limit = { development = 30 has_seat_in_parliament = no }
+						set_seat_in_parliament = yes
+					}
+				}
+			}
+			else_if = {
+				limit = {any_owned_province = { development = 20 has_seat_in_parliament = no }}
+				custom_tooltip = add_all_20_development_provinces_parliament_seats_tt
+				hidden_effect = {
+					every_owned_province = {
+						limit = { development = 20 has_seat_in_parliament = no }
+						set_seat_in_parliament = yes
+					}
+				}
+			}
+			else = {
+				custom_tooltip = add_all_provinces_parliament_seats_tt
+				hidden_effect = {
+					every_owned_province = {
+						limit = { has_seat_in_parliament = no }
+						set_seat_in_parliament = yes
+					}
+				}
+			}
+			hidden_effect = {
+				every_owned_province = {
+					limit = { has_seat_in_parliament = yes }
+					add_pop_modifier = {race = all class = parliament amount = 25percent resource = tax onbase = base_tax}
+					add_pop_modifier = {race = all class = parliament amount = 25percent resource = goods_produced onbase = base_production}
+					add_pop_modifier = {race = all class = parliament amount = 20percent resource = manpower onbase = base_manpower}
+				}
+			}
+		}
+		ai_will_do = {factor = 1}
+	}
 }
