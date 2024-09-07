@@ -5287,7 +5287,7 @@ halessi = {
 					limit = {
 						has_church_aspect = hebat_tana_aspect
 					}
-					add_yearly_manpower = 0.4
+					add_yearly_manpower = 1.0
 					hidden_effect = {
 						country_event = {
 							id = mystic_accord_events.201
