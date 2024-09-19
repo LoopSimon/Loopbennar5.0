@@ -6171,7 +6171,7 @@ switchiochand = {
 			add_accepted_culture = creek_gnome
 			add_accepted_culture = iochander
 			add_accepted_culture = low_lorentish
-			override_country_name = Iochander_Birarchy
+			override_country_name = IOCHANDER_BIRARCHY
 			set_country_flag = switchiochand_done
 		}
 		hidden_effect = {
@@ -6196,7 +6196,7 @@ switchiochand = {
 				add_accepted_culture = creek_gnome
 				add_accepted_culture = iochander
 				add_accepted_culture = low_lorentish
-				override_country_name = Iochander_Birarchy
+				override_country_name = IOCHANDER_BIRARCHY
 				set_country_flag = switchiochand_done
 			}
 		}
