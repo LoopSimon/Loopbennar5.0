@@ -15,10 +15,6 @@ grain = {
 	chance = {
 		factor = 35
 		modifier = {
-			factor = 9999999
-			has_province_flag = escann_grain_province
-		}
-		modifier = {
 			factor = 0
 			OR = {
 				has_terrain = desert
@@ -107,6 +103,8 @@ grain = {
 			factor = 0
 			OR = {
 				province_id = 4236
+				province_id = 2978
+				province_id = 2914
 				region = moduk_region
 				area = somyonghon_area
 				continent = africa #chance is so low its not worth having as a possibility
@@ -125,10 +123,6 @@ wine = {
 	}
 	chance = {
 		factor = 5
-		modifier = {
-			factor = 9999999
-			has_province_flag = escann_wine_province
-		}
 		modifier = {
 			factor = 0
 			OR = {
@@ -169,7 +163,11 @@ wine = {
 		}
 		modifier = {
 			factor = 0
-			province_id = 4236
+			OR = {
+				province_id = 4236
+				province_id = 2978
+				province_id = 2914
+			}
 		}
 		modifier = {
 			factor = 3
@@ -192,10 +190,6 @@ wool = {
 	}
 	chance = {
 		factor = 30
-		modifier = {
-			factor = 9999999
-			has_province_flag = escann_wool_province
-		}
 		modifier = {
 			factor = 0
 			OR = {
@@ -253,6 +247,8 @@ wool = {
 			factor = 0
 			OR = {
 				province_id = 4236
+				province_id = 2978
+				province_id = 2914
 				region = mushroom_forest_region
 				area = westnest_area
 				area = eastnest_area
@@ -271,10 +267,6 @@ cloth = {
 	}
 	chance = {
 		factor = 10
-		modifier = {
-			factor = 9999999
-			has_province_flag = escann_cloth_province
-		}
 		modifier = {
 			factor = 0
 			OR = {
@@ -299,7 +291,11 @@ cloth = {
 		}
 		modifier = {
 			factor = 0
-			province_id = 4236
+			OR = {
+				province_id = 4236
+				province_id = 2978
+				province_id = 2914
+			}
 		}
 	}
 }
@@ -315,12 +311,9 @@ fish = {
 	chance = {
 		factor = 20
 		modifier = {
-			factor = 9999999
-			has_province_flag = escann_fish_province
-		}
-		modifier = {
 			factor = 0
 			NOT = { has_port = yes }
+			NOT = { province_id = 2978 } #Claxac's Abyss
 		}
 		modifier = {
 			factor = 1.1
@@ -360,11 +353,18 @@ fish = {
 		}
 		modifier = {
 			factor = 0
-			province_id = 4236
+			OR = {
+				province_id = 4236
+				province_id = 2914
+			}
 		}
 		modifier = {
 			factor = 0.4
 			continent = africa #fish has too high of a chance
+		}
+		modifier = {
+			factor = 1000
+			province_id = 2978 #Claxac's Abyss
 		}
 	}
 }
@@ -379,10 +379,6 @@ fur = {
 	}
 	chance = {
 		factor = 15
-		modifier = {
-			factor = 9999999
-			has_province_flag = escann_fur_province
-		}
 		modifier = {
 			factor = 0
 			OR = {
@@ -458,7 +454,11 @@ fur = {
 		}
 		modifier = {
 			factor = 0
-			province_id = 4236
+			OR = {
+				province_id = 4236
+				province_id = 2978
+				province_id = 2914
+			}
 		}
 		modifier = {
 			factor = 2.0
@@ -477,10 +477,6 @@ salt = {
 	}
 	chance = {
 		factor = 5
-		modifier = {
-			factor = 9999999
-			has_province_flag = escann_salt_province
-		}
 		modifier = {
 			factor = 0
 			NOT = { has_terrain = desert }
@@ -512,7 +508,11 @@ salt = {
 		}
 		modifier = {
 			factor = 0
-			province_id = 4236
+			OR = {
+				province_id = 4236
+				province_id = 2978
+				province_id = 2914
+			}
 		}
 	}
 }
@@ -527,10 +527,6 @@ naval_supplies = {
 	}
 	chance = {
 		factor = 15
-		modifier = {
-			factor = 9999999
-			has_province_flag = escann_naval_supplies_province
-		}
 		modifier = {
 			factor = 0
 			OR = {
@@ -549,6 +545,7 @@ naval_supplies = {
 				has_terrain = dwarven_road
 				superregion = northern_expanse_superregion
 				region = yezel_mora_region
+				region = dao_nako_region
 			}
 		}
 		modifier = {
@@ -594,7 +591,11 @@ naval_supplies = {
 		}
 		modifier = {
 			factor = 0
-			province_id = 4236
+			OR = {
+				province_id = 4236
+				province_id = 2978
+				province_id = 2914
+			}
 		}
 	}
 }
@@ -611,10 +612,6 @@ copper = {
 	}
 	chance = {
 		factor = 15
-		modifier = {
-			factor = 9999999
-			has_province_flag = escann_copper_province
-		}
 		modifier = {
 			factor = 0
 			OR = {
@@ -633,6 +630,9 @@ copper = {
 				region = yezel_mora_region
 				region = domandrod_region
 				province_id = 4236 #mithradhum
+				province_id = 2978 #Claxac's Abyss
+				province_id = 2914 #Verkal Gulan
+				region = dao_nako_region
 				AND = {
 					continent = africa
 					province_is_on_an_island = yes
@@ -800,11 +800,17 @@ gold = {
 		}
 		modifier = {
 			factor = 1000	#dragon turtle's hoard
-			province_id = 2262
+			OR = {
+				province_id = 2262
+				province_id = 2914 #Verkal Gulan
+			}
 		}
 		modifier = {
 			factor = 0
-			province_id = 4236
+			OR = {
+				province_id = 4236
+				province_id = 2978
+			}
 		}
 		modifier = {
 			factor = 1.1
@@ -847,14 +853,12 @@ iron = {
 	chance = {
 		factor = 10
 		modifier = {
-			factor = 9999999
-			has_province_flag = escann_iron_province
-		}
-		modifier = {
 			factor = 0
 			OR = {
 				region = yezel_mora_region
 				province_id = 4236
+				province_id = 2978
+				province_id = 2914
 				AND = {
 					continent = africa
 					province_is_on_an_island = yes
@@ -961,6 +965,8 @@ slaves = {
 			factor = 0
 			OR = {
 				province_id = 4236
+				province_id = 2978
+				province_id = 2914
 				region = serpents_vale_region
 			}
 		}
@@ -1455,8 +1461,10 @@ sugar = {
 			factor = 0
 			OR = {
 				continent = europe
+				continent = serpentspine
 				region = northern_pass_region
 				region = yezel_mora_region
+				region = dao_nako_region
 			}
 		}
 		modifier = {
@@ -1472,10 +1480,6 @@ sugar = {
 				has_terrain = highlands
 				has_terrain = forest
 				has_terrain = steppe
-				has_terrain = cavern
-				has_terrain = dwarven_hold
-				has_terrain = dwarven_hold_surface
-				has_terrain = dwarven_road
 			}
 		}
 		
@@ -1902,10 +1906,6 @@ livestock = {
 	chance = {
 		factor = 30
 		modifier = {
-			factor = 9999999
-			has_province_flag = escann_livestock_province
-		}
-		modifier = {
 			factor = 0
 			OR = {
 				has_terrain = glacier
@@ -1974,6 +1974,14 @@ livestock = {
 			factor = 3.3 # there's no reference here, go away
 			region = mushroom_forest_region
 		}
+		modifier = {
+			factor = 0
+			OR = {
+				province_id = 4236 #Mithradhum
+				province_id = 2978 #Claxac's Abyss
+				province_id = 2914
+			}
+		}
 	}
 }
 
@@ -2018,7 +2026,11 @@ incense = {
 		}
 		modifier = {
 			factor = 0
-			province_id = 4236
+			OR = {
+				province_id = 4236
+				province_id = 2978
+				province_id = 2914
+			}
 		}
 		modifier = {
 			factor = 1.25
@@ -2041,10 +2053,6 @@ glass = {
 	}
 	chance = {
         factor = 5
-		modifier = {
-			factor = 9999999
-			has_province_flag = escann_glass_province
-		}
         modifier = {
             factor = 0
 			NOT = { development = 18 }
@@ -2066,7 +2074,11 @@ glass = {
 		}
 		modifier = {
 			factor = 0
-			province_id = 4236
+			OR = {
+				province_id = 4236
+				province_id = 2978
+				province_id = 2914
+			}
 		}
 	}
 }
@@ -2094,7 +2106,11 @@ paper = {
 		}
 		modifier = {
 			factor = 0
-			province_id = 4236
+			OR = {
+				province_id = 4236
+				province_id = 2978
+				province_id = 2914
+			}
 		}
 	}
 }
@@ -2109,10 +2125,6 @@ gems = {
 	}
 	chance = {
 		factor = 5
-		modifier = {
-			factor = 9999999
-			has_province_flag = escann_gems_province
-		}
 		modifier = {
 			factor = 0
 			is_random_new_world = yes
@@ -2145,7 +2157,6 @@ gems = {
 				AND = {
 					has_port = yes
 					OR = {
-						region = dao_nako_region
 						area = bavabetsaro_area
 						area = visage_isles_area
 						area = daagalkauva_area
@@ -2211,7 +2222,11 @@ gems = {
 		}
 		modifier = {
 			factor = 0
-			province_id = 4236
+			OR = {
+				province_id = 4236
+				province_id = 2978
+				province_id = 2914
+			}
 		}
 		modifier = {
 			factor = 1.25
@@ -2248,6 +2263,7 @@ gems = {
 					has_country_flag = H76_increased_gem_chance
 				}
 			}
+			continent = serpentspine
 		}
 	}
 }
@@ -2268,13 +2284,25 @@ coal = {
 			limit = {
 				owner = {
 					NOT = { has_country_flag = earlier_coal_available }
+					NOT = { has_country_flag = even_earlier_coal_available }
 				}
 			}
 			provincial_institution_progress = {
-				which = manufactories
+				which = enlightenment
 				value = 100
 			}
-			owner = { has_institution = manufactories }
+			owner = { has_institution = enlightenment }
+		}
+		else_if = {
+			limit = { owner = { has_country_flag = even_earlier_coal_available } }
+			provincial_institution_progress = {
+				which = global_trade
+				value = 100
+			}
+			owner = {
+				has_institution = global_trade
+				innovativeness = 50
+			}
 		}
 		else = {
 			provincial_institution_progress = {
@@ -2283,7 +2311,7 @@ coal = {
 			}
 			owner = {
 				has_institution = manufactories
-				adm_tech = 20
+				adm_tech = 23
 			}
 		}
 	}
@@ -2424,6 +2452,13 @@ mithril = {
 			has_terrain = cavern
 		}
 		modifier = {
+			factor = 0
+			OR = {
+				province_id = 2978 #Claxac's Abyss
+				province_id = 2914 #Verkal Gulan
+			}
+		}
+		modifier = {
 			factor = 1000
 			province_id = 4236
 		}
@@ -2511,7 +2546,11 @@ fungi = {
 		}
 		modifier = {
 			factor = 0
-			province_id = 4236
+			OR = {
+				province_id = 4236
+				province_id = 2978
+				province_id = 2914
+			}
 		}
 		modifier = {
 			factor = 20
@@ -2556,7 +2595,11 @@ serpentbloom = {
 		}
 		modifier = {
 			factor = 0
-			province_id = 4236
+			OR = {
+				province_id = 4236
+				province_id = 2978
+				province_id = 2914
+			}
 		}
 		modifier = {
 			factor = 0.5

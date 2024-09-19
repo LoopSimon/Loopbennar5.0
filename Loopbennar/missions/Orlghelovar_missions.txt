@@ -1852,7 +1852,7 @@ orlghelovar_glass_2 = {
 		
 		trigger = {
 			calc_true_if = {
-				amount = 1
+				amount = 3
 				all_ally = {
 					has_opinion = {
 						who = ROOT

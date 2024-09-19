@@ -116,7 +116,7 @@ aksa_sanuyego = {
 		}
 
 		country_modifiers = {
-			global_ship_trade_power = 0.25
+			global_ship_trade_power = 0.30
 		}
 
 		on_upgraded = {
@@ -130,7 +130,7 @@ aksa_sanuyego = {
 		}
 
 		cost_to_upgrade = {
-			factor = 9000
+			factor = 5000
 		}
 
 		province_modifiers = {
@@ -146,7 +146,8 @@ aksa_sanuyego = {
 		}
 
 		country_modifiers = {
-			global_ship_trade_power = 0.30
+			global_ship_trade_power = 0.45
+			local_own_coast_naval_combat_bonus = 1
 		}
 
 		on_upgraded = {
@@ -312,7 +313,7 @@ balkhangfa_palace = {
 
 		
 		cost_to_upgrade = {
-			factor = 9000
+			factor = 5000
 		}
 
 		
@@ -441,7 +442,7 @@ feiten_aerodrome = {
 			custom_tooltip = updateGrandSkyportTT
 			custom_tooltip = feitenGetSkypostCapBreakdown
 			custom_tooltip = shuimuOperatingCapacityBreakdownTT
-			custom_tooltip = grandSkyportDescriptionNoteworthyTT
+			custom_tooltip = grand_skyport_descTT
 		}
 	}
 	
@@ -451,7 +452,7 @@ feiten_aerodrome = {
 		}
 		
 		cost_to_upgrade = {
-			factor = 9000
+			factor = 5000
 		}
 		
 		province_modifiers = {
@@ -478,7 +479,7 @@ feiten_aerodrome = {
 			custom_tooltip = updateGrandSkyportTT
 			custom_tooltip = feitenGetSkypostCapBreakdown
 			custom_tooltip = shuimuOperatingCapacityBreakdownTT
-			custom_tooltip = grandSkyportDescriptionSignificantTT
+			custom_tooltip = grand_skyport_descTT
 		}
 	}
 	
@@ -488,7 +489,7 @@ feiten_aerodrome = {
 		}
 		
 		cost_to_upgrade = {
-			factor = 9000
+			factor = 10000
 		}
 		
 		province_modifiers = {
@@ -517,7 +518,7 @@ feiten_aerodrome = {
 			custom_tooltip = updateGrandSkyportBeegTT
 			custom_tooltip = feitenGetSkypostCapBreakdown
 			custom_tooltip = shuimuOperatingCapacityBreakdownTT
-			custom_tooltip = grandSkyportDescriptionMagnificentTT
+			custom_tooltip = grand_skyport_descTT
 		}
 	}
 }
@@ -671,7 +672,7 @@ hall_of_endless_debate = {
 		}
 
 		cost_to_upgrade = {
-			factor = 9000
+			factor = 5000
 		}
 
 		province_modifiers = {
@@ -825,7 +826,7 @@ oracle_mountain = {
 		}
 
 		cost_to_upgrade = {
-			factor = 9000
+			factor = 5000
 		}
 
 		province_modifiers = {
@@ -868,6 +869,8 @@ golden_palace = {
 	starting_tier = 1
 
 	type = monument
+
+	build_trigger = { NOT = { has_province_flag = golden_palace_skewered_drake_can_build } }
 
 	can_use_modifiers_trigger = {
 		OR = {
@@ -1024,7 +1027,7 @@ golden_palace = {
 		}
 
 		cost_to_upgrade = {
-			factor = 9000
+			factor = 5000
 		}
 
 		province_modifiers = {
@@ -1089,19 +1092,31 @@ godswall = {
 
 	can_use_modifiers_trigger = {
 		OR = {
-			religion_group = raheni
-			religion_group = halessi
+			province_is_or_accepts_or_harmonizes_religion_group = {
+				religion_group = raheni
+			}
+			province_is_or_accepts_or_harmonizes_religion_group = {
+				religion_group = halessi
+			}
+			province_is_or_accepts_or_harmonizes_religion_group = {
+				religion_group = supreme_spirit
+			}
 		}
-		has_owner_religion = yes
 		has_owner_accepted_culture = yes
 	}
 
 	can_upgrade_trigger = {
 		OR = {
-			religion_group = raheni
-			religion_group = halessi
+			province_is_or_accepts_or_harmonizes_religion_group = {
+				religion_group = raheni
+			}
+			province_is_or_accepts_or_harmonizes_religion_group = {
+				religion_group = halessi
+			}
+			province_is_or_accepts_or_harmonizes_religion_group = {
+				religion_group = supreme_spirit
+			}
 		}
-		has_owner_religion = yes
 		has_owner_accepted_culture = yes
 	}
 
@@ -1199,7 +1214,7 @@ godswall = {
 		}
 
 		cost_to_upgrade = {
-			factor = 9000
+			factor = 5000
 		}
 
 		province_modifiers = {
@@ -1378,7 +1393,7 @@ sarisung_city = {
 		}
 
 		cost_to_upgrade = {
-			factor = 9000
+			factor = 5000
 		}
 
 		province_modifiers = {
@@ -1426,14 +1441,14 @@ palace_of_divine_call = {
 
 	can_use_modifiers_trigger = {
 		has_owner_accepted_culture = yes
-		development = 50
+		development = 40
 		is_capital = yes
 		owner = { government_rank = 2 }
 	}
 
 	can_upgrade_trigger = {
 		has_owner_accepted_culture = yes
-		development = 50
+		development = 40
 		is_capital = yes
 		owner = { government_rank = 2 }
 	}
@@ -1643,7 +1658,7 @@ palace_of_divine_call = {
 		}
 
 		cost_to_upgrade = {
-			factor = 9000
+			factor = 5000
 		}
 
 		province_modifiers = {
@@ -1863,7 +1878,7 @@ bim_lau_necropolis = {
 		}
 
 		cost_to_upgrade = {
-			factor = 9000
+			factor = 5000
 		}
 
 		province_modifiers = {
@@ -1885,17 +1900,6 @@ bim_lau_necropolis = {
 
 		on_upgraded = {
 			custom_tooltip = bim_lau_spirit_update_monument_tt
-			change_religion = mystic_accord
-			country_modifiers = {
-			missionaries = 1
-			global_missionary_strength = 0.02
-			}
-			owner = {
-				country_event = { 
-					id = loop.1
-					days = 1
-				}
-			}
 			hidden_effect = {
 				4565 = {
 					change_variable = {
@@ -2086,7 +2090,7 @@ temple_of_undying_flame = {
 		}
 
 		cost_to_upgrade = {
-			factor = 9000
+			factor = 5000
 		}
 
 		province_modifiers = {
@@ -2468,6 +2472,7 @@ dwarovar_valley_tunnel = {
 	on_built = {
 		add_canal = dwarovar_valley_tunnel
 		set_global_flag = dwarovar_valley_tunnel_opened
+		FROM = { discover_province = 6830 }
 	}
 
 	#what to do when it's destroyed
@@ -2603,6 +2608,7 @@ valley_dwarovar_tunnel = {
 	on_built = {
 		add_canal = valley_dwarovar_tunnel
 		set_global_flag = dwarovar_valley_tunnel_opened
+		FROM = { discover_province = 4285 }
 	}
 
 	#what to do when it's destroyed

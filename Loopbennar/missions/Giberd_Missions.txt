@@ -23,7 +23,7 @@ giberd_imperial = {
 					exists = A06 #Nimscodd
 					treasury = 200
 				}
-				NOT = { exists = A06 } #Nimsc	dd
+				NOT = { exists = A06 } #Nimscodd
 			}
 		}
 		
@@ -66,6 +66,21 @@ giberd_imperial = {
 			giberd_grow_in_size
 		}
 		position = 3
+		
+		trigger = {
+			OR = {
+				calc_true_if = {
+					all_elector = {
+						has_opinion = {
+							who = ROOT
+							value = 150
+						}
+					}
+					amount = 5
+				}
+				eoa_is_dismantled = yes
+			}
+		}
 		
 		effect = {
 			add_country_modifier = {
@@ -603,7 +618,7 @@ giberd_mercantile_shipping = {
 		effect = {
 			add_country_modifier = {
 				name = giberd_transhavoral_trade_mod
-				duration = -1
+				duration = 7300 #20 years
 			}
 		}
 	}

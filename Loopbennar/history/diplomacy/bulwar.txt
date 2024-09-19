@@ -82,7 +82,7 @@ vassal = {
 
 #Birsartanses - Gelkalis
 dependency = {
-	subject_type = "march"
+	subject_type = "autonomous_vassal"
 	first = F21
 	second = F26
 	start_date = 1444.1.1
@@ -147,7 +147,8 @@ vassal = {
 }
 
 #Irrliam - Zansap
-vassal = {
+dependency = {
+	subject_type = "autonomous_vassal"
 	first = F37
 	second = F43
 	start_date = 1444.1.1

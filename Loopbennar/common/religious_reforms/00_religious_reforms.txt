@@ -597,7 +597,7 @@ feast_of_the_gods_reform_1 = {
 		num_of_subjects = 3
 		
 		num_of_owned_provinces_with = {
-			value = 2
+			value = 4
 			OR = {
 				trade_goods = grain
 				trade_goods = serpentbloom

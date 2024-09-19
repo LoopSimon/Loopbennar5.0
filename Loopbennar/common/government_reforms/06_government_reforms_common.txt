@@ -673,7 +673,10 @@ dwarovar_assembly_of_holds_reform = {
 	effect = {
 		hidden_effect = {
 			every_owned_province = {
-				limit = { province_group = hold_province }
+				limit = {
+					province_group = hold_province
+					has_seat_in_parliament = yes
+				}
 				add_province_modifier = { name = hold_has_parliament duration = -1 }
 			}
 		}
@@ -1587,6 +1590,8 @@ strengthen_clergy_reform = {
 		church_influence_modifier = 0.1
 		church_loyalty_modifier = 0.1
 		war_exhaustion = -0.03
+		uppercastes_influence_modifier = 0.1 #Anbennar
+		uppercastes_loyalty_modifier = 0.1 #Anbennar
 	}
 	
 	ai = {
@@ -1612,6 +1617,7 @@ curtail_clergy_power_reform = {
 		adm_tech_cost_modifier = -0.1
 		religious_unity = 0.1
 		church_influence_modifier = -0.1
+		uppercastes_influence_modifier = -0.1 #Anbennar
 	}
 	custom_attributes = {
 		seizing_land_no_rebels_from_estate_church = yes
@@ -1639,6 +1645,7 @@ secure_clergy_power_reform = {
 	}
 	modifiers = {
 		church_influence_modifier = 0.05
+		uppercastes_influence_modifier = 0.05 #Anbennar
 	}
 	effect = {
 		hidden_effect = {
@@ -2314,10 +2321,10 @@ anbennar_T5_generic_bottomless_bags = {
 					has_country_modifier = troll_military
 					has_country_modifier = kobold_military
 					has_country_modifier = gnollish_military
-					has_country_modifier = human_military
 				}
 			}
 		}
+		NOT = { has_country_modifier = human_military }
 		NOT = { has_country_modifier = ruinborn_military }
 	}
 	trigger = {
@@ -2350,10 +2357,10 @@ anbennar_T5_generic_protection_charms = {
 					has_country_modifier = troll_military
 					has_country_modifier = kobold_military
 					has_country_modifier = gnollish_military
-					has_country_modifier = human_military
 				}
 			}
 		}
+		NOT = { has_country_modifier = human_military }
 		NOT = { has_country_modifier = ruinborn_military }
 	}
 	trigger = {
@@ -2385,10 +2392,10 @@ anbennar_T5_generic_windshapers = {
 					has_country_modifier = troll_military
 					has_country_modifier = kobold_military
 					has_country_modifier = gnollish_military
-					has_country_modifier = human_military
 				}
 			}
 		}
+		NOT = { has_country_modifier = human_military }
 		NOT = { has_country_modifier = ruinborn_military }
 	}
 	trigger = {
@@ -2423,10 +2430,10 @@ anbennar_T5_generic_war_games = {
 					has_country_modifier = troll_military
 					has_country_modifier = kobold_military
 					has_country_modifier = gnollish_military
-					has_country_modifier = human_military
 				}
 			}
 		}
+		NOT = { has_country_modifier = human_military }
 		NOT = { has_country_modifier = ruinborn_military }
 	}
 	trigger = {
@@ -2459,10 +2466,10 @@ anbennar_T5_generic_adventurer_contracts = {
 					has_country_modifier = troll_military
 					has_country_modifier = kobold_military
 					has_country_modifier = gnollish_military
-					has_country_modifier = human_military
 				}
 			}
 		}
+		NOT = { has_country_modifier = human_military }
 		NOT = { has_country_modifier = ruinborn_military }
 	}
 	trigger = {
@@ -2499,10 +2506,10 @@ anbennar_T5_generic_specialized_troops = {
 					has_country_modifier = troll_military
 					has_country_modifier = kobold_military
 					has_country_modifier = gnollish_military
-					has_country_modifier = human_military
 				}
 			}
 		}
+		NOT = { has_country_modifier = human_military }
 		NOT = { has_country_modifier = ruinborn_military }
 	}
 	trigger = {
@@ -2533,10 +2540,10 @@ anbennar_T5_generic_fodder = {
 					has_country_modifier = troll_military
 					has_country_modifier = kobold_military
 					has_country_modifier = gnollish_military
-					has_country_modifier = human_military
 				}
 			}
 		}
+		NOT = { has_country_modifier = human_military }
 		NOT = { has_country_modifier = ruinborn_military }
 	}
 	trigger = {
@@ -2568,10 +2575,10 @@ anbennar_T5_generic_mage_shields = {
 					has_country_modifier = troll_military
 					has_country_modifier = kobold_military
 					has_country_modifier = gnollish_military
-					has_country_modifier = human_military
 				}
 			}
 		}
+		NOT = { has_country_modifier = human_military }
 		NOT = { has_country_modifier = ruinborn_military }
 	}
 	trigger = {
@@ -2595,7 +2602,7 @@ anbennar_T5_human_centaur = {
 	allow_normal_conversion = yes
 	potential = {
 		NOT = { has_adventurer_reform = yes }
-		has_country_modifier = mechanim_military
+		has_country_modifier = human_military
 	}
 	trigger = {
 		high_tolerance_centaur_race_trigger = yes
@@ -2621,7 +2628,7 @@ anbennar_T5_human_dwarven = {
 	allow_normal_conversion = yes
 	potential = {
 		NOT = { has_adventurer_reform = yes }
-		has_country_modifier = mechanim_military
+		has_country_modifier = human_military
 	}
 	trigger = {
 		high_tolerance_dwarven_race_trigger = yes
@@ -2647,7 +2654,7 @@ anbennar_T5_human_elven = {
 	allow_normal_conversion = yes
 	potential = {
 		NOT = { has_adventurer_reform = yes }
-		has_country_modifier = hmechanim_military
+		has_country_modifier = human_military
 	}
 	trigger = {
 		high_tolerance_elven_race_trigger = yes
@@ -2674,7 +2681,7 @@ anbennar_T5_human_gnollish = {
 	allow_normal_conversion = yes
 	potential = {
 		NOT = { has_adventurer_reform = yes }
-		has_country_modifier = mechanim_military
+		has_country_modifier = human_military
 	}
 	trigger = {
 		high_tolerance_gnollish_race_trigger = yes
@@ -2697,7 +2704,7 @@ anbennar_T5_human_gnomish = {
 	allow_normal_conversion = yes
 	potential = {
 		NOT = { has_adventurer_reform = yes }
-		has_country_modifier = mechanim_military
+		has_country_modifier = human_military
 	}
 	trigger = {
 		high_tolerance_gnomish_race_trigger = yes
@@ -2734,7 +2741,7 @@ anbennar_T5_human_goblin = {
 	allow_normal_conversion = yes
 	potential = {
 		NOT = { has_adventurer_reform = yes }
-		has_country_modifier = mechanim_military
+		has_country_modifier = human_military
 	}
 	trigger = {
 		high_tolerance_goblin_race_trigger = yes
@@ -2758,7 +2765,7 @@ anbennar_T5_human_half_elven = {
 	allow_normal_conversion = yes
 	potential = {
 		NOT = { has_adventurer_reform = yes }
-		has_country_modifier = mechanim_military
+		has_country_modifier = human_military
 	}
 	trigger = {
 		high_tolerance_half_elven_race_trigger = yes
@@ -2782,7 +2789,7 @@ anbennar_T5_human_half_orcish = {
 	allow_normal_conversion = yes
 	potential = {
 		NOT = { has_adventurer_reform = yes }
-		has_country_modifier = mechanim_military
+		has_country_modifier = human_military
 	}
 	trigger = {
 		high_tolerance_half_orcish_race_trigger = yes
@@ -2808,7 +2815,7 @@ anbennar_T5_human_halfling = {
 	allow_normal_conversion = yes
 	potential = {
 		NOT = { has_adventurer_reform = yes }
-		has_country_modifier = mechanim_military
+		has_country_modifier = human_military
 	}
 	trigger = {
 		high_tolerance_halfling_race_trigger = yes
@@ -2835,7 +2842,7 @@ anbennar_T5_human_harimari = {
 	allow_normal_conversion = yes
 	potential = {
 		NOT = { has_adventurer_reform = yes }
-		has_country_modifier = mechanim_military
+		has_country_modifier = human_military
 	}
 	trigger = {
 		high_tolerance_harimari_race_trigger = yes
@@ -2859,7 +2866,7 @@ anbennar_T5_human_harpy = {
 	allow_normal_conversion = yes
 	potential = {
 		NOT = { has_adventurer_reform = yes }
-		has_country_modifier = mechanim_military
+		has_country_modifier = human_military
 	}
 	trigger = {
 		high_tolerance_harpy_race_trigger = yes
@@ -2885,7 +2892,7 @@ anbennar_T5_human_hobgoblin = {
 	allow_normal_conversion = yes
 	potential = {
 		NOT = { has_adventurer_reform = yes }
-		has_country_modifier = mechanim_military
+		has_country_modifier = human_military
 	}
 	trigger = {
 		high_tolerance_hobgoblin_race_trigger = yes
@@ -2911,7 +2918,7 @@ anbennar_T5_human_human = {
 	allow_normal_conversion = yes
 	potential = {
 		NOT = { has_adventurer_reform = yes }
-		has_country_modifier = mechanim_military
+		has_country_modifier = human_military
 	}
 	trigger = {
 		always = yes
@@ -2934,7 +2941,7 @@ anbennar_T5_human_kobold = {
 	allow_normal_conversion = yes
 	potential = {
 		NOT = { has_adventurer_reform = yes }
-		has_country_modifier = mechanim_military
+		has_country_modifier = human_military
 	}
 	trigger = {
 		high_tolerance_kobold_race_trigger = yes
@@ -2960,7 +2967,7 @@ anbennar_T5_human_lizardfolk = {
 	allow_normal_conversion = yes
 	potential = {
 		NOT = { has_adventurer_reform = yes }
-		has_country_modifier = mechanim_military
+		has_country_modifier = human_military
 	}
 	trigger = {
 		high_tolerance_lizardfolk_race_trigger = yes
@@ -3019,7 +3026,7 @@ anbennar_T5_human_ogre = {
 	allow_normal_conversion = yes
 	potential = {
 		NOT = { has_adventurer_reform = yes }
-		has_country_modifier = mechanim_military
+		has_country_modifier = human_military
 	}
 	trigger = {
 		high_tolerance_ogre_race_trigger = yes
@@ -3044,7 +3051,7 @@ anbennar_T5_human_orcish = {
 	allow_normal_conversion = yes
 	potential = {
 		NOT = { has_adventurer_reform = yes }
-		has_country_modifier = mechanim_military
+		has_country_modifier = human_military
 	}
 	trigger = {
 		high_tolerance_orcish_race_trigger = yes
@@ -3070,7 +3077,7 @@ anbennar_T5_human_ruinborn = {
 	allow_normal_conversion = yes
 	potential = {
 		NOT = { has_adventurer_reform = yes }
-		has_country_modifier = mechanim_military
+		has_country_modifier = human_military
 	}
 	trigger = {
 		high_tolerance_ruinborn_race_trigger = yes
@@ -3096,7 +3103,7 @@ anbennar_T5_human_troll = {
 	allow_normal_conversion = yes
 	potential = {
 		NOT = { has_adventurer_reform = yes }
-		has_country_modifier = mechanim_military
+		has_country_modifier = human_military
 	}
 	trigger = {
 		high_tolerance_troll_race_trigger = yes
@@ -3121,7 +3128,6 @@ anbennar_T5_human_army_of_halann = {
 	allow_normal_conversion = yes
 	potential = {
 		NOT = { has_adventurer_reform = yes }
-		has_country_modifier = human_military
 	}
 	trigger = {
 		custom_trigger_tooltip = {
@@ -3142,13 +3148,12 @@ anbennar_T5_human_army_of_halann = {
 				high_tolerance_human_race_trigger = yes
 				high_tolerance_kobold_race_trigger = yes
 				high_tolerance_lizardfolk_race_trigger = yes
-				high_tolerance_mechanim_race_trigger = yes
+				# high_tolerance_mechanim_race_trigger = yes
 				high_tolerance_ogre_race_trigger = yes
 				high_tolerance_orcish_race_trigger = yes
 				high_tolerance_ruinborn_race_trigger = yes
 				high_tolerance_troll_race_trigger = yes
 				fast_owns_num_pops_of_race = { race = centaur amount = 1 }
-				fast_owns_num_pops_of_race = { race = mechanim amount = 1 }
 				fast_owns_num_pops_of_race = { race = dwarven amount = 1 }
 				fast_owns_num_pops_of_race = { race = elven amount = 1 }
 				fast_owns_num_pops_of_race = { race = gnollish amount = 1 }
@@ -5536,7 +5541,12 @@ empower_the_burghers_reform = {
 		NOT = { has_adventurer_reform = yes } # Anbennar
 		NOT = { has_reform = hobgoblin_stratocracy_reform }
 		NOT = { culture_group = goblin }
-		NOT = { culture_group = gnomish }
+		NOT = {
+			OR = {
+				culture_group = gnomish 
+				culture = iochander
+			}
+		}
 		NOT = { has_government_attribute = is_technocracy }
 		NOT = { religion = the_thought }
 		OR = {
@@ -5574,7 +5584,12 @@ curtail_the_burghers_reform = {
 		NOT = { has_government_attribute = is_pirate_republic_reform }
 		NOT = { has_adventurer_reform = yes } # Anbennar
 		NOT = { has_reform = hobgoblin_stratocracy_reform }
-		NOT = { culture_group = gnomish }
+		NOT = {
+			OR = {
+				culture_group = gnomish 
+				culture = iochander
+			}
+		}
 		NOT = { has_government_attribute = is_technocracy }
 		NOT = { religion = the_thought }
 		OR = {
@@ -5673,6 +5688,7 @@ mercantilistic_approach_reform = {
 			AND = {
 				OR = {
 					culture_group = gnomish 
+					culture = iochander
 					has_government_attribute = is_technocracy
 				}
 				OR = {
@@ -5720,6 +5736,7 @@ free_trade_reform = {
 			AND = {
 				OR = {
 					culture_group = gnomish 
+					culture = iochander
 					has_government_attribute = is_technocracy
 				}
 				OR = {
@@ -5768,7 +5785,12 @@ lockean_proviso_reform = {
 		NOT = { has_government_attribute = is_pirate_republic_reform }
 		NOT = { has_adventurer_reform = yes } # Anbennar
 		NOT = { has_reform = hobgoblin_stratocracy_reform }
-		NOT = { culture_group = gnomish }
+		NOT = {
+			OR = {
+				culture_group = gnomish 
+				culture = iochander
+			}
+		}
 		NOT = { has_government_attribute = is_technocracy }
 		NOT = { religion = the_thought }
 	}
@@ -6658,7 +6680,7 @@ the_theory_of_everything = {
 		religion = the_thought
 	}
 	modifiers = {
-		tec_brilliance_influence = 0.05
+		tec_brilliance_influence = 0.1
 		church_loyalty_modifier = 0.05
 		yearly_harmony = 0.25
 		harmonization_speed = 0.25
@@ -6681,7 +6703,7 @@ union_of_magic_and_machine = {
 		religion = the_thought
 	}
 	modifiers = {
-		tec_technomancy_influence = 0.05
+		tec_technomancy_influence = 0.1
 		all_power_cost = -0.025
 		technology_cost = 0.05
 		church_loyalty_modifier = -0.05
@@ -6706,7 +6728,7 @@ societal_sentience_scholarship = {
 		religion = the_thought
 	}
 	modifiers = {
-		tec_mechanists_influence = 0.05
+		tec_mechanists_influence = 0.1
 		yearly_harmony = 0.25
 		church_influence_modifier = 0.05
 	}
@@ -6746,15 +6768,23 @@ cultural_colonies = {
 	icon = "russian_principality"
  	allow_normal_conversion = yes
  	potential = {
- 		culture_group = gnomish
+		OR = {
+			culture_group = gnomish 
+			culture = iochander
+			has_reform = gnomish_cogovernment_reform
+		}
  	}
 	trigger = {
-		culture_group = gnomish
+		OR = {
+			culture_group = gnomish 
+			culture = iochander
+			has_reform = gnomish_cogovernment_reform
+		}
 	}
 	modifiers = {
-		tec_brilliance_influence = 0.05
-		culture_conversion_time = -0.5
-		culture_conversion_cost = -0.5
+		tec_brilliance_influence = 0.1
+		culture_conversion_time = -0.15
+		culture_conversion_cost = -0.15
 		tolerance_heathen = -2
 	}
 	custom_attributes = {
@@ -6795,13 +6825,21 @@ the_theory_of_gnomeostasis = {
 	icon = "revolutionary_council_reform"
  	allow_normal_conversion = yes
  	potential = {
- 		culture_group = gnomish
+		OR = {
+			culture_group = gnomish 
+			culture = iochander
+			has_reform = gnomish_cogovernment_reform
+		}
  	}
 	trigger = {
-		culture_group = gnomish
+		OR = {
+			culture_group = gnomish 
+			culture = iochander
+			has_reform = gnomish_cogovernment_reform
+		}
 	}
 	modifiers = {
-		tec_technomancy_influence = 0.05
+		tec_technomancy_influence = 0.1
 		ae_impact = -0.1
 		diplomatic_upkeep = 1
 		years_of_nationalism = -5
@@ -6816,18 +6854,20 @@ apparatus_system = {
  	allow_normal_conversion = yes
  	potential = {
  		OR = {
-			culture_group = gnomish
+			culture_group = gnomish 
+			culture = iochander
 			has_government_attribute = is_technocracy
 		}
  	}
 	trigger = {
 		OR = {
-			culture_group = gnomish
+			culture_group = gnomish 
+			culture = iochander
 			has_government_attribute = is_technocracy
 		}
 	}
 	modifiers = {
-		tec_mechanists_influence = 0.05
+		tec_mechanists_influence = 0.1
 		governing_capacity = 175
 	}
 	custom_attributes = {
@@ -6843,14 +6883,16 @@ the_marketplace_of_ideas = {
 	icon = "tribal_lip_service"
  	allow_normal_conversion = yes
  	potential = {
- 		OR = {
-			culture_group = gnomish
+		OR = {
+			culture_group = gnomish 
+			culture = iochander
 			has_government_attribute = is_technocracy
 		}
  	}
 	trigger = {
 		OR = {
-			culture_group = gnomish
+			culture_group = gnomish 
+			culture = iochander
 			has_government_attribute = is_technocracy
 		}
 		OR = {
@@ -6862,11 +6904,14 @@ the_marketplace_of_ideas = {
 		}
 	}
 	modifiers = {
-		tec_brilliance_influence = 0.05
+		tec_brilliance_influence = 0.1
 		trade_efficiency = 0.05
 	}
 	custom_attributes = {
 		can_propagate_trade_gov_attribute = yes 
+	}
+	effect = {
+		hidden_effect = { set_country_flag = 35_trade_power_for_propogate_religion }
 	}
 	ai = {
 		factor = 10
@@ -6878,20 +6923,22 @@ deliberative_design = {
  	allow_normal_conversion = yes
  	potential = {
  		OR = {
-			culture_group = gnomish
+			culture_group = gnomish 
+			culture = iochander
 			has_government_attribute = is_technocracy
 			religion = the_thought
 		}
  	}
 	trigger = {
 		OR = {
-			culture_group = gnomish
+			culture_group = gnomish 
+			culture = iochander
 			has_government_attribute = is_technocracy
 			religion = the_thought
 		}
 	}
 	modifiers = {
-		tec_technomancy_influence = 0.05
+		tec_technomancy_influence = 0.1
 		all_estate_loyalty_equilibrium = 0.05
 	}
 	conditional = {
@@ -6927,20 +6974,22 @@ aggregate_integrate_associate_amalgamate = {
  	allow_normal_conversion = yes
  	potential = {
  		OR = {
-			culture_group = gnomish
+			culture_group = gnomish 
+			culture = iochander
 			has_government_attribute = is_technocracy
 			religion = the_thought
 		}
  	}
 	trigger = {
 		OR = {
-			culture_group = gnomish
+			culture_group = gnomish 
+			culture = iochander
 			has_government_attribute = is_technocracy
 			religion = the_thought
 		}
 	}
 	modifiers = {
-		tec_mechanists_influence = 0.05
+		tec_mechanists_influence = 0.1
 		centralize_state_cost = -0.25
 		mercantilism_cost = -0.25
 	}

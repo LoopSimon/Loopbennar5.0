@@ -145,6 +145,10 @@ corin = {
 			religion = regent_court
 		}
 		has_global_flag = corins_ascension #Requires 1445 Pantheonic Council event
+		OR = {
+			NOT = { has_global_flag = crimson_deluge } # crimson deluge didn't start yet
+			has_global_flag = upgraded_adean_admin # Adenica MT re-enable it
+		}
 	}
 	
 	sprite = 3

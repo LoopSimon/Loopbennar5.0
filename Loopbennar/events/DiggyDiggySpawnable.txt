@@ -20,7 +20,7 @@ country_event = {
 	mean_time_to_happen = { years = 1 }
 	
 	trigger = {
-		is_year = 1800
+		is_year = 1450
 		owns = 526 #ovdal tungr
 		NOT = { has_global_flag = delete_west_serpentspine_region }
 	}
@@ -29,7 +29,7 @@ country_event = {
 		hidden_effect = {
 			random_province = {
 				limit = {
-					area = shazstundihr_area
+					region = serpentreach_region
 					is_empty = yes
 					has_empty_adjacent_province = yes
 					OR = {
@@ -424,7 +424,7 @@ country_event = {
 	mean_time_to_happen = { years = 1 }
 	
 	trigger = {
-		is_year = 1800
+		is_year = 1460
 		owns = 4397
 		NOT = { has_global_flag = delete_east_serpentspine_region }
 	}
@@ -433,7 +433,7 @@ country_event = {
 		hidden_effect = {
 			random_province = {
 				limit = {
-					area = dwarovrod_45_48_area
+					region = tree_of_stone_region
 					is_empty = yes
 					has_empty_adjacent_province = yes
 				}

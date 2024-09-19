@@ -130,7 +130,7 @@ the_south_citadel = {
 		}
 
 		cost_to_upgrade = {
-			factor = 9000
+			factor = 5000
 		}
 
 		province_modifiers = {
@@ -295,7 +295,7 @@ beikdugang_arsenal = {
 		}
 
 		cost_to_upgrade = {
-			factor = 9000
+			factor = 5000
 		}
 
 		province_modifiers = {
@@ -466,7 +466,7 @@ beikdugang_lights = {
 		}
 
 		cost_to_upgrade = {
-			factor = 9000
+			factor = 5000
 		}
 
 		province_modifiers = {
@@ -634,7 +634,7 @@ anzarzax_palace = {
 
 		
 		cost_to_upgrade = {
-			factor = 9000
+			factor = 5000
 		}
 
 		
@@ -833,7 +833,7 @@ elikhander_pyramid = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 9000
+			factor = 5000
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -1021,7 +1021,7 @@ elikhander_orbs = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 9000
+			factor = 5000
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -1207,7 +1207,7 @@ elikhander_sphinx = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 9000
+			factor = 5000
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -1404,7 +1404,7 @@ eternal_pillar_1 = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 1000
+			factor = 2000
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -1601,7 +1601,7 @@ eternal_pillar_2 = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 1000
+			factor = 2000
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -1798,7 +1798,7 @@ eternal_pillar_3 = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 1000
+			factor = 2000
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -1995,7 +1995,7 @@ eternal_pillar_4 = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 1000
+			factor = 2000
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -2192,7 +2192,7 @@ eternal_pillar_5 = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 1000
+			factor = 2000
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -2389,7 +2389,7 @@ eternal_pillar_6 = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 1000
+			factor = 2000
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -2586,7 +2586,7 @@ eternal_pillar_7 = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 1000
+			factor = 2000
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -2783,7 +2783,7 @@ eternal_pillar_8 = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 1000
+			factor = 2000
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -2980,7 +2980,7 @@ eternal_pillar_9 = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 1000
+			factor = 2000
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -3175,7 +3175,7 @@ well_of_majesty = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 1000
+			factor = 2000
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -3359,7 +3359,7 @@ scp_bureau_hq = {
 
 		
 		cost_to_upgrade = {
-			factor = 9000
+			factor = 5000
 		}
 
 		
