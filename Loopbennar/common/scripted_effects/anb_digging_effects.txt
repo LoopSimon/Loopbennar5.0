@@ -1432,14 +1432,14 @@ repair_hold = {
 		trigger_switch = {
 			on_trigger = development
 			
-			100 = { owner = { add_mil_power = -500 add_dip_power = -500 add_adm_power = -500 } }
-			90 = { owner = { add_mil_power = -450 add_dip_power = -450 add_adm_power = -450 } }
-			80 = { owner = { add_mil_power = -400 add_dip_power = -400 add_adm_power = -400 } }
-			70 = { owner = { add_mil_power = -350 add_dip_power = -350 add_adm_power = -350 } }
-			60 = { owner = { add_mil_power = -300 add_dip_power = -300 add_adm_power = -300 } }
-			50 = { owner = { add_mil_power = -250 add_dip_power = -250 add_adm_power = -250 } }
-			40 = { owner = { add_mil_power = -200 add_dip_power = -200 add_adm_power = -200 } }
-			30 = { owner = { add_mil_power = -150 add_dip_power = -150 add_adm_power = -150 } }
+			100 = { owner = { add_mil_power = -100 add_dip_power = -100 add_adm_power = -100 } }
+			90 = { owner = { add_mil_power = -100 add_dip_power = -100 add_adm_power = -100 } }
+			80 = { owner = { add_mil_power = -100 add_dip_power = -100 add_adm_power = -100 } }
+			70 = { owner = { add_mil_power = -100 add_dip_power = -100 add_adm_power = -100 } }
+			60 = { owner = { add_mil_power = -100 add_dip_power = -100 add_adm_power = -100 } }
+			50 = { owner = { add_mil_power = -100 add_dip_power = -100 add_adm_power = -100 } }
+			40 = { owner = { add_mil_power = -100 add_dip_power = -100 add_adm_power = -100 } }
+			30 = { owner = { add_mil_power = -100 add_dip_power = -100 add_adm_power = -100 } }
 			20 = { owner = { add_mil_power = -100 add_dip_power = -100 add_adm_power = -100 } }
 			10 = { owner = { add_mil_power = -50 add_dip_power = -50 add_adm_power = -50 } }
 			3 = { owner = { add_mil_power = -50 add_dip_power = -50 add_adm_power = -50 } }
@@ -1450,14 +1450,14 @@ repair_hold = {
 		trigger_switch = {
 			on_trigger = development
 			
-			100 = { owner = { add_mil_power = -400 add_dip_power = -400 add_adm_power = -400 } }
-			90 = { owner = { add_mil_power = -350 add_dip_power = -350 add_adm_power = -350 } }
-			80 = { owner = { add_mil_power = -325 add_dip_power = -325 add_adm_power = -325 } }
-			70 = { owner = { add_mil_power = -300 add_dip_power = -300 add_adm_power = -300 } }
-			60 = { owner = { add_mil_power = -250 add_dip_power = -250 add_adm_power = -250 } }
-			50 = { owner = { add_mil_power = -200 add_dip_power = -200 add_adm_power = -200 } }
-			40 = { owner = { add_mil_power = -175 add_dip_power = -175 add_adm_power = -175 } }
-			30 = { owner = { add_mil_power = -150 add_dip_power = -150 add_adm_power = -150 } }
+			100 = { owner = { add_mil_power = -100 add_dip_power = -100 add_adm_power = -100 } }
+			90 = { owner = { add_mil_power = -100 add_dip_power = -100 add_adm_power = -100 } }
+			80 = { owner = { add_mil_power = -100 add_dip_power = -100 add_adm_power = -100 } }
+			70 = { owner = { add_mil_power = -100 add_dip_power = -100 add_adm_power = -100 } }
+			60 = { owner = { add_mil_power = -100 add_dip_power = -100 add_adm_power = -100 } }
+			50 = { owner = { add_mil_power = -100 add_dip_power = -100 add_adm_power = -100 } }
+			40 = { owner = { add_mil_power = -100 add_dip_power = -100 add_adm_power = -100 } }
+			30 = { owner = { add_mil_power = -100 add_dip_power = -100 add_adm_power = -100 } }
 			20 = { owner = { add_mil_power = -100 add_dip_power = -100 add_adm_power = -100 } }
 			10 = { owner = { add_mil_power = -50 add_dip_power = -50 add_adm_power = -50 } }
 			3 = { owner = { add_mil_power = -50 add_dip_power = -50 add_adm_power = -50 } }
@@ -1468,15 +1468,15 @@ repair_hold = {
 		trigger_switch = {
 			on_trigger = development
 			
-			100 = { owner = { add_mil_power = -300 add_dip_power = -300 add_adm_power = -300 } }
-			90 = { owner = { add_mil_power = -275 add_dip_power = -275 add_adm_power = -275 } }
-			80 = { owner = { add_mil_power = -250 add_dip_power = -250 add_adm_power = -250 } }
-			70 = { owner = { add_mil_power = -225 add_dip_power = -225 add_adm_power = -225 } }
-			60 = { owner = { add_mil_power = -175 add_dip_power = -175 add_adm_power = -175 } }
-			50 = { owner = { add_mil_power = -125 add_dip_power = -125 add_adm_power = -125 } }
+			100 = { owner = { add_mil_power = -100 add_dip_power = -100 add_adm_power = -100 } }
+			90 = { owner = { add_mil_power = -100 add_dip_power = -100 add_adm_power = -100 } }
+			80 = { owner = { add_mil_power = -100 add_dip_power = -100 add_adm_power = -100 } }
+			70 = { owner = { add_mil_power = -100 add_dip_power = -100 add_adm_power = -100 } }
+			60 = { owner = { add_mil_power = -100 add_dip_power = -100 add_adm_power = -100 } }
+			50 = { owner = { add_mil_power = -100 add_dip_power = -100 add_adm_power = -100 } }
 			40 = { owner = { add_mil_power = -100 add_dip_power = -100 add_adm_power = -100 } }
-			30 = { owner = { add_mil_power = -75 add_dip_power = -75 add_adm_power = -75 } }
-			20 = { owner = { add_mil_power = -50 add_dip_power = -50 add_adm_power = -50 } }
+			30 = { owner = { add_mil_power = -100 add_dip_power = -100 add_adm_power = -100 } }
+			20 = { owner = { add_mil_power = -100 add_dip_power = -100 add_adm_power = -100 } }
 			10 = { owner = { add_mil_power = -50 add_dip_power = -50 add_adm_power = -50 } }
 			3 = { owner = { add_mil_power = -50 add_dip_power = -50 add_adm_power = -50 } }
 		}
