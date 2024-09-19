@@ -5314,8 +5314,8 @@ prabhi_reform = {
 
 	legacy_equivalent = daimyo_legacy
 	modifiers = {
-		development_cost = -0.1
-		land_forcelimit = 1
+		development_cost = -0.05
+		land_forcelimit = 0.5
 	}
 	custom_attributes = {
 		locked_government_type = yes
@@ -5348,7 +5348,7 @@ indep_prabhi_reform = {
 	}
 	legacy_equivalent = indep_daimyo_legacy
 	modifiers = {
-		development_cost = -0.1
+		development_cost = -0.05
 	}
 	custom_attributes = {
 		locked_government_type = yes
