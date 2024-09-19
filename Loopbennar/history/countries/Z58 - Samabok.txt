@@ -3,8 +3,24 @@ government = republic
 add_government_reform = eunuch_republic
 government_rank = 1
 primary_culture = forest_yan
-religion = righteous_path
+add_accepted_culture = coastal_yan
+religion = high_philosophy
 technology_group = tech_halessi
 capital = 4951
 
+
 1000.1.1 = { set_estate_privilege = estate_mages_organization_state }
+
+1438.1.1 = {
+	monarch = {
+		name = "Tac"
+		dynasty = "Jyuk"
+		culture = forest_yan
+		birth_date = 1424.5.12
+		adm = 2
+		dip = 4
+		mil = 5
+	}
+	add_ruler_personality = bold_fighter_personality
+	add_ruler_personality = inspiring_leader_personality
+}
