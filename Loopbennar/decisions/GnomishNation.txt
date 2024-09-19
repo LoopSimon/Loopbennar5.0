@@ -144,7 +144,6 @@ country_decisions = {
                 country_event = { id = ideagroups.1 } #Swap Ideas
             }
 			hidden_effect = { restore_country_name = yes }
-			remove_non_electors_emperors_from_empire_effect = yes
 			if = {
 				limit = {
 					NOT = { government_rank = 2 }
@@ -174,19 +173,6 @@ country_decisions = {
 				limit = { NOT = { government = monarchy } }
 				change_government = monarchy
 			}
-			change_technology_group = tech_gnomish
-			
-			#hidden_effect = { 
-				clear_racial_military = yes
-				add_country_modifier = {
-					name = human_military
-					duration = -1
-				}
-				add_country_modifier = { 
-					name = restructuring_military
-					duration = 3650
-				}	
-			#}
 
 			add_government_reform = feudalism_reform
 			increase_legitimacy_large_effect = yes
