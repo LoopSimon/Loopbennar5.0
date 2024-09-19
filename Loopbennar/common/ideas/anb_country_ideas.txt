@@ -2565,7 +2565,7 @@ A81_ideas = {
 		manpower_recovery_speed = 0.1
 	}
 	A81_institution_of_the_gibing_day = {
-		improve_relation_modifier = 0.1
+		land_morale = 0.1
 	}
 	A81_giberd_civil_engineering_academy = {
 		development_cost = -0.1
@@ -6107,7 +6107,7 @@ H63_ideas = {
 A16_ideas = {
 	start = {
 		global_own_trade_power = 0.1
-		naval_forcelimit_modifier = 0.2
+		infantry_power = 0.1
 	}
 	bonus = {
 		global_prov_trade_power_modifier = 0.2
@@ -6121,7 +6121,7 @@ A16_ideas = {
 		trade_steering = 0.20
 	}
 	A16_the_wine_watchers = {
-		mercenary_discipline = 0.1
+		naval_forcelimit_modifier = 0.2
 	}
 	A16_a_street_for_every_wine = {
 		development_cost = -0.1
@@ -6138,7 +6138,7 @@ A16_ideas = {
 		placed_merchant_power = 2
 	}
 	A16_wineport_cheeks = {
-		global_unrest = -2
+		mercenary_discipline = 0.10
 	}
 }
 
@@ -9727,7 +9727,7 @@ U17_ideas = {
 		naval_morale = 0.1 
 	}
 	U17_the_cult_of_the_lightfather = {
-		tolerance_heathen = 2
+		infantry_power = 0.1 
 	}
 	U17_sapphires_of_the_sea = {
 		inflation_reduction = 0.1 
@@ -10420,7 +10420,7 @@ Y51_ideas = {
 		trade_steering = 0.25
 	}
 	Y51_the_eternal_duty = {	# The people of Bim Lau know their obligation is to protect their land and their people from threats both physical and spiritual and this is not something they can be swayed from
-		land_morale = 0.05
+		land_morale = 0.1
 		recover_army_morale_speed = 0.10
 	}
 	Y51_wisdom_in_stone_and_plaster = { # The necropolis does not only function as drain on resources, it is also a source of knowledge for the people on many things, among them matters of governance.
@@ -17358,7 +17358,7 @@ Y20_ideas = {
 	free = yes
 
 	Y20_organized_impressment = { #Most of Feiten's ships are crewed with pressganged prisoners
-		global_sailors_modifier = 0.15
+		land_morale = 0.1
 	}
 	Y20_where_the_wind_blows = { #Feiten has a tendency to use alliances as long as they benefit them before moving along, as seen with them betraying Xiyun
 		diplomatic_upkeep = 1
@@ -19699,7 +19699,7 @@ F43_ideas = {
 		tolerance_own = 2
 	}
 	F43_taelarios_left_hand = {
-		infantry_power = 0.05
+		discipline = 0.05
 		global_missionary_strength = 0.01
 	}
 	F43_a_well_earned_rest = {
