@@ -9,7 +9,7 @@ base_tax = 3
 base_production = 2
 base_manpower = 1
 
-trade_goods = unknown
+trade_goods = wine
 center_of_trade = 1
 tribal_owner = B22
 
@@ -20,3 +20,5 @@ is_city = yes
 native_size = 34
 native_ferocity = 8
 native_hostileness = 8
+
+set_province_flag = escann_wine_province
