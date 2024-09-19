@@ -1,0 +1,140 @@
+####################
+#Dalr
+####################
+#Staple Port of Konungrhavn (Bjarnrik)
+bjarnrik_staple_port_of_konungrhavn = {
+	start = 956
+	date = 01.01.01
+	time = {
+		months = 0
+	}
+	build_cost = 0
+	can_be_moved = no
+	move_days_per_unit_distance = 1
+	starting_tier = 1
+	type = monument
+	build_trigger = {	
+	}
+	on_built = {		
+	}
+	on_destroyed = {	
+	}
+	can_use_modifiers_trigger = {
+		AND = {
+			custom_trigger_tooltip = {
+				tooltip = cannorian_monuments_can_use_tooltip_dalr
+					OR = {
+						culture_group = gerudian
+						culture_group = reachman
+						culture = fjord_troll
+						culture = black_castanorian
+						culture = castanorian
+					}
+			}
+			province_is_or_accepts_culture = yes
+		}
+	}		
+	can_upgrade_trigger = {
+		AND = {
+			custom_trigger_tooltip = {
+				tooltip = cannorian_monuments_can_use_tooltip_dalr
+					OR = {
+						culture_group = gerudian
+						culture_group = reachman
+						culture = fjord_troll
+						culture = black_castanorian
+						culture = castanorian
+					}
+			}
+			province_is_or_accepts_culture = yes
+		}
+	}	
+	keep_trigger = {
+	}
+	tier_0 = {
+		upgrade_time = {
+			months = 0
+		}
+		cost_to_upgrade = {
+			factor = 0
+		}
+		province_modifiers = {
+		}
+		area_modifier = {
+		}
+		country_modifiers = {	
+		}
+		on_upgraded = {
+		}
+	}
+	tier_1 = {
+		upgrade_time = {
+			months = 120
+		}
+		cost_to_upgrade = {
+			factor = 1000
+		}
+		province_modifiers = {
+			local_development_cost = -0.05
+			province_trade_power_value = 3
+		}
+		area_modifier = {
+		}
+		country_modifiers = {
+			range = 0.1
+			transport_attrition = -0.1
+		}
+		on_upgraded = {
+		}
+	}
+	tier_2 = {
+		upgrade_time = {
+			months = 240
+		}
+		cost_to_upgrade = {
+			factor = 2500
+		}
+		province_modifiers = {
+			local_development_cost = -0.1
+			province_trade_power_value = 5
+		}
+		area_modifier = {
+		}
+		country_modifiers = {
+			range = 0.2
+			transport_attrition = -0.2
+			ship_durability = 0.025
+		}
+		on_upgraded = {
+			define_advisor = {
+				type = navigator
+				skill = 3
+				culture = root
+				religion = root
+				location = 956
+				cost_multiplier = 0.25
+			}
+		}
+	}
+	tier_3 = {
+		upgrade_time = {
+			months = 480
+		}
+		cost_to_upgrade = {
+			factor = 5000
+		}
+		province_modifiers = {
+			local_development_cost = -0.15
+			province_trade_power_value = 10
+		}
+		area_modifier = {
+		}
+		country_modifiers = {
+			range = 0.33
+			transport_attrition = -0.33
+			ship_durability = 0.05
+		}
+		on_upgraded = {
+		}
+	}
+}

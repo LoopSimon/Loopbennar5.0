@@ -1,0 +1,16 @@
+﻿l_english:
+
+dwarven_monuments_vaulthold.1.t: "Technology of the Precursors"
+dwarven_monuments_vaulthold.1.d: "Inside the Vaulthold we uncovered something incredible. Ancient technologies long forgotten and locked up, manuscripts, manuals, books, and more filled with ancient knowledge written down by the dwarves of the old empire before the collapse. Much of the technology seems to dated to the time of the War of Ages, where the dwarves fought against the armies of the precursor elf Ducaniel. \nThe question now remains: should we formalize a branch of the state to focus on perfecting this technology?"
+dwarven_monuments_vaulthold.1.a: "The secrets of the Vaulthold shall serve the state!"
+dwarven_monuments_vaulthold.1.b: "It would be unwise to disturb this ancient technology. Best leave it be."
+dwarven_monuments_vaulthold.1.c: "Artificery? Why, we already have artificery!"
+dwarven_monuments_vaulthold.1.e: "Even though we already know of this technology, we can put the contents of the vault to use."
+
+dwarven_monuments_goblinslayer_academy.1.t: "Education of the [Root.Monarch.GetTitle]: Goblinslayer Academy"
+dwarven_monuments_goblinslayer_academy.1.d: "With the finishing touches and academy improvements to the new and improved Goblinslayer Academy, our [Root.Monarch.GetTitle] has decided to enroll themselves into a short but rigorous educational course to focus their military skills and knowledge of the battlefield. What should our [Root.Monarch.GetTitle] focus on?"
+dwarven_monuments_goblinslayer_academy.1.a: "Our [Root.Monarch.GetTitle] should take an interest in discipline and order."
+dwarven_monuments_goblinslayer_academy.1.b: "Our [Root.Monarch.GetTitle] should learn how best to organize our general staff."
+dwarven_monuments_goblinslayer_academy.1.c: "Our [Root.Monarch.GetTitle] should be able to inspire the troops!"
+dwarven_monuments_goblinslayer_academy.1.e: "Tactics is where the action happens, that's where our [Root.Monarch.GetTitle] should focus."
+dwarven_monuments_goblinslayer_academy.1.f: "What if our [Root.Monarch.GetTitle] did a little bit of everything?"

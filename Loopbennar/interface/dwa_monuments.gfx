@@ -1,0 +1,245 @@
+spriteTypes = {
+
+####################
+#Event Pictures
+####################
+
+	spriteType = {
+		name = "THE_VAULTHOLD_eventPicture"
+		texturefile = "gfx/event_pictures/THE_VAULTHOLD_eventPicture.dds"
+	}
+
+####################
+#Western Dwarovar
+####################
+
+	spriteType = {
+        name = "GFX_great_project_kronium_throne"	
+        texturefile = "gfx//interface//great_projects//great_project_kronium_throne.dds"
+    }
+	
+    spriteType = {
+        name = "GFX_great_project_amlharaz_assembly"	
+        texturefile = "gfx//interface//great_projects//great_project_amlharaz_assembly.dds"
+    }
+	
+	spriteType = {
+        name = "GFX_great_project_fortress_of_verkal_vazkron"	
+        texturefile = "gfx//interface//great_projects//great_project_fortress_of_verkal_vazkron.dds"
+    }
+	
+	spriteType = {
+        name = "GFX_great_project_hall_of_the_ancestors"	
+        texturefile = "gfx//interface//great_projects//great_project_hall_of_the_ancestors.dds"
+    }
+	
+	spriteType = {
+        name = "GFX_great_project_mithradhum_academy"	
+        texturefile = "gfx//interface//great_projects//great_project_mithradhum_academy.dds"
+    }
+	
+	spriteType = {
+        name = "GFX_great_project_kozenad_brothel"	
+        texturefile = "gfx//interface//great_projects//great_project_kozenad_brothel.dds"
+    }
+	
+    spriteType = {
+        name = "GFX_great_project_er_natvir_railyard"	
+        texturefile = "gfx//interface//great_projects//great_project_er_natvir_railyard.dds"
+    }
+	
+	spriteType = {
+        name = "GFX_great_project_vazhatun_observatory"	
+        texturefile = "gfx//interface//great_projects//great_project_vazhatun_observatory.dds"
+    }
+	
+	spriteType = {
+        name = "GFX_great_project_krakdhumvror_hold"	
+        texturefile = "gfx//interface//great_projects//great_project_krakdhumvror_hold.dds"
+    }
+	
+	spriteType = {
+        name = "GFX_great_project_ramvault_mines"	
+        texturefile = "gfx//interface//great_projects//great_project_ramvault_mines.dds"
+    }
+	
+	spriteType = {
+        name = "GFX_great_project_orlazam_food_silos"	
+        texturefile = "gfx//interface//great_projects//great_project_orlazam_food_silos.dds"
+    }
+	
+	spriteType = {
+        name = "GFX_great_project_orldhum_estates"	
+        texturefile = "gfx//interface//great_projects//great_project_orldhum_estates.dds"
+    }
+	
+	spriteType = {
+        name = "GFX_great_project_khugdihr_bank"	
+        texturefile = "gfx//interface//great_projects//great_project_khugdihr_bank.dds"
+    }
+	
+	spriteType = {
+        name = "GFX_great_project_jorkad_aqueduct"	
+        texturefile = "gfx//interface//great_projects//great_project_jorkad_aqueduct.dds"
+    }
+	
+	spriteType = {
+		name = "GFX_great_project_sedadhum_mining_settlement"	
+        texturefile = "gfx//interface//great_projects//great_project_sedadhum_mining_settlement.dds"
+    }
+
+####################
+#Serpentsreach
+####################
+
+	spriteType = {
+		name = "GFX_great_project_gor_burad_fireglass_forge"	
+		texturefile = "gfx//interface//great_projects//great_project_gor_burad_fireglass_forge.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_great_project_verkal_skomdihr_warding_gate"	
+		texturefile = "gfx//interface//great_projects//great_project_verkal_skomdihr_warding_gate.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_great_project_arg_ordstun_great_clast_shafts"	
+		texturefile = "gfx//interface//great_projects//great_project_arg_ordstun_great_clast_shafts.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_great_project_shaztundihr_marble_gate"	
+		texturefile = "gfx//interface//great_projects//great_project_shaztundihr_marble_gate.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_great_project_ovdal_lodhum_tunnel_of_love"	
+		texturefile = "gfx//interface//great_projects//great_project_ovdal_lodhum_tunnel_of_love.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_great_project_orlghelovar_great_waterfall"	
+		texturefile = "gfx//interface//great_projects//great_project_orlghelovar_great_waterfall.dds"
+	}
+	
+####################
+#Middle Dwarovar
+####################	
+	
+	spriteType = {
+		name = "GFX_great_project_verkal_gulan_golden_delve"	
+		texturefile = "gfx//interface//great_projects//great_project_verkal_gulan_golden_delve.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_great_project_seghdihr_home_of_the_seg_band"	
+		texturefile = "gfx//interface//great_projects//great_project_seghdihr_home_of_the_seg_band.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_great_project_hehodovar_school_of_architecture"	
+		texturefile = "gfx//interface//great_projects//great_project_hehodovar_school_of_architecture.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_great_project_gor_vazumbrog_the_vaulthold"	
+		texturefile = "gfx//interface//great_projects//great_project_gor_vazumbrog_the_vaulthold.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_great_project_gor_ozumbrog_the_topaz_throne"	
+		texturefile = "gfx//interface//great_projects//great_project_gor_ozumbrog_the_topaz_throne.dds"
+	}
+	
+####################
+#Tree of Stone
+####################
+
+	spriteType = {
+		name = "GFX_great_project_earthseed"	
+		texturefile = "gfx//interface//great_projects//great_project_earthseed.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_great_project_ovdal_kanzad_cannon_foundry"	
+		texturefile = "gfx//interface//great_projects//great_project_ovdal_kanzad_cannon_foundry.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_grozumdhir_green_gate"	
+		texturefile = "gfx//interface//great_projects//great_project_grozumdhir_green_gate.dds"
+	}	
+	
+	spriteType = {
+		name = "GFX_great_project_ovdal_az_an_grand_lake_ballroom"	
+		texturefile = "gfx//interface//great_projects//great_project_ovdal_az_an_grand_lake_ballroom.dds"
+	}	
+	
+	spriteType = {
+		name = "GFX_great_project_hul_as_krakazol_breweries"	
+		texturefile = "gfx//interface//great_projects//great_project_hul_as_krakazol_breweries.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_great_project_grozumdhir_green_gate"	
+		texturefile = "gfx//interface//great_projects//great_project_grozumdhir_green_gate.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_great_project_rubyhold_academy"	
+		texturefile = "gfx//interface//great_projects//great_project_rubyhold_academy.dds"
+	}
+
+####################
+#Jade Mines
+####################
+
+	spriteType = {
+		name = "GFX_great_project_tuwad_dhumakon_gardens"	
+		texturefile = "gfx//interface//great_projects//great_project_tuwad_dhumakon_gardens.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_gronstunad_trade_halls"	
+		texturefile = "gfx//interface//great_projects//great_project_gronstunad_trade_halls.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_great_project_verkal_dromak_mage_academy"	
+		texturefile = "gfx//interface//great_projects//great_project_verkal_dromak_mage_academy.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_vurdriz_andriz_bastion"	
+		texturefile = "gfx//interface//great_projects//great_project_vurdriz_andriz_bastion.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_emerald_spire"	
+		texturefile = "gfx//interface//great_projects//great_project_emerald_spire.dds"
+	}
+
+####################
+#Not In Serpentspine
+####################
+	
+	spriteType = {
+		name = "GFX_great_project_marrhold_gate_to_the_serpentspine"	
+		texturefile = "gfx//interface//great_projects//great_project_marrhold_gate_to_the_serpentspine.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_great_project_ovdal_tungr_port_hold"	
+		texturefile = "gfx//interface//great_projects//great_project_ovdal_tungr_port_hold.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_great_project_verkal_ozovar_phokhao_citadel"	
+		texturefile = "gfx//interface//great_projects//great_project_verkal_ozovar_phokhao_citadel.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_great_project_silverforge_strongbellow_academy"	
+		texturefile = "gfx//interface//great_projects//great_project_silverforge_strongbellow_academy.dds"
+	}
+}
