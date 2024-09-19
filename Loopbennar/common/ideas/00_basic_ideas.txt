@@ -591,16 +591,18 @@ diplomatic_ideas = {
 	category = DIP
 	bonus = {
 		reduced_stab_impacts = yes
+		free_policy = 1
 	}
 	
 	grand_banquets = {
 		diplomats = 1
 	}
 	foreign_embassies = { #1.35
-		dip_advisor_cost = -0.25
+		advisor_cost = -0.1
 	}
 	cabinet = {
 		diplomatic_upkeep = 1
+		all_estate_loyalty_equilibrium = 0.1
 	}
 	benign_diplomats = {
 		improve_relation_modifier = 0.25
@@ -1422,7 +1424,7 @@ quantity_ideas = {
 	category = MIL
 
 	bonus = {
-		land_forcelimit_modifier  = 0.33 #1.35
+		land_forcelimit_modifier  = 0.2 #1.35
 		num_of_pronoiars = 1
 	}
 	mass_army = {
@@ -1545,6 +1547,19 @@ expansion_ideas = {
 			}
 		}
 		modifier = {
+			factor = 10	#Boys who wanna settle the Dreadmire and in the future, the Serpentspine
+			OR = {
+				any_owned_province = {
+					OR = {
+						region = ourdia_region
+						region = dostanor_region
+						region = the_borders_region
+					}
+					has_empty_adjacent_province = yes
+				}
+			}
+		}
+		modifier = {
 			factor = 0	#Serpentspine starts alread get colonists
 			capital_scope = {
 				continent = serpentspine
@@ -1621,20 +1636,9 @@ expansion_ideas = {
 			factor = 0
 			NOT = { has_idea_group = exploration_ideas }
 			NOT = { is_colonial_nation = yes }
-			OR = {
-				NOT = {
-					any_owned_province = {
-						has_empty_adjacent_province = yes
-					}
-				}
-				AND = {
-					capital_scope = {
-						OR = {
-							superregion = western_cannor_superregion
-							superregion = escann_superregion
-						}
-					}
-					NOT = { is_year = 1500 }
+			NOT = {
+				any_owned_province = {
+					has_empty_adjacent_province = yes
 				}
 			}
 		}
@@ -1668,23 +1672,26 @@ administrative_ideas = {
 		adm_advisor_cost = -0.25  #1.35
 	}
 	local_rule = {
-		advisor_pool = 1
+		all_estate_loyalty_equilibrium = 0.05
 		num_of_pronoiars = 1
 	}
 	adaptability = {
 		core_creation = -0.25
 	}
 	cultural_regulations = { #1.35
-		promote_culture_cost = -0.3
+		num_accepted_cultures = 1
 	}
 	stable_government = { #1.35
-		stability_cost_modifier = -0.25 
+		stability_cost_modifier = -0.2
+		state_maintenance_modifier = -0.1
 	}
 	centralization = { #1.35
 		global_autonomy = -0.05
+		min_autonomy_in_territories = -0.05
+		
 	}
 	civil_servants = {
-		adm_tech_cost_modifier = -0.1
+		ae_impact = -0.15
 		#Anbennar
 		effect = { increase_legitimacy_equivalent_absolutism_from_idea_groups_mod = yes }
 		removed_effect = { decrease_legitimacy_equivalent_absolutism_from_idea_groups_mod = yes }
@@ -1749,19 +1756,21 @@ humanist_ideas = {
 	}
 	indirect_rule = {
 		years_of_nationalism = -10
+		core_creation = -0.15
 	}
 	ecumenism = { #1.35
 		tolerance_heretic = 2
 	}
 	cultural_ties = {
 		num_accepted_cultures = 2
+		advisor_cost = -0.1
 	}
 	humanist_tolerance = { #1.35
 		tolerance_heathen = 2
 		religious_unity = 0.2
 	}
 	benevolence = {
-		improve_relation_modifier = 0.3
+		stability_cost_modifier = -0.2
 	}
 	tolerance_idea = { #1.35
 		tolerance_of_heretics_capacity = 1 
@@ -1871,39 +1880,31 @@ naval_ideas = {
 	}
 
 	bonus = {
-		global_naval_barrage_cost = -1
-		disengagement_chance = 0.15
+		free_leader_pool = 1
 	}
 
 	boarding_parties = {
-		leader_naval_shock = 1
-		landing_penalty = -1 #1.35
+		discipline = 0.035
 	}
 	improved_rams = {
-		galley_power = 0.25
+		leader_land_fire = 1
 	}
 	naval_cadets = {
-		leader_naval_fire = 1
-		sunk_ship_morale_hit_recieved = -0.33
+		leader_land_manuever = 1
+		leader_naval_manuever = 1
 	}
 	naval_glory = {
-		navy_tradition = 1
-		siege_blockade_progress = 1
+		leader_siege = 1
 	}
 	press_gangs = {
-		sailors_recovery_speed = 0.25
-		allowed_marine_fraction = 0.25
+		leader_naval_fire = 1
+		leader_naval_shock = 1
 	}
 	oak_forests_for_ships = {
-		heavy_ship_power = 0.20
-		ship_durability = 0.1
+		yearly_army_professionalism = 0.002
 	}
 	superior_seamanship = {
-		naval_morale = 0.1
-		global_naval_engagement_modifier = 0.1
-		#Anbennar
-		effect = { increase_legitimacy_equivalent_absolutism_from_idea_groups_mod = yes }
-		removed_effect = { decrease_legitimacy_equivalent_absolutism_from_idea_groups_mod = yes }
+		army_tradition_decay = -0.025
 	}
 
 	ai_will_do = {
@@ -1948,20 +1949,19 @@ court_ideas = { #1.35
 		horde_unity = 0.5
 		meritocracy = 0.25 
 		imperial_mandate = 0.1
-		imperial_authority = 0.05
+		imperial_authority = 0.05 
 	}
 	
 	long_echo = {
-		power_projection_from_insults = 1
-		diplomatic_reputation = 1
+		global_unrest = -2
+		no_stability_loss_on_monarch_death = yes  
 	}
 	recognize_hierarchy = {
 		all_estate_loyalty_equilibrium = 0.1
 		loyalty_change_on_revoked = 0.05
 	}
 	welcoming_ceremonies = {
-		prestige = 1 
-		monthly_persian_influence = 0.1
+		global_prosperity_growth = 0.25
 	}
 	tranquil_coordination = {
 		reform_progress_growth = 0.2
@@ -2015,24 +2015,22 @@ mercenary_ideas = { #1.35
 	}
 	war_council = {
 		mil_advisor_cost = -0.25
-		merc_independent_from_trade_range = yes
 	}
 	expanded_contracts = {
-		merc_maintenance_modifier = -0.25
+		merc_maintenance_modifier = -0.1
 	}
 	nation_of_war = {
 		mil_tech_cost_modifier = -0.1
 	}
 	benefits_for_mercenaries = {
 		war_taxes_cost_modifier = -0.5
-		merc_leader_army_tradition = 0.5
+		merc_leader_army_tradition = 0.25
 	}
 	seasoned_veterans = {
 		infantry_power = 0.1
 	}
 	organised_mercenary_recruitment = { 
-		mercenary_manpower = 0.3
-		allow_mercenary_drill = yes
+		mercenary_manpower = 0.15
 		#Anbennar
 		effect = { increase_legitimacy_equivalent_absolutism_from_idea_groups_mod = yes }
 		removed_effect = { decrease_legitimacy_equivalent_absolutism_from_idea_groups_mod = yes }
