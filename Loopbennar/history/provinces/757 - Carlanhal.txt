@@ -1,5 +1,8 @@
 
 # No previous file for Ilheus
+owner = B23
+controller = B23
+add_core = B23
 culture = green_orc
 religion = great_dookan
 
