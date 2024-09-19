@@ -3945,8 +3945,8 @@ Z53_ideas = {
 #Darkscale
 Z55_ideas = {
 	start = {
-		leader_land_shock = 1
-		land_attrition = -0.1
+		leader_land_shock  = 0.1
+		land_morale = 0.1
 	}
 	bonus = {
 		monarch_admin_power = 1
@@ -19680,11 +19680,12 @@ F36_ideas = {
 #Zansap
 F43_ideas = {
 	start = {
+	shock_damage_received = -0.10 #used to fighting monsters
 		warscore_cost_vs_other_religion = -0.15 #want to take their land back
 		global_own_trade_power = 0.1 #lots of rivers, good for trading
 	}
 	bonus = {
-		shock_damage_received = -0.10 #used to fighting monsters
+		global_own_trade_power = 0.1 #lots of rivers, good for trading
 	}
 
 	trigger = {
@@ -19703,7 +19704,7 @@ F43_ideas = {
 		global_missionary_strength = 0.01
 	}
 	F43_a_well_earned_rest = {
-		production_efficiency = 0.05
+		production_efficiency = 0.1
 		missionary_maintenance_cost = -0.10
 	}
 	F43_the_blooming_kasiyaru = {
