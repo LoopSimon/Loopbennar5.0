@@ -2321,10 +2321,10 @@ anbennar_T5_generic_bottomless_bags = {
 					has_country_modifier = troll_military
 					has_country_modifier = kobold_military
 					has_country_modifier = gnollish_military
+					has_country_modifier = human_military
 				}
 			}
 		}
-		NOT = { has_country_modifier = human_military }
 		NOT = { has_country_modifier = ruinborn_military }
 	}
 	trigger = {
@@ -2357,10 +2357,10 @@ anbennar_T5_generic_protection_charms = {
 					has_country_modifier = troll_military
 					has_country_modifier = kobold_military
 					has_country_modifier = gnollish_military
+					has_country_modifier = human_military
 				}
 			}
 		}
-		NOT = { has_country_modifier = human_military }
 		NOT = { has_country_modifier = ruinborn_military }
 	}
 	trigger = {
@@ -2392,10 +2392,10 @@ anbennar_T5_generic_windshapers = {
 					has_country_modifier = troll_military
 					has_country_modifier = kobold_military
 					has_country_modifier = gnollish_military
+					has_country_modifier = human_military
 				}
 			}
 		}
-		NOT = { has_country_modifier = human_military }
 		NOT = { has_country_modifier = ruinborn_military }
 	}
 	trigger = {
@@ -2430,10 +2430,10 @@ anbennar_T5_generic_war_games = {
 					has_country_modifier = troll_military
 					has_country_modifier = kobold_military
 					has_country_modifier = gnollish_military
+					has_country_modifier = human_military
 				}
 			}
 		}
-		NOT = { has_country_modifier = human_military }
 		NOT = { has_country_modifier = ruinborn_military }
 	}
 	trigger = {
@@ -2466,10 +2466,10 @@ anbennar_T5_generic_adventurer_contracts = {
 					has_country_modifier = troll_military
 					has_country_modifier = kobold_military
 					has_country_modifier = gnollish_military
+					has_country_modifier = human_military
 				}
 			}
 		}
-		NOT = { has_country_modifier = human_military }
 		NOT = { has_country_modifier = ruinborn_military }
 	}
 	trigger = {
@@ -2506,10 +2506,10 @@ anbennar_T5_generic_specialized_troops = {
 					has_country_modifier = troll_military
 					has_country_modifier = kobold_military
 					has_country_modifier = gnollish_military
+					has_country_modifier = human_military
 				}
 			}
 		}
-		NOT = { has_country_modifier = human_military }
 		NOT = { has_country_modifier = ruinborn_military }
 	}
 	trigger = {
@@ -2540,10 +2540,10 @@ anbennar_T5_generic_fodder = {
 					has_country_modifier = troll_military
 					has_country_modifier = kobold_military
 					has_country_modifier = gnollish_military
+					has_country_modifier = human_military
 				}
 			}
 		}
-		NOT = { has_country_modifier = human_military }
 		NOT = { has_country_modifier = ruinborn_military }
 	}
 	trigger = {
@@ -2575,10 +2575,10 @@ anbennar_T5_generic_mage_shields = {
 					has_country_modifier = troll_military
 					has_country_modifier = kobold_military
 					has_country_modifier = gnollish_military
+					has_country_modifier = human_military
 				}
 			}
 		}
-		NOT = { has_country_modifier = human_military }
 		NOT = { has_country_modifier = ruinborn_military }
 	}
 	trigger = {
@@ -2602,7 +2602,7 @@ anbennar_T5_human_centaur = {
 	allow_normal_conversion = yes
 	potential = {
 		NOT = { has_adventurer_reform = yes }
-		has_country_modifier = human_military
+		has_country_modifier = mechanim_military
 	}
 	trigger = {
 		high_tolerance_centaur_race_trigger = yes
@@ -2628,7 +2628,7 @@ anbennar_T5_human_dwarven = {
 	allow_normal_conversion = yes
 	potential = {
 		NOT = { has_adventurer_reform = yes }
-		has_country_modifier = human_military
+		has_country_modifier = mechanim_military
 	}
 	trigger = {
 		high_tolerance_dwarven_race_trigger = yes
@@ -2654,7 +2654,7 @@ anbennar_T5_human_elven = {
 	allow_normal_conversion = yes
 	potential = {
 		NOT = { has_adventurer_reform = yes }
-		has_country_modifier = human_military
+		has_country_modifier = mechanim_military
 	}
 	trigger = {
 		high_tolerance_elven_race_trigger = yes
@@ -2681,7 +2681,7 @@ anbennar_T5_human_gnollish = {
 	allow_normal_conversion = yes
 	potential = {
 		NOT = { has_adventurer_reform = yes }
-		has_country_modifier = human_military
+		has_country_modifier = mechanim_military
 	}
 	trigger = {
 		high_tolerance_gnollish_race_trigger = yes
@@ -2704,7 +2704,7 @@ anbennar_T5_human_gnomish = {
 	allow_normal_conversion = yes
 	potential = {
 		NOT = { has_adventurer_reform = yes }
-		has_country_modifier = human_military
+		has_country_modifier = mechanim_military
 	}
 	trigger = {
 		high_tolerance_gnomish_race_trigger = yes
@@ -2741,7 +2741,7 @@ anbennar_T5_human_goblin = {
 	allow_normal_conversion = yes
 	potential = {
 		NOT = { has_adventurer_reform = yes }
-		has_country_modifier = human_military
+		has_country_modifier = mechanim_military
 	}
 	trigger = {
 		high_tolerance_goblin_race_trigger = yes
@@ -2765,7 +2765,7 @@ anbennar_T5_human_half_elven = {
 	allow_normal_conversion = yes
 	potential = {
 		NOT = { has_adventurer_reform = yes }
-		has_country_modifier = human_military
+		has_country_modifier = mechanim_military
 	}
 	trigger = {
 		high_tolerance_half_elven_race_trigger = yes
@@ -2789,7 +2789,7 @@ anbennar_T5_human_half_orcish = {
 	allow_normal_conversion = yes
 	potential = {
 		NOT = { has_adventurer_reform = yes }
-		has_country_modifier = human_military
+		has_country_modifier = mechanim_military
 	}
 	trigger = {
 		high_tolerance_half_orcish_race_trigger = yes
@@ -2815,7 +2815,7 @@ anbennar_T5_human_halfling = {
 	allow_normal_conversion = yes
 	potential = {
 		NOT = { has_adventurer_reform = yes }
-		has_country_modifier = human_military
+		has_country_modifier = mechanim_military
 	}
 	trigger = {
 		high_tolerance_halfling_race_trigger = yes
@@ -2842,7 +2842,7 @@ anbennar_T5_human_harimari = {
 	allow_normal_conversion = yes
 	potential = {
 		NOT = { has_adventurer_reform = yes }
-		has_country_modifier = human_military
+		has_country_modifier = mechanim_military
 	}
 	trigger = {
 		high_tolerance_harimari_race_trigger = yes
@@ -2866,7 +2866,7 @@ anbennar_T5_human_harpy = {
 	allow_normal_conversion = yes
 	potential = {
 		NOT = { has_adventurer_reform = yes }
-		has_country_modifier = human_military
+		has_country_modifier = mechanim_military
 	}
 	trigger = {
 		high_tolerance_harpy_race_trigger = yes
@@ -2892,7 +2892,7 @@ anbennar_T5_human_hobgoblin = {
 	allow_normal_conversion = yes
 	potential = {
 		NOT = { has_adventurer_reform = yes }
-		has_country_modifier = human_military
+		has_country_modifier = mechanim_military
 	}
 	trigger = {
 		high_tolerance_hobgoblin_race_trigger = yes
@@ -2918,7 +2918,7 @@ anbennar_T5_human_human = {
 	allow_normal_conversion = yes
 	potential = {
 		NOT = { has_adventurer_reform = yes }
-		has_country_modifier = human_military
+		has_country_modifier = mechanim_military
 	}
 	trigger = {
 		always = yes
@@ -2941,7 +2941,7 @@ anbennar_T5_human_kobold = {
 	allow_normal_conversion = yes
 	potential = {
 		NOT = { has_adventurer_reform = yes }
-		has_country_modifier = human_military
+		has_country_modifier = mechanim_military
 	}
 	trigger = {
 		high_tolerance_kobold_race_trigger = yes
@@ -2967,7 +2967,7 @@ anbennar_T5_human_lizardfolk = {
 	allow_normal_conversion = yes
 	potential = {
 		NOT = { has_adventurer_reform = yes }
-		has_country_modifier = human_military
+		has_country_modifier = mechanim_military
 	}
 	trigger = {
 		high_tolerance_lizardfolk_race_trigger = yes
@@ -3026,7 +3026,7 @@ anbennar_T5_human_ogre = {
 	allow_normal_conversion = yes
 	potential = {
 		NOT = { has_adventurer_reform = yes }
-		has_country_modifier = human_military
+		has_country_modifier = mechanim_military
 	}
 	trigger = {
 		high_tolerance_ogre_race_trigger = yes
@@ -3051,7 +3051,7 @@ anbennar_T5_human_orcish = {
 	allow_normal_conversion = yes
 	potential = {
 		NOT = { has_adventurer_reform = yes }
-		has_country_modifier = human_military
+		has_country_modifier = mechanim_military
 	}
 	trigger = {
 		high_tolerance_orcish_race_trigger = yes
@@ -3077,7 +3077,7 @@ anbennar_T5_human_ruinborn = {
 	allow_normal_conversion = yes
 	potential = {
 		NOT = { has_adventurer_reform = yes }
-		has_country_modifier = human_military
+		has_country_modifier = mechanim_military
 	}
 	trigger = {
 		high_tolerance_ruinborn_race_trigger = yes
@@ -3103,7 +3103,7 @@ anbennar_T5_human_troll = {
 	allow_normal_conversion = yes
 	potential = {
 		NOT = { has_adventurer_reform = yes }
-		has_country_modifier = human_military
+		has_country_modifier = mechanim_military
 	}
 	trigger = {
 		high_tolerance_troll_race_trigger = yes
@@ -3148,11 +3148,11 @@ anbennar_T5_human_army_of_halann = {
 				high_tolerance_human_race_trigger = yes
 				high_tolerance_kobold_race_trigger = yes
 				high_tolerance_lizardfolk_race_trigger = yes
-				# high_tolerance_mechanim_race_trigger = yes
 				high_tolerance_ogre_race_trigger = yes
 				high_tolerance_orcish_race_trigger = yes
 				high_tolerance_ruinborn_race_trigger = yes
 				high_tolerance_troll_race_trigger = yes
+				high_tolerance_mechanim_race_trigger = yes
 				fast_owns_num_pops_of_race = { race = centaur amount = 1 }
 				fast_owns_num_pops_of_race = { race = dwarven amount = 1 }
 				fast_owns_num_pops_of_race = { race = elven amount = 1 }
@@ -3171,6 +3171,8 @@ anbennar_T5_human_army_of_halann = {
 				fast_owns_num_pops_of_race = { race = orcish amount = 1 }
 				fast_owns_num_pops_of_race = { race = ruinborn amount = 1 }
 				fast_owns_num_pops_of_race = { race = troll amount = 1 }
+				fast_owns_num_pops_of_race = { race = mechanim amount = 1 }
+				
 			}
 		}
 	}
