@@ -672,6 +672,10 @@ country_event = {
 	
 	immediate = {
 		set_global_flag = "corins_ascension"
+		723 = { #Bayvic Goblin stuff starts
+			set_variable = { which = goblin_migration_repeats value = 2 }
+			province_event = { id = goblin_migration.0 days = 730 random = 3650 }
+		}
 	}
 	
 	mean_time_to_happen = {
