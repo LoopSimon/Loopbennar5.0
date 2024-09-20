@@ -1530,7 +1530,7 @@ A48_ideas = {
 # Xanzerbexis Ideas
 A49_ideas = {
 	start = {
-		hostile_attrition = 1 # hill gnolls have learned guerilla tactics, also gameplay-wise attrition may increase survival chance for ai
+		infantry_power = 0.075 # hill gnolls have learned guerilla tactics, also gameplay-wise attrition may increase survival chance for ai
 		defensiveness = 0.15 # Mountain nation holed up in the mountains
 	}
 
@@ -1560,7 +1560,7 @@ A49_ideas = {
 		leader_land_manuever = 1
 	}
 	A49_hillthrone_has_eyes = { # Queens of the Hill created an enforcer gang of young hostages from the disparate Khenak tribes
-		global_autonomy = -0.05
+		hostile_attrition = 1
 	}
 	A49_inquisitive_of_all_kults = { # Xhazobkult worship became more tolerable and more animistic, sacrificing animals and objects instead of humans
 		tolerance_heathen = 2
