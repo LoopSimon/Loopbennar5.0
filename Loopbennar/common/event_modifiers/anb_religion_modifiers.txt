@@ -1807,7 +1807,7 @@ primary_khetist_cult = {
 }
 
 primary_gnollish_cult = {
-	land_morale = 0.05
+	land_morale = 0.1
 	reduced_liberty_desire = 10
 	religion = yes
 }
