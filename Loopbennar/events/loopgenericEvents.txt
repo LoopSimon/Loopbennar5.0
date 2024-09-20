@@ -1,0 +1,213 @@
+namespace = flavor_loopgeneric
+country_event = { #Military Direction
+	id = flavor_loopgeneric.1
+	title = flavor_generic.1.t
+	desc = flavor_generic.1.d
+	picture = DIPLOMACY_eventPicture
+	
+	is_triggered_only = yes
+
+	trigger = {
+		#mission
+
+	}
+	
+	option = { #morale
+			name = "flavor_loopgeneric.1.a" 
+			add_mil_power = 100
+			add_country_modifier = {
+				name = morale_g
+				duration = -1
+			}
+			
+	}
+	option = { #shock
+			name = "flavor_loopgeneric.1.b"
+			add_mil_power = 100
+			add_country_modifier = {
+				name = shock_g
+				duration = -1
+			}
+			
+	}
+	option = { #fire
+			name = "flavor_loopgeneric.1.c"
+			add_mil_power = 100
+			add_country_modifier = {
+				name = fire_g
+				duration = -1
+			}
+			
+	}
+	option = { #infantry
+			name = "flavor_loopgeneric.1.e"
+			add_mil_power = 100
+			add_country_modifier = {
+				name = infantry_g
+				duration = -1
+			}
+			
+	}
+	option = { #quantity
+			name = "flavor_loopgeneric.1.f"
+			add_mil_power = 100
+			add_country_modifier = {
+				name = quantity_g
+				duration = -1
+			}
+			
+	}
+}
+
+country_event = { #General Academy
+	id = flavor_loopgeneric.2
+	title = flavor_generic.2.t
+	desc = flavor_generic.2.d
+	picture = DIPLOMACY_eventPicture
+	
+	is_triggered_only = yes
+
+	trigger = {
+		#mission
+
+	}
+	
+	option = { #stock general
+			name = "flavor_loopgeneric.2.a" 
+			define_general = {
+				name = "Generic the Everyman"
+				fire = 5
+				shock = 5
+				manuever = 2
+				siege = 2
+			}
+			
+	}
+	option = { #shock
+			name = "flavor_loopgeneric.2.b"
+			add_country_modifier = {
+				name = general_buff
+				duration = 10950
+			}
+			
+	}
+}
+
+country_event = { #New Manufactoring Centers
+	id = flavor_loopgeneric.3
+	title = flavor_generic.3.t
+	desc = flavor_generic.3.d
+	picture = DIPLOMACY_eventPicture
+	
+	is_triggered_only = yes
+
+	trigger = {
+		#mission
+
+	}
+	
+	option = { #stock general
+			name = "flavor_loopgeneric.3.a"
+			home_trade_node_effect_scope = {
+				random_trade_node_member_province = {
+						limit = {
+							owned_by = ROOT
+							}
+					add_province_modifier = {
+						name = manufactoring_center
+						duration = -1
+					}
+				}
+			}
+			
+	}
+}
+
+country_event = { #New Manufactoring Centers
+	id = flavor_loopgeneric.4
+	title = flavor_generic.4.t
+	desc = flavor_generic.4.d
+	picture = DIPLOMACY_eventPicture
+	
+	is_triggered_only = yes
+
+	trigger = {
+		#mission
+
+	}
+	
+	option = { #stock general
+			name = "flavor_loopgeneric.4.a"
+			home_trade_node_effect_scope = {
+				random_trade_node_member_province = {
+						limit = {
+							owned_by = ROOT
+							}
+					add_province_modifier = {
+						name = manufactoring_center
+						duration = -1
+					}
+				}
+			}
+			
+	}
+}
+country_event = { #Economic Direction
+	id = flavor_loopgeneric.5
+	title = flavor_generic.5.t
+	desc = flavor_generic.5.d
+	picture = DIPLOMACY_eventPicture
+	
+	is_triggered_only = yes
+
+	trigger = {
+		#mission
+
+	}
+	
+	option = { #
+			name = "flavor_loopgeneric.5.a" 
+			add_adm_power = 100
+			add_country_modifier = {
+				name = money_g
+				duration = -1
+			}
+			
+	}
+	option = { #
+			name = "flavor_loopgeneric.5.b"
+			add_adm_power = 100
+			add_country_modifier = {
+				name = advisors_g
+				duration = -1
+			}
+			
+	}
+	option = { #
+			name = "flavor_loopgeneric.5.c"
+			add_adm_power = 100
+			add_country_modifier = {
+				name = progress_g
+				duration = -1
+			}
+			
+	}
+	option = { #
+			name = "flavor_loopgeneric.5.e"
+			add_adm_power = 100
+			add_country_modifier = {
+				name = construction_g
+				duration = -1
+			}
+			
+	}
+	option = { #
+			name = "flavor_loopgeneric.5.f"
+			add_adm_power = 100
+			add_country_modifier = {
+				name = mana_g
+				duration = -1
+			}
+			
+	}
+}
