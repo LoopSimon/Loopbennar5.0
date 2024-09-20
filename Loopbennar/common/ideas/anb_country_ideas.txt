@@ -3945,7 +3945,7 @@ Z53_ideas = {
 #Darkscale
 Z55_ideas = {
 	start = {
-		leader_land_shock  = 0.1
+		leader_land_shock  = 1.0
 		land_morale = 0.1
 	}
 	bonus = {
