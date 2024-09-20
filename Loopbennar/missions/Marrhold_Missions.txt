@@ -640,7 +640,7 @@ marrhold_three = {
 		effect = {
 			add_country_modifier = {
 				name = "marrhold_reclamation"
-				duration = 36500 #100 years
+				duration = 73000
 			}
 			dryadsdale_area = {
 				limit = {
