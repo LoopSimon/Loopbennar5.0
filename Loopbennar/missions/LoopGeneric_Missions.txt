@@ -39,19 +39,13 @@ loopgeneric_column_2 = {
 			grown_by_development = 100
 		}
 		effect = {
-			capital_scope = {
-				region = {
-					limit = {
-						NOT = {
-						owned_by = ROOT
-						is_core = ROOT
-					}
-				}
-			add_permanent_claim = ROOT
+			ROOT = {
+			add_adm_power = 150
+			add_dip_power = 150
+			add_mil_power = 150
+			change_government_reform_progress = 75
 			}
 		}
-
-	}
 }
 	##Mission End
 	##Mission Start
@@ -176,7 +170,7 @@ loopgeneric_column_3 = {
 	}
 	##Mission End
 	##Mission Start
-	hegamonic_reality = {
+	hegemonic_reality = {
 		icon = avoid_fragmentation
 		required_missions {
 			general_staff
