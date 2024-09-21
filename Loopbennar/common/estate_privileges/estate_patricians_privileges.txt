@@ -121,6 +121,8 @@ estate_castonath_patricians_trade_rights = {
 				estate = estate_castonath_patricians
 				influence = 60
 			}
+			NOT = { has_country_flag = cl-semi-patrician }
+			NOT = { has_country_flag = patrician_castanor }
 		}
 		modifier = {
 			trade_efficiency = -0.05
@@ -139,6 +141,7 @@ estate_castonath_patricians_trade_rights = {
 				estate = estate_castonath_patricians
 				influence = 70
 			}
+			NOT = { has_country_flag = cl-semi-patrician }
 			NOT = { has_country_flag = patrician_castanor }
 		}
 		modifier = {
@@ -344,6 +347,7 @@ estate_castonath_patricians_free_building_permits = {
 				estate = estate_castonath_patricians
 				influence = 70
 			}
+			NOT = { has_country_flag = cl-semi-patrician }
 			NOT = { has_country_flag = patrician_castanor }
 		}
 		modifier = {
@@ -532,6 +536,7 @@ estate_castonath_patricians_support_patrician_owned_businesses = {
 				estate = estate_castonath_patricians
 				influence = 60
 			}
+			NOT = { has_country_flag = cl-semi-patrician }
 			NOT = { has_country_flag = patrician_castanor }
 		}
 		modifier = {
@@ -551,6 +556,7 @@ estate_castonath_patricians_support_patrician_owned_businesses = {
 				estate = estate_castonath_patricians
 				influence = 70
 			}
+			NOT = { has_country_flag = cl-semi-patrician }
 			NOT = { has_country_flag = patrician_castanor }
 		}
 		modifier = {
@@ -570,6 +576,7 @@ estate_castonath_patricians_support_patrician_owned_businesses = {
 				estate = estate_castonath_patricians
 				influence = 80
 			}
+			NOT = { has_country_flag = cl-semi-patrician }
 			NOT = { has_country_flag = patrician_castanor }
 		}
 		modifier = {
@@ -583,6 +590,7 @@ estate_castonath_patricians_support_patrician_owned_businesses = {
 				estate = estate_castonath_patricians
 				influence = 90
 			}
+			NOT = { has_country_flag = cl-semi-patrician }
 			NOT = { has_country_flag = patrician_castanor }
 		}
 		modifier = {
@@ -706,6 +714,7 @@ estate_castonath_patricians_slaken_authority_for_tithes = {
 				estate = estate_castonath_patricians
 				influence = 70
 			}
+			NOT = { has_country_flag = cl-semi-patrician }
 			NOT = { has_country_flag = patrician_castanor }
 		}
 		modifier = {
@@ -725,6 +734,7 @@ estate_castonath_patricians_slaken_authority_for_tithes = {
 				estate = estate_castonath_patricians
 				influence = 80
 			}
+			NOT = { has_country_flag = cl-semi-patrician }
 			NOT = { has_country_flag = patrician_castanor }
 		}
 		modifier = {
@@ -738,6 +748,7 @@ estate_castonath_patricians_slaken_authority_for_tithes = {
 				estate = estate_castonath_patricians
 				influence = 90
 			}
+			NOT = { has_country_flag = cl-semi-patrician }
 			NOT = { has_country_flag = patrician_castanor }
 		}
 		modifier = {
@@ -844,6 +855,7 @@ estate_castonath_patricians_center_of_an_empire = {
 				estate = estate_castonath_patricians
 				influence = 60
 			}
+			NOT = { has_country_flag = cl-semi-patrician }
 			NOT = { has_country_flag = patrician_castanor }
 		}
 		modifier = {
@@ -864,6 +876,7 @@ estate_castonath_patricians_center_of_an_empire = {
 				estate = estate_castonath_patricians
 				influence = 70
 			}
+			NOT = { has_country_flag = cl-semi-patrician }
 			NOT = { has_country_flag = patrician_castanor }
 		}
 		modifier = {
@@ -884,6 +897,7 @@ estate_castonath_patricians_center_of_an_empire = {
 				estate = estate_castonath_patricians
 				influence = 80
 			}
+			NOT = { has_country_flag = cl-semi-patrician }
 			NOT = { has_country_flag = patrician_castanor }
 		}
 		modifier = {
@@ -898,6 +912,7 @@ estate_castonath_patricians_center_of_an_empire = {
 				estate = estate_castonath_patricians
 				influence = 90
 			}
+			NOT = { has_country_flag = cl-semi-patrician }
 			NOT = { has_country_flag = patrician_castanor }
 		}
 		modifier = {
@@ -1007,6 +1022,7 @@ estate_castonath_patricians_deal_with_overpopulation = {
 				estate = estate_castonath_patricians
 				influence = 60
 			}
+			NOT = { has_country_flag = cl-semi-patrician }
 			NOT = { has_country_flag = patrician_castanor }
 		}
 		modifier = {
@@ -1026,6 +1042,7 @@ estate_castonath_patricians_deal_with_overpopulation = {
 				estate = estate_castonath_patricians
 				influence = 70
 			}
+			NOT = { has_country_flag = cl-semi-patrician }
 			NOT = { has_country_flag = patrician_castanor }
 		}
 		modifier = {
@@ -1045,6 +1062,7 @@ estate_castonath_patricians_deal_with_overpopulation = {
 				estate = estate_castonath_patricians
 				influence = 80
 			}
+			NOT = { has_country_flag = cl-semi-patrician }
 			NOT = { has_country_flag = patrician_castanor }
 		}
 		modifier = {
@@ -1058,6 +1076,7 @@ estate_castonath_patricians_deal_with_overpopulation = {
 				estate = estate_castonath_patricians
 				influence = 90
 			}
+			NOT = { has_country_flag = cl-semi-patrician }
 			NOT = { has_country_flag = patrician_castanor }
 		}
 		modifier = {

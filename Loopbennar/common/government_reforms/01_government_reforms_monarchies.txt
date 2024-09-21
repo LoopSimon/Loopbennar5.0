@@ -12852,6 +12852,35 @@ pasiragha_gov_empowered_philosophers = {
 	}
 }
 
+#Counts League
+trust_of_the_future = {
+	icon = "centralized_clan_education"
+	allow_normal_conversion = yes
+	potential = {
+		has_country_flag = cl_kindness_of_the_future
+		OR = {
+			tag = B55
+			was_tag = B55
+		}
+	}
+	maintain_dynasty = yes
+
+	modifiers = {
+		legitimacy = 1
+		monthly_heir_claim_increase = 0.1 
+		no_stability_loss_on_monarch_death = yes
+	}
+	custom_attributes = {
+	}
+	effect = {
+		custom_tooltip = cl_heir_increases_tt
+	}
+	ai = {
+		factor = 1
+	}
+}
+
+
 #t3 z
 pasiragha_gov_res_advisory_com = {
 	icon = "nobleman"
