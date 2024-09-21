@@ -720,7 +720,7 @@ khetist_cult = {
 gnollish_cult = {
 	sprite = 17
 
-	land_morale = 0.05
+	land_morale = 0.1
 	reduced_liberty_desire = 10
 
 	allow = {
