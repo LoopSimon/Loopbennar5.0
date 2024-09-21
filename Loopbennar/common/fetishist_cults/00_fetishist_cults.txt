@@ -1,4 +1,5 @@
 
+
 kroozmuta_zemna_cult = {
 	sprite = 1
 
