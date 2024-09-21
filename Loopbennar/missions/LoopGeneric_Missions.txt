@@ -170,7 +170,7 @@ loopgeneric_column_3 = {
 	}
 	##Mission End
 	##Mission Start
-	hegemonic_reality = {
+	hegamonic_reality = {
 		icon = avoid_fragmentation
 		required_missions {
 			general_staff
