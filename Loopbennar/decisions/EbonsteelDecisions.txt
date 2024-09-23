@@ -42,6 +42,7 @@ country_decisions = {
 				primary_culture = blue_reachman
 				primary_culture = fjord_troll
 				primary_culture = jarnklo_harpy
+				primary_culture = city_goblin
 			}
 		}
 
