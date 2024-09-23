@@ -435,8 +435,18 @@ thirabnir_4 = {
 		position = 2
 		required_missions = { thirabnir_4_1 } 
 
-		trigger = {  
-			has_church_aspect = remembrance_festivals
+		trigger = {
+			OR = {
+				trading_policy_in_node = {
+					node = 4500 #False flag error #Kharunyana
+					policy = establish_communities
+				}
+				trading_policy_in_node = {
+					node = 1361 #False flag error #Gulf of Rahen
+					policy = establish_communities
+				}
+			}  
+			
 			has_estate_privilege = estate_mages_spirit_speakers
 			treasury = 100
 		} 
@@ -463,7 +473,12 @@ thirabnir_4 = {
 		} 
 
 		trigger = {  
-			4779 = { development = 12 }
+			4779 = { 
+				development = 12 
+				all_neighbor_province = {
+					transmutative_path_has_chi_wellspring_trigger = no
+				}
+			}
 			estate_loyalty = {
 				estate = estate_adventurers
 				loyalty = 50
