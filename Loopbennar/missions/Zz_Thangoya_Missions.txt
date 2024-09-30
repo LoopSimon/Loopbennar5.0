@@ -1350,20 +1350,6 @@ thangoya_3 = {
             4779 = { province_has_center_of_trade_of_level = 2 } #Haiban
             custom_trigger_tooltip = {
                 tooltip = thangoya_2_aw_modifier_tt
-                NOT = {
-                    calc_true_if = {
-                        ROOT = {
-                            all_owned_province = {
-                                OR = {
-                                    has_infestation_1 = yes
-                                    has_infestation_2 = yes
-                                    has_infestation_3 = yes
-                                }
-                            }
-                        }
-                        amount = 3
-                    }
-                }
             }
             estate_loyalty = {
                 estate = estate_adventurers
