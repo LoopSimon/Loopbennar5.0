@@ -272,7 +272,7 @@ marrhold = {
 		}
 		
 		trigger = {
-			is_institution_enabled = manufactories
+			is_institution_enabled = global_trade
 			has_estate = estate_artificers
 			estate_loyalty = {
 				estate = estate_artificers
