@@ -788,7 +788,6 @@ estate_church_inwards_perfection = {
 		}
 	}
 	modifier_by_land_ownership = {
-		development_cost = -0.5
 		global_tax_modifier = 0.1
 		production_efficiency = 0.1
 		manpower_in_true_faith_provinces = 0.1
