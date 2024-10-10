@@ -28,7 +28,6 @@ country_decisions = {
 				owned_by = H84 #mountainshark
 				owned_by = H89 #snotfinger
 				owned_by = H85 #truedagger
-				owned_by = H90 #spiderwretch
 			}
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
