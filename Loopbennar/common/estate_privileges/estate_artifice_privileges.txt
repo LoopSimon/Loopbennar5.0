@@ -4731,7 +4731,7 @@ artifice_invention_think_quik_drink_mix = {
 	}
 	benefits = {
 		artificers_privilege_slots = 1
-		idea_cost  = 0.1
+		idea_cost  = -0.1
 	}
 	ai_will_do = {
 		factor = 50
