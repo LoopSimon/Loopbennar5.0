@@ -37,8 +37,7 @@ country_decisions = {
 					tag = H75
 					tag = H84
 					tag = H89
-					tag = H85
-					tag = H90
+					tag = H85^
 				}
 			}
 			is_at_war = no
@@ -54,7 +53,6 @@ country_decisions = {
 				H84 = { OR = { exists = no is_subject_of = ROOT tag = ROOT } }
 				H89 = { OR = { exists = no is_subject_of = ROOT tag = ROOT } }
 				H85 = { OR = { exists = no is_subject_of = ROOT tag = ROOT } }
-				H90 = { OR = { exists = no is_subject_of = ROOT tag = ROOT } }
 			}
 			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
 				value = 100
