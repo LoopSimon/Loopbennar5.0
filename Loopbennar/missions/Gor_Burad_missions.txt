@@ -1940,41 +1940,6 @@ gor_burad_3c = {
 			gor_burad_slamming_the_doors
 		}
 		
-		provinces_to_highlight = {
-			OR = {
-				AND = {
-					owned_by = ROOT
-					region = serpentreach_region
-					unrest = 0
-					is_city = yes
-				}
-				AND = {
-					NOT = { owned_by = ROOT }
-					OR = {
-						province_id = 2981
-						province_id = 4100
-						province_id = 4238
-						province_id = 2942
-						province_id = 2966				
-					}
-				}
-			}
-		}
-		
-		trigger = {
-			NOT = {
-				any_owned_province = {
-					region = serpentreach_region
-					unrest = 0
-					is_city = yes
-				}
-			}
-			owns = 2981
-			owns = 4100
-			owns = 4238
-			owns = 2942
-			owns = 2966
-		}
 		
 		effect = {
 			add_stability_or_adm_power = yes
@@ -2289,20 +2254,7 @@ gor_burad_4c = {
 			
 		}
 		
-		trigger = {
-			custom_trigger_tooltip = {
-				tooltip = gor_burad_the_lava_must_flow_trigger_tt
-				has_country_flag = gor_burad_trials_complete
-			}
-			serpentreach_region = {
-				type = all
-				owned_by = ROOT
-			}
-			check_variable = {
-				which = gor_burad_industry
-				value = 100
-			}
-		}
+		
 		
 		effect = {
 			subtract_variable = {
