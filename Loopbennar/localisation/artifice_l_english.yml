@@ -92,6 +92,7 @@
  permanently_increases_our_artifice_points_by_3_tt:0 "Permanently increases our §GStatic Artifice Capacity§! by §G3§!"
  permanently_increases_our_artifice_points_by_4_tt:0 "Permanently increases our §GStatic Artifice Capacity§! by §G4§!"
  permanently_increases_our_artifice_points_by_5_tt:0 "Permanently increases our §GStatic Artifice Capacity§! by §G5§!"
+ permanently_increases_our_artifice_points_by_10_tt:0 "Permanently increases our §GStatic Artifice Capacity§! by §G10§!"
  permanently_decreases_our_artifice_points_by_10_tt:0 "Permanently decreases our §GStatic Artifice Capacity§! by §R10§!"
  permanently_decreases_our_artifice_points_by_5_tt:0 "Permanently decreases our §GStatic Artifice Capacity§! by §R5§!"
 
@@ -497,6 +498,7 @@
  artifice_research.3.m215:0 "Kaydhano-Powered Vessels"
  artifice_research.3.m216:0 "Warfare Simulator"
  artifice_research.3.m217:0 "G-U Boats"
+ artifice_research.3.m218:0 "Veykoda Rune Protections"
  #Military Tier 3
  artifice_research.3.m31:0 "Black Damestear Bullets"
  artifice_research.3.m32:0 "Artillery Autoloaders"

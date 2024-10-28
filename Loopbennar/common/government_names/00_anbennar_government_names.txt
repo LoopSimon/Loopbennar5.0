@@ -543,6 +543,17 @@ monarchy_county = {	#For special counts, in the HRE/EOA this is by default. Like
 		NOT = { culture_group = elven } #Elfrealms take priority
 		NOT = { total_development = 50 }
 		NOT = { has_country_flag = is_a_grand_duchy }
+		NOT = {	
+			OR = {
+				tag = A39 #Bennon
+				tag = A40 #Exwes
+				tag = A56 #Celliande
+				tag = A57 #Toarnen
+				tag = A76 #Uelaire
+				tag = A84 #Galeinn
+				tag = Z05 #Tretun
+			}
+		}	
 	}
 }
 
@@ -3448,8 +3459,8 @@ harpy_matriarchy = {
 		OR = {
 			government = tribal
 			government = monarchy
-			has_reform = matriarchal_pirate_republic
 		}
+		not = { has_reform = naleni_thalassocracy_reform }
 		culture_group = harpy
 	}
 }

@@ -15,6 +15,7 @@ reset_racial_military_via_administration = {
 		add_country_modifier = {
 			name = orcish_military
 			duration = -1
+			hidden = yes
 		}
 		if = {
 			limit = {
@@ -84,7 +85,7 @@ reset_racial_military_via_administration = {
 		}
 		else_if = {
 			limit = {
-				capital_scope = { superregion = west_sarhal_superregion }
+				capital_scope = { superregion = tanib_dajek_superregion }
 			}
 			change_unit_type = tech_west_sarhaly
 		}
@@ -109,7 +110,12 @@ reset_racial_military_via_administration = {
 		}
 		else_if = {
 			limit = {
-				capital_scope = { superregion = south_sarhal_superregion }
+				capital_scope = { 
+					OR = { 
+						superregion = djinnakah_superregion
+						superregion = taneyas_superregion
+					}
+				}
 			}
 			if = {
 				limit = { 
@@ -342,7 +348,7 @@ reset_racial_military_via_administration = {
         else_if = {
         	limit = {
         		OR = {
-        			capital_scope = { continent = asia NOT = { superregion = forbidden_plains_superregion } }
+        			capital_scope = { continent = asia NOT = { superregion = forbidden_lands_superregion } }
         			primary_culture = hill_troll
         			AND = {
         				accepted_culture = hill_troll
@@ -367,6 +373,7 @@ reset_racial_military_via_administration = {
 		add_country_modifier = {
 			name = gnollish_military
 			duration = -1
+			hidden = yes
 		}
 		change_unit_type = tech_gnollish
 		if = {
@@ -651,7 +658,7 @@ reset_racial_military_via_administration = {
 			limit = {
 				OR = {
 					capital_scope = { superregion = north_salahad_superregion }
-					capital_scope = { superregion = west_sarhal_superregion }
+					capital_scope = { superregion = tanib_dajek_superregion }
 					capital_scope = { superregion = fangaula_superregion }
 					primary_culture = nzeri_harpy
 					AND = {
@@ -683,7 +690,7 @@ reset_racial_military_via_administration = {
             limit = {
                 OR = {
                     capital_scope = {
-						superregion = west_sarhal_superregion
+						superregion = tanib_dajek_superregion
 					}
 					is_vyzemby_primary_culture = yes
                     AND = {
@@ -5267,12 +5274,7 @@ pop_menu_military_sorting_effect = {
 	17 = { pop_menu_military_sorting_setup = { RACE = gnollish } }
 	16 = { pop_menu_military_sorting_setup = { RACE = gnomish } }
 	15 = { pop_menu_military_sorting_setup = { RACE = goblin } }
-	14 = {
-		set_variable = { which = nbRaceDev value = 0 }
-		set_variable = { which = raceRanking value = 20 }
-		ROOT = { set_variable = { which = half_elvenRanking value = 20 } }
-		# pop_menu_military_sorting_setup = { RACE = half_elven }
-	}	#half elven military doesn't exist
+	14 = { pop_menu_military_sorting_setup = { RACE = half_elven } }
 	13 = { pop_menu_military_sorting_setup = { RACE = half_orcish } }
 	12 = { pop_menu_military_sorting_setup = { RACE = halfling } }
 	11 = { pop_menu_military_sorting_setup = { RACE = harimari } }
@@ -5328,7 +5330,7 @@ pop_menu_military_change_mil_effects = {
 	pop_menu_military_change_mil_race = { RACE = gnomish ORDER = $ORDER$ GNOMISH_ARTIFICERS = yes }
 	pop_menu_military_change_mil_race = { RACE = goblin ORDER = $ORDER$ }
 	pop_menu_military_change_mil_race = { RACE = halfling ORDER = $ORDER$ }
-	# pop_menu_military_change_mil_race = { RACE = half_elven ORDER = $ORDER$ }
+	pop_menu_military_change_mil_race = { RACE = half_elven ORDER = $ORDER$ }
 	pop_menu_military_change_mil_race = { RACE = half_orcish ORDER = $ORDER$ }
 	pop_menu_military_change_mil_race = { RACE = harimari ORDER = $ORDER$ }
 	pop_menu_military_change_mil_race = { RACE = harpy ORDER = $ORDER$ }
@@ -5583,7 +5585,7 @@ pop_menu_military_change_tech = {
 			limit = {
 				OR = {
 					capital_scope = { superregion = north_salahad_superregion }
-					capital_scope = { superregion = west_sarhal_superregion }
+					capital_scope = { superregion = tanib_dajek_superregion }
 					capital_scope = { superregion = fangaula_superregion }
 					primary_culture = nzeri_harpy
 					AND = {
@@ -5610,7 +5612,7 @@ pop_menu_military_change_tech = {
 			change_unit_type = tech_salahadesi
 		}
 		else_if = { 
-			limit = { capital_scope = { superregion = west_sarhal_superregion } }
+			limit = { capital_scope = { superregion = tanib_dajek_superregion } }
 		    if = {
 				limit = { 
 					OR = {
@@ -5627,7 +5629,14 @@ pop_menu_military_change_tech = {
 			change_unit_type = tech_west_sarhaly
 		}
 		else_if = { 
-			limit = { capital_scope = { superregion = south_sarhal_superregion } }
+			limit = { 
+				capital_scope = { 
+					OR = { 
+						superregion = djinnakah_superregion
+						superregion = taneyas_superregion
+					}
+				}
+			}
 			if = {
 				limit = { 
 					OR = {
@@ -5873,7 +5882,7 @@ pop_menu_military_change_tech = {
             limit = {
                 OR = {
                     capital_scope = {
-						superregion = west_sarhal_superregion
+						superregion = tanib_dajek_superregion
 					}
 					is_vyzemby_primary_culture = yes
                     AND = {
@@ -5958,7 +5967,7 @@ update_unit_sprites_for_racial_mil = {
 			hidden_effect = { apply_sprite_pack = indiangfx_sprite_pack }
 		}
 		
-		# south haless + yanshen
+		# vimdatrong + yanshen
 		else_if = {
 			limit = {
 				capital_scope = {
@@ -5978,7 +5987,7 @@ update_unit_sprites_for_racial_mil = {
 				capital_scope = {
 					OR = {
 						superregion = north_haless_superregion
-						superregion = forbidden_plains_superregion
+						superregion = forbidden_lands_superregion
 					}
 				}
 			}
@@ -5992,7 +6001,8 @@ update_unit_sprites_for_racial_mil = {
 				capital_scope = {
 					OR = {
 						superregion = east_sarhal_superregion
-						superregion = south_sarhal_superregion
+						superregion = djinnakah_superregion
+						superregion = taneyas_superregion
 					}
 				}
 			}
@@ -6392,44 +6402,46 @@ generic_increase_state_action_malus = { #this can be called to take away free st
 		limit = { has_country_flag = unlimited_$action$ }
 		custom_tooltip = $action$_free_tt
 	}
-	else_if = {
-		limit = { check_variable = { which = remaining_free_$action$ value = 1 } }
-		custom_tooltip = $action$_below_limit_tt
-	}
 	else = {
-		custom_tooltip = $action$_limit_tt
-	}
-	hidden_effect = { change_variable = { which = remaining_free_$action$ value = -1 } } #starts at 1 for all nations by default
-	if = {
-		limit = {
-			OR = {
-				AND = {
-					check_variable = { which = remaining_free_$action$ value = 0 }
-					NOT = { check_variable = { which = remaining_free_$action$ value = 1 } }
-					ai = no
-				}
-				AND = { #ai are a little dumb and need the extra buffer
-					check_variable = { which = remaining_free_$action$ value = -1 }
-					NOT = { check_variable = { which = remaining_free_$action$ value = 0 } }
-					ai = yes
+		if = {
+			limit = { check_variable = { which = remaining_free_$action$ value = 1 } }
+			custom_tooltip = $action$_below_limit_tt
+		}
+		else = {
+			custom_tooltip = $action$_limit_tt
+		}
+		hidden_effect = { change_variable = { which = remaining_free_$action$ value = -1 } } #starts at 1 for all nations by default
+		if = {
+			limit = {
+				OR = {
+					AND = {
+						check_variable = { which = remaining_free_$action$ value = 0 }
+						NOT = { check_variable = { which = remaining_free_$action$ value = 1 } }
+						ai = no
+					}
+					AND = { #ai are a little dumb and need the extra buffer
+						check_variable = { which = remaining_free_$action$ value = -1 }
+						NOT = { check_variable = { which = remaining_free_$action$ value = 0 } }
+						ai = yes
+					}
 				}
 			}
+			hidden_effect = { add_country_modifier = { name = $action$_diplomats_0 duration = -1 hidden = yes } }
 		}
-		hidden_effect = { add_country_modifier = { name = $action$_diplomats_0 duration = -1 hidden = yes } }
-	}
-	else = {
-		trigger_switch = {
-			on_trigger = has_country_modifier
-			$action$_diplomats_0 = { remove_country_modifier = $action$_diplomats_0 add_country_modifier = { name = $action$_diplomats_1 duration = -1 desc = while_policy_active } }
-			$action$_diplomats_1 = { remove_country_modifier = $action$_diplomats_1 add_country_modifier = { name = $action$_diplomats_2 duration = -1 desc = while_policy_active } }
-			$action$_diplomats_2 = { remove_country_modifier = $action$_diplomats_2 add_country_modifier = { name = $action$_diplomats_3 duration = -1 desc = while_policy_active } }
-			$action$_diplomats_3 = { remove_country_modifier = $action$_diplomats_3 add_country_modifier = { name = $action$_diplomats_4 duration = -1 desc = while_policy_active } }
-			$action$_diplomats_4 = { remove_country_modifier = $action$_diplomats_4 add_country_modifier = { name = $action$_diplomats_5 duration = -1 desc = while_policy_active } }
-			$action$_diplomats_5 = { remove_country_modifier = $action$_diplomats_5 add_country_modifier = { name = $action$_diplomats_6 duration = -1 desc = while_policy_active } }
-			$action$_diplomats_6 = { remove_country_modifier = $action$_diplomats_6 add_country_modifier = { name = $action$_diplomats_7 duration = -1 desc = while_policy_active } }
-			$action$_diplomats_7 = { remove_country_modifier = $action$_diplomats_7 add_country_modifier = { name = $action$_diplomats_8 duration = -1 desc = while_policy_active } }
-			$action$_diplomats_8 = { remove_country_modifier = $action$_diplomats_8 add_country_modifier = { name = $action$_diplomats_9 duration = -1 desc = while_policy_active } }
-			$action$_diplomats_9 = { remove_country_modifier = $action$_diplomats_9 add_country_modifier = { name = $action$_diplomats_10 duration = -1 desc = while_policy_active } }
+		else = {
+			trigger_switch = {
+				on_trigger = has_country_modifier
+				$action$_diplomats_0 = { remove_country_modifier = $action$_diplomats_0 add_country_modifier = { name = $action$_diplomats_1 duration = -1 desc = while_policy_active } }
+				$action$_diplomats_1 = { remove_country_modifier = $action$_diplomats_1 add_country_modifier = { name = $action$_diplomats_2 duration = -1 desc = while_policy_active } }
+				$action$_diplomats_2 = { remove_country_modifier = $action$_diplomats_2 add_country_modifier = { name = $action$_diplomats_3 duration = -1 desc = while_policy_active } }
+				$action$_diplomats_3 = { remove_country_modifier = $action$_diplomats_3 add_country_modifier = { name = $action$_diplomats_4 duration = -1 desc = while_policy_active } }
+				$action$_diplomats_4 = { remove_country_modifier = $action$_diplomats_4 add_country_modifier = { name = $action$_diplomats_5 duration = -1 desc = while_policy_active } }
+				$action$_diplomats_5 = { remove_country_modifier = $action$_diplomats_5 add_country_modifier = { name = $action$_diplomats_6 duration = -1 desc = while_policy_active } }
+				$action$_diplomats_6 = { remove_country_modifier = $action$_diplomats_6 add_country_modifier = { name = $action$_diplomats_7 duration = -1 desc = while_policy_active } }
+				$action$_diplomats_7 = { remove_country_modifier = $action$_diplomats_7 add_country_modifier = { name = $action$_diplomats_8 duration = -1 desc = while_policy_active } }
+				$action$_diplomats_8 = { remove_country_modifier = $action$_diplomats_8 add_country_modifier = { name = $action$_diplomats_9 duration = -1 desc = while_policy_active } }
+				$action$_diplomats_9 = { remove_country_modifier = $action$_diplomats_9 add_country_modifier = { name = $action$_diplomats_10 duration = -1 desc = while_policy_active } }
+			}
 		}
 	}
 }
@@ -6438,34 +6450,47 @@ generic_decrease_state_action_malus = { #this can be called to give free state a
 		limit = { has_country_flag = unlimited_$action$ }
 		custom_tooltip = $action$_free_tt
 	}
-	else_if = {
-		limit = { check_variable = { which = remaining_free_$action$ value = 0 } }
-		custom_tooltip = $action$_below_limit_tt
-	}
 	else = {
-		custom_tooltip = $action$_limit_tt
-	}
-	hidden_effect = { change_variable = { which = remaining_free_$action$ value = 1 } }
-	trigger_switch = {
-		on_trigger = has_country_modifier
-		$action$_diplomats_0 = { remove_country_modifier = $action$_diplomats_0 }
-		$action$_diplomats_1 = { remove_country_modifier = $action$_diplomats_1 add_country_modifier = { name = $action$_diplomats_0 duration = -1 desc = while_policy_active } }
-		$action$_diplomats_2 = { remove_country_modifier = $action$_diplomats_2 add_country_modifier = { name = $action$_diplomats_1 duration = -1 desc = while_policy_active } }
-		$action$_diplomats_3 = { remove_country_modifier = $action$_diplomats_3 add_country_modifier = { name = $action$_diplomats_2 duration = -1 desc = while_policy_active } }
-		$action$_diplomats_4 = { remove_country_modifier = $action$_diplomats_4 add_country_modifier = { name = $action$_diplomats_3 duration = -1 desc = while_policy_active } }
-		$action$_diplomats_5 = { remove_country_modifier = $action$_diplomats_5 add_country_modifier = { name = $action$_diplomats_4 duration = -1 desc = while_policy_active } }
-		$action$_diplomats_6 = { remove_country_modifier = $action$_diplomats_6 add_country_modifier = { name = $action$_diplomats_5 duration = -1 desc = while_policy_active } }
-		$action$_diplomats_7 = { remove_country_modifier = $action$_diplomats_7 add_country_modifier = { name = $action$_diplomats_6 duration = -1 desc = while_policy_active } }
-		$action$_diplomats_8 = { remove_country_modifier = $action$_diplomats_8 add_country_modifier = { name = $action$_diplomats_7 duration = -1 desc = while_policy_active } }
-		$action$_diplomats_9 = { remove_country_modifier = $action$_diplomats_9 add_country_modifier = { name = $action$_diplomats_8 duration = -1 desc = while_policy_active } }
-		$action$_diplomats_10 = { remove_country_modifier = $action$_diplomats_10 add_country_modifier = { name = $action$_diplomats_9 duration = -1 desc = while_policy_active } }
+		if = {
+			limit = { check_variable = { which = remaining_free_$action$ value = 0 } }
+			custom_tooltip = $action$_below_limit_tt
+		}
+		else = {
+			custom_tooltip = $action$_limit_tt
+		}
+		hidden_effect = { change_variable = { which = remaining_free_$action$ value = 1 } }
+		trigger_switch = {
+			on_trigger = has_country_modifier
+			$action$_diplomats_0 = { remove_country_modifier = $action$_diplomats_0 }
+			$action$_diplomats_1 = { remove_country_modifier = $action$_diplomats_1 add_country_modifier = { name = $action$_diplomats_0 duration = -1 desc = while_policy_active } }
+			$action$_diplomats_2 = { remove_country_modifier = $action$_diplomats_2 add_country_modifier = { name = $action$_diplomats_1 duration = -1 desc = while_policy_active } }
+			$action$_diplomats_3 = { remove_country_modifier = $action$_diplomats_3 add_country_modifier = { name = $action$_diplomats_2 duration = -1 desc = while_policy_active } }
+			$action$_diplomats_4 = { remove_country_modifier = $action$_diplomats_4 add_country_modifier = { name = $action$_diplomats_3 duration = -1 desc = while_policy_active } }
+			$action$_diplomats_5 = { remove_country_modifier = $action$_diplomats_5 add_country_modifier = { name = $action$_diplomats_4 duration = -1 desc = while_policy_active } }
+			$action$_diplomats_6 = { remove_country_modifier = $action$_diplomats_6 add_country_modifier = { name = $action$_diplomats_5 duration = -1 desc = while_policy_active } }
+			$action$_diplomats_7 = { remove_country_modifier = $action$_diplomats_7 add_country_modifier = { name = $action$_diplomats_6 duration = -1 desc = while_policy_active } }
+			$action$_diplomats_8 = { remove_country_modifier = $action$_diplomats_8 add_country_modifier = { name = $action$_diplomats_7 duration = -1 desc = while_policy_active } }
+			$action$_diplomats_9 = { remove_country_modifier = $action$_diplomats_9 add_country_modifier = { name = $action$_diplomats_8 duration = -1 desc = while_policy_active } }
+			$action$_diplomats_10 = { remove_country_modifier = $action$_diplomats_10 add_country_modifier = { name = $action$_diplomats_9 duration = -1 desc = while_policy_active } }
+		}
 	}
 }
 generic_start_purge = {
+	[[free]
+		custom_tooltip = racial_policy_free
+		set_country_flag = free_$race$_genocide
+		if = {
+			limit = { has_country_modifier = racial_pop_$race$_purge }
+			hidden_effect = { generic_decrease_state_action_malus = { action = genocide } }
+		}
+	]
 	if = {
 		limit = { NOT = { has_country_modifier = racial_pop_$race$_purge } }
 		if = {
-			limit = { NOT = { has_country_flag = unlimited_genocide } }
+			limit = { has_country_flag = free_$race$_genocide }
+			custom_tooltip = free_genocide_tt
+		}
+		else = {
 			generic_increase_state_action_malus = { action = genocide }
 		}
 		add_country_modifier = {
@@ -6501,9 +6526,23 @@ generic_start_purge = {
 	}
 }
 generic_start_expulsion = {
+	[[free]
+		custom_tooltip = racial_policy_free
+		set_country_flag = free_$race$_genocide
+		if = {
+			limit = { has_country_modifier = racial_pop_$race$_expulsion }
+			hidden_effect = { generic_decrease_state_action_malus = { action = genocide } }
+		}
+	]
 	if = {
 		limit = { NOT = { has_country_modifier = racial_pop_$race$_expulsion } }
-		generic_increase_state_action_malus = { action = genocide }
+		if = {
+			limit = { has_country_flag = free_$race$_genocide }
+			custom_tooltip = free_genocide_tt
+		}
+		else = {
+			generic_increase_state_action_malus = { action = genocide }
+		}
 		add_country_modifier = {
 			name = racial_pop_$race$_expulsion
 			duration = -1
@@ -6735,9 +6774,9 @@ racial_focus_disabled_tt = {
 	if = { limit = { NOT = { can_afford_state_action_diplomat_malus = { action = focus } } }
 		custom_tooltip = pop_menu_need_a_diplomat_tt
 	}
-	if = { limit = { NOT = { dip_power = 50 } }
-		custom_tooltip = pop_menu_cannot_focus_not_enough_dip_tt
-	}
+	if = { limit = { NOT = { dip_power = 50 has_country_flag = focusing_is_free_flag } }
+        custom_tooltip = pop_menu_cannot_focus_not_enough_dip_tt
+    }	
 }
 
 remove_all_racial_majority = {
@@ -7629,7 +7668,7 @@ calculate_refugee_exploit_rewards = {
 			which = manpower_gained_on_exploit
 			value = 0.25
 		}
-		if = { #the sanity check—you will never go below 10 ducats and 1000 manpower from a 0 devastation province
+		if = { #the sanity checkï¿½you will never go below 10 ducats and 1000 manpower from a 0 devastation province
 			limit = {
 				NOT = {
 					check_variable = {
@@ -7723,6 +7762,7 @@ calculate_refugee_exploit_rewards = {
 }
 
 set_tolerance_to_coexisting_or_higher = {
+	custom_tooltip = set_tolerance_of_$race$_to_coexisting_or_higher_tt
 	hidden_effect = {
 		if = {
 			limit = {
@@ -7880,4 +7920,50 @@ set_all_tolerance_below_integrated = {
     set_tolerance_below_integrated = { race = ogre }
     set_tolerance_below_integrated = { race = lizardfolk }
     set_tolerance_below_integrated = { race = mechanim }
+}
+
+end_all_expel = {
+	generic_end_expulsion = { race = elven }
+	generic_end_expulsion = { race = dwarven }
+	generic_end_expulsion = { race = halfling }
+	generic_end_expulsion = { race = gnomish }
+	generic_end_expulsion = { race = kobold }
+	generic_end_expulsion = { race = orcish }
+	generic_end_expulsion = { race = half_orcish }
+	generic_end_expulsion = { race = human }
+	generic_end_expulsion = { race = gnollish }
+	generic_end_expulsion = { race = ruinborn }
+	generic_end_expulsion = { race = goblin }
+	generic_end_expulsion = { race = harpy }
+	generic_end_expulsion = { race = troll }
+	generic_end_expulsion = { race = half_elven }
+	generic_end_expulsion = { race = harimari }
+	generic_end_expulsion = { race = hobgoblin }
+	generic_end_expulsion = { race = centaur }
+	generic_end_expulsion = { race = ogre }
+	generic_end_expulsion = { race = lizardfolk }
+	generic_end_expulsion = { race = mechanim }
+}
+
+end_all_purge = {
+	generic_end_purge = { race = elven }
+	generic_end_purge = { race = dwarven }
+	generic_end_purge = { race = halfling }
+	generic_end_purge = { race = gnomish }
+	generic_end_purge = { race = kobold }
+	generic_end_purge = { race = orcish }
+	generic_end_purge = { race = half_orcish }
+	generic_end_purge = { race = human }
+	generic_end_purge = { race = gnollish }
+	generic_end_purge = { race = ruinborn }
+	generic_end_purge = { race = goblin }
+	generic_end_purge = { race = harpy }
+	generic_end_purge = { race = troll }
+	generic_end_purge = { race = half_elven }
+	generic_end_purge = { race = harimari }
+	generic_end_purge = { race = hobgoblin }
+	generic_end_purge = { race = centaur }
+	generic_end_purge = { race = ogre }
+	generic_end_purge = { race = lizardfolk }
+	generic_end_purge = { race = mechanim }
 }

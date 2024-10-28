@@ -168,7 +168,7 @@ country_event = {
 	}
 }
 
-#Escanni Wars Bypass
+#Escanni Wars Early Bypass
 country_event = {
 	id = escanni_wars.3
 	title = "escanni_wars.3.t"
@@ -191,26 +191,13 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		current_age = age_of_absolutism
-		
-		# Can trigger if the wars have not begun and the wars have not ended
-		NOT = { has_global_flag = escanni_wars_global_flag }
-		NOT = { has_global_flag = escanni_wars_end_global_flag }
-	
-		# and this country can participate in the escanni wars
-		country_can_participate_in_escanni_wars = yes
-		
-		# but no other country can
-		NOT = { 
-			any_known_country = {
-				country_can_participate_in_escanni_wars = yes
-			}
-		}
+		#Flag from decision
+		has_country_flag = bypassed_escanni_wars
 	}
 
 	immediate = {
 		hidden_effect = {
-			# Flag the global wars as having been bypassed
+			#Flag the global wars as having been bypassed
 			set_global_flag = escanni_wars_bypass
 		}
 	}
@@ -218,8 +205,13 @@ country_event = {
 	option = {
 		name = escanni_wars.3.a
 		
-		# Immediately set this country as having won the war
+		#Immediately set this country as having won the war
 		country_event = { id = escanni_wars.10 days = 1 }
+	}
+
+	after = {
+		#Clears flag since it's no longer being used
+		clr_country_flag = bypassed_escanni_wars
 	}
 }
 
@@ -292,6 +284,13 @@ country_event = {
 			hre_size = 1
 			is_emperor = no
 			NOT = { tag = B37 } #Rogieria has its own reward
+			NOT = {
+				culture_group = orcish
+				culture_group = goblin
+			}
+		}
+		ai_chance = {
+			factor = 0
 		}
 		if = {
 			limit = { tag = B50 }
@@ -318,21 +317,13 @@ country_event = {
 			#NOT = { exists = Z34 } #Black Castanor doesn't exist
 			#NOT = { tag = B33 } #Blademarches hate Castanor
 			NOT = { tag = Z34 }	#Black Castanor cannot into Castanor
-			NOT = { has_country_flag = orc_nation_formed }	#prevents orc formables from forming it
-			
-			OR = {
-				ai = no
-				is_playing_custom_nation = no
+			NOT = {
+				culture_group = orcish
+				culture_group = goblin
 			}
-			is_colonial_nation = no
-			OR = {
-				is_former_colonial_nation = no
-				AND = {
-					is_former_colonial_nation = yes
-					ai = no
-				}
-			}
-			normal_or_historical_nations = yes
+		}
+		ai_chance = {
+			factor = 100
 		}
 		if = {
 			limit = { tag = B33 }
@@ -366,6 +357,13 @@ country_event = {
 				has_ruler_modifier = witch_king_modifier
 			}
 			NOT = { exists = Z99 }
+			NOT = {
+				culture_group = orcish
+				culture_group = goblin
+			}
+		}
+		ai_chance = {
+			factor = 100
 		}
 		if = {
 			limit = { tag = B50 }
@@ -389,6 +387,9 @@ country_event = {
 			mission_completed = corintar_the_reconciliation
 			mission_completed = corintar_escann_defended
 		}
+		ai_chance = {
+			factor = 1000
+		}
 
 		# Name change
 		override_country_name = CORINTAR_HOLY_EMPIRE
@@ -407,6 +408,9 @@ country_event = {
 			tag = B37 #Rogieria
 			hre_size = 1
 		}
+		ai_chance = {
+			factor = 1000
+		}
 		
 		custom_tooltip = rogieria_escanni_wars_bypass
 		set_country_flag = rogieria_escanni_wars_bypass_flag
@@ -418,6 +422,9 @@ country_event = {
 		add_country_modifier = {
 			name = escanni_wars_escanni_imperialism
 			duration = -1
+		}
+		ai_chance = {
+			factor = 1
 		}
 		if = {
 			limit = { tag = B50 }
@@ -432,6 +439,9 @@ country_event = {
 		add_country_modifier = {
 			name = escanni_wars_escanni_peace
 			duration = -1
+		}
+		ai_chance = {
+			factor = 1
 		}
 		if = {
 			limit = { tag = B50 }

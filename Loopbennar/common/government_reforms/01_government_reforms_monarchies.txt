@@ -4379,6 +4379,7 @@ wine_lord_reform = {
 			primary_culture = low_lorentish
 			primary_culture = sorncosti
 			primary_culture = roilsardi
+			primary_culture = lencori_half_elf
 		}
 	}
 	potential = {
@@ -4388,6 +4389,7 @@ wine_lord_reform = {
 			primary_culture = low_lorentish
 			primary_culture = sorncosti
 			primary_culture = roilsardi
+			primary_culture = lencori_half_elf
 		}
 	}
 	trigger = {
@@ -4397,6 +4399,7 @@ wine_lord_reform = {
 			primary_culture = low_lorentish
 			primary_culture = sorncosti
 			primary_culture = roilsardi
+			primary_culture = lencori_half_elf
 		}
 		any_owned_province = {
 			trade_goods = wine
@@ -4657,12 +4660,9 @@ ogre_empire = {
 	maintain_dynasty = yes
 
 	modifiers = {
-		defensiveness = 0.3
-		build_cost = -0.15
-		land_morale = 0.075
-		development_cost = -0.1
-		land_maintenance_modifier = -0.1
-		global_institution_spread = -0.1
+		defensiveness = 0.2
+		build_cost = -0.1
+		land_morale = 0.2
 		max_absolutism = 15
 	}
 }
@@ -4884,6 +4884,12 @@ jadd_empire = {
 		}
 		reachman = {
 			merchants = 1
+		}
+		khudi = {
+			reinforce_speed = 0.10
+		}
+		tyvorkan = {
+			global_tariffs = 0.15
 		}
 	}
 }
@@ -5238,19 +5244,11 @@ ranger_lordship_2 = {
 
 hobgoblin_stratocracy_reform = {
 	icon = "soldiers_5"
-	allow_normal_conversion = no
+	allow_normal_conversion = yes
 	lock_level_when_selected = yes
 	potential = {
-		OR = {
-			tag = R62
-			tag = R67
-			tag = R68
-			tag = R69
-			tag = R94
-			tag = R95
-			tag = R96
-			has_reform = hobgoblin_stratocracy_reform
-		}
+		culture_group = hobgoblin
+		NOT = { religion = eagle_worship }
 	}
 	valid_for_nation_designer = yes
 	nation_designer_cost = 0
@@ -5280,6 +5278,10 @@ hobgoblin_stratocracy_reform = {
 		blocked_call_diet = yes
 		royal_marriage = no
 		disables_regular_estates = yes
+	}
+
+	government_abilities = {
+		command_korashi_mechanic
 	}
 }
 
@@ -5314,8 +5316,8 @@ prabhi_reform = {
 
 	legacy_equivalent = daimyo_legacy
 	modifiers = {
-		development_cost = -0.05
-		land_forcelimit = 0.5
+		development_cost = -0.1
+		land_forcelimit = 1
 	}
 	custom_attributes = {
 		locked_government_type = yes
@@ -5348,7 +5350,7 @@ indep_prabhi_reform = {
 	}
 	legacy_equivalent = indep_daimyo_legacy
 	modifiers = {
-		development_cost = -0.05
+		development_cost = -0.1
 	}
 	custom_attributes = {
 		locked_government_type = yes
@@ -5509,6 +5511,15 @@ damerian_monarchy = {
 			primary_culture = east_damerian
 			primary_culture = rogieran
 			primary_culture = pashainey
+			AND = {
+				primary_culture = half_elf
+				OR = {
+					accepted_culture = west_damerian
+					accepted_culture = east_damerian
+					accepted_culture = rogieran
+					accepted_culture = pashainey
+				}
+			}
 		}
 	}
 	valid_for_nation_designer = yes
@@ -7162,7 +7173,7 @@ vermillion_throne_reform = {
 	lock_level_when_selected = yes
 	nation_designer_cost = 0
 	potential = {
-		primary_culture = forest_yan
+		primary_culture = naamjyut
 	}
 
 	modifiers = {
@@ -7441,7 +7452,10 @@ enforce_trader_privileges_reform = {
 	icon = "paper_money_map"
 	allow_normal_conversion = yes
 	potential = {
-		is_reform_available = plutocratic_reform
+		OR = {
+			is_reform_available = plutocratic_reform
+			has_reform = raghamidesh_merchant_kingdom_reform
+		}
 		OR = {
 			# technology_group = indian
 			# technology_group = muslim
@@ -7457,7 +7471,10 @@ enforce_trader_privileges_reform = {
 		}
 	}
 	trigger = {
-		has_reform = plutocratic_reform
+		OR = {
+			has_reform = plutocratic_reform
+			has_reform = raghamidesh_merchant_kingdom_reform
+		}
 	}
 	modifiers = {
 		trade_range_modifier = 0.3
@@ -12162,6 +12179,51 @@ merchant_matriarchs_harpylen_reform = {
 	}
 }
 
+#Gronstunad
+gronstunad_sovereign_empire = {
+	icon = "states_general"
+	allow_normal_conversion = no
+	potential = {
+		is_or_was_tag = { tag = I22 }
+		is_revolutionary = no
+		has_country_flag = gronstunad_sovereign_1
+	}
+	trigger = {
+		has_country_flag = gronstunad_sovereign_1
+	}
+	modifiers = {
+		reduced_liberty_desire = 10
+		advisor_pool = 1
+		nobles_influence_modifier = 0.1
+	}
+	government_abilities = {
+		gronstunad_authority_mechanic
+	}
+	lock_level_when_selected = yes
+}
+
+gronstunad_sovereign_of_haless = {
+	icon = "states_general"
+	allow_normal_conversion = no
+	potential = {
+		is_or_was_tag = { tag = I22 }
+		is_revolutionary = no
+		has_country_flag = gronstunad_sovereign_2
+	}
+	trigger = {
+		has_country_flag = gronstunad_sovereign_2
+	}
+	modifiers = {
+		liberty_desire_from_subject_development = -0.25
+		all_estate_loyalty_equilibrium = 0.1
+		global_trade_power = 0.1
+	}
+	government_abilities = {
+		gronstunad_authority_mechanic
+	}
+	lock_level_when_selected = yes
+}
+
 #luciande
 luciande_board_of_chains_reform = {
 	icon = "black_blueprint"
@@ -12367,48 +12429,22 @@ raghamidesh_merchant_kingdom_reform = {
 		primary_culture = raghamidesh
 	}
 	allow_normal_conversion = yes
+	lock_level_when_selected = yes
 	valid_for_nation_designer = yes
 	nation_designer_cost = 10
 	modifiers = {
 		merchants = 1
 		global_trade_power = 0.1
+		global_trade_goods_size_modifier = 0.1
 		middlecastes_loyalty_modifier = 0.1
 		uppercastes_influence_modifier = -0.05
 	}
 	custom_attributes = {
 	#	has_ruler_election = yes	#Terrible vanilla loc
+		enables_plutocratic_idea_group = yes
+		enables_aristocratic_idea_group = no
 		anb_election_effect = yes
-	}
-	boost_income = yes
-	conditional = {
-		allow = {
-			has_dlc = "Leviathan"
-		}
-		allow_draft_transport_ships = yes
-	}
-	conditional = {
-		allow = {
-			has_dlc = "Res Publica"
-			NOT = { has_dlc = "Mare Nostrum" }
-		}
-		can_use_trade_post = yes
-	}
-	conditional = {
-		allow = {
-			has_dlc = "Mare Nostrum"
-			NOT = { has_dlc = "Res Publica" }
-		}
-		can_form_trade_league = yes
-		trade_city_reform = trading_city
-	}
-	conditional = {
-		allow = {
-			has_dlc = "Res Publica"
-			has_dlc = "Mare Nostrum"
-		}
-		can_use_trade_post = yes
-		can_form_trade_league = yes
-		trade_city_reform = trading_city
+		locked_government_type = yes
 	}
 	ai = {
 		factor = 20
@@ -12803,7 +12839,7 @@ heroic_realm_reform = {
 	}
 }
 
-
+#Covenblad
 covenblad_covenant_arbiters = {
 	icon = "covenblad_covenant_arbiters"
 	allow_normal_conversion = yes
@@ -12830,25 +12866,6 @@ covenblad_covenant_arbiters = {
 	}
 	ai = {
 		factor = 1
-	}
-}
-
-#Passsssssssiragha
-pasiragha_gov_empowered_philosophers = {
-	icon = "nobleman"
-	allow_normal_conversion = no
-	lock_level_when_selected = yes
-	potential = {
-		tag = R61
-		has_reform = pasiragha_gov_empowered_philosophers
-	}
-	
-	modifiers = {
-		idea_cost = -0.05
-		prestige_decay = -0.01
-	}
-	government_abilities = {
-		anb_pasiragha_philosophical_lean_mechanic
 	}
 }
 
@@ -12880,6 +12897,24 @@ trust_of_the_future = {
 	}
 }
 
+#Passsssssssiragha
+pasiragha_gov_empowered_philosophers = {
+	icon = "nobleman"
+	allow_normal_conversion = no
+	lock_level_when_selected = yes
+	potential = {
+		tag = R61
+		has_reform = pasiragha_gov_empowered_philosophers
+	}
+	
+	modifiers = {
+		idea_cost = -0.05
+		prestige_decay = -0.01
+	}
+	government_abilities = {
+		anb_pasiragha_philosophical_lean_mechanic
+	}
+}
 
 #t3 z
 pasiragha_gov_res_advisory_com = {
@@ -13009,5 +13044,348 @@ gnoll_gnollish_monarchy = {
 
 	ai = {
 		factor = 2
+	}
+}
+
+sanghariyar_parliament_reform = {
+	icon = "black_market_consortium"
+	allow_normal_conversion = no
+	lock_level_when_selected = yes
+
+	potential = {
+		OR = {
+			has_reform = sanghariyar_parliament_reform
+			have_had_reform = sanghariyar_parliament_reform
+		}
+	}
+
+	modifiers = {
+		num_accepted_cultures = 1
+		uppercastes_influence_modifier = -0.1
+		promote_culture_cost = -0.33
+	}
+
+	custom_attributes = {
+		has_parliament = yes
+		anb_special_bribes = yes
+		money_bribes_only = yes
+		mana_from_parliament = yes
+	}
+}
+
+sanghariyar_parliament_reform_2 = { #Alternate version of the same reform--because conditional is banned
+	icon = "black_market_consortium"
+	allow_normal_conversion = no
+	lock_level_when_selected = yes
+
+	potential = {
+		OR = {
+			has_reform = sanghariyar_parliament_reform_2
+			have_had_reform = sanghariyar_parliament_reform_2
+		}
+	}
+
+	modifiers = {
+		num_accepted_cultures = 1
+		uppercastes_influence_modifier = -0.1
+		parliament_backing_chance = 0.15
+	}
+
+	custom_attributes = {
+		has_parliament = yes
+		anb_special_bribes = yes
+		money_bribes_only = yes
+		mana_from_parliament = yes
+		halved_parliament_bribes = yes
+	}
+}
+
+plutocratic_reform_cant_convert = {
+	icon = "asian_scripture"
+	allow_normal_conversion = no
+	lock_level_when_selected = yes
+	legacy_equivalent = despotic_monarchy
+	potential = {
+		OR = {
+			has_reform = plutocratic_reform_cant_convert
+			have_had_reform = plutocratic_reform_cant_convert
+		}
+	}
+	valid_for_nation_designer = no
+	modifiers = {
+		merchants = 1
+		nobles_influence_modifier = -0.05
+		burghers_influence_modifier = 0.05
+
+		# Anbennar
+		uppercastes_influence_modifier = -0.05
+		middlecastes_influence_modifier = 0.05
+	}
+	custom_attributes = {
+		enables_plutocratic_idea_group = yes
+		enables_aristocratic_idea_group = no
+		locked_government_type = yes
+	}
+	boost_income = yes
+	conditional = {
+		allow = {
+			has_dlc = "Leviathan"
+		}
+		allow_draft_transport_ships = yes
+	}
+	conditional = {
+		allow = {
+			has_dlc = "Res Publica"
+			NOT = { has_dlc = "Mare Nostrum" }
+		}
+		can_use_trade_post = yes
+	}
+	conditional = {
+		allow = {
+			has_dlc = "Mare Nostrum"
+			NOT = { has_dlc = "Res Publica" }
+		}
+		can_form_trade_league = yes
+		trade_city_reform = trading_city
+	}
+	conditional = {
+		allow = {
+			has_dlc = "Res Publica"
+			has_dlc = "Mare Nostrum"
+		}
+		can_use_trade_post = yes
+		can_form_trade_league = yes
+		trade_city_reform = trading_city
+	}
+	ai = {
+		factor = 0.75 #generic
+	}
+}
+
+#naleni post mutiny reform
+naleni_thalassocracy_reform = {
+	lock_level_when_selected = yes
+	allow_normal_conversion = yes
+	icon = "harpy_matriarchy"
+	potential = {
+		has_country_flag = L55_riva_reform
+		OR = {
+			tag = L55
+			was_tag = L55
+		}
+	}
+	lock_level_when_selected = yes
+	legacy_equivalent = ottoman_government_legacy
+	
+	modifiers = {
+		block_introduce_heir = yes
+		naval_forcelimit_modifier = 0.5
+		capture_ship_chance = 0.33
+		may_perform_slave_raid_on_same_religion = yes
+		allowed_marine_fraction = 0.5
+	}
+
+	custom_attributes = {
+		queen = no
+		disabled_expelling_human = yes
+		disabled_purging_human = yes
+		locked_government_type = yes
+	}
+	conditional = {
+		allow = { has_dlc = "Rights of Man" }
+		has_harem = yes
+	}
+}
+
+
+
+
+
+winged_menkaunswt_reform = {
+	lock_level_when_selected = yes
+	allow_normal_conversion = yes
+	icon = "harpy_matriarchy"
+	potential = {
+		has_country_flag = duwarkani_reform_has_it
+	}
+
+	valid_for_nation_designer = no
+	maintain_dynasty = yes
+	
+	modifiers = {
+		prestige_decay = -0.01
+		may_recruit_female_generals = yes
+	}
+	effect = {
+		custom_tooltip = duwarkani_winged_menk_reform_tt
+	}
+}
+
+virtuous_cults_reform = {
+	icon = "feudal_theocracy"
+	allow_normal_conversion = yes
+	potential = {
+		religion = old_bulwari_sun_cult
+	}
+	modifiers = {
+		manpower_in_true_faith_provinces = 0.10
+		church_loyalty_modifier = 0.10
+		church_influence_modifier = 0.10
+	}
+	custom_attributes = {
+		virtuous_cults_upgrade = yes
+	}
+}
+
+#Cannorian Monarchy T2
+
+honor_the_senators = {
+	icon = "restoration_of_the_senate_reform"
+	allow_normal_conversion = yes
+	potential = {
+		has_reform = damerian_monarchy
+	}
+	modifiers = {
+		reform_progress_growth = 0.10
+		nobles_loyalty_modifier = 0.05
+	}
+	effect = {
+		custom_tooltip = new_parliament_issues_tt
+	}
+}
+
+ties_with_anbennarian_nobility = {
+	icon = "elective_monarchy"
+	allow_normal_conversion = yes
+	block_cultural_union = yes
+	potential = {
+		NOT = { culture_group = anbennarian }
+		OR = {
+		is_part_of_hre = yes
+		is_emperor = yes
+		tag = Z01 # Anbennar
+		}
+		OR = {
+		capital_scope = { superregion = western_cannor_superregion }
+		tag = Z01 # Anbennar
+		}
+	}
+	modifiers = {
+		diplomatic_upkeep = -1
+		improve_relation_modifier = 0.1
+	}
+	effect = {
+		custom_tooltip = ties_with_anbennarian_tt
+		hidden_effect = {
+			add_country_modifier = {
+				name = gov_ties_with_anbennarian_I
+				duration = -1
+				hidden = yes
+			}
+			every_heretic_province = {
+					limit = {is_anbennarian_imperial_culture = yes}
+					add_province_modifier = { 
+						name = gov_empire_heretic
+						duration = -1
+					}
+				}
+			}
+		}
+	removed_effect = {
+		hidden_effect = {
+			remove_country_modifier = gov_ties_with_anbennarian_I
+			remove_country_modifier = gov_ties_with_anbennarian_II
+			remove_country_modifier = gov_ties_with_anbennarian_III
+			remove_country_modifier = gov_ties_with_anbennarian_IV
+			every_heretic_province = {
+				limit = {is_anbennarian_imperial_culture = yes}
+				remove_province_modifier = gov_empire_heretic
+			}
+		}
+	}
+}
+
+strengthen_elves_privileges = {
+	icon = "human_elf"
+	allow_normal_conversion = yes
+	potential = {
+		OR = {
+		culture = farrani_half_elf
+		culture_group = lencori
+		culture_group = anbennarian
+		}
+	}
+	trigger = {
+		NOT = {has_country_modifier = racial_pop_elven_purge}
+		NOT = {has_country_modifier = racial_pop_elven_expulsion}
+	}
+	modifiers = {
+		ae_impact = -0.10
+		nobles_loyalty_modifier = -0.1
+	}
+	effect = {
+		custom_tooltip = strengthen_elves_privileges_tt
+		hidden_effect = {
+			add_accepted_culture = moon_elf
+			add_country_modifier = {
+				name = gov_moon_elf_slot
+				duration = -1
+				hidden = yes
+			}
+			every_owned_province = {
+					limit = {culture = moon_elf}
+					add_province_modifier = { 
+						name = gov_moon_elf_tolerance
+						duration = -1
+					}
+				}
+			every_owned_province = {
+					limit = {religion = elven_forebears}
+					add_province_modifier = { 
+						name = gov_moon_elven_religion_tolerance
+						duration = -1
+					}
+				}
+			}
+		}
+	removed_effect = {
+		hidden_effect = {
+			remove_accepted_culture = moon_elf
+			remove_country_modifier = gov_moon_elf_slot
+			every_owned_province = {
+				limit = {
+					OR = {
+						has_province_modifier = gov_moon_elf_tolerance
+						has_province_modifier = gov_moon_elven_religion_tolerance
+					}
+				}
+				remove_province_modifier = gov_moon_elf_tolerance
+				remove_province_modifier = gov_moon_elven_religion_tolerance
+			}
+		}
+	}
+}
+
+empower_magnate_council = {
+	icon = "organized_military_staff"
+	allow_normal_conversion = yes
+	potential = {
+		OR = {
+			culture = gawedi
+			culture = old_alenic
+			culture = blue_reachman
+		}
+		NOT = { has_disaster = magnate_uprising }
+	}
+	modifiers = {
+		global_trade_goods_size_modifier = 0.05
+		nobles_loyalty_modifier = -0.1
+		nobles_influence_modifier = -0.1
+	}
+	custom_attributes = {
+		magnate_council_doubled = yes
+		primacy_of_nobility_harsher = yes
+		disable_noble_land_right = yes
+		burghers_land_right_streghtened = yes
 	}
 }

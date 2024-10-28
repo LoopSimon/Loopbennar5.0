@@ -21,7 +21,6 @@ cannorian = {
 			ravelian
 		}
 		country = {
-		infantry_power = 0.1
 			tolerance_heathen = 2
 			stability_cost_modifier = -0.15
 		}
@@ -975,7 +974,7 @@ faithless = {
 			technology_cost = -0.05
 			possible_policy = 1
 		}
-		heretic = { TAOIST }
+		heretic = { DAMESTEARCULTIST ANTITHEORETICAL OVERTHINKER THOUGHTLESS }
 		uses_harmony = yes
 	}
 
@@ -1602,6 +1601,8 @@ khetist = {
 			aakhetist_aakhet_blessing
 			aakhetist_aakhet_wrath
 			aakhetist_aakhet_retinue
+			aakhetist_aakhet_rage
+			aakhetist_aakhet_conquest
 			aakhetist_aakhet_wisdom
 			aakhetist_aakhet_glory
 		}
@@ -2922,14 +2923,14 @@ dwarven = {
 			}
 
 			hidden_effect = {
-				set_variable = { which = ClanShadowhammerAllegienceVar value = 0 }
-				set_variable = { which = ClanDarkstoneAllegienceVar value = 0 }
-				set_variable = { which = GroediAzAnAllegienceVar value = 0 }
-				set_variable = { which = AmlruzskappaAllegienceVar value = 0 }
-				set_variable = { which = FurdanhundAllegienceVar value = 0 }
-				set_variable = { which = RunefathersMightAllegienceVar value = 0 }
-				set_variable = { which = RunefathersMercyAllegienceVar value = 0 }
-				set_variable = { which = RunefathersMajestyAllegienceVar value = 0 }
+				set_variable = { which = ClanShadowhammerAllegianceVar value = 0 }
+				set_variable = { which = ClanDarkstoneAllegianceVar value = 0 }
+				set_variable = { which = GroediAzAnAllegianceVar value = 0 }
+				set_variable = { which = AmlruzskappaAllegianceVar value = 0 }
+				set_variable = { which = FurdanhundAllegianceVar value = 0 }
+				set_variable = { which = RunefathersMightAllegianceVar value = 0 }
+				set_variable = { which = RunefathersMercyAllegianceVar value = 0 }
+				set_variable = { which = RunefathersMajestyAllegianceVar value = 0 }
 			}
 		}
 
@@ -3123,7 +3124,6 @@ bulwari = {
 		allowed_conversion = {
 		}
 		country = {
-			land_morale = 0.05
 			global_unrest = -2
 			recover_army_morale_speed = 0.10
 		}
@@ -3160,7 +3160,6 @@ bulwari = {
 		allowed_conversion = {
 		}
 		country = {
-			land_morale = 0.05
 			garrison_size = 0.4
 			tolerance_own = 2
 		}
@@ -3351,6 +3350,9 @@ orcish = {
 
 		uses_anglican_power = yes				# Uses church power/aspect mechanics
 		aspects = {
+			prepare_mask
+			blood_frenzy
+			summon_blood_moon
 			look_for_omens
 			shake_the_earth_old
 			ask_for_dookan_guidance
@@ -3539,7 +3541,7 @@ dragon_cult = {
 			}
 		}
 
-		heretic = { DENIER }
+		heretic = { CULTOFMALLIATH CHILDOFTAYEKAN CULTOFSILENCE CULTOFZURZUMEX }
 	}
 
 	drozma_tur = {
@@ -3693,6 +3695,8 @@ harpy_cults = {
 			harpy_raid_neighbour_aspect
 			harpy_entice_immigration_aspect
 			harpy_the_odd_hunt_aspect
+			naleni_organize_a_great_prayer
+			naleni_cleanse_the_sins_of_the_riyitewag
 		}
 		aspects_name = ANGLICAN_ASPECTS
 
@@ -4002,7 +4006,7 @@ cheshoshi_religion = {
 		heretic = { RUINED_GODS }
 	}
 
-	harmonized_modifier = harmonized_cheshoshi
+	harmonized_modifier = harmonized_cheshoshi_religion
 
 	crusade_name = HOLY_WAR
 }
@@ -4186,6 +4190,8 @@ harafic = {
 			tolerance_heathen = -1
 			tolerance_own = 2
 			stability_cost_modifier = -0.20
+			female_advisor_chance = 0.4
+			may_recruit_female_generals = yes
 		}
 		province = {
 			local_missionary_strength = 0.02 # Easy to convert
@@ -4821,6 +4827,8 @@ fey_religion = {
 		country = {
 			church_power_modifier = 0.10
 			global_missionary_strength = 0.01
+			female_advisor_chance = 0.4
+			may_recruit_female_generals = yes
 		}
 		country_as_secondary = {
 			church_power_modifier = 0.05
@@ -4830,7 +4838,21 @@ fey_religion = {
 		on_convert = {
 			change_religion = eordellon
 			add_prestige = -100
-			country_event = { id = eordellon.5 }
+			if = {
+				limit = {
+					OR = {
+						has_country_modifier = seasonal_court_level_zero
+						has_country_modifier = seasonal_court_level_one
+						has_country_modifier = seasonal_court_level_two
+						has_country_modifier = seasonal_court_level_three
+						has_country_modifier = seasonal_court_level_four
+					}
+				}
+				country_event = { id = eordellon.21 }
+			}
+			else = {
+				country_event = { id = eordellon.5 }
+			}
 			add_country_modifier = {
 				name = "conversion_zeal"
 				duration = 3650
@@ -4884,7 +4906,7 @@ fey_religion = {
 			mil_eordellon_redcap
 			adm_eordellon_gladewarden
 			mil_eordellon_wildhunt
-			adm_eordellon_uncrownedqueen
+			adm_eordellon_unthronedqueen
 			
 			#Neutral
 			
@@ -4934,6 +4956,8 @@ fey_religion = {
 		country = {
 			idea_cost = -0.05
 			manpower_recovery_speed = 0.1
+			female_advisor_chance = 0.4
+			may_recruit_female_generals = yes
 		}
 		country_as_secondary = {
 			idea_cost = -0.05
@@ -4943,7 +4967,21 @@ fey_religion = {
 		on_convert = {
 			change_religion = spring_court
 			add_prestige = -100
-			country_event = { id = eordellon.5 }
+			if = {
+				limit = {
+					OR = {
+						has_country_modifier = seasonal_court_level_zero
+						has_country_modifier = seasonal_court_level_one
+						has_country_modifier = seasonal_court_level_two
+						has_country_modifier = seasonal_court_level_three
+						has_country_modifier = seasonal_court_level_four
+					}
+				}
+				country_event = { id = eordellon.21 }
+			}
+			else = {
+				country_event = { id = eordellon.5 }
+			}
 			add_country_modifier = {
 				name = "conversion_zeal"
 				duration = 3650
@@ -4997,7 +5035,7 @@ fey_religion = {
 			mil_eordellon_redcap
 			adm_eordellon_gladewarden
 			mil_eordellon_wildhunt
-			adm_eordellon_uncrownedqueen
+			adm_eordellon_unthronedqueen
 			
 			#Neutral
 			
@@ -5045,6 +5083,8 @@ fey_religion = {
 		country = {
 			naval_forcelimit_modifier = 0.20
 			trade_efficiency = 0.1 
+			female_advisor_chance = 0.4
+			may_recruit_female_generals = yes
 		}
 		country_as_secondary = {
 			naval_forcelimit_modifier = 0.1
@@ -5054,7 +5094,21 @@ fey_religion = {
 		on_convert = {
 			change_religion =summer_court
 			add_prestige = -100
-			country_event = { id = eordellon.5 }
+			if = {
+				limit = {
+					OR = {
+						has_country_modifier = seasonal_court_level_zero
+						has_country_modifier = seasonal_court_level_one
+						has_country_modifier = seasonal_court_level_two
+						has_country_modifier = seasonal_court_level_three
+						has_country_modifier = seasonal_court_level_four
+					}
+				}
+				country_event = { id = eordellon.21 }
+			}
+			else = {
+				country_event = { id = eordellon.5 }
+			}
 			add_country_modifier = {
 				name = "conversion_zeal"
 				duration = 3650
@@ -5108,7 +5162,7 @@ fey_religion = {
 			mil_eordellon_redcap
 			adm_eordellon_gladewarden
 			mil_eordellon_wildhunt
-			adm_eordellon_uncrownedqueen
+			adm_eordellon_unthronedqueen
 			
 			#Neutral
 			
@@ -5156,6 +5210,8 @@ fey_religion = {
 		country = {
 			production_efficiency = 0.1
 			drill_gain_modifier = 0.5 
+			female_advisor_chance = 0.4
+			may_recruit_female_generals = yes
 		}
 		country_as_secondary = {
 			production_efficiency = 0.05
@@ -5165,7 +5221,21 @@ fey_religion = {
 		on_convert = {
 			change_religion = autumn_court
 			add_prestige = -100
-			country_event = { id = eordellon.5 }
+			if = {
+				limit = {
+					OR = {
+						has_country_modifier = seasonal_court_level_zero
+						has_country_modifier = seasonal_court_level_one
+						has_country_modifier = seasonal_court_level_two
+						has_country_modifier = seasonal_court_level_three
+						has_country_modifier = seasonal_court_level_four
+					}
+				}
+				country_event = { id = eordellon.21 }
+			}
+			else = {
+				country_event = { id = eordellon.5 }
+			}
 			add_country_modifier = {
 				name = "conversion_zeal"
 				duration = 3650
@@ -5219,7 +5289,7 @@ fey_religion = {
 			mil_eordellon_redcap
 			adm_eordellon_gladewarden
 			mil_eordellon_wildhunt
-			adm_eordellon_uncrownedqueen
+			adm_eordellon_unthronedqueen
 			
 			#Neutral
 			
@@ -5267,6 +5337,8 @@ fey_religion = {
 		country = {
 			fort_maintenance_modifier = -0.15 
 			war_exhaustion = -0.03
+			female_advisor_chance = 0.4
+			may_recruit_female_generals = yes
 		}
 		country_as_secondary = {
 			fort_maintenance_modifier = -0.10 
@@ -5276,7 +5348,21 @@ fey_religion = {
 		on_convert = {
 			change_religion = winter_court
 			add_prestige = -100
-			country_event = { id = eordellon.5 }
+			if = {
+				limit = {
+					OR = {
+						has_country_modifier = seasonal_court_level_zero
+						has_country_modifier = seasonal_court_level_one
+						has_country_modifier = seasonal_court_level_two
+						has_country_modifier = seasonal_court_level_three
+						has_country_modifier = seasonal_court_level_four
+					}
+				}
+				country_event = { id = eordellon.21 }
+			}
+			else = {
+				country_event = { id = eordellon.5 }
+			}
 			add_country_modifier = {
 				name = "conversion_zeal"
 				duration = 3650
@@ -5330,7 +5416,7 @@ fey_religion = {
 			mil_eordellon_redcap
 			adm_eordellon_gladewarden
 			mil_eordellon_wildhunt
-			adm_eordellon_uncrownedqueen
+			adm_eordellon_unthronedqueen
 			
 			#Neutral
 			
@@ -6143,50 +6229,375 @@ halessi = {
 	flags_with_emblem_percentage = 33 # default == 0
 	flag_emblem_index_range = { 1 57 }
 
-	righteous_path = {
+	accretive_path = {
 		color = { 222  222  222 }
 		icon = 70
 		allowed_conversion = {
-			#lefthand_path
+			#devouring_path
 		}
 		country = {
 			army_tradition = 0.5
-			global_tax_modifier = 0.1
+			tolerance_heretic = 3
+			church_power_modifier = -1
 		}
 		country_as_secondary = {
 			army_tradition = 0.5
 			ae_impact = -0.1
 		}
 
-		uses_church_power = yes				# Uses church power/aspect mechanics
-		can_have_secondary_religion = yes
+		uses_judaism_power = yes
 		aspects = {
-			wandering_warriors
-			leadership_of_martial_heroes
-			romanticize_our_feats
-			organize_the_sects
-			martial_arts_for_the_peasantry
-			meditation_through_farming
-			preserve_the_secret_world
-			trial_by_combat
-			karmic_code
-			matchlock_monks
-			teachings_of_balris
-			elixirs_of_knowledge
-			temple_communities
-			meditation_and_tea
-			vow_of_poverty
-			kobold_house_pets
-			remembrance_festivals
-			equal_inheritance
-			guardians_after_death
-			spirit_influenced_crafts
-			honsai_the_ghostemperor
+			accretive_path_acts_of_hermitage_minor
+			accretive_path_acts_of_hermitage_major_unimproved
+			accretive_path_acts_of_hermitage_major_improved
+			accretive_path_remembrance_festivals_minor
+			accretive_path_remembrance_festivals_major_unimproved
+			accretive_path_remembrance_festivals_major_improved
+			accretive_path_sponsor_travelling_libraries_minor
+			accretive_path_sponsor_travelling_libraries_major_unimproved
+			accretive_path_sponsor_travelling_libraries_major_improved
+			accretive_path_meditation_through_labour_minor
+			accretive_path_meditation_through_labour_major_unimproved
+			accretive_path_meditation_through_labour_major_improved
+			accretive_path_fill_the_begging_bowls_minor
+			accretive_path_fill_the_begging_bowls_major_unimproved
+			accretive_path_fill_the_begging_bowls_major_improved
+			accretive_path_relive_past_lives_minor
+			accretive_path_relive_past_lives_major_unimproved
+			accretive_path_relive_past_lives_major_improved
+			accretive_path_universal_martial_education_minor
+			accretive_path_universal_martial_education_major_unimproved
+			accretive_path_universal_martial_education_major_improved
+			accretive_path_leadership_of_hero_monks_minor
+			accretive_path_leadership_of_hero_monks_major_unimproved
+			accretive_path_leadership_of_hero_monks_major_improved
+			accretive_path_hire_sellsword_monks_minor
+			accretive_path_hire_sellsword_monks_major_unimproved
+			accretive_path_hire_sellsword_monks_major_improved
+			accretive_path_liberation_of_the_mind_major_unimproved
+			accretive_path_liberation_of_the_mind_major_improved
+			accretive_path_liberation_of_the_soul_major_unimproved
+			accretive_path_liberation_of_the_soul_major_improved
+			accretive_path_liberation_of_the_body_major_unimproved
+			accretive_path_liberation_of_the_body_major_improved
+			accretive_path_river_flows_in_you_minor
+			accretive_path_river_flows_in_you_major_unimproved
+			accretive_path_river_flows_in_you_major_improved
+			accretive_path_words_aflame_minor
+			accretive_path_words_aflame_major_unimproved
+			accretive_path_words_aflame_major_improved
+			accretive_path_serenity_in_rock_and_stone_minor
+			accretive_path_serenity_in_rock_and_stone_major_unimproved
+			accretive_path_serenity_in_rock_and_stone_major_improved
+			accretive_path_the_second_ascension_minor
+			accretive_path_the_second_ascension_major_unimproved
+			accretive_path_the_second_ascension_major_improved
+			accretive_path_tea_ceremonies_minor
+			accretive_path_tea_ceremonies_major_unimproved
+			accretive_path_tea_ceremonies_major_improved
+			accretive_path_teachings_of_balris_minor
+			accretive_path_teachings_of_balris_major_unimproved
+			accretive_path_teachings_of_balris_major_improved
+			accretive_path_sages_of_the_misty_mountains_minor
+			accretive_path_sages_of_the_misty_mountains_major_unimproved
+			accretive_path_sages_of_the_misty_mountains_major_improved
 		}
-		aspects_name = RIGHTEOUS_PATH_ASPECTS
+		aspects_name = ACCRETIVE_PATH_ASPECTS
 
 		on_convert = {
-			change_religion = righteous_path
+			change_religion = accretive_path
+			add_prestige = -100
+
+			add_country_modifier = {
+				name = "conversion_zeal"
+				duration = 3650
+			}
+		}
+
+		celebrate = {
+			cost = 200
+			potential = {}
+			allow = {
+				custom_trigger_tooltip = {
+					tooltip = accretive_path_celebrate_trigger_tt
+					accretive_path_full_aspect_scripted_trigger = yes
+				}
+			}
+			effect = {
+				custom_tooltip = accretive_path_chi_stacking_methods_tt
+				custom_tooltip = accretive_path_celebrate_effect_tt
+				hidden_effect = {
+					accretive_path_clear_flags_scripted_effect = yes
+					trigger_switch = {
+						on_trigger = has_church_aspect
+	
+						accretive_path_acts_of_hermitage_major_unimproved = {
+							set_country_flag = improved_accretive_path_acts_of_hermitage
+							add_church_aspect = accretive_path_acts_of_hermitage_major_improved
+							set_country_flag = accretive_path_major_aspect_flag
+						}
+						accretive_path_acts_of_hermitage_major_improved = { add_ruler_modifier = { name = accretive_path_acts_of_hermitage_major_improved_mod duration = -1 } }
+
+						accretive_path_remembrance_festivals_major_unimproved = {
+							set_country_flag = improved_accretive_path_remembrance_festivals
+							add_church_aspect = accretive_path_remembrance_festivals_major_improved
+							set_country_flag = accretive_path_major_aspect_flag
+						}
+						accretive_path_remembrance_festivals_major_improved = { add_ruler_modifier = { name = accretive_path_remembrance_festivals_major_improved_mod duration = -1 } }
+
+						accretive_path_sponsor_travelling_libraries_major_unimproved = {
+							set_country_flag = improved_accretive_path_sponsor_travelling_libraries
+							add_church_aspect = accretive_path_sponsor_travelling_libraries_major_improved
+							set_country_flag = accretive_path_major_aspect_flag
+						}
+						accretive_path_sponsor_travelling_libraries_major_improved = { add_ruler_modifier = { name = accretive_path_sponsor_travelling_libraries_major_improved_mod duration = -1 } }
+
+						accretive_path_meditation_through_labour_major_unimproved = {
+							set_country_flag = improved_accretive_path_meditation_through_labour
+							add_church_aspect = accretive_path_meditation_through_labour_major_improved
+							set_country_flag = accretive_path_major_aspect_flag
+						}
+						accretive_path_meditation_through_labour_major_improved = { add_ruler_modifier = { name = accretive_path_meditation_through_labour_major_improved_mod duration = -1 } }
+
+						accretive_path_fill_the_begging_bowls_major_unimproved = {
+							set_country_flag = improved_accretive_path_fill_the_begging_bowls
+							add_church_aspect = accretive_path_fill_the_begging_bowls_major_improved
+							set_country_flag = accretive_path_major_aspect_flag
+						}
+						accretive_path_fill_the_begging_bowls_major_improved = { add_ruler_modifier = { name = accretive_path_fill_the_begging_bowls_major_improved_mod duration = -1 } }
+
+						accretive_path_relive_past_lives_major_unimproved = {
+							set_country_flag = improved_accretive_path_relive_past_lives
+							add_church_aspect = accretive_path_relive_past_lives_major_improved
+							set_country_flag = accretive_path_major_aspect_flag
+						}
+						accretive_path_relive_past_lives_major_improved = { add_ruler_modifier = { name = accretive_path_relive_past_lives_major_improved_mod duration = -1 } }
+
+						accretive_path_universal_martial_education_major_unimproved = {
+							set_country_flag = improved_accretive_path_universal_martial_education
+							add_church_aspect = accretive_path_universal_martial_education_major_improved
+							set_country_flag = accretive_path_major_aspect_flag
+						}
+						accretive_path_universal_martial_education_major_improved = { add_ruler_modifier = { name = accretive_path_universal_martial_education_major_improved_mod duration = -1 } }
+
+						accretive_path_leadership_of_hero_monks_major_unimproved = {
+							set_country_flag = improved_accretive_path_leadership_of_hero_monks
+							add_church_aspect = accretive_path_leadership_of_hero_monks_major_improved
+							set_country_flag = accretive_path_major_aspect_flag
+						}
+						accretive_path_leadership_of_hero_monks_major_improved = { add_ruler_modifier = { name = accretive_path_leadership_of_hero_monks_major_improved_mod duration = -1 } }
+
+						accretive_path_hire_sellsword_monks_major_unimproved = {
+							set_country_flag = improved_accretive_path_hire_sellsword_monks
+							add_church_aspect = accretive_path_hire_sellsword_monks_major_improved
+							set_country_flag = accretive_path_major_aspect_flag
+						}
+						accretive_path_hire_sellsword_monks_major_improved = { add_ruler_modifier = { name = accretive_path_hire_sellsword_monks_major_improved_mod duration = -1 } }
+
+						accretive_path_liberation_of_the_mind_major_unimproved = {
+							set_country_flag = improved_accretive_path_liberation_of_the_mind
+							add_church_aspect = accretive_path_liberation_of_the_mind_major_improved
+							set_country_flag = accretive_path_major_aspect_flag
+						}
+						accretive_path_liberation_of_the_mind_major_improved = {
+							if = {
+								limit = { adm = 5 }
+								add_ruler_modifier = {
+									name = accretive_path_liberation_of_the_mind_major_improved_mod
+									duration = -1
+								}
+							}
+							else_if = {
+								limit = { adm = 4 }
+								change_adm = 1
+							}
+							else_if = {
+								limit = { adm = 3 }
+								change_adm = 2
+							}
+							else_if = {
+								limit = { adm = 2 }
+								change_adm = 3
+							}
+							else_if = {
+								limit = { adm = 1 }
+								change_adm = 4
+							}
+							else = {
+								change_adm = 5
+							}
+						}
+
+						accretive_path_liberation_of_the_soul_major_unimproved = {
+							set_country_flag = improved_accretive_path_liberation_of_the_soul
+							add_church_aspect = accretive_path_liberation_of_the_soul_major_improved
+							set_country_flag = accretive_path_major_aspect_flag
+						}
+						accretive_path_liberation_of_the_soul_major_improved = {
+							if = {
+								limit = { dip = 5 }
+								add_ruler_modifier = {
+									name = accretive_path_liberation_of_the_soul_major_improved_mod
+									duration = -1
+								}
+							}
+							else_if = {
+								limit = { dip = 4 }
+								change_dip = 1
+							}
+							else_if = {
+								limit = { dip = 3 }
+								change_dip = 2
+							}
+							else_if = {
+								limit = { dip = 2 }
+								change_dip = 3
+							}
+							else_if = {
+								limit = { dip = 1 }
+								change_dip = 4
+							}
+							else = {
+								change_dip = 5
+							}
+						}
+
+						accretive_path_liberation_of_the_body_major_unimproved = {
+							set_country_flag = improved_accretive_path_liberation_of_the_body
+							add_church_aspect = accretive_path_liberation_of_the_body_major_improved
+							set_country_flag = accretive_path_major_aspect_flag
+						}
+						accretive_path_liberation_of_the_body_major_improved = {
+							if = {
+								limit = { mil = 5 }
+								add_ruler_modifier = {
+									name = accretive_path_liberation_of_the_body_major_improved_mod
+									duration = -1
+								}
+							}
+							else_if = {
+								limit = { mil = 4 }
+								change_mil = 1
+							}
+							else_if = {
+								limit = { mil = 3 }
+								change_mil = 2
+							}
+							else_if = {
+								limit = { mil = 2 }
+								change_mil = 3
+							}
+							else_if = {
+								limit = { mil = 1 }
+								change_mil = 4
+							}
+							else = {
+								change_mil = 5
+							}
+						}
+
+						accretive_path_river_flows_in_you_major_unimproved = {
+							set_country_flag = improved_accretive_path_river_flows_in_you
+							add_church_aspect = accretive_path_river_flows_in_you_major_improved
+							set_country_flag = accretive_path_major_aspect_flag
+						}
+						accretive_path_river_flows_in_you_major_improved = { add_ruler_modifier = { name = accretive_path_river_flows_in_you_major_improved_mod duration = -1 } }
+
+						accretive_path_words_aflame_major_unimproved = {
+							set_country_flag = improved_accretive_path_words_aflame
+							add_church_aspect = accretive_path_words_aflame_major_improved
+							set_country_flag = accretive_path_major_aspect_flag
+						}
+						accretive_path_words_aflame_major_improved = { add_ruler_modifier = { name = accretive_path_words_aflame_major_improved_mod duration = -1 } }
+
+						accretive_path_serenity_in_rock_and_stone_major_unimproved = {
+							set_country_flag = improved_accretive_path_serenity_in_rock_and_stone
+							add_church_aspect = accretive_path_serenity_in_rock_and_stone_major_improved
+							set_country_flag = accretive_path_major_aspect_flag
+						}
+						accretive_path_serenity_in_rock_and_stone_major_improved = { add_ruler_modifier = { name = accretive_path_serenity_in_rock_and_stone_major_improved_mod duration = -1 } }
+						
+						accretive_path_the_second_ascension_major_unimproved = {
+							set_country_flag = improved_accretive_path_the_second_ascension
+							add_church_aspect = accretive_path_the_second_ascension_major_improved
+							set_country_flag = accretive_path_major_aspect_flag
+						}
+						accretive_path_the_second_ascension_major_improved = { add_ruler_modifier = { name = accretive_path_the_second_ascension_major_improved_mod duration = -1 } }
+
+						accretive_path_tea_ceremonies_major_unimproved = {
+							set_country_flag = improved_accretive_path_tea_ceremonies
+							add_church_aspect = accretive_path_tea_ceremonies_major_improved
+							set_country_flag = accretive_path_major_aspect_flag
+						}
+						accretive_path_tea_ceremonies_major_improved = { add_ruler_modifier = { name = accretive_path_tea_ceremonies_major_improved_mod duration = -1 } }
+
+						accretive_path_teachings_of_balris_major_unimproved = {
+							set_country_flag = improved_accretive_path_teachings_of_balris
+							add_church_aspect = accretive_path_teachings_of_balris_major_improved
+							set_country_flag = accretive_path_major_aspect_flag
+						}
+						accretive_path_teachings_of_balris_major_improved = { add_ruler_modifier = { name = accretive_path_teachings_of_balris_major_improved_mod duration = -1 } }
+
+						accretive_path_sages_of_the_misty_mountains_major_unimproved = {
+							set_country_flag = improved_accretive_path_sages_of_the_misty_mountains
+							add_church_aspect = accretive_path_sages_of_the_misty_mountains_major_improved
+							set_country_flag = accretive_path_major_aspect_flag
+						}
+						accretive_path_sages_of_the_misty_mountains_major_improved = { add_ruler_modifier = { name = accretive_path_sages_of_the_misty_mountains_major_improved_mod duration = -1 } }
+					}
+				}
+			}
+		}
+
+		heretic = { FORBIDDEN_PATH }
+
+	}
+
+	transmutative_path = {
+		color = { 195  255  197 }
+		icon = 140
+		allowed_conversion = {
+		}
+		country = {
+			global_unrest = -2
+			tolerance_heretic = 3
+			church_power_modifier = -1
+		}
+		country_as_secondary = {
+			global_unrest = -2
+		}
+
+		uses_church_power = yes				# Uses church power/aspect mechanics
+
+		aspects = {
+			transmutative_path_acts_of_hermitage
+			transmutative_path_rememberance_festival
+			transmutative_path_sponsor_travelling_libraries
+			transmutative_path_meditation_through_labour
+			transmutative_path_fill_the_begging_bowls
+			transmutative_path_relive_past_lives
+			transmutative_path_universal_martial_education
+			transmutative_path_leadership_of_hero_monks
+			transmutative_path_hire_sellsword_monks
+			transmutative_path_everything_under_heaven
+			transmutative_path_through_inaction_action
+			transmutative_path_we_all_lift_together
+			transmutative_path_the_second_ascension
+			transmutative_path_tea_ceremonies
+			transmutative_path_from_strings_to_silk
+			transmutative_path_dowsing_for_metals
+			transmutative_path_muzzle_the_ox
+			transmutative_path_strip_the_scales
+			transmutative_path_sages_of_the_misty_mountains
+			transmutative_path_weaving_weal
+			transmutative_path_dessicate_landscape
+			transmutative_path_dredge_the_flats
+			transmutative_path_threadeth_the_corn
+		}
+		aspects_name = TRANSMUTATIVE_PATH_ASPECTS
+
+		on_convert = {
+			change_religion = transmutative_path
 			add_prestige = -100
 
 			add_country_modifier = {
@@ -6199,39 +6610,54 @@ halessi = {
 
 	}
 
-	lefthand_path = {
+	devouring_path = {
 		color = { 57  57  57 }
 		icon = 68
 		allowed_conversion = {
 			#righteous_path
 		}
 		country = {
-			army_tradition_decay = -0.01
+			religious_unity = 0.33
 			shock_damage = 0.1
+			church_power_modifier = -1
+			reverse_relation_with_heretic_religion = -25
 		}
 		country_as_secondary = {
-			army_tradition_decay = -0.01
+			shock_damage = 0.1
 			free_mil_policy = 1
 		}
 
 		uses_church_power = yes				# Uses church power/aspect mechanics
 		aspects = {
 			expand_the_dark_world
+			wisdom_beyond_honor
+			barter_with_dark_spirits
+			witches_and_shamans_preview
+			witches_and_shamans
+			advocation_of_chi_stealers
+			from_beyond_preview
+			from_beyond
+			chroniclers_of_secret_histories
+			gifts_for_fools
+			to_devour_chi_preview
+			to_devour_chi
+
 			gunpowder_meditation
 			demon_warriors
 			oni_demon_warriors
-			barter_with_dark_spirits
-			wisdom_beyond_honor
-			advocation_of_chi_stealers
-			mummy_monks
-			way_of_the_shadows
-			organize_the_cults
-			witches_and_shamans
+			the_god_eaters
+			the_dead_serve_the_living_preview
+			the_dead_serve_the_living
+			way_of_shadows
+			means_to_an_end
+			above_spirits_and_man
+			tether_the_weak
+			bleed_haless_dry
 		}
-		aspects_name = RIGHTEOUS_PATH_ASPECTS
+		aspects_name = DEVOURING_PATH_ASPECTS
 
 		on_convert = {
-			change_religion = lefthand_path
+			change_religion = devouring_path
 			add_prestige = -100
 
 			add_country_modifier = {
@@ -6674,8 +7100,9 @@ halessi = {
 							if = {
 								limit = {
 									OR = {
-										religion = righteous_path
-										religion = lefthand_path
+										religion = accretive_path
+										religion = transmutative_path
+										religion = devouring_path
 										religion = bangujonsi
 										religion = saanorgegh
 									}
@@ -7340,7 +7767,7 @@ centaur_religion = {
 			global_manpower_modifier = 0.05
 		}
 
-######IRDUKHUGA##########
+		######IRDUKHUGA##########
 		irdukhuga_school = {
 			potential_invite_scholar = {
 				always = yes
@@ -7854,7 +8281,7 @@ tanibic_religion = {
 	}
 
 	
-	harmonized_modifier = harmonized_tanibic
+	harmonized_modifier = harmonized_tanibic_religion
 	
 	crusade_name = HOLY_WAR
 }
@@ -8039,7 +8466,7 @@ hag_religion = {
 		}
 	}
 
-	harmonized_modifier = harmonized_hag
+	harmonized_modifier = harmonized_hag_religion
 
 	crusade_name = HOLY_WAR
 }
@@ -8300,7 +8727,7 @@ lizardfolk_religion = {
 		heretic = { CURSED }
 	}
 	
-	harmonized_modifier = harmonized_lizardfolk
+	harmonized_modifier = harmonized_lizardfolk_religion
 	
 	crusade_name = HOLY_WAR
 }
@@ -8367,7 +8794,7 @@ eltibhen_religion = {
 		heretic = { NOGOD }
 	}	
 	
-	harmonized_modifier = harmonized_gotiriei
+	harmonized_modifier = harmonized_eltibhen
 		
 	crusade_name = HOLY_WAR
 }
@@ -8404,6 +8831,8 @@ east_sarhal_religion = {
 			denounce_yrilaks_followers
 			expand_the_holy_realm
 			enforce_amilaks_supremacy
+			naleni_fair_winds_aspect
+			naleni_seek_powerful_egg_aspect
 		}
 		aspects_name = ANGLICAN_ASPECTS
 
@@ -8568,11 +8997,11 @@ amadian_religion = {
 		
 		country = {
 			yearly_corruption = -0.1
-			leader_land_shock = 1
+			land_attrition = -0.15
 		}
 		country_as_secondary = {
 			yearly_corruption = -0.1
-			leader_land_shock = 1
+			land_attrition = -0.15
 		}
 
 		on_convert = {
@@ -8585,9 +9014,10 @@ amadian_religion = {
 			}
 		}
 		heretic = { VISAGE_DENIERS }
+
+		personal_deity = yes
+		
+		crusade_name = HOLY_WAR
 	}
-
 	harmonized_modifier = harmonized_amadian
-	crusade_name = HOLY_WAR
-
 }

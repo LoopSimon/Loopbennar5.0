@@ -65,7 +65,7 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_fetishists_strip"
 		texturefile = "gfx//interface//fetishists_strip.dds"
-		noOfFrames = 37
+		noOfFrames = 43
 	}
 
 
@@ -737,6 +737,36 @@ spriteTypes = {
 		name = "GFX_icons_of_the_church_icon"
 		texturefile = "gfx/interface/church_aspects_anglicanism/icons_of_the_church_icon.dds"
 	}
+	
+	spriteType = {
+		name = "GFX_ancestral_armaments"
+		texturefile = "gfx/interface/church_aspects/kvangahga/ancestral_armaments.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_repurposed_relics"
+		texturefile = "gfx/interface/church_aspects/kvangahga/repurposed_relics.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_salvage_shipwrecks"
+		texturefile = "gfx/interface/church_aspects/kvangahga/salvage_shipwrecks.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_reconditioned_tools"
+		texturefile = "gfx/interface/church_aspects/kvangahga/reconditioned_tools.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_recycled_jewellery"
+		texturefile = "gfx/interface/church_aspects/kvangahga/recycled_jewellery.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_trial_of_the_reforged_chain"
+		texturefile = "gfx/interface/church_aspects/kvangahga/trial_of_the_reforged_chain.dds"
+	}
 
 	#Anbennar
 	spriteType = { 
@@ -1136,6 +1166,16 @@ spriteTypes = {
         name = "GFX_runefather_bar_majesty_5"
         texturefile = "gfx//interface//ideas_EU4//runefather_worship//bar_majesty_5.dds"    
     }
+
+	spriteType = {
+		name = "accretive_path_blocker"
+		texturefile = "gfx//interface//custom_gui//accretive_path_blocker.dds"
+	}
+
+	spriteType = {
+		name = "GFX_devouring_path_blocker"
+		texturefile = "gfx//interface//custom_gui//devouring_path_blocker.dds"
+	}
 }	
 
 

@@ -2932,7 +2932,10 @@ country_event = {
 	option = {
 		name = "EVTOPTL5060"		# Curse you, Comet Sense!
 		trigger = {
-			NOT = { stability = -1 }
+			NOT = {
+				stability = -1
+				NOT = { capital_scope = { continent = serpentspine } } #Anbennar
+			}
 		}
 		if = {
 			limit = { NOT = { stability = -2 } }
@@ -13651,7 +13654,7 @@ country_event = {
 	trigger = {
 		grain = 1
 		num_of_cities = 2
-		any_owned_province = {
+		any_owned_province = { 
 			trade_goods = grain
 			is_capital = no
 		}

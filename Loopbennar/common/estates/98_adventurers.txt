@@ -40,6 +40,7 @@ estate_adventurers = {
 	# These scale with loyalty & power
 	country_modifier_happy = {
 		mercenary_cost = -0.2
+		mercenary_discipline = 0.1
 	}
 	country_modifier_neutral = {
 		mercenary_cost = -0.2
@@ -204,13 +205,6 @@ estate_adventurers = {
 		}
 	}
 
-	custom_name = {
-		desc = inyaswarosa_heroes
-		trigger = {
-			culture_group = inyaswarosa
-		}
-	}
-
 	custom_name = { #Mengi free warriors
 		desc = estate_mengi_riyitewag
 		trigger = {
@@ -342,6 +336,11 @@ estate_adventurers = {
 		estate_adventurers_allclan_bestiary_yidab
 
 		estate_adventurers_heroic_realm
+
+		estate_adventurers_state_assassins
+
+		estate_adventurers_track_vampire_nobility
+		estate_adventurers_stalbor_vampire_hunters
 	}
 
 	agendas = {

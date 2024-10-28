@@ -3,8 +3,8 @@ setup_vision = yes
 government = republic
 add_government_reform = gang_control_reform
 government_rank = 1
-primary_culture = western_yan
-religion = lefthand_path
+primary_culture = szitu
+religion = devouring_path
 technology_group = tech_halessi
 capital = 4620
 
@@ -17,8 +17,16 @@ capital = 4620
 		birth_date = 1400.6.3
 		death_date = 1477.7.1
 		female = no
-		culture = western_yan
+		culture = szitu
 	}
 }
 
 1000.1.1 = { set_estate_privilege = estate_mages_organization_state }
+
+1444.11.10 = { #Devouring Path setup
+	add_church_power = 200
+	set_country_flag = was_devouring_path
+	set_country_flag = demon_warriors_unlocked
+	set_country_flag = way_of_shadows_unlocked
+	set_country_flag = means_to_an_end_unlocked
+}

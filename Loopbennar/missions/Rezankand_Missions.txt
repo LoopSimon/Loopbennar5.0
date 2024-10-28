@@ -68,7 +68,7 @@ rezankand_1_a = {
 			define_conquistador = {
 				name = "Kortazel"
 				fire = 5
-				shock = 8
+				shock = 9
 				manuever = 4
 				siege = 5
 			}

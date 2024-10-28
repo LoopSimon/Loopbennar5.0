@@ -2061,18 +2061,22 @@ estate_khelorvalshi_church_power = {
 	max_absolutism = -5
 	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 1 } }
 	influence = 0.1
-	loyalty = 0.1
 	can_select = {
 	}
 	on_granted = {
 	}
 	penalties = {
+		legitimacy = -0.5
+		devotion = -0.5
+		horde_unity = -0.5
+		meritocracy = -0.5
+		republican_tradition = -0.25
 	}
 	benefits = {
-		church_power_modifier = 0.5
+		church_power_modifier = 0.2
 	}
 	ai_will_do = {
-		factor = 0 #add in proper factors
+		factor = 100
 	}
 }
 estate_khelorvalshi_study_help = {
@@ -2102,8 +2106,8 @@ estate_khelorvalshi_temple_desecrators = {
 	loyalty = 0.05
 	influence = 0.1
 	is_valid = {
-		religion = lefthand_path
-		has_country_flag = lefthand_temple_secrets
+		religion = devouring_path
+		has_country_flag = devouring_temple_secrets
 		has_country_flag = azjakuma_unlock_corruption
 	}
 	can_select = {
@@ -2139,7 +2143,7 @@ estate_khelorvalshi_halve_corruption_penalty = {
 	loyalty = -0.05
 	influence = 0.1
 	is_valid = {
-		religion = lefthand_path
+		religion = devouring_path
 		has_country_flag = oni_halve_corruption_penalty
 	}
 	on_granted = {

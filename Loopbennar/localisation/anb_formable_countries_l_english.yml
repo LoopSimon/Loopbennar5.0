@@ -25,6 +25,7 @@
  farranean_nation_desc:0 "The Kingdom of Farraneán was the link between east and west, and rivalled Ibevar for domination of the Forlorn Vale. Founded by the Esmari noble Martin Farran during the War of the Sorcerer-King, the horrors wrought by the White Pestilence brought them and the elves of the Cursewood closer together to defend against the ambitions of Ibenion ta'Lunatein, giving rise to the síl na Eán dynasty that would rule the diverse and prosperous kingdom until the Greentide brought them down. Most of the survivors fled to the Aldresian Order as well as their old rivals Ibevar, while others stayed in the Cursewood to continue fighting, or barricaded themselves in Freetower and the Valefort before joining the marchers.\n\n§R(Mutually exclusive with formables that revive extinct Escanni kingdoms)§!"
  castanor_nation_title:0 "Revive Castan's Empire"
  castanor_nation_desc:0 "Castan's Empire (commonly known as Castanor) was the first human empire in all of history. Forged through war and flame, Castanor triumphed over the dark beasts of Escann and without them, humanity would never have become as great as they are today. To take up the mantle of Castanor again, our ruler must first pass the Trials of Castan like every Castan has beforehand. The trials are a rigorous ascent up the Trialmount with dangers both magical and mundane, a true challenge for any aspirant."
+ can_form_castanor_tooltip:0 "Has consolidated Escann and decided to devote the nation to revive Castanor"
  black_castanor_nation_title:0 "Revive Ebonfrost's Empire"
  black_castanor_nation_desc:0 "Many years ago, in the Era of Black Ice, Castan Ebonfrost invaded and conquered Castanor. Now that the Reavers once again rule over these lands, the legacy of Castan Ebonfrost can be restored!"
  endralliande_nation_title:0 "Form Endralliander Nation"
@@ -169,6 +170,7 @@
  flavour_covenblad.1.c:0 "Keep our current ruler's surname."
  universal_escann_nation_title:0 "Form Our Own Country!"
  universal_escann_nation_desc:0 "We have grown powerful enough in Escann that our influence matches the old lords of the west. We must move on from our adventurer beginnings and turn into a sovereign nation in our own right!\n\n§R(Mutually exclusive with formables that revive extinct Escanni kingdoms)§!"
+ tag_must_win_conso_wars_tt:0 "§TThis nation's mission tree will require you to win the §YEscanni Wars of Consolidation§!.§!"
 
  silvermere_nation_title:0 "Form the Kingdom of Silvermere!"
  silvermere_nation_desc:0 "We have grown powerful enough to assert dominance over the great Silvermere, the largest body of water in Escann and hub of Escanni trade. Let us formalize our rule and bring glory to our people!"
@@ -292,8 +294,8 @@
  form_vanrahar_title:0 "Form Vanrahar"
  form_vanrahar_desc:0 "For more than a millennia the Harimari have dominated Haless. Our homeland, however, the jungles of the Ascension Peninsula, where our people first arose, has for centuries been divided amongst various squabbling states. Now, however, it is united once more, as it has not been since the days of Harimar the Great of legend. Now, with our people truly united, we can build a modern Harimari state. Vanrahar."
 
- form_great_bulwar_title:0 "Unite the Cities of Bulwar"
- form_great_bulwar_desc:0 "Bulwar is the birthplace of human civilisation, but unlike other, much younger lands, it has never been united under native human rule. It's been conquered by Gnolls and Elves, but it is time that came to an end. We have united the cities of Bulwar under our banner, for the first time a banner of a Bulwari citystate. We will not let our homeland fall under the rule of a foreign power again!"
+ form_surakes_title:0 "Unite the Cities of Bulwar"
+ form_surakes_desc:0 "Bulwar is the birthplace of human civilisation, but unlike other, much younger lands, it has never been united under native human rule. It's been conquered by Gnolls and Elves, but it is time that came to an end. We have united the cities of Bulwar under our banner, for the first time a banner of a Bulwari citystate. We will not let our homeland fall under the rule of a foreign power again!"
 
  form_udzenklan_title:0 "Form The Allclan"
  form_udzenklan_desc:0 "Having proven our might and united all cave goblin clans existing in the Western Dwarovar, we have declared all clans to be abrogated aside from Ves Udzenklan, the clan of all. The time has come to abandon petty rivalries and focus on progress for the goblin race. Though such a radical restructuring may no doubt rankle powerful and weak alike, the might and wealth at our disposal is enough to allay such concerns. This is truly a historic moment in our people's history. There is no way this can end badly for us. The mountains are ours! For the future! For goblinkind!"
@@ -384,7 +386,7 @@
  konolkhatep_nation_desc:0 "At first our relationship with the beings known as the Khet was one of mere practicality, they have allowed us to rule the lands of Kheterata and we have facilitated the lifestyles to which they have become accustomed. Over time we have begun to see in the Khet the expression of our greatest ideals, these creatures live in absolute luxury, never lifting a finger and being worshipped as gods! Increasingly our nobles have begun to imitate their lifestyle and we gnolls have come to be seen as an integral part of Kheteratan society. Let us fully embrace this change, we shall proclaim our faith in the Khet and declare the foundation of an empire that is both Gnollish and Kheteratan, Konolkhatep!"
  
  lizard_empire_nation_title:0 "The Final Empire"
- lizard_empire_nation_desc:0 "Since the dawn of our civilization, times no one even remembers now, our civilization rose and fell and from the ashes of the old a new one always emerged. It has been prophesied that after 332 Empires great will die, a new one will be created - an Empire of Empires, the last ultimate one, that shall forever unite all of our race.\n\nThe time is now, with our recent conquest we proved to be worthy of a mantle of an empire allowing others to see our claim to the Last Empire as legitimate. 
+ lizard_empire_nation_desc:0 "Since the dawn of our civilization, times no one even remembers now, our civilization rose and fell and from the ashes of the old a new one always emerged. It has been prophesied that after 332 Empires great have died, a new one will be created - an Empire of Empires, the last ultimate one, that shall forever unite all of our race.\n\nThe time is now, with our recent conquest we proved to be worthy of a mantle of an empire allowing others to see our claim to the Last Empire as legitimate."
 
  adzalan_formation_title:0 "Form Adzalan"
  adzalan_formation_desc:0 "As our tribe has expanded and modernized over the years, art has developed and become more poignant in our society. Bards have taken over more and more facets of our administration and nation in general, and have benefited from the many rising magnates facilitating their craft. It is clear that our identity has extended beyond that of our tribe; now we are a nation of all artists, a far cry from the conceived barbarism in the eyes of our cousins!"
@@ -409,3 +411,6 @@
  no_other_soulseekers_tt:0 "All other Soulseeker nations are either our subjects or do not exist"
  form_samthalsu_title:0 "Form Samthalsu"
  form_samthalsu_desc:0 "The time has come for our people to unite under one banner, the banner of the great confederacy!"
+ 
+ cataboek_nation_title:0 "Form Cataboek!"
+ cataboek_nation_desc:0 "Form the Kingdom of Cataboek!"

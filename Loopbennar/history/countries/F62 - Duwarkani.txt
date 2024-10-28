@@ -11,15 +11,19 @@ capital = 6022
 
 1000.1.1 = { set_estate_privilege = estate_mages_organization_guilds }
 
-1408.9.4 = {
+1430.9.4 = {
 	monarch = {
 		name = "Kenmu"
-		dynasty = "Menkaunswid"
+		dynasty = "Menkaunswt"
 		birth_date = 1408.9.4
 		adm = 6
 		dip = 3
 		mil = 2
+		religion = elikhetist
+		
 	}
+	add_ruler_personality = fierce_negotiator_personality
+	add_ruler_personality = charismatic_negotiator_personality
 	queen = {
 		name = "Safana"
 		dynasty = "Duwaran"
@@ -30,13 +34,14 @@ capital = 6022
 		adm = 1
 		dip = 2
 		mil = 6
+		religion = nirakhetist
 	}
 }
 
 1443.9.2 = {
 	heir = {
 		name = "Banafrit"
-		dynasty = "Menkaunswid"
+		dynasty = "Menkaunswt"
 		culture = nzeri_harpy
 		birth_date = 1443.9.2
 		death_date = 1510.1.1
@@ -45,5 +50,6 @@ capital = 6022
 		adm = 3
 		dip = 5
 		mil = 6
+		religion = nirakhetist
 	}
 }

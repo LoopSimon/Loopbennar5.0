@@ -272,7 +272,7 @@ marrhold = {
 		}
 		
 		trigger = {
-			is_institution_enabled = global_trade
+			is_institution_enabled = manufactories
 			has_estate = estate_artificers
 			estate_loyalty = {
 				estate = estate_artificers
@@ -640,7 +640,7 @@ marrhold_three = {
 		effect = {
 			add_country_modifier = {
 				name = "marrhold_reclamation"
-				duration = 73000
+				duration = 36500 #100 years
 			}
 			dryadsdale_area = {
 				limit = {

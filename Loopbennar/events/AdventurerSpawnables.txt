@@ -304,7 +304,6 @@ province_event = {
 	trigger = {
 		has_global_flag = new_world_discovered
 		current_age = age_of_reformation
-		is_year = 1800
 		NOT = { has_global_flag = delete_north_aelantir_region }
 		OR = {
 			epednan_expanse_region = {
@@ -749,7 +748,7 @@ country_event = {
 		}
 		is_subject = no
 		has_global_flag = new_world_discovered
-		is_year = 1820
+		is_year = 1520
 		NOT = { has_global_flag = delete_north_aelantir_region }
 		forest_of_the_cursed_ones_region = {
 			is_empty = yes
@@ -795,7 +794,10 @@ country_event = {
 		hidden_effect = {
 			if = {
 				limit = { is_religion_enabled = corinite }
-				H50 = { change_religion = corinite }
+				H50 = {
+					change_religion = corinite
+					add_prestige = 100
+				}
 			}
 			random_province = {
 				limit = {
@@ -917,7 +919,6 @@ province_event = {
 	trigger = {
 		has_global_flag = new_world_discovered
 		current_age = age_of_reformation
-		is_year = 1800
 		NOT = { has_global_flag = delete_north_aelantir_region }
 		epednan_expanse_region = {
 			is_empty = yes
@@ -1036,7 +1037,6 @@ province_event = {
 	trigger = {
 		has_global_flag = new_world_discovered
 		current_age = age_of_reformation
-		is_year = 1800
 		NOT = { has_global_flag = delete_north_aelantir_region }
 		# OR = {
 		# 	small_country_region = {
@@ -1191,7 +1191,6 @@ province_event = {
 	trigger = {
 		has_global_flag = new_world_discovered
 		current_age = age_of_reformation
-		is_year = 1800
 		NOT = { has_global_flag = delete_north_aelantir_region }
 		OR = {
 			veykoda_region = {
@@ -1498,8 +1497,7 @@ province_event = {
 	
 	trigger = {
 		has_global_flag = new_world_discovered
-		is_year = 1800
-		current_age = age_of_artificery
+		current_age = age_of_reformation
 		NOT = { has_global_flag = delete_north_aelantir_region }
 		OR = {
 			epednan_expanse_region = {
@@ -1774,7 +1772,6 @@ province_event = {
 	trigger = {
 		has_global_flag = new_world_discovered
 		current_age = age_of_reformation
-		is_year = 1800
 		NOT = { has_global_flag = delete_north_aelantir_region }
 		epednan_expanse_region = {
 			is_empty = yes

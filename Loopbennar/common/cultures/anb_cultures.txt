@@ -374,6 +374,51 @@ anbennarian = {
 			Constança Alienor Valença Emila Gisela Cora Coralina Coralina Liçoleta Nara Reiana Anna Adala Leslin Lindelin
 		}
 	}
+	gliosine = {
+		dynasty_names = {
+			"síl Cymbeahn" Alderman Boatwright Munasite Silversmith "sína Airgemár" "síl Lunsfer" "of Silverwing" "síl Letháil"
+		}
+		male_names = {
+			Ademar  Adran  Adrian  Adrien  Alphonse  Alos  Alain  Alvar  Ardan  Ardor  Aril  Artorian  Artur  Aucan  Austan  Awen  Borian  Brendan  Brayan  Brendan  Calas  Castén  Castín  Daras  Daras  Denar  Emond  Elran  Erel  Eren  Erlan  Evin  Galin  Gelman  Laurens  
+			Marion  Maurise  Olor  Otó  Rián  Ricain Ricard  Rión  Robbin  Rogier  Sandur  Taelar  Thal  Thiren  Tomás  Trian  Tristian  Varian  Varion  Varilor  Vincen  Willam  Dustyn  Avery  Lucius  Crege  Taliesin  Marven  Galien  Sulgen Eustace
+			Dominic  Vernel  Armian  Cecill  Teagan  Andrel  Frederic  Valeran  Valen  Corin  Aldres  Emil  Cailan  Carlián  Lothane  Adénn  Arrel  Lorran  Cristof  Devan  Alec  Marlen  Munerin  Damien  Damian  Devand  Darus  Silvard  Silverin  Sylvester  Cressen  Tomar
+		}
+		female_names = {
+			Adra  Adelina  Alara  Aldresia  Alisanna  Athara  Amina  Amarien  Maria  Marionna  Marian  Marina  Aria  Aucanna  Auci  Arabella  Calassa  Casténnia  Castínna  
+			Cella  Celadora  Claria  Eilís  Eilísabet  Erela  Galinda  Alina  Lauranna  Lianne  Madaléin  Riánna  Thalia  Verina  Margary  Cecilie  Isabel  Isobella  Bella  
+			Willamina  Sophia  Sybille  Constance  Eléanor  Valence  Emilie  Gisela  Cara  Carina  Corina  Lisolona  Nara  Riannón  Marianne  Verina  Varina  Damevira  Damelina  Lunarona  Laurentine  Moruen  Moruith  Morganne
+		}	
+	}
+	arthaman = {
+		dynasty_names = {
+			"síl Cymbeahn" Alderman Boatwright Munasite Silversmith "sína Airgemár" "síl Lunsfer" "of Silverwing" "síl Letháil"
+		}
+		male_names = {
+			Ademar  Adran  Adrian  Adrien  Alphonse  Alos  Alain  Alvar  Ardan  Ardor  Aril  Artorian  Artur  Aucan  Austan  Awen  Borian  Brendan  Brayan  Brendan  Calas  Castén  Castín  Daras  Daras  Denar  Emond  Elran  Erel  Eren  Erlan  Evin  Galin  Gelman  Laurens  
+			Marion  Maurise  Olor  Otó  Rián  Ricain Ricard  Rión  Robbin  Rogier  Sandur  Taelar  Thal  Thiren  Tomás  Trian  Tristian  Varian  Varion  Varilor  Vincen  Willam  Dustyn  Avery  Lucius  Crege  Taliesin  Marven  Galien  Sulgen Eustace
+			Dominic  Vernel  Armian  Cecill  Teagan  Andrel  Frederic  Valeran  Valen  Corin  Aldres  Emil  Cailan  Carlián  Lothane  Adénn  Arrel  Lorran  Cristof  Devan  Alec  Marlen  Munerin  Damien  Damian  Devand  Darus  Silvard  Silverin  Sylvester  Cressen  Tomar
+		}
+		female_names = {
+			Adra  Adelina  Alara  Aldresia  Alisanna  Athara  Amina  Amarien  Maria  Marionna  Marian  Marina  Aria  Aucanna  Auci  Arabella  Calassa  Casténnia  Castínna  
+			Cella  Celadora  Claria  Eilís  Eilísabet  Erela  Galinda  Alina  Lauranna  Lianne  Madaléin  Riánna  Thalia  Verina  Margary  Cecilie  Isabel  Isobella  Bella  
+			Willamina  Sophia  Sybille  Constance  Eléanor  Valence  Emilie  Gisela  Cara  Carina  Corina  Lisolona  Nara  Riannón  Marianne  Verina  Varina  Damevira  Damelina  Lunarona  Laurentine  Moruen  Moruith  Morganne
+		}
+	}
+	fiadionni = {
+		dynasty_names = {
+			"síl Cymbeahn" Alderman Boatwright Munasite Silversmith "sína Airgemár" "síl Lunsfer" "of Silverwing" "síl Letháil"
+		}
+		male_names = {
+			Ademar  Adran  Adrian  Adrien  Alphonse  Alos  Alain  Alvar  Ardan  Ardor  Aril  Artorian  Artur  Aucan  Austan  Awen  Borian  Brendan  Brayan  Brendan  Calas  Castén  Castín  Daras  Daras  Denar  Emond  Elran  Erel  Eren  Erlan  Evin  Galin  Gelman  Laurens  
+			Marion  Maurise  Olor  Otó  Rián  Ricain Ricard  Rión  Robbin  Rogier  Sandur  Taelar  Thal  Thiren  Tomás  Trian  Tristian  Varian  Varion  Varilor  Vincen  Willam  Dustyn  Avery  Lucius  Crege  Taliesin  Marven  Galien  Sulgen Eustace
+			Dominic  Vernel  Armian  Cecill  Teagan  Andrel  Frederic  Valeran  Valen  Corin  Aldres  Emil  Cailan  Carlián  Lothane  Adénn  Arrel  Lorran  Cristof  Devan  Alec  Marlen  Munerin  Damien  Damian  Devand  Darus  Silvard  Silverin  Sylvester  Cressen  Tomar
+		}
+		female_names = {
+			Adra  Adelina  Alara  Aldresia  Alisanna  Athara  Amina  Amarien  Maria  Marionna  Marian  Marina  Aria  Aucanna  Auci  Arabella  Calassa  Casténnia  Castínna  
+			Cella  Celadora  Claria  Eilís  Eilísabet  Erela  Galinda  Alina  Lauranna  Lianne  Madaléin  Riánna  Thalia  Verina  Margary  Cecilie  Isabel  Isobella  Bella  
+			Willamina  Sophia  Sybille  Constance  Eléanor  Valence  Emilie  Gisela  Cara  Carina  Corina  Lisolona  Nara  Riannón  Marianne  Verina  Varina  Damevira  Damelina  Lunarona  Laurentine  Moruen  Moruith  Morganne
+		}
+	}
 
 	dynasty_names = {
 		Silcalas Silnara Silebor Silurion Silistra Silgarion
@@ -498,6 +543,25 @@ alenic = {
 		Alice Lisbet Erela Galinda Alina Lorinne Lisban Magda Reínne Calia Varina Margaery Cecilia Isebel Isebella Bella Wyllamina Sofina Cibilla Constance Elenor Valenca Emma Gicela Cora Corina Coralinde Lisolene Nara Riennón
 		}
 	}
+	
+	westman = {
+		dynasty_names = {
+			Cottersea Ginnfield Dire Robacard Leapdon Cockerwall Kingston
+			Pike Spear Rider Rifle Miner Crafter Steel Carver Butcher Rector Greave Guard Smith Carpenter Cobbler Caster Chainmaker Marner Oakmonger Garder Woodsman Tanner
+		}
+		male_names = {
+			Aldelar Alenn Alfred Alric Alan Alvor Arthur Arthur Austin Brandon Brian Brandon Carsten Cassan Edmund Lawrence Otto Ryan Richard Robin Rodger Thomas Tristan Barry Wincent Welyam Dustin Alfred Dominic Vernon Arman Cecil Tristan Teagan Anders Fred Conric Alder Emil
+			Evin Gallin Gelmann Larens Marron Markan Ollor Otto Rian Rikkard Rikon Sandor Taelar Thal Thiren Thomas Tryan Varian Winsent Laan Vernon Arnald Sessil Tegann Anders Frederik Valeran Valeen Korin Aldeer Emil Kalen Karl Lotane
+		}
+		female_names = {
+			Adeline Aldris Alisa Atara Mina Mary Marian Maria Maria Arabell Castana Cassína Clarya Alice Lisabeth Alina Alina Lauren Margeret Cecilia Elizabeth Bella Willemina Sophie Cybill Constance Emily Cora Caroline Lisa Rianwyn Abigail Allison Annabel Belinda Bridget Deidre
+			Adela Allara Amariel Aria Akana Aaki Arabella Kallassa Kastanna Kastianna Sela Keladora Klarimond Alis Lisbet Ella Galina Larinn Lisbann Magda Rianna Kalia Varina Sessilia Isebella Bella Willemina Sofia Sebill
+			Konstanse Elenor Valensia Emma Gissella Liselott Naraa Rinnon Anna Trinn Helena
+		}		
+	}
+
+	alenic_half_elf = {
+	}
 
 	dynasty_names = {
 		Gerwick "of Vanbury" Eaglecrest Fludd Lodan Feycombe Wightsgate Humbercroft Ginnfield Derwing Alainson Cottersea Leapdon Brontay Beron Cockerwall Edgemoor Fouler Lonevalley Greenley "of Alenath" 
@@ -556,6 +620,25 @@ businori = {
 		Adriana Aldelina Alara Aldresia Alisana Açara Omina Amariena María Mariana Mariela Marina Ariana Aucana Arabela Calassa Castentia Castintia Celia Celiadora Clara Eilísa Eilísabeta Erela Galinta Laína Laurentia Lisbana Madalena Rimana Çalia Varina Margarita Cecilia Isabel
 		Isabela Bella Guillemina Sofía Sibila Costança Eleonora Valençe Emilia Giçela Coria Corina Coralina Lisoleta Nara Rimannón Anaísa Arasia Arecis Fariana Niria Sabel Sibani Mica Iset Amaral 
 		}
+	}
+
+	nariandi = {
+		dynasty_names = {
+			"of Dagger Point" "of Curmarket" "síl na Nar" "síl Tropaicost" "Turtleback" "síl Eboria" "síl na Crag" "síl Leoncóst" "of New Hortosare"
+			}
+		male_names = {
+			Adelmar Adrán Adrián Adriá Alonso Alfrido Alós Laín Álvar Ardano Ardor Aril Arturián Arturo Aucán Ostán Aven Borian Breogán Brayan Bregán Calas Castente Castinte Darres Dega Edmón Elrán Erel Eren Evin Galin Gelmante Laurente Marion Mauriço Olayo Otón Rimán Rican Rimón
+			Robin Roger Sandor Taelar Çal Çiren Tomé Trían Tristán Varil Varion Varil Vicente Guillén Dostán Alfrido Lucián Dominico Bernal Armán Cecilio Tegán Andrel Federic Valerán Valente Corin Aldrés Émil Cailén Carleón Loçán Anzaro
+		}
+		female_names = {
+			Adriana Aldelina Alara Aldresia Alisana Açara Omina Amariena María Mariana Mariela Marina Ariana Aucana Arabela Calassa Castentia Castintia Celia Celiadora Clara Eilísa Eilísabeta Erela Galinta Laína Laurentia Lisbana Madalena Rimana Çalia Varina Margarita Cecilia Isabel
+			Isabela Bella Guillemina Sofía Sibila Costança Eleonora Valençe Emilia Giçela Coria Corina Coralina Lisoleta Nara Rimannón
+		}
+			
+	}
+
+	businori_half_elf = {
+	
 	}
 
 	dynasty_names = {
@@ -684,7 +767,7 @@ escanni = {
 		Sofia Sebillr Constance Elenora Valenca Emma Gisell Cora Corina Karolin Lisolene Nara Riennón Anna Trin Frida Haelga Astrid Audun
 		}
 	}
-	farrani = {
+	farrani_half_elf = {
 		primary = B60 #Farraneán
 		dynasty_names = {
 			"síl na Eán" Escin Lonesfield Whistlehill Freetower Meléthsel Cursewood Stagborn Blackroot Forlorn Coldrest Hushdell Widor
@@ -1305,6 +1388,8 @@ dostanorian_g = {
 		Margere Cecilia Ezebel Ezebela Bela Welhemina Sofina Cibila Constanta Elenior Valenca Emma Gisea Coara Coarina Coarinde Lizolena Nara Rienon
 		}
 	}
+	dostanorian_half_elf = {
+	}
 	dynasty_names = {
 		"síl Vivin" "síl Gablainé" "síl Cannmarion" "síl Kortir" "síl Kaldere" Karnoris 
 		"síl Milcor"
@@ -1467,7 +1552,7 @@ lencori = {
 		Varion Varil Varil Vincent Guillame Tustin Avery Lucian Dominique Vernell Armand Cecile Trystane Tadgán André Fredéric Valeran Valen Aldré Emile Carlean Lauthane Kylian Armand Tomáis Ruben Stefan Caylen Loui Silas Petre Gregoire Marcel Arel
 		}
 		female_names = {
-		Adranne Adéle Alara Aldressa Alisanne Athara Mina Amarien Marié Marianne Marien Marinne Aria Arabel Calassa Casténne Castíne Cela Celadora Claire Eilís Eilísibet Erela 
+		Adranne Adéle Alara Aldressa Alisanne Athara Mina Amarien Marié Marianne Marien Marinne Aria Arabeoril Calassa Casténne Castíne Cela Celadora Claire Eilís Eilísibet Erela 
 		Galinde Aline Laurenne Laurentíne Madaléin Reánna Thalia Varinne Margery Cécille Isobel Isobelle Belle Guillamina Sofie Sybille Constance Eléanore Valence Emile Gisíle 
 		Corale Coraline Coraline Lisolette Nara Reánnon Kylia
 		}
@@ -1486,6 +1571,70 @@ lencori = {
 		dynasty_names = {
 			"Carnetoris"
 		}
+	}
+
+	arbcoster = {
+		dynasty_names = {
+			"síl Criodhcel" "sina Sella" "síl na Criodh" "of Endral’s Reach" "síl Sheahin" "of Kwinehcóst" "of Shofashok" "of Redport" "of Ruinfall" "síl Minar Yolli"
+		}
+		male_names = {
+			"Kylian-Tomáis" "Reán-Laurens" Caradan Adenn Rewan Lorenan Florien Percevan Gawain Geraint Thibault Darien Beltran Devan Crovan Soreán Ruben Sorewan Lorevarn Maren Loren
+			Ademar Adran Hadrien Adrien Alfonse Avery Alois Alain Alvier Ardand Ardor Aril Artorian Artur Austen Awen Borian Brandan Brayan Brandan Calas Casten Castin Darran
+			Denare Edmond Elran Erenn Erlan Evin Galin Gelmon Laurens Marion Maurice Olor Odo Reán Ricain Rion Robin Rogier Sandur Taelar Thal Thiren Tomáis Trian Trystane Varil
+			Varion Vincent Guillame Tustin Avery Lucian Dominique Vernell Armand Cecile Trystane Tadgán Andre Frederic Valeran Valen Aldre Emile Carlean Lauthane Kylian
+			Crovan Creston Maugun Teudur Roen Beltram Riol Luan Cairard Gawan Pedain Peolf Caylen Drunhem Belan Arnalt
+		}
+		female_names = {
+			Morganne Adelaide Condele Andriel
+			Adranne Adele Alara Aldressa Alisanne Athara Mina Amarien Marie Marianne Marien Marinne Aria Arabel Calassa Castenne Castine Cela Celadora Claire Eilis Eilisibet Erela 
+			Galinde Aline Laurenne Laurentine Madalein Reánna Thalia Varinne Margery Cecille Isobel Isobelle Belle Guillamina Sofie Sybille Constance Eleanore Valence Emile Gisile 
+			Corale Coraline Coraline Lisolette Nara Reánnon Kylia
+			Maugunia Enrouana Milian Enoguen Griselda Magdalene Condelet Avandrec Anaudrec Aunnia
+		}			
+	}
+
+	criodhi = {
+		dynasty_names = {
+			"síl Criodhcel" "sina Sella" "síl na Criodh" "of Endral’s Reach" "síl Sheahin" "of Kwinehcóst" "of Shofashok" "of Redport" "of Ruinfall" "síl Minar Yolli"
+		}
+		male_names = {
+			"Kylian-Tomáis" "Reán-Laurens" Caradan Adenn Rewan Lorenan Florien Percevan Gawain Geraint Thibault Darien Beltran Devan Crovan Soreán Ruben Sorewan Lorevarn Maren Loren
+			Ademar Adran Hadrien Adrien Alfonse Avery Alois Alain Alvier Ardand Ardor Aril Artorian Artur Austen Awen Borian Brandan Brayan Brandan Calas Casten Castin Darran
+			Denare Edmond Elran Erenn Erlan Evin Galin Gelmon Laurens Marion Maurice Olor Odo Reán Ricain Rion Robin Rogier Sandur Taelar Thal Thiren Tomáis Trian Trystane Varil
+			Varion Vincent Guillame Tustin Avery Lucian Dominique Vernell Armand Cecile Trystane Tadgán Andre Frederic Valeran Valen Aldre Emile Carlean Lauthane Kylian
+			Crovan Creston Maugun Teudur Roen Beltram Riol Luan Cairard Gawan Pedain Peolf Caylen Drunhem Belan Arnalt
+		}
+		female_names = {
+			Morganne Adelaide Condele Andriel
+			Adranne Adele Alara Aldressa Alisanne Athara Mina Amarien Marie Marianne Marien Marinne Aria Arabel Calassa Castenne Castine Cela Celadora Claire Eilis Eilisibet Erela 
+			Galinde Aline Laurenne Laurentine Madalein Reánna Thalia Varinne Margery Cecille Isobel Isobelle Belle Guillamina Sofie Sybille Constance Eleanore Valence Emile Gisile 
+			Corale Coraline Coraline Lisolette Nara Reánnon Kylia
+			Maugunia Enrouana Milian Enoguen Griselda Magdalene Condelet Avandrec Anaudrec Aunnia
+		}
+	}
+
+	thornish = {
+		dynasty_names = {
+			"síl Criodhcel" "sina Sella" "síl na Criodh" "of Endral’s Reach" "síl Sheahin" "of Kwinehcóst" "of Shofashok" "of Redport" "of Ruinfall" "síl Minar Yolli"
+		}
+		male_names = {
+			"Kylian-Tomáis" "Reán-Laurens" Caradan Adenn Rewan Lorenan Florien Percevan Gawain Geraint Thibault Darien Beltran Devan Crovan Soreán Ruben Sorewan Lorevarn Maren Loren
+			Ademar Adran Hadrien Adrien Alfonse Avery Alois Alain Alvier Ardand Ardor Aril Artorian Artur Austen Awen Borian Brandan Brayan Brandan Calas Casten Castin Darran
+			Denare Edmond Elran Erenn Erlan Evin Galin Gelmon Laurens Marion Maurice Olor Odo Reán Ricain Rion Robin Rogier Sandur Taelar Thal Thiren Tomáis Trian Trystane Varil
+			Varion Vincent Guillame Tustin Avery Lucian Dominique Vernell Armand Cecile Trystane Tadgán Andre Frederic Valeran Valen Aldre Emile Carlean Lauthane Kylian
+			Crovan Creston Maugun Teudur Roen Beltram Riol Luan Cairard Gawan Pedain Peolf Caylen Drunhem Belan Arnalt
+		}
+		female_names = {
+			Morganne Adelaide Condele Andriel
+			Adranne Adele Alara Aldressa Alisanne Athara Mina Amarien Marie Marianne Marien Marinne Aria Arabel Calassa Castenne Castine Cela Celadora Claire Eilis Eilisibet Erela 
+			Galinde Aline Laurenne Laurentine Madalein Reánna Thalia Varinne Margery Cecille Isobel Isobelle Belle Guillamina Sofie Sybille Constance Eleanore Valence Emile Gisile 
+			Corale Coraline Coraline Lisolette Nara Reánnon Kylia
+			Maugunia Enrouana Milian Enoguen Griselda Magdalene Condelet Avandrec Anaudrec Aunnia
+		}
+	}
+	
+	lencori_half_elf = {
+	
 	}
 	
 	dynasty_names = {
@@ -1960,6 +2109,7 @@ gnomish = {
 	tinker_gnome = {
 		primary = H30 #Gommoport
 	}
+	frontier_gnome = {}
 	dynasty_names = { 
 		#Traditional
 		Somberwazy Quintain Coddorran #House of Coddorran is a famous and powerful mercantile family
@@ -2034,6 +2184,11 @@ gerudian = {
 		dynasty_names = {
 			"síl na Trísfer" "sílna Galvin" "síl Tretun" "síl Lanpool"
 		}
+	}
+	elnarfolk = {
+		dynasty_names = {
+			"Fran Knarhatt" Narvodr Leifsson Trolbani "Fran Fuglborg" Jotunsaug "Fran Alptborg" Nordvodr
+		}		
 	}
 	dynasty_names = {
 		Bjarnsson Olavsson Revrman Sidaett "fran Eikodr" "fran Rosstavik" "fran Urviksten" Kaldr Ravman Hrafngatr "fran Sporreyn" Silfrhjart #Silverheart
@@ -2560,6 +2715,8 @@ kobold = {
 	steelscale_kobold = {
 		primary = H31 #Zurzumexia
 	}
+
+	vrendzani_kobold = { }
 	
 	dynasty_names = { 
 		Scalesinger Scalemaster Greatfang Sneakscale Dragontail Sharpjaw Trapsetter Trapkin Spikemaker Scaleburrow Spiketail Traptail
@@ -3586,7 +3743,7 @@ hobgoblin = {
 	male_names = {
         Anbi Anru Atonrun Banse Banyo Banyun Baranyo Bege Behyakun Bei Benan Benu Bonbon Buge Daban Dabe Dahyu Dangu Danso Dapyun Dazan Doda Dozakan Eken Ensuden Gakeke Gekyo Genbo Genyu Gibya Gio Giza Gobetan Gubu Gupe Guson Habyahen Hagyu Haki Hapya Hehyo Heko Hekon Hesen Hinbu Hinro Hipu Hipyun Ingen Inpen Inyu Kahon Kaken Kaki Kakyun Kani Kano Kapun Kasun Kazu Kebon Kenbin Keton Keza Kiban Kihyu Kinran Kiza Kobyu Kokyu Konbon Konu Kuda Kuen Kuhyon Kupon Kuryunre Naron Nebu Negyo Nekyo Neson Neten Neza Nibi Niha Nihyohya Nina Nine Nipu Non Nongi Noryo Nuhyu Nukin Nukyun Nuni Nunran Nupu Nuse Nuzu Okansu One Opyun Penpu Pohyu Posen Poya Pugyun Punpana Rakun Ranta Raryopu Riranre Ronu Rugan Ruta Sagyun Sapon Sehan Sena Senbun Senun Sepyunbu Sosui Soyu Sozen Sugu Sunpen Sunyo Supu Tabyon Takyun Tanba Tanban Tanyon Tari Tateri Tazuri Tazute Tegi Tento Tobyanan Togaga Tohe Toya Tyonkun Ubi Uhenso Unan Unto Warin Yaku Yanabya Yohyukyu Yohyun Yoka Yoken Yunyun Yuryan Zakuron Zaso Zau Zazon Zoran Zunan Zurshin Zusu    }
     female_names = {
-    	Anru Banse Banyo Bege Behyakun Danso Dapyun Dazan Dodo Enyu Gakeke Gibya Gina Giza Gobetan Gubu Haki Hesen Hikari Hinbu Hito Hogen Hon Hongen Hipyun Iya Kaken Kapon Kazu Kihyu Kiza Kobyu Koru Kunya Nae Niha Niyan Non Nukin Nuni Nunran Nupu Nuse Rari Ren Renbu Renpo Rigo Rigyu Ronu Ruta Sani Senbun Senun Sonri Sonyun Sunpen Sunyo Takyun Tanba Tanban Tari Toya Uhenso Yaze Yuryan Zeni Zusu
+    	Anru Banse Banyo Bege Behyakun Danso Dapyun Dazan Dodo Enyu Gakeke Gibya Gina Giza Gobetan Gubu Haki Hesen Hikari Hinbu Hito Hogen Hon Hongen Hipyun Iya Kaken Kapon Kayara Kazu Kihyu Kiza Kobyu Koru Kunya Nae Niha Niyan Non Nukin Nuni Nunran Nupu Nuse Rari Ren Renbu Renpo Rigo Rigyu Ronu Ruta Sani Senbun Senun Sonri Sonyun Sunpen Sunyo Takyun Tanba Tanban Tari Toya Uhenso Yaze Yuryan Zeni Zusu
     }
 }
 
@@ -4123,8 +4280,8 @@ kheionai_ruinborn_elf = {
 		primary = G62 #Amgremós
 	}
 	eltibhen = { }
-	klereyen = { province = { local_institution_spread = 0.20 } } #Kheionized Taychendi
-	astolbhen = { province = { local_friendly_movement_speed = 0.1 } } #Kheionized Devandi
+	klereyen = { } #Kheionized Taychendi
+	astolbhen = { } #Kheionized Devandi
 	dynasty_names = {
 
 		Takes Makes Ekes Petrokes Petropus Politarus Delis Delos Kondos Konda Hasogos Vitakes Damasos Tacenus Tacenos Venanos Venanikes Venaneous Venanyros Venansis Ducanoulos Ducanaris Aldanos Aldandenos Dranikes Drarides Dramisces Dhounes
@@ -4144,8 +4301,8 @@ eltibhari_ruinborn_elf = {
 	eltibhar = {	#"barbarians"
 		primary = G60 #Eltikan
 	}
-	mteirghe = { province = { local_friendly_movement_speed = 0.1 } } #Eltikanized Mteibhar
-	berrirghe = { province = { local_institution_spread = 0.2 } } #Eltikanized Kheionai
+	mteirghe = { } #Eltikanized Mteibhar
+	berrirghe = { } #Eltikanized Kheionai
 	dynasty_names = {
 
 		#Generic Moon Elf Cannorized
@@ -4176,6 +4333,16 @@ devandi_ruinborn_elf = {
 	}
 	chendhyan = {
 		primary = H28 #Durasyar
+		male_names = {
+			Alazh Alazhlan Khamlan Khamlanbeg Kharozh Khelad Darazh Denaur Aebhor Elhadh Galhyn Galhynbeg Geladh Geladhan Izhran Izhranbeg Izhalan Aebhen Munazhlan Nezhlan Olerlan Olerlanbeg Sadyzh Sadyzhlan Ferazh Ferazhan Tiraezh Tiraezhan Taedyr Taedyraz Ultarlan Ultarlanbeg Urazhlan Uramat Vakhyr Vakhyrlan Vaunsar Vaunsarlan Zaernsar Zaernsarlan
+		}
+		female_names = {
+			Erra Selada Eluzha Vaura Panha Andyzha Varhyna Drana Azhera Rhadella Nharae Zhalsara Afrina Zhara Vezha Fenel Izhrana Merfena Izhra Galha Narha Fera
+		}
+		dynasty_names = {
+			Alazhyr Alazhlana Khamlana Khamlanbegha Kharozhlana Kheladlana Darazhlana Denaurlana Aebhorhyr Elhadhyr Galhynir Galhynbegha Geladhyr Geladhanhyr Izhranhyr Izhranbegha Izhalana Aebhenhyr Munazhlana Nezhlana Olerlana Olerlanbegha Sadyzhyr Sadyzhlana Ferazhyr Ferazhana Tiraezhyr Tiraezhanhyr Taedyrha Taedyrazhyr Ultarlana Urazhlana Uramathyr Vakhyrhir Vakhyrlana Vaunsarhyr Vaunsarlana Zaernsarhyr Zaernsarlana
+			Erradhyr Seladhyr Eluzhadhyr Vauradhyr Panhadhyr Andyzhadhyr Varhynadhyr Dranadhyr Azheradhyr Rhadelladhyr Nharadhyr Zhalsaradhyr Afrinadhyr Zharadhyr Vezhadhyr Feneldhyr Izhranadhyr Merfenadhyr Izhradhyr Galhadhyr Narhadhyr Feradhyr
+		}
 	}
 	dynasty_names = {
 
@@ -4541,33 +4708,90 @@ taychendi_ruinborn_elf = {
 	larankarha = {
 		primary = G64 #Larankar
 		dynasty_names = {
-			#From their leader names
-			Velama
+			#new names by takasaki
+			Calindana
+			Clemetana
+			Vindana
+			Ebeneshna
+			Sadvyna
+			Enlana
+			Urvana
+			Ganagana
+			Belcahar
+			Tirsivar
+			Kuduvar
+			Panarinar
+			Gurhavyar
+			Vumalumai
+			Tuchupan
+			Dyaracha
+			Achavyar
+			Kavalar
+			Nadhru
+			Canhay
+			Panasna
+			Kalnada
+			Bhargidur
+			Nerakha
+			Temenkaha
+			Vuscura
+			Cherelha
+			Nanpanra
+			Tuchula
+			Mukha
+			Gurha
+			Kaonrippavar
+			Bahadur
+			Velama # old names
 			Reddy
-			Gona 
-			Rai
-			Gannaiah
+			Gona
 			Roy
 			Ambadeva
 			Pandava
 			Racha
-			Suryavamsa
 		}
 	}
 	advakhalla = {
 		primary = G78 #Ethanamara
 		dynasty_names = {
 			#From their leader names
-			Velama
+			Pedrena
+			Genhana
+			Ethanna
+			Ahartana
+			Belcahar
+			Tirsivar
+			Kuduvar
+			Panarinar
+			Gurhavyar
+			Vumalumai
+			Tuchupan
+			Dyaracha
+			Achavyar
+			Kavalar
+			Nadhru
+			Canhay
+			Panasna
+			Kalnada
+			Bhargidur
+			Nerakha
+			Temenkaha
+			Vuscura
+			Cherelha
+			Nanpanra
+			Tuchula
+			Mukha
+			Gurha
+			Ethana
+			Sedrengha
+			Dyama
+			Velama # old names
 			Reddy
-			Gona 
-			Rai
-			Gannaiah
+			Gona
 			Roy
 			Ambadeva
 			Pandava
 			Racha
-			Suryavamsa
 		}
 	}
 	sarihaddi = {
@@ -4602,8 +4826,43 @@ taychendi_ruinborn_elf = {
 		primary = G73 #Ahartadyam
 		dynasty_names = {
 			#From their leader names
+			Gophena
+			Kattena
+			Uttana
+			Tirsina
+			Sibisina
+			Varana
+			Nymbhavna
+			Bayasna
+			Nerena
+			Kannaluna
+			Bellcarhan
+			Tirsivan
+			Sanahan
+			Vansarna
+			Kuranaya
+			Vussalumai
+			Tauruppan
+			Danracha
+			Yonahan
+			Kavalal
+			Nadhru
+			Kaunaya
+			Panaya
+			Kalnada
+			Bhargidur
+			Nerukkai
+			Temenkata
+			Vuskara
+			Kereli
+			Nanpanra
+			Taurula
+			Mukha
+			Kura
+			Takasangamar
+			Uttasangamar
 			Alupa
-			Nayak
+			Nayak # old names
 			Nayaka
 			Nayudu
 			Narasa
@@ -4630,9 +4889,50 @@ taychendi_ruinborn_elf = {
 		primary = G68 #Nakar Mlerek
 		dynasty_names = {
 			#From their leader names
+			Nakarana
+			Parahana
+			Varamna
+			Vettana
+			Matnadavna
+			Volona
+			Royana
+			Cankana
+			Orenkorana
+			Uesrenna
+			Katellna
+			Pattina
+			Velcaihan
+			Pirlaval
+			Sanahai
+			Arihnai
+			Curaiveran
+			Vumalumai
+			Alayeppan
+			Danracai
+			Mavihan
+			Cavalal
+			Nadhru
+			Caunai
+			Pannai
+			Calnadai
+			Bhargidur
+			Neraccai
+			Temencal
+			Vuscura
+			Cireli
+			Nanpanra
+			Tucalai
+			Mucha
+			Curai
 			Mudaliar
-			Rajapopalachari
-			Sastri
+			Rakulacan
+			Vustarin
+			Ursibadur
+			Nymkorai
+			Kattyva
+			Aryakompu
+			Senjita
+			Sastri # old names
 			Dalawa
 			Thondaiman
 			Saluva
@@ -4649,7 +4949,42 @@ taychendi_ruinborn_elf = {
 		primary = G78 #Thekvrystan
 		dynasty_names = {
 			#From their leader names
-			Kartha
+			Tenvachna
+			Sthana
+			Korrimadhana
+			Thekvussana
+			Vyechna
+			Anakalna
+			Korrimutrena
+			Imarna
+			Oremvana
+			Elcartha
+			Phirsiva
+			Sanadhu
+			Panithal
+			Kuthirana
+			Vuslumai
+			Aduruppan
+			Danrachas
+			Yunahan
+			Kavalal
+			Nadhru
+			Cennaya
+			Pennha
+			Kalnatha
+			Bhargidur
+			Neracthai
+			Temencatha
+			Vuscutha
+			Chereli
+			Nanpanra
+			Turvula
+			Mucca
+			Cura
+			Dumruktam
+			Uyasmar
+			Nacuriyan
+			Kartha # old names
 			Karthavu
 			Kaimal
 			Nedungadi
@@ -4662,6 +4997,10 @@ taychendi_ruinborn_elf = {
 			Kurup
 		}
 	}
+
+	bekauta = {
+	}
+	
 	dynasty_names = {
 
 		#Generic Moon Elf Cannorized
@@ -4734,8 +5073,6 @@ ynnic_ruinborn_elf = {
 		}
 	}
 	malacnari = {
-		country = { drill_decay_modifier = -0.25 }
-		province = { local_manpower_modifier = 0.25 }
 		#primary = G32 #Malacnar
 		dynasty_names = {
 			"yen Amuc" "yen Argran" "yen Bara" "yen Bregila" "yen Boghetsbost" "yen Bost" "yen Botka" "yen Durev" "yen Gyal" "yen Epad" "yen Idda" "yen Juzron" "yen Kerya" "yen Korya" "yen Kozelynn" "yen Krest" "yen Krestmyo" "yen Lisitsa" "yen Malac" "yen Mocbas" "yen Pole" "yen Porda" "yen Sholas" "yen Sol" "yen Son" "yen Svendir" "yen Shtiant" "yen Suntse" "yen Tor" "yen Tri" "yen Sarvo" "yen Skopic"
@@ -4900,6 +5237,9 @@ bom = {
 	teplin = {
 		primary = Y58 #Lot Dekkhang
 	}
+	bom_half_elf = {
+	
+	}
 
 	
 	dynasty_names = {
@@ -4993,7 +5333,9 @@ kai = {
 			"Dara" "Mya" "Chiraprapha" "Wisutthithewi" "Yasuntarathewi"
 		}
 	}
-	
+	kai_half_elf = {
+		
+	}
 
 	
 	dynasty_names = {
@@ -5034,7 +5376,9 @@ kelino = {
 	}
 	gataw = {
 	}
-
+	kelino_half_elf = {
+	
+	}
 
 	
 
@@ -5098,17 +5442,17 @@ yanglam = {		#The Old Ones, aka real natives of the land (Malay)
 yan = {	
 	graphical_culture = asiangfx
 
-	river_yan = {
+	jiangszun = {
 		primary = Y19 #Tianlou
 		
 	}
-	hill_yan = {
+	beikling = {
 		primary = Z60 #Cukqiao
 	}
-	coastal_yan = {
+	gangim = {
 		primary = Y20 #Feiten
 	}
-	forest_yan = {
+	naamjyut = {
 		primary = Y23 #Zyujyut
 		dynasty_names = {
 			Wong Lei Zoeng Lau Can Joeng Zyu Ng Zau Ceoi Syun Maa Wu Gwok Ho Lam Mok
@@ -5160,18 +5504,18 @@ yan = {
 			"Min Siu" "Hiu Laam" "Yu Hei"
 		}
 	}
-	western_yan = {
+	szitu = {
 		primary = Y28 #Jiangliusi
 		
 	}
-	northern_yan = {
+	jiangyang = {
 		primary = Y14 #Zhiqian
 		
 	}
-	southern_yan = {
+	pinghoi = {
 		primary = Y64 #Pinghoi
 	}
-	eastern_yan = {	#for insyaa colonials
+	haiwai = {	#for insyaa colonials
 	}
 	
 	daxug = {
@@ -5228,13 +5572,13 @@ yan = {
 	yan_half_orc = { #Yanification culture
 	}
 	
-	steppe_yan = { #Yanification culture
+	shuokyuan = { #Yanification culture
 	}
 	
-	rahen_yan = { #Yanification culture
+	luoxian = { #Yanification culture
 	}
 	
-	bom_kai_yan = { #Yanification culture
+	naamzau = { #Yanification culture
 	}
 		
 	dynasty_names = {

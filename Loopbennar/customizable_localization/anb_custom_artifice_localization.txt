@@ -1070,14 +1070,17 @@ defined_text = {
 	text = {
 		localisation_key = artifice_invention_chi_cultivation
 		trigger = {
-			religion = lefthand_path
+			religion = devouring_path
 		}
 	}
 
 	text = {
 		localisation_key = artifice_invention_power_fists
 		trigger = {
-			religion = righteous_path
+			OR = {
+				religion = accretive_path
+				religion = transmutative_path
+			}
 		}
 	}
 
@@ -1237,11 +1240,41 @@ defined_text = {
 	}
 
 	text = {
+		localisation_key = artifice_invention_holy_gunblade
+		trigger = {
+			OR = {
+				tag =  A77
+				was_tag = A77
+			}
+		}
+	}
+
+	text = {
 		localisation_key = artifice_invention_karakhanbar_high_heat_smelters
 		trigger = {
 			OR = {
 				tag = Z54
 				was_tag = Z54
+			}
+		}
+	}
+
+	text = {
+		localisation_key = artifice_invention_korashi_tuners
+		trigger = {
+			OR = {
+				tag = R62
+				was_tag = R62
+			}
+		}
+	}
+
+	text = {
+		localisation_key = artifice_invention_ironwraith_weapons_platform
+		trigger = {
+			OR = {
+				tag = I90
+				was_tag = I90
 			}
 		}
 	}
@@ -1286,6 +1319,16 @@ defined_text = {
 			OR = {
 				tag = Z54
 				was_tag = Z54
+			}
+		}
+	}
+
+	text = {
+		localisation_key = artifice_invention_spirit_capture_tech
+		trigger = {
+			OR = {
+				tag = I90
+				was_tag = I90
 			}
 		}
 	}

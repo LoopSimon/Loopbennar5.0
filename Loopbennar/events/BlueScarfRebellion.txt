@@ -49,7 +49,7 @@ country_event = {
 
 	immediate = {
 		hidden_effect = {
-			release_with_religion_and_culture = { tag = Y05 religion = righteous_path culture = river_yan }
+			release_with_religion_and_culture = { tag = Y05 religion = accretive_path culture = jiangszun }
 			Y05 = {
 				declare_war_with_cb = {
 					who = ROOT
@@ -93,8 +93,8 @@ country_event = {
 					age = 33
 					claim = 100
 					male = yes
-					culture = river_yan
-					religion = righteous_path
+					culture = jiangszun
+					religion = accretive_path
 					name = "Shang"
 					dynasty = "Shui"
 				}
@@ -855,7 +855,7 @@ country_event = {
 			Y05 = {
 				4871 = { blue_scarves_army_large = yes }
 				define_general = {
-					shock = 8
+					shock = 10
 					fire = 4
 					manuever = 4
 					siege = 6
@@ -963,7 +963,7 @@ country_event = {
 		}
 		Y05 = {
 			define_general = {
-				shock = 8
+				shock = 9
 				fire = 2
 				manuever = 5
 				siege = 4

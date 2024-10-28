@@ -934,7 +934,7 @@ A28_ideas = {
 	} 
 	cannor_kobolds_colour_competition = { 
 		innovativeness_gain = 0.25 
-		promote_culture_cost = -0.125 
+		promote_culture_cost = -0.25 
 	} 
 	cannor_kobolds_tayekans_wake = { 
 		tolerance_own = 2 
@@ -1530,7 +1530,7 @@ A48_ideas = {
 # Xanzerbexis Ideas
 A49_ideas = {
 	start = {
-		infantry_power = 0.075 # hill gnolls have learned guerilla tactics, also gameplay-wise attrition may increase survival chance for ai
+		hostile_attrition = 1 # hill gnolls have learned guerilla tactics, also gameplay-wise attrition may increase survival chance for ai
 		defensiveness = 0.15 # Mountain nation holed up in the mountains
 	}
 
@@ -1560,7 +1560,7 @@ A49_ideas = {
 		leader_land_manuever = 1
 	}
 	A49_hillthrone_has_eyes = { # Queens of the Hill created an enforcer gang of young hostages from the disparate Khenak tribes
-		hostile_attrition = 1
+		global_autonomy = -0.05
 	}
 	A49_inquisitive_of_all_kults = { # Xhazobkult worship became more tolerable and more animistic, sacrificing animals and objects instead of humans
 		tolerance_heathen = 2
@@ -1789,7 +1789,7 @@ A79_ideas = {
 	free = yes
 
 	A79_reconstitute_reconstruct_repatriate = {
-		development_cost = -0.05
+		development_cost = -0.15
 	}
 	A79_all_small_artillerists = {
 		fire_damage_received = -0.1
@@ -2287,15 +2287,12 @@ F23_ideas = {
 #Brasan ideas
 F24_ideas = {
 	start = {
-		naval_forcelimit_modifier = 0.25
+		naval_maintenance_modifier = -0.2
 		caravan_power = 0.20
 	}
 
 	bonus = {
-		legitimacy = 1
-		devotion = 1
-		republican_tradition = 0.3
-		horde_unity = 1
+		global_trade_power = 0.1
 	}
 
 	trigger = {
@@ -2304,27 +2301,30 @@ F24_ideas = {
 	free = yes		#will be added at load.
 
 	F24_brasa_abadazar = {
-		stability_cost_modifier = -0.15
+		development_cost = -0.1
 	}
-	F24_lamps_and_tapestries = {
+	F24_eternal_home = { 
+        hostile_attrition = 1
+    }
+	F24_lions_and_elephants = {
+		legitimacy = 1
+        devotion = 1
+        republican_tradition = 0.3
+        horde_unity = 1
+	}
+	F24_brasankar = {
 		merchants = 1
-		placed_merchant_power = 10
+        placed_merchant_power = 10
 	}
-	F24_eternal_home = {
-		hostile_attrition = 1
-		defensiveness = 0.10
-	}
-	F24_land_of_floating_gardens = {
-		development_cost = -0.15
+	F24_commoners_fleet = {
+		naval_forcelimit_modifier = 0.25
 	}
 	F24_heart_of_the_world = {
-		global_trade_power = 0.1
+		trade_steering = 0.2
 	}
-	F24_port_of_emperors = {
-		naval_maintenance_modifier = -0.2
-	}
-	F24_beyond_the_horizon = {
-		global_ship_recruit_speed = -0.1
+	F24_brokers_league = {
+		interest = -0.5
+        inflation_reduction = 0.1
 	}
 }
 
@@ -2565,7 +2565,7 @@ A81_ideas = {
 		manpower_recovery_speed = 0.1
 	}
 	A81_institution_of_the_gibing_day = {
-		land_morale = 0.1
+		improve_relation_modifier = 0.1
 	}
 	A81_giberd_civil_engineering_academy = {
 		development_cost = -0.1
@@ -3945,8 +3945,8 @@ Z53_ideas = {
 #Darkscale
 Z55_ideas = {
 	start = {
-		leader_land_shock  = 1.0
-		land_morale = 0.1
+		leader_land_shock = 1
+		land_attrition = -0.1
 	}
 	bonus = {
 		monarch_admin_power = 1
@@ -5099,6 +5099,8 @@ G05_ideas = {
 	start = {
 		improve_relation_modifier = 0.2
 		stability_cost_modifier = -0.1
+		female_advisor_chance = 0.4
+		may_recruit_female_generals = yes
 	}
 	bonus = {
 		global_trade_power = 0.1
@@ -5285,7 +5287,7 @@ G09_ideas = {
 }
 
 # Endralliande Ideas
-G10_ideas = {
+U52_ideas = {
 	start = {
 		navy_tradition = 1
 		global_ship_trade_power = 0.2
@@ -5294,32 +5296,32 @@ G10_ideas = {
 		number_of_cannons_modifier = 0.1
 	}
 	trigger = {
-		tag = G10
+		tag = U52
 	}
 	free = yes
 
-	G10_seal_of_the_golden_expedition = {
+	U52_seal_of_the_golden_expedition = {
 		naval_morale = 0.1
 	}
-	G10_the_realm_of_the_fog = {
+	U52_the_realm_of_the_fog = {
 		development_cost = -0.05
 		hostile_attrition = 1
 	}
-	G10_the_bride_of_lencenor = {
+	U52_the_bride_of_lencenor = {
 		global_trade_power = 0.1
 	}
-	G10_coasts_of_light = {
+	U52_coasts_of_light = {
 		trade_steering = 0.2
 		prestige = 1
 	}
-	G10_the_standard_elven_army = {
+	U52_the_standard_elven_army = {
 		army_tradition_decay = -0.01
 	}
-	G10_four_corners_navy = {
+	U52_four_corners_navy = {
 		sunk_ship_morale_hit_recieved = -0.1
 		allowed_marine_fraction = 0.25
 	}
-	G10_aelentir_nexus = {
+	U52_aelentir_nexus = {
 		trade_efficiency = 0.1
 	}
 }
@@ -5717,7 +5719,6 @@ Z43_ideas = {
 	}
 	Z43_alariandel_legacy = {
 		navy_tradition = 1
-		may_recruit_female_generals = yes
 	}
 	Z43_aelnar_drill_academy = {
 		discipline = 0.05
@@ -6107,7 +6108,7 @@ H63_ideas = {
 A16_ideas = {
 	start = {
 		global_own_trade_power = 0.1
-		infantry_power = 0.1
+		naval_forcelimit_modifier = 0.2
 	}
 	bonus = {
 		global_prov_trade_power_modifier = 0.2
@@ -6121,7 +6122,7 @@ A16_ideas = {
 		trade_steering = 0.20
 	}
 	A16_the_wine_watchers = {
-		naval_forcelimit_modifier = 0.2
+		mercenary_discipline = 0.1
 	}
 	A16_a_street_for_every_wine = {
 		development_cost = -0.1
@@ -6138,7 +6139,7 @@ A16_ideas = {
 		placed_merchant_power = 2
 	}
 	A16_wineport_cheeks = {
-		mercenary_discipline = 0.10
+		global_unrest = -2
 	}
 }
 
@@ -9727,7 +9728,7 @@ U17_ideas = {
 		naval_morale = 0.1 
 	}
 	U17_the_cult_of_the_lightfather = {
-		infantry_power = 0.1 
+		tolerance_heathen = 2
 	}
 	U17_sapphires_of_the_sea = {
 		inflation_reduction = 0.1 
@@ -10039,7 +10040,8 @@ Z45_ideas = {
 		tolerance_heathen = 2
 	}
 	Z45_path_to_chivalry = {
-		diplomatic_reputation = 1.5
+		diplomatic_reputation = 1
+		dip_advisor_cost = -0.1
 	}
 	Z45_the_northern_shield = {
 		discipline = 0.05
@@ -10204,11 +10206,11 @@ Z49_ideas = {
 #Marrhold
 B36_ideas = {
 	start = {
-		global_colonial_growth = 15
+		defensiveness = 0.20
 		cavalry_flanking = 0.75
 	}
 	bonus = {
-		caravan_power = 0.25
+		production_efficiency = 0.15
 	}
 	trigger = {
 		tag = B36
@@ -10216,24 +10218,24 @@ B36_ideas = {
 
 	free = yes
 
-	B36_griffon_riders_of_cannor = {
-		cavalry_power = 0.2
-	}
 	B36_alenic_ancestry = {
-		recover_army_morale_speed = 0.10
-		war_exhaustion = -0.01
+		war_exhaustion = -0.03
 	}
-	B36_the_icon_of_marrhold = {
-		fort_maintenance_modifier = -0.15
+	B36_the_hold_of_the_griffon_king = {
+		development_cost = -0.10
+	}
+	B36_griffon_riders_of_cannor = {
+		cavalry_power = 0.20
+	}
+	B36_the_great_sky_jousts = {
+		army_tradition = 0.50
+		prestige_decay = -0.01
+	}
+	B36_the_young_griffon = {
+		recover_army_morale_speed = 0.10
 	}
 	B36_death_ring_of_marrvale = {
-		leader_land_manuever = 1
-	}
-	B36_curbing_the_tyrants_of_the_serpentspine = {
-		trade_efficiency = 0.15
-	}
-	B36_royal_griffon_races = {
-		global_tax_modifier = 0.1
+		hostile_attrition = 1
 	}
 	B36_griffon_bombadier_squadron = {
 		fire_damage = 0.1
@@ -10420,7 +10422,7 @@ Y51_ideas = {
 		trade_steering = 0.25
 	}
 	Y51_the_eternal_duty = {	# The people of Bim Lau know their obligation is to protect their land and their people from threats both physical and spiritual and this is not something they can be swayed from
-		land_morale = 0.1
+		land_morale = 0.05
 		recover_army_morale_speed = 0.10
 	}
 	Y51_wisdom_in_stone_and_plaster = { # The necropolis does not only function as drain on resources, it is also a source of knowledge for the people on many things, among them matters of governance.
@@ -13187,7 +13189,7 @@ G75_ideas = {
 	}
 }
 
-#Vul Tenvach
+#Vuls Tenvach
 G79_ideas = {
     start = {
 		naval_attrition = -0.1 # cape of thekvussam storms
@@ -13204,7 +13206,7 @@ G79_ideas = {
     G79_masters_of_the_straight_road = { # The Straight Road is a trade route as well used as it is ancient. Running across southern Taychend in a near-straight line from Korrimadhala to Imarchend, the route has long been the south�s inland economic artery � though the Tenvacha portion of it was not always so integral. While the overland route, up the Vyech, to the Kalavend remained open, Vuls Tenvach was impoverished � but when the bandits of Sibisimra rose in the 400s, and cut that road off, the merchants of the south had to find a different route to the Kalavend � through the sea, via Vuls Tenvach. Vuls Tenvach took great advantage of this sudden change in the mercantile landscape. Building its strength over the 5th century, it carved a great empire across the entirety of the Straight Road during the 6th and 7th, breaking Sibisimra�s power in the process. Though their period of rule would come to an end when one of their generals, a certain Eletam the Gold, betrayed them and subsequently subjugated the city � forming the Dumrusvarn Dannuka � the Tenvacha remain proud of their history, and temples to the heroes that once mastered the Straight Road line the avenues of Vuls Tenvach.
 		caravan_power = 0.2
     }
-    G79_textiles_of_the_tapheta_toram = { # The southern regions of Vul Tenvach are famed around Taychend for producing the world�s most luxurious Tapheta cloth, a crisp cloth with a smooth feel, known for holding its shape extremely well. Before the founding of Ameion, this fame had driven many merchants and caravans to our cities for many centuries � with the opening of the Path of Wine going west to the Kheionai, Tenvacha ports become even busier as the westerners sought Taychendi produced textiles. Tapheta would also become one of most sought after goods in Taychend for the Cannorians, where womens fashion especially began to emphasise the stiffness Tapheta provides � the massive increase in Tapheta�s price that occurred when Ameion closed their ports would be one of the main causes of the later Cannorian intervention and subsequent imposition of the Deylokem system.
+    G79_textiles_of_the_tapheta_toram = { # The southern regions of Vuls Tenvach are famed around Taychend for producing the world�s most luxurious Tapheta cloth, a crisp cloth with a smooth feel, known for holding its shape extremely well. Before the founding of Ameion, this fame had driven many merchants and caravans to our cities for many centuries � with the opening of the Path of Wine going west to the Kheionai, Tenvacha ports become even busier as the westerners sought Taychendi produced textiles. Tapheta would also become one of most sought after goods in Taychend for the Cannorians, where womens fashion especially began to emphasise the stiffness Tapheta provides � the massive increase in Tapheta�s price that occurred when Ameion closed their ports would be one of the main causes of the later Cannorian intervention and subsequent imposition of the Deylokem system.
 		global_prov_trade_power_modifier = 0.1
     }
     G79_the_kappadi_war = { # Invading Vuls Tenvach is more difficult than one would think. With the cities of the north protected by a river and strong fortifications, and the cities of the south overland by the rugged hills of Uyarbaid, one must embark on a costly campaign of over-river sieges, or march south along the coast via Nagar Vyechei. Though a treaty with Laskaris prevented its conquest for decades, when war did break out Ameion chose the latter route. However the southern campaign too had a problem � the storms of Cape Thekvussam are legendary, known for wrecking inexperienced captains trying to round the cape. Only the sailors of Vuls Tenvach able to navigate it without issue, and resupply the cities of the south coast, preventing their capture. Through precise planning and timing, the ruler of Vuls Tenvach, Alvardip Tailarudu, managed to lure the Ambhen navy into a sea storm off the cape, which obliterated most of their invading fleet, at minimal cost to his own � dooming Ameion�s campaign. The Kappadi War, or the War of the Navigators, would help preserve Tenvacha independence for another 60 years, and though he would die soon after Alvardip Tailarudu would become a widely worshipped god-hero.
@@ -16327,6 +16329,53 @@ Y07_ideas = { #The oldest city of the Yanszin. After Harimar's conquest of the r
 	}
 }
 
+V19_ideas = { #Yanszin ideas
+    start = {
+        legitimacy = 1
+        republican_tradition = 0.3
+        devotion = 1
+        horde_unity = 1
+        ae_impact = -0.10
+    }
+    
+    bonus = {
+        advisor_cost = -0.1
+    }
+    
+    trigger = {
+        tag = V19
+    }
+    free = yes
+    
+    V19_the_league_revitalized = { 
+        diplomats = 1
+    }
+    
+    V19_keep_your_friends_close_but_your_enemies_closer = { 
+        improve_relation_modifier = 0.25
+    }
+    
+    V19_the_best_treaty_is_a_trade_treaty = { 
+        trade_efficiency = 0.1
+    }
+    
+    V19_sharpened_by_fangs = { 
+        infantry_power = 0.1
+    }
+    
+    V19_knowledge_first_morals_second = { 
+        technology_cost = -0.05
+    }
+    
+    V19_beware_a_dagger_hidden_in_a_smile = { 
+        global_unrest = -1
+    }
+    
+    V19_a_nation_of_intellectuals = { 
+        global_missionary_strength = 0.02
+    }
+}
+
 #Zongji Ideas
 Y25_ideas = {
 	start = {
@@ -17358,7 +17407,7 @@ Y20_ideas = {
 	free = yes
 
 	Y20_organized_impressment = { #Most of Feiten's ships are crewed with pressganged prisoners
-		land_morale = 0.1
+		global_sailors_modifier = 0.15
 	}
 	Y20_where_the_wind_blows = { #Feiten has a tendency to use alliances as long as they benefit them before moving along, as seen with them betraying Xiyun
 		diplomatic_upkeep = 1
@@ -17482,7 +17531,7 @@ Y22_ideas = {
 	Y22_the_upper_crossing = { #Controls an important crossing of the Yanhe
 		global_prov_trade_power_modifier = 0.15
 	}
-	Y22_corruptive_aura = { #Hazifuche changes people, including turning the River Yan that reclaimed the city alongside Harimar's armies to the Lefthand Path
+	Y22_corruptive_aura = { #Hazifuche changes people, including turning the River Yan that reclaimed the city alongside Harimar's armies to the Devouring Path
 		global_missionary_strength = 0.02
 	}
 	Y22_jiazu_jinnin = { #The merchant houses that rule the city from behind the scenes
@@ -17806,7 +17855,7 @@ Y55_ideas = {
 	Y55_walls_of_earth_and_metal = { #The forts used by the people of Khabtei Teleni were created with a combination of iron found in mines that are located around the nation and the natural materials like rocks and soil. With how easily these materials are found, the maintenance of these forts have always been very low.
 		fort_maintenance_modifier = -0.2
 	}
-	Y55_a_leakeban_people = { #While many of the upper nobles and the capital of the country follows the High Philosophy faith, many of the peasants and lower citizens instead follow the Righteous Path. The royalty, and later the elected nobles, never pushed High Philosophy on the peasants and instead preferred to have both religions coexist in one country. Over time the people of Khabtei Teleni were nicknamed the "leakeban people", meaning mixed people in regards to their faith.
+	Y55_a_leakeban_people = { #While many of the upper nobles and the capital of the country follows the High Philosophy faith, many of the peasants and lower citizens instead follow the Transmutative Path. The royalty, and later the elected nobles, never pushed High Philosophy on the peasants and instead preferred to have both religions coexist in one country. Over time the people of Khabtei Teleni were nicknamed the "leakeban people", meaning mixed people in regards to their faith.
 		religious_unity = 0.25
 	}
 
@@ -18662,9 +18711,9 @@ H59_ideas = {
 	free = yes		#will be added at load.
 
 	H59_the_mercenary_god = { #Chippengard's half-orcs worship Dookan as a mercenary god.
-			tolerance_own = 1
-				mercenary_cost = -0.05
-		}
+		tolerance_own = 1
+		mercenary_cost = -0.05
+	}
 	H59_ynnic_contracts = { #Ynn is a great source of wealth for mercenaries, especially since Ynnics hold no prejudice to half-orcs like cannorians do.
 		possible_condottieri = 1.0
 		improve_relation_modifier = 0.15
@@ -18681,7 +18730,6 @@ H59_ideas = {
 	}
 	H59_half_orcish_meritocracy = { #Chippengard is very meritocratic as half-orcs don't care about one's origin and promote on merit
 		advisor_cost = -0.1
-		female_advisor_chance = 0.25
 	}
 	H59_the_chargestoppers = { #In 1644, Chippengarder armies clashed with Sarda armies in Stenurynn. Despite being outnumbered and having just foot soldiers fight against Ynnic cavalry, the half-orcs won. This battle solidified their foot soldiers as the best in the region.
 		infantry_power = 0.10
@@ -19672,7 +19720,7 @@ F36_ideas = {
 	F36_the_sunlily_berry= { #the sunlily berry is one of the more interesting and curious plants native to the region, when consumed, it grants a man the energy to go through an entire day. No doubt this is a small emanation of Surael, the life giving energies condensed into one small ounce of creation. And very easy to grow as well, leading to a boom of production
 		production_efficiency = 0.1
 	}
-	F36_gunfire_phalanx = { #with the rise of smoke and gunfire in warfare, the traditional bulwari phalanx began to fall out of favor. But with the invention of bayonets, the tried and true bulwari phalanx can once again decimate enemy armies, now with gunfire.
+	F36_gunfire_shieldbearer = { #with the rise of smoke and gunfire in warfare, the traditional bulwari shieldbearers began to fall out of favor. But with the invention of bayonets, the tried and true bulwari shieldbearers can once again decimate enemy armies, now with gunfire.
 		infantry_power = 0.1
 	}
 }
@@ -19680,12 +19728,11 @@ F36_ideas = {
 #Zansap
 F43_ideas = {
 	start = {
-	shock_damage_received = -0.10 #used to fighting monsters
 		warscore_cost_vs_other_religion = -0.15 #want to take their land back
 		global_own_trade_power = 0.1 #lots of rivers, good for trading
 	}
 	bonus = {
-		global_own_trade_power = 0.1 #lots of rivers, good for trading
+		shock_damage_received = -0.10 #used to fighting monsters
 	}
 
 	trigger = {
@@ -19700,11 +19747,11 @@ F43_ideas = {
 		tolerance_own = 2
 	}
 	F43_taelarios_left_hand = {
-		discipline = 0.05
+		infantry_power = 0.05
 		global_missionary_strength = 0.01
 	}
 	F43_a_well_earned_rest = {
-		production_efficiency = 0.1
+		production_efficiency = 0.05
 		missionary_maintenance_cost = -0.10
 	}
 	F43_the_blooming_kasiyaru = {
@@ -20108,7 +20155,7 @@ Z64_ideas = {
 		garrison_size = 0.2
 		nobles_loyalty_modifier = 0.1
 	}
-	Z64_the_yanglamese_sea = { #Guiding and protecting trade around South Haless
+	Z64_the_yanglamese_sea = { #Guiding and protecting trade around Vimdatrong
 		light_ship_cost = -0.1
 		ship_power_propagation = 0.15
 	}
@@ -20671,7 +20718,7 @@ H16_ideas = {
 		republican_tradition = 0.3
 		horde_unity = 1
 		core_creation = -0.1
-		female_advisor_chance = 0.25
+		female_advisor_chance = 0.10
 	}
 	bonus = {
 		manpower_recovery_speed = 0.15
@@ -21164,7 +21211,7 @@ R68_ideas = {
 	}
 	free = yes
 
-	R68_now_we_rebuild = { #rebuilding and restoring south haless after conquest of it
+	R68_now_we_rebuild = { #rebuilding and restoring vimdatrong after conquest of it
 		development_cost = -0.1
 	}
 	R68_volume_from_talent = { #most skilled artisans of the hobgobs
@@ -21329,8 +21376,6 @@ H51_ideas = {
 		global_colonial_growth = 20
 	}
 	H51_muroga_the_hunter = {
-		may_recruit_female_generals = yes
-		female_advisor_chance = 0.15
 		tolerance_own = 2
 	}
 	H51_the_gray_guard = {
@@ -21601,7 +21646,6 @@ U05_ideas = {
 #Birsartanses
 F21_ideas = {
 	start = {
-		female_advisor_chance = 0.25 #girlboss country
 		governing_capacity_modifier = 0.1
 		global_tax_modifier = 0.1 #From Sun Elf ideas
 	}
@@ -23276,8 +23320,7 @@ H86_ideas = {
 		land_forcelimit_modifier = 0.2
 	}
 }
-
-#Count's League Ideas, Upgraded. 
+#Count's League Ideas, Upgraded. Loaded first for safety as per PDX doing this for Greater Armenia in KoK.
 
 B551_ideas = {
 	start = {
@@ -23321,7 +23364,6 @@ B551_ideas = {
 		unjustified_demands = -0.2
 	}
 }
-
 
 #Count's League ideas
 B55_ideas = {
@@ -23970,6 +24012,8 @@ H23_ideas = {
 	start = {
 		land_morale = 0.1
 		movement_speed = 0.15
+		female_advisor_chance = 0.4
+		may_recruit_female_generals = yes
 	}
 	bonus = {
 		technology_cost = -0.05
@@ -24010,6 +24054,8 @@ H28_ideas = {
 	start = {
 		land_morale = 0.1
 		movement_speed = 0.15
+		female_advisor_chance = 0.4
+		may_recruit_female_generals = yes
 	}
 	bonus = {
 		unjustified_demands = -0.2
@@ -24049,6 +24095,8 @@ H29_ideas = {
 	start = {
 		land_morale = 0.1
 		movement_speed = 0.15
+		female_advisor_chance = 0.4
+		may_recruit_female_generals = yes
 	}
 	bonus = {
 		manpower_recovery_speed = 0.1
@@ -24090,6 +24138,8 @@ H00_ideas = {
 	start = {
 		land_morale = 0.15
 		province_warscore_cost = -0.15
+		female_advisor_chance = 0.4
+		may_recruit_female_generals = yes
 	}
 	bonus = {
 		governing_capacity_modifier = 0.1
@@ -29981,6 +30031,49 @@ R44_ideas = {
 	}
 }
 
+#Sanghariyar
+R98_ideas = {
+	start = {
+		merchants = 1
+		defensiveness = 0.2
+	}
+	bonus = {
+		num_accepted_cultures = 2
+	}
+
+	trigger = {
+		tag = R98
+	}
+	free = yes
+
+	R98_call_of_the_sea = {
+		navy_tradition = 1
+		allowed_marine_fraction = 0.25
+	}
+	R98_union_raghamidesh = {
+		development_cost = -0.1
+	}
+	R98_sarkhashabid_weapons_company = {
+		fire_damage = 0.1
+		number_of_cannons_modifier = 0.1
+	}
+	R98_great_port_sarkhashabid = {
+		trade_efficiency = 0.15
+		trade_range_modifier = 0.5
+	}
+	R98_raghamidesh_stoicism = {
+		morale_damage_received = -0.1
+		global_sailors_modifier = 0.1
+	}
+	R98_relentless_perseverance = {
+		build_cost = -0.1
+	}
+	R98_melting_pot = {
+		global_institution_spread = 0.1
+		reform_progress_growth = 0.15
+	}
+}
+
 #Vandipha
 L62_ideas = {
 	start = {
@@ -32456,6 +32549,8 @@ J70_ideas = {
 	start = {
 		mercenary_discipline = 0.05
 		global_trade_power = 0.10
+		female_advisor_chance = 0.4
+		may_recruit_female_generals = yes
 	}
 	bonus = {
 		production_efficiency = 0.1
@@ -32814,6 +32909,8 @@ J74_ideas = {
 	start = {
 		tolerance_own = 2
 		global_missionary_strength = 0.02
+		female_advisor_chance = 0.4
+		may_recruit_female_generals = yes
 	}
 	bonus = {
 		war_exhaustion = -0.03	 
@@ -34969,6 +35066,8 @@ J73_ideas = {
 	start = {
 		cavalry_power = 0.15 #chendhyan
 		tolerance_heathen = 2 #Zaernmaera doesnt care much about faith as long as you venerate Munakles
+		female_advisor_chance = 0.4
+		may_recruit_female_generals = yes
 	}
 	bonus = {
 		years_of_nationalism = -5 #dreams of a 2nd saerraeg
@@ -35233,7 +35332,7 @@ R59_ideas = {
 	R59_alchemical_traditions = {
 		idea_cost = -0.1
 	}
-	R59_lefthand_devotion = {
+	R59_devouring_devotion = {
 		tolerance_own = 2
 	}
 	gang_regional_ties = {
@@ -35554,7 +35653,6 @@ F85_ideas = {
 	}
 	F85_harpies = {
 		merchants = 1
-		female_advisor_chance = 0.33
 	}
 	F85_killed_rooftile = {
 		hostile_attrition = 1
@@ -35950,6 +36048,8 @@ J72_ideas = {
 	    horde_unity = 1 
 	    republican_tradition = 0.3
 		manpower_in_accepted_culture_provinces = 0.2
+		female_advisor_chance = 0.4
+		may_recruit_female_generals = yes
 	}
 	
 	bonus = {
@@ -38333,7 +38433,7 @@ S84_BM_ideas = {
 		tag = S84 #Bwa Dakinshi
 		NOT = {
 			religion = shadow_pact
-			religion = righteous_path
+			religion = transmutative_path
 		}
 	}
 
@@ -38467,7 +38567,7 @@ S84_SP_ideas = {
 	}
 }
 
-#Righteous Path ver.
+#Transmutative Path ver.
 S84_RP_ideas = {
 
 	start = {
@@ -38481,7 +38581,7 @@ S84_RP_ideas = {
 
 	trigger = {
 		tag = S84 #Bwa Dakinshi
-		religion = righteous_path
+		religion = transmutative_path
 	}
 
 	free = yes
@@ -40589,7 +40689,7 @@ Y89_ideas = {
     Y89_plunderers_of_the_temples = { #While under the Oni, aided in the corruption of Halessi temples, bringing strength to Yuanszi mages
         church_power_modifier = 0.1
     }
-    Y89_heart_of_the_lefthand = { #The Lefthand Path originated amongst the first worshippers of the Oni, and Yuanszi especially
+    Y89_devouring_heart = { #The Devouring Path originated amongst the first worshippers of the Oni, and Yuanszi especially
         global_missionary_strength = 0.02
     }
     Y89_devils_brew = { #Yuanszi brews strong enough alcohol to drunken an Oni, reknown across Haless for potency and strength
@@ -42115,6 +42215,8 @@ U39_ideas = {
     start = {
 		land_forcelimit_modifier = 0.33 # hordes of peasants and freed-slaves
 		hostile_attrition = 1 # expert guerilla fighters
+		female_advisor_chance = 0.4
+		may_recruit_female_generals = yes
     }
     bonus = {
 		governing_capacity_modifier = 0.15 # kavalali system helps govern territory
@@ -42151,3 +42253,549 @@ U39_ideas = {
 		defensiveness = 0.15
     }
 }
+
+#Darom
+B73_ideas = {
+	start = {
+		war_exhaustion = -0.03
+		army_tradition = 0.5
+	}
+	
+	bonus = {
+		artillery_barrage_cost = -0.25
+	}
+	
+	trigger = {
+		tag = B73 #Darom
+	}
+	free = yes
+	
+	B73_daromas_general = { #Daromas was the namesake of the Duchy of Darom and a governor of parts of western Lencenor during the dragonwake, forging a short lived martial empire in the year 475, and becoming a well respected figure in later periods of Lencori history. Few states within Lencenor can claim a legacy this old.
+		prestige = 1
+	}
+	
+	B73_hangings_of_478 = { #The Lencori empire was a very short lived state forged by Daromas� conquests in the late 470s, and had its fair share of opposition movements. The typical imperial response was summary execution, as the meteoric rise and collapse of the empire left no time for slower methods of administering justice. The ruthless treatment of traitors persists today in Darom, but in a reduced capacity following the stabilization of the area.
+		harsh_treatment_cost = -0.25
+	}
+	
+	B73_knights_villein = { #Darom does not distinguish between peasant and noble when it comes to defense of the realm, any man can serve. This tradition stems from the duchy�s Low Lorentish culture, meaning that those peasants who join the army as Light Cavalry can attain the title of Knight-Villein, giving some of the rights of knighthood without a noble title.
+		cavalry_cost = -0.15
+	}
+	
+	B73_keystone_renaissance = { # Whilst Daromsfort has been besieged, occupied, and otherwise subjugated many times throughout its history, the Lenco-Damerian culture has never left the city. The Rasnico (Old Damerian word for Peasant-Like, being used for rugged) people of Daromsfort have never yielded culturally, and maintain strong local traditions to this day.
+		development_cost = -0.1
+	}
+	
+	B73_lencori_bureacracy = { #Daromas created the Antefactiores, a highly flexible and absolutist bureaucracy where titles would be given out to local representatives for their lifespan only, being inherited by the realm�s leader upon death. Today this has morphed into a system of mostly meritocratic appointment, yet Daromasian hereditary titles still exist.
+		global_autonomy = -0.05
+	}
+	
+	B73_daromsfort_forge = { #The Daromsfort forge is the pinnacle of Human weapons manufacture in Lencenor, with a team of blacksmiths working with mages to harness the power of fire elementals to keep the forge running at all times, and with higher productivity than other smithing operations.
+		production_efficiency = 0.1
+	}
+	
+	B73_the_lencesk_seawall = { #Daromath is a crossroads in both culture and geography, being at the intersections of the Derannics and the Low and High Lorentish, as well as sitting on the banks of the Lencesk river which divides Western Lencenor in two. Both aspects of the city�s status as a crossroads are seen in the Lencesk seawall, a mixed style Quay that also holds a vital bridge between the north and the south.
+		global_trade_power = 0.1
+        global_regiment_cost = -0.1
+	}
+}
+
+#Tretun
+Z05_ideas = {
+	start = {
+		mil_tech_cost_modifier = -0.1 #Tretun has for centuries prioritized adopting the latest military innovations to make up for their small manpower pool and conserve their soldiers' lives
+		manpower_in_own_culture_provinces = 0.2 #Tretunic society has is passionately devoted for their freedom and country, so there is no shortage of people willing to fight for the defence of their homeland
+	}
+	bonus = {
+		 trade_efficiency = 0.1 #Prior to its collapse, Tretun was a major trans-Divenhali trade power: Tretunic Kingdom's restoration would no doubt lead to seeking to recreate that era of trade dominance
+	}
+	trigger = {
+		tag = Z05 #Tretun
+	}
+	free = yes
+
+	Z05_friends_across_the_sea = { #Tretun has always looked overseas for allies to counter its mainland enemies, maintaining cordial relations with kingdoms of western Divenhal. Tretunic honour code has also given them a reputation as trustworthy allies - first and foremost Verne, whose close alliance with Tretun has kept Pearlsedge's expansionist ambitions in a deadlock for centuries.
+		diplomatic_upkeep = 1
+	}
+	Z05_sounding_the_olifants = { #Set of Akasi ivory horns given to Tretun by the kings of Khasa as a symbol of Tretunic-Akasi friendship. Used for sounding of war hostings - when the horns are sounded, all of Tretun is expected to mobilise for war
+		land_forcelimit_modifier = 0.15
+	}
+	Z05_last_of_the_kings_first_of_the_dukes = { #Tretun's ancient lineage to a kingdom gives it a surprising amount of clout within the Imperial politics for its size and power, most notably Gracos síl Tretun, longest-reigning of Anbennar’s mage-emperors
+		diplomatic_reputation = 1
+	}
+	Z05_the_foreign_company = { #A special unit of the Tretunic army composed of foreign fighters, mainly adventurers, but also non-humans and planetouched. Company's captains are some of Tretun's most important military commanders, and síl Tretuns were founded by an ennobled Khasani captain of the Foreign Company who saved Tretun from Pearlsedge subjugation after the king of Tretun was slain in battle in 950s.
+		mil_advisor_cost = -0.15
+		general_cost = -0.1
+	}
+	Z05_priviledge_of_plunder = { #As a poor country without much wealth to pay for mercenaries against their wars with Pearlsedge, Tretun instituted the "customary privilege of plunder" - anything mercenaries and foreign fighters loot from enemy territories is theirs to keep.
+		mercenary_cost = -0.15
+	}
+	Z05_tretunic_dawn = { #Rise of national studies led to Tretun emphasising the glories of their past, and the revival of Tretunic Kingdom's motto which can only be pronounced accurately in the Tretunic variety of Lencori Common, making it hard for foreign spies to get it right.
+		prestige = 1
+		global_spy_defence = 0.1
+	}
+	Z05_the_promised_child = { #Prophecy by a powerful and famous Tretunic mage in the 900s-910s of an avatar destined to destroy Pearlsedge and bring Tretun back to greatness - belief in Tretun’s prophesied future greatness has made its armies fight with high morale
+		land_morale = 0.1
+	}
+}
+
+#Lembingtana 
+Y84_ideas = { 
+	start = { 
+		hostile_attrition = 1 
+        shock_damage_received = -0.1 
+	} 
+	bonus = { 
+		land_forcelimit_modifier = 0.25 
+	} 
+	trigger = { 
+		tag = Y84   
+	} 
+	free = yes 
+ 
+	Y84_twilight_tribes = { 
+		global_unrest = -1 
+		land_maintenance_modifier = -0.1 
+	} 
+ 
+	Y84_hard_learned_lessons = {  
+		allowed_marine_fraction = 0.25 
+		global_sailors_modifier = 0.1	 
+	} 
+ 
+	Y84_coming_of_age = {  
+		merchants = 1 
+		transport_attrition = -0.5		 
+	} 
+ 
+	Y84_sea_spirits = {  
+		innovativeness_gain = 0.5 
+		global_institution_spread = 0.25 
+	} 
+ 
+	Y84_dance_of_light_and_shadows = { 
+		movement_speed = 0.15 
+	} 
+ 
+	Y84_festival_of_the_sea = {  
+		stability_cost_modifier = -0.15 
+	} 
+ 
+	yanglam_community_of_spirits_and_humans = {  
+		reform_progress_growth = 0.15 
+	} 	 
+}
+
+#Milcorissia
+B94_ideas = {
+	start = {
+		land_forcelimit_modifier = 0.20
+		build_cost = -0.1
+	}
+	
+	bonus = {
+		global_missionary_strength = 0.02
+	}
+	
+	trigger = {
+		tag = B94 #Milcorissia
+	}
+	free = yes
+	
+	B94_king_of_kings = { #Milcorissia
+		prestige = 1
+	}
+	
+	B94_slayers_of_lions = { #Milcorissia
+		discipline = 0.05
+	}
+	
+	B94_land_of_labyrinths = { #Milcorissia
+		defensiveness = 0.15
+	}
+	
+	B94_first_of_the_dead = { #Milcorissia
+		all_power_cost = -0.025
+		mages_loyalty_modifier = 0.05
+	}
+	
+	B94_servants_of_nerat = { #Milcorissia
+		global_unrest = -2
+		stability_cost_modifier = -0.1
+	}
+	
+	B94_milcori_meritocracy = { #Milcorissia
+		advisor_cost = -0.10
+	}
+	
+	B94_scourge_of_man = { #Milcorissia
+		manpower_in_own_culture_provinces = 0.20
+		war_exhaustion = -0.02
+	}
+}
+
+#Cataboek
+U48_ideas = {
+	start = {
+	infantry_power = 0.1
+	global_missionary_strength = 0.02
+	}
+	
+	bonus = {
+		production_efficiency = 0.15
+	}
+		trigger = {
+		tag = U48
+	}
+	free = yes
+	
+	U48_dream = {
+		land_morale = 0.1
+	}
+	
+	U48_sinew = {
+		reform_progress_growth = 0.15
+		global_autonomy = -0.05
+	}
+	
+	U48_gate = {
+		all_power_cost = -0.025
+	}
+	
+	U48_history = {
+		army_tradition_decay = -0.01
+	}
+	
+	U48_wrahpowucha = {
+		global_unrest = -2
+	}
+	
+	U48_veil = {
+		global_spy_defence = 0.2
+		global_trade_power = 0.1
+	}
+	
+	U48_no_origin = {
+		same_religion_advisor_cost = -0.2
+	}
+}
+
+#Labanyak
+Y82_ideas = { 
+	start = { 
+		hostile_attrition = 1 
+        shock_damage_received = -0.1 
+	} 
+	bonus = { 
+		num_accepted_cultures = 2
+	} 
+	trigger = { 
+		tag = Y82 #Labanyak
+	} 
+	free = yes 
+ 
+	Y82_spirit_cooks = { 
+		global_unrest = -1
+		prestige = 0.5
+	} 
+ 
+	Y82_magic_lights = {  
+		reserves_organisation = 0.1	 
+	} 
+ 
+	Y82_tirusak_singers = {  
+		improve_relation_modifier = 0.2		 
+	} 
+ 
+	Y82_spirit_tools = {  
+		production_efficiency = 0.1 
+	} 
+ 
+	Y82_yanglam_alchemists = { 
+		technology_cost = -0.05
+	} 
+ 
+	Y82_festival_of_labanyak = {  
+		stability_cost_modifier = -0.15 
+	} 
+ 
+	yanglam_community_of_spirits_and_humans = {  
+		reform_progress_growth = 0.15 
+	} 	 
+}
+
+#Validaunea
+J99_ideas = {
+	start = {
+		global_ship_cost = -0.1
+		advisor_cost = -0.15
+	}
+	
+	bonus = {
+		reserves_organisation = 0.1
+	}
+	
+	trigger = {
+		tag = J99 #Validaunea
+	}
+	free = yes
+	
+	J99_hammer_anvil_and_crucible = {
+		infantry_power = 0.10
+		cavalry_flanking = 0.5			
+	}
+	
+	J99_philosopher_king_warlord_autonomous = {
+		monarch_military_power = 1
+	}
+		
+	J99_an_arcane_navy = {
+		galley_power = 0.2
+		global_ship_recruit_speed = -0.1
+	}
+
+	J99_cult_of_laskaris = {
+		tolerance_heathen = 2
+	}
+		
+	J99_magic_of_east_and_west = {
+		mages_loyalty_modifier = 0.1
+		innovativeness_gain = 0.25
+	}
+	
+	J99_the_validaunean_triarchy = {
+		land_forcelimit_modifier = 0.10	
+		global_autonomy = -0.025		
+	}
+	
+	J99_new_taychendi_art = {
+		monthly_splendor = 2	
+		build_cost = -0.10
+	}
+}
+
+#Poson
+S49_ideas = {
+	start = {
+		improve_relation_modifier = 0.20
+		manpower_recovery_speed = 0.15 
+	}
+	
+	bonus = {
+		trade_efficiency = 0.1
+	}
+	
+	trigger = {
+		tag = S49 #Poson
+	}
+	free = yes
+	
+	S49_crowned_zibwaf = {
+		prestige = 1	
+	}
+	
+	S49_treasured_scapegoat = {
+		diplomatic_upkeep = 1
+	}
+		
+	S49_late_night_morale = {
+		production_efficiency = 0.1
+	}
+
+	S49_mobile_birds = {
+		land_attrition = -0.15
+	}
+		
+	S49_last_one_there_is_troll_food = {
+		movement_speed = 0.15
+	}
+	
+	S49_the_legacy_of_tariku_iii_zor_biruk-kebek = {
+		spy_action_cost_modifier = -0.2	
+	}
+	
+	S49_the_battle_of_sodikant = {
+		war_exhaustion = -0.10
+	}
+}
+
+#Pegosi
+L64_ideas = {
+	start = {
+		institution_spread_from_true_faith = 0.2
+		manpower_recovery_speed = 0.1
+	}
+	
+	bonus = {
+		innovativeness_gain = 0.5
+	}
+	
+	trigger = {
+		tag = L64 #Pegosi
+	}
+	free = yes
+	
+	L64_fluffy_fortifications = {
+		defensiveness = 0.15	
+	}
+	
+	L64_necessity_is_the_mother_of_pegosi = {
+		idea_cost = -0.1
+	}
+		
+	L64_the_woolen_stand_of_tistrias = {
+		morale_damage_received = -0.1
+	}
+
+	L64_gifts_of_the_shaggy_oxen = {
+		production_efficiency = 0.1
+	}
+		
+	L64_no_enemy_shall_tread = {
+		hostile_attrition = 1
+	}
+	
+	L64_ink_and_influence = {
+		dip_tech_cost_modifier = -0.1	
+	}
+	
+	L64_echoes_of_the_afterlife = {
+		church_power_modifier = 0.1
+	}
+}
+
+#Sudokli
+V08_ideas = {
+	start = {
+		same_culture_advisor_cost = -0.15
+		morale_damage_received = -0.1
+	}
+	
+	bonus = {
+		all_estate_loyalty_equilibrium = 0.05
+	}
+
+	trigger = {
+		tag = V08 
+	}
+	free = yes
+	
+	V08_the_first_shrine_binders = {
+    		idea_cost = -0.1
+	}
+    
+	V08_soul_spheres = {
+    		cavalry_shock = 0.25 
+	}
+    
+	V08_tapestries_of_those_remembered = {
+    		free_adm_policy = 1
+	}
+    
+	V08_emulation_of_the_elders = {
+    		build_cost = -0.1
+	}
+    
+	V08_leading_our_brethren = {
+    		diplomats = 1
+            legitimacy = 0.5
+			devotion = 0.5
+			republican_tradition = 0.15
+			horde_unity = 0.5
+	}
+    
+	V08_our_strongest_muscle = {
+    		stability_cost_modifier = -0.15
+	}
+    
+	V08_a_balance_of_our_own = {
+    		tolerance_own = 2
+	}
+}
+
+
+#Bazuneizar
+V06_ideas = {
+    start = {
+        caravan_power = 0.2
+        fort_maintenance_modifier = -0.15 
+    }
+    
+    bonus = {
+         morale_damage_received = -0.1
+    }
+    
+    trigger = {
+        tag = V06 #Bazuneizar
+    }
+    free = yes
+	
+	V06_walls = {
+		defensiveness = 0.15
+	}
+	
+	V06_clockwork_wonders = {
+		production_efficiency = 0.1
+	}
+	
+	V06_relic_guilds = {
+		technology_cost = -0.05
+	}
+	
+	V06_open_air = {
+		prestige_decay = -0.01
+	}
+	
+	V06_appeasement = {
+		artificers_loyalty_modifier = 0.05
+        church_loyalty_modifier 0.05
+	}
+	
+	V06_practical = {
+		global_supply_limit_modifier = 0.25
+	}
+	
+	V06_isolated = {
+		innovativeness_gain = 0.5
+	}
+
+}
+
+#Acromton
+Z40_ideas = {
+	start = {
+		fort_maintenance_modifier = -0.15
+		infantry_power = 0.1
+	}
+	bonus = {
+		leader_land_fire = 1
+	}
+
+	trigger = {
+		tag = Z40 #Acromton
+	}
+	free = yes
+
+	Z40_the_tradewinds_of_anbenncost = {
+		trade_efficiency = 0.10
+	}
+	Z40_the_siege_of_castle_acromton = {
+		defensiveness = 0.15
+	}
+	Z40_damerias_wings = {
+		discipline = 0.05
+	}
+	Z40_the_red_flight = {
+		improve_relation_modifier = 0.2
+	}
+	Z40_the_house_of_acromis = {
+		army_tradition = 0.5
+	}
+	Z40_the_purse_of_the_dove_duke = {
+		development_cost = -0.1
+	}
+	Z40_the_history_of_acromton = {
+		prestige = 0.5
+	}
+}
+

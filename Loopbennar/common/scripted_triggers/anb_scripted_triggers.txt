@@ -3531,24 +3531,6 @@ is_a_hanging_city = {
 	}
 }
 
-ruler_is_bulwari = {
-	custom_trigger_tooltip = {
-		tooltip = ruler_is_bulwari_tt
-		or = {
-			ruler_culture = zanite
-			ruler_culture = bahari
-			ruler_culture = surani
-			ruler_culture = brasanni
-			ruler_culture = gelkar
-			ruler_culture = maqeti
-			ruler_culture = masnsih
-			ruler_culture = sadnatu
-			ruler_culture = kuzarami
-			ruler_culture = bulwari_half_elf
-		}
-	}
-}
-
 in_or_leading_regent_court_league = {
 
 	custom_trigger_tooltip = {
@@ -3667,102 +3649,28 @@ has_divine_call_palace_monument = {
 has_golden_highway_discount_50_percent = {
 	OR = { 
 		has_divine_call_palace_monument = yes
+		has_country_flag = golden_highway_discount_flag
 	}
 }
 
 can_die_oni_extension = {
-	has_ruler_flag = lefthand_life_extension
+	has_ruler_flag = devouring_life_extension
 	OR = {
 		AND = {
-			check_variable = {
-				which = lefthand_life_extension_max_age_var
-				value = 110
-			}
-			NOT = {
-				check_variable = {
-					which = lefthand_life_extension_max_age_var
-					value = 111
-				}
-			}
-			ruler_age = 110
+			has_ruler_flag = dvp_life_extension_1
+			ruler_age = 100
 		}
 		AND = {
-			check_variable = {
-				which = lefthand_life_extension_max_age_var
-				value = 140
-			}
-			NOT = {
-				check_variable = {
-					which = lefthand_life_extension_max_age_var
-					value = 141
-				}
-			}
-			ruler_age = 140
+			has_ruler_flag = dvp_life_extension_2
+			ruler_age = 125
 		}
 		AND = {
-			check_variable = {
-				which = lefthand_life_extension_max_age_var
-				value = 160
-			}
-			NOT = {
-				check_variable = {
-					which = lefthand_life_extension_max_age_var
-					value = 161
-				}
-			}
-			ruler_age = 160
+			has_ruler_flag = dvp_life_extension_3
+			ruler_age = 150
 		}
 		AND = {
-			check_variable = {
-				which = lefthand_life_extension_max_age_var
-				value = 175
-			}
-			NOT = {
-				check_variable = {
-					which = lefthand_life_extension_max_age_var
-					value = 176
-				}
-			}
+			has_ruler_flag = dvp_life_extension_4
 			ruler_age = 175
-		}
-		AND = {
-			check_variable = {
-				which = lefthand_life_extension_max_age_var
-				value = 185
-			}
-			NOT = {
-				check_variable = {
-					which = lefthand_life_extension_max_age_var
-					value = 186
-				}
-			}
-			ruler_age = 185
-		}
-		AND = {
-			check_variable = {
-				which = lefthand_life_extension_max_age_var
-				value = 190
-			}
-			NOT = {
-				check_variable = {
-					which = lefthand_life_extension_max_age_var
-					value = 191
-				}
-			}
-			ruler_age = 190
-		}
-		AND = {
-			check_variable = {
-				which = lefthand_life_extension_max_age_var
-				value = 195
-			}
-			NOT = {
-				check_variable = {
-					which = lefthand_life_extension_max_age_var
-					value = 196
-				}
-			}
-			ruler_age = 195
 		}
 		ruler_age = 200 #not allowed to live past 200
 	}
@@ -3771,7 +3679,7 @@ can_die_oni_extension = {
 special_life_extension = {
 	OR = {
 		AND = {
-			has_ruler_flag = lefthand_life_extension
+			has_ruler_flag = devouring_life_extension
 			NOT = { can_die_oni_extension = yes }
 		}
 		has_country_modifier = lich_ruler
@@ -3780,7 +3688,7 @@ special_life_extension = {
 		has_ruler_flag = shadow_pact_time_effect
 		has_country_modifier = varamhar_blessed_of_surael
 		AND= {
-			has_country_modifier = exceptional_willpower_75
+			has_ruler_modifier = exceptional_willpower_75
 			NOT = { ruler_age = 75 }
 		}
 		AND = {
@@ -3792,7 +3700,7 @@ special_life_extension = {
 			NOT = { ruler_age = 100 }
 		}
 		AND = {
-			has_country_modifier = exceptional_willpower_150
+			has_ruler_modifier = exceptional_willpower_150
 			NOT = { ruler_age = 150 }
 		}
 		AND = {
@@ -3957,6 +3865,17 @@ has_50_opinion_improved_relation = {
 	}
 }
 
+has_25_opinion_improved_relation = {
+	custom_trigger_tooltip = {
+		tooltip = 25_improved_relation_trigger_tt
+		has_opinion_modifier = {
+			who = $target$
+			modifier = improved_relation
+			value = 25
+		}
+	}
+}
+
 has_25_opinion_sent_gift = {
 	custom_trigger_tooltip = {
 		tooltip = 25_sent_gift_trigger_tt
@@ -4001,7 +3920,6 @@ has_any_opinion_sent_gift = {
 	}
 }
 
-
 has_15_opinion_getting_subsidies = {
 	custom_trigger_tooltip = {
 		tooltip = 15_getting_subsidies_trigger_tt
@@ -4034,6 +3952,7 @@ has_5_opinion_getting_subsidies = {
 		}
 	}
 }
+
 has_any_opinion_getting_subsidies = {
 	custom_trigger_tooltip = {
 		tooltip = any_getting_subsidies_trigger_tt
@@ -4044,7 +3963,6 @@ has_any_opinion_getting_subsidies = {
 		}
 	}
 }
-
 
 #Aelantir Cliff Passages
 arbeloch_ascensor_constructed = {
@@ -4170,5 +4088,144 @@ ruler_has_bad_personality = {
 		ruler_has_personality = loose_lips_personality
 		ruler_has_personality = craven_personality
 		ruler_has_personality = infertile_personality
+	}
+}
+
+culture_has_equal_heir = {
+	OR = {
+		has_country_modifier = kheionai_has_civil_rights
+		tag = U39
+		
+		culture_group = elven
+		culture_group = eordan_ruinborn_elf
+		culture_group = gnollish
+		culture_group = kobold
+		culture_group = bulwari
+		culture_group = giantkind
+		
+		culture = kwineh
+		culture = chendhyan
+		
+		culture = high_lorentish
+		culture = rosanda
+		culture = lencori_half_elf
+		
+		culture = west_dalr
+		culture = east_dalr
+		
+		culture = creek_gnome
+		
+		culture = opal_dwarf
+		culture = quartz_dwarf
+		
+		culture = szitu
+		culture = naamjyut
+		
+		culture_group = akasi
+		
+		culture_group = inyaswarosa
+		
+		culture = cyazizeta_lizardfolk
+		
+		culture = jiromji
+		
+		culture = amezatany
+		culture = mboala
+		culture = mazava
+		culture = fomarati
+		culture = vyoronsi
+		culture = zohebidi
+		
+		culture = west_damerian
+		culture = east_damerian
+		culture = rogieran
+		culture = anbenncoster
+		culture = anbenlander
+		culture = ancardian
+		culture = nurcestiran
+		culture = istranari
+		culture = half_elf
+		
+		culture = vernman
+		culture = heartman
+		culture = valorman
+		culture = pashainey
+		
+		culture = farrani_half_elf
+		
+		culture = corintari
+		
+		culture = corinsfielder
+		
+		culture = arbarani
+		
+		culture = steadsman
+		
+		culture = cestirmarker
+		
+		culture = marcher
+		
+		culture = mantimatu
+	}
+}
+
+holds_castanor_legacy = {
+	custom_trigger_tooltip = {
+		tooltip = holds_castanor_legacy_tooltip
+		OR = {
+			tag = B32
+			is_subject_of = B32
+		}	
+	}
+}
+
+number_of_accepted_imperial_cultures = {
+    calc_true_if = {
+			accepted_culture = anbenncoster
+			accepted_culture = half_elf
+			accepted_culture = west_damerian
+			accepted_culture = east_damerian
+			accepted_culture = pearlsedger
+			accepted_culture = crownsman
+			accepted_culture = vernman
+			accepted_culture = exwesser
+			accepted_culture = arbarani
+			accepted_culture = esmari
+			accepted_culture = arannese
+			accepted_culture = uelairey
+			accepted_culture = aldresian
+			accepted_culture = telgeiran
+			accepted_culture = pashainey
+			accepted_culture = havoric
+			accepted_culture = imperial_halfling
+			accepted_culture = imperial_gnome
+			accepted_culture = dovesworn_gnoll
+			accepted_culture = moon_elf
+        amount = $amount$
+    }
+}
+
+is_anbennarian_imperial_culture = {
+	OR = {
+		culture = anbenncoster
+		culture = half_elf
+		culture = west_damerian
+		culture = east_damerian
+		culture = pearlsedger
+		culture = crownsman
+		culture = vernman
+		culture = exwesser
+		culture = arbarani
+		culture = esmari
+		culture = arannese
+		culture = uelairey
+		culture = aldresian
+		culture = telgeiran
+		culture = pashainey
+		culture = havoric
+		culture = imperial_halfling
+		culture = imperial_gnome
+		culture = dovesworn_gnoll
+		culture = moon_elf
 	}
 }

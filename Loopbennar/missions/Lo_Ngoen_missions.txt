@@ -39,7 +39,7 @@ lo_ngoen_2 = {
 				type = master_of_mint
 				skill = 1
 				culture = sikai
-				religion = righteous_path
+				religion = transmutative_path
 			}
 		} 
 	}
@@ -77,7 +77,7 @@ lo_ngoen_2 = {
 					has_50_opinion_improved_relation = { target = ROOT }
 					has_any_opinion_sent_gift = { target = ROOT }
 				}
-
+			}
 		} 
 
 		effect = {  

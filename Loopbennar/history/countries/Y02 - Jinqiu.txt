@@ -3,9 +3,9 @@ setup_vision = yes
 government = republic
 add_government_reform = eternal_council
 government_rank = 2
-primary_culture = river_yan
-add_accepted_culture = hill_yan
-religion = lefthand_path
+primary_culture = jiangszun
+add_accepted_culture = beikling
+religion = devouring_path
 technology_group = tech_halessi
 capital = 4842
 historical_rival = Y28 #Starting Wulin
@@ -39,4 +39,12 @@ historical_rival = Y99 #One Xia
 		name = jinqiu_zhuying_chancellor
 		duration = -1
 	}
+}
+
+1444.11.10 = { #Devouring Path setup
+	add_church_power = 200
+	set_country_flag = was_devouring_path
+	set_country_flag = gunpowder_meditation_unlocked
+	set_country_flag = demon_warriors_unlocked
+	set_country_flag = the_god_eaters_unlocked
 }

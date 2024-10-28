@@ -87,6 +87,9 @@ onwards_from_castellos = {
 	tolerance_own = -2
 	idea_cost = -0.1
 }
+infernal_inspiration = {
+	land_morale = 0.05
+}
 
 hre_dominant_regent_court = {
 	legitimacy = 0.25
@@ -263,8 +266,8 @@ removed_corinite_centers = {
 
 # Great Dookan Abilities
 dookan_reconnected_with_past_lives = {
-	land_morale = 0.1
-	shock_damage = 0.2
+	land_morale = 0.2
+	shock_damage = 0.4
 	shock_damage_received = 0.1
     movement_speed = 0.2
 }
@@ -324,7 +327,7 @@ dookan_no_omen = {
 	church_power_modifier = -0.9
 }
 dookans_guidance_war = {
-	land_morale = 0.1
+	land_morale = 0.15
 	army_tradition_from_battle = 1
 	shock_damage = 0.1
 	shock_damage_received = -0.1 
@@ -332,7 +335,7 @@ dookans_guidance_war = {
 }
 dookans_guidance_peace = {
 	stability_cost_to_declare_war = 2
-	development_cost = -0.1
+	development_cost = -0.2
 	global_tax_modifier = 0.15
 	global_trade_goods_size_modifier = 0.1
 }
@@ -457,7 +460,7 @@ harmonized_harpy_cults = {
 	religion = yes
 }
 
-harmonized_cheshoshi = {
+harmonized_cheshoshi_religion = {
 	land_morale = 0.05
 	religion = yes
 }
@@ -532,17 +535,17 @@ harmonized_supreme_spirit = {
 	religion = yes
 }
 
-harmonized_tanibic = {
+harmonized_tanibic_religion = {
 	global_unrest = -1
 	religion = yes
 }
 
-harmonized_hag = {
+harmonized_hag_religion = {
 	spy_offence = 0.2
 	religion = yes
 }
 
-harmonized_lizardfolk = {
+harmonized_lizardfolk_religion = {
 	core_creation = -0.05
 	religion = yes
 }
@@ -552,7 +555,7 @@ harmonized_east_sarhal_religion = {
 	religion = yes
 }
 
-harmonized_gotiriei = {
+harmonized_eltibhen = {
 	movement_speed = 0.1
 	religion = yes
 }
@@ -1807,7 +1810,7 @@ primary_khetist_cult = {
 }
 
 primary_gnollish_cult = {
-	land_morale = 0.1
+	land_morale = 0.05
 	reduced_liberty_desire = 10
 	religion = yes
 }
@@ -2371,6 +2374,52 @@ vachava_thrifter = {
 	land_maintenance_modifier = -0.10
 }
 
+#Suhan's Praxis
+
+sexes_liberated = {
+	female_advisor_chance = 0.33
+	may_recruit_female_generals = yes
+	same_religion_advisor_cost = -0.15
+	leader_cost = -0.10
+}
+
+guru_diplomatic_effort = {
+	diplomatic_reputation = 1
+	improve_relation_modifier = 0.2
+}
+
+expanded_horizons_of_mind = {
+	innovativeness_gain = 0.25
+	technology_cost = -0.05
+}
+
+paradigmatic_zealousness = {
+	land_morale = 0.10
+	naval_morale = 0.1
+}
+
+debated_nature = {
+	global_missionary_strength = 0.015
+}
+debated_nature2 = {
+	global_missionary_strength = 0.02
+}
+debated_nature3 = {
+	global_missionary_strength = 0.025
+}
+debated_nature4 = {
+	global_missionary_strength = 0.03
+}
+debated_nature5 = {
+	global_missionary_strength = 0.035
+}
+debated_nature6 = {
+	global_missionary_strength = 0.04
+}
+debated_nature7 = {
+	global_missionary_strength = 0.045
+}
+
 #Taychend
 taychend_helpless_subject = {
 	land_forcelimit_modifier = -0.75
@@ -2535,4 +2584,57 @@ feast_gods_hungry_populace = {
 
 feast_gods_hopeful_populace = {
 	yearly_doom_reduction = 1
+}
+
+###Devouring Path
+dvp_devoured_mod = {
+	church_power_modifier = -1
+}
+expand_the_dark_world_mod = {
+	missionaries = 1
+	global_missionary_strength = 0.05
+}
+chroniclers_of_secret_histories_mod = {
+	all_power_cost = -0.05
+}
+gunpowder_meditation_mod = {
+	fire_damage = 0.2
+}
+demon_warriors_mod = {
+	infantry_shock = 0.2
+}
+oni_demon_warriors_mod = {
+	infantry_shock = 0.4
+}
+the_god_eaters_mod = {
+	warscore_cost_vs_other_religion = -0.15
+}
+gifts_for_fools_mod = {
+	ae_impact = -0.2
+}
+way_of_shadows_mod = {
+	spy_offence = 0.33
+	siege_ability = 0.2
+}
+means_to_an_end_mod = {
+	diplomats = 1
+	colonists = 1
+	missionaries = 1
+	merchants = 1
+	envoy_travel_time = -0.5
+}
+above_spirits_and_man_mod = {
+	free_adm_policy = 1
+	free_dip_policy = 1
+	free_mil_policy = 1
+}
+tether_the_weak_mod = {
+	morale_damage_received = -0.15
+}
+bleed_haless_dry_mod = {
+	global_trade_goods_size_modifier = 0.1
+	production_efficiency = 0.1
+}
+dvp_temple_devcost = {
+	local_development_cost = -0.1
 }

@@ -1,6 +1,6 @@
 
 ancestral_armaments_aspect = {
-	sprite = "GFX_icons_of_the_church_icon"
+	sprite = "GFX_ancestral_armaments"
 	cost = 200
 
 	potential = {
@@ -27,7 +27,7 @@ ancestral_armaments_aspect = {
 #This is for a mission in Irkorzik MT that lowers the cost of this action to 150. Unless there is another way of doing this,
 #creating this clone if the only thing I could think of.
 ancestral_armaments_irkorzik_aspect = {
-	sprite = "GFX_icons_of_the_church_icon"
+	sprite = "GFX_ancestral_armaments"
 	cost = 150
 
 	potential = {
@@ -53,7 +53,7 @@ ancestral_armaments_irkorzik_aspect = {
 }
 
 repurposed_relics_aspect = {
-	sprite = "GFX_dissolve_monasteries_icon"
+	sprite = "GFX_repurposed_relics"
 	cost = 100
 	
 	trigger = {
@@ -82,7 +82,7 @@ repurposed_relics_aspect = {
 }			
 
 reconditioned_tools_aspect = {
-	sprite = "GFX_innovativeness_aspect"
+	sprite = "GFX_reconditioned_tools"
 	cost = 200
 	
 	trigger = {
@@ -98,7 +98,7 @@ reconditioned_tools_aspect = {
 }
 
 salvage_shipwrecks_aspect = {
-	sprite = "GFX_divorce_consort_icon"
+	sprite = "GFX_salvage_shipwrecks"
 	cost = 100
 	
 	trigger = {
@@ -124,7 +124,7 @@ salvage_shipwrecks_aspect = {
 }		
 
 recycled_jewellery_aspect = {
-	sprite = "GFX_marry_local_suitor_icon"
+	sprite = "GFX_recycled_jewellery"
 	cost = 100
 	
 	trigger = {
@@ -139,7 +139,7 @@ recycled_jewellery_aspect = {
 }
 
 trial_of_the_reforged_chain_aspect = {
-	sprite = "GFX_expel_heretics_aspect"
+	sprite = "GFX_trial_of_the_reforged_chain"
 	cost = 150
 	
 	trigger = {

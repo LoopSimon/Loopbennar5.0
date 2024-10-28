@@ -2,8 +2,8 @@ setup_vision = yes
 government = tribal
 add_government_reform = tribal_kingdom
 government_rank = 1
-primary_culture = hill_yan
-religion = lefthand_path
+primary_culture = beikling
+religion = devouring_path
 technology_group = tech_halessi
 capital = 4852
 
@@ -28,12 +28,20 @@ capital = 4852
 		birth_date = 1409.3.15
 		death_date = 1454.2.30
 		female = yes
-		culture = hill_yan
-		religion = lefthand_path
+		culture = beikling
+		religion = devouring_path
 		adm = 4
 		dip = 5
 		mil = 1
 	}
 	add_queen_personality = benevolent_personality
 	
+}
+
+1444.11.10 = { #Devouring Path setup
+	add_church_power = 200
+	set_country_flag = was_devouring_path
+	set_country_flag = gunpowder_meditation_unlocked
+	set_country_flag = demon_warriors_unlocked
+	set_country_flag = the_god_eaters_unlocked
 }
