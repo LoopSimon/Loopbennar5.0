@@ -7351,7 +7351,7 @@ artifice_invention_centipedal_chests = {
 		artificers_privilege_slots = 1
 		dragon_command_privilege_slots = 1
 		envoy_travel_time = -0.25
-		shock_damage = 0.5
+		shock_damage = 0.05
 		tec_brilliance_influence = 0.02
 	}
 	ai_will_do = {
