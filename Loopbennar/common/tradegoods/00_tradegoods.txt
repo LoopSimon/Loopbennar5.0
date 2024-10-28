@@ -15,6 +15,10 @@ grain = {
 	chance = {
 		factor = 35
 		modifier = {
+			factor = 9999999
+			has_province_flag = escann_grain_province
+		}
+		modifier = {
 			factor = 0
 			OR = {
 				has_terrain = desert
@@ -124,6 +128,10 @@ wine = {
 	chance = {
 		factor = 5
 		modifier = {
+			factor = 9999999
+			has_province_flag = escann_wine_province
+		}
+		modifier = {
 			factor = 0
 			OR = {
 				has_winter = severe_winter
@@ -190,6 +198,10 @@ wool = {
 	}
 	chance = {
 		factor = 30
+		modifier = {
+			factor = 9999999
+			has_province_flag = escann_wool_province
+		}
 		modifier = {
 			factor = 0
 			OR = {
@@ -268,6 +280,10 @@ cloth = {
 	chance = {
 		factor = 10
 		modifier = {
+			factor = 9999999
+			has_province_flag = escann_cloth_province
+		}
+		modifier = {
 			factor = 0
 			OR = {
 				has_terrain = cavern
@@ -310,6 +326,10 @@ fish = {
 	}
 	chance = {
 		factor = 20
+		modifier = {
+			factor = 9999999
+			has_province_flag = escann_fish_province
+		}
 		modifier = {
 			factor = 0
 			NOT = { has_port = yes }
@@ -379,6 +399,10 @@ fur = {
 	}
 	chance = {
 		factor = 15
+		modifier = {
+			factor = 9999999
+			has_province_flag = escann_fur_province
+		}
 		modifier = {
 			factor = 0
 			OR = {
@@ -478,6 +502,10 @@ salt = {
 	chance = {
 		factor = 5
 		modifier = {
+			factor = 9999999
+			has_province_flag = escann_salt_province
+		}
+		modifier = {
 			factor = 0
 			NOT = { has_terrain = desert }
 			NOT = { has_terrain = marsh }
@@ -527,6 +555,10 @@ naval_supplies = {
 	}
 	chance = {
 		factor = 15
+		modifier = {
+			factor = 9999999
+			has_province_flag = escann_naval_supplies_province
+		}
 		modifier = {
 			factor = 0
 			OR = {
@@ -612,6 +644,10 @@ copper = {
 	}
 	chance = {
 		factor = 15
+		modifier = {
+			factor = 9999999
+			has_province_flag = escann_copper_province
+		}
 		modifier = {
 			factor = 0
 			OR = {
@@ -852,6 +888,10 @@ iron = {
 	}
 	chance = {
 		factor = 10
+		modifier = {
+			factor = 9999999
+			has_province_flag = escann_iron_province
+		}
 		modifier = {
 			factor = 0
 			OR = {
@@ -1906,6 +1946,10 @@ livestock = {
 	chance = {
 		factor = 30
 		modifier = {
+			factor = 9999999
+			has_province_flag = escann_livestock_province
+		}
+		modifier = {
 			factor = 0
 			OR = {
 				has_terrain = glacier
@@ -2053,6 +2097,10 @@ glass = {
 	}
 	chance = {
         factor = 5
+		modifier = {
+			factor = 9999999
+			has_province_flag = escann_glass_province
+		}
         modifier = {
             factor = 0
 			NOT = { development = 18 }
@@ -2125,6 +2173,10 @@ gems = {
 	}
 	chance = {
 		factor = 5
+		modifier = {
+			factor = 9999999
+			has_province_flag = escann_gems_province
+		}
 		modifier = {
 			factor = 0
 			is_random_new_world = yes
@@ -2242,10 +2294,7 @@ gems = {
 		}
 		modifier = {
 			factor = 100
-			OR = {
-				province_id = 2948 #diamond quarry
-				province_id = 4338 #emerald spire
-			}
+			province_id = 2948 #diamond quarry
 		}
 		modifier = {
 			factor = 4
@@ -2463,10 +2512,7 @@ mithril = {
 		}
 		modifier = {
 			factor = 1000
-			OR = {
-				province_id = 4236 #Mithradhum
-				province_id = 4334 #Truesilver hollow
-			}
+			province_id = 4236
 		}
 		modifier = {
 			factor = 1000

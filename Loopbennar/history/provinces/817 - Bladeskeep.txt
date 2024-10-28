@@ -18,7 +18,7 @@ capital = ""
 
 is_city = yes
 
-
+set_province_flag = escann_livestock_province
 
 
 
