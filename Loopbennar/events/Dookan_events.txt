@@ -61,7 +61,7 @@ country_event = {
 
 		if = {
 			limit = { NOT = { has_country_modifier = slackening_modifier } }
-			add_yearly_manpower = 5
+			add_yearly_manpower = 3
 		}
 		else = {
 			add_yearly_manpower = 2
