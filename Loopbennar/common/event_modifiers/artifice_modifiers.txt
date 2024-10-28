@@ -68,10 +68,12 @@ artificer_research_bonus_machinery_society = {
 artifice_sparkdrive_rifles = {
 	is_rajput_modifier = yes
 
-	fire_damage = 0.20
+	fire_damage = 0.10
 }
 
 artifice_holy_gunblade = {
+	is_rajput_modifier = yes
+	
 	fire_damage = 0.10
 	infantry_power = 0.05
 
@@ -89,8 +91,8 @@ artifice_exo_arms = {
 artifice_war_golems = {
 	is_rajput_modifier = yes
 
-	shock_damage = 0.15
-	shock_damage_received = -0.15
+	shock_damage = 0.2
+	shock_damage_received = -0.05
 }
 
 artifice_war_golems_asra = {
@@ -104,7 +106,7 @@ artifice_war_golems_asra = {
 artifice_wandlocks = {
 	is_rajput_modifier = yes
 
-	land_morale = 0.15
+	land_morale = 0.1
 
 	#reinforce_speed = -0.05
 	#reinforce_cost_modifier = 1
@@ -119,14 +121,15 @@ artifice_bioartificed_ascension = {
 
 artifice_personal_mageshields = {
 	is_rajput_modifier = yes
-
-	shock_damage_received = -0.35
+	
+	shock_damage = 0.2
+	shock_damage_received = -0.2
 }
 
 artifice_portable_turrets = {
 	is_rajput_modifier = yes
 
-	shock_damage_received = -0.20
+	shock_damage_received = -0.075
 }
 
 artifice_arcane_blaster = {
@@ -157,7 +160,7 @@ artifice_artifice_hunting_masks = {
 
 artifice_avatar_serum = {
 	is_rajput_modifier = yes
-	infantry_power = 0.2
+	infantry_power = 0.1
 
 	#reinforce_speed = -0.075
 	#reinforce_cost_modifier = 1.5
@@ -189,8 +192,8 @@ artifice_platinum_warsuit = {
 artifice_dragonscale_plating = {
 	is_rajput_modifier = yes
 
-	shock_damage_received = -0.1
-	fire_damage_received = -0.1
+	shock_damage_received = -0.05
+	fire_damage_received = -0.05
 }
 artifice_giantshape_warframe = {
 	is_rajput_modifier = yes
@@ -218,7 +221,7 @@ artifice_dragonblood_gene_warriors = {
 	is_rajput_modifier = yes
 
 	land_morale = 0.15
-	morale_damage_received = -0.15
+	morale_damage_received = -0.1
 }
 
 artifice_elemental_gunpowder = {
@@ -232,7 +235,7 @@ artifice_elemental_gunpowder = {
 artifice_codorran_powered_exoskeleton = {
 	is_rajput_modifier = yes
 
-	infantry_power = 0.2
+	infantry_power = 0.15
 }
 
 artifice_controlled_rage_serum = {
@@ -260,7 +263,9 @@ artifice_pearl_cultivator_bonus = {
 }
 
 artifice_power_fists = {
-	shock_damage = 0.15
+	is_rajput_modifier = yes
+	
+	shock_damage = 0.2
 }
 
 artifice_vg_musket_precursor_edition = {
@@ -271,10 +276,4 @@ artifice_vg_musket_precursor_edition = {
 
 artifice_ivory_tools = {
 	local_development_cost = -0.05
-}
-
-artifice_bramble_burners = {
-	is_rajput_modifier = yes
-	fire_damage = 0.1
-	fire_damage_received = 0.05
 }
