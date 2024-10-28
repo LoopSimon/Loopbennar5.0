@@ -935,7 +935,8 @@ skilled_cartographers = {
 		full_idea_group = exploration_ideas
 	}	
 	
-	global_naval_engagement_modifier = 0.2
+	naval_morale = 0.1
+	allowed_marine_fraction = 0.1
 	
 	effect = {}
 	removed_effect = {}
