@@ -1,7 +1,8 @@
 
-owner = R38
-controller = R38
+owner = Y51
+controller = Y51
 add_core = R38
+add_core = Y51
 add_core = R90
 culture = chengrong
 religion = high_philosophy
