@@ -1,4 +1,5 @@
 namespace = flavor_loopgeneric
+
 country_event = { #Military Direction
 	id = flavor_loopgeneric.1
 	title = flavor_generic.1.t
@@ -210,4 +211,35 @@ country_event = { #Economic Direction
 			}
 			
 	}
+	
+	country_event = {
+	id = flavor_loopgeneric.6
+	title = diggy.108.t
+	desc = loopgeneric.6
+	picture = ARTWORK_eventPicture
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+	
+		has_country_flag = dwarovar_remnant
+		
+		NOT = { has_country_flag = dwarovar_claimer_setup }
+		NOT = {
+			tag = F47
+		}
+	}
+	
+	option = {
+        name = loopgeneric.6.a
+        ai_chance = { factor = 100 }
+		add_country_modifier = {
+			name = loop_remnant_spiner
+			duration = 18250
+		}
+		set_country_flag = dwarovar_claimer_setup
+	}
+}
+	
 }
