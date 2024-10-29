@@ -10,6 +10,7 @@ monarchy_mechanic = {
 		enables_aristocratic_idea_group = yes
 	}
 	modifiers = {
+		max_absolutism = 40
 		nobles_influence_modifier = 0.05
 
 		# Anbennar
