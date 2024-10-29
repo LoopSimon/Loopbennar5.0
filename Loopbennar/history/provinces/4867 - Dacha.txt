@@ -1,8 +1,8 @@
-owner = Y05
-controller = Y05
+owner = Y13
+controller = Y13
 add_core = Y05
 add_core = Y13
-culture = jiangszun
+culture = river_yan
 religion = high_philosophy
 
 hre = no
