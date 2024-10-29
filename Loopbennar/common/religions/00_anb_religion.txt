@@ -21,6 +21,7 @@ cannorian = {
 			ravelian
 		}
 		country = {
+			infantry_power = 0.1
 			tolerance_heathen = 2
 			stability_cost_modifier = -0.15
 		}
@@ -7057,7 +7058,7 @@ halessi = {
 					limit = {
 						has_church_aspect = hebat_tana_aspect
 					}
-					add_yearly_manpower = 2.0
+					add_yearly_manpower = 1.0
 					hidden_effect = {
 						country_event = {
 							id = mystic_accord_events.201
