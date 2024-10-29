@@ -239,6 +239,29 @@ country_event = { #Economic Direction
 			duration = 18250
 		}
 		set_country_flag = dwarovar_claimer_setup
+		}
+	}
+	
+	country_event = {
+	id = flavor_loopgeneric.7
+	title = diggy.121.t
+	desc = diggy.121.d
+	picture = ARTWORK_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_country_modifier = loop_remnant_spiner
+	}
+
+	immediate = {
+		remove_country_modifier = loop_remnant_spiner
+	}
+	
+	# welcome to the dwarovar. Send your tears to the discord.
+	option = {
+        name = flavor_loopgeneric.7.a
+        ai_chance = { factor = 10 }
 	}
 }
 	
