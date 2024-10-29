@@ -48,9 +48,7 @@ marrhold_dwarovar_tunnel = {
 	can_use_modifiers_trigger = {}
 
 	#can our country upgrade it?
-	can_upgrade_trigger = {
-		NOT = { 4065 = { has_great_project = { type = dwarovar_marrhold_tunnel } has_construction = dwarovar_marrhold_tunnel  } }
-	}
+	can_upgrade_trigger = { NOT = { 4065 = { has_great_project = { type = dwarovar_marrhold_tunnel } } } }
 
 	#can our country keep it or is it destroyed when we get hold of it?
 	keep_trigger = {}
@@ -197,9 +195,7 @@ dwarovar_marrhold_tunnel = {
 	can_use_modifiers_trigger = {}
 
 	#can our country upgrade it?
-	can_upgrade_trigger = {
-		NOT = { 4097 = { has_great_project = { type = marrhold_dwarovar_tunnel } has_construction = marrhold_dwarovar_tunnel  } }
-	}
+	can_upgrade_trigger = { NOT = { 4097 = { has_great_project = { type = marrhold_dwarovar_tunnel } } } }
 
 	#can our country keep it or is it destroyed when we get hold of it?
 	keep_trigger = {}
@@ -441,7 +437,7 @@ redrushes_climb = {
 		}
 
 		#what effects happen when this tier is achieved
-		on_upgraded = {	
+		on_upgraded = {
 		}
 	}
 
@@ -501,7 +497,7 @@ redrushes_climb = {
 		}
 
 		#what effects happen when this tier is achieved
-		on_upgraded = {		
+		on_upgraded = {
 		}
 	}
 }
@@ -621,7 +617,7 @@ spoorland_lift = {
 		}
 
 		#what effects happen when this tier is achieved
-		on_upgraded = {			
+		on_upgraded = {
 		}
 	}
 
@@ -651,7 +647,7 @@ spoorland_lift = {
 		}
 
 		#what effects happen when this tier is achieved
-		on_upgraded = {			
+		on_upgraded = {
 		}
 	}
 
@@ -681,7 +677,7 @@ spoorland_lift = {
 		}
 
 		#what effects happen when this tier is achieved
-		on_upgraded = {			
+		on_upgraded = {
 		}
 	}
 
@@ -711,7 +707,7 @@ spoorland_lift = {
 		}
 
 		#what effects happen when this tier is achieved
-		on_upgraded = {			
+		on_upgraded = {
 		}
 	}
 }
@@ -861,7 +857,7 @@ walkway_of_thorns = {
 		}
 
 		#what effects happen when this tier is achieved
-		on_upgraded = {		
+		on_upgraded = {
 		}
 	}
 
@@ -891,7 +887,7 @@ walkway_of_thorns = {
 		}
 
 		#what effects happen when this tier is achieved
-		on_upgraded = {			
+		on_upgraded = {
 		}
 	}
 
@@ -921,7 +917,7 @@ walkway_of_thorns = {
 		}
 
 		#what effects happen when this tier is achieved
-		on_upgraded = {			
+		on_upgraded = {
 		}
 	}
 }
@@ -1071,7 +1067,7 @@ arca_noruin = {
 		}
 
 		#what effects happen when this tier is achieved
-		on_upgraded = {		
+		on_upgraded = {
 		}
 	}
 
@@ -1101,7 +1097,7 @@ arca_noruin = {
 		}
 
 		#what effects happen when this tier is achieved
-		on_upgraded = {			
+		on_upgraded = {
 		}
 	}
 
@@ -1131,7 +1127,7 @@ arca_noruin = {
 		}
 
 		#what effects happen when this tier is achieved
-		on_upgraded = {			
+		on_upgraded = {
 		}
 	}
 }
@@ -1281,7 +1277,7 @@ arca_venaan = {
 		}
 
 		#what effects happen when this tier is achieved
-		on_upgraded = {			
+		on_upgraded = {
 		}
 	}
 
@@ -1311,7 +1307,7 @@ arca_venaan = {
 		}
 
 		#what effects happen when this tier is achieved
-		on_upgraded = {			
+		on_upgraded = {
 		}
 	}
 
@@ -1341,7 +1337,7 @@ arca_venaan = {
 		}
 
 		#what effects happen when this tier is achieved
-		on_upgraded = {			
+		on_upgraded = {
 		}
 	}
 }
@@ -1491,7 +1487,7 @@ arbeloch_ascensor = {
 		}
 
 		#what effects happen when this tier is achieved
-		on_upgraded = {			
+		on_upgraded = {
 		}
 	}
 
@@ -1521,7 +1517,7 @@ arbeloch_ascensor = {
 		}
 
 		#what effects happen when this tier is achieved
-		on_upgraded = {		
+		on_upgraded = {
 		}
 	}
 
@@ -1695,7 +1691,7 @@ the_wormway = {
 		}
 
 		#what effects happen when this tier is achieved
-		on_upgraded = {		
+		on_upgraded = {
 		}
 	}
 
@@ -1724,7 +1720,7 @@ the_wormway = {
 		}
 
 		#what effects happen when this tier is achieved
-		on_upgraded = {		
+		on_upgraded = {
 		}
 	}
 
@@ -1753,7 +1749,7 @@ the_wormway = {
 		}
 
 		#what effects happen when this tier is achieved
-		on_upgraded = {			
+		on_upgraded = {
 		}
 	}
 }
@@ -1817,8 +1813,6 @@ deepwoods_fey_portal = {
 		4997 = { add_canal = domandrod_fey_portal }
 		4998 = { add_canal = domandrod_fey_portal }
 		4999 = { add_canal = domandrod_fey_portal }
-
-		show_ambient_object = deepwoods_fey_portal_object
 	}
 	
 	#what to do when it's destroyed
@@ -1851,8 +1845,6 @@ deepwoods_fey_portal = {
 		4997 = { remove_canal = domandrod_fey_portal }
 		4998 = { remove_canal = domandrod_fey_portal }
 		4999 = { remove_canal = domandrod_fey_portal }
-
-		hide_ambient_object = deepwoods_fey_portal_object
 	}
 
 	#can our country use it?
@@ -1906,7 +1898,7 @@ deepwoods_fey_portal = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 10000
+			factor = 9000
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -1937,7 +1929,7 @@ deepwoods_fey_portal = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 10000
+			factor = 9000
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -1968,7 +1960,7 @@ deepwoods_fey_portal = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 10000
+			factor = 9000
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -2051,8 +2043,6 @@ domandrod_fey_portal = {
 		4997 = { add_canal = domandrod_fey_portal }
 		4998 = { add_canal = domandrod_fey_portal }
 		4999 = { add_canal = domandrod_fey_portal }
-
-		show_ambient_object = domandrod_fey_portal_object
 	}
 	
 	#what to do when it's destroyed
@@ -2085,8 +2075,6 @@ domandrod_fey_portal = {
 		4997 = { remove_canal = domandrod_fey_portal }
 		4998 = { remove_canal = domandrod_fey_portal }
 		4999 = { remove_canal = domandrod_fey_portal }
-
-		hide_ambient_object = domandrod_fey_portal_object
 	}
 
 	#can our country use it?
@@ -2140,7 +2128,7 @@ domandrod_fey_portal = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 10000
+			factor = 9000
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -2171,7 +2159,7 @@ domandrod_fey_portal = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 10000
+			factor = 9000
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -2202,7 +2190,7 @@ domandrod_fey_portal = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 10000
+			factor = 9000
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -2806,14 +2794,14 @@ domandrod_winter_gate = {
 	
 	#what to do when it's built
 	on_built = {
-		3288 = {
+		1811 = {
 			add_canal = domandrod_winter_gate
 		}
 	}
 	
 	#what to do when it's destroyed
 	on_destroyed = {
-		3288 = {
+		1811 = {
 			remove_canal = domandrod_winter_gate
 		}
 	}
@@ -3295,7 +3283,7 @@ zabyostlar_canal = {
 
 		#cost to upgrade to this level (0 for tier 0)
 		cost_to_upgrade = {
-			factor = 5000
+			factor = 9000
 		}
 
 		#what modifiers are added to the province when we have this project here on this tier
@@ -3501,7 +3489,7 @@ kozuurigur_canal = {
 }
 
 grand_archives = {
-	start = 5256
+	start = 5257
 
 	date = 1.1.1
 
@@ -3528,75 +3516,35 @@ grand_archives = {
 	}
 
 	can_use_modifiers_trigger = {
-		if = { 
-			limit = {
-				owner = {
-					OR = {
-						tag = I90
-						was_tag = I90 
-					}
-				}
+		religion_group = triunic_lake
+		NOT = { religion = yudunyovi }
+		OR = {
+		        has_owner_religion = yes
+				owner = { has_harmonized_with = ROOT }
 			}
-			owner = { 
-				custom_trigger_tooltip = {
-					tooltip = I90_can_use_archive_tt_2
-					has_country_flag = I90_can_use_archive 
-				}
-			}
-		}
-		else = {
-			AND = {
-				religion_group = triunic_lake
-				NOT = { religion = yudunyovi }
-				OR = {
-					has_owner_religion = yes
-					owner = { has_harmonized_with = ROOT }
-				}
-				culture_group = triunic
-				owner = { 
-					AND = {
-					culture_group = triunic
-					religion_group = triunic_lake
-					}
-				}
-			}
-		}
+		culture_group = triunic
+		owner = { 
+		       AND = {
+			   culture_group = triunic
+			   religion_group = triunic_lake
+			   }
+			   }
 	}
 
 	can_upgrade_trigger = {
-		if = { 
-			limit = {
-				owner = {
-					OR = {
-						tag = I90
-						was_tag = I90 
-					}
-				}
+		religion_group = triunic_lake
+		NOT = { religion = yudunyovi }
+		OR = {
+		        has_owner_religion = yes
+				owner = { has_harmonized_with = ROOT }
 			}
-			owner = { 
-				custom_trigger_tooltip = {
-					tooltip = I90_can_use_archive_tt_2
-					has_country_flag = I90_can_use_archive 
-				}
-			}
-		}
-		else = {
-			AND = {
-				religion_group = triunic_lake
-				NOT = { religion = yudunyovi }
-				OR = {
-					has_owner_religion = yes
-					owner = { has_harmonized_with = ROOT }
-				}
-				culture_group = triunic
-				owner = { 
-					AND = {
-					culture_group = triunic
-					religion_group = triunic_lake
-					}
-				}
-			}
-		}
+		culture_group = triunic
+		owner = { 
+		       AND = {
+			   culture_group = triunic
+			   religion_group = triunic_lake
+			   }
+			   }
 	}
 
 	keep_trigger = {
@@ -3686,7 +3634,7 @@ grand_archives = {
 		}
 
 		cost_to_upgrade = {
-			factor = 5000
+			factor = 9000
 		}
 
 		province_modifiers = {
@@ -3856,7 +3804,7 @@ amber_palace = {
 		}
 
 		cost_to_upgrade = {
-			factor = 5000
+			factor = 9000
 		}
 
 		province_modifiers = {
@@ -3909,31 +3857,31 @@ black_embassy = {
 	can_use_modifiers_trigger = {
 		religion_group = triunic_lake
 		OR = {
-		       has_owner_religion = yes
-			owner = { has_harmonized_with = ROOT }
-		}
+		        has_owner_religion = yes
+				owner = { has_harmonized_with = ROOT }
+			}
 		culture_group = triunic
 		owner = { 
-			AND = {
+		       AND = {
 			   culture_group = triunic
 			   religion_group = triunic_lake
-			}
-		}
+			   }
+			   }
 	}
 
 	can_upgrade_trigger = {
 		religion_group = triunic_lake
 		OR = {
-			has_owner_religion = yes
-			owner = { has_harmonized_with = ROOT }
-		}
+		        has_owner_religion = yes
+				owner = { has_harmonized_with = ROOT }
+			}
 		culture_group = triunic
 		owner = { 
-		    AND = {
-				culture_group = triunic
-				religion_group = triunic_lake
-			}
-		}
+		       AND = {
+			   culture_group = triunic
+			   religion_group = triunic_lake
+			   }
+			   }
 	}
 
 	keep_trigger = {
@@ -3982,7 +3930,6 @@ black_embassy = {
 		country_modifiers = {
 			diplomatic_reputation = 1
 			diplomatic_upkeep = 1
-			monthly_kalsyto_influence = 0.02
 		}
 
 		on_upgraded = {
@@ -4010,7 +3957,6 @@ black_embassy = {
 			diplomatic_reputation = 1
 			diplomatic_upkeep = 1
 			governing_capacity_modifier = 0.075
-			monthly_kalsyto_influence = 0.05
 		}
 
 		on_upgraded = {
@@ -4025,7 +3971,7 @@ black_embassy = {
 		}
 
 		cost_to_upgrade = {
-			factor = 5000
+			factor = 9000
 		}
 
 		province_modifiers = {
@@ -4040,7 +3986,6 @@ black_embassy = {
 			diplomatic_reputation = 2
 			diplomatic_upkeep = 1
 			governing_capacity_modifier = 0.15
-			monthly_kalsyto_influence = 0.1
 		}
 
 		on_upgraded = {
@@ -4195,7 +4140,7 @@ temple_kodave = {
 		}
 
 		cost_to_upgrade = {
-			factor = 5000
+			factor = 9000
 		}
 
 		province_modifiers = {
@@ -4230,7 +4175,7 @@ glyphs_irdaeos = {
 
 	build_cost = 0
 
-	can_be_moved = no
+	can_be_moved = yes
 
 	starting_tier = 0
 
@@ -4247,29 +4192,19 @@ glyphs_irdaeos = {
 	}
 
 	can_use_modifiers_trigger = {
-		if = {
-			limit = {
-				NOT = { owner = { has_country_flag = H90_glyphs_irdaeos_bypass } }
-			}
-			OR = {
-				religion_group = centaur_religion
-				religion = yudunyovi
-			}
-			has_owner_religion = yes
+		OR = {
+			religion_group = centaur_religion
+			religion = yudunyovi
 		}
+		has_owner_religion = yes
 	}
 
 	can_upgrade_trigger = {
-		if = {
-			limit = {
-				NOT = { owner = { has_country_flag = H90_glyphs_irdaeos_bypass } }
-			}
-			OR = {
-				religion_group = centaur_religion
-				religion = yudunyovi
-			}
-			has_owner_religion = yes
+		OR = {
+			religion_group = centaur_religion
+			religion = yudunyovi
 		}
+		has_owner_religion = yes
 	}
 
 	keep_trigger = {
@@ -4360,7 +4295,7 @@ glyphs_irdaeos = {
 		}
 
 		cost_to_upgrade = {
-			factor = 5000
+			factor = 9000
 		}
 
 		province_modifiers = {
@@ -4411,63 +4346,31 @@ cloud_ruins = {
 	}
 
 	can_use_modifiers_trigger = {
-		if = {
-			limit = {
-				owner = {
-					OR = {
-						tag = H81
-						was_tag = H81
-					}
-				}
+		religion_group = giantkin
+		has_owner_religion = yes
+		OR = {
+			AND = {
+				culture_group = ogre
+				owner = { culture_group = ogre }
 			}
-			custom_trigger_tooltip = {
-				tooltip = mb_mag_ruins_tt
-				owner = { has_country_flag = mb_mag_ruins_flg }
-			}
-		}
-		else = {
-			religion_group = giantkin
-			has_owner_religion = yes
-			OR = {
-				AND = {
-					culture_group = ogre
-					owner = { culture_group = ogre }
-				}
-				AND = {
-					culture_group = giantkind
-					owner = { culture_group = giantkind }
-				}
+			AND = {
+				culture_group = giantkind
+				owner = { culture_group = giantkind }
 			}
 		}
 	}
 
 	can_upgrade_trigger = {
-		if = {
-			limit = {
-				owner = {
-					OR = {
-						tag = H81
-						was_tag = H81
-					}
-				}
+		religion_group = giantkin
+		has_owner_religion = yes
+		OR = {
+			AND = {
+				culture_group = ogre
+				owner = { culture_group = ogre }
 			}
-			custom_trigger_tooltip = {
-				tooltip = mb_mag_ruins_tt
-				owner = { has_country_flag = mb_mag_ruins_flg }
-			}
-		}
-		else = {
-			religion_group = giantkin
-			has_owner_religion = yes
-			OR = {
-				AND = {
-					culture_group = ogre
-					owner = { culture_group = ogre }
-				}
-				AND = {
-					culture_group = giantkind
-					owner = { culture_group = giantkind }
-				}
+			AND = {
+				culture_group = giantkind
+				owner = { culture_group = giantkind }
 			}
 		}
 	}
@@ -4560,7 +4463,7 @@ cloud_ruins = {
 		}
 
 		cost_to_upgrade = {
-			factor = 5000
+			factor = 9000
 		}
 
 		province_modifiers = {
@@ -4611,46 +4514,19 @@ warmrock_bazar = {
 
 	can_use_modifiers_trigger = {
 		if = {
-			limit = { 
-				NOT = { 
-					owner = { 
-						OR = {
-							has_country_flag = J53_warmrock_bazaar
-							has_country_flag = H90_warmrock_bazar_bypass
-						} 
-					} 
-				}
-			}
+			limit = { NOT = { owner = { has_country_flag = J53_warmrock_bazaar } } }
 			has_owner_culture = yes
 		}
-		if = {
-			limit = { 
-				NOT = { 
-					owner = { 
-						has_country_flag = H90_warmrock_bazar_bypass
-					} 
-				}
-			}
-			OR = {
-				culture_group = triunic
-				culture_group = centaur
-				culture_group = ogre
-			}
+		OR = {
+			culture_group = triunic
+			culture_group = centaur
+			culture_group = ogre
 		}
 	}
 
 	can_upgrade_trigger = {
 		if = {
-			limit = { 
-				NOT = { 
-					owner = { 
-						OR = {
-							has_country_flag = J53_warmrock_bazaar
-							has_country_flag = H90_warmrock_bazar_bypass
-						}
-					}
-				}
-			}
+			limit = { NOT = { owner = { has_country_flag = J53_warmrock_bazaar } } }
 			has_owner_culture = yes
 		}
 		OR = {
@@ -4746,7 +4622,7 @@ warmrock_bazar = {
 		}
 
 		cost_to_upgrade = {
-			factor = 5000
+			factor = 9000
 		}
 
 		province_modifiers = {
