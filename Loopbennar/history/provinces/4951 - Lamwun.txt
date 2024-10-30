@@ -2,7 +2,7 @@ owner = Z58
 controller = Z58
 add_core = Z58
 add_claim = Y23
-culture = forest_yan
+culture = naamjyut
 religion = accretive_path
 
 hre = no

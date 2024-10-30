@@ -1,7 +1,7 @@
 owner = Y22
 controller = Y22
 add_core = Y22
-culture = river_yan
+culture = jiangszun
 religion = accretive_path
 
 
