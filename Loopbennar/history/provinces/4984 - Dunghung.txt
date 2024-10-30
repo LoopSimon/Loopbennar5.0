@@ -2,7 +2,8 @@ owner = Y23
 controller = Y23
 add_core = Y23
 culture = forest_yan
-religion = righteous_path
+religion = accretive_path
+
 
 hre = no
 

@@ -2,7 +2,7 @@ owner = Z59
 controller = Z59
 add_core = Z59
 culture = coastal_yan
-religion = righteous_path
+religion = accretive_path
 
 hre = no
 

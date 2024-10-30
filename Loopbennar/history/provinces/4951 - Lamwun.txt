@@ -3,7 +3,7 @@ controller = Z58
 add_core = Z58
 add_claim = Y23
 culture = forest_yan
-religion = righteous_path
+religion = accretive_path
 
 hre = no
 

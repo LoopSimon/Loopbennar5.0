@@ -3,7 +3,8 @@ controller = Y13
 add_core = Y05
 add_core = Y13
 culture = river_yan
-religion = high_philosophy
+religion = accretive_path
+
 
 hre = no
 

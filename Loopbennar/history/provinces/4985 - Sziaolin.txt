@@ -2,7 +2,8 @@ owner = Y22
 controller = Y22
 add_core = Y22
 culture = river_yan
-religion = righteous_path
+religion = accretive_path
+
 
 hre = no
 
