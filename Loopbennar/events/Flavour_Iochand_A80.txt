@@ -12,6 +12,7 @@ country_event = {
 	option = { #Queen Orra
 		name = iochand.1.a
 		ai_chance = { factor = 0 }
+		switchiochand = yes
 		define_ruler = {
 					name = "Orra"
 					dynasty = "síl Iochand"
@@ -35,6 +36,7 @@ country_event = {
 	option = { #King Fizwick IV
 		name = iochand.1.b
 		ai_chance = { factor = 0 }
+		switchiochand = yes
 		define_ruler = {
 					name = "Fizwick IV"
 					dynasty = "síl Iochand"

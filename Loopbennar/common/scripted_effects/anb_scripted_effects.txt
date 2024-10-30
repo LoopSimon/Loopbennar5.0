@@ -6155,6 +6155,54 @@ anb_remove_extra_mage_tower_dev = {
 	}
 }
 
+switchiochand = {
+	123 = {
+		change_culture = creek_gnome
+	}
+	if = {
+		limit = {
+			A80 = {
+				exists = yes
+				NOT = { has_country_flag = switchiochand_done }
+			}
+		}
+		A80 = {
+			change_primary_culture = creek_gnome
+			add_accepted_culture = creek_gnome
+			add_accepted_culture = iochander
+			add_accepted_culture = low_lorentish
+			override_country_name = IOCHANDER_BIRARCHY
+			set_country_flag = switchiochand_done
+		}
+		hidden_effect = {
+			128 = {
+				change_province_name = "Ronroy" 
+			}
+		}
+	}
+	if = {
+		limit = {
+			A80 = {
+				exists = no
+				NOT = { has_country_flag = switchiochand_done }
+			}
+		}
+		723 = {
+			change_province_name = "Ronroy"
+		}
+		hidden_effect = {
+			A80 = {
+				change_primary_culture = creek_gnome
+				add_accepted_culture = creek_gnome
+				add_accepted_culture = iochander
+				add_accepted_culture = low_lorentish
+				override_country_name = IOCHANDER_BIRARCHY
+				set_country_flag = switchiochand_done
+			}
+		}
+	}
+}
+
 switch_bayvic_to_bayvek = {
 	723 = {
 		change_culture = city_goblin
