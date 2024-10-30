@@ -1,8 +1,7 @@
-owner = Y53
-controller = Y53
+owner = R38
+controller = R38
 add_claim = R38
 add_core = Y54
-add_core = Y53
 culture = risbeko
 religion = mystic_accord
 

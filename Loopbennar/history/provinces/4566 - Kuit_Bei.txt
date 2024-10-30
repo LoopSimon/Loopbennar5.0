@@ -1,5 +1,5 @@
-owner = Y54
-controller = Y54
+owner = R38
+controller = R38
 add_claim = R38
 add_core = Y54
 culture = risbeko
