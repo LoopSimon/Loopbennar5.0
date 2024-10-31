@@ -9751,7 +9751,7 @@ A98_ideas = {
 		core_creation = -0.1
 	}
 	A98_order_of_long_lance = {
-		land_morale = -0.1
+		land_morale = 0.1
 	}
 	A98_opportunistic_pragmatism = {
 		unjustified_demands = -0.1
