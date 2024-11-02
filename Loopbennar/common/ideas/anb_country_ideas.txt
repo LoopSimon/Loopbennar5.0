@@ -15237,7 +15237,7 @@ H75_ideas = {
 		global_regiment_cost = -0.1
 	}
 	H75_idea_2 = {
-		discipline = 0.5
+		discipline = 0.05 #Loop-Classic
 	}
 	H75_idea_3 = {
 		defensiveness = 0.2
