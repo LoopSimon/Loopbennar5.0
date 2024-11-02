@@ -730,7 +730,6 @@ estate_artificers_organization_feiten_shuimu_cadre = {
 			movement_speed_in_fleet_modifier = 2
 			allowed_rajput_fraction = 0.025
 			naval_maintenance_modifier = 0.5
-			fire_damage_received = 0.2 # Balloons/airships blowing/burning up result in lots of collateral damage
 		}
 	}
 	# 0% to 50% over cap
@@ -755,7 +754,6 @@ estate_artificers_organization_feiten_shuimu_cadre = {
 			movement_speed_in_fleet_modifier = 1.5
 			allowed_rajput_fraction = 0.025
 			naval_maintenance_modifier = 0.5
-			fire_damage_received = 0.2
 		}
 	}
 	# 50% to 100% over cap
@@ -780,7 +778,6 @@ estate_artificers_organization_feiten_shuimu_cadre = {
 			movement_speed_in_fleet_modifier = 1
 			allowed_rajput_fraction = 0.025
 			naval_maintenance_modifier = 0.5
-			fire_damage_received = 0.2
 		}
 	}
 	# >100% over cap
@@ -799,7 +796,6 @@ estate_artificers_organization_feiten_shuimu_cadre = {
 			movement_speed_in_fleet_modifier = 0.5
 			allowed_rajput_fraction = 0.025
 			naval_maintenance_modifier = 0.5
-			fire_damage_received = 0.2
 		}
 	}
 	ai_will_do = {
