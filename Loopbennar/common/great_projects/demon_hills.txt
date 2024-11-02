@@ -24,7 +24,7 @@ azjakuma_shinukhorchi_the_highest_fire = {
 						culture = horned_ogre
 						AND = {
 							has_owner_religion = yes
-							religion = lefthand_path
+							religion = devouring_path
 						}
 					}
 			}
@@ -39,7 +39,7 @@ azjakuma_shinukhorchi_the_highest_fire = {
 						culture = horned_ogre
 						AND = {
 							has_owner_religion = yes
-							religion = lefthand_path
+							religion = devouring_path
 						}
 					}
 			}
@@ -179,7 +179,7 @@ azjakuma_ajgriijarul_the_bright_claw = {
 						culture = horned_ogre
 						AND = {
 							has_owner_religion = yes
-							religion = lefthand_path
+							religion = devouring_path
 						}
 					}
 			}
@@ -194,7 +194,7 @@ azjakuma_ajgriijarul_the_bright_claw = {
 						culture = horned_ogre
 						AND = {
 							has_owner_religion = yes
-							religion = lefthand_path
+							religion = devouring_path
 						}
 					}
 			}
@@ -333,7 +333,7 @@ azjakuma_chumijemoya_the_silent_mist = {
 						culture = horned_ogre
 						AND = {
 							has_owner_religion = yes
-							religion = lefthand_path
+							religion = devouring_path
 						}
 					}
 			}
@@ -348,7 +348,7 @@ azjakuma_chumijemoya_the_silent_mist = {
 						culture = horned_ogre
 						AND = {
 							has_owner_religion = yes
-							religion = lefthand_path
+							religion = devouring_path
 						}
 					}
 			}
@@ -492,7 +492,7 @@ azkajuma_kabiurgarko_the_golden_gates = {
 						culture = horned_ogre
 						AND = {
 							has_owner_religion = yes
-							religion = lefthand_path
+							religion = devouring_path
 						}
 					}
 			}
@@ -507,7 +507,7 @@ azkajuma_kabiurgarko_the_golden_gates = {
 						culture = horned_ogre
 						AND = {
 							has_owner_religion = yes
-							religion = lefthand_path
+							religion = devouring_path
 						}
 					}
 			}
