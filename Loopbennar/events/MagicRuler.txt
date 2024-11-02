@@ -13999,7 +13999,7 @@ country_event = {
 			# }
 			# define_ruler_to_general = {
 				# fire = 3
-				# shock = 11
+				# shock = 8
 				# manuever = 2
 				# siege = 8
 				# #
