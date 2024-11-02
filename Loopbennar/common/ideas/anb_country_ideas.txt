@@ -15237,7 +15237,7 @@ H75_ideas = {
 		global_regiment_cost = -0.1
 	}
 	H75_idea_2 = {
-		global_unrest = -2
+		discipline = 0.5
 	}
 	H75_idea_3 = {
 		defensiveness = 0.2
