@@ -912,7 +912,7 @@ port_emperor = {
 		country_modifiers = {
 			naval_maintenance_modifier = -0.10
 			naval_forcelimit_modifier = 0.10
-			max_flagships = 1
+			naval_morale = 0.10
 		}
 		on_upgraded = {
 		}
