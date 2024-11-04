@@ -2671,6 +2671,10 @@ G79_liberator_of_taychendi = {
 mb_made_mask_opinion = {
 	opinion = -200
 }
+#themarenn
+rejected_themarenn_claims = {
+	opinion = -100
+	yearly_decay = 2
 
 #Maghargma
 I90_happy_ogre = {

@@ -330,6 +330,7 @@ monarchy = {
 				representation_of_the_crown_reform
 
 				#Anbennar
+				imperial_esmari_circle
 				restructured_dhenijansari_court_reform
 				jaherian_administration
 				jaddari_mobile_centralization

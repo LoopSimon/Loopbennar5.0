@@ -311,6 +311,23 @@ surakes_desert_provinces = {
 mothers_sorrow_group = {
 	462 503 463 546 464 466 467 468 469 471 6088 472 473 474 475 6089 476 477 478 479 480 6090 481 482 483 484 486 5478 5479 5481
 }
+# themarenn mt
+esmar_river_group = {
+	328 281 297 44 280 916 274 333 267 266 260 911 262 254 908 234
+}
+
+logrodaine_river_group = {
+	266 268 271 909 901 309 308 912
+}
+
+hehaine_river_group = {
+	268 270 263 356 353 352 351 261 350
+}
+
+origin_province_group = {
+	328 912 261 350
+}
+
 
 # Castanor MT
 white_walls = {

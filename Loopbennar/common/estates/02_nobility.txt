@@ -276,6 +276,13 @@ estate_nobles = {
 	# }
 	
 	#Alternative naming of estates
+	custom_name = { #esmari stewards
+		desc = estate_esmari_stewards
+		trigger = {
+			tag = A95
+			has_country_flag = A95_esmari_stewards_name
+		}
+	}
 	custom_name = {
 		desc = estate_imperial_nobility
 		trigger = {
@@ -540,6 +547,7 @@ estate_nobles = {
 		estate_nobles_nobility_primacy
 		estate_nobles_officer_corp
 		estate_nobles_jiangdu_officer_corp # Jiangdu version
+		estate_nobles_themarenn_sailors #themarenn levies
 		estate_nobles_levies
 		estate_nobles_advisors
 		estate_nobles_right_of_counsel

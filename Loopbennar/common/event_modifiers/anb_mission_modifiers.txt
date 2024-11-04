@@ -30804,6 +30804,269 @@ G79_taking_a_stand = {
 	global_manpower = 5
 }
 
+#themarenn
+recent_river_party = {}
+autonomy_of_the_sweetcastles = {
+	min_local_autonomy = 90
+	local_fort_maintenance_modifier = -0.5
+	nobles_loyalty_modifier = -0.1
+	nobles_influence_modifier = 0.1
+}
+vernellian_treaty = {
+	local_tax_modifier = -0.35
+	local_production_efficiency = -0.35
+	province_trade_power_modifier = -0.35
+	local_manpower_modifier = -0.5
+	nobles_loyalty_modifier = 0.05
+}
+seat_of_the_grand_duchy_of_esmaria = {
+	imperial_authority = 0.10
+}
+way_of_the_esmayral = {
+	female_advisor_chance = 0.15
+	diplomatic_annexation_cost = -0.05
+}
+the_right_of_succession = {
+	governing_capacity_modifier = 0.10
+	diplomatic_annexation_cost = -0.10
+	monthly_heir_claim_increase = 0.2
+}
+ryal_connection = {
+	local_sailors = 600
+}
+canal_provisions_a95 = {
+	local_build_time = 10
+	local_build_cost = 10
+	local_manpower_modifier = -0.5
+	local_development_cost = -0.05
+}
+origin_of_the_esmar = {
+	legitimacy = 1
+	prestige = 1
+}
+origin_of_the_hehaine = {
+	local_tax_modifier = 0.10
+	improve_relation_modifier = 0.10
+}
+origin_of_the_logdoraine = {
+	local_production_efficiency = 0.25
+	development_cost_in_primary_culture = -0.05
+}
+revoked_priviligia_2 = {
+	local_governing_cost = -0.30
+	local_fort_maintenance_modifier = -0.15
+}
+supporting_the_bastard = {
+	advisor_pool = -1
+}
+treaty_of_themarenn_local = {
+	diplomatic_reputation = 1
+}
+treaty_of_themarenn_imperial = {
+	imperial_authority_value = 0.10
+}
+cleansing_infernal_cultists = {
+	global_missionary_strength = 0.02
+}
+slow_great_palace_lake = {
+	local_great_project_upgrade_cost = 0.2
+}
+fast_great_palace_lake = {
+	local_great_project_upgrade_cost = 0.5
+}
+stewards_of_the_rivers = {
+	prestige_decay = -0.01
+}
+home_of_the_river_reavers_1 = {
+	has_marines = yes
+	allowed_marine_fraction = 0.15
+	global_manpower_modifier = -0.10
+}
+home_of_the_river_reavers_2 = {
+	has_marines = yes
+	allowed_marine_fraction = 0.30
+	sailors_recovery_speed = 0.10
+	global_manpower_modifier = -0.20
+	infantry_cost = 0.10
+}
+home_of_the_river_reavers_3 = {
+	has_marines = yes
+	allowed_marine_fraction = 0.50
+	sailors_recovery_speed = 0.20
+	global_manpower_modifier = -0.30
+	infantry_cost = 0.20
+}
+river_reavers_1 = {
+	is_marine_modifier = yes
+	regiment_manpower_usage = -0.10
+	fire_damage = 0.10
+	land_attrition = -0.15
+}
+river_reavers_2 = {
+	is_marine_modifier = yes
+	regiment_manpower_usage = -0.10
+	fire_damage = 0.10
+	land_attrition = -0.15
+	discipline = 0.05
+	shock_damage_received = -0.10
+}
+river_reavers_3 = {
+	is_marine_modifier = yes
+	regiment_manpower_usage = -0.10
+	fire_damage = 0.10
+	land_attrition = -0.15
+	discipline = 0.05
+	shock_damage_received = -0.20
+	fire_damage_received = -0.10
+	military_tactics = 0.25
+}
+themaria_river_reavers = {
+	is_marine_modifier = yes
+	regiment_manpower_usage = -0.10
+	discipline = 0.05
+	land_attrition = -0.15
+}
+themaria_river_reavers2 = {
+	allowed_marine_fraction = 0.15
+}
+contesting_ryalan_temple = {
+	adm_advisor_cost = -0.15
+}
+a95_tier1_sailors = {
+	local_sailors = 600
+	allowed_num_of_manufactories = 1
+}
+a95_tier2_sailors = {
+	local_sailors = 900
+	allowed_num_of_manufactories = 1
+}
+a95_ryal_estuary = {
+	province_trade_power_value = 10
+}
+a95_ryal2_estuary = {
+	province_trade_power_value = 20
+	local_ship_repair = 0.25
+}
+since_times_immortal_mod = {
+	diplomatic_reputation = 1
+}
+grand_party_throwers = {}
+imperial_politics = {
+	reasons_to_elect = 20
+}
+resolving_fallout = {
+	improve_relation_modifier = -0.15
+}
+king_of_the_river = {
+	province_trade_power_value = 25
+	trade_value_modifier = 0.25
+	global_trade_power = 0.10
+}
+canal_empty_modifier = {}
+a95_esmaraine_ep2 = {}
+esmaraine_civil_unrest_a95 = {
+	local_core_creation = 1
+	local_missionary_strength = 0.04
+	local_unrest = 10
+}
+a95_esmari_circle_vassal = {
+	development_cost_in_primary_culture = -0.25
+	land_forcelimit_modifier = 0.2
+}
+a95_esmari_circle_emperor = {
+	imperial_authority = 0.10
+}
+a95_ryalan_dream = {
+	monarch_diplomatic_power = 1
+}
+a95_consort_pros_1 = {
+	global_prosperity_growth = 0.1
+}
+a95_consort_pros_2 = {
+	global_prosperity_growth = 0.2
+}
+a95_consort_pros_3 = {
+	global_prosperity_growth = 0.3
+}
+a95_consort_pros_4 = {
+	global_prosperity_growth = 0.4
+}
+a95_consort_pros_5 = {
+	global_prosperity_growth = 0.5
+}
+a95_consort_pros_6 = {
+	global_prosperity_growth = 0.6
+}
+a95_way_of_esmaryal = {
+	diplomatic_annexation_cost = -0.05
+	female_advisor_chance = 0.25
+}
+a95_way_of_esmaryal2 = {
+	diplomatic_annexation_cost = -0.05
+	female_advisor_chance = 0.25
+	relation_with_same_religion = 15
+	reverse_relation_with_same_religion = 15
+}
+a95_yarncliff_ships = {
+	local_ship_repair = 0.1
+	local_ship_cost = -0.1
+}
+a95_admin_burden = {
+	governing_capacity_modifier = -0.05
+	adm_tech_cost_modifier = 0.05
+	advisor_cost = 0.05
+}
+a95_admin2_burden = {
+	governing_capacity_modifier = -0.1
+	adm_tech_cost_modifier = 0.1
+	advisor_cost = 0.1
+	core_creation = 0.05
+}
+a95_admin3_burden = {
+	governing_capacity_modifier = -0.15
+	adm_tech_cost_modifier = 0.15
+	advisor_cost = 0.15
+	core_creation = 0.1
+	advisor_pool = -1
+}
+a95_admin4_burden = {
+	governing_capacity_modifier = -0.2
+	adm_tech_cost_modifier = 0.2
+	advisor_cost = 0.2
+	core_creation = 0.15
+	advisor_pool = -2
+}
+a95_admin5_burden = {
+	governing_capacity_modifier = -0.25
+	adm_tech_cost_modifier = 0.25
+	advisor_cost = 0.25
+	core_creation = 0.2
+	advisor_pool = -3
+}
+a95_navy_speed = {
+	movement_speed_in_fleet_modifier = 1
+	reinforce_speed = 0.15
+}
+a95_bank_investigation = {
+	yearly_corruption = -0.1
+}
+sailors_when_slacken = {
+	sailors_recovery_speed = 2
+}
+a95_valen_uni = {
+	adm_tech_cost_modifier = -0.05
+	local_tax_modifier = 0.15
+	local_production_efficiency = 0.15
+}
+a95_twins_infrastructure = {
+	global_ship_repair = 0.10
+	local_development_cost = -0.1
+	local_state_maintenance_modifier = -0.25
+}
+a95_gnome_rediscovery = {
+	artificers_loyalty_modifier = 0.1
+	build_time = -0.05
+}
 #Maghargma
 I90_monument_building = {
 	local_development_cost = -0.7

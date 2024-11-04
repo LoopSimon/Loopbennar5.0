@@ -2277,6 +2277,21 @@ on_siege_won_country = {
 		clr_country_flag = duwarkani_naga_revolt_started
 		set_country_flag = duwarkani_naga_revolt_ended
 	}
+	if = {
+		limit = {
+			OR = {
+				tag = A95
+				was_tag = A95
+			}
+			has_country_modifier = a95_esmaraine_ep2
+			FROM = { province_id = 266 }
+			266 = {
+				owned_by = A44
+				controlled_by = ROOT
+			}
+		}
+		country_event = { id = flavour_themarenn.39 }
+	}
 }
 
 # country
@@ -2856,6 +2871,14 @@ on_new_consort = {
 			}
 		}
 	}
+	#themarenn ryala path
+	if = { 
+		limit = { 
+			OR = { tag = A95 was_tag = A95 } ai = no has_country_flag = a95_ryalan_prosperity 
+		} 
+		themarenn_refresh_prosperity = yes 
+		themarenn_ryala_prosperity = yes
+	}
 }
 
 # country
@@ -2962,6 +2985,22 @@ on_monarch_death = {
 		country_event = { id = sarhalevents.26 }
 	}
 
+	if = {
+		limit = {
+			tag = A94
+			has_country_flag = vassalize_gabmorionn
+		}
+		country_event = { id = flavour_themarenn.94 }
+	}
+	if = {
+		limit = {
+			tag = A94
+			has_country_flag = pu_gabmorionn
+		}
+		country_event = { id = flavour_themarenn.97 }
+	}
+
+	
 	anb_scripted_effects_for_ruler_death = yes
 	
 }
@@ -3515,6 +3554,12 @@ on_new_heir = {
 		}
 		remove_country_modifier = heir_mage_personality_mod
 	}
+	if = { 
+		limit = {
+			OR = { tag = A95 was_tag = A95 } ai = no has_country_flag = a95_esmaryal_heir_education
+		} 
+		country_event = { id = flavour_themarenn.43 } 
+	} #themarenn esmaryal path
 }
 
 # country
@@ -15968,9 +16013,31 @@ on_slacken_start = {
             duration = -1
         }
     }
+	if = {
+		limit = {
+			OR = {
+				was_tag = A95
+				tag = A95
+			}
+			ai = no
+			has_country_flag = sailors_when_slacken
+		}
+		add_country_modifier = { name = sailors_when_slacken duration = -1 }
+	}
 }
 on_slacken_stop = {
 	remove_country_modifier = slackening_modifier
+	if = {
+		limit = {
+			OR = {
+				was_tag = A95
+				tag = A95
+			}
+			ai = no
+			has_country_flag = sailors_when_slacken
+		}
+		remove_country_modifier = sailors_when_slacken
+	}
 }
 
 on_colony_finished = { #ROOT - Province

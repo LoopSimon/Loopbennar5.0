@@ -208,6 +208,7 @@ missions_yes = {
 				tag = F62 #Duwarkani
 				tag = H81 #Masked Butcher
 				tag = I35 #Brambleskinner
+				tag = A95 #Themarenn
 
 				AND = {
 					capital_scope = {
