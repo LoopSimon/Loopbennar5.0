@@ -211,37 +211,7 @@ country_event = { #Economic Direction
 			}
 			
 	}
-	
-	country_event = {
-	id = flavor_loopgeneric.6
-	title = diggy.108.t
-	desc = loopgeneric.6
-	picture = ARTWORK_eventPicture
-	
-	is_triggered_only = yes
-	hidden = yes
-	
-	trigger = {
-	
-		has_country_flag = dwarovar_remnant
-		
-		NOT = { has_country_flag = dwarovar_claimer_setup }
-		NOT = {
-			tag = F47
-		}
-	}
-	
-	option = {
-        name = loopgeneric.6.a
-        ai_chance = { factor = 100 }
-		add_country_modifier = {
-			name = loop_remnant_spiner
-			duration = 18250
-		}
-		set_country_flag = dwarovar_claimer_setup
-		}
-	}
-	
+
 	country_event = {
 	id = flavor_loopgeneric.7
 	title = diggy.121.t
