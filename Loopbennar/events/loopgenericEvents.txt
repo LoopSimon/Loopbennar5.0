@@ -211,6 +211,7 @@ country_event = { #Economic Direction
 			}
 			
 	}
+}
 
 	country_event = {
 	id = flavor_loopgeneric.7
@@ -232,7 +233,7 @@ country_event = { #Economic Direction
 	option = {
         name = flavor_loopgeneric.7.a
         ai_chance = { factor = 10 }
+		}
 	}
-}
 	
 }
