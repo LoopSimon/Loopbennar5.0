@@ -1990,10 +1990,10 @@ seghdihr_reform_holds = {
 	local_manpower_modifier = 0.5
 }
 seghdihr_reform_secondary = {
-	local_manpower_modifier = -0.75
+	local_manpower_modifier = -0.1
 }
 seghdihr_reform_other = {
-	local_manpower_modifier = -2.5
+	local_manpower_modifier = -0.75
 }
 seghdihr_syndicate_overlord_bonus = {
 	placed_merchant_power = 5
