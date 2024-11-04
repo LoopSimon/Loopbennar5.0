@@ -9755,7 +9755,7 @@ A98_ideas = {
 	}
 	A98_opportunistic_pragmatism = {
 		unjustified_demands = -0.1
-		province_warscore_cost = -0.15
+		cavalry_shock = 0.25
 	}
 	A98_loud_and_proud = {
 		power_projection_from_insults = 1
