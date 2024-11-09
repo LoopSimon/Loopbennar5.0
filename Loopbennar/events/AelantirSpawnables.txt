@@ -1821,6 +1821,7 @@ country_event = {
 		}
 		is_subject = no
 		has_global_flag = new_world_discovered
+		is_year = 1800
 		NOT = { has_global_flag = delete_south_aelantir_region }
 		greenfort_area = {
 			is_empty = yes

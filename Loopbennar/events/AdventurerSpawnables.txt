@@ -748,7 +748,7 @@ country_event = {
 		}
 		is_subject = no
 		has_global_flag = new_world_discovered
-		is_year = 1520
+		is_year = 1800
 		NOT = { has_global_flag = delete_north_aelantir_region }
 		forest_of_the_cursed_ones_region = {
 			is_empty = yes
