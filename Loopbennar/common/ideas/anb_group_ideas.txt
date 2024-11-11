@@ -41,7 +41,7 @@ client_ideas = {
 ## Copied from zz_group_ideas.txt
 colonial_ideas = {
 	start = {
-		development_cost = -0.1
+		global_unrest = -2
 		no_religion_penalty = yes
 	}
 	bonus = {
