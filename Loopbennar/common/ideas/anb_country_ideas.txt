@@ -42449,8 +42449,8 @@ U48_ideas = {
 	}
 	free = yes
 	
-	U48_dream = {
-		land_morale = 0.1
+	G01_eternal_kingdom = { # Story about how the Boek defeated their fate and conquered the Eastern Trollsbay
+		land_morale = 0.15
 	}
 	
 	U48_sinew = {
