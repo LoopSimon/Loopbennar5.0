@@ -1723,6 +1723,7 @@ self_governing_colony_government = {
 		embracement_cost = -0.1
 		state_maintenance_modifier = -0.25
 		max_absolutism = 40
+		land_morale= -0.1
 	}
 
 	custom_attributes = {
