@@ -1,4 +1,6 @@
 From;To;Type;Through;start_x;start_y;stop_x;stop_y;Comment
+6838;6831;sea;6562;-1;-1;-1;-1;Rift
+4323;4020;;-1;-1;-1;-1;-1;this portal was made in china
 2;276;sea;1272;2848;1531;2854;1527;Eargate-Damescross
 168;11;sea;1271;2803;1532;-1;-1;Auraire-Damesteeth
 11;13;sea;1271;-1;-1;-1;-1;Damesteeth-Toothsend
