@@ -236,4 +236,21 @@ country_event = { #Economic Direction
 		}
 	}
 	
+country_event = {
+	id = flavor_loopgeneric.8
+	title = flavor_teu.29.t
+	desc = flavor_teu.29.desc
+	picture = DIPLOMACY_SIGNING_eventPicture
+	is_triggered_only = yes
+	
+	option = {	# Nice
+		name = flavor_teu.29.a
+		custom_tooltip = flavor_teu.29.a.tt
+		set_in_empire = yes
+		set_country_flag = teu_is_allowed_to_stay_in_the_hre
+		ai_chance = {
+			factor = 100
+		}
+	}
+
 }
