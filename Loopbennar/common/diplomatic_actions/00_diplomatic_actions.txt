@@ -800,6 +800,22 @@ declarewar = {
 		}
 		if = {
 			limit = {
+				has_country_modifier = loop_remnant_spiner
+				FROM = {
+					NOT = {
+						any_owned_province = {
+							continent = serpentspine
+						}
+					}
+					NOT = { coalition_target = FROM }
+				}
+			}
+			country_event = {
+				id = flavor_loopgeneric.7
+			}
+		}
+		if = {
+			limit = {
 				has_country_modifier = dwarovar_claimer
 				FROM = {
 					NOT = {
