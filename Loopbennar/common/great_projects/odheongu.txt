@@ -1,0 +1,139 @@
+#Hajigaja Library (Daengun)
+daengun_hajigaja_library = {
+	start = 5353
+	date = 01.01.01
+	time = {
+		months = 0
+	}
+	build_cost = 0
+	can_be_moved = no
+	move_days_per_unit_distance = 1
+	starting_tier = 0
+	type = monument
+	build_trigger = {	
+	}
+	on_built = {		
+	}
+	on_destroyed = {	
+	}
+	can_use_modifiers_trigger = {
+		AND = {
+			custom_trigger_tooltip = {
+				tooltip = halessi_monuments_can_use_tooltip_odheongu
+					OR = {
+						culture_group = yan
+						culture_group = odheongun
+						culture_group = hobgoblin
+						culture_group = wuhyun
+						culture = goldscale_kobold
+						culture_group = harpy
+					}
+			}
+			province_is_or_accepts_culture = yes
+		}
+	}
+	can_upgrade_trigger = {
+		AND = {
+			custom_trigger_tooltip = {
+				tooltip = halessi_monuments_can_use_tooltip_odheongu
+					OR = {
+						culture_group = yan
+						culture_group = odheongun
+						culture_group = hobgoblin
+						culture_group = wuhyun
+						culture = goldscale_kobold
+						culture_group = harpy
+					}
+			}
+			province_is_or_accepts_culture = yes
+		}
+	}	
+	keep_trigger = {
+	}
+	tier_0 = {
+		upgrade_time = {
+			months = 0
+		}
+		cost_to_upgrade = {
+			factor = 0
+		}
+		province_modifiers = {
+		}
+		area_modifier = {
+		}
+		country_modifiers = {	
+		}
+		on_upgraded = {
+		}
+	}
+	tier_1 = {
+		upgrade_time = {
+			months = 120
+		}
+		cost_to_upgrade = {
+			factor = 1000
+		}
+		province_modifiers = {
+			local_institution_spread = 0.1
+		}
+		area_modifier = {
+		}
+		country_modifiers = {
+			dip_tech_cost_modifier = -0.025
+			global_institution_spread = 0.10
+		}
+		on_upgraded = {
+			owner = { 
+				change_innovativeness = 1
+			}
+		}
+	}
+	tier_2 = {
+		upgrade_time = {
+			months = 240
+		}
+		cost_to_upgrade = {
+			factor = 2500
+		}
+		province_modifiers = {
+			local_institution_spread = 0.2
+			local_development_cost = -0.05
+		}
+		area_modifier = {
+		}
+		country_modifiers = {
+			dip_tech_cost_modifier = -0.05
+			global_institution_spread = 0.15
+			embracement_cost = -0.075
+		}
+		on_upgraded = {
+			owner = { 
+				change_innovativeness = 2
+			}
+		}
+	}
+	tier_3 = {
+		upgrade_time = {
+			months = 480
+		}
+		cost_to_upgrade = {
+			factor = 5000
+		}
+		province_modifiers = {
+			local_institution_spread = 0.33
+			local_development_cost = -0.1
+		}
+		area_modifier = {
+		}
+		country_modifiers = {
+			dip_tech_cost_modifier = -0.1
+			global_institution_spread = 0.25
+			embracement_cost = -0.15
+		}
+		on_upgraded = {
+			owner = { 
+				change_innovativeness = 3
+			}
+		}
+	}
+}

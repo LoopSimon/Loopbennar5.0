@@ -1,0 +1,158 @@
+####################
+#The Borders
+####################
+#Deepwater Harbor of Sorncell (Celliande)
+sorncell_deepwater_harbor = {
+	start = 413
+	date = 01.01.01
+	time = {
+		months = 0
+	}
+	build_cost = 0
+	can_be_moved = no
+	move_days_per_unit_distance = 1
+	starting_tier = 1
+	type = monument
+	build_trigger = {	
+	}
+	on_built = {		
+	}
+	on_destroyed = {	
+	}
+	can_use_modifiers_trigger = {
+		AND = {
+			custom_trigger_tooltip = {
+				tooltip = cannorian_monuments_can_use_tooltip_empire_of_anbennar
+					OR = {
+						culture_group = anbennarian
+						culture = imperial_halfling
+						culture = imperial_gnome
+						culture = moon_elf
+						culture = silver_dwarf
+						culture = wexonard
+						culture = vertesker
+						culture = roilsardi
+						culture = castanorian
+					}
+			}
+			province_is_or_accepts_culture = yes
+		}
+	}	
+	can_upgrade_trigger = {
+		AND = {
+			custom_trigger_tooltip = {
+				tooltip = cannorian_monuments_can_use_tooltip_empire_of_anbennar
+					OR = {
+						culture_group = anbennarian
+						culture = imperial_halfling
+						culture = imperial_gnome
+						culture = moon_elf
+						culture = silver_dwarf
+						culture = wexonard
+						culture = vertesker
+						culture = roilsardi
+						culture = castanorian
+					}
+			}
+			province_is_or_accepts_culture = yes
+		}
+	}	
+	keep_trigger = {
+	}
+	tier_0 = {
+		upgrade_time = {
+			months = 0
+		}
+		cost_to_upgrade = {
+			factor = 0
+		}
+		province_modifiers = {
+		}
+		area_modifier = {
+		}
+		country_modifiers = {	
+		}
+		on_upgraded = {
+		}
+	}
+	tier_1 = {
+		upgrade_time = {
+			months = 120
+		}
+		cost_to_upgrade = {
+			factor = 1000
+		}
+		province_modifiers = {
+			local_development_cost = -0.05
+			local_sailors_modifier = 0.25
+			ship_recruit_speed = -0.1
+		}
+		area_modifier = {
+		}
+		country_modifiers = {
+			heavy_ship_cost = -0.05
+			heavy_ship_power = 0.025
+		}
+		on_upgraded = {
+		}
+	}
+	tier_2 = {
+		upgrade_time = {
+			months = 240
+		}
+		cost_to_upgrade = {
+			factor = 2500
+		}
+		province_modifiers = {
+			local_development_cost = -0.1
+			local_sailors_modifier = 0.5
+			ship_recruit_speed = -0.2
+		}
+		area_modifier = {
+		}
+		country_modifiers = {
+			heavy_ship_cost = -0.1
+			heavy_ship_power = 0.05
+			heavy_ship_hull_size_modifier = 0.05
+		}
+		on_upgraded = {
+			add_base_production = 2
+			change_trade_goods = naval_supplies
+		}
+	}
+	tier_3 = {
+		upgrade_time = {
+			months = 480
+		}
+		cost_to_upgrade = {
+			factor = 5000
+		}
+		province_modifiers = {
+			local_development_cost = -0.15
+			local_sailors_modifier = 1
+			ship_recruit_speed = -0.33
+		}
+		area_modifier = {
+		}
+		country_modifiers = {
+			heavy_ship_cost = -0.15
+			heavy_ship_power = 0.1
+			heavy_ship_hull_size_modifier = 0.1
+		}
+		on_upgraded = {
+			add_base_production = 2
+			owner = {
+				add_country_modifier = {
+					name = sorncell_deepwater_harbor_hardy_sailors
+					duration = 7300
+				}
+			}
+			add_unit_construction = {
+				type = heavy_ship
+				amount = 10
+				speed = 0.1
+				cost = 0
+			}
+		}
+	}
+}

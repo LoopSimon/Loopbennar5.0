@@ -1,0 +1,160 @@
+#Lanjin Hall (Lanjinhui)
+lanjinhui_lanjin_hall = {
+	start = 4930
+	date = 01.01.01
+	time = {
+		months = 0
+	}
+	build_cost = 0
+	can_be_moved = no
+	move_days_per_unit_distance = 1
+	starting_tier = 0
+	type = monument
+	build_trigger = {	
+	}
+	on_built = {		
+	}
+	on_destroyed = {	
+	}
+	can_use_modifiers_trigger = {
+		AND = {
+			custom_trigger_tooltip = {
+				tooltip = halessi_monuments_can_use_tooltip_yanshen
+					OR = {
+						culture_group = yan
+						culture_group = harimari
+						culture_group = hobgoblin
+						culture_group = wuhyun
+						culture = goldscale_kobold
+						culture_group = harpy
+					}
+			}
+			province_is_or_accepts_culture = yes
+		}
+	}	
+	can_upgrade_trigger = {
+		AND = {
+			custom_trigger_tooltip = {
+				tooltip = halessi_monuments_can_use_tooltip_yanshen
+					OR = {
+						culture_group = yan
+						culture_group = harimari
+						culture_group = hobgoblin
+						culture_group = wuhyun
+						culture = goldscale_kobold
+						culture_group = harpy
+					}
+			}
+			province_is_or_accepts_culture = yes
+		}
+	}	
+	keep_trigger = {
+	}
+	tier_0 = {
+		upgrade_time = {
+			months = 0
+		}
+		cost_to_upgrade = {
+			factor = 0
+		}
+		province_modifiers = {
+		}
+		area_modifier = {
+		}
+		country_modifiers = {	
+		}
+		on_upgraded = {	
+		}
+	}
+	tier_1 = {
+		upgrade_time = {
+			months = 120
+		}
+		cost_to_upgrade = {
+			factor = 1000
+		}
+		province_modifiers = {
+			local_institution_spread = 0.1
+		}
+		area_modifier = {
+		}
+		country_modifiers = {
+			adm_advisor_cost = -0.05
+		}
+		on_upgraded = {
+			change_trade_goods = paper
+			add_base_tax = 1
+			add_base_production = 1
+			add_base_manpower = 1
+		}
+	}
+	tier_2 = {
+		upgrade_time = {
+			months = 240
+		}
+		cost_to_upgrade = {
+			factor = 2500
+		}
+		province_modifiers = {
+			local_institution_spread = 0.2
+		}
+		area_modifier = {
+		}
+		country_modifiers = {
+			adm_advisor_cost = -0.1
+			idea_cost = -0.025
+			technology_cost = -0.025
+		}
+		on_upgraded = {
+			define_advisor = {
+				type = philosopher
+				skill = 3
+				culture = root
+				religion = root
+				location = root
+				cost_multiplier = 0.25
+			}
+			add_base_tax = 1
+			add_base_production = 1
+			add_base_manpower = 1
+		}
+	}
+	tier_3 = {
+		upgrade_time = {
+			months = 480
+		}
+		cost_to_upgrade = {
+			factor = 5000
+		}
+		province_modifiers = {
+			local_institution_spread = 0.33
+		}
+		area_modifier = {
+		}
+		country_modifiers = {
+			adm_advisor_cost = -0.15
+			idea_cost = -0.05
+			technology_cost = -0.05
+		}
+		on_upgraded = {
+			add_building = university
+			owner = {
+				change_ruler_stat = {
+					stat = adm
+					amount = 1
+				}
+				change_ruler_stat = {
+					stat = dip
+					amount = 1
+				}
+				change_ruler_stat = {
+					stat = mil
+					amount = 1
+				}
+			}
+			add_base_tax = 1
+			add_base_production = 1
+			add_base_manpower = 1
+		}
+	}
+}

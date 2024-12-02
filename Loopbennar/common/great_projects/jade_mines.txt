@@ -1,0 +1,705 @@
+####################
+#Jade Mines
+####################
+#Gardens of Tuwad-Dhûmakon
+tuwad_dhumakon_gardens = {
+	start = 4350
+	date = 01.01.01
+	time = {
+		months = 0
+	}
+	build_cost = 0
+	can_be_moved = no
+	move_days_per_unit_distance = 1
+	starting_tier = 0
+	type = monument
+	build_trigger = {	
+	}
+	on_built = {	
+	}
+	on_destroyed = {		
+	}	
+	can_use_modifiers_trigger = {
+		AND = {
+			custom_trigger_tooltip = {
+				tooltip = dwarven_monuments_can_use_tooltip_dig_level_2_or_higher
+				dwarven_monuments_has_dig_level_2_or_higher = yes
+			}
+			custom_trigger_tooltip = {
+				tooltip = dwarven_monuments_can_use_tooltip
+					dwarven_monuments_has_acceptable_culture_or_race = yes
+			}
+			province_is_or_accepts_culture = yes
+		}
+	}
+	can_upgrade_trigger = {
+		AND = {
+			custom_trigger_tooltip = {
+				tooltip = dwarven_monuments_can_use_tooltip_dig_level_2_or_higher
+					dwarven_monuments_has_dig_level_2_or_higher = yes
+			}
+			custom_trigger_tooltip = {
+				tooltip = dwarven_monuments_can_use_tooltip
+					dwarven_monuments_has_acceptable_culture_or_race = yes
+			}
+			province_is_or_accepts_culture = yes
+		}
+	}	
+	keep_trigger = {
+	}
+	tier_0 = {
+		upgrade_time = {
+			months = 0
+		}
+		cost_to_upgrade = {
+			factor = 0
+		}
+		province_modifiers = {
+		}
+		area_modifier = {
+		}
+		country_modifiers = {		
+		}
+		on_upgraded = {
+		}
+	}
+	tier_1 = {
+		upgrade_time = {
+			months = 120
+		}
+		cost_to_upgrade = {
+			factor = 1000
+		}
+		province_modifiers = {
+		}
+		area_modifier = {
+		}
+		region_modifier = {
+				local_unrest = -1
+		}
+		country_modifiers = {
+			global_monthly_devastation = -0.03
+			global_prosperity_growth = 0.1
+			recover_army_morale_speed = 0.04
+		}
+		on_upgraded = {
+		}
+	}
+	tier_2 = {
+		upgrade_time = {
+			months = 240
+		}
+		cost_to_upgrade = {
+			factor = 3500
+		}
+		province_modifiers = {
+		}
+		area_modifier = {	
+		}
+		region_modifier = {
+				local_unrest = -3
+		}
+		country_modifiers = {
+			global_monthly_devastation = -0.05
+			global_prosperity_growth = 0.3
+			recover_army_morale_speed = 0.08
+		}
+		on_upgraded = {
+		}
+	}
+	tier_3 = {
+		upgrade_time = {
+			months = 480
+		}
+		cost_to_upgrade = {
+			factor = 7000
+		}
+		province_modifiers = {
+		}
+		area_modifier = {	
+		}
+		region_modifier = {
+			local_unrest = -5
+		}
+		country_modifiers = {
+			global_monthly_devastation = -0.08
+			global_prosperity_growth = 0.5
+			recover_army_morale_speed = 0.12
+			monthly_splendor = 1
+		}
+		on_upgraded = {
+			owner = {
+				add_country_modifier = {
+					name = tuwad_dhumakon_gardens_prosperity
+					duration = 1825
+				}
+			}
+		}
+	}
+}
+#Trade Halls of Gronstunad
+gronstunad_trade_halls = {
+	start = 4311
+	date = 01.01.01
+	time = {
+		months = 0
+	}
+	build_cost = 0
+	can_be_moved = no
+	move_days_per_unit_distance = 1
+	starting_tier = 0
+	type = monument
+	build_trigger = {	
+	}
+	on_built = {		
+	}
+	on_destroyed = {		
+	}	
+	can_use_modifiers_trigger = {
+		AND = {
+			custom_trigger_tooltip = {
+				tooltip = dwarven_monuments_can_use_tooltip_dig_level_3_or_higher
+				dwarven_monuments_has_dig_level_3_or_higher = yes
+			}
+			custom_trigger_tooltip = {
+				tooltip = dwarven_monuments_can_use_tooltip
+					dwarven_monuments_has_acceptable_culture_or_race = yes
+			}
+			province_is_or_accepts_culture = yes
+		}
+	}
+	can_upgrade_trigger = {
+		AND = {
+			custom_trigger_tooltip = {
+				tooltip = dwarven_monuments_can_use_tooltip_dig_level_3_or_higher
+					dwarven_monuments_has_dig_level_3_or_higher = yes
+			}
+			custom_trigger_tooltip = {
+				tooltip = dwarven_monuments_can_use_tooltip
+					dwarven_monuments_has_acceptable_culture_or_race = yes
+			}
+			province_is_or_accepts_culture = yes
+		}
+	}	
+	keep_trigger = {
+	}
+	tier_0 = {
+		upgrade_time = {
+			months = 0
+		}
+		cost_to_upgrade = {
+			factor = 0
+		}
+		province_modifiers = {
+		}
+		area_modifier = {
+		}
+		country_modifiers = {			
+		}
+		on_upgraded = {
+		}
+	}
+	tier_1 = {
+		upgrade_time = {
+			months = 120
+		}
+		cost_to_upgrade = {
+			factor = 1000
+		}
+		province_modifiers = {
+			province_trade_power_value = 3
+			province_trade_power_modifier = 0.1
+			allowed_num_of_buildings = 1
+		}
+		area_modifier = {			
+		}
+		country_modifiers = {
+			trade_efficiency = 0.05
+		}
+		on_upgraded = {
+			owner = {
+				add_estate_loyalty = {
+					estate = estate_burghers
+					loyalty = 5
+				}
+			}
+		}
+	}
+	tier_2 = {
+		upgrade_time = {
+			months = 240
+		}
+		cost_to_upgrade = {
+			factor = 3500
+		}
+		province_modifiers = {
+			province_trade_power_value = 5
+			province_trade_power_modifier = 0.2
+		}
+		area_modifier = {
+			allowed_num_of_buildings = 1
+		}
+		country_modifiers = {
+			trade_efficiency = 0.075
+			merchants = 1
+		}
+		on_upgraded = {
+			owner = {
+				add_estate_loyalty = {
+					estate = estate_burghers
+					loyalty = 10
+				}
+			}
+			define_advisor = {
+				type = trader
+				skill = 3
+				culture = root
+				religion = root
+				location = 4311
+				cost_multiplier = 0.25
+			}
+		}
+	}
+	tier_3 = {
+		upgrade_time = {
+			months = 480
+		}
+		cost_to_upgrade = {
+			factor = 7000
+		}
+		province_modifiers = {
+			province_trade_power_value = 10
+			province_trade_power_modifier = 0.33
+		}
+		area_modifier = {			
+		}
+		region_modifier = {
+			allowed_num_of_buildings = 1
+		}
+		country_modifiers = {
+			trade_efficiency = 0.1
+			merchants = 1
+		}
+		on_upgraded = {
+			owner = {
+				add_estate_loyalty = {
+					estate = estate_burghers
+					loyalty = 15
+				}
+			}
+		}
+	}
+}
+#Mage Academy of Verkal Dromak
+verkal_dromak_mage_academy = {
+	start = 4323
+	date = 01.01.01
+	time = {
+		months = 0
+	}
+	build_cost = 0
+	can_be_moved = no
+	move_days_per_unit_distance = 1
+	starting_tier = 0
+	type = monument
+	build_trigger = {	
+	}
+	on_built = {		
+	}
+	on_destroyed = {		
+	}	
+	can_use_modifiers_trigger = {
+		AND = {
+			custom_trigger_tooltip = {
+				tooltip = dwarven_monuments_can_use_tooltip_dig_level_2_or_higher
+				dwarven_monuments_has_dig_level_2_or_higher = yes
+			}
+			custom_trigger_tooltip = {
+				tooltip = dwarven_monuments_can_use_tooltip
+					dwarven_monuments_has_acceptable_culture_or_race = yes
+			}
+			province_is_or_accepts_culture = yes
+		}
+	}
+	can_upgrade_trigger = {
+		AND = {
+			custom_trigger_tooltip = {
+				tooltip = dwarven_monuments_can_use_tooltip_dig_level_2_or_higher
+					dwarven_monuments_has_dig_level_2_or_higher = yes
+			}
+			custom_trigger_tooltip = {
+				tooltip = dwarven_monuments_can_use_tooltip
+					dwarven_monuments_has_acceptable_culture_or_race = yes
+			}
+			province_is_or_accepts_culture = yes
+		}
+	}
+	keep_trigger = {
+	}
+	tier_0 = {
+		upgrade_time = {
+			months = 0
+		}
+		cost_to_upgrade = {
+			factor = 0
+		}
+		province_modifiers = {
+		}
+		area_modifier = {
+		}
+		country_modifiers = {			
+		}
+		on_upgraded = {
+		}
+	}
+	tier_1 = {
+		upgrade_time = {
+			months = 120
+		}
+		cost_to_upgrade = {
+			factor = 1000
+		}
+		province_modifiers = {
+			local_defensiveness = 0.1
+		}
+		area_modifier = {			
+		}
+		country_modifiers = {
+			monarch_lifespan = 0.075
+			mages_loyalty_modifier = 0.025
+		}
+		on_upgraded = {
+			owner = {
+				add_estate_loyalty = {
+					estate = estate_mages
+					loyalty = 5
+				}
+			}
+		}
+	}
+	tier_2 = {
+		upgrade_time = {
+			months = 240
+		}
+		cost_to_upgrade = {
+			factor = 3500
+		}
+		province_modifiers = {
+			local_defensiveness = 0.2
+			local_hostile_attrition = 0.5
+		}
+		area_modifier = {		
+		}
+		country_modifiers = {
+			monarch_lifespan = 0.15
+			all_power_cost = -0.01
+			mages_influence_modifier = 0.025
+			mages_loyalty_modifier = 0.05
+		}
+		on_upgraded = {
+			owner = {
+				add_estate_loyalty = {
+					estate = estate_mages
+					loyalty = 10
+				}
+			}
+			define_advisor = {
+				type = court_mage
+				skill = 3
+				culture = root
+				religion = root
+				location = 4323
+				cost_multiplier = 0.25
+			}
+		}
+	}
+	tier_3 = {
+		upgrade_time = {
+			months = 480
+		}
+		cost_to_upgrade = {
+			factor = 7000
+		}
+		province_modifiers = {
+			local_defensiveness = 0.33
+			local_hostile_attrition = 1
+			local_defender_dice_roll_bonus = 1
+		}
+		area_modifier = {			
+		}
+		country_modifiers = {
+			all_power_cost = -0.025
+			mages_influence_modifier = 0.05
+			mages_loyalty_modifier = 0.1
+			monarch_lifespan = 0.25
+		}
+		on_upgraded = {
+			add_permanent_province_modifier = {
+				name = verkal_dromak_mage_academy_mages_summon_large_damestear_meteor
+				duration = -1
+			}
+			change_trade_goods = damestear
+			set_province_flag = permanent_damestear
+			custom_tooltip = dwarven_monuments_permanent_damestear
+			owner = {
+				add_estate_loyalty = {
+					estate = estate_mages
+					loyalty = 15
+				}
+			}
+		}
+	}
+}
+#Bastion of Vûrdriz-Ândriz
+vurdriz_andriz_bastion = {
+	start = 4313
+	date = 01.01.01
+	time = {
+		months = 0
+	}
+	build_cost = 0
+	can_be_moved = no
+	move_days_per_unit_distance = 1
+	starting_tier = 0
+	type = monument
+	build_trigger = {	
+	}
+	on_built = {		
+	}
+	on_destroyed = {		
+	}	
+	can_use_modifiers_trigger = {
+		AND = {
+			custom_trigger_tooltip = {
+				tooltip = dwarven_monuments_can_use_tooltip_dig_level_2_or_higher
+				dwarven_monuments_has_dig_level_2_or_higher = yes
+			}
+			custom_trigger_tooltip = {
+				tooltip = dwarven_monuments_can_use_tooltip
+					dwarven_monuments_has_acceptable_culture_or_race = yes
+			}
+			province_is_or_accepts_culture = yes
+		}
+	}
+	can_upgrade_trigger = {
+		AND = {
+			custom_trigger_tooltip = {
+				tooltip = dwarven_monuments_can_use_tooltip_dig_level_2_or_higher
+					dwarven_monuments_has_dig_level_2_or_higher = yes
+			}
+			custom_trigger_tooltip = {
+				tooltip = dwarven_monuments_can_use_tooltip
+					dwarven_monuments_has_acceptable_culture_or_race = yes
+			}
+			province_is_or_accepts_culture = yes
+		}
+	}
+	keep_trigger = {
+	}
+	tier_0 = {
+		upgrade_time = {
+			months = 0
+		}
+		cost_to_upgrade = {
+			factor = 0
+		}
+		province_modifiers = {
+		}
+		area_modifier = {
+		}
+		country_modifiers = {			
+		}
+		on_upgraded = {
+		}
+	}
+	tier_1 = {
+		upgrade_time = {
+			months = 120
+		}
+		cost_to_upgrade = {
+			factor = 1000
+		}
+		province_modifiers = {
+			local_defensiveness = 0.1	
+		}
+		area_modifier = {			
+		}
+		country_modifiers = {
+			global_garrison_growth = 0.1
+			garrison_damage = 0.1
+			rival_border_fort_maintenance = -0.25
+		}
+		on_upgraded = {
+			add_base_manpower = 1
+		}
+	}
+	tier_2 = {
+		upgrade_time = {
+			months = 240
+		}
+		cost_to_upgrade = {
+			factor = 3500
+		}
+		province_modifiers = {
+			local_defensiveness = 0.25
+		}
+		area_modifier = {			
+		}
+		country_modifiers = {
+			defensiveness = 0.05
+			global_garrison_growth = 0.2
+			garrison_damage = 0.2
+			rival_border_fort_maintenance = -0.5
+		}
+		on_upgraded = {
+			add_base_manpower = 2
+		}
+	}
+	tier_3 = {
+		upgrade_time = {
+			months = 480
+		}
+		cost_to_upgrade = {
+			factor = 7000
+		}
+		province_modifiers = {
+			local_defensiveness = 0.5
+		}
+		area_modifier = {			
+		}
+		country_modifiers = {
+			defensiveness = 0.1
+			global_garrison_growth = 0.33
+			garrison_damage = 0.33
+			rival_border_fort_maintenance = -0.9
+		}
+		on_upgraded = {
+			add_base_manpower = 3
+		}
+	}
+}
+#The Emerald Spire
+emerald_spire = {
+	start = 4338
+	date = 01.01.01
+	time = {
+		months = 0
+	}
+	build_cost = 0
+	can_be_moved = no
+	move_days_per_unit_distance = 1
+	starting_tier = 0
+	type = monument
+	build_trigger = {	
+	}
+	on_built = {		
+	}
+	on_destroyed = {	
+	}
+	can_use_modifiers_trigger = {
+		AND = {
+			development = 10
+				custom_trigger_tooltip = {
+					tooltip = dwarven_monuments_can_use_tooltip
+						 dwarven_monuments_has_acceptable_culture_or_race = yes
+				}
+			province_is_or_accepts_culture = yes
+		}
+	}
+	can_upgrade_trigger = {
+		AND = {
+			development = 10
+				custom_trigger_tooltip = {
+					tooltip = dwarven_monuments_can_use_tooltip
+						 dwarven_monuments_has_acceptable_culture_or_race = yes
+				}
+			province_is_or_accepts_culture = yes
+		}
+	}
+	keep_trigger = {
+	}
+	tier_0 = {
+		upgrade_time = {
+			months = 0
+		}
+		cost_to_upgrade = {
+			factor = 0
+		}
+		province_modifiers = {
+		}
+		area_modifier = {
+		}
+		country_modifiers = {
+		}
+		on_upgraded = {
+		}
+	}
+	tier_1 = {
+		upgrade_time = {
+			months = 120
+		}
+		cost_to_upgrade = {
+			factor = 400
+		}
+		province_modifiers = {
+			local_development_cost = -0.3
+		}
+		area_modifier = {
+		}
+		country_modifiers = {
+			improve_relation_modifier = 0.1
+			prestige_decay = -0.001
+			diplomatic_reputation = 0.5
+		}
+		on_upgraded = {
+		}
+	}
+	tier_2 = {
+		upgrade_time = {
+			months = 240
+		}
+		cost_to_upgrade = {
+			factor = 1800
+		}
+		province_modifiers = {
+			local_development_cost = -0.6
+			allowed_num_of_buildings = 1
+		}
+		area_modifier = {
+		}
+		country_modifiers = {
+			improve_relation_modifier = 0.15
+			prestige_decay = -0.003
+			diplomatic_reputation = 1
+		}
+		on_upgraded = {
+		}
+	}
+	tier_3 = {
+		upgrade_time = {
+			months = 480
+		}
+		cost_to_upgrade = {
+			factor = 3600
+		}
+		province_modifiers = {
+			local_development_cost = -0.9
+			allowed_num_of_buildings = 2
+		}
+		area_modifier = {
+		}
+		country_modifiers = {
+			improve_relation_modifier = 0.2
+			prestige_decay = -0.005
+			diplomatic_reputation = 1.5
+		}
+		on_upgraded = {
+			4338 = {
+				add_permanent_province_modifier = {
+					name = emerald_spire_emerald_deposit_beneath_the_spire
+					duration = -1
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,831 @@
+####################
+#Serpentsreach
+####################
+#Ghelebur Krakdhum (Gor Burad)
+gor_burad_fireglass_forge = {
+	start = 4039
+	date = 01.01.01
+	time = {
+		months = 0
+	}
+	build_cost = 0
+	can_be_moved = no
+	move_days_per_unit_distance = 1
+	starting_tier = 0
+	type = monument
+	build_trigger = {
+	}
+	on_built = {	
+	}
+	on_destroyed = {	
+	}
+	can_use_modifiers_trigger = {
+		AND = {
+			custom_trigger_tooltip = {
+				tooltip = dwarven_monuments_can_use_tooltip_dig_level_2_or_higher
+				dwarven_monuments_has_dig_level_2_or_higher = yes
+			}
+			custom_trigger_tooltip = {
+				tooltip = dwarven_monuments_can_use_tooltip
+					dwarven_monuments_has_acceptable_culture_or_race = yes
+			}
+			province_is_or_accepts_culture = yes
+		}
+	}
+	can_upgrade_trigger = {
+		AND = {
+			custom_trigger_tooltip = {
+				tooltip = dwarven_monuments_can_use_tooltip_dig_level_2_or_higher
+					dwarven_monuments_has_dig_level_2_or_higher = yes
+			}
+			custom_trigger_tooltip = {
+				tooltip = dwarven_monuments_can_use_tooltip
+					dwarven_monuments_has_acceptable_culture_or_race = yes
+			}
+			province_is_or_accepts_culture = yes
+		}
+	}
+	keep_trigger = {
+	}
+	tier_0 = {
+		upgrade_time = {
+			months = 0
+		}
+		cost_to_upgrade = {
+			factor = 0
+		}
+		province_modifiers = {
+		}
+		area_modifier = {
+		}
+		country_modifiers = {		
+		}
+		on_upgraded = {
+		}
+	}
+	tier_1 = {
+		upgrade_time = {
+			months = 120
+		}
+		cost_to_upgrade = {
+			factor = 1000
+		}
+		province_modifiers = {
+			trade_goods_size = 1
+			trade_goods_size_modifier = 0.1	
+			allowed_num_of_buildings = 1
+		}
+		area_modifier = {		
+		}
+		country_modifiers = {
+			global_trade_goods_size_modifier = 0.025
+		}
+		on_upgraded = {
+			if = {
+				limit = {
+					AND = {
+						NOT = { trade_goods = glass }
+						NOT = { trade_goods = gold }
+						NOT = { trade_goods = mithril }
+						NOT = { trade_goods = damestear }
+						NOT = { trade_goods = precursor_relics }
+					}
+				}
+				change_trade_goods = glass
+			}
+			add_base_production = 2
+		}
+	}
+	tier_2 = {
+		upgrade_time = {
+			months = 240
+		}
+		cost_to_upgrade = {
+			factor = 3500
+		}
+		province_modifiers = {
+			trade_goods_size = 2
+			trade_goods_size_modifier = 0.2
+		}
+		area_modifier = {	
+			allowed_num_of_buildings = 1
+		}
+		country_modifiers = {
+			global_trade_goods_size_modifier = 0.05		
+		}
+		on_upgraded = {
+			add_base_production = 4
+		}
+	}
+	tier_3 = {
+		upgrade_time = {
+			months = 480
+		}
+		cost_to_upgrade = {
+			factor = 7000
+		}
+		province_modifiers = {
+			trade_goods_size = 3
+			trade_goods_size_modifier = 0.33
+		}
+		area_modifier = {		
+		}
+		region_modifier = {
+			allowed_num_of_buildings = 1
+		}
+		country_modifiers = {
+			global_trade_goods_size_modifier = 0.1
+		}
+		on_upgraded = {
+			add_base_production = 6
+		}
+	}
+}
+#The Warding Gate (Verkal Skomdihr)
+verkal_skomdihr_warding_gate = {
+	start = 4100
+	date = 01.01.01
+	time = {
+		months = 0
+	}
+	build_cost = 0
+	can_be_moved = no
+	move_days_per_unit_distance = 1
+	starting_tier = 0
+	type = monument
+	build_trigger = {	
+	}
+	on_built = {	
+	}
+	on_destroyed = {		
+	}	
+	can_use_modifiers_trigger = {
+		AND = {
+			custom_trigger_tooltip = {
+				tooltip = dwarven_monuments_can_use_tooltip_dig_level_2_or_higher
+				dwarven_monuments_has_dig_level_2_or_higher = yes
+			}
+			custom_trigger_tooltip = {
+				tooltip = dwarven_monuments_can_use_tooltip
+					dwarven_monuments_has_acceptable_culture_or_race = yes
+			}
+			province_is_or_accepts_culture = yes
+		}
+	}
+	can_upgrade_trigger = {
+		AND = {
+			custom_trigger_tooltip = {
+				tooltip = dwarven_monuments_can_use_tooltip_dig_level_2_or_higher
+					dwarven_monuments_has_dig_level_2_or_higher = yes
+			}
+			custom_trigger_tooltip = {
+				tooltip = dwarven_monuments_can_use_tooltip
+					dwarven_monuments_has_acceptable_culture_or_race = yes
+			}
+			province_is_or_accepts_culture = yes
+		}
+	}
+	keep_trigger = {
+	}
+	tier_0 = {
+		upgrade_time = {
+			months = 0
+		}
+		cost_to_upgrade = {
+			factor = 0
+		}
+		province_modifiers = {
+		}
+		area_modifier = {
+		}
+		country_modifiers = {		
+		}
+		on_upgraded = {
+		}
+	}
+	tier_1 = {
+		upgrade_time = {
+			months = 120
+		}
+		cost_to_upgrade = {
+			factor = 1000
+		}
+		province_modifiers = {
+			local_defensiveness = 0.15
+			local_hostile_attrition = 0.5
+		}
+		area_modifier = {		
+		}
+		country_modifiers = {
+			infantry_fire = 0.05
+		}
+		on_upgraded = {
+		}
+	}
+	tier_2 = {
+		upgrade_time = {
+			months = 240
+		}
+		cost_to_upgrade = {
+			factor = 3500
+		}
+		province_modifiers = {
+			local_defensiveness = 0.25
+			local_hostile_attrition = 1
+		}
+		area_modifier = {		
+		}
+		country_modifiers = {
+			infantry_fire = 0.1
+			max_general_fire = 1
+		}
+		on_upgraded = {
+		}
+	}
+	tier_3 = {
+		upgrade_time = {
+			months = 480
+		}
+		cost_to_upgrade = {
+			factor = 7000
+		}
+		province_modifiers = {
+			local_defensiveness = 0.5
+			local_hostile_attrition = 2
+			local_defender_dice_roll_bonus = 1
+		}
+		area_modifier = {		
+		}
+		country_modifiers = {
+			infantry_fire = 0.15
+			max_general_fire = 1
+			leader_land_fire = 1
+		}
+		on_upgraded = {
+			owner = {
+				add_country_modifier = {
+					name = verkal_skomdihr_warding_gate_extra_firepower
+					duration = 5475
+				}
+			}
+		}
+	}
+}
+#The Tunnel of Love (Ovdal Lodhum)
+ovdal_lodhum_tunnel_of_love = {
+	start = 2973
+	date = 01.01.01
+	time = {
+		months = 0
+	}
+	build_cost = 0
+	can_be_moved = no
+	move_days_per_unit_distance = 1
+	starting_tier = 0
+	type = monument
+	build_trigger = {	
+	}
+	on_built = {	
+	}
+	on_destroyed = {		
+	}	
+	can_use_modifiers_trigger = {
+		AND = {
+			custom_trigger_tooltip = {
+				tooltip = dwarven_monuments_can_use_tooltip_dig_level_2_or_higher
+				dwarven_monuments_has_dig_level_2_or_higher = yes
+			}
+			custom_trigger_tooltip = {
+				tooltip = dwarven_monuments_can_use_tooltip
+					dwarven_monuments_has_acceptable_culture_or_race = yes
+			}
+			province_is_or_accepts_culture = yes
+		}
+	}
+	can_upgrade_trigger = {
+		AND = {
+			custom_trigger_tooltip = {
+				tooltip = dwarven_monuments_can_use_tooltip_dig_level_2_or_higher
+					dwarven_monuments_has_dig_level_2_or_higher = yes
+			}
+			custom_trigger_tooltip = {
+				tooltip = dwarven_monuments_can_use_tooltip
+					dwarven_monuments_has_acceptable_culture_or_race = yes
+			}
+			province_is_or_accepts_culture = yes
+		}
+	}
+	keep_trigger = {
+	}
+	tier_0 = {
+		upgrade_time = {
+			months = 0
+		}
+		cost_to_upgrade = {
+			factor = 0
+		}
+		province_modifiers = {
+		}
+		area_modifier = {
+		}
+		country_modifiers = {		
+		}
+		on_upgraded = {
+		}
+	}
+	tier_1 = {
+		upgrade_time = {
+			months = 120
+		}
+		cost_to_upgrade = {
+			factor = 600
+		}
+		province_modifiers = {
+		}
+		area_modifier = {		
+		}
+		region_modifier = {
+			local_unrest = -1
+		}
+		country_modifiers = {
+			may_explore = yes
+			global_colonial_growth = 10
+			colonist_placement_chance = 0.025
+		}
+		on_upgraded = {
+			add_center_of_trade_level = 1
+			owner = {
+				add_country_modifier = {
+					name = ovdal_lodhum_tunnel_of_love_colonizing_the_serpentspine
+					duration = 7300
+				}
+			}
+		}
+	}
+	tier_2 = {
+		upgrade_time = {
+			months = 240
+		}
+		cost_to_upgrade = {
+			factor = 2000
+		}
+		province_modifiers = {
+		}
+		area_modifier = {		
+		}
+		region_modifier = {
+			local_unrest = -3
+		}
+		country_modifiers = {
+			may_explore = yes
+			auto_explore_adjacent_to_colony = yes
+			global_colonial_growth = 20
+			colonist_placement_chance = 0.05
+			colony_development_boost = 1
+		}
+		on_upgraded = {	
+		}
+	}
+	tier_3 = {
+		upgrade_time = {
+			months = 480
+		}
+		cost_to_upgrade = {
+			factor = 4000
+		}
+		province_modifiers = {
+		}
+		area_modifier = {		
+		}
+		region_modifier = {
+			local_unrest = -5
+		}
+		country_modifiers = {
+			may_explore = yes
+			global_colonial_growth = 30
+			colonist_placement_chance = 0.1
+			colony_development_boost = 1
+		}
+		on_upgraded = {
+		}
+	}
+}
+#Great Clast Shafts of Arg-Ôrdstun
+arg_ordstun_great_clast_shafts = {
+	start = 4093
+	date = 01.01.01
+	time = {
+		months = 0
+	}
+	build_cost = 0
+	can_be_moved = no
+	move_days_per_unit_distance = 1
+	starting_tier = 0
+	type = monument
+	build_trigger = {		
+	}
+	on_built = {	
+	}
+	on_destroyed = {	
+	}
+	can_use_modifiers_trigger = {
+		AND = {
+			custom_trigger_tooltip = {
+				tooltip = dwarven_monuments_can_use_tooltip_dig_level_2_or_higher
+				dwarven_monuments_has_dig_level_2_or_higher = yes
+			}
+			custom_trigger_tooltip = {
+				tooltip = dwarven_monuments_can_use_tooltip
+					dwarven_monuments_has_acceptable_culture_or_race = yes
+			}
+			province_is_or_accepts_culture = yes
+		}
+	}
+	can_upgrade_trigger = {
+		AND = {
+			custom_trigger_tooltip = {
+				tooltip = dwarven_monuments_can_use_tooltip_dig_level_2_or_higher
+					dwarven_monuments_has_dig_level_2_or_higher = yes
+			}
+			custom_trigger_tooltip = {
+				tooltip = dwarven_monuments_can_use_tooltip
+					dwarven_monuments_has_acceptable_culture_or_race = yes
+			}
+			province_is_or_accepts_culture = yes
+		}
+	}
+	keep_trigger = {
+	}
+	tier_0 = {
+		upgrade_time = {
+			months = 0
+		}
+		cost_to_upgrade = {
+			factor = 0
+		}
+		province_modifiers = {
+		}
+		area_modifier = {
+		}
+		country_modifiers = {		
+		}
+		on_upgraded = {
+		}
+	}
+	tier_1 = {
+		upgrade_time = {
+			months = 120
+		}
+		cost_to_upgrade = {
+			factor = 1000
+		}
+		province_modifiers = {
+			local_development_cost = -0.025
+			trade_goods_size = 0.5
+		}
+		area_modifier = {		
+		}
+		region_modifier = {
+		}
+		country_modifiers = {
+			production_efficiency = 0.025
+			development_cost_in_primary_culture = -0.025
+		}
+		on_upgraded = {
+		}
+	}
+	tier_2 = {
+		upgrade_time = {
+			months = 240
+		}
+		cost_to_upgrade = {
+			factor = 3500
+		}
+		province_modifiers = {
+			local_development_cost = -0.05
+			trade_goods_size = 1
+		}
+		area_modifier = {			
+		}
+		region_modifier = {
+		}
+		country_modifiers = {
+			production_efficiency = 0.05
+			development_cost_in_primary_culture = -0.05
+		}
+		on_upgraded = {
+			define_advisor = {
+				type = natural_scientist
+				skill = 3
+				culture = root
+				religion = root
+				location = 4093
+				cost_multiplier = 0.25
+			}
+		}
+	}
+	tier_3 = {
+		upgrade_time = {
+			months = 480
+		}
+		cost_to_upgrade = {
+			factor = 7000
+		}
+		province_modifiers = {
+			local_development_cost = -0.1
+			trade_goods_size = 1.5
+		}
+		area_modifier = {		
+		}
+		region_modifier = {
+			local_development_cost = -0.15
+		}
+		country_modifiers = {
+			production_efficiency = 0.1
+			development_cost_in_primary_culture = -0.1
+		}
+		on_upgraded = {
+			owner = {
+				add_country_modifier = {
+					name = arg_ordstun_great_clast_shafts_development
+					duration = 5475
+				}
+			}
+		}
+	}
+}
+#The Great Waterfall of Orlghelovar
+orlghelovar_great_waterfall = {
+	start = 4238
+	date = 01.01.01
+	time = {
+		months = 0
+	}
+	build_cost = 0
+	can_be_moved = no
+	move_days_per_unit_distance = 1
+	starting_tier = 0
+	type = monument
+	build_trigger = {	
+	}
+	on_built = {	
+	}
+	on_destroyed = {		
+	}	
+	can_use_modifiers_trigger = {
+		AND = {
+			custom_trigger_tooltip = {
+				tooltip = dwarven_monuments_can_use_tooltip_dig_level_2_or_higher
+				dwarven_monuments_has_dig_level_2_or_higher = yes
+			}
+			custom_trigger_tooltip = {
+				tooltip = dwarven_monuments_can_use_tooltip
+					dwarven_monuments_has_acceptable_culture_or_race = yes
+			}
+			province_is_or_accepts_culture = yes
+		}
+	}
+	can_upgrade_trigger = {
+		AND = {
+			custom_trigger_tooltip = {
+				tooltip = dwarven_monuments_can_use_tooltip_dig_level_2_or_higher
+					dwarven_monuments_has_dig_level_2_or_higher = yes
+			}
+			custom_trigger_tooltip = {
+				tooltip = dwarven_monuments_can_use_tooltip
+					dwarven_monuments_has_acceptable_culture_or_race = yes
+			}
+			province_is_or_accepts_culture = yes
+		}
+	}
+	keep_trigger = {
+	}
+	tier_0 = {
+		upgrade_time = {
+			months = 0
+		}
+		cost_to_upgrade = {
+			factor = 0
+		}
+		province_modifiers = {
+		}
+		area_modifier = {
+		}
+		country_modifiers = {
+			
+		}
+		on_upgraded = {
+		}
+	}
+	tier_1 = {
+		upgrade_time = {
+			months = 120
+		}
+		cost_to_upgrade = {
+			factor = 1000
+		}
+		province_modifiers = {
+			local_defensiveness = 0.1
+		}
+		area_modifier = {		
+		}
+		country_modifiers = {
+			stability_cost_modifier = -0.1
+			dip_advisor_cost = -0.1
+		}
+		on_upgraded = {
+		}
+	}
+	tier_2 = {
+		upgrade_time = {
+			months = 240
+		}
+		cost_to_upgrade = {
+			factor = 3500
+		}
+		province_modifiers = {
+			local_defensiveness = 0.2
+			local_hostile_attrition = 0.5
+		}
+		area_modifier = {		
+		}
+		country_modifiers = {
+			stability_cost_modifier = -0.15
+			dip_advisor_cost = -0.15
+		}
+		on_upgraded = {
+			define_advisor = {
+				type = statesman
+				skill = 3
+				culture = root
+				religion = root
+				location = root
+				cost_multiplier = 0.25
+			}
+		}
+	}
+	tier_3 = {
+		upgrade_time = {
+			months = 480
+		}
+		cost_to_upgrade = {
+			factor = 7000
+		}
+		province_modifiers = {
+			local_defensiveness = 0.33
+			local_hostile_attrition = 1
+			local_defender_dice_roll_bonus = 1
+		}
+		area_modifier = {		
+		}
+		country_modifiers = {
+			stability_cost_modifier = -0.2
+			dip_advisor_cost = -0.2
+			monarch_diplomatic_power = 1
+		}
+		on_upgraded = {
+			owner = {
+				random_list = {
+					50 = {
+						add_dip_power = 150
+					}
+					30 = {
+						change_ruler_stat = {
+							stat = dip
+							amount = 2
+						}
+					}
+					20 = {
+						add_dip_tech = 1
+					}
+				}
+			}
+		}
+	}
+}
+#The Marble Gate (Shaztundihr)
+shaztundihr_marble_gate = {
+	start = 2942
+	date = 01.01.01
+	time = {
+		months = 0
+	}
+	build_cost = 0
+	can_be_moved = no
+	move_days_per_unit_distance = 1
+	starting_tier = 0
+	type = monument
+
+	build_trigger = {	
+	}
+	on_built = {	
+	}
+	on_destroyed = {		
+	}	
+	can_use_modifiers_trigger = {
+		AND = {
+			custom_trigger_tooltip = {
+				tooltip = dwarven_monuments_can_use_tooltip_dig_level_2_or_higher
+				dwarven_monuments_has_dig_level_2_or_higher = yes
+			}
+			custom_trigger_tooltip = {
+				tooltip = dwarven_monuments_can_use_tooltip
+					dwarven_monuments_has_acceptable_culture_or_race = yes
+			}
+			province_is_or_accepts_culture = yes
+		}
+	}
+	can_upgrade_trigger = {
+		AND = {
+			custom_trigger_tooltip = {
+				tooltip = dwarven_monuments_can_use_tooltip_dig_level_2_or_higher
+					dwarven_monuments_has_dig_level_2_or_higher = yes
+			}
+			custom_trigger_tooltip = {
+				tooltip = dwarven_monuments_can_use_tooltip
+					dwarven_monuments_has_acceptable_culture_or_race = yes
+			}
+			province_is_or_accepts_culture = yes
+		}
+	}
+	keep_trigger = {
+	}
+	tier_0 = {
+		upgrade_time = {
+			months = 0
+		}
+		cost_to_upgrade = {
+			factor = 0
+		}
+		province_modifiers = {
+		}
+		area_modifier = {
+		}
+		country_modifiers = {		
+		}
+		on_upgraded = {
+		}
+	}
+	tier_1 = {
+		upgrade_time = {
+			months = 120
+		}
+		cost_to_upgrade = {
+			factor = 1000
+		}
+		province_modifiers = {
+			local_defensiveness = 0.15
+		}
+		area_modifier = {		
+		}
+		country_modifiers = {
+			fort_maintenance_modifier = -0.05
+			prestige = 0.1
+		}
+		on_upgraded = {
+		}
+	}
+	tier_2 = {
+		upgrade_time = {
+			months = 240
+		}
+		cost_to_upgrade = {
+			factor = 3500
+		}
+		province_modifiers = {
+			local_defensiveness = 0.2
+			local_hostile_attrition = 0.5
+		}
+		area_modifier = {			
+		}
+		country_modifiers = {
+			fort_maintenance_modifier = -0.125
+			prestige = 0.25
+			monthly_splendor = 1
+		}
+		on_upgraded = {
+		}
+	}
+	tier_3 = {
+		upgrade_time = {
+			months = 480
+		}
+		cost_to_upgrade = {
+			factor = 7000
+		}
+		province_modifiers = {
+			local_defensiveness = 0.33
+			local_hostile_attrition = 1
+			local_defender_dice_roll_bonus = 1
+		}
+		area_modifier = {		
+		}
+		country_modifiers = {
+			fort_maintenance_modifier = -0.2
+			monthly_splendor = 2
+			prestige = 0.5
+		}
+		on_upgraded = {
+		}
+	}
+}

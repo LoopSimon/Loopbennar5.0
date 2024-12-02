@@ -1,0 +1,242 @@
+﻿l_english:
+
+####################
+#Custom Tooltips
+####################
+
+dwarven_monuments_can_use_tooltip_dig_level_2_or_higher: "Has at least §YDig Level 2: Underground Hold§!, or has at least §Y50 Development§!"
+dwarven_monuments_can_use_tooltip_dig_level_3_or_higher: "Has at least §YDig Level 3: Cavernous Hold§!, or has at least §Y60 Development§!"
+dwarven_monuments_can_use_tooltip_dig_level_4_or_higher: "Has at least §YDig Level 4: Outer Hold§!, or has at least §Y70 Development§!"
+dwarven_monuments_can_use_tooltip: "§Y[Root.GetName]§! either belongs to a §YSubterranean Race§!, or has a §YSubterranean Racial Minority§! either §GCoexisting§! or §TIntegrated§!"
+dwarven_monuments_can_use_tooltip_marrhold: "§Y[Root.GetName]§! belongs to either a §YSubterranean Race§! or an §YEscanni§! culture"
+dwarven_monuments_can_use_tooltip_strongbellow_academy: "§YProvince§! either belongs to a §YSubterranean Race§!, or has a §YSubterranean Race§! either §GCoexisting§! or §TIntegrated§!, or belongs to a culture native to §YThe Empire of Anbennar§!"
+
+dwarven_monuments_permanent_damestear: "The damestear in this province is §Ypermanent§!, and will not deplete over time."
+
+####################
+#Western Dwarovar
+####################
+
+kronium_throne_title: "The Kronium Throne"
+kronium_throne: "The Kronium Throne"
+great_project_kronium_throne: "The Kronium Throne"
+kronium_throne_desc: "The Kronium Throne is the physical symbol of the High King's authority and sovereign dominion over all the Serpentspine."
+
+amlharaz_assembly_title: "High Assembly of Amlharaz"
+amlharaz_assembly: "High Assembly of Amlharaz"
+great_project_amlharaz_assembly: "High Assembly of Amlharaz"
+amlharaz_assembly_desc: "Amlharaz is the ancient meeting place of the old Dwarven Empire. The High Assembly of Amlharaz, more appropriately of Aul-Dwarov itself, was where the first dwarven kings met to broker peace and conduct diplomacy amongst their holds."
+
+hall_of_the_ancestors_title: "Hall of the Ancestors"
+hall_of_the_ancestors: "Hall of the Ancestors"
+great_project_hall_of_the_ancestors: "Hall of the Ancestors"
+hall_of_the_ancestors_desc: "Before the fall of Aul-Dwarov, The Hall of the Ancestors was the home of all the knowledge of all dwarves. To call it a library would almost be an understatement, as at its prime it exceeded all other libraries in Halann in the wealth, size, and depth of its knowledge."
+
+fortress_of_verkal_vazkron_title: "Fortress of Verkal Vazkron"
+fortress_of_verkal_vazkron: "Fortress of Verkal Vazkron"
+great_project_fortress_of_verkal_vazkron: "Fortress of Verkal Vazkron"
+fortress_of_verkal_vazkron_desc: "Verkal Vazkron was one of the legendary holds of The Kingsrock that held out in the siege of Amldhir for many decades, though it eventually fell to the invading orcs in 5888 BA, after all of the dwarven defenders had been killed in a last stand defense of the Kingsrock."
+
+er_natvir_railyard_title: "Railyard of Er-Natvir"
+er_natvir_railyard: "Railyard of Er-Natvir"
+great_project_er_natvir_railyard: "Railyard of Er-Natvir"
+er_natvir_railyard_desc: "It is said that all rails in the Dwarovar lead to Er-Natvir. The Railyard of the Dagrite Dwarves is in many ways the heart of the Serpentspine Mountains, even more so than Amldihr. Quick and efficient transportation was crucial to the Dwarven Empire, not just for the movement and logistical supply of dwarven armies, but also for the Dwarovstapola, or the Dwarven postal and delivery service. Afer Er-Natvir fell to the orcs in 5934 BA, it crippled the ability of the Dwarves to quickly respond to orcish incursions in the Western Dwarovar."
+
+kozenad_brothel_title: "Brothels of Verkal Kozenad"
+kozenad_brothel: "Brothels of Verkal Kozenad"
+great_project_kozenad_brothel: "Brothels of Verkal Kozenad"
+kozenad_brothel_desc: "The degenerates of the dwarovar, Verkal Kozenad is famed for its many brothels and the 'ladies of the opal calling'."
+
+mithradhum_academy_title: "Goblinslayer Academy"
+mithradhum_academy: "Goblinslayer Academy"
+great_project_mithradhum_academy: "Goblinslayer Academy"
+mithradhum_academy_desc: "After the famous general of the Mithradûmic army Thorin Goblinslayer retired from military command, he sought to ensure the lessons he had learned in his long military career were not lost when he died. In the hold of Mithradûm, he founded Goblinslayer Academy, where he personally taught many prospective officers and soldiers to be as deadly and stubborn in battle as mithril itself."
+
+orldhum_estates_title: "Noble Estates of Haraz Orldhûm"
+orldhum_estates: "Noble Estates of Haraz Orldhûm"
+great_project_orldhum_estates: "Noble Estates of Haraz Orldhûm"
+orldhum_estates_desc: "The platinum makers, many dwarf nobles and High Kings of Aul-Dwarov came from Haraz Orldhûm. The Platinum Dwarves have a history of belligerence against everyone, even other dwarves. Out of all the various dwarven peoples, the dwarves of Haraz Orldhûm are the most regal and stubborn."
+
+khugdihr_bank_title: "The Asra Bank of Khugdhir"
+khugdihr_bank: "The Asra Bank of Khugdhir"
+great_project_khugdihr_bank: "The Asra Bank of Khugdhir"
+khugdihr_bank_desc: "Khugdhir is a hold famous for its Asra Bank, founded by Fognir Asra after he reclaimed the Gem of Asra. The Asra Bank has branches all across Halann, from Anbenncost to far eastern Haless in Tianlou."
+
+orlazam_food_silos_title: "Food Silos of Orlazam"
+orlazam_food_silos: "Food Silos of Orlazam"
+great_project_orlazam_food_silos: "Food Silos of Orlazam"
+orlazam_food_silos_desc: "Orlazam's position as the premier Dwarven hold overlooking the rich and fertile Serpentsvale has led to it becoming a key location for the collection and distribution of food, especially for the army. The rail lines between Orlazam and Er-Natvir, the Railyard of the empire, are some of the fastest and highest quality rails in all of the Dwarovar, due to the importance of the Serpentsvale in supplying the army and the holds. An army marches on its stomach, after all."
+
+ramvault_mines_title: "Razstunad Mines"
+ramvault_mines: "Razstunad Mines"
+great_project_ramvault_mines: "Razstunad Mines"
+ramvault_mines_desc: "The Ramsteel Dwarves of Orlazam were the developers and originators of dwarven ram cavalry. While they began as frontier woodsmen and farmers living in and around the Serpentsvale, it was the Raztunad Mines that supplied the critical ramsteel used by their ram cavalry."
+
+vazhatun_observatory_title: "Observatory of Dûr-Vazhatun"
+vazhatun_observatory: "Observatory of Dûr-Vazhatun"
+great_project_vazhatun_observatory: "Observatory of Dûr-Vazhatun"
+vazhatun_observatory_desc: "Dûr-Vazhatun is the home of the academic dwarves and philosophers, smart, studious and curious. Unlike other dwarven holds, the Sapphire Darves of Dur-Vazhatûn love the outdoors and observing the night sky. Dur-Vazatûn is also home to the highest peak of the Serpentspine Mountains, upon which the Dwarves have built a massive observatory to watch the stars."
+
+krakdhumvror_hold_title: "Frozen Hold of Krakdûmvror"
+krakdhumvror_hold: "Frozen Hold of Krakdûmvror"
+great_project_krakdhumvror_hold: "Frozen Hold of Krakdûmvror"
+krakdhumvror_hold_desc: "Krakdûmvror is a cold and ancient hold founded by the exiles and criminals of the Dwarven Empire. The modern hold of Krakdumvror has its roots in Verkal Midjurdr Kralt, a fortress originally built to protect the Dwarovar against the Ice Giants of ages long past."
+
+jorkad_aqueduct_title: "Aqueducts of Hul-Jorkad"
+jorkad_aqueduct: "Aqueducts of Hul-Jorkad"
+great_project_jorkad_aqueduct: "Aqueducts of Hul-Jorkad"
+jorkad_aqueduct_desc: "As a famous dwarf worker once remarked, there does not exist any social phenomenon or organization that *isn't* ultimately based on water infrastructure. Hul-Jorkad was the first hold of the Dwarven Empire to fall to the orcs, and once it fell, the lack of water caused the fate of the majority of the holds--those that relied on Hul-Jorkad for water--to be all but sealed. It could reasonably be argued, as it has been by many dwarves following the fall, that had any hold, any hold at all besides Hul-Jorkad fallen to the invaders, that the Dwarven race may have been able to survive against the onslaught of orcs."
+
+sedadhum_mining_settlement_title: "Sedadhûm Mining Settlement"
+sedadhum_mining_settlement: "Sedadhûm Mining Settlement"
+great_project_sedadhum_mining_settlement: "Sedadhûm Mining Settlement"
+sedadhum_mining_settlement_desc: "Relative to its origin hold, Sedadhûm is a recent expansion by the Quartz Dwarves of Krakdûmvror to mine out the Giant's Anvil from the relative safety of the inner cave system. While initial prospecting and surveying operations indicated that large quantities of mithril were likely in the area, continued attacks by orcish rading parties and swarms of goblins forced the Quartz Dwarves to retreat back into their hold, at least for the time being."
+
+####################
+#Serpentsreach
+####################
+
+gor_burad_fireglass_forge_title: "Ghelebûr Krakdhûm"
+gor_burad_fireglass_forge: "Ghelebûr Krakdhûm"
+great_project_gor_burad_fireglass_forge: "Ghelebûr Krakdhûm"
+gor_burad_fireglass_forge_desc: "Ghelebûr Krakdhûm, also known as the Fireglass Forge, is the source of the main export of Gor Bûrad: glass. Using the volcano's lava, the forge produces exquisite obsidian artwork and large quantities of glass."
+
+shaztundihr_marble_gate_title: "The Marble Gate"
+shaztundihr_marble_gate: "The Marble Gate"
+great_project_shaztundihr_marble_gate: "The Marble Gate"
+shaztundihr_marble_gate_desc: "The Marble Gate of Shaztundihr is a remarkable work of dwarven architecture and engineering. Made up of giant single blocks of marble, each door is estimated to weigh over 1500 tons. Meticulously maintained, the designs and decoration on the surface of the gate show off the skill of the Marble Dwarf stoneworkers of Shazstun."
+
+verkal_skomdihr_warding_gate_title: "The Warding Gate"
+verkal_skomdihr_warding_gate: "The Warding Gate"
+great_project_verkal_skomdihr_warding_gate: "The Warding Gate"
+verkal_skomdihr_warding_gate_desc: "Officially known as the "Citadel that Shields Against the Wood", Verkal Skomdihr's main feature was its circular gem-adorned gate (which is also the hold's flag). It is said that the gate was warded by ancient rune and gem magic in order to protect the hold from the malicious influence of the fey. In addition to the Warding Gate, Verkal Skomdihr is also known for being the origin of Flintlock Schematics. While Ovdal Kanzad perfected cannons and artillery, it was the flint dwarves who perfected the small arms of the Dwarven Empire."
+
+arg_ordstun_great_clast_shafts_title: "Great Clast Shafts of Arg-Ôrdstun"
+arg_ordstun_great_clast_shafts: "Great Clast Shafts of Arg-Ôrdstun"
+great_project_arg_ordstun_great_clast_shafts: "Great Clast Shafts of Arg-Ôrdstun"
+arg_ordstun_great_clast_shafts_desc: "A journey through the cavernous hold of Arg-Ôrdstun reveals to the traveler several massive circular shafts piercing the rock in depths unseen. A complex pulley system moves goods up and down, while Dwarven workshops bustle in between. Such are the incredible Great Clast Shafts of Arg-Ordstun."
+
+ovdal_lodhum_tunnel_of_love_title: "The Tunnel of Love"
+ovdal_lodhum_tunnel_of_love: "The Tunnel of Love"
+great_project_ovdal_lodhum_tunnel_of_love: "The Tunnel of Love"
+ovdal_lodhum_tunnel_of_love_desc: "Before the fall of the Dwarven Empire, Ovdal Lohum was known as the romance capial of the Dwarovar. Among other things, the Garnet Dwarves constructed their famous tunnel of love from an old railway, which rapidly became the most popular attraction in Ovdal Lodhum."
+
+orlghelovar_great_waterfall_title: "The Great Waterfall of Orlghelovar"
+orlghelovar_great_waterfall: "The Great Waterfall of Orlghelovar"
+great_project_orlghelovar_great_waterfall: "The Great Waterfall of Orlghelovar"
+orlghelovar_great_waterfall_desc: "A masterwork of engineering, the central hall of Orghelovar at its prime was famous for the waterfall within it, which filled the hall with a pleasant mist that was said to be able to calm even the most enraged of dwarves. The waterfall was fed by an underground spring which was the source of a river, and is recorded to have taken many years of labor to originally construct it."
+
+####################
+#Middle Dwarovar
+####################
+
+verkal_gulan_golden_delve_title: "The Golden Delve"
+verkal_gulan_golden_delve: "The Golden Delve"
+great_project_verkal_gulan_golden_delve: "The Golden Delve"
+verkal_gulan_golden_delve_desc: "The hold of Verkal Gulan rests upon a massive chasm with countless veins of gold running through it, making it the deepest gold mine in the Serpentspine. While in a state of disrepair in 1444 AA, the Golden Delve at its peak supplied Aul-Dwarov with the majority of its minted coins before the collapse of the empire."
+
+seghdihr_home_of_the_seg_band_title: "Home of the Seg Band"
+seghdihr_home_of_the_seg_band: "Home of the Seg Band"
+great_project_seghdihr_home_of_the_seg_band: "Home of the Seg Band"
+seghdihr_home_of_the_seg_band_desc: "One of the most notorious and ruthless mercenary companies in Cannor, the Seg Band (a corruption of the Segbandal, which meant Southern Alliance which Seghdir had led) first found notoriety serving as enforcers under Sun Elven Employ when the hold was shared between the Phoenix Empire and the Segbandal."
+
+hehodovar_school_of_architecture_title: "Hehodovar School of Architecture"
+hehodovar_school_of_architecture: "Hehodovar School of Architecture"
+great_project_hehodovar_school_of_architecture: "Hehodovar School of Architecture"
+hehodovar_school_of_architecture_desc: "The first hold, and the hold of the builders. Hehodovar is famous for its school of architecture, which at its prime was the definitive school in all of Halann for teaching building design and construction, though with a known *slight* bias towards dwarven styles by the professors."
+
+gor_vazumbrog_the_vaulthold_title: "The Vaulthold"
+gor_vazumbrog_the_vaulthold: "The Vaulthold"
+great_project_gor_vazumbrog_the_vaulthold: "The Vaulthold"
+gor_vazumbrog_the_vaulthold_desc: "In the time of ancient Aul-Dwarov, Gor Vazumbrog was second only to Mithradum in matters of military importance and the security of the Dwarovar, due to the large amount of relics and arcane tomes that were locked deep in its titanium vaults. Only an appeal by the High King of Amldihr himself could open a titanium vault, and it was rarely done, for much of what was sealed was sealed for good reason."
+
+gor_ozumbrog_the_topaz_throne_title: "The Topaz Throne"
+gor_ozumbrog_the_topaz_throne: "The Topaz Throne"
+great_project_gor_ozumbrog_the_topaz_throne: "The Topaz Throne"
+gor_ozumbrog_the_topaz_throne_desc: "While never as mighty as the Kronium Throne of the High King of Amldhir, the Topaz Throne is a symbol of the power of the Old Kings of Gor Ozumbrog before the fall of the hold during the collapse of the Dwarven Empire led to its near total destruction."
+
+####################
+#Tree of Stone
+####################
+
+earthseed_title: "Earthseed"
+earthseed: "Earthseed"
+great_project_earthseed: "Earthseed"
+earthseed_desc: "Earthseed is the location where the earth goddess Halanna is said to have created the Dwarves from the rock of the Serpentspine. It is the most holy and venerated site for all Dwarves, especially those who reside within the Serpentspine itself."
+
+ovdal_kanzad_cannon_foundry_title: "The Kanzadi Cannon Foundry"
+ovdal_kanzad_cannon_foundry: "The Kanzadi Cannon Foundry"
+great_project_ovdal_kanzad_cannon_foundry: "The Kanzadi Cannon Foundry"
+ovdal_kanzad_cannon_foundry_desc: "Cannons and artillery are the signature focus of the Amber Dwarves of Ovdal Kanzad. Endlessly tinkering with different metals and alloys to produce the best and most powerful cannons and shells from their foundry, one almost pities the goblins and orcs on the other side of the battlefield."
+
+grozumdhir_green_gate_title: "The Green Gate"
+grozumdhir_green_gate: "The Green Gate"
+great_project_grozumdhir_green_gate: "The Green Gate"
+grozumdhir_green_gate_desc: "The Welcoming Gate, or "Green Gate" of Grozumdhir is a massive gate ornamented with peridot stones, and the origin of the hold's name. Above the gate are the words "All friends of the dwarves are welcome". In modern times, humans from Rahen, as well as Harimari scholars and even some Sun and Desert Elves have settled within Grozumdhir's outer levels, making it one of the most diverse holds in the Dwarovar."
+
+ovdal_az_an_grand_lake_ballroom_title: "The Grand Lake Ballroom"
+ovdal_az_an_grand_lake_ballroom: "The Grand Lake Ballroom"
+great_project_ovdal_az_an_grand_lake_ballroom: "The Grand Lake Ballroom"
+ovdal_az_an_grand_lake_ballroom_desc: "Hewn into the stone by Magun the Carver, the Gand Lake Ballroom is a point of pride for the dwarves of Ovdal Az-An. Polished to a mirror-like sheen, the dance floor looks like an undisturbed glowing lake as the dwarves of the hold guide soundlessly over it during their dance across its surface. Through some unknown technique or trick by Magun himself when building the ballroom, the surface is never marred by use."
+
+hul_as_krakazol_breweries_title: "The Hul-az-Krakazol Breweries"
+hul_as_krakazol_breweries: "The Hul-az-Krakazol Breweries"
+great_project_hul_as_krakazol_breweries: "The Hul-az-Krakazol Breweries"
+hul_as_krakazol_breweries_desc: "The Amethyst Dwarves of Hul-az-Krakazol were famous for their brewing. it is said that they were the people who originally discovered the fermenting process for alcohol. Backed by hundreds of years of improvements, Krakazoller brewers are renowned for their unique flavors, quality, and potency."
+
+####################
+#Jade Mines
+####################
+
+tuwad_dhumakon_gardens_title: "Gardens of Tuwad-Dhûmakon"
+tuwad_dhumakon_gardens: "Gardens of Tuwad-Dhûmakon"
+great_project_tuwad_dhumakon_gardens: "Gardens of Tuwad-Dhûmakon"
+tuwad_dhumakon_gardens_desc: "The Gardens of Tuwad-Dhûmakon stand as one of the Sepentspine's most magnificent managed gardens. Maintained by the Emerald Dwarves for nearly a millenia before the fall, the The Gardens of Tuwad-Dhûmakon are said to be able to calm and rejuvenate even the most pent up of dwarves."
+
+gronstunad_trade_halls_title: "Trade Halls of Grônstunad"
+gronstunad_trade_halls: "Trade Halls of Grônstunad"
+great_project_gronstunad_trade_halls: "Trade Halls of Grônstunad"
+gronstunad_trade_halls_desc: "Grônstunad was once the center of a dwarven trading empire that thrived even as most of Aul-Dwarov crumbled. While the occupation of the hold by the militaristic hobgoblins has turned Grônstunad into a shadow of its former self, the potential to rise up to its former greatness still lingers in its halls."
+
+verkal_dromak_mage_academy_title: "Mage Academy of Verkal Dromak"
+verkal_dromak_mage_academy: "Mage Academy of Verkal Dromak"
+great_project_verkal_dromak_mage_academy: "Mage Academy of Verkal Dromak"
+verkal_dromak_mage_academy_desc: "Verkal Dromak is home to quite a few practitioners of the arcane arts, many of which are proficient in divination rather than the more traditional rune magic of most other arcane dwarves. These mages keep to themselves for the most part, but a few lend their talents to the hold to peer into the dreams of enemies and dissidents."
+
+vurdriz_andriz_bastion_title: "Bastion of Vûrdriz-Ândriz"
+vurdriz_andriz_bastion: "Bastion of Vûrdriz-Ândriz"
+great_project_vurdriz_andriz_bastion: "Bastion of Vûrdriz-Ândriz"
+
+emerald_spire_title: "The Emerald Spire"
+emerald_spire: "The Emerald Spire"
+great_project_emerald_spire: "The Emerald Spire"
+emerald_spire_desc: "The Emerald Spire stands as one of the Serpentspine's most magnificent formations. An enormous limestone cave, stretching leagues through the ground, centered with its titular spire. A grand pillar of emerald, the spire is said to be the aorta of Halanna's heart."
+
+####################
+#Not In Serpentspine
+####################
+
+marrhold_gate_to_the_serpentspine_title: "Marrhold, Gate to the Serpentspine"
+marrhold_gate_to_the_serpentspine: "Marrhold, Gate to the Serpentspine"
+great_project_marrhold_gate_to_the_serpentspine: "Marrhold, Gate to the Serpentspine"
+marrhold_gate_to_the_serpentspine_desc: "Marrhold is an ancient dwarven hold, but has long since been abandoned by the dwarves due to an unfortunate tunnel collapse. Now, Alenic humans reside in and around the old hold, having been rebuilt and occupied by them since 492 AA."
+
+ovdal_tungr_port_hold_title: "Port-Hold of Ovdal Tûngr"
+ovdal_tungr_port_hold: "Port-Hold of Ovdal Tûngr"
+great_project_ovdal_tungr_port_hold: "Port-Hold of Ovdal Tûngr"
+ovdal_tungr_port_hold_desc: "The Copper Dwarves of Ovdal Tûngr stand out amongst all the dwarves of Halann — not just those within the Serpentspine — as being unusually adept and capable at sea. While most dwarves have a great dislike and even fear of large bodies of open water, the Copper Dwarves prove that this fear is hardly something that is genetic to the Dwarven race, and are some of the best sailors in all of both Bulwar and Cannor."
+
+rubyhold_academy_title: "Rubyhold Institute of Humanities"
+rubyhold_academy: "Rubyhold Institute of Humanities"
+great_project_rubyhold_academy: "Rubyhold Institute of Humanities"
+rubyhold_academy_desc: "The Rubyhold Institute of Humanities is an institution dedicated to the study of humans and human societies. Founded when humans first began settling in the Dameshead region, dwarven scholars from the Institute have been carefully studying humans for over a thousand years. Topics such as human construction methods, how humans conduct wars, how they order their societies, and human religion are all fascinating topics that intelligent and studious dwarves at the Institute have carefully compiled records on for thousands of years."
+
+verkal_ozovar_phokhao_citadel_title: "Phokhao Citadel"
+verkal_ozovar_phokhao_citadel: "Phokhao Citadel"
+great_project_verkal_ozovar_phokhao_citadel: "Phokhao Citadel"
+verkal_ozovar_phokhao_citadel_desc: "The Verdant Dwarves of the east have resided in their mountain citadel since the fall of Grônstunad, guarding the riches from their mountain and looming over the lands of Hinphat."
+
+silverforge_strongbellow_academy_title: "Strongbellow Academy of Metallurgy"
+silverforge_strongbellow_academy: "Strongbellow Academy of Metallurgy"
+great_project_silverforge_strongbellow_academy: "Strongbellow Academy of Metallurgy"
+silverforge_strongbellow_academy_desc: "During the 4th Lilac War, the dwarven armies of Silverforge were looking into new ways to combat the powerful cavalry-dominated armies fielded by Lorent and their allies, having suffered heavy losses from them in the field. This task was assigned to a dwarf named Grun Strongbellow, who, after decades of exploration into ancient dwarven weaponry in the Serpentspine, developed new rifle and artillery batteries for the armies of Silverforge. A center of higher education within the hold of Silverforge is now named in his honor."

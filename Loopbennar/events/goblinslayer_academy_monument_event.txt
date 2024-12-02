@@ -1,0 +1,65 @@
+#T3 Goblinslayer Academy event, allows you to pick between three ruler personalities, or decline for 75 military power. +1 monarch mil regardless of choice.
+#currently is not implemented until I fix the event picture
+
+namespace = dwarven_monuments_goblinslayer_academy
+country_event = {
+	id = dwarven_monuments_goblinslayer_academy.1
+	title = dwarven_monuments_goblinslayer_academy.1.t
+	desc = dwarven_monuments_goblinslayer_academy.1.d
+	picture = THE_VAULTHOLD_eventPicture
+	goto = 4236
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+
+	option = {
+		name = dwarven_monuments_goblinslayer_academy.1.a #gain strict
+		trigger = {
+			NOT = { ruler_has_personality = strict_personality }
+			NOT = {	ruler_has_max_personalities = yes }
+		} 
+		add_ruler_personality = strict_personality
+		change_mil = 1
+	}
+	option = {
+		name = dwarven_monuments_goblinslayer_academy.1.b #gain martial educator
+		trigger = {
+			NOT = { ruler_has_personality = martial_educator_personality_personality }
+			NOT = {	ruler_has_max_personalities = yes }
+		} 
+		add_ruler_personality = martial_educator_personality
+		change_mil = 1
+		ai_chance = { 
+			factor = 1
+		}
+	}
+	option = {
+		name = dwarven_monuments_goblinslayer_academy.1.c #gain inspiring leader, lose craven
+		trigger = {
+			NOT = { ruler_has_personality = inspiring_leader_personality }
+			NOT = { ruler_has_personality = craven_personality }
+			NOT = {	ruler_has_max_personalities = yes }
+		}
+		add_ruler_personality = inspiring_leader_personality
+		change_mil = 1
+	}
+	option = {
+		name = dwarven_monuments_goblinslayer_academy.1.e #gain tactial genius
+		trigger = {
+			NOT = { ruler_has_personality = tactical_genius_personality }
+			NOT = {	ruler_has_max_personalities = yes }
+		}
+		add_ruler_personality = tactical_genius_personality
+		change_mil = 1
+	}
+	option = {
+		name = dwarven_monuments_goblinslayer_academy.1.f #gain +75 mil points
+		trigger = {
+			always = yes
+		}
+		add_mil_power = 75
+		change_mil = 1
+	}
+}

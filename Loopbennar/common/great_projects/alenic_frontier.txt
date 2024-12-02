@@ -1,0 +1,304 @@
+####################
+#Alenic Frontier
+####################
+#Mustering Grounds of Freecestir (Arbaran)
+freecestir_mustering_grounds = {
+	start = 245
+	date = 01.01.01
+	time = {
+		months = 0
+	}
+	build_cost = 0
+	can_be_moved = no
+	move_days_per_unit_distance = 1
+	starting_tier = 1
+	type = monument
+	build_trigger = {	
+	}
+	on_built = {		
+	}
+	on_destroyed = {	
+	}
+	can_use_modifiers_trigger = {
+		AND = {
+			custom_trigger_tooltip = {
+				tooltip = cannorian_monuments_can_use_tooltip_empire_of_anbennar_and_alenic
+					OR = {
+						culture_group = anbennarian
+						culture = imperial_halfling
+						culture = imperial_gnome
+						culture = moon_elf
+						culture = silver_dwarf
+						culture_group = alenic
+						culture_group = reachman
+						culture = white_reachman
+						culture = vertesker
+						culture = roilsardi
+						culture = castanorian
+					}
+			}
+			province_is_or_accepts_culture = yes
+		}
+	}	
+	can_upgrade_trigger = {
+		AND = {
+			custom_trigger_tooltip = {
+				tooltip = cannorian_monuments_can_use_tooltip_empire_of_anbennar_and_alenic
+					OR = {
+						culture_group = anbennarian
+						culture = imperial_halfling
+						culture = imperial_gnome
+						culture = moon_elf
+						culture = silver_dwarf
+						culture_group = alenic
+						culture_group = reachman
+						culture = white_reachman
+						culture = roilsardi
+						culture = castanorian
+					}
+			}
+			province_is_or_accepts_culture = yes
+		}
+	}	
+	keep_trigger = {
+	}
+	tier_0 = {
+		upgrade_time = {
+			months = 0
+		}
+		cost_to_upgrade = {
+			factor = 0
+		}
+		province_modifiers = {
+		}
+		area_modifier = {
+		}
+		country_modifiers = {	
+		}
+		on_upgraded = {
+		}
+	}
+	tier_1 = {
+		upgrade_time = {
+			months = 120
+		}
+		cost_to_upgrade = {
+			factor = 1000
+		}
+		province_modifiers = {
+			province_trade_power_modifier = 0.1
+			supply_limit_modifier = 0.15
+		}
+		area_modifier = {
+			local_manpower_modifier = 0.1
+		}
+		country_modifiers = {
+			land_forcelimit_modifier = 0.025
+		}
+		on_upgraded = {
+		}
+	}
+	tier_2 = {
+		upgrade_time = {
+			months = 240
+		}
+		cost_to_upgrade = {
+			factor = 2500
+		}
+		province_modifiers = {
+			province_trade_power_modifier = 0.20
+			supply_limit_modifier = 0.3
+		}
+		area_modifier = {
+			local_manpower_modifier = 0.2
+		}
+		country_modifiers = {
+			land_forcelimit_modifier = 0.05
+		}
+		on_upgraded = {
+			define_advisor = {
+				type = army_organiser
+				skill = 3
+				culture = root
+				religion = root
+				location = 245
+				cost_multiplier = 0.25
+			}
+		}
+	}
+	tier_3 = {
+		upgrade_time = {
+			months = 480
+		}
+		cost_to_upgrade = {
+			factor = 5000
+		}
+		province_modifiers = {
+			province_trade_power_modifier = 0.33
+			supply_limit_modifier = 0.5
+		}
+		area_modifier = {
+			local_manpower_modifier = 0.33
+		}
+		country_modifiers = {
+			land_forcelimit_modifier = 0.1
+		}
+		on_upgraded = {
+			owner = {
+				add_country_modifier = {
+					name = recruits_flock
+					duration = 1825
+				}
+			}
+		}
+	}
+}
+#Castle Gaweton
+gawed_castle_gaweton = {
+	start = 221
+	date = 01.01.01
+	time = {
+		months = 0
+	}
+	build_cost = 0
+	can_be_moved = no
+	move_days_per_unit_distance = 1
+	starting_tier = 1
+	type = monument
+	build_trigger = {	
+	}
+	on_built = {		
+	}
+	on_destroyed = {	
+	}
+	can_use_modifiers_trigger = {
+		AND = {
+			custom_trigger_tooltip = {
+				tooltip = cannorian_monuments_can_use_tooltip_alenic_and_reach
+					OR = {
+						culture_group = alenic
+						culture_group = reachman
+						culture = white_reachman
+						culture = castanorian
+					}
+			}
+			province_is_or_accepts_culture = yes
+		}
+	}	
+	can_upgrade_trigger = {
+		AND = {
+			custom_trigger_tooltip = {
+				tooltip = cannorian_monuments_can_use_tooltip_alenic_and_reach
+					OR = {
+						culture_group = alenic
+						culture_group = reachman
+						culture = white_reachman
+						culture = castanorian
+					}
+			}
+			province_is_or_accepts_culture = yes
+		}
+	}
+	keep_trigger = {
+	}
+	tier_0 = {
+		upgrade_time = {
+			months = 0
+		}
+		cost_to_upgrade = {
+			factor = 0
+		}
+		province_modifiers = {
+		}
+		area_modifier = {
+		}
+		country_modifiers = {	
+		}
+		on_upgraded = {
+		}
+	}
+	tier_1 = {
+		upgrade_time = {
+			months = 120
+		}
+		cost_to_upgrade = {
+			factor = 1000
+		}
+		province_modifiers = {
+			local_defensiveness = 0.1
+		}
+		area_modifier = {
+			local_production_efficiency = 0.1
+		}
+		country_modifiers = {
+			legitimacy = 0.25
+			republican_tradition = 0.1
+			horde_unity = 0.25
+			devotion = 0.25
+			province_warscore_cost = -0.025
+		}
+		on_upgraded = {
+		}
+	}
+	tier_2 = {
+		upgrade_time = {
+			months = 240
+		}
+		cost_to_upgrade = {
+			factor = 2500
+		}
+		province_modifiers = {
+			local_defensiveness = 0.2
+		}
+		area_modifier = {
+			local_production_efficiency = 0.2
+		}
+		country_modifiers = {
+			legitimacy = 0.5
+			republican_tradition = 0.2
+			horde_unity = 0.5
+			devotion = 0.5
+			province_warscore_cost = -0.05
+		}
+		on_upgraded = {
+			define_advisor = {
+				type = grand_captain
+				skill = 3
+				culture = root
+				religion = root
+				location = 221
+				cost_multiplier = 0.25
+			}
+		}
+	}
+	tier_3 = {
+		upgrade_time = {
+			months = 480
+		}
+		cost_to_upgrade = {
+			factor = 5000
+		}
+		province_modifiers = {
+			local_defensiveness = 0.33
+			local_defender_dice_roll_bonus = 1
+		}
+		area_modifier = {
+			local_production_efficiency = 0.33
+		}
+		country_modifiers = {
+			legitimacy = 1
+			republican_tradition = 0.3
+			horde_unity = 1
+			devotion = 1
+			province_warscore_cost = -0.1
+		}
+		on_upgraded = {
+			owner = {
+				add_country_modifier = {
+					name = gawed_castle_gaweton_northern_lord_meeting
+					duration = 5475
+				}
+			}
+		}
+	}
+}

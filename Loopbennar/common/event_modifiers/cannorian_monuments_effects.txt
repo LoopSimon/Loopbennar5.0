@@ -1,0 +1,96 @@
+#This file is for the temporary effects granted by some monuments.
+
+lorentaine_mage_academy_loyalty {
+	mages_loyalty_modifier = 0.1
+	all_power_cost = -0.025
+}
+
+marrhold_the_feather_academy_aerial_cavalry {
+	cavalry_power = 0.1
+	mil_tech_cost_modifier = -0.1
+}
+
+lorent_new_adea_naval_school_new_admiralty {
+	leader_naval_fire = 1
+	leader_naval_shock = 1
+	leader_naval_manuever = 1
+}
+
+nathalaire_city_of_pirates_nathalynes_boon {
+	spy_offence = 0.25
+	privateer_efficiency = 0.25
+}
+
+minara_temple_degenerate_sex_party {
+	improve_relation_modifier = 0.15
+	power_projection_from_insults = 1
+}
+
+ibevar_temple_of_munas_boon {
+	tolerance_heathen = 2
+}
+
+gawed_castle_gaweton_northern_lord_meeting {
+	nobles_loyalty_modifier = 0.2
+	advisor_pool = 3
+}
+
+urviksten_ebonsteel_armory_roars_to_life {
+	shock_damage = 0.1
+	shock_damage_received = -0.05
+}
+
+ara_temple_lods_of_emone {
+	trade_efficiency = 0.1
+	global_tax_modifier = 0.1
+}
+
+esthili_academy_of_magic_tier_one {
+	trade_goods_size_modifier = -0.5
+}
+
+esthili_academy_of_magic_tier_two {
+	trade_goods_size_modifier = -0.25
+}
+
+esthili_academy_of_magic_tier_three {
+	trade_goods_size = 1
+	trade_goods_size_modifier = 0.33
+}
+
+esthili_academy_of_magic_consequences_of_baneposting {
+	local_development_cost = 0.5
+}
+
+neckcliffe_journey_across_the_sea_of_stars {
+	naval_morale = 0.1
+	prestige_from_naval = 1
+}
+
+deranne_westport_derannic_colonial_enthusiasm = {
+	colonists = 1
+	colonist_placement_chance = 0.15
+}
+
+damescrown_grand_exchange_the_prosperous_merchants {
+	burghers_loyalty_modifier = 0.15
+	dip_advisor_cost = -0.15
+}
+
+beepeck_the_largest_small_city_traders_of_beepeck_dominating = {
+	placed_merchant_power = 5
+	global_trade_power = 0.15
+}
+
+sorncell_deepwater_harbor_hardy_sailors = {
+	heavy_ship_power = 0.1
+	sailors_recovery_speed = 0.1
+}
+
+giberd_academy_of_engineering_building_boom {
+	build_cost = -0.1
+	build_time = -0.25
+}
+seinathil_institute_of_song_bardic_inspiration {
+	land_morale = 0.1
+}

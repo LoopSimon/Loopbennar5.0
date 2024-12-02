@@ -1,0 +1,338 @@
+﻿l_english:
+
+####################
+#Custom Tooltips
+####################
+
+cannorian_monuments_can_use_tooltip_empire_of_anbennar: "§Y[Root.GetName]§! is a culture native to §YThe Empire of Anbennar§!"
+cannorian_monuments_can_use_tooltip_empire_of_anbennar_and_alenic: "§Y[Root.GetName]§! is either a culture native to §YThe Empire of Anbennar§!, or to an §YAlenic§! culture"
+cannorian_monuments_can_use_tooltip_alenic_and_reach: "§Y[Root.GetName]§! is either §YAlenic§! or §YReachman§!"
+cannorian_monuments_can_use_tooltip_reach_cities: "§Y[Root.GetName]§! is either §YAlenic§!, §YReachman§! or §YMoon Elf§!"
+cannorian_monuments_can_use_tooltip_businor: "§Y[Root.GetName]§! is either §YBusinori§! or §YKheteratan§!"
+cannorian_monuments_can_use_tooltip_dalr: "§Y[Root.GetName]§! is either §YGerudian§!, §YReachman§!, §YFjord Troll§!, or §YJárnklo Harpy§!"
+cannorian_monuments_can_use_tooltip_beepeck: "§Y[Root.GetName]§! is either a culture native to §YThe Empire of Anbennar§!, or is §YHalfling§!"
+cannorian_monuments_can_use_tooltip_nathalaire: "§Y[Root.GetName]§! is either a culture native to §YThe Empire of Anbennar§!, or is §YDostanorian§!"
+cannorian_monuments_can_use_tooltip_nimscodd: "§Y[Root.GetName]§! is either §YGnomish§!, §YReverian§!, §YKobold§!, or follows §YThe Thought§!"
+cannorian_monuments_can_use_tooltip_portroy: "§Y[Root.GetName]§! is either §YGnomish§!, §YReverian§!, §YKobold§! or §YLencori§!"
+cannorian_monuments_can_use_tooltip_kobildzex: "§Y[Root.GetName]§! is §YKobold§!"
+cannorian_monuments_can_use_tooltip_dragonhoard: "§Y[Root.GetName]§! is §YKobold§!, and the owner enjoys stockpiling all of their gold into a big pile and then sitting atop it"
+cannorian_monuments_can_use_tooltip_escann: "§Y[Root.GetName]§! is either §YOrcish§!, an §YEscanni§! culture, or §YMoon Elven§!"
+cannorian_monuments_can_use_tooltip_bladeskeep: "§Y[Root.GetName]§! is either §YOrcish§!, an §YEscanni§! culture, §YMoon Elven§!, or belongs to §YBlademarches§!"
+cannorian_monuments_can_use_tooltip_hammerhome: "§Y[Root.GetName]§! is either §YOrcish§!, an §YEscanni§! culture, §YMoon Elven§!, or belongs to a race renowned for §YArtificery§!"
+cannorian_monuments_can_use_tooltip_sorcerer_king_throne: "§Y[Root.GetName]§! is either §YGerudian§!, §YBlack Castanorian§!, §YBlack Demesner§!, or is owned by a §YWitch-King§!"
+cannorian_monuments_can_use_tooltip_lencenor: "§Y[Root.GetName]§! is either a §YLencori§! culture or is §YMoon Elf§!"
+cannorian_monuments_can_use_tooltip_north_salahad: "§Y[Root.GetName]§! is either a culture native to §YNorth Salahad§! or is §YSun Elf§!"
+cannorian_monuments_can_use_tooltip_pyramids_of_khet: "§Y[Root.GetName]§! is either a culture native to §YNorth Salahad§!, is §YSun Elf§!, or the owner is the §YSteward of the Sorrow§!"
+cannorian_monuments_can_use_tooltip_aquatbar_library: "§Y[Root.GetName]§! is either §YBulwari§!, §YElven§!, §YExodus Goblin§!, §YKarashari§!, §YGnollish§!, or §YHarpy§!"
+cannorian_monuments_can_use_tooltip_halls_of_reverence: "§Y[Root.GetName]§! is either §YBulwari§! or follows the §YOld Sun Cult§Y"
+
+WITCH_KING_REQUIREMENT: "Ruler is a Witch-King" #For the Throne of the Sorceror-King in #833 (North Castonath)
+
+cannorian_monuments_permanent_damestear: "This §YDamestear§! is §ypermanent§!, and will not deplete over time."
+
+####################
+#Alenic Frontier
+####################
+
+freecestir_mustering_grounds_title: "Mustering Grounds of Freecestir"
+freecestir_mustering_grounds: "Mustering Grounds of Freecestir"
+great_project_freecestir_mustering_grounds: "Mustering Grounds of Freecestir"
+freecestir_mustering_grounds_desc: "Freecestir has been a settlement of great importance ever since the pivotal role it played in the defeat of the Sorcerer-King. Freecestir's strategic location at the crossroads between Escann and the rest of Cannor means that it has frequently served as a mustering ground for armies (and adventurers) seeking to gain glory in Escann and beyond, as well as a stopping point for trade passing between the two regions."
+
+gawed_castle_gaweton_title: "Castle Gaweton"
+gawed_castle_gaweton: "Castle Gaweton"
+great_project_gawed_castle_gaweton: "Castle Gaweton"
+gawed_castle_gaweton_desc: "Gaweton has been the traditional home of the kings of Gawed for its history. While Gaweton itself is not as developed as Lorentainé in the south, it is still a powerful symbol of the continuing legitimacy of the Gawedi Kings."
+
+####################
+#Alenic Reach
+####################
+
+bayvic_grandest_city_of_the_reach_title: "Bayvic, Grandest City of the Reach"
+bayvic_grandest_city_of_the_reach: "Bayvic, Grandest City of the Reach"
+great_project_bayvic_grandest_city_of_the_reach: "Bayvic, Grandest City of the Reach"
+bayvic_grandest_city_of_the_reach_desc: "Bayvic has long been a large and influential city along the Alenic Reach, but with the recent orcish invasion of Escann, it has grown into an even bigger city. Any aspiring trader or conqueror would do well to respect the economic influence wielded by Bayvic."
+
+celmaldor_icewind_palace_of_commerce_title: "Icewind Palace of Commerce"
+celmaldor_icewind_palace_of_commerce: "Icewind Palace of Commerce"
+great_project_celmaldor_icewind_palace_of_commerce: "Icewind Palace of Commerce"
+celmaldor_icewind_palace_of_commerce_desc: "After the landing of the elves in Celmaldor, one of the largest elven clans, the Icewinds, eventually took power and began to develop the city of Celmaldor into a proper trading port to rival others along the Alenic Reach and Dalr. In the Palace of Commerce, the most magnificent building constructed by the Icewinds, Celmaldorian merchants gather to discuss business and development of the city."
+
+####################
+#Businor
+####################
+
+eborthil_toref_citadel_title: "Toref Citadel"
+eborthil_toref_citadel: "Toref Citadel"
+great_project_eborthil_toref_citadel: "Toref Citadel"
+eborthil_toref_citadel_desc: "The Isle of Tef could be argued to be a fortress by merit of natural geography alone, but the Toref Citadel makes it into an indisputable fact. Built in antiquity by the Kheteratans at the height of their empire, then later improved with extensive dockyards when conquered by the Castanorians, the Toref Citadel makes attacking the Isle of Tef an infuriating process to any would-be conqueror."
+
+####################
+#Dalr
+####################
+
+bjarnrik_staple_port_of_konungrhavn_title: "Staple Port of Konungrhavn"
+bjarnrik_staple_port_of_konungrhavn: "Staple Port of Konungrhavn"
+great_project_bjarnrik_staple_port_of_konungrhavn: "Staple Port of Konungrhavn"
+bjarnrik_staple_port_of_konungrhavn_desc: "Situated at the mouth of the Rafn river, Konungrhavn has always been the staple port of Bjarnrik. Trade on the Giant's Grave Sea has shuffled from east to west and back, rarely moving past the Dragon Coast because of the dangerous seas and those borne upon them."
+
+####################
+#Damescrown
+####################
+
+beepeck_the_largest_small_city_title: "Beepeck, The Largest Small City"
+beepeck_the_largest_small_city: "Beepeck, The Largest Small City"
+great_project_beepeck_the_largest_small_city: "Beepeck, The Largest Small City"
+beepeck_the_largest_small_city_desc: "Beepeck and its halfling population serve as the gatekeepers of the Dameshead, exerting a large influence on trade and movement around its waters. Beepeck is also one of the most built up cities in all of Halann, due to the halfling urban design of stacking their houses upon one another."
+
+damescrown_grand_exchange_title: "Grand Exchange of Damescrown"
+damescrown_grand_exchange: "Grand Exchange of Damescrown"
+great_project_damescrown_grand_exchange: "Grand Exchange of Damescrown"
+damescrown_grand_exchange_desc: "The Grand Exchange is the largest market forum in Anbennar, surpassing even those of Anbenncost in selection and grandeur. The CLSTC, the largest mercantile company in the world, is headquartered in Damescrown due to the city's incredible mercantile significance."
+
+ara_temple_title: "Temple of Ara"
+ara_temple: "Temple of Ara"
+great_project_ara_temple: "Temple of Ara"
+ara_temple_desc: "Ara (also known as lady luck) is the goddess of trade and fortune. Her followers were responsible for setting up the first human mint and currency, allowing ancient Castanor to move from its reliance on dwarven coinage. The largest temple to Ara in Cannor is found in the Dameshead, geographically between the cities of Vertesk and Damescrown and only a short distance away from other important cities."
+
+####################
+#Daravan's Folly
+####################
+
+nathalaire_city_of_pirates_title: "Nathalaire, City of Pirates"
+nathalaire_city_of_pirates: "Nathalaire, City of Pirates"
+great_project_nathalaire_city_of_pirates: "Nathalaire, City of Pirates"
+nathalaire_city_of_pirates_desc: "Nathalaire is a city renowned for its patronage of agents skilled in the arts of espionage and information, as well as being a haven for pirates. The city is named after the Cannorian goddess Nathalalyne, who is the patron and protector of the city."
+
+####################
+#Dragon Coast
+####################
+
+nimscodd_academy_title: "Nimscodd Academy"
+nimscodd_academy: "Nimscodd Academy"
+great_project_nimscodd_academy: "Nimscodd Academy"
+nimscodd_academy_desc: "Nimscodd Academy was founded back when the Gnomish Hierarchy still ruled as the undisputed masters of the Dragon Coast, with a particular focus on engineering and artificery. It is here, on the isle of Nimscodd, that the secrects of artificery were first unraveled."
+
+portnamm_portroy_merchants_guild_title: "Portroy Merchant's Guild"
+portnamm_portroy_merchants_guild: "Portroy Merchant's Guild"
+great_project_portnamm_portroy_merchants_guild: "Portroy Merchant's Guild"
+portnamm_portroy_merchants_guild_desc: "The Portroy Merchants Guild of Portnamm is the foremost mercantile organization of Portnamm, and exerts a large amount of influence upon the local politics of the city. Beyond Portnamm itself, the guild is infamous for its ruthless tactics at maintaining its trading influence within the surrounding waters of Portnamm."
+
+kobildzan_kobildzex_guild_of_trapsmiths_title: "Kobildzex Guild of Trapsmiths"
+kobildzan_kobildzex_guild_of_trapsmiths: "Kobildzex Guild of Trapsmiths"
+great_project_kobildzan_kobildzex_guild_of_trapsmiths: "Kobildzex Guild of Trapsmiths"
+kobildzan_kobildzex_guild_of_trapsmiths_desc: "The Kobold Guild of Trapsmiths has existed within the Kobold realms of the Dragon Coast for many years, yet they have never had a formal home. Deep in the heart of the Dragonheights in Soxun Kobildzex, a guild hall for them to practice their art shall be made."
+
+the_dragonhoard_title: "The Dragonhoard"
+the_dragonhoard: "The Dragonhoard"
+great_project_the_dragonhoard: "The Dragonhoard"
+the_dragonhoard_desc: "Kobolds are essentially small dragons. Dragons, by their very nature, like gold. Where does a dragon put all the gold they find? In a hoard of couse. The largest hoard of gold in all of the Dragondepths (and perhaps all of Cannor as well) is located here, in Soxun Kobildzex. As greed begets greed, the more the hoard grows, so too does the desire for even more wealth grow alongside it."
+
+####################
+#East Dameshead
+####################
+
+anbenncost_imperial_palace_title: "Imperial Palace of Anbenncóst"
+anbenncost_imperial_palace: "Imperial Palace of Anbenncóst"
+great_project_anbenncost_imperial_palace: "Imperial Palace of Anbenncóst"
+anbenncost_imperial_palace_desc: "Anbenncóst is the beating heart of the Empire of Anbennar, and the place to which all emperors must make their way to in order to be coronated. It is the largest city in the world in 1444, and is the residence of many successful adventuring heroes. Anbenncóst is also home to the Order of Chroniclers, a group of scholars and historians dedicated to collecting and scribing the world into their encyclopedia."
+
+moonhaven_port_munas_title: "Port Munas, The Little Anbenncóst"
+moonhaven_port_munas: "Port Munas, The Little Anbenncóst"
+great_project_moonhaven_port_munas: "Port Munas, The Little Anbenncóst"
+moonhaven_port_munas_desc: "The capital of the elven electorate of Moonhaven, Port Munas is situated to control the trade that flows into the Dameshead. Despite being owned by the elven electorate, the city shares more in common culturally with Anbenncóst to its north than with the rest of Moonhaven itself."
+
+silvelar_silver_spires_title: "Silver Spires of the Silver Moon"
+silvelar_silver_spires: "Silver Spires of the Silver Moon"
+great_project_silvelar_silver_spires: "Silver Spires of the Silver Moon"
+silvelar_silver_spires_desc: "The Silver Moon is one of the Dame's greatest temples, with its spires sparkling in the sunlight to produce a most bewitching effect - an optical illusion that causes those who gaze upon it to mistake it for pure silver, warped and hammered into a lances that pierce the clouds themselves. Its existence is a testament to Silvelar's construction industry, which facilitated the development of the Silver Moon from a simple temple to a grand monument - an enterprise three centuries in the making, and one begun by an elf priest whose name remains lost to the ages."
+
+menibor_hall_of_the_gallant_title: "The Hall of the Gallant"
+menibor_hall_of_the_gallant: "The Hall of the Gallant"
+great_project_menibor_hall_of_the_gallant: "The Hall of the Gallant"
+menibor_hall_of_the_gallant_desc: "The dream of every adventurer hailing from the Dameshead is to have their statue and name featured in the hallowed corridors of the Hall of the Gallant, a vast memorial dedicated to those heroes that lost their lives fighting for glory and justice. With names and busts dating back ot before the Dragonwake, it is the most well known and respected edifice in the city."
+
+damish_temple_moonmount_library_title: "The Moonmount Library"
+damish_temple_moonmount_library: "The Moonmount Library"
+great_project_damish_temple_moonmount_library: "The Moonmount Library"
+damish_temple_moonmount_library_desc: "The Moonmount mountain is home to both the famous Temple of the Highest Moon and the Moonmount Library, the latter of which is one of the oldest standing libraries in the world and filled with texts ranging from history, religious treatises to magical tomes and more."
+
+damish_temple_temple_of_the_highest_moon_title: "Temple of the Highest Moon"
+damish_temple_temple_of_the_highest_moon: "Temple of the Highest Moon"
+great_project_damish_temple_temple_of_the_highest_moon: "Temple of the Highest Moon"
+damish_temple_temple_of_the_highest_moon_desc: "The Temple of the Highest Moon is the largest temple in cannor dedicated to the goddess of tolerance, harvests, and magic: the Dame. Due to its location, it is also the highest temple in Cannor, due to its location near the summit of the Moonmount."
+
+####################
+#Esmaria
+####################
+
+telgeir_vanbury_steel_foundry_title: "Vanbury Steel Foundry"
+telgeir_vanbury_steel_foundry: "Vanbury Steel Foundry"
+great_project_telgeir_vanbury_steel_foundry: "Vanbury Steel Foundry"
+telgeir_vanbury_steel_foundry_desc: "Telgeir is home to the immense and influential Vanbury Guild, an ancient dynasty originally from Gawed. When the dynasty moved to their current 1444 home in Telgeir, they brought with them their traditions of smithing and armor-making, leading up to what is today the Vanbury Steel Foundry."
+
+giberd_academy_of_engineering_title: "Giberd Academy of Engineering"
+giberd_academy_of_engineering: "Giberd Academy of Engineering"
+great_project_giberd_academy_of_engineering: "Giberd Academy of Engineering"
+giberd_academy_of_engineering_desc: "The Giberd Engineering Academy (technically the Giberd *Civil* Engineering Academy but the name was considered too long) serves to teach the citizens of the Empire about the techniques and ideas found within gnomish craftsmanship, and to hone the skills of all aspiring artisans. Many of the foremost developments in urban design have originated from Giberd thanks to this academy."
+
+temple_of_ryala_title: "Temple of Ryala"
+temple_of_ryala: "Temple of Ryala"
+great_project_temple_of_ryala: "Temple of Ryala"
+temple_of_ryala_desc: "Ryala is Castellos' virginal daughter, and the goddess of true love, beauty, courtship, and chastity. Her temple worships her and honors her tenets."
+
+konwell_the_imperial_archives_title: "The Imperial Archives"
+konwell_the_imperial_archives: "The Imperial Archives"
+great_project_konwell_the_imperial_archives: "The Imperial Archives"
+konwell_the_imperial_archives_desc: "Traditionally the seat of the Imperial Archives, the city of Konwell has always been a hotspot for Anbennarian scholars, where books were safe from the frequent fires in Anbenncost."
+
+seinathil_institute_of_song_title: "Seinathíl Institute of Song"
+seinathil_institute_of_song: "Seinathíl Institute of Song"
+great_project_seinathil_institute_of_song: "Seinathíl Institute of Song"
+seinathil_institute_of_song_desc: "The Seinathil Institute of Song was formed by exiled creatives from the Konwell Institute, and is the institution of choice that any aspiring bard in Cannor aims to learn at."
+
+####################
+#Forlorn Vale
+####################
+
+ibevar_temple_of_munas_title: "Temple of Munas"
+ibevar_temple_of_munas: "Temple of Munas"
+great_project_ibevar_temple_of_munas: "Temple of Munas"
+ibevar_temple_of_munas_desc: "The elves of Ibevar seek to build their planned temple to Munas Moonsinger, the god of travel, music, and the seas, who saved the elven Remnant Fleet and ended their 1000-year voyage after the loss of their homeland in the Day of Ashen Skies."
+
+####################
+#Gerudian Coast
+####################
+
+urviksten_ebonsteel_armory_title: "Ebonsteel Armory"
+urviksten_ebonsteel_armory: "Ebonsteel Armory"
+great_project_urviksten_ebonsteel_armory: "Ebonsteel Armory"
+urviksten_ebonsteel_armory_desc: "The prize of Urviksten, and of Black Castanor in the past, the Ebonsteel Armory is a vast foundry, blacksmith, and armory supplying high quality weapons and armor made of Ebonsteel, a dark, naturally alloyed metal found throughout Urviksten."
+
+####################
+#Inner Castanor
+####################
+
+hammerhome_artificers_guild_title: "Hammerhome Artificers Guild"
+hammerhome_artificers_guild: "Hammerhome Artificers Guild"
+great_project_hammerhome_artificers_guild: "Hammerhome Artificers Guild"
+hammerhome_artificers_guild_desc: "In 1846, various prominent dwarven artificers such as Kelgrim Kazdoran founded the Dwarven Artificers Guild in Hammerhome as a response to the immense pressure and influence from the gnomish artificer circles to think and invent their way."
+
+draculas_throne_title: "Throne of the Sorceror-King"
+draculas_throne: "Throne of the Sorceror-King"
+great_project_draculas_throne: "Throne of the Sorceror-King"
+draculas_throne_desc: "Nichmer, more commonly known as the Sorcerer King was a former advisor of Korbarid origin to the Empire of Castanor. Using dark magics he enthralled Castan the Enthralled and used him to wage war on the rest of Cannor, in what would later be known as the War of the Sorcerer King. Before the war broke out however, Nichmer commissioned a grand thone for himself in Castonath, one that would demonstrate his power as the new and legitimate ruler of Castanor."
+
+####################
+#Lencenor
+####################
+
+lorentaine_mage_academy_title: "Mage Academy of Lorentainé"
+lorentaine_mage_academy: "Mage Academy of Lorentainé"
+great_project_lorentaine_mage_academy: "Mage Academy of Lorentainé"
+lorentaine_mage_academy_desc: "Lorent has always been home to many mages and mage schools, but none that were fully under the control of the Lorentish Crown until the Lorentish king built a royal mage academy in the capital of Lorent, Lorentainé."
+
+lorent_new_adea_naval_school_title: "New Adea Naval School"
+lorent_new_adea_naval_school: "New Adea Naval School"
+great_project_lorent_new_adea_naval_school: "New Adea Naval School"
+lorent_new_adea_naval_school_desc: "The Shrouded Coast was never particularly rich in resources, yet its strategic location on a protected waterway with easy access to inland seas and the open waves of the Lament means that it is a prime location for a naval academy to educate the next generation of captains and admirals."
+
+deranne_westport_gateway_to_aelantir_title: "Westport, Gateway to Aelantir"
+deranne_westport_gateway_to_aelantir: "Westport, Gateway to Aelantir"
+great_project_deranne_westport_gateway_to_aelantir: "Westport, Gateway to Aelantir"
+deranne_westport_gateway_to_aelantir_desc: "Deranne has many ports along its coastline for merchants, adventurers, and explorers alike, but none more prominent or influential than Westport. Many Derranians hope to use the resources and location of Westport to fuel explorations of the ruins of Aelantir, for riches and glory alike."
+
+minara_temple_title: "Temple of Minara"
+minara_temple: "Temple of Minara"
+great_project_minara_temple: "Temple of Minara"
+minara_temple_desc: "The goddess of (lesser) love, Minara is said to have been uplifted into godhood by Ryala after Ryala witnessed and was impressed with Minara's skills at lovemaking. Her temple is dedicated to, uh, things related to Minara's uplifting."
+
+####################
+#Not Cannorian
+####################
+
+koroshesh_grain_port_title: "Grain Port of Koroshesh"
+koroshesh_grain_port: "Grain Port of Koroshesh"
+great_project_koroshesh_grain_port: "Grain Port of Koroshesh"
+koroshesh_grain_port_desc: "The Port of Koroshesh is the main location for all exports from the Mother's Sorrow Estuary, and the main location where Kheteratan grain is shipped to Cannor. Regardless of what happens to the North Salahad, the grain must flow."
+
+zornartakel_naval_harbor_title: "Zornartakel Naval Shipyard"
+zornartakel_naval_harbor: "Zornartakel Naval Shipyard"
+great_project_zornartakel_naval_harbor: "Zornartakel Naval Shipyard"
+zornartakel_naval_harbor_desc: "The Zornartakel Naval Harbor at Baqtkhet's Retreat is an extensive military harbor designed to be a complete installation for the construction of ships, the training of sailors, and the harboring of freight. The position of the Naval Harbor on the southern side of the island of Elzina allows for natural protection against sudden storms in the Sea of Eliz, or from enemy fleets."
+
+deshak_temple_of_the_elements_title: "Temple of the Elements"
+deshak_temple_of_the_elements: "Temple of the Elements"
+great_project_deshak_temple_of_the_elements: "Temple of the Elements"
+deshak_temple_of_the_elements_desc: "Established by an unknown ancient civilization long before Deshak was founded, the Temple of the Elements is claimed to have been built on the site where the Planetouched first came to existence. It continues to stand as one of the most prominent houses of worship in Akan."
+
+aquatbar_great_library_title: "Great Library of Aqatbar"
+aquatbar_great_library: "Great Library of Aqatbar"
+great_project_aquatbar_great_library: "Great Library of Aqatbar"
+aquatbar_great_library_desc: "When goblins first entered Aqatbar, they were stunned by the size and contents of its library. The library of Aquatbar contains a large collection of historical documents, scientific and religious texts, copies of ancient and contemporary Bulwari literature, and more."
+
+ekha_harbor_title: "Ekha Harbor"
+ekha_harbor: "Ekha Harbor"
+great_project_ekha_harbor: "Ekha Harbor"
+ekha_harbor_desc: "The Ekhan people have always lived and died with their existences focused on the sea, and the great Ekhan Harbor exemplifies this. Ekhan sailors and ships have always proven themselves to be quite strong indeed."
+
+dasmati_halls_of_reverence_title: "Dasmati Halls of Reverence"
+dasmati_halls_of_reverence: "Dasmati Halls of Reverence"
+great_project_dasmati_halls_of_reverence: "Dasmati Halls of Reverence"
+dasmati_halls_of_reverence_desc: "The Halls of Reverence are where the Maqeti people buried their former kings, honored for their achievements in the struggle against the gnollish slavers that once hunted them."
+
+pyramids_of_khet_title: "Pyramids of Khet"
+pyramids_of_khet: "Pyramids of Khet"
+great_project_pyramids_of_khet: "Pyramids of Khet"
+pyramids_of_khet_desc: "Kheterata is an ancient land, older than nearly every other known civilization on the Cannorian continent. The Pyramids of Khet, only a short distance outside of the great metropolis of Kheterat itself, has enthralled countless generations of artists and thinkers from all around the world. They are a true wonder to behold."
+
+####################
+#The Borders
+####################
+
+sorncell_deepwater_harbor_title: "Deepwater Harbor of Sorncell"
+sorncell_deepwater_harbor: "Deepwater Harbor of Sorncell"
+great_project_sorncell_deepwater_harbor: "Deepwater Harbor of Sorncell"
+sorncell_deepwater_harbor_desc: "The Coastal city of Sorncell has an excellent deepwater port that has been in continuous use since ancient times. Large and heavy ships, usually either merchantmen or warships, could easily enter the harbor and dock safely. Further, because of this natural port, Sorncell's local economy is heavily built around shipbuilding and sailing."
+
+####################
+#South Castanor
+####################
+
+marrhold_the_feather_academy_title: "The Feather Academy"
+marrhold_the_feather_academy: "The Feather Academy"
+great_project_marrhold_the_feather_academy: "The Feather Academy"
+marrhold_the_feather_academy_desc: "Griffons are local to the mountainous lands around the Serpentspine, and particularly around Marrhold. The Marrodic peoples are the only group of humans in Cannor to have successfully tamed Griffons and learned to fly them. To teach others - mostly from Marrhold but also promising candidates from the rest of Escann - The Feather Academy was created."
+
+esthili_academy_of_magic_title: "Esthíli Academy of Magic"
+esthili_academy_of_magic: "Esthíli Academy of Magic"
+great_project_esthili_academy_of_magic: "Esthíli Academy of Magic"
+esthili_academy_of_magic_desc: "The Esthíli Academy of Magic is the foremost magical education institution in all of Escann. In all of Cannor, only the Mage Academy of Lorentainé is able to compete with it."
+
+bladeskeep_title: "Bladeskeep"
+bladeskeep: "Bladeskeep"
+great_project_bladeskeep: "Bladeskeep"
+bladeskeep_desc: "Bladeskeep is the historic home of the Order of the Bladestewards and the historic capital of the Blademarches, and served as both a base and a fortress to the many warriors of the blade for centuries during Escann's high medieval period."
+
+####################
+#Western Castanor
+####################
+
+ancardia_escanni_academy_of_war_title: "Escanni Academy of War"
+ancardia_escanni_academy_of_war: "Escanni Academy of War"
+great_project_ancardia_escanni_academy_of_war: "Escanni Academy of War"
+ancardia_escanni_academy_of_war_desc: "Founded in 1630, the Ancardi War School (later renamed to the Escanni Academy of War in 1718), became the foremost military academy in all of Cannor. The academy's founding members were descended from the Escanni Knights of the Sapphire Eye, who in feudal Escann safeguarded the realm and fought as champions for their country to settle disputes rather than war."
+
+adenica_longlance_knights_academy_title: "Longlance Knights Academy"
+adenica_longlance_knights_academy: "Longlance Knights Academy"
+great_project_adenica_longlance_knights_academy: "Longlance Knights Academy"
+adenica_longlance_knights_academy_desc: "Caylen Longlance - a name synonymous with 'hero' and 'knight' to the many children who grew up hearing tales of his honorable deeds and valiant actions in the long War of the Sorcerer-King - is considered by many to be the first modern knight. As such, the foundation of an academy in his name dedicated to teaching proper knightly conduct and martial skills is downright reasonable."
+
+####################
+#West Dameshead
+####################
+
+neckcliffe_the_imperial_dockyard_title: "The Imperial Dockyard"
+neckcliffe_the_imperial_dockyard: "The Imperial Dockyard"
+great_project_neckcliffe_the_imperial_dockyard: "The Imperial Dockyard"
+neckcliffe_the_imperial_dockyard_desc: "Since Anbennar's founding, Neckcliffe has been the primary port of call for the Imperial Navy due to its natural harbor and strategic position."

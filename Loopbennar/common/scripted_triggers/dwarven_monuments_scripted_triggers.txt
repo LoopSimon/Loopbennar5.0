@@ -1,0 +1,73 @@
+#the sole purpose of this file is to reduce code clutter in the main great project files and make it easier to update periodically
+dwarven_monuments_has_acceptable_culture_or_race = { 
+	OR = {
+		culture_group = dwarven
+		culture_group = goblin
+		culture_group = kobold
+		culture = black_orc
+		culture = mossmouth_ogre
+		has_province_modifier = dwarven_majority_coexisting
+		has_province_modifier = dwarven_majority_integrated
+		has_province_modifier = dwarven_majority_primary
+		has_province_modifier = kobold_majority_coexisting
+		has_province_modifier = kobold_majority_integrated
+		has_province_modifier = kobold_majority_primary
+		has_province_modifier = goblin_majority_coexisting
+		has_province_modifier = goblin_majority_integrated
+		has_province_modifier = goblin_majority_primary
+		has_province_modifier = dwarven_minority_integrated_large
+		has_province_modifier = dwarven_minority_integrated_small
+		has_province_modifier = dwarven_minority_coexisting_large
+		has_province_modifier = dwarven_minority_coexisting_small
+		has_province_modifier = kobold_minority_integrated_large
+		has_province_modifier = kobold_minority_integrated_small
+		has_province_modifier = kobold_minority_coexisting_large
+		has_province_modifier = kobold_minority_coexisting_small
+		has_province_modifier = goblin_minority_coexisting_large
+		has_province_modifier = goblin_minority_coexisting_small
+		has_province_modifier = goblin_minority_integrated_large
+		has_province_modifier = goblin_minority_integrated_small
+	}
+}
+dwarven_monuments_has_dig_level_2_or_higher = {
+	OR = {
+		has_province_modifier = dig_2
+		has_province_modifier = dig_3
+		has_province_modifier = dig_4
+		has_province_modifier = dig_5
+		has_province_modifier = dig_6
+		has_province_modifier = dig_7
+		has_province_modifier = dig_8
+		has_province_modifier = dig_9
+		has_province_modifier = dig_10
+		has_province_modifier = dig_11
+		development = 50
+	}
+}
+dwarven_monuments_has_dig_level_3_or_higher = {
+	OR = {
+		has_province_modifier = dig_3
+		has_province_modifier = dig_4
+		has_province_modifier = dig_5
+		has_province_modifier = dig_6
+		has_province_modifier = dig_7
+		has_province_modifier = dig_8
+		has_province_modifier = dig_9
+		has_province_modifier = dig_10
+		has_province_modifier = dig_11
+		development = 60
+	}
+}
+dwarven_monuments_has_dig_level_4_or_higher = {
+	OR = {
+		has_province_modifier = dig_4
+		has_province_modifier = dig_5
+		has_province_modifier = dig_6
+		has_province_modifier = dig_7
+		has_province_modifier = dig_8
+		has_province_modifier = dig_9
+		has_province_modifier = dig_10
+		has_province_modifier = dig_11
+		development = 70
+	}
+}
