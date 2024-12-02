@@ -85,7 +85,6 @@ prukakhin_bazaar_of_blood_and_ivory = {
 		country_modifiers = {
 			trade_range_modifier = 0.1
 			burghers_loyalty_modifier = 0.025
-			placed_merchant_power = 5
 		}
 		on_upgraded = {
 			add_estate_loyalty = {
@@ -112,7 +111,6 @@ prukakhin_bazaar_of_blood_and_ivory = {
 			trade_range_modifier = 0.2
 			burghers_loyalty_modifier = 0.05
 			burghers_influence_modifier = 0.025
-			placed_merchant_power = 10
 		}
 		on_upgraded = {
 			add_estate_loyalty = {
@@ -147,7 +145,7 @@ prukakhin_bazaar_of_blood_and_ivory = {
 			trade_range_modifier = 0.33
 			burghers_loyalty_modifier = 0.1
 			burghers_influence_modifier = 0.05
-			placed_merchant_power = 15
+			placed_merchant_power = 5
 		}
 		on_upgraded = {
 			add_estate_loyalty = {
@@ -291,20 +289,6 @@ phaethmen_di_phaemruk_shipyard_district = {
 			naval_forcelimit_modifier = 0.1
 			galley_cost = -0.15
 			galley_power = 0.1
-		}
-		on_upgraded = {
-			center_of_trade = 1
-			add_base_production = 3
-			owner = {
-				define_admiral = {
-					name = "Kakada of Skarkaophe"
-					trait = ram_raider_personality
-					fire = 3
-					shock = 8
-					manuever = 5
-					siege = 0
-				}
-			}
 		}
 	}
 }
@@ -594,140 +578,6 @@ lapnam_amrik_weapon_market = {
 				estate = estate_daulophs
 				loyalty = 15
 			}
-		}
-	}
-}
-#Teplinbasiet Arena (Lapnam Amrik)
-lapnam_amrik_teplinbasiet_arena = {
-	start = 4941
-	date = 01.01.01
-	time = {
-		months = 0
-	}
-	build_cost = 0
-	can_be_moved = no
-	move_days_per_unit_distance = 1
-	starting_tier = 0
-	type = monument
-	build_trigger = {	
-	}
-	on_built = {		
-	}
-	on_destroyed = {	
-	}
-	can_use_modifiers_trigger = {
-		AND = {
-			custom_trigger_tooltip = {
-				tooltip = halessi_monuments_can_use_tooltip_bomdan
-					OR = {
-						culture_group = bom
-						culture_group = yan
-						culture_group = harimari		
-						culture_group = hobgoblin
-						culture_group = wuhyun
-						culture = goldscale_kobold
-						culture_group = harpy
-					}
-			}
-			province_is_or_accepts_culture = yes
-		}
-	}	
-	can_upgrade_trigger = {
-		AND = {
-			custom_trigger_tooltip = {
-				tooltip = halessi_monuments_can_use_tooltip_bomdan
-					OR = {
-						culture_group = bom
-						culture_group = yan
-						culture_group = harimari		
-						culture_group = hobgoblin
-						culture_group = wuhyun
-						culture = goldscale_kobold
-						culture_group = harpy
-					}
-			}
-			province_is_or_accepts_culture = yes
-		}
-	}	
-	keep_trigger = {
-	}
-	tier_0 = {
-		upgrade_time = {
-			months = 0
-		}
-		cost_to_upgrade = {
-			factor = 0
-		}
-		province_modifiers = {
-		}
-		area_modifier = {
-		}
-		country_modifiers = {	
-		}
-		on_upgraded = {
-		}
-	}
-	tier_1 = {
-		upgrade_time = {
-			months = 120
-		}
-		cost_to_upgrade = {
-			factor = 1000
-		}
-		province_modifiers = {
-			local_regiment_cost = -0.05
-		}
-		area_modifier = {
-			local_manpower_modifier = 0.1
-		}
-		country_modifiers = {
-			land_maintenance_modifier = -0.025
-			merc_leader_army_tradition = 0.15
-			army_tradition_from_battle = 0.25
-		}
-		on_upgraded = {
-		}
-	}
-	tier_2 = {
-		upgrade_time = {
-			months = 240
-		}
-		cost_to_upgrade = {
-			factor = 2500
-		}
-		province_modifiers = {
-			local_regiment_cost = -0.1
-		}
-		area_modifier = {
-			local_manpower_modifier = 0.2
-		}
-		country_modifiers = {
-			merc_leader_army_tradition = 0.3
-			army_tradition_from_battle = 0.5
-			land_maintenance_modifier = -0.05
-		}
-		on_upgraded = {
-		}
-	}
-	tier_3 = {
-		upgrade_time = {
-			months = 480
-		}
-		cost_to_upgrade = {
-			factor = 5000
-		}
-		province_modifiers = {
-			local_regiment_cost = -0.2
-		}
-		area_modifier = {
-			local_manpower_modifier = 0.33
-		}
-		country_modifiers = {
-			merc_leader_army_tradition = 0.5
-			army_tradition_from_battle = 1
-			land_maintenance_modifier = -0.1
-		}
-		on_upgraded = {
 		}
 	}
 }

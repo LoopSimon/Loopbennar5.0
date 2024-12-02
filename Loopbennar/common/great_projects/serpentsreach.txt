@@ -128,10 +128,10 @@ gor_burad_fireglass_forge = {
 			trade_goods_size = 3
 			trade_goods_size_modifier = 0.33
 		}
-		area_modifier = {		
+		area_modifier = {	
+			allowed_num_of_buildings = 1			
 		}
 		region_modifier = {
-			allowed_num_of_buildings = 1
 		}
 		country_modifiers = {
 			global_trade_goods_size_modifier = 0.1
@@ -236,8 +236,7 @@ verkal_skomdihr_warding_gate = {
 		area_modifier = {		
 		}
 		country_modifiers = {
-			infantry_fire = 0.1
-			max_general_fire = 1
+			infantry_fire = 0.07
 		}
 		on_upgraded = {
 		}
@@ -252,22 +251,11 @@ verkal_skomdihr_warding_gate = {
 		province_modifiers = {
 			local_defensiveness = 0.5
 			local_hostile_attrition = 2
-			local_defender_dice_roll_bonus = 1
 		}
 		area_modifier = {		
 		}
 		country_modifiers = {
-			infantry_fire = 0.15
-			max_general_fire = 1
-			leader_land_fire = 1
-		}
-		on_upgraded = {
-			owner = {
-				add_country_modifier = {
-					name = verkal_skomdihr_warding_gate_extra_firepower
-					duration = 5475
-				}
-			}
+			infantry_fire = 0.1
 		}
 	}
 }
@@ -511,7 +499,6 @@ arg_ordstun_great_clast_shafts = {
 		}
 		country_modifiers = {
 			production_efficiency = 0.05
-			development_cost_in_primary_culture = -0.05
 		}
 		on_upgraded = {
 			define_advisor = {
@@ -538,20 +525,11 @@ arg_ordstun_great_clast_shafts = {
 		area_modifier = {		
 		}
 		region_modifier = {
-			local_development_cost = -0.15
 		}
 		country_modifiers = {
-			production_efficiency = 0.1
-			development_cost_in_primary_culture = -0.1
+			production_efficiency = 0.15
 		}
-		on_upgraded = {
-			owner = {
-				add_country_modifier = {
-					name = arg_ordstun_great_clast_shafts_development
-					duration = 5475
-				}
-			}
-		}
+		
 	}
 }
 #The Great Waterfall of Orlghelovar
@@ -674,7 +652,6 @@ orlghelovar_great_waterfall = {
 		province_modifiers = {
 			local_defensiveness = 0.33
 			local_hostile_attrition = 1
-			local_defender_dice_roll_bonus = 1
 		}
 		area_modifier = {		
 		}
@@ -682,24 +659,6 @@ orlghelovar_great_waterfall = {
 			stability_cost_modifier = -0.2
 			dip_advisor_cost = -0.2
 			monarch_diplomatic_power = 1
-		}
-		on_upgraded = {
-			owner = {
-				random_list = {
-					50 = {
-						add_dip_power = 150
-					}
-					30 = {
-						change_ruler_stat = {
-							stat = dip
-							amount = 2
-						}
-					}
-					20 = {
-						add_dip_tech = 1
-					}
-				}
-			}
 		}
 	}
 }
@@ -816,7 +775,6 @@ shaztundihr_marble_gate = {
 		province_modifiers = {
 			local_defensiveness = 0.33
 			local_hostile_attrition = 1
-			local_defender_dice_roll_bonus = 1
 		}
 		area_modifier = {		
 		}

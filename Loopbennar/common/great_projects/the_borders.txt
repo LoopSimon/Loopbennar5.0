@@ -139,20 +139,5 @@ sorncell_deepwater_harbor = {
 			heavy_ship_power = 0.1
 			heavy_ship_hull_size_modifier = 0.1
 		}
-		on_upgraded = {
-			add_base_production = 2
-			owner = {
-				add_country_modifier = {
-					name = sorncell_deepwater_harbor_hardy_sailors
-					duration = 7300
-				}
-			}
-			add_unit_construction = {
-				type = heavy_ship
-				amount = 10
-				speed = 0.1
-				cost = 0
-			}
-		}
 	}
 }

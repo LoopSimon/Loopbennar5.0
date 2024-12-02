@@ -123,7 +123,6 @@ draculas_throne = {
 		country_modifiers = {
 			yearly_absolutism = 1
 			max_absolutism = 10
-			possible_policy = 1
 		}
 		on_upgraded = {
 			custom_tooltip = tughayasa_better_divination_2_tt
@@ -234,7 +233,6 @@ hammerhome_artificers_guild = {
 		country_modifiers = {
 			artificers_loyalty_modifier = 0.025
 			allowed_rajput_fraction = 0.025
-			fire_damage_received = -0.025
 		}
 		on_upgraded = {
 			if = {
@@ -271,7 +269,6 @@ hammerhome_artificers_guild = {
 			artificers_loyalty_modifier = 0.05
 			artificers_influence_modifier = 0.025
 			allowed_rajput_fraction = 0.05
-			fire_damage_received = -0.05
 		}
 		on_upgraded = {
 			add_base_production = 3
@@ -304,22 +301,10 @@ hammerhome_artificers_guild = {
 			artificers_loyalty_modifier = 0.1
 			artificers_influence_modifier = 0.05
 			allowed_rajput_fraction = 0.1
-			fire_damage_received = -0.1
 		}
 		on_upgraded = {
 			add_base_production = 4
 			center_of_trade = 1
-			owner = {
-				if = {
-					limit = {
-						NOT = { has_country_flag = artificery_unlocked }
-					}
-					country_event = {
-						id = magic_artificery_setup.1
-						days = 1
-					}
-				}
-			}
 		}
 	}
 }

@@ -119,7 +119,6 @@ rubyhold_academy = {
 		area_modifier = {
 			local_defensiveness = 0.33
 			local_hostile_attrition = 2
-			local_defender_dice_roll_bonus = 1
 		}
 		country_modifiers = {
 			spy_offence = 0.25
@@ -232,18 +231,6 @@ ovdal_tungr_port_hold = {
 		flagship_durability = 0.25
 		navy_tradition_decay = -0.005
 		}
-		on_upgraded = {
-			owner = {
-				define_admiral = {
-					name = "Sevrund Shalebeard"
-					trait = ironside_personality
-					fire = 8
-					shock = 4
-					manuever = 5
-					siege = 2
-				}
-			}
-		}
 	}
 	tier_3 = {
 		upgrade_time = {
@@ -254,7 +241,6 @@ ovdal_tungr_port_hold = {
 		}
 		province_modifiers = {
 		local_defensiveness = 0.33
-		local_defender_dice_roll_bonus = 1
 		local_ship_repair = 1
 		local_sailors_modifier = 1
 		}
@@ -264,14 +250,6 @@ ovdal_tungr_port_hold = {
 		ship_durability = 0.05
 		flagship_durability = 0.5
 		navy_tradition_decay = -0.01
-		}
-		on_upgraded = {
-			owner = {
-				add_country_modifier = {
-					name = ovdal_tungr_port_hold_ship_durability
-					duration = 5475
-				}
-			}
 		}
 	}
 }
@@ -392,7 +370,7 @@ marrhold_gate_to_the_serpentspine = {
 		on_upgraded = {
 			define_advisor = {
 				type = commandant
-				name = "Erwin Smith"
+				name = "Mank Mankson"
 				skill = 3
 				culture = root
 				religion = root
@@ -411,7 +389,6 @@ marrhold_gate_to_the_serpentspine = {
 		province_modifiers = {
 			local_defensiveness = 0.33
 			local_hostile_attrition = 1
-			local_defender_dice_roll_bonus = 1
 		}
 		area_modifier = {
 			local_manpower_modifier = 0.33
@@ -419,23 +396,6 @@ marrhold_gate_to_the_serpentspine = {
 		country_modifiers = {
 			mil_advisor_cost = -0.2
 			army_tradition_from_battle = 1
-		}
-		on_upgraded = {
-			center_of_trade = 1
-			owner = {
-				define_general = {
-					name = "Eren Jeager"
-					trait = goal_oriented_personality
-					fire = 2
-					shock = 8
-					manuever = 5
-					siege = 2
-				}
-				add_country_modifier = {
-					name = marrhold_tatake_tatake
-					duration = 7300
-				}	
-			}
 		}
 	}
 }
@@ -562,7 +522,6 @@ verkal_ozovar_phokhao_citadel = {
 		province_modifiers = {
 			local_defensiveness = 0.33
 			local_hostile_attrition = 1
-			local_defender_dice_roll_bonus = 1
 			trade_goods_size = 3
 		}
 		area_modifier = {		
@@ -723,7 +682,6 @@ silverforge_strongbellow_academy = {
 		province_modifiers = {
 			local_defensiveness = 0.33
 			local_development_cost = -0.15
-			local_defender_dice_roll_bonus = 1
 		}
 		area_modifier = {		
 		}
@@ -731,20 +689,6 @@ silverforge_strongbellow_academy = {
 			global_regiment_cost = -0.1
 			mil_tech_cost_modifier = -0.1
 			free_land_leader_pool = 2
-		}
-		on_upgraded = {
-			center_of_trade = 1
-			owner = {
-				mission_reward_artifice_points_3 = yes
-				define_general = {
-					name = "Grun Strongbellow Jr."
-					trait = siege_specialist_personality
-					fire = 10
-					shock = 3
-					manuever = 3
-					siege = 6
-				}
-			}
 		}
 	}
 }

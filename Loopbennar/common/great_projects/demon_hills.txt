@@ -140,7 +140,6 @@ azjakuma_shinukhorchi_the_highest_fire = {
 		area_modifier = {
 		}
 		region_modifier = {
-			local_defender_dice_roll_bonus = 1
 			local_development_cost = -0.1
 		}
 		country_modifiers = {
@@ -271,16 +270,6 @@ azjakuma_ajgriijarul_the_bright_claw = {
 		on_upgraded = {
 			add_human_minority_size_effect = yes
 			add_base_manpower = 2
-			owner = {
-				define_general = {
-					name = "Akira Kavari"
-					trait = defensive_planner_personality
-					fire = 4
-					shock = 8
-					manuever = 4
-					siege = 2
-				}
-			}
 		}
 	}
 	tier_3 = {
@@ -306,14 +295,6 @@ azjakuma_ajgriijarul_the_bright_claw = {
 			ajgriijarul_influence_modifier = 0.05
 		}
 		on_upgraded = {
-			add_base_manpower = 3
-			owner = {
-				add_country_modifier = {
-					name = azjakuma_ajgriijarul_the_bright_claw_fearsome_oni_warriors
-					duration = 10950
-				}
-			}
-		}
 	}
 }
 #Chumijemoya, The Silent Mist (Azjakuma)
@@ -553,7 +534,7 @@ azkajuma_kabiurgarko_the_golden_gates = {
 		province_modifiers = {
 			local_development_cost = -0.05
 			local_defensiveness = 0.1
-			local_gold_depletion_chance_modifier = -0.3
+			local_gold_depletion_chance_modifier = -0.1
 			trade_goods_size = 0.5
 		}
 		area_modifier = {
@@ -578,7 +559,7 @@ azkajuma_kabiurgarko_the_golden_gates = {
 			local_development_cost = -0.1
 			local_defensiveness = 0.2
 			local_hostile_attrition = 0.5
-			local_gold_depletion_chance_modifier = -0.6
+			local_gold_depletion_chance_modifier = -0.2
 			trade_goods_size = 1
 		}
 		area_modifier = {
@@ -586,7 +567,6 @@ azkajuma_kabiurgarko_the_golden_gates = {
 		region_modifier = {
 		}
 		country_modifiers = {
-			interest = -0.5
 			inflation_action_cost = -0.2
 			kabiurgarko_loyalty_modifier = 0.05
 			kabiurgarko_influence_modifier = 0.025	
@@ -614,7 +594,7 @@ azkajuma_kabiurgarko_the_golden_gates = {
 			local_development_cost = -0.15
 			local_defensiveness = 0.33
 			local_hostile_attrition = 1
-			local_gold_depletion_chance_modifier = -0.9
+			local_gold_depletion_chance_modifier = -0.3
 			trade_goods_size = 2
 		}
 		area_modifier = {
@@ -622,7 +602,6 @@ azkajuma_kabiurgarko_the_golden_gates = {
 		region_modifier = {
 		}
 		country_modifiers = {
-			interest = -1
 			inflation_action_cost = -0.3
 			kabiurgarko_loyalty_modifier = 0.1
 			kabiurgarko_influence_modifier = 0.05
@@ -779,12 +758,6 @@ hubao_the_tiger_fortress = {
 		}
 		country_modifiers = {
 			fort_maintenance_modifier = -0.2
-		}
-		on_upgraded = {
-			add_permanent_province_modifier = {
-				name = hubao_the_tiger_fortress_invincible_fortress
-				duration = 27375
-			}
 		}
 	}
 }

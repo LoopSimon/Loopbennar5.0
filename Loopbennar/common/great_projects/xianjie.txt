@@ -83,7 +83,6 @@ xiadao_liusibao = {
 		}
 		country_modifiers = {
 			reduced_liberty_desire_on_same_continent = 5
-			governing_capacity_modifier = 0.05
 		}
 		on_upgraded = {
 		}
@@ -104,7 +103,6 @@ xiadao_liusibao = {
 		}
 		country_modifiers = {
 			reduced_liberty_desire_on_same_continent = 10
-			governing_capacity_modifier = 0.075
 			diplomatic_reputation = 0.5
 		}
 		on_upgraded = {
@@ -126,7 +124,6 @@ xiadao_liusibao = {
 		}
 		country_modifiers = {
 			reduced_liberty_desire_on_same_continent = 15
-			governing_capacity_modifier = 0.1
 			diplomatic_reputation = 1
 		}
 		on_upgraded = {
@@ -406,10 +403,6 @@ gundhaghidur_library_of_insight = {
 		on_upgraded = {
 			owner = { 
 				change_innovativeness = 3
-				add_country_modifier = {
-					name = gundhaghidur_library_of_insight_library_research
-					duration = 5475
-				}
 			}
 		}
 	}
@@ -561,11 +554,11 @@ aoshan_hanging_temple = {
 					duration = 5475
 				}
 				define_general = {
-					name = "Kenshiro"
+					name = "Neko"
 					trait = master_of_arms_personality
 					fire = 1
-					shock = 12
-					manuever = 4
+					shock = 5
+					manuever = 1
 					siege = 1
 				}
 			}

@@ -127,14 +127,6 @@ tuwad_dhumakon_gardens = {
 			recover_army_morale_speed = 0.12
 			monthly_splendor = 1
 		}
-		on_upgraded = {
-			owner = {
-				add_country_modifier = {
-					name = tuwad_dhumakon_gardens_prosperity
-					duration = 1825
-				}
-			}
-		}
 	}
 }
 #Trade Halls of Gronstunad
@@ -274,7 +266,6 @@ gronstunad_trade_halls = {
 		area_modifier = {			
 		}
 		region_modifier = {
-			allowed_num_of_buildings = 1
 		}
 		country_modifiers = {
 			trade_efficiency = 0.1
@@ -432,21 +423,6 @@ verkal_dromak_mage_academy = {
 			mages_influence_modifier = 0.05
 			mages_loyalty_modifier = 0.1
 			monarch_lifespan = 0.25
-		}
-		on_upgraded = {
-			add_permanent_province_modifier = {
-				name = verkal_dromak_mage_academy_mages_summon_large_damestear_meteor
-				duration = -1
-			}
-			change_trade_goods = damestear
-			set_province_flag = permanent_damestear
-			custom_tooltip = dwarven_monuments_permanent_damestear
-			owner = {
-				add_estate_loyalty = {
-					estate = estate_mages
-					loyalty = 15
-				}
-			}
 		}
 	}
 }
@@ -692,14 +668,6 @@ emerald_spire = {
 			improve_relation_modifier = 0.2
 			prestige_decay = -0.005
 			diplomatic_reputation = 1.5
-		}
-		on_upgraded = {
-			4338 = {
-				add_permanent_province_modifier = {
-					name = emerald_spire_emerald_deposit_beneath_the_spire
-					duration = -1
-				}
-			}
 		}
 	}
 }

@@ -132,29 +132,9 @@ lanjinhui_lanjin_hall = {
 		area_modifier = {
 		}
 		country_modifiers = {
-			adm_advisor_cost = -0.15
+			adm_advisor_cost = -0.05
 			idea_cost = -0.05
 			technology_cost = -0.05
-		}
-		on_upgraded = {
-			add_building = university
-			owner = {
-				change_ruler_stat = {
-					stat = adm
-					amount = 1
-				}
-				change_ruler_stat = {
-					stat = dip
-					amount = 1
-				}
-				change_ruler_stat = {
-					stat = mil
-					amount = 1
-				}
-			}
-			add_base_tax = 1
-			add_base_production = 1
-			add_base_manpower = 1
 		}
 	}
 }

@@ -235,7 +235,6 @@ gawed_castle_gaweton = {
 			republican_tradition = 0.1
 			horde_unity = 0.25
 			devotion = 0.25
-			province_warscore_cost = -0.025
 		}
 		on_upgraded = {
 		}
@@ -258,7 +257,6 @@ gawed_castle_gaweton = {
 			republican_tradition = 0.2
 			horde_unity = 0.5
 			devotion = 0.5
-			province_warscore_cost = -0.05
 		}
 		on_upgraded = {
 			define_advisor = {
@@ -290,7 +288,6 @@ gawed_castle_gaweton = {
 			republican_tradition = 0.3
 			horde_unity = 1
 			devotion = 1
-			province_warscore_cost = -0.1
 		}
 		on_upgraded = {
 			owner = {

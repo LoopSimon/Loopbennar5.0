@@ -85,7 +85,6 @@ pyramids_of_khet = {
 		region_modifier = {
 			local_production_efficiency = 0.1
 			local_monthly_devastation = -0.05
-			local_development_cost = -0.05
 		}
 		country_modifiers = {
 			imperial_mandate = 0.03
@@ -105,9 +104,8 @@ pyramids_of_khet = {
 		area_modifier = {
 		}
 		region_modifier = {
-			local_production_efficiency = 0.2
+			local_production_efficiency = 0.15
 			local_monthly_devastation = -0.1
-			local_development_cost = -0.1
 		}
 		country_modifiers = {
 			imperial_mandate = 0.05
@@ -129,9 +127,8 @@ pyramids_of_khet = {
 		area_modifier = {
 		}
 		region_modifier = {
-			local_production_efficiency = 0.33
+			local_production_efficiency = 0.2
 			local_monthly_devastation = -0.15
-			local_development_cost = -0.15
 		}
 		country_modifiers = {
 			imperial_mandate = 0.1
@@ -411,7 +408,7 @@ zornartakel_naval_harbor = {
 		}
 		country_modifiers = {
 			naval_forcelimit = 25		
-			allowed_marine_fraction = 0.25
+			allowed_marine_fraction = 0.2
 		}
 		on_upgraded = {
 		}
@@ -773,7 +770,6 @@ aquatbar_great_library = {
 		area_modifier = {
 		}
 		country_modifiers = {
-			advisor_cost = -0.025
 			innovativeness_gain = 0.1
 		}
 		on_upgraded = {
@@ -796,7 +792,6 @@ aquatbar_great_library = {
 		area_modifier = {
 		}
 		country_modifiers = {
-			advisor_cost = -0.05
 			innovativeness_gain = 0.2
 			technology_cost = -0.025
 		}
@@ -820,7 +815,6 @@ aquatbar_great_library = {
 		area_modifier = {
 		}
 		country_modifiers = {
-			advisor_cost = -0.1
 			innovativeness_gain = 0.33
 			technology_cost = -0.05
 		}

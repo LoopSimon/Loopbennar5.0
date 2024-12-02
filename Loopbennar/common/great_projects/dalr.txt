@@ -30,6 +30,7 @@ bjarnrik_staple_port_of_konungrhavn = {
 						culture = black_castanorian
 						culture = castanorian
 						culture = jarnklo_harpy
+						culture = city_goblin
 					}
 			}
 			province_is_or_accepts_culture = yes
@@ -46,6 +47,7 @@ bjarnrik_staple_port_of_konungrhavn = {
 						culture = black_castanorian
 						culture = castanorian
 						culture = jarnklo_harpy
+						culture = city_goblin
 					}
 			}
 			province_is_or_accepts_culture = yes

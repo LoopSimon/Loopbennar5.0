@@ -113,7 +113,6 @@ giberd_academy_of_engineering = {
 		area_modifier = {
 		}
 		region_modifier = {
-			local_development_cost = -0.025
 		}
 		country_modifiers = {
 			build_cost = -0.05
@@ -140,7 +139,6 @@ giberd_academy_of_engineering = {
 		area_modifier = {
 		}
 		region_modifier = {
-			local_development_cost = -0.05
 		}
 		country_modifiers = {
 			build_cost = -0.1
@@ -150,18 +148,9 @@ giberd_academy_of_engineering = {
 			add_base_production = 4
 			owner = {
 				change_innovativeness = 3
-				if = {
-					limit = {
-						NOT = { has_country_flag = artificery_unlocked }
-					}
-					country_event = {
-						id = magic_artificery_setup.1
-						days = 1
-					}
 				}
 			}
 			center_of_trade = 1
-			add_building = university
 		}
 	}
 }
@@ -253,7 +242,7 @@ telgeir_vanbury_steel_foundry = {
 		area_modifier = {
 		}
 		country_modifiers = {
-			infantry_fire = 0.05
+			infantry_fire = 0.03
 		}
 		on_upgraded = {
 			add_base_production = 2
@@ -273,8 +262,7 @@ telgeir_vanbury_steel_foundry = {
 		area_modifier = {
 		}
 		country_modifiers = {
-			infantry_fire = 0.10
-			fire_damage_received = -0.025
+			infantry_fire = 0.06
 		}
 		on_upgraded = {
 			add_base_production = 2
@@ -295,8 +283,7 @@ telgeir_vanbury_steel_foundry = {
 		area_modifier = {
 		}
 		country_modifiers = {
-			infantry_fire = 0.15
-			fire_damage_received = -0.05
+			infantry_fire = 0.1
 		}
 		on_upgraded = {
 			center_of_trade = 1
@@ -588,21 +575,6 @@ konwell_the_imperial_archives = {
 			adm_tech_cost_modifier = -0.1
 			idea_cost = -0.05
 		}
-		on_upgraded = {
-			owner = {
-				random_list = {
-					65 = {
-						add_adm_power = 200
-					}
-					20 = {
-						increase_ruler_adm_effect = 1
-						}
-					15 = {
-						add_adm_tech = 1
-					}
-				}
-			}
-		}
 	}
 }
 #Seinathíl Institute of Song
@@ -732,14 +704,6 @@ seinathil_institute_of_song = {
 		country_modifiers = {
 			recover_army_morale_speed = 0.1
 			war_exhaustion = -0.03
-		}
-		on_upgraded = {
-			owner = {
-				add_country_modifier = {
-					name = seinathil_institute_of_song_bardic_inspiration
-					duration = 5475
-				}
-			}
 		}
 	}
 }

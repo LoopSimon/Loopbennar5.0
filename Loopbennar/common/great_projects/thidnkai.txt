@@ -104,7 +104,6 @@ azkare_citadel_of_the_dawn = {
 		area_modifier = {
 		}
 		country_modifiers = {
-			trade_steering = 0.15
 			num_accepted_cultures = 1
 		}
 		on_upgraded = {
@@ -125,7 +124,6 @@ azkare_citadel_of_the_dawn = {
 		area_modifier = {
 		}
 		country_modifiers = {
-			trade_steering = 0.25
 			num_accepted_cultures = 2
 			merchants = 1
 		}
@@ -269,7 +267,6 @@ kudet_kai_danon_dungcam_mercenary_guild = {
 		}
 		country_modifiers = {
 			mercenary_manpower = 0.2
-			mercenary_discipline = 0.025
 			adventurers_loyalty_modifier = 0.1
 			adventurers_influence_modifier = 0.05
 		}

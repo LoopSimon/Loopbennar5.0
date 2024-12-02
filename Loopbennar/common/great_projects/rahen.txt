@@ -44,7 +44,6 @@ temple_mindanan = {
 		AND = {
 			OR = {
 				religion = high_philosophy
-				religion = suhans_praxis
 			}
 			has_owner_religion = yes
 			custom_trigger_tooltip = {
@@ -404,7 +403,6 @@ dhujati_headquarters = {
 		area_modifier = {
 		}
 		country_modifiers = {
-			trade_steering = 0.05
 			trade_efficiency = 0.025
 			caravan_power = 0.1
 		}
@@ -423,7 +421,6 @@ dhujati_headquarters = {
 		area_modifier = {
 		}
 		country_modifiers = {
-			trade_steering = 0.1
 			trade_efficiency = 0.05
 			caravan_power = 0.15
 		}
@@ -442,7 +439,6 @@ dhujati_headquarters = {
 		area_modifier = {
 		}
 		country_modifiers = {
-			trade_steering = 0.15
 			trade_efficiency = 0.1
 			caravan_power = 0.2
 		}
@@ -544,9 +540,6 @@ sarnihanpur_library = {
 		on_upgraded = {
 			owner = { 
 				change_innovativeness = 1
-				add_adm_power = 20
-				add_dip_power = 20
-				add_mil_power = 20
 			}
 		}
 	}
@@ -570,9 +563,6 @@ sarnihanpur_library = {
 		on_upgraded = {
 			owner = { 
 				change_innovativeness = 2
-				add_adm_power = 40
-				add_dip_power = 40
-				add_mil_power = 40
 			}
 		}
 	}
@@ -596,9 +586,6 @@ sarnihanpur_library = {
 		on_upgraded = {
 			owner = { 
 				change_innovativeness = 3
-				add_adm_power = 80
-				add_dip_power = 80
-				add_mil_power = 80
 			}
 		}
 	}
@@ -830,7 +817,7 @@ sheramvi_foundry = {
 		}
 		country_modifiers = {
 			global_regiment_cost = -0.05
-			fire_damage = 0.05
+			fire_damage = 0.03
 		}
 		on_upgraded = {
 			add_base_production = 2
@@ -851,7 +838,7 @@ sheramvi_foundry = {
 		}
 		country_modifiers = {
 			global_regiment_cost = -0.075
-			fire_damage = 0.075
+			fire_damage = 0.05
 		}
 		on_upgraded = {
 			add_base_production = 3
@@ -872,7 +859,7 @@ sheramvi_foundry = {
 		}
 		country_modifiers = {
 			global_regiment_cost = -0.1
-			fire_damage = 0.1
+			fire_damage = 0.07
 		}
 		on_upgraded = {
 			add_base_production = 4
@@ -968,7 +955,6 @@ sardhasi_fields = {
 			trade_goods_size_modifier = 0.1
 		}
 		country_modifiers = {
-			merchants = 1
 			global_own_trade_power = 0.1
 		}
 		on_upgraded = {
@@ -989,7 +975,6 @@ sardhasi_fields = {
 			trade_goods_size_modifier = 0.2
 		}
 		country_modifiers = {
-			merchants = 1
 			global_own_trade_power = 0.15
 		}
 		on_upgraded = {
@@ -1011,7 +996,6 @@ sardhasi_fields = {
 		}
 		country_modifiers = {
 			global_own_trade_power = 0.2
-			merchants = 2
 		}
 		on_upgraded = {
 		}
@@ -1107,7 +1091,6 @@ great_market_sramaya = {
 			province_trade_power_modifier = 0.05
 		}
 		country_modifiers = {
-			trade_efficiency = 0.025
 		}
 		on_upgraded = {
 			owner = {
@@ -1140,7 +1123,6 @@ great_market_sramaya = {
 			province_trade_power_modifier = 0.1
 		}
 		country_modifiers = {
-			trade_efficiency = 0.05
 			merchants = 1
 		}
 		on_upgraded = {
@@ -1174,7 +1156,6 @@ great_market_sramaya = {
 			province_trade_power_modifier = 0.2
 		}
 		country_modifiers = {
-			trade_efficiency = 0.1
 			merchants = 1
 		}
 		on_upgraded = {
@@ -1320,8 +1301,6 @@ brass_palace = {
 		province_modifiers = {
 			local_defensiveness = 0.33
 			local_garrison_size = 0.5
-			local_own_coast_naval_combat_bonus = 1
-			local_defender_dice_roll_bonus = 1
 		}
 		area_modifier = {
 		}

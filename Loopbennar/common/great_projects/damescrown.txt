@@ -90,7 +90,6 @@ damescrown_grand_exchange = {
 		}
 		country_modifiers = {
 			center_of_trade_upgrade_cost = -0.1
-			merchants = 1
 		}
 		on_upgraded = {
 		}
@@ -111,7 +110,6 @@ damescrown_grand_exchange = {
 		country_modifiers = {
 			interest = -0.25
 			center_of_trade_upgrade_cost = -0.2
-			merchants = 1
 		}
 		on_upgraded = {
 			define_advisor = {
@@ -140,7 +138,6 @@ damescrown_grand_exchange = {
 		country_modifiers = {
 			interest = -0.5
 			center_of_trade_upgrade_cost = -0.33
-			merchants = 2
 		}
 		on_upgraded = {
 			owner = {
@@ -243,7 +240,6 @@ beepeck_the_largest_small_city = {
 		country_modifiers = {
 			embargo_efficiency = 0.15
 			global_trade_power = 0.05
-			merchants = 1
 		}
 		on_upgraded = {
 		}
@@ -266,7 +262,6 @@ beepeck_the_largest_small_city = {
 		country_modifiers = {
 			embargo_efficiency = 0.25
 			global_trade_power = 0.1
-			merchants = 1
 		}
 		on_upgraded = {
 		}
@@ -289,7 +284,6 @@ beepeck_the_largest_small_city = {
 		country_modifiers = {
 			embargo_efficiency = 0.5
 			global_trade_power = 0.15
-			merchants = 2
 		}
 		on_upgraded = {
 			owner = {
@@ -388,7 +382,7 @@ ara_temple = {
 		}
 		province_modifiers = {
 			local_development_cost = -0.05
-			gold_depletion_chance_modifier = -0.33
+			gold_depletion_chance_modifier = -0.1
 		}
 		area_modifier = {
 			local_unrest = -1
@@ -396,7 +390,7 @@ ara_temple = {
 		}
 		country_modifiers = {
 			tolerance_own = 0.25
-			trade_efficiency = 0.025
+			trade_efficiency = 0.02
 			global_tax_modifier = 0.025
 		}
 		on_upgraded = {
@@ -411,7 +405,7 @@ ara_temple = {
 		}
 		province_modifiers = {
 			local_development_cost = -0.1
-			gold_depletion_chance_modifier = -0.66
+			gold_depletion_chance_modifier = -0.2
 		}
 		area_modifier = {
 			local_unrest = -3
@@ -419,7 +413,7 @@ ara_temple = {
 		}
 		country_modifiers = {
 			tolerance_own = 0.5
-			trade_efficiency = 0.05
+			trade_efficiency = 0.04
 			global_tax_modifier = 0.05
 		}
 		on_upgraded = {
@@ -438,7 +432,7 @@ ara_temple = {
 		}
 		province_modifiers = {
 			local_development_cost = -0.15
-			gold_depletion_chance_modifier = -1
+			gold_depletion_chance_modifier = -0.3
 		}
 		area_modifier = {
 			local_unrest = -5
@@ -446,7 +440,7 @@ ara_temple = {
 		}
 		country_modifiers = {
 			tolerance_own = 1
-			trade_efficiency = 0.1
+			trade_efficiency = 0.06
 			global_tax_modifier = 0.1
 		}
 		on_upgraded = {

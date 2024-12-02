@@ -85,8 +85,7 @@ urviksten_ebonsteel_armory = {
 			supply_limit = 0.5
 		}
 		country_modifiers = {
-			infantry_shock = 0.05
-			infantry_cost = -0.025
+			shock_damage_received = -0.025
 		}
 		on_upgraded = {
 			add_base_production = 1
@@ -108,7 +107,6 @@ urviksten_ebonsteel_armory = {
 			supply_limit = 1
 		}
 		country_modifiers = {
-			infantry_shock = 0.1
 			infantry_cost = -0.05
 			shock_damage_received = -0.025
 		}
@@ -140,19 +138,12 @@ urviksten_ebonsteel_armory = {
 			supply_limit = 2
 		}
 		country_modifiers = {
-			infantry_shock = 0.15
 			infantry_cost = -0.1
 			shock_damage_received = -0.05
 		}
 		on_upgraded = {
 			add_base_production = 3
 			center_of_trade = 1
-			owner = {
-				add_country_modifier = {
-					name = urviksten_ebonsteel_armory_roars_to_life
-					duration = 5475
-				}
-			}
 		}
 	}
 }

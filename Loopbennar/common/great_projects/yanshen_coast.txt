@@ -81,7 +81,6 @@ tianlou_jewel_of_yanshen = {
 		}
 		country_modifiers = {
 			prestige = 0.1
-			trade_efficiency = 0.025
 		}
 		on_upgraded = {
 		}
@@ -101,7 +100,6 @@ tianlou_jewel_of_yanshen = {
 		}
 		country_modifiers = {
 			prestige = 0.25
-			trade_efficiency = 0.05
 		}
 		on_upgraded = {
 		}
@@ -121,7 +119,6 @@ tianlou_jewel_of_yanshen = {
 		}
 		country_modifiers = {
 			prestige = 0.5
-			trade_efficiency = 0.1
 			merchants = 1
 		}
 		on_upgraded = {
@@ -209,7 +206,6 @@ tianlou_xuezhefang_eunuch_academy = {
 		area_modifier = {
 		}
 		country_modifiers = {
-			governing_capacity = 25
 			expand_administration_cost = -0.1
 			eunuchs_anb_loyalty_modifier = 0.025
 		}
@@ -235,7 +231,6 @@ tianlou_xuezhefang_eunuch_academy = {
 		area_modifier = {
 		}
 		country_modifiers = {
-			governing_capacity = 50
 			expand_administration_cost = -0.3
 			eunuchs_anb_loyalty_modifier = 0.05
 			eunuchs_anb_influence_modifier = 0.025
@@ -271,7 +266,6 @@ tianlou_xuezhefang_eunuch_academy = {
 		area_modifier = {
 		}
 		country_modifiers = {
-			governing_capacity = 100
 			expand_administration_cost = -0.5
 			eunuchs_anb_loyalty_modifier = 0.1
 			eunuchs_anb_influence_modifier = 0.05
@@ -592,18 +586,6 @@ luoyip_house_of_fire_and_water = {
 		}
 		on_upgraded = {
 			center_of_trade = 1
-			owner = {
-				change_innovativeness = 3
-				if = {
-					limit = {
-						NOT = { has_country_flag = artificery_unlocked }
-					}
-					country_event = {
-						id = magic_artificery_setup.1
-						days = 1
-					}
-				}
-			}
 		}
 	}
 }
@@ -743,14 +725,6 @@ yinquan_the_conquerors_hotspring = {
 		country_modifiers = {
 			prestige = 0.5
 			monthly_splendor = 1
-		}
-		on_upgraded = {
-			owner = {
-				add_country_modifier = {
-					name = yinquan_the_conquerors_hotspring_soaked_men_tell_no_tales
-					duration = 7300
-				}
-			}
 		}
 	}
 }

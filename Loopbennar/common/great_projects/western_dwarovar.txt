@@ -98,7 +98,6 @@ kronium_throne = {
 		country_modifiers = {
 			yearly_absolutism = 0.5
 			max_absolutism = 5
-			governing_capacity_modifier = 0.05
 			administrative_efficiency = 0.025
 		}
 		on_upgraded = {
@@ -119,7 +118,6 @@ kronium_throne = {
 		country_modifiers = {
 			yearly_absolutism = 1
 			max_absolutism = 10
-			governing_capacity_modifier = 0.1
 			administrative_efficiency = 0.05
 		}
 		on_upgraded = {
@@ -127,277 +125,6 @@ kronium_throne = {
 				add_country_modifier = {
 					name = kronium_throne_one_throne_to_rule_them_all
 					duration = 3650
-				}
-			}
-		}
-	}
-}
-#High Assembly of Amlharaz
-amlharaz_assembly = {
-	start = 4149
-	date = 01.01.01
-	time = {
-		months = 0
-	}
-	build_cost = 0
-	can_be_moved = no
-	move_days_per_unit_distance = 1
-	starting_tier = 0
-	type = monument
-	build_trigger = {	
-	}
-	on_built = {	
-	}
-	on_destroyed = {	
-	}
-	can_use_modifiers_trigger = {
-		AND = {
-			custom_trigger_tooltip = {
-				tooltip = dwarven_monuments_can_use_tooltip_dig_level_2_or_higher
-				dwarven_monuments_has_dig_level_2_or_higher = yes
-			}
-			custom_trigger_tooltip = {
-				tooltip = dwarven_monuments_can_use_tooltip
-					dwarven_monuments_has_acceptable_culture_or_race = yes
-			}
-			province_is_or_accepts_culture = yes
-		}
-	}
-	can_upgrade_trigger = {
-		AND = {
-			custom_trigger_tooltip = {
-				tooltip = dwarven_monuments_can_use_tooltip_dig_level_2_or_higher
-					dwarven_monuments_has_dig_level_2_or_higher = yes
-			}
-			custom_trigger_tooltip = {
-				tooltip = dwarven_monuments_can_use_tooltip
-					dwarven_monuments_has_acceptable_culture_or_race = yes
-			}
-			province_is_or_accepts_culture = yes
-		}
-	}
-	keep_trigger = {
-	}
-	tier_0 = {
-		upgrade_time = {
-			months = 0
-		}
-		cost_to_upgrade = {
-			factor = 0
-		}
-		province_modifiers = {
-		}
-		area_modifier = {
-		}
-		country_modifiers = {	
-		}
-		on_upgraded = {
-		}
-	}
-	tier_1 = {
-		upgrade_time = {
-			months = 120
-		}
-		cost_to_upgrade = {
-			factor = 1000
-		}
-		province_modifiers = {	
-		}
-		area_modifier = {
-			local_production_efficiency = 0.05
-		}
-		country_modifiers = {
-			diplomatic_reputation = 0.25
-		}
-		on_upgraded = {
-			add_base_production = 1
-		}
-	}
-	tier_2 = {
-		upgrade_time = {
-			months = 240
-		}
-		cost_to_upgrade = {
-			factor = 3500
-		}
-		province_modifiers = {		
-		}
-		area_modifier = {
-			local_production_efficiency = 0.075
-		}
-		country_modifiers = {
-			diplomatic_reputation = 0.5
-		}
-		on_upgraded = {
-			add_base_production = 2
-			define_advisor = {
-				type = statesman
-				skill = 3
-				culture = root
-				religion = root
-				location = 4149
-				cost_multiplier = 0.25
-			}
-		}
-	}
-	tier_3 = {
-		upgrade_time = {
-			months = 480
-		}
-		cost_to_upgrade = {
-			factor = 7000
-		}
-		province_modifiers = {		
-		}
-		area_modifier = {
-			local_production_efficiency = 0.1
-		}
-		country_modifiers = {
-			diplomats = 1
-			diplomatic_reputation = 1
-			allow_client_states = yes
-		}
-		on_upgraded = {
-		add_base_production = 3
-			owner = {
-				add_country_modifier = {
-					name = amlharaz_assembly_hold_council
-					duration = 3650
-				}
-			}
-		}
-	}
-}
-#Fortress of Verkal Vazkron
-fortress_of_verkal_vazkron = {
-	start = 4122
-	date = 01.01.01
-	time = {
-		months = 0
-	}
-	build_cost = 0
-	can_be_moved = no
-	move_days_per_unit_distance = 1
-	starting_tier = 0
-	type = monument
-	build_trigger = {	
-	}
-	on_built = {		
-	}
-	on_destroyed = {		
-	}	
-	can_use_modifiers_trigger = {
-		AND = {
-			custom_trigger_tooltip = {
-				tooltip = dwarven_monuments_can_use_tooltip_dig_level_2_or_higher
-				dwarven_monuments_has_dig_level_2_or_higher = yes
-			}
-			custom_trigger_tooltip = {
-				tooltip = dwarven_monuments_can_use_tooltip
-					dwarven_monuments_has_acceptable_culture_or_race = yes
-			}
-			province_is_or_accepts_culture = yes
-		}
-	}
-	can_upgrade_trigger = {
-		AND = {
-			custom_trigger_tooltip = {
-				tooltip = dwarven_monuments_can_use_tooltip_dig_level_2_or_higher
-					dwarven_monuments_has_dig_level_2_or_higher = yes
-			}
-			custom_trigger_tooltip = {
-				tooltip = dwarven_monuments_can_use_tooltip
-					dwarven_monuments_has_acceptable_culture_or_race = yes
-			}
-			province_is_or_accepts_culture = yes
-		}
-	}
-	keep_trigger = {
-	}
-	tier_0 = {
-		upgrade_time = {
-			months = 0
-		}
-		cost_to_upgrade = {
-			factor = 0
-		}
-		province_modifiers = {
-		}
-		area_modifier = {
-		}
-		country_modifiers = {		
-		}
-		on_upgraded = {
-		}
-	}
-	tier_1 = {
-		upgrade_time = {
-			months = 120
-		}
-		cost_to_upgrade = {
-			factor = 1000
-		}
-		province_modifiers = {			
-		}
-		area_modifier = {
-			local_defensiveness = 0.15
-		}
-		country_modifiers = {
-			defensiveness = 0.025
-		}
-		on_upgraded = {
-		}
-	}
-	tier_2 = {
-		upgrade_time = {
-			months = 240
-		}
-		cost_to_upgrade = {
-			factor = 3500
-		}
-		province_modifiers = {			
-		}
-		area_modifier = {
-			local_defensiveness = 0.25
-		}
-		country_modifiers = {
-			defensiveness = 0.075
-			hostile_attrition = 0.25
-		}
-		on_upgraded = {
-			define_advisor = {
-				type = fortification_expert
-				skill = 3
-				culture = root
-				religion = root
-				location = root
-				cost_multiplier = 0.25
-			}
-		}
-	}
-	tier_3 = {
-		upgrade_time = {
-			months = 480
-		}
-		cost_to_upgrade = {
-			factor = 7000
-		}
-		province_modifiers = {
-			
-		}
-		area_modifier = {
-			local_defensiveness = 0.5
-			local_defender_dice_roll_bonus = 1
-		}
-		country_modifiers = {
-			defensiveness = 0.1
-			hostile_attrition = 0.5
-		}
-		on_upgraded = {
-			owner = {
-				add_country_modifier = {
-					name = fortress_of_verkal_vazkron_capital_terrain_bonus
-					duration = 27375
 				}
 			}
 		}
@@ -654,11 +381,11 @@ er_natvir_railyard = {
 		on_upgraded = {
 			owner = {
 				define_general = {
-					name = "Odar 'The Rail' Ironrunner"
+					name = "Tava"
 					trait = goal_oriented_personality
-					fire = 2
-					shock = 3
-					manuever = 12
+					fire = 1
+					shock = 1
+					manuever = 10
 					siege = 1
 				}
 			}
@@ -877,7 +604,6 @@ mithradhum_academy = {
 		}
 		country_modifiers = {
 			army_tradition_decay = -0.001
-			yearly_army_professionalism = 0.001
 		}
 		on_upgraded = {
 		}
@@ -897,7 +623,7 @@ mithradhum_academy = {
 		}
 		country_modifiers = {
 			army_tradition_decay = -0.003
-			yearly_army_professionalism = 0.003
+			yearly_army_professionalism = 0.001
 		}
 		on_upgraded = {
 			owner = {
@@ -923,26 +649,7 @@ mithradhum_academy = {
 		}
 		country_modifiers = {
 			army_tradition_decay = -0.005
-			yearly_army_professionalism = 0.005
-		}
-		on_upgraded = {
-			add_building = university
-			owner = {
-				random_list = {
-					50 = {
-						add_mil_power = 100
-					}
-					30 = {
-						change_ruler_stat = {
-							stat = mil
-							amount = 2
-						}
-					}
-					20 = {
-						add_mil_tech = 1
-					}
-				}
-			}
+			yearly_army_professionalism = 0.002
 		}
 	}
 }
@@ -1083,10 +790,6 @@ orldhum_estates = {
 		on_upgraded = {
 			add_base_manpower = 3
 			owner = {
-				add_country_modifier = {
-					name = haraz_orldhum_nobles_pleased_with_hold_improvements
-					duration = 10950
-				}
 				add_estate_loyalty = {
 					estate = estate_nobles
 					loyalty = 15
@@ -1172,7 +875,6 @@ khugdihr_bank = {
 		country_modifiers = {
 			inflation_reduction = 0.05
 			inflation_action_cost = -0.15
-			interest = -0.25
 		}
 		on_upgraded = {
 		}
@@ -1193,7 +895,6 @@ khugdihr_bank = {
 		country_modifiers = {
 			inflation_reduction = 0.07
 			inflation_action_cost = -0.20
-			interest = -0.5
 		}
 		on_upgraded = {
 			define_advisor = {
@@ -1223,7 +924,6 @@ khugdihr_bank = {
 		country_modifiers = {
 			inflation_reduction = 0.1
 			inflation_action_cost = -0.25
-			interest = -1
 		}
 		on_upgraded = {
 			owner = {
@@ -1366,14 +1066,6 @@ orlazam_food_silos = {
 			global_prosperity_growth = 0.5
 			global_monthly_devastation = -0.15
 		}
-		on_upgraded = {
-			owner = {
-				add_country_modifier = {
-					name = orlazam_food_silos_shrimp_fried_rice
-					duration = 7300
-				}
-			}
-		}
 	}
 }
 #Razstunad Mines
@@ -1446,7 +1138,6 @@ ramvault_mines = {
 			trade_goods_size = 0.5
 		}
 		country_modifiers = {
-			cavalry_cost = -0.05
 			cav_to_inf_ratio = 0.1
 		}
 		on_upgraded = {
@@ -1482,7 +1173,6 @@ ramvault_mines = {
 			allowed_num_of_buildings = 1
 		}
 		country_modifiers = {
-			cavalry_cost = -0.1
 			cav_to_inf_ratio = 0.15
 		}
 		on_upgraded = {
@@ -1504,9 +1194,7 @@ ramvault_mines = {
 			allowed_num_of_buildings = 1
 		}
 		country_modifiers = {
-			cavalry_cost = -0.15
 			cav_to_inf_ratio = 0.25
-			leader_land_manuever = 1
 		}
 		on_upgraded = {
 			add_base_production = 4
@@ -1918,9 +1606,7 @@ jorkad_aqueduct = {
 			allowed_num_of_buildings = 1
 		}
 		country_modifiers = {
-			state_maintenance_modifier = -0.25
 			garrison_size = 0.33
-			garrison_damage = 0.33
 		}
 		on_upgraded = {
 		}
@@ -1997,14 +1683,9 @@ sedadhum_mining_settlement = {
 		}
 		country_modifiers = {
 			shock_damage = 0.02
-			shock_damage_received = -0.01
 		}
 		on_upgraded = {
 			change_trade_goods = mithril
-			add_permanent_province_modifier = {
-				name = sedadhum_discovery_of_mithril_small
-				duration = -1
-			}
 		}
 	}
 	tier_2 = {
@@ -2022,14 +1703,6 @@ sedadhum_mining_settlement = {
 		}
 		country_modifiers = {
 			shock_damage = 0.04
-			shock_damage_received = -0.02
-		}
-		on_upgraded = {
-			remove_province_modifier = sedadhum_discovery_of_mithril_small
-			add_permanent_province_modifier = {
-				name = sedadhum_discovery_of_mithril_medium
-				duration = -1
-			}
 		}
 	}
 	tier_3 = {
@@ -2047,15 +1720,6 @@ sedadhum_mining_settlement = {
 		}
 		country_modifiers = {
 			shock_damage = 0.06
-			shock_damage_received = -0.03
-		}
-		on_upgraded = {
-			center_of_trade = 1
-			remove_province_modifier = sedadhum_discovery_of_mithril_medium
-			add_permanent_province_modifier = {
-				name = sedadhum_discovery_of_mithril_large
-				duration = -1
-			}
 		}
 	}
 }
