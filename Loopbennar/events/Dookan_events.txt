@@ -65,7 +65,7 @@ country_event = {
 		}
 		
 		else = {
-			add_yearly_manpower = 5
+			add_yearly_manpower = 2
 			add_army_professionalism = -0.025
 			add_country_modifier = {
 				name = dookan_gather_great_host
