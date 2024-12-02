@@ -26,6 +26,11 @@ country_event = {
 	fire_only_once = yes
 	is_triggered_only = yes
 
+	trigger = {
+		has_ruler = "Kenmu"
+		consort_is_harpy = yes
+	}
+
 	option = {
 		name = flavor_duwarkani.2.a
 		if = {
@@ -67,9 +72,6 @@ country_event = {
 
 	trigger = {
 		tag = F62
-		NOT = {
-			has_reform = winged_menkaunswt_reform
-		}
 	}
 
 	option = {
@@ -142,8 +144,8 @@ country_event = { #new ruler consort event
 		define_consort = {
 			country_of_origin = root
 			religion = root
-			culture = root
 			male = yes
+			culture = tijarikheti
 		}
 		hidden_effect = {
 			define_heir = {
@@ -618,6 +620,14 @@ country_event = {
 		name = flavor_duwarkani.18.a
 		add_yearly_manpower = -3
 	}
+	after = {
+		hidden_effect = {
+			country_event = {
+				id = flavor_duwarkani.33
+				days = 1825
+			}
+		}
+	}
 }
 
 country_event = {
@@ -816,6 +826,30 @@ country_event = {
 			culture = nzeri_harpy
 			female = yes
 			dynasty = "Menkaunswt"
+		}
+	}
+}
+
+country_event = {
+	id = flavor_duwarkani.33
+	title = flavor_duwarkani.33.t
+	desc = flavor_duwarkani.33.d
+	picture = USA_EXPLORERS_eventPicture
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	option = {
+		name = flavor_duwarkani.33.a
+		if = {
+			limit = { 
+				NOT = {
+					has_global_flag = ahati_disaster_began
+				}
+			}
+			country_event = {
+				id = ahati_events.100
+			}
 		}
 	}
 }

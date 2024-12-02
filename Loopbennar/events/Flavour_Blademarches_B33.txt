@@ -1220,7 +1220,7 @@ country_event = {
 		define_general = {
 				name = "Varilor síl Aldcamp"
 				fire = 4
-				shock = 8
+				shock = 9
 				manuever = 4
 				siege = 4
 			}

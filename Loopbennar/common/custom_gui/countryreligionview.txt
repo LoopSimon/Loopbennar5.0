@@ -1177,6 +1177,12 @@ custom_button = {
 		}
 	}
 	effect = { 
+		hidden_effect = {
+			change_variable = {
+				which = numOfLightThePyres
+				value = 1
+			}
+		}
 		if = {
 			limit = { NOT = { total_development = 100 } }
 			custom_tooltip = xhazobkult_light_the_pyres_100
@@ -1184,7 +1190,7 @@ custom_button = {
 				random_owned_province = {
 					limit = {
 						AND = {
-							NOT = { religion = xhazobkult }
+							NOT = { religion = xhazobkult }							
 							base_tax = 2
 							base_production = 2
 							base_manpower = 2
@@ -1195,9 +1201,6 @@ custom_button = {
 					add_base_manpower = -1
 				}
 			}		
-			add_patriarch_authority = 0.05
-			clr_country_flag = xhazobkult_light_the_pyres_cooldown
-			set_country_flag = xhazobkult_light_the_pyres_cooldown
 		}
 		else_if = {
 			limit = { NOT = { total_development = 200 } }
@@ -1207,7 +1210,7 @@ custom_button = {
 				effect = "
 					random_owned_province = {
 						limit = {
-							NOT = { religion = xhazobkult }
+							NOT = { religion = xhazobkult }							
 							NOT = { has_province_flag = xhazobkult_already_lighted_the_pyre }
 							base_tax = 2
 							base_production = 2
@@ -1220,12 +1223,9 @@ custom_button = {
 					}
 				"
 			}
-			add_patriarch_authority = 0.05
 			every_owned_province = {
 				clr_province_flag = xhazobkult_already_lighted_the_pyre
 			}
-			clr_country_flag = xhazobkult_light_the_pyres_cooldown
-			set_country_flag = xhazobkult_light_the_pyres_cooldown
 		}
 		else_if = {
 			limit = { NOT = { total_development = 300 } }
@@ -1235,7 +1235,7 @@ custom_button = {
 				effect = "
 					random_owned_province = {
 						limit = {
-							NOT = { religion = xhazobkult }
+							NOT = { religion = xhazobkult }							
 							NOT = { has_province_flag = xhazobkult_already_lighted_the_pyre }
 							base_tax = 2
 							base_production = 2
@@ -1248,12 +1248,9 @@ custom_button = {
 					}
 				"
 			}
-			add_patriarch_authority = 0.05
 			every_owned_province = {
 				clr_province_flag = xhazobkult_already_lighted_the_pyre
 			}
-			clr_country_flag = xhazobkult_light_the_pyres_cooldown
-			set_country_flag = xhazobkult_light_the_pyres_cooldown
 		}
 		else_if = {
 			limit = { NOT = { total_development = 400 } }
@@ -1263,7 +1260,7 @@ custom_button = {
 				effect = "
 					random_owned_province = {
 						limit = {
-							NOT = { religion = xhazobkult }
+							NOT = { religion = xhazobkult }							
 							NOT = { has_province_flag = xhazobkult_already_lighted_the_pyre }
 							base_tax = 2
 							base_production = 2
@@ -1276,12 +1273,9 @@ custom_button = {
 					}
 				"
 			}
-			add_patriarch_authority = 0.05
 			every_owned_province = {
 				clr_province_flag = xhazobkult_already_lighted_the_pyre
 			}
-			clr_country_flag = xhazobkult_light_the_pyres_cooldown
-			set_country_flag = xhazobkult_light_the_pyres_cooldown
 		}
 		else_if = {
 			limit = { NOT = { total_development = 500 } }
@@ -1291,7 +1285,7 @@ custom_button = {
 				effect = "
 					random_owned_province = {
 						limit = {
-							NOT = { religion = xhazobkult }
+							NOT = { religion = xhazobkult }							
 							NOT = { has_province_flag = xhazobkult_already_lighted_the_pyre }
 							base_tax = 2
 							base_production = 2
@@ -1304,12 +1298,9 @@ custom_button = {
 					}
 				"
 			}
-			add_patriarch_authority = 0.05
 			every_owned_province = {
 				clr_province_flag = xhazobkult_already_lighted_the_pyre
 			}
-			clr_country_flag = xhazobkult_light_the_pyres_cooldown
-			set_country_flag = xhazobkult_light_the_pyres_cooldown
 		}
 		else_if = {
 			limit = { NOT = { total_development = 600 } }
@@ -1319,7 +1310,7 @@ custom_button = {
 				effect = "
 					random_owned_province = {
 						limit = {
-							NOT = { religion = xhazobkult }
+							NOT = { religion = xhazobkult }							
 							NOT = { has_province_flag = xhazobkult_already_lighted_the_pyre }
 							base_tax = 2
 							base_production = 2
@@ -1332,12 +1323,9 @@ custom_button = {
 					}
 				"
 			}
-			add_patriarch_authority = 0.05
 			every_owned_province = {
 				clr_province_flag = xhazobkult_already_lighted_the_pyre
 			}
-			clr_country_flag = xhazobkult_light_the_pyres_cooldown
-			set_country_flag = xhazobkult_light_the_pyres_cooldown
 		}
 		else_if = {
 			limit = { NOT = { total_development = 700 } }
@@ -1347,7 +1335,7 @@ custom_button = {
 				effect = "
 					random_owned_province = {
 						limit = {
-							NOT = { religion = xhazobkult }
+							NOT = { religion = xhazobkult }							
 							NOT = { has_province_flag = xhazobkult_already_lighted_the_pyre }
 							base_tax = 2
 							base_production = 2
@@ -1360,12 +1348,9 @@ custom_button = {
 					}
 				"
 			}
-			add_patriarch_authority = 0.05
 			every_owned_province = {
 				clr_province_flag = xhazobkult_already_lighted_the_pyre
 			}
-			clr_country_flag = xhazobkult_light_the_pyres_cooldown
-			set_country_flag = xhazobkult_light_the_pyres_cooldown
 		}
 		else_if = {
 			limit = { NOT = { total_development = 800 } }
@@ -1375,7 +1360,7 @@ custom_button = {
 				effect = "
 					random_owned_province = {
 						limit = {
-							NOT = { religion = xhazobkult }
+							NOT = { religion = xhazobkult }							
 							NOT = { has_province_flag = xhazobkult_already_lighted_the_pyre }
 							base_tax = 2
 							base_production = 2
@@ -1388,12 +1373,9 @@ custom_button = {
 					}
 				"
 			}
-			add_patriarch_authority = 0.05
 			every_owned_province = {
 				clr_province_flag = xhazobkult_already_lighted_the_pyre
 			}
-			clr_country_flag = xhazobkult_light_the_pyres_cooldown
-			set_country_flag = xhazobkult_light_the_pyres_cooldown
 		}
 		else_if = {
 			limit = { NOT = { total_development = 900 } }
@@ -1403,7 +1385,7 @@ custom_button = {
 				effect = "
 					random_owned_province = {
 						limit = {
-							NOT = { religion = xhazobkult }
+							NOT = { religion = xhazobkult }							
 							NOT = { has_province_flag = xhazobkult_already_lighted_the_pyre }
 							base_tax = 2
 							base_production = 2
@@ -1416,22 +1398,44 @@ custom_button = {
 					}
 				"
 			}
-			add_patriarch_authority = 0.05
 			every_owned_province = {
 				clr_province_flag = xhazobkult_already_lighted_the_pyre
 			}
-			clr_country_flag = xhazobkult_light_the_pyres_cooldown
-			set_country_flag = xhazobkult_light_the_pyres_cooldown
 		}
 		else_if = {
-			limit = { total_development = 300 }
+			limit = { NOT = { total_development = 1000 } }
+			for = {
+				amount = 10
+				custom_tooltip = xhazobkult_light_the_pyres_900
+				effect = "
+					random_owned_province = {
+						limit = {
+							NOT = { religion = xhazobkult }							
+							NOT = { has_province_flag = xhazobkult_already_lighted_the_pyre }
+							base_tax = 2
+							base_production = 2
+							base_manpower = 2
+						}
+						add_base_tax = -1
+						add_base_production = -1
+						add_base_manpower = -1
+						set_province_flag = xhazobkult_already_lighted_the_pyre
+					}
+				"
+			}
+			every_owned_province = {
+				clr_province_flag = xhazobkult_already_lighted_the_pyre
+			}
+		}
+		else_if = {
+			limit = { total_development = 1000 }
 			for = {
 				amount = 10
 				custom_tooltip = xhazobkult_light_the_pyres_1000
 				effect = "
 					random_owned_province = {
 						limit = {
-							NOT = { religion = xhazobkult }
+							NOT = { religion = xhazobkult }						
 							NOT = { has_province_flag = xhazobkult_already_lighted_the_pyre }
 							base_tax = 2
 							base_production = 2
@@ -1444,13 +1448,20 @@ custom_button = {
 					}
 				"
 			}
-			add_patriarch_authority = 0.05
 			every_owned_province = {
 				clr_province_flag = xhazobkult_already_lighted_the_pyre
 			}
-			clr_country_flag = xhazobkult_light_the_pyres_cooldown
-			set_country_flag = xhazobkult_light_the_pyres_cooldown
 		}
+		clr_country_flag = xhazobkult_light_the_pyres_cooldown
+		set_country_flag = xhazobkult_light_the_pyres_cooldown
+		if = {
+			limit = { has_country_flag = rakkaz_light_the_pyres_upgrade }
+			add_patriarch_authority = 0.075
+		}
+		else = {
+			add_patriarch_authority = 0.05
+		}
+		rakkaz_fighting_pit_mazu_makhara_interactions = yes
 	}
 }
 
@@ -1491,4 +1502,16 @@ custom_icon = {
 		}
 	}
 	tooltip = devouring_path_blocker_tt
+}
+
+custom_icon = {
+    name = taychend_deity_desc
+    potential = { OR = { religion = gods_of_the_taychend religion = oren_nayiru } }
+	tooltip = taychend_deity_description
+}
+
+custom_icon = {
+    name = kheionist_deity_desc
+    potential = { religion = kheionism }
+	tooltip = kheionist_deity_description
 }

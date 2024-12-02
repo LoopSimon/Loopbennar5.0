@@ -1,26 +1,41 @@
 #NOTE - if changing modifiers in this file make sure to also change them in event_modifiers/anb_kobold_dragon_cult_modifiers.txt
 #NOTE - if changing modifiers in this file make sure to also change them in event_modifiers/anb_kobold_dragon_cult_modifiers.txt
 
-red_dragon_1 = {
-	cost = 100
-	trigger = {
+red_dragon_1_base = {
+	cost = 50
+	potential = {
+		NOT = {
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
+				COLOUR = red
+				SLOT = 1
+				UPGRADE = upgraded
+			}
+		}	
 	}
 	monarch_power = adm
 	modifier = {
-		global_trade_goods_size_modifier = 0.1 
+		global_trade_goods_size_modifier = 0.05
 	}
 	ai_will_do = {
 		factor = 15
 	}
 }
 
-red_dragon_2 = {
-	cost = 100
+red_dragon_2_base = {
+	cost = 50
 	potential = {
-		has_unlocked_single_kobold_cult_for_level_and_colour = {
-			LEVEL = 2
+		has_unlocked_kobold_cult_for_color_slot_upgrade = {
 			COLOUR = red
+			SLOT = 2
+			UPGRADE = base
 		}
+		NOT = {
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
+				COLOUR = red
+				SLOT = 2
+				UPGRADE = upgraded
+			}
+		}	
 	}
 	monarch_power = dip
 	modifier = {
@@ -31,13 +46,21 @@ red_dragon_2 = {
 	}
 }
 
-red_dragon_3 = {
-	cost = 100
+red_dragon_3_base= {
+	cost = 50
 	potential = {
-		has_unlocked_single_kobold_cult_for_level_and_colour = {
-			LEVEL = 3
+		has_unlocked_kobold_cult_for_color_slot_upgrade = {
 			COLOUR = red
+			SLOT = 3
+			UPGRADE = base
 		}
+		NOT = {
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
+				COLOUR = red
+				SLOT = 3
+				UPGRADE = upgraded
+			}
+		}	
 	}
 	monarch_power = mil
 	modifier = {
@@ -48,9 +71,16 @@ red_dragon_3 = {
 	}
 }
 
-blue_dragon_1 = {
-	cost = 100
+blue_dragon_1_base= {
+	cost = 50
 	potential = {
+		NOT = {
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
+				COLOUR = blue
+				SLOT = 1
+				UPGRADE = upgraded
+			}
+		}	
 	}
 	monarch_power = adm
 	modifier = {
@@ -62,13 +92,21 @@ blue_dragon_1 = {
 	}
 }
 
-blue_dragon_2 = {
-	cost = 100
+blue_dragon_2_base= {
+	cost = 50
 	potential = {
-		has_unlocked_single_kobold_cult_for_level_and_colour = {
-			LEVEL = 2
+		has_unlocked_kobold_cult_for_color_slot_upgrade = {
 			COLOUR = blue
+			SLOT = 2
+			UPGRADE = base
 		}
+		NOT = {
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
+				COLOUR = blue
+				SLOT = 2
+				UPGRADE = upgraded
+			}
+		}	
 	}
 	monarch_power = dip
 	modifier = {
@@ -79,13 +117,21 @@ blue_dragon_2 = {
 	}
 }
 
-blue_dragon_3 = {
-	cost = 100
+blue_dragon_3_base= {
+	cost = 50
 	potential = {
-		has_unlocked_single_kobold_cult_for_level_and_colour = {
-			LEVEL = 3
+		has_unlocked_kobold_cult_for_color_slot_upgrade = {
 			COLOUR = blue
+			SLOT = 3
+			UPGRADE = base
 		}
+		NOT = {
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
+				COLOUR = blue
+				SLOT = 3
+				UPGRADE = upgraded
+			}
+		}	
 	}
 	monarch_power = mil
 	modifier = {
@@ -96,9 +142,16 @@ blue_dragon_3 = {
 	}
 }
 
-green_dragon_1 = {
-	cost = 100
+green_dragon_1_base= {
+	cost = 50
 	potential = {
+		NOT = {
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
+				COLOUR = green
+				SLOT = 1
+				UPGRADE = upgraded
+			}
+		}	
 	}
 	monarch_power = adm
 	modifier = {
@@ -109,13 +162,21 @@ green_dragon_1 = {
 	}
 }
 
-green_dragon_2 = {
-	cost = 100
+green_dragon_2_base= {
+	cost = 50
 	potential = {
-		has_unlocked_single_kobold_cult_for_level_and_colour = {
-			LEVEL = 2
+		has_unlocked_kobold_cult_for_color_slot_upgrade = {
 			COLOUR = green
+			SLOT = 2
+			UPGRADE = base
 		}
+		NOT = {
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
+				COLOUR = green
+				SLOT = 2
+				UPGRADE = upgraded
+			}
+		}	
 	}
 	monarch_power = dip
 	modifier = {
@@ -126,13 +187,21 @@ green_dragon_2 = {
 	}
 }
 
-green_dragon_3 = {
-	cost = 100
+green_dragon_3_base= {
+	cost = 50
 	potential = {
-		has_unlocked_single_kobold_cult_for_level_and_colour = {
-			LEVEL = 3
+		has_unlocked_kobold_cult_for_color_slot_upgrade = {
 			COLOUR = green
+			SLOT = 3
+			UPGRADE = base
 		}
+		NOT = {
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
+				COLOUR = green
+				SLOT = 3
+				UPGRADE = upgraded
+			}
+		}	
 	}
 	monarch_power = mil
 	modifier = {
@@ -143,9 +212,16 @@ green_dragon_3 = {
 	}
 }
 
-black_dragon_1 = {
-	cost = 100
+black_dragon_1_base= {
+	cost = 50
 	potential = {
+		NOT = {
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
+				COLOUR = black
+				SLOT = 1
+				UPGRADE = upgraded
+			}
+		}	
 	}
 	monarch_power = adm
 	modifier = {
@@ -156,13 +232,21 @@ black_dragon_1 = {
 	}
 }
 
-black_dragon_2 = {
-	cost = 100
+black_dragon_2_base= {
+	cost = 50
 	potential = {
-		has_unlocked_single_kobold_cult_for_level_and_colour = {
-			LEVEL = 2
+		has_unlocked_kobold_cult_for_color_slot_upgrade = {
 			COLOUR = black
+			SLOT = 2
+			UPGRADE = base
 		}
+		NOT = {
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
+				COLOUR = black
+				SLOT = 2
+				UPGRADE = upgraded
+			}
+		}	
 	}
 	monarch_power = dip
 	modifier = {
@@ -173,12 +257,20 @@ black_dragon_2 = {
 	}
 }
 
-black_dragon_3 = {
-	cost = 100
+black_dragon_3_base= {
+	cost = 50
 	potential = {
-		has_unlocked_single_kobold_cult_for_level_and_colour = {
-			LEVEL = 3
+		has_unlocked_kobold_cult_for_color_slot_upgrade = {
 			COLOUR = black
+			SLOT = 3
+			UPGRADE = base
+		}
+		NOT = {
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
+				COLOUR = black
+				SLOT = 3
+				UPGRADE = upgraded
+			}
 		}
 	}
 	monarch_power = mil
@@ -190,9 +282,16 @@ black_dragon_3 = {
 	}
 }
 
-white_dragon_1 = {
-	cost = 100
+white_dragon_1_base= {
+	cost = 50
 	potential = {
+		NOT = {
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
+				COLOUR = white
+				SLOT = 1
+				UPGRADE = upgraded
+			}
+		}	
 	}
 	monarch_power = adm
 	modifier = {
@@ -203,12 +302,20 @@ white_dragon_1 = {
 	}
 }
 
-white_dragon_2 = {
-	cost = 100
+white_dragon_2_base= {
+	cost = 50
 	potential = {
-		has_unlocked_single_kobold_cult_for_level_and_colour = {
-			LEVEL = 2
+		has_unlocked_kobold_cult_for_color_slot_upgrade = {
 			COLOUR = white
+			SLOT = 2
+			UPGRADE = base
+		}
+		NOT = {
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
+				COLOUR = white
+				SLOT = 2
+				UPGRADE = upgraded
+			}
 		}
 	}
 	monarch_power = dip
@@ -220,12 +327,20 @@ white_dragon_2 = {
 	}
 }
 
-white_dragon_3 = {
-	cost = 100
+white_dragon_3_base= {
+	cost = 50
 	potential = {
-		has_unlocked_single_kobold_cult_for_level_and_colour = {
-			LEVEL = 3
+		has_unlocked_kobold_cult_for_color_slot_upgrade = {
 			COLOUR = white
+			SLOT = 3
+			UPGRADE = base
+		}
+		NOT = {
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
+				COLOUR = white
+				SLOT = 3
+				UPGRADE = upgraded
+			}
 		}
 	}
 	monarch_power = mil
@@ -237,45 +352,43 @@ white_dragon_3 = {
 	}
 }
 
-purple_dragon_1 = {
-	cost = 100
+purple_dragon_1_base= {
+	cost = 50
 	potential = {
+		NOT = {
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
+				COLOUR = purple
+				SLOT = 1
+				UPGRADE = upgraded
+			}
+		}	
 	}
 	monarch_power = adm
 	modifier = {
-		development_cost = -0.1
+		development_cost = -0.05
 	}
 	ai_will_do = {
 		factor = 15
 	}
 }
 
-purple_dragon_2 = {
-	cost = 100
+purple_dragon_2_base= {
+	cost = 50
 	potential = {
-		has_unlocked_single_kobold_cult_for_level_and_colour = {
-			LEVEL = 2
+		has_unlocked_kobold_cult_for_color_slot_upgrade = {
 			COLOUR = purple
+			SLOT = 2
+			UPGRADE = base
+		}
+		NOT = {
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
+				COLOUR = purple
+				SLOT = 2
+				UPGRADE = upgraded
+			}
 		}
 	}
 	monarch_power = dip
-	modifier = {
-		technology_cost = -0.025
-	}
-	ai_will_do = {
-		factor = 15
-	}
-}
-
-purple_dragon_3 = {
-	cost = 100
-	potential = {
-		has_unlocked_single_kobold_cult_for_level_and_colour = {
-			LEVEL = 3
-			COLOUR = purple
-		}
-	}
-	monarch_power = mil
 	modifier = {
 		global_autonomy = -0.025
 	}
@@ -284,9 +397,41 @@ purple_dragon_3 = {
 	}
 }
 
-brown_dragon_1 = {
-	cost = 100
+purple_dragon_3_base= {
+	cost = 50
 	potential = {
+		has_unlocked_kobold_cult_for_color_slot_upgrade = {
+			COLOUR = purple
+			SLOT = 3
+			UPGRADE = base
+		}
+		NOT = {
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
+				COLOUR = purple
+				SLOT = 3
+				UPGRADE = upgraded
+			}
+		}
+	}
+	monarch_power = mil
+	modifier = {
+		embracement_cost = -0.2
+	}
+	ai_will_do = {
+		factor = 15
+	}
+}
+
+brown_dragon_1_base= {
+	cost = 50
+	potential = {
+		NOT = {
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
+				COLOUR = brown
+				SLOT = 1
+				UPGRADE = upgraded
+			}
+		}	
 	}
 	monarch_power = adm
 	modifier = {
@@ -297,12 +442,20 @@ brown_dragon_1 = {
 	}
 }
 
-brown_dragon_2 = {
-	cost = 100
+brown_dragon_2_base= {
+	cost = 50
 	potential = {
-		has_unlocked_single_kobold_cult_for_level_and_colour = {
-			LEVEL = 2
+		has_unlocked_kobold_cult_for_color_slot_upgrade = {
 			COLOUR = brown
+			SLOT = 2
+			UPGRADE = base
+		}
+		NOT = {
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
+				COLOUR = brown
+				SLOT = 2
+				UPGRADE = upgraded
+			}
 		}
 	}
 	monarch_power = dip
@@ -314,12 +467,20 @@ brown_dragon_2 = {
 	}
 }
 
-brown_dragon_3 = {
-	cost = 100
+brown_dragon_3_base= {
+	cost = 50
 	potential = {
-		has_unlocked_single_kobold_cult_for_level_and_colour = {
-			LEVEL = 3
+		has_unlocked_kobold_cult_for_color_slot_upgrade = {
 			COLOUR = brown
+			SLOT = 3
+			UPGRADE = base
+		}
+		NOT = {
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
+				COLOUR = brown
+				SLOT = 3
+				UPGRADE = upgraded
+			}
 		}
 	}
 	monarch_power = mil
@@ -331,25 +492,40 @@ brown_dragon_3 = {
 	}
 }
 
-brass_dragon_1 = {
-	cost = 100
+brass_dragon_1_base= {
+	cost = 50
 	potential = {
+		NOT = {
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
+				COLOUR = brass
+				SLOT = 1
+				UPGRADE = upgraded
+			}
+		}	
 	}
 	monarch_power = adm
 	modifier = {
-		global_unrest = -2
+		spy_offence = 0.25
 	}
 	ai_will_do = {
 		factor = 15
 	}
 }
 
-brass_dragon_2 = {
-	cost = 100
+brass_dragon_2_base= {
+	cost = 50
 	potential = {
-		has_unlocked_single_kobold_cult_for_level_and_colour = {
-			LEVEL = 2
+		has_unlocked_kobold_cult_for_color_slot_upgrade = {
 			COLOUR = brass
+			SLOT = 2
+			UPGRADE = base
+		}
+		NOT = {
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
+				COLOUR = brass
+				SLOT = 2
+				UPGRADE = upgraded
+			}
 		}
 	}
 	monarch_power = dip
@@ -361,12 +537,20 @@ brass_dragon_2 = {
 	}
 }
 
-brass_dragon_3 = {
-	cost = 100
+brass_dragon_3_base= {
+	cost = 50
 	potential = {
-		has_unlocked_single_kobold_cult_for_level_and_colour = {
-			LEVEL = 3
+		has_unlocked_kobold_cult_for_color_slot_upgrade = {
 			COLOUR = brass
+			SLOT = 3
+			UPGRADE = base
+		}
+		NOT = {
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
+				COLOUR = brass
+				SLOT = 3
+				UPGRADE = upgraded
+			}
 		}
 	}
 	monarch_power = mil
@@ -378,9 +562,16 @@ brass_dragon_3 = {
 	}
 }
 
-copper_dragon_1 = {
-	cost = 100
+copper_dragon_1_base= {
+	cost = 50
 	potential = {
+		NOT = {
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
+				COLOUR = copper
+				SLOT = 1
+				UPGRADE = upgraded
+			}
+		}	
 	}
 	monarch_power = adm
 	modifier = {
@@ -391,12 +582,20 @@ copper_dragon_1 = {
 	}
 }
 
-copper_dragon_2 = {
-	cost = 100
+copper_dragon_2_base= {
+	cost = 50
 	potential = {
-		has_unlocked_single_kobold_cult_for_level_and_colour = {
-			LEVEL = 2
+		has_unlocked_kobold_cult_for_color_slot_upgrade = {
 			COLOUR = copper
+			SLOT = 2
+			UPGRADE = base
+		}
+		NOT = {
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
+				COLOUR = copper
+				SLOT = 2
+				UPGRADE = upgraded
+			}
 		}
 	}
 	monarch_power = dip
@@ -408,108 +607,20 @@ copper_dragon_2 = {
 	}
 }
 
-copper_dragon_3 = {
-	cost = 100
+copper_dragon_3_base= {
+	cost = 50
 	potential = {
-		has_unlocked_single_kobold_cult_for_level_and_colour = {
-			LEVEL = 3
+		has_unlocked_kobold_cult_for_color_slot_upgrade = {
 			COLOUR = copper
+			SLOT = 3
+			UPGRADE = base
 		}
-	}
-	monarch_power = mil
-	modifier = {
-		global_missionary_strength = 0.01
-	}
-	ai_will_do = {
-		factor = 15
-	}
-}
-
-bronze_dragon_1 = {
-	cost = 100
-	potential = {
-	}
-	monarch_power = adm
-	modifier = {
-		army_tradition = 0.5
-		navy_tradition = 0.5
-	}
-	ai_will_do = {
-		factor = 15
-	}
-}
-
-bronze_dragon_2 = {
-	cost = 100
-	potential = {
-		has_unlocked_single_kobold_cult_for_level_and_colour = {
-			LEVEL = 2
-			COLOUR = bronze
-		}
-	}
-	monarch_power = dip
-	modifier = {
-		backrow_artillery_damage = 0.05
-	}
-	ai_will_do = {
-		factor = 15
-	}
-}
-
-bronze_dragon_3 = {
-	cost = 100
-	potential = {
-		has_unlocked_single_kobold_cult_for_level_and_colour = {
-			LEVEL = 3
-			COLOUR = bronze
-		}
-	}
-	monarch_power = mil
-	modifier = {
-		discipline = 0.025
-	}
-	ai_will_do = {
-		factor = 15
-	}
-}
-
-silver_dragon_1 = {
-	cost = 100
-	potential = {
-	}
-	monarch_power = adm
-	modifier = {
-		yearly_corruption = -0.10
-		church_power_modifier = 0.25
-	}
-	ai_will_do = {
-		factor = 15
-	}
-}
-
-silver_dragon_2 = {
-	cost = 100
-	potential = {
-		has_unlocked_single_kobold_cult_for_level_and_colour = {
-			LEVEL = 2
-			COLOUR = silver
-		}
-	}
-	monarch_power = dip
-	modifier = {
-		governing_capacity_modifier = 0.05
-	}
-	ai_will_do = {
-		factor = 15
-	}
-}
-
-silver_dragon_3 = {
-	cost = 100
-	potential = {
-		has_unlocked_single_kobold_cult_for_level_and_colour = {
-			LEVEL = 3
-			COLOUR = silver
+		NOT = {
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
+				COLOUR = copper
+				SLOT = 3
+				UPGRADE = upgraded
+			}
 		}
 	}
 	monarch_power = mil
@@ -521,9 +632,158 @@ silver_dragon_3 = {
 	}
 }
 
-gold_dragon_1 = {
-	cost = 100
+bronze_dragon_1_base= {
+	cost = 50
 	potential = {
+		NOT = {
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
+				COLOUR = bronze
+				SLOT = 1
+				UPGRADE = upgraded
+			}
+		}	
+	}
+	monarch_power = adm
+	modifier = {
+		army_tradition = 0.5
+		navy_tradition = 0.5
+	}
+	ai_will_do = {
+		factor = 15
+	}
+}
+
+bronze_dragon_2_base= {
+	cost = 50
+	potential = {
+		has_unlocked_kobold_cult_for_color_slot_upgrade = {
+			COLOUR = bronze
+			SLOT = 2
+			UPGRADE = base
+		}
+		NOT = {
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
+				COLOUR = bronze
+				SLOT = 2
+				UPGRADE = upgraded
+			}
+		}
+	}
+	monarch_power = dip
+	modifier = {
+		backrow_artillery_damage = 0.05
+	}
+	ai_will_do = {
+		factor = 15
+	}
+}
+
+bronze_dragon_3_base= {
+	cost = 50
+	potential = {
+		has_unlocked_kobold_cult_for_color_slot_upgrade = {
+			COLOUR = bronze
+			SLOT = 3
+			UPGRADE = base
+		}
+		NOT = {
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
+				COLOUR = bronze
+				SLOT = 3
+				UPGRADE = upgraded
+			}
+		}
+	}
+	monarch_power = mil
+	modifier = {
+		discipline = 0.025
+	}
+	ai_will_do = {
+		factor = 15
+	}
+}
+
+silver_dragon_1_base= {
+	cost = 50
+	potential = {
+		NOT = {
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
+				COLOUR = silver
+				SLOT = 1
+				UPGRADE = upgraded
+			}
+		}	
+	}
+	monarch_power = adm
+	modifier = {
+		yearly_corruption = -0.10
+		church_power_modifier = 0.125
+	}
+	ai_will_do = {
+		factor = 15
+	}
+}
+
+silver_dragon_2_base= {
+	cost = 50
+	potential = {
+		has_unlocked_kobold_cult_for_color_slot_upgrade = {
+			COLOUR = silver
+			SLOT = 2
+			UPGRADE = base
+		}
+		NOT = {
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
+				COLOUR = silver
+				SLOT = 2
+				UPGRADE = upgraded
+			}
+		}
+	}
+	monarch_power = dip
+	modifier = {
+		tolerance_own = 1
+	}
+	ai_will_do = {
+		factor = 15
+	}
+}
+
+silver_dragon_3_base= {
+	cost = 50
+	potential = {
+		has_unlocked_kobold_cult_for_color_slot_upgrade = {
+			COLOUR = silver
+			SLOT = 3
+			UPGRADE = base
+		}
+		NOT = {
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
+				COLOUR = silver
+				SLOT = 3
+				UPGRADE = upgraded
+			}
+		}
+	}
+	monarch_power = mil
+	modifier = {
+		global_missionary_strength = 0.01
+	}
+	ai_will_do = {
+		factor = 15
+	}
+}
+
+gold_dragon_1_base= {
+	cost = 50
+	potential = {
+		NOT = {
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
+				COLOUR = gold
+				SLOT = 1
+				UPGRADE = upgraded
+			}
+		}	
 	}
 	monarch_power = adm
 	modifier = {
@@ -534,29 +794,46 @@ gold_dragon_1 = {
 	}
 }
 
-gold_dragon_2 = {
-	cost = 100
+gold_dragon_2_base= {
+	cost = 50
 	potential = {
-		has_unlocked_single_kobold_cult_for_level_and_colour = {
-			LEVEL = 2
+		has_unlocked_kobold_cult_for_color_slot_upgrade = {
 			COLOUR = gold
+			SLOT = 2
+			UPGRADE = base
+		}
+		NOT = {
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
+				COLOUR = gold
+				SLOT = 2
+				UPGRADE = upgraded
+			}
 		}
 	}
 	monarch_power = dip
 	modifier = {
 		diplomatic_annexation_cost = -0.1
+		diplomatic_reputation = 1
 	}
 	ai_will_do = {
 		factor = 15
 	}
 }
 
-gold_dragon_3 = {
-	cost = 100
+gold_dragon_3_base= {
+	cost = 50
 	potential = {
-		has_unlocked_single_kobold_cult_for_level_and_colour = {
-			LEVEL = 3
+		has_unlocked_kobold_cult_for_color_slot_upgrade = {
 			COLOUR = gold
+			SLOT = 3
+			UPGRADE = base
+		}
+		NOT = {
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
+				COLOUR = gold
+				SLOT = 3
+				UPGRADE = upgraded
+			}
 		}
 	}
 	monarch_power = mil
@@ -570,15 +847,19 @@ gold_dragon_3 = {
 
 # Locked versions
 red_dragon_2_locked = {
-	cost = 100
+	cost = 50
 	trigger = {
-		always = no
+		custom_trigger_tooltip = {
+			tooltip = must_be_unlocked_through_festivals_tt
+			always = no
+		}
 	}
 	potential = {
 		NOT = {
-			has_unlocked_single_kobold_cult_for_level_and_colour = {
-				LEVEL = 2
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = red
+				SLOT = 2
+				UPGRADE = base
 			}
 		}
 	}
@@ -589,15 +870,19 @@ red_dragon_2_locked = {
 }
 
 red_dragon_3_locked = {
-	cost = 100
+	cost = 50
 	trigger = {
-		always = no
+		custom_trigger_tooltip = {
+			tooltip = must_be_unlocked_through_festivals_tt
+			always = no
+		}
 	}
 	potential = {
 		NOT = {
-			has_unlocked_single_kobold_cult_for_level_and_colour = {
-				LEVEL = 3
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = red
+				SLOT = 3
+				UPGRADE = base
 			}
 		}
 	}
@@ -608,15 +893,19 @@ red_dragon_3_locked = {
 }
 
 blue_dragon_2_locked = {
-	cost = 100
+	cost = 50
 	trigger = {
-		always = no
+		custom_trigger_tooltip = {
+			tooltip = must_be_unlocked_through_festivals_tt
+			always = no
+		}
 	}
 	potential = {
 		NOT = {
-			has_unlocked_single_kobold_cult_for_level_and_colour = {
-				LEVEL = 2
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = blue
+				SLOT = 2
+				UPGRADE = base
 			}
 		}
 	}
@@ -627,15 +916,19 @@ blue_dragon_2_locked = {
 }
 
 blue_dragon_3_locked = {
-	cost = 100
+	cost = 50
 	trigger = {
-		always = no
+		custom_trigger_tooltip = {
+			tooltip = must_be_unlocked_through_festivals_tt
+			always = no
+		}
 	}
 	potential = {
 		NOT = {
-			has_unlocked_single_kobold_cult_for_level_and_colour = {
-				LEVEL = 3
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = blue
+				SLOT = 3
+				UPGRADE = base
 			}
 		}
 	}
@@ -646,15 +939,19 @@ blue_dragon_3_locked = {
 }
 
 green_dragon_2_locked = {
-	cost = 100
+	cost = 50
 	trigger = {
-		always = no
+		custom_trigger_tooltip = {
+			tooltip = must_be_unlocked_through_festivals_tt
+			always = no
+		}
 	}
 	potential = {
 		NOT = {
-			has_unlocked_single_kobold_cult_for_level_and_colour = {
-				LEVEL = 2
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = green
+				SLOT = 2
+				UPGRADE = base
 			}
 		}
 	}
@@ -665,15 +962,19 @@ green_dragon_2_locked = {
 }
 
 green_dragon_3_locked = {
-	cost = 100
+	cost = 50
 	trigger = {
-		always = no
+		custom_trigger_tooltip = {
+			tooltip = must_be_unlocked_through_festivals_tt
+			always = no
+		}
 	}
 	potential = {
 		NOT = {
-			has_unlocked_single_kobold_cult_for_level_and_colour = {
-				LEVEL = 3
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = green
+				SLOT = 3
+				UPGRADE = base
 			}
 		}
 	}
@@ -684,15 +985,19 @@ green_dragon_3_locked = {
 }
 
 black_dragon_2_locked = {
-	cost = 100
+	cost = 50
 	trigger = {
-		always = no
+		custom_trigger_tooltip = {
+			tooltip = must_be_unlocked_through_festivals_tt
+			always = no
+		}
 	}
 	potential = {
 		NOT = {
-			has_unlocked_single_kobold_cult_for_level_and_colour = {
-				LEVEL = 2
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = black
+				SLOT = 2
+				UPGRADE = base
 			}
 		}
 	}
@@ -703,15 +1008,19 @@ black_dragon_2_locked = {
 }
 
 black_dragon_3_locked = {
-	cost = 100
+	cost = 50
 	trigger = {
-		always = no
+		custom_trigger_tooltip = {
+			tooltip = must_be_unlocked_through_festivals_tt
+			always = no
+		}
 	}
 	potential = {
 		NOT = {
-			has_unlocked_single_kobold_cult_for_level_and_colour = {
-				LEVEL = 3
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = black
+				SLOT = 3
+				UPGRADE = base
 			}
 		}
 	}
@@ -722,15 +1031,19 @@ black_dragon_3_locked = {
 }
 
 white_dragon_2_locked = {
-	cost = 100
+	cost = 50
 	trigger = {
-		always = no
+		custom_trigger_tooltip = {
+			tooltip = must_be_unlocked_through_festivals_tt
+			always = no
+		}
 	}
 	potential = {
 		NOT = {
-			has_unlocked_single_kobold_cult_for_level_and_colour = {
-				LEVEL = 2
-				COLOUR = white
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
+				COLOUR = white	
+				SLOT = 2
+				UPGRADE = base
 			}
 		}
 	}
@@ -741,15 +1054,19 @@ white_dragon_2_locked = {
 }
 
 white_dragon_3_locked = {
-	cost = 100
+	cost = 50
 	trigger = {
-		always = no
+		custom_trigger_tooltip = {
+			tooltip = must_be_unlocked_through_festivals_tt
+			always = no
+		}
 	}
 	potential = {
 		NOT = {
-			has_unlocked_single_kobold_cult_for_level_and_colour = {
-				LEVEL = 3
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = white
+				SLOT = 3
+				UPGRADE = base
 			}
 		}
 	}
@@ -760,53 +1077,65 @@ white_dragon_3_locked = {
 }
 
 purple_dragon_2_locked = {
-	cost = 100
+	cost = 50
 	trigger = {
-		always = no
+		custom_trigger_tooltip = {
+			tooltip = must_be_unlocked_through_festivals_tt
+			always = no
+		}
 	}
 	potential = {
 		NOT = {
-			has_unlocked_single_kobold_cult_for_level_and_colour = {
-				LEVEL = 2
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = purple
+				SLOT = 2
+				UPGRADE = base
 			}
 		}
 	}
 	monarch_power = dip
 	modifier = {
-		technology_cost = -0.025
+		global_autonomy = -0.025
 	}
 }
 
 purple_dragon_3_locked = {
-	cost = 100
+	cost = 50
 	trigger = {
-		always = no
+		custom_trigger_tooltip = {
+			tooltip = must_be_unlocked_through_festivals_tt
+			always = no
+		}
 	}
 	potential = {
 		NOT = {
-			has_unlocked_single_kobold_cult_for_level_and_colour = {
-				LEVEL = 3
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = purple
+				SLOT = 3
+				UPGRADE = base
 			}
 		}
 	}
 	monarch_power = mil
 	modifier = {
-		global_autonomy = -0.025
+		embracement_cost = -0.2
 	}
 }
 
 brown_dragon_2_locked = {
-	cost = 100
+	cost = 50
 	trigger = {
-		always = no
+		custom_trigger_tooltip = {
+			tooltip = must_be_unlocked_through_festivals_tt
+			always = no
+		}
 	}
 	potential = {
 		NOT = {
-			has_unlocked_single_kobold_cult_for_level_and_colour = {
-				LEVEL = 2
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = brown
+				SLOT = 2
+				UPGRADE = base
 			}
 		}
 	}
@@ -817,15 +1146,19 @@ brown_dragon_2_locked = {
 }
 
 brown_dragon_3_locked = {
-	cost = 100
+	cost = 50
 	trigger = {
-		always = no
+		custom_trigger_tooltip = {
+			tooltip = must_be_unlocked_through_festivals_tt
+			always = no
+		}
 	}
 	potential = {
 		NOT = {
-			has_unlocked_single_kobold_cult_for_level_and_colour = {
-				LEVEL = 3
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = brown
+				SLOT = 3
+				UPGRADE = base
 			}
 		}
 	}
@@ -836,15 +1169,19 @@ brown_dragon_3_locked = {
 }
 
 brass_dragon_2_locked = {
-	cost = 100
+	cost = 50
 	trigger = {
-		always = no
+		custom_trigger_tooltip = {
+			tooltip = must_be_unlocked_through_festivals_tt
+			always = no
+		}
 	}
 	potential = {
 		NOT = {
-			has_unlocked_single_kobold_cult_for_level_and_colour = {
-				LEVEL = 2
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = brass
+				SLOT = 2
+				UPGRADE = base
 			}
 		}
 	}
@@ -855,15 +1192,19 @@ brass_dragon_2_locked = {
 }
 
 brass_dragon_3_locked = {
-	cost = 100
+	cost = 50
 	trigger = {
-		always = no
+		custom_trigger_tooltip = {
+			tooltip = must_be_unlocked_through_festivals_tt
+			always = no
+		}
 	}
 	potential = {
 		NOT = {
-			has_unlocked_single_kobold_cult_for_level_and_colour = {
-				LEVEL = 3
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = brass
+				SLOT = 3
+				UPGRADE = base
 			}
 		}
 	}
@@ -874,15 +1215,19 @@ brass_dragon_3_locked = {
 }
 
 copper_dragon_2_locked = {
-	cost = 100
+	cost = 50
 	trigger = {
-		always = no
+		custom_trigger_tooltip = {
+			tooltip = must_be_unlocked_through_festivals_tt
+			always = no
+		}
 	}
 	potential = {
 		NOT = {
-			has_unlocked_single_kobold_cult_for_level_and_colour = {
-				LEVEL = 2
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = copper
+				SLOT = 2
+				UPGRADE = base
 			}
 		}
 	}
@@ -893,34 +1238,42 @@ copper_dragon_2_locked = {
 }
 
 copper_dragon_3_locked = {
-	cost = 100
+	cost = 50
 	trigger = {
-		always = no
+		custom_trigger_tooltip = {
+			tooltip = must_be_unlocked_through_festivals_tt
+			always = no
+		}
 	}
 	potential = {
 		NOT = {
-			has_unlocked_single_kobold_cult_for_level_and_colour = {
-				LEVEL = 3
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = copper
+				SLOT = 3
+				UPGRADE = base
 			}
 		}
 	}
 	monarch_power = mil
 	modifier = {
-		global_missionary_strength = 0.01
+		tolerance_heathen = 2
 	}
 }
 
 bronze_dragon_2_locked = {
-	cost = 100
+	cost = 50
 	trigger = {
-		always = no
+		custom_trigger_tooltip = {
+			tooltip = must_be_unlocked_through_festivals_tt
+			always = no
+		}
 	}
 	potential = {
 		NOT = {
-			has_unlocked_single_kobold_cult_for_level_and_colour = {
-				LEVEL = 2
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = bronze
+				SLOT = 2
+				UPGRADE = base
 			}
 		}
 	}
@@ -931,15 +1284,19 @@ bronze_dragon_2_locked = {
 }
 
 bronze_dragon_3_locked = {
-	cost = 100
+	cost = 50
 	trigger = {
-		always = no
+		custom_trigger_tooltip = {
+			tooltip = must_be_unlocked_through_festivals_tt
+			always = no
+		}
 	}
 	potential = {
 		NOT = {
-			has_unlocked_single_kobold_cult_for_level_and_colour = {
-				LEVEL = 3
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = bronze
+				SLOT = 3
+				UPGRADE = base
 			}
 		}
 	}
@@ -950,72 +1307,89 @@ bronze_dragon_3_locked = {
 }
 
 silver_dragon_2_locked = {
-	cost = 100
+	cost = 50
 	trigger = {
-		always = no
+		custom_trigger_tooltip = {
+			tooltip = must_be_unlocked_through_festivals_tt
+			always = no
+		}
 	}
 	potential = {
 		NOT = {
-			has_unlocked_single_kobold_cult_for_level_and_colour = {
-				LEVEL = 2
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = silver
+				SLOT = 2
+				UPGRADE = base
 			}
 		}
 	}
 	monarch_power = dip
 	modifier = {
-		governing_capacity_modifier = 0.05
+		tolerance_own = 1
 	}
 }
 
 silver_dragon_3_locked = {
-	cost = 100
+	cost = 50
 	trigger = {
-		always = no
+		custom_trigger_tooltip = {
+			tooltip = must_be_unlocked_through_festivals_tt
+			always = no
+		}
 	}
 	potential = {
 		NOT = {
-			has_unlocked_single_kobold_cult_for_level_and_colour = {
-				LEVEL = 3
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = silver
+				SLOT = 3
+				UPGRADE = base
 			}
 		}
 	}
 	monarch_power = mil
 	modifier = {
-		tolerance_heathen = 2
+		global_missionary_strength = 0.01
 	}
 }
 
 gold_dragon_2_locked = {
-	cost = 100
+	cost = 50
 	trigger = {
-		always = no
+		custom_trigger_tooltip = {
+			tooltip = must_be_unlocked_through_festivals_tt
+			always = no
+		}
 	}
 	potential = {
 		NOT = {
-			has_unlocked_single_kobold_cult_for_level_and_colour = {
-				LEVEL = 2
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = gold
+				SLOT = 2
+				UPGRADE = base
 			}
 		}
 	}
 	monarch_power = dip
 	modifier = {
 		diplomatic_annexation_cost = -0.1
+		diplomatic_reputation = 1
 	}
 }
 
 gold_dragon_3_locked = {
-	cost = 100
+	cost = 50
 	trigger = {
-		always = no
+		custom_trigger_tooltip = {
+			tooltip = must_be_unlocked_through_festivals_tt
+			always = no
+		}
 	}
 	potential = {
 		NOT = {
-			has_unlocked_single_kobold_cult_for_level_and_colour = {
-				LEVEL = 3
+			has_unlocked_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = gold
+				SLOT = 3
+				UPGRADE = base
 			}
 		}
 	}
@@ -1023,4 +1397,684 @@ gold_dragon_3_locked = {
 	modifier = {
 		advisor_cost = -0.05
 	}
+}
+
+# Upgraded
+
+red_dragon_1_upgraded = {
+    cost = 50
+	potential = {
+		has_unlocked_kobold_cult_for_color_slot_upgrade = {
+			COLOUR = red
+			SLOT = 1
+			UPGRADE = upgraded
+		}
+	}
+    monarch_power = adm
+    modifier = {
+		global_trade_goods_size_modifier = 0.075
+		interest = -0.25
+    }
+    ai_will_do = {
+        factor = 15
+    }
+}
+
+red_dragon_2_upgraded = {
+    cost = 50
+    potential = {
+        has_unlocked_kobold_cult_for_color_slot_upgrade = {
+            COLOUR = red
+            SLOT = 2
+            UPGRADE = upgraded
+        }
+    }
+    monarch_power = dip
+    modifier = {
+		global_trade_power = 0.075
+		fire_damage = 0.025
+    }
+    ai_will_do = {
+        factor = 15
+    }
+}
+
+red_dragon_3_upgraded= {
+    cost = 50
+    potential = {
+        has_unlocked_kobold_cult_for_color_slot_upgrade = {
+            COLOUR = red
+            SLOT = 3
+            UPGRADE = upgraded
+        }
+    }
+    monarch_power = mil
+    modifier = {
+		inflation_reduction = 0.1
+		fire_damage_received = -0.05
+    }
+    ai_will_do = {
+        factor = 15
+    }
+}
+
+blue_dragon_1_upgraded= {
+    cost = 50
+	potential = {
+		has_unlocked_kobold_cult_for_color_slot_upgrade = {
+			COLOUR = blue
+			SLOT = 1
+			UPGRADE = upgraded
+		}
+	}
+    monarch_power = adm
+    modifier = {
+		leader_land_fire = 1
+		technology_cost = -0.025
+    }
+    ai_will_do = {
+        factor = 15
+    }
+}
+
+blue_dragon_2_upgraded= {
+    cost = 50
+    potential = {
+        has_unlocked_kobold_cult_for_color_slot_upgrade = {
+            COLOUR = blue
+            SLOT = 2
+            UPGRADE = upgraded
+        }
+    }
+    monarch_power = dip
+    modifier = {
+		improve_relation_modifier = 0.10
+		idea_cost = -0.1
+    }
+    ai_will_do = {
+        factor = 15
+    }
+}
+
+blue_dragon_3_upgraded= {
+    cost = 50
+    potential = {
+        has_unlocked_kobold_cult_for_color_slot_upgrade = {
+            COLOUR = blue
+            SLOT = 3
+            UPGRADE = upgraded
+        }
+    }
+    monarch_power = mil
+    modifier = {
+		ae_impact = -0.1
+    }
+    ai_will_do = {
+        factor = 15
+    }
+}
+
+green_dragon_1_upgraded= {
+    cost = 50
+	potential = {
+		has_unlocked_kobold_cult_for_color_slot_upgrade = {
+			COLOUR = green
+			SLOT = 1
+			UPGRADE = upgraded
+		}
+	}
+    monarch_power = adm
+    modifier = {
+		heavy_ship_power = 0.1
+		republican_tradition = 0.3
+    }
+    ai_will_do = {
+        factor = 15
+    }
+}
+
+green_dragon_2_upgraded= {
+    cost = 50
+    potential = {
+        has_unlocked_kobold_cult_for_color_slot_upgrade = {
+            COLOUR = green
+            SLOT = 2
+            UPGRADE = upgraded
+        }
+    }
+    monarch_power = dip
+    modifier = {
+		colonist_placement_chance = 0.1
+		liberty_desire_from_subject_development = -0.25
+    }
+    ai_will_do = {
+        factor = 15
+    }
+}
+
+green_dragon_3_upgraded= {
+    cost = 50
+    potential = {
+        has_unlocked_kobold_cult_for_color_slot_upgrade = {
+            COLOUR = green
+            SLOT = 3
+            UPGRADE = upgraded
+        }
+    }
+    monarch_power = mil
+    modifier = {
+		hull_size_modifier = 0.05
+		vassal_forcelimit_bonus = 0.4
+    }
+    ai_will_do = {
+        factor = 15
+    }
+}
+
+black_dragon_1_upgraded= {
+    cost = 50
+	potential = {
+		has_unlocked_kobold_cult_for_color_slot_upgrade = {
+			COLOUR = black
+			SLOT = 1
+			UPGRADE = upgraded
+		}
+	}
+    monarch_power = adm
+    modifier = {
+		missionaries = 1
+		republican_tradition = 0.3
+    }
+    ai_will_do = {
+        factor = 15
+    }
+}
+
+black_dragon_2_upgraded= {
+    cost = 50
+    potential = {
+        has_unlocked_kobold_cult_for_color_slot_upgrade = {
+            COLOUR = black
+            SLOT = 2
+            UPGRADE = upgraded
+        }
+    }
+    monarch_power = dip
+    modifier = {
+		years_of_nationalism = -5
+		build_cost = -0.1 
+    }
+    ai_will_do = {
+        factor = 15
+    }
+}
+
+black_dragon_3_upgraded= {
+    cost = 50
+    potential = {
+        has_unlocked_kobold_cult_for_color_slot_upgrade = {
+            COLOUR = black
+            SLOT = 3
+            UPGRADE = upgraded
+        }
+    }
+    monarch_power = mil
+    modifier = {
+		core_creation = -0.05
+		max_absolutism = 15
+    }
+    ai_will_do = {
+        factor = 15
+    }
+}
+
+white_dragon_1_upgraded= {
+    cost = 50
+	potential = {
+		has_unlocked_kobold_cult_for_color_slot_upgrade = {
+			COLOUR = white
+			SLOT = 1
+			UPGRADE = upgraded
+		}
+	}
+    monarch_power = adm
+    modifier = {
+		max_hostile_attrition = 2
+    }
+    ai_will_do = {
+        factor = 15
+    }
+}
+
+white_dragon_2_upgraded= {
+    cost = 50
+    potential = {
+        has_unlocked_kobold_cult_for_color_slot_upgrade = {
+            COLOUR = white
+            SLOT = 2
+            UPGRADE = upgraded
+        }
+    }
+    monarch_power = dip
+    modifier = {
+		defensiveness = 0.15
+		hostile_attrition = 1
+    }
+    ai_will_do = {
+        factor = 15
+    }
+}
+
+white_dragon_3_upgraded= {
+    cost = 50
+    potential = {
+        has_unlocked_kobold_cult_for_color_slot_upgrade = {
+            COLOUR = white
+            SLOT = 3
+            UPGRADE = upgraded
+        }
+    }
+    monarch_power = mil
+    modifier = {
+		war_exhaustion = -0.03
+		global_unrest = -2
+    }
+    ai_will_do = {
+        factor = 15
+    }
+}
+
+purple_dragon_1_upgraded= {
+    cost = 50
+	potential = {
+		has_unlocked_kobold_cult_for_color_slot_upgrade = {
+			COLOUR = purple
+			SLOT = 1
+			UPGRADE = upgraded
+		}
+	}
+    monarch_power = adm
+    modifier = {
+		development_cost = -0.05
+		artillery_cost = -0.1
+    }
+    ai_will_do = {
+        factor = 15
+    }
+}
+
+purple_dragon_2_upgraded= {
+    cost = 50
+    potential = {
+        has_unlocked_kobold_cult_for_color_slot_upgrade = {
+            COLOUR = purple
+            SLOT = 2
+            UPGRADE = upgraded
+        }
+    }
+    monarch_power = dip
+    modifier = {
+		global_autonomy = -0.025
+		artillery_levels_available_vs_fort = 1
+    }
+    ai_will_do = {
+        factor = 15
+    }
+}
+
+purple_dragon_3_upgraded= {
+    cost = 50
+    potential = {
+        has_unlocked_kobold_cult_for_color_slot_upgrade = {
+            COLOUR = purple
+            SLOT = 3
+            UPGRADE = upgraded
+        }
+    }
+    monarch_power = mil
+    modifier = {
+		embracement_cost = -0.2
+		artillery_power = 0.05
+    }
+    ai_will_do = {
+        factor = 15
+    }
+}
+
+brown_dragon_1_upgraded= {
+    cost = 50
+	potential = {
+		has_unlocked_kobold_cult_for_color_slot_upgrade = {
+			COLOUR = brown
+			SLOT = 1
+			UPGRADE = upgraded
+		}
+	}
+    monarch_power = adm
+    modifier = {
+		global_regiment_cost = -0.1
+		global_ship_cost = -0.2
+    }
+    ai_will_do = {
+        factor = 15
+    }
+}
+
+brown_dragon_2_upgraded= {
+    cost = 50
+    potential = {
+        has_unlocked_kobold_cult_for_color_slot_upgrade = {
+            COLOUR = brown
+            SLOT = 2
+            UPGRADE = upgraded
+        }
+    }
+    monarch_power = dip
+    modifier = {
+		culture_conversion_cost = -0.2
+    }
+    ai_will_do = {
+        factor = 15
+    }
+}
+
+brown_dragon_3_upgraded= {
+    cost = 50
+    potential = {
+        has_unlocked_kobold_cult_for_color_slot_upgrade = {
+            COLOUR = brown
+            SLOT = 3
+            UPGRADE = upgraded
+        }
+    }
+    monarch_power = mil
+    modifier = {
+		siege_ability = 0.1
+		diplomatic_reputation = 1
+    }
+    ai_will_do = {
+        factor = 15
+    }
+}
+
+brass_dragon_1_upgraded= {
+    cost = 50
+	potential = {
+		has_unlocked_kobold_cult_for_color_slot_upgrade = {
+			COLOUR = brass
+			SLOT = 1
+			UPGRADE = upgraded
+		}
+	}
+    monarch_power = adm
+    modifier = {
+		spy_offence = 0.25
+		spy_action_cost_modifier = -0.25
+    }
+    ai_will_do = {
+        factor = 15
+    }
+}
+
+brass_dragon_2_upgraded= {
+    cost = 50
+    potential = {
+        has_unlocked_kobold_cult_for_color_slot_upgrade = {
+            COLOUR = brass
+            SLOT = 2
+            UPGRADE = upgraded
+        }
+    }
+    monarch_power = dip
+    modifier = {
+		land_morale = 0.05
+		reserves_organisation = 0.1
+    }
+    ai_will_do = {
+        factor = 15
+    }
+}
+
+brass_dragon_3_upgraded= {
+    cost = 50
+    potential = {
+        has_unlocked_kobold_cult_for_color_slot_upgrade = {
+            COLOUR = brass
+            SLOT = 3
+            UPGRADE = upgraded
+        }
+    }
+    monarch_power = mil
+    modifier = {
+		province_warscore_cost = -0.075
+    }
+    ai_will_do = {
+        factor = 15
+    }
+}
+
+copper_dragon_1_upgraded= {
+    cost = 50
+	potential = {
+		has_unlocked_kobold_cult_for_color_slot_upgrade = {
+			COLOUR = copper
+			SLOT = 1
+			UPGRADE = upgraded
+		}
+	}
+    monarch_power = adm
+    modifier = {
+		idea_cost = -0.1
+		movement_speed = 0.075
+    }
+    ai_will_do = {
+        factor = 15
+    }
+}
+
+copper_dragon_2_upgraded= {
+    cost = 50
+    potential = {
+        has_unlocked_kobold_cult_for_color_slot_upgrade = {
+            COLOUR = copper
+            SLOT = 2
+            UPGRADE = upgraded
+        }
+    }
+    monarch_power = dip
+    modifier = {
+		trade_efficiency = 0.1
+    }
+    ai_will_do = {
+        factor = 15
+    }
+}
+
+copper_dragon_3_upgraded= {
+    cost = 50
+    potential = {
+        has_unlocked_kobold_cult_for_color_slot_upgrade = {
+            COLOUR = copper
+            SLOT = 3
+            UPGRADE = upgraded
+        }
+    }
+    monarch_power = mil
+    modifier = {
+		tolerance_heathen = 4
+    }
+    ai_will_do = {
+        factor = 15
+    }
+}
+
+bronze_dragon_1_upgraded = {
+    cost = 50
+	potential = {
+		has_unlocked_kobold_cult_for_color_slot_upgrade = {
+			COLOUR = bronze
+			SLOT = 1
+			UPGRADE = upgraded
+		}
+	}
+    monarch_power = adm
+    modifier = {
+		army_tradition = 1
+		navy_tradition = 1
+    }
+    ai_will_do = {
+        factor = 15
+    }
+}
+
+bronze_dragon_2_upgraded= {
+    cost = 50
+    potential = {
+        has_unlocked_kobold_cult_for_color_slot_upgrade = {
+            COLOUR = bronze
+            SLOT = 2
+            UPGRADE = upgraded
+        }
+    }
+    monarch_power = dip
+    modifier = {
+		backrow_artillery_damage = 0.05
+		drill_gain_modifier = 0.25
+    }
+    ai_will_do = {
+        factor = 15
+    }
+}
+
+bronze_dragon_3_upgraded= {
+    cost = 50
+    potential = {
+        has_unlocked_kobold_cult_for_color_slot_upgrade = {
+            COLOUR = bronze
+            SLOT = 3
+            UPGRADE = upgraded
+        }
+    }
+    monarch_power = mil
+    modifier = {
+		discipline = 0.025
+		leader_cost = -0.1
+    }
+    ai_will_do = {
+        factor = 15
+    }
+}
+
+silver_dragon_1_upgraded= {
+    cost = 50
+	potential = {
+		has_unlocked_kobold_cult_for_color_slot_upgrade = {
+			COLOUR = silver
+			SLOT = 1
+			UPGRADE = upgraded
+		}
+	}
+    monarch_power = adm
+    modifier = {
+		yearly_corruption = -0.2
+		church_power_modifier = 0.25
+    }
+    ai_will_do = {
+        factor = 15
+    }
+}
+
+silver_dragon_2_upgraded= {
+    cost = 50
+    potential = {
+        has_unlocked_kobold_cult_for_color_slot_upgrade = {
+            COLOUR = silver
+            SLOT = 2
+            UPGRADE = upgraded
+        }
+    }
+    monarch_power = dip
+    modifier = {
+		tolerance_own = 1
+		overextension_impact_modifier = -0.1
+    }
+    ai_will_do = {
+        factor = 15
+    }
+}
+
+silver_dragon_3_upgraded= {
+    cost = 50
+    potential = {
+        has_unlocked_kobold_cult_for_color_slot_upgrade = {
+            COLOUR = silver
+            SLOT = 3
+            UPGRADE = upgraded
+        }
+    }
+    monarch_power = mil
+    modifier = {
+		global_missionary_strength = 0.01
+		country_admin_power = 1
+    }
+    ai_will_do = {
+        factor = 15
+    }
+}
+
+gold_dragon_1_upgraded= {
+    cost = 50
+	potential = {
+		has_unlocked_kobold_cult_for_color_slot_upgrade = {
+			COLOUR = gold
+			SLOT = 1
+			UPGRADE = upgraded
+		}
+	}
+    monarch_power = adm
+    modifier = {
+		diplomatic_upkeep = 1
+		trade_company_investment_cost = -0.1
+    }
+    ai_will_do = {
+        factor = 15
+    }
+}
+
+gold_dragon_2_upgraded= {
+    cost = 50
+    potential = {
+        has_unlocked_kobold_cult_for_color_slot_upgrade = {
+            COLOUR = gold
+            SLOT = 2
+            UPGRADE = upgraded
+        }
+    }
+    monarch_power = dip
+    modifier = {
+		diplomatic_annexation_cost = -0.2
+		diplomatic_reputation = 2
+    }
+    ai_will_do = {
+        factor = 15
+    }
+}
+
+gold_dragon_3_upgraded= {
+    cost = 50
+    potential = {
+        has_unlocked_kobold_cult_for_color_slot_upgrade = {
+            COLOUR = gold
+            SLOT = 3
+            UPGRADE = upgraded
+        }
+    }
+    monarch_power = mil
+    modifier = {
+		advisor_cost = -0.1
+		morale_damage_received = -0.1
+    }
+    ai_will_do = {
+        factor = 15
+    }
 }

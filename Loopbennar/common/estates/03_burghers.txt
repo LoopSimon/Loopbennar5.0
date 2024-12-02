@@ -461,7 +461,13 @@ estate_burghers = {
 				culture = sarnik
 			}
 		}
-	}	
+	}
+	custom_name = {
+		desc = estate_peasants
+		trigger = {
+			tag = Y17 #Gushuokguan
+		}
+	}
 	
 
 	# custom_name = {

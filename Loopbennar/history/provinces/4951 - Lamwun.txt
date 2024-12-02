@@ -1,5 +1,6 @@
-owner = Z58
-controller = Z58
+owner = Y09
+controller = Y09
+add_core = Y09
 add_core = Z58
 add_claim = Y23
 culture = naamjyut

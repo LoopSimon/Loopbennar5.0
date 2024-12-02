@@ -102,7 +102,7 @@ province_event = {	#Handler event, determines which spirit event the country get
 				province_event = { id = spirits.106 } #Divine Abduction
 			}
 			10 = {
-				trigger = { OR = { superregion = rahen_superregion superregion = south_haless_superregion } } 
+				trigger = { OR = { superregion = rahen_superregion superregion = vimdatrong_superregion } } 
 				province_event = { id = spirits.107 } #Yakshini prosperity
 			}
 			10 = {
@@ -190,7 +190,7 @@ province_event = {	#Handler event, determines which spirit event the country get
 			factor = 100
 			modifier = {
 				factor = 2
-				superregion = south_haless_superregion
+				superregion = vimdatrong_superregion
 			}
 		}
 	}
@@ -1936,18 +1936,13 @@ country_event = { #Temple Plundering menu
 	}
 }
 
-province_event = { #Continue Temple Plundering
+country_event = { #Continue Temple Plundering
 	id = spirits.010
 	title = spirits.010.t
 	desc = spirits.010.d
 	picture = GOLDEN_CITY_eventPicture
-	goto = ROOT
 	
 	is_triggered_only = yes
-	
-	trigger = {
-		has_province_flag = temple_being_plundered
-	}
 	
 	option = {	#Continue Plundering
         name = spirits.010.a
@@ -1955,24 +1950,20 @@ province_event = { #Continue Temple Plundering
 			factor = 25
 			modifier = {
 				factor = 0
-				religion = high_philosophy
+				religion_group = raheni
 			}
 		}
 		trigger = {
-			owner = {
-				has_estate = estate_artificers
-				OR = { 
-					artifice_has_points_10 = yes
+			has_estate = estate_artificers
+			OR = { 
+				artifice_has_points_10 = yes
 					has_estate_privilege = artifice_invention_korashi_drills
 				}
-			}
 		}
 
-		owner = {
-			if = {
-				limit = { NOT = { has_estate_privilege = artifice_invention_korashi_drills } }
-				set_estate_privilege = artifice_invention_korashi_drills
-			}
+		if = {
+			limit = { NOT = { has_estate_privilege = artifice_invention_korashi_drills } }
+			set_estate_privilege = artifice_invention_korashi_drills
 		}
 	}
 	
@@ -1982,21 +1973,26 @@ province_event = { #Continue Temple Plundering
 			factor = 5
 			modifier = {
 				factor = 2
-				owner = { religion_group = halessi }
+				religion_group = halessi
 			}
 			modifier = {
 				factor = 10
-				owner = { religion_group = raheni }
+				religion_group = raheni
 			}
 		}
 		trigger = {
-			owner = {
 				has_estate = estate_artificers
-			}
 		}
 		hidden_effect = {
-			clr_province_flag = temple_being_plundered
-			clr_province_flag = permanent_precursor_relics
+			every_owned_province = {
+				limit = {
+					has_province_flag = temple_being_plundered
+				}
+				clr_province_flag = temple_being_plundered
+				clr_province_flag = already_plundered
+				clr_province_flag = permanent_precursor_relics
+				set_from_saved_trade_goods = yes
+			}
 			REB = {
 				subtract_variable = {
 					which = num_precursor_relics
@@ -2010,10 +2006,17 @@ province_event = { #Continue Temple Plundering
 	option = {	#Don't have Artificers, automatically ends plundering
         name = spirits.010.c
         ai_chance = { factor = 5 }
-		trigger = { NOT = { owner = { has_estate = estate_artificers } } }
+		trigger = { NOT = { has_estate = estate_artificers } } 
 		hidden_effect = {
-			clr_province_flag = temple_being_plundered
-			clr_province_flag = permanent_precursor_relics
+			every_owned_province = {
+				limit = {
+					has_province_flag = temple_being_plundered
+				}
+				clr_province_flag = temple_being_plundered
+				clr_province_flag = already_plundered
+				clr_province_flag = permanent_precursor_relics
+				set_from_saved_trade_goods = yes
+			}
 			REB = {
 				subtract_variable = {
 					which = num_precursor_relics
@@ -2021,7 +2024,6 @@ province_event = { #Continue Temple Plundering
 				}
 			}
 		}
-		set_from_saved_trade_goods = yes
 	}
 }
 
@@ -4331,7 +4333,7 @@ province_event = {
 				province_event = { id = spirits.206 }
 			}
 			10 = {
-				trigger = {	has_fort_building_trigger = yes OR = { superregion = rahen_superregion superregion = south_haless_superregion } }
+				trigger = {	has_fort_building_trigger = yes OR = { superregion = rahen_superregion superregion = vimdatrong_superregion } }
 				province_event = { id = spirits.207 }
 			}
 			10 = {
@@ -11432,7 +11434,6 @@ country_event = { #Temple Corruption menu
 				adm_power = 50
 				dip_power = 50
 				mil_power = 50
-				church_power = 100
 			}
 			
 		}
@@ -11452,7 +11453,6 @@ country_event = { #Temple Corruption menu
 				adm_power = 50
 				dip_power = 50
 				mil_power = 50
-				church_power = 100
 			}
 			
 		}
@@ -11472,7 +11472,6 @@ country_event = { #Temple Corruption menu
 				adm_power = 50
 				dip_power = 50
 				mil_power = 50
-				church_power = 100
 			}
 			
 		}
@@ -11492,7 +11491,6 @@ country_event = { #Temple Corruption menu
 				adm_power = 50
 				dip_power = 50
 				mil_power = 50
-				church_power = 100
 			}
 			
 		}
@@ -11512,7 +11510,6 @@ country_event = { #Temple Corruption menu
 				adm_power = 50
 				dip_power = 50
 				mil_power = 50
-				church_power = 100
 			}
 			
 		}
@@ -11532,7 +11529,6 @@ country_event = { #Temple Corruption menu
 				adm_power = 50
 				dip_power = 50
 				mil_power = 50
-				church_power = 100
 			}
 			
 		}
@@ -11618,20 +11614,66 @@ province_event = {	#Temple Corrupted
 									has_province_modifier = corrupted_temple_complex
 								}
 							}
-							country_event = { id = spirits.613 days = 365 }
+							country_event = { id = spirits.614 days = 365 }
 						}
 					}
 					else_if = {
 						limit = { check_variable = { which = devouring_path_flavor_counter value = 2 } }
 						if = {
 							limit = {
-								NOT = { has_global_flag = rending_happened }
 								num_of_owned_provinces_with = {
 									value = 10
 									has_province_modifier = corrupted_temple_complex
 								}
 							}
-							country_event = { id = spirits.612 days = 365 }
+							change_variable = { which = devouring_path_flavor_counter value = 1 }
+							if = { #Summer festival, I know it looks ugly but it's not bad performance-wise
+								limit = { is_month = 11 }
+								country_event = { id = spirits.613 days = 213 }
+							}
+							else_if = {
+								limit = { is_month = 10 }
+								country_event = { id = spirits.613 days = 242 }
+							}
+							else_if = {
+								limit = { is_month = 9 }
+								country_event = { id = spirits.613 days = 273 }
+							}
+							else_if = {
+								limit = { is_month = 8 }
+								country_event = { id = spirits.613 days = 303 }
+							}
+							else_if = {
+								limit = { is_month = 7 }
+								country_event = { id = spirits.613 days = 334 }
+							}
+							else_if = {
+								limit = { is_month = 6 }
+								country_event = { id = spirits.613 days = 365 }
+							}
+							else_if = {
+								limit = { is_month = 5 }
+								country_event = { id = spirits.613 days = 30 }
+							}
+							else_if = {
+								limit = { is_month = 4 }
+								country_event = { id = spirits.613 days = 61 }
+							}
+							else_if = {
+								limit = { is_month = 3 }
+								country_event = { id = spirits.613 days = 91 }
+							}
+							else_if = {
+								limit = { is_month = 2 }
+								country_event = { id = spirits.613 days = 122 }
+							}
+							else_if = {
+								limit = { is_month = 1 }
+								country_event = { id = spirits.613 days = 150 }
+							}
+							else = {
+								country_event = { id = spirits.613 days = 181 }
+							}
 						}
 					}
 					else_if = {
@@ -11644,6 +11686,7 @@ province_event = {	#Temple Corrupted
 								}
 							}
 							country_event = { id = spirits.611 days = 365 }
+							hidden_effect = { change_variable = { which = devouring_path_flavor_counter value = 1 } }
 						}
 					}
 					else = { country_event = { id = spirits.610 days = 365 } }
@@ -11821,9 +11864,10 @@ country_event = { #The Miseducation of the Demon Hills
 		ai_chance = { factor = 1 }
 
 		temple_province_group = { add_claim = ROOT }
+		dvp_gain_ae_with_accretive_and_transmutative_paths = { value = 5 }
 	}
 }
-country_event = { #From the Attic
+country_event = { #Memories From the Attic
 	id = spirits.611
 	title = spirits.611.t
 	desc = spirits.611.d
@@ -11831,44 +11875,99 @@ country_event = { #From the Attic
 
 	is_triggered_only = yes
 
-	immediate = { hidden_effect = { change_variable = { which = devouring_path_flavor_counter value = 1 } } }
+	immediate = {
+		hidden_effect = {
+			change_variable = { which = devouring_path_flavor_counter value = 1 }
+			country_event = { id = spirits.612 days = 365 }
+		}
+	}
 
 	option = {
 		name = spirits.611.a
+		ai_chance = { factor = 1 }
+	
+		if = {
+			limit = {
+				any_neighbor_country = {
+					culture_group = yan
+					NOT = { religion = devouring_path }
+				}
+			}
+			random_neighbor_country = {
+				limit = {
+					culture_group = yan
+					NOT = { religion = devouring_path }
+				}
+				reverse_add_casus_belli = {	
+					target = ROOT
+					type = cb_insult
+					months = 12
+				}
+			}
+		}
+		else_if = {
+			limit = { any_neighbor_country = { NOT = { religion = devouring_path } } }
+			random_neighbor_country = {
+				limit = { NOT = { religion = devouring_path } }
+				reverse_add_casus_belli = {	
+					target = ROOT
+					type = cb_insult
+					months = 12
+				}
+			}
+		}
+		else = {
+			random_neighbor_country = {
+				reverse_add_casus_belli = {	
+					target = ROOT
+					type = cb_insult
+					months = 12
+				}
+			}
+		}
+	}
+}
+country_event = { #Memories From the Shirgrii
+	id = spirits.612
+	title = spirits.612.t
+	desc = spirits.612.d
+	picture = CONSORT_DOING_BADLY_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = spirits.612.a
 		ai_chance = { factor = 1 }
 
 		create_war_wizard_effect = yes
 		dvp_gain_ae_with_accretive_and_transmutative_paths = { value = 10 }
 	}
 }
-country_event = { #More Chi than Usual
-	id = spirits.612
-	title = spirits.612.t
-	desc = spirits.612.d
-	picture = HIGH_TEMPLE_CITY_eventPicture
+country_event = { #All Ancestors' Day
+	id = spirits.613
+	title = spirits.613.t
+	desc = spirits.613.d
+	picture = FEAST_eventPicture
 
 	is_triggered_only = yes
 
-	immediate = { hidden_effect = { change_variable = { which = devouring_path_flavor_counter value = 1 } } }
-
 	option = {
-		name = spirits.612.a
+		name = spirits.613.a
 		ai_chance = { factor = 1 }
 
-		custom_tooltip = dvp_gain_devcost_tt
+		custom_tooltip = dvp_every_corrupted_temple_gains_tt
 		tooltip = {
 			random_owned_province = {
 				limit = { has_province_modifier = corrupted_temple_complex }
 				add_province_modifier = { name = dvp_temple_devcost duration = 7300 }
 			}
 		}
-		dvp_gain_ae_with_accretive_and_transmutative_paths = { value = 15 }
 	}
 }
 country_event = { #Arrival Imminent
-	id = spirits.613
-	title = spirits.613.t
-	desc = spirits.613.d
+	id = spirits.614
+	title = spirits.614.t
+	desc = spirits.614.d
 	picture = ONI_HUMANS_eventPicture
 
 	is_triggered_only = yes
@@ -11876,7 +11975,7 @@ country_event = { #Arrival Imminent
 	immediate = { hidden_effect = { change_variable = { which = devouring_path_flavor_counter value = 1 } } }
 
 	option = {
-		name = spirits.613.a
+		name = spirits.614.a
 		ai_chance = { factor = 1 }
 
 		temple_province_group = { add_permanent_claim = ROOT }
@@ -11905,9 +12004,9 @@ country_event = {
 	}
 
 	mean_time_to_happen = {
-		years = 1
+		years = 50
 		modifier = {
-			factor = 1
+			factor = 0.95
 			NOT = {
 				4871 = {
 					check_variable = {
@@ -11918,7 +12017,7 @@ country_event = {
 			}
 		}
 		modifier = {
-			factor = 1
+			factor = 0.90
 			NOT = {
 				4871 = {
 					check_variable = {
@@ -11929,7 +12028,7 @@ country_event = {
 			}
 		}
 		modifier = {
-			factor = 1
+			factor = 0.85
 			NOT = {
 				4871 = {
 					check_variable = {
@@ -11940,7 +12039,7 @@ country_event = {
 			}
 		}
 		modifier = {
-			factor = 1
+			factor = 0.80
 			NOT = {
 				4871 = {
 					check_variable = {
@@ -11951,7 +12050,7 @@ country_event = {
 			}
 		}
 		modifier = {
-			factor = 1
+			factor = 0.50
 			NOT = {
 				4871 = {
 					check_variable = {
@@ -11962,8 +12061,8 @@ country_event = {
 			}
 		}
 		modifier = {
-			factor = 2
-			is_year = 1601
+			factor = 0.1
+			is_year = 1655
 		}
 	}
 
@@ -12196,7 +12295,7 @@ country_event = {
 					limit = { 
 						NOT = { 
 							superregion = forbidden_lands_superregion
-							superregion = north_haless_superregion
+							superregion = gozengun_superregion
 							has_province_flag = pristine_wards
 						}
 					}

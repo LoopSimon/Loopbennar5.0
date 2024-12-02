@@ -1003,94 +1003,6 @@ defined_text = {
 }
 
 defined_text = {
-	name = KoboldHoard
-	random = no
-	
-	text = {
-		localisation_key = KoboldHoard4
-		trigger = {
-			REB = { check_variable = { dragon_cult_hoard = 256000 } }
-		}
-	}
-	
-	text = {
-		localisation_key = KoboldHoard5
-		trigger = {
-			REB = { check_variable = { dragon_cult_hoard = 128000 } }
-		}
-	}
-	
-	text = {
-		localisation_key = KoboldHoard6
-		trigger = {
-			REB = { check_variable = { dragon_cult_hoard = 64000 } }
-		}
-	}
-	
-	text = {
-		localisation_key = KoboldHoard7
-		trigger = {
-			REB = { check_variable = { dragon_cult_hoard = 32000 } }
-		}
-	}
-	
-	text = {
-		localisation_key = KoboldHoard8
-		trigger = {
-			REB = { check_variable = { dragon_cult_hoard = 16000 } }
-		}
-	}
-	
-	
-	text = {
-		localisation_key = KoboldHoard9
-		trigger = {
-			REB = { check_variable = { dragon_cult_hoard = 8000 } }
-		}
-	}
-	
-	text = {
-		localisation_key = KoboldHoard10
-		trigger = {
-			REB = { check_variable = { dragon_cult_hoard = 4000 } }
-		}
-	}
-	
-	text = {
-		localisation_key = KoboldHoard11
-		trigger = {
-			REB = { check_variable = { dragon_cult_hoard = 2000 } }
-		}
-	}
-	
-	text = {
-		localisation_key = KoboldHoard12
-		trigger = {
-			REB = { check_variable = { dragon_cult_hoard = 1000 } }
-		}
-	}
-	
-	text = {
-		localisation_key = KoboldHoard13
-		trigger = {
-			REB = { check_variable = { dragon_cult_hoard = 500 } }
-		}
-	}
-	text = {
-		localisation_key = KoboldHoard14
-		trigger = {
-			REB = { check_variable = { dragon_cult_hoard = 1 } }
-		}
-	}
-	text = {
-		localisation_key = KoboldHoard15
-		trigger = {
-			REB = { check_variable = { dragon_cult_hoard = 0 } }
-		}
-	}
-}
-
-defined_text = {
     name = CavernOfInterest
 	random = no
 	
@@ -13100,9 +13012,9 @@ defined_text = {
 		}
 	}
 	text = {
-		localisation_key = ruler_school_necromany_tt
+		localisation_key = ruler_school_necromancy_tt
 		trigger = {
-			has_ruler_flag = ruler_studying_necromany
+			has_ruler_flag = ruler_studying_necromancy
 		}
 	}
 	text = {
@@ -13935,11 +13847,11 @@ defined_text = {
 	text = { localisation_key = FlagG07 trigger = { tag = G07 } }
 	text = { localisation_key = FlagG08 trigger = { tag = G08 } }
 	text = { localisation_key = FlagG09 trigger = { tag = G09 } }
-	text = { localisation_key = FlagG10 trigger = { tag = G10 } }
-	text = { localisation_key = FlagG11 trigger = { tag = G11 } }
-	text = { localisation_key = FlagG12 trigger = { tag = G12 } }
-	text = { localisation_key = FlagG13 trigger = { tag = G13 } }
-	text = { localisation_key = FlagG14 trigger = { tag = G14 } }
+	#text = { localisation_key = FlagG10 trigger = { tag = G10 } }
+	#text = { localisation_key = FlagG11 trigger = { tag = G11 } }
+	#text = { localisation_key = FlagG12 trigger = { tag = G12 } }
+	#text = { localisation_key = FlagG13 trigger = { tag = G13 } }
+	#text = { localisation_key = FlagG14 trigger = { tag = G14 } }
 	text = { localisation_key = FlagG15 trigger = { tag = G15 } }
 	text = { localisation_key = FlagG16 trigger = { tag = G16 } }
 	text = { localisation_key = FlagG17 trigger = { tag = G17 } }
@@ -16407,16 +16319,17 @@ defined_text = {
 defined_text = {
 	name = GetHonsaiDecayrate
 	random = no
-	text = {
-		localisation_key = honsai_decay_aspect_tt
-		trigger = {
-			has_church_aspect = honsai_the_ghostemperor
-		}
-	}
+	#text = {
+	#	localisation_key = honsai_decay_aspect_tt
+	#	trigger = {
+	#		has_church_aspect = honsai_the_ghostemperor
+	#	}
+	#}
 	text = {
 		localisation_key = honsai_decay_normal_tt
 		trigger = {
-			NOT = { has_church_aspect = honsai_the_ghostemperor }
+			always = yes
+			#NOT = { has_church_aspect = honsai_the_ghostemperor }
 		}
 	}
 }
@@ -18815,5 +18728,465 @@ defined_text = {
 	}
 	text = {
 		localisation_key = command_populace_korashi_button_desc_1
+	}
+}
+defined_text = { #Wyvernheart stuff
+	name = GetSchoolTarget1
+	random = no
+	
+	text = {
+		localisation_key = ruler_school_abjuration_tt
+		trigger = { has_country_flag = wyvernheart_school_focus_1_abjuration }
+	}
+	text = {
+		localisation_key = ruler_school_conjuration_tt
+		trigger = { has_country_flag = wyvernheart_school_focus_1_conjuration }
+	}
+	text = {
+		localisation_key = ruler_school_divination_tt
+		trigger = { has_country_flag = wyvernheart_school_focus_1_divination }
+	}
+	text = {
+		localisation_key = ruler_school_enchantment_tt
+		trigger = { has_country_flag = wyvernheart_school_focus_1_enchantment }
+	}
+	text = {
+		localisation_key = ruler_school_evocation_tt
+		trigger = { has_country_flag = wyvernheart_school_focus_1_evocation }
+	}
+	text = {
+		localisation_key = ruler_school_illusion_tt
+		trigger = { has_country_flag = wyvernheart_school_focus_1_illusion }
+	}
+	text = {
+		localisation_key = ruler_school_necromancy_tt
+		trigger = { has_country_flag = wyvernheart_school_focus_1_necromancy }
+	}
+	text = {
+		localisation_key = ruler_school_transmutation_tt
+		trigger = { has_country_flag = wyvernheart_school_focus_1_transmutation }
+	}
+}
+defined_text = { #Wyvernheart stuff
+	name = GetSchoolTarget2
+	random = no
+	
+	text = {
+		localisation_key = ruler_school_abjuration_tt
+		trigger = { has_country_flag = wyvernheart_school_focus_2_abjuration }
+	}
+	text = {
+		localisation_key = ruler_school_conjuration_tt
+		trigger = { has_country_flag = wyvernheart_school_focus_2_conjuration }
+	}
+	text = {
+		localisation_key = ruler_school_divination_tt
+		trigger = { has_country_flag = wyvernheart_school_focus_2_divination }
+	}
+	text = {
+		localisation_key = ruler_school_enchantment_tt
+		trigger = { has_country_flag = wyvernheart_school_focus_2_enchantment }
+	}
+	text = {
+		localisation_key = ruler_school_evocation_tt
+		trigger = { has_country_flag = wyvernheart_school_focus_2_evocation }
+	}
+	text = {
+		localisation_key = ruler_school_illusion_tt
+		trigger = { has_country_flag = wyvernheart_school_focus_2_illusion }
+	}
+	text = {
+		localisation_key = ruler_school_necromancy_tt
+		trigger = { has_country_flag = wyvernheart_school_focus_2_necromancy }
+	}
+	text = {
+		localisation_key = ruler_school_transmutation_tt
+		trigger = { has_country_flag = wyvernheart_school_focus_2_transmutation }
+	}
+}
+defined_text = { #Wyvernheart stuff
+	name = GetFloodbornAgeScaling
+	random = no
+	text = {
+		localisation_key = wyvernheart_monarchy_under_40
+		trigger = {
+                OR = {
+                    has_reform = floodborn_council_reform
+                    has_reform = floodborn_council_reform_always_mage
+                }
+                NOT = { ruler_age = 40 }
+        }
+	}
+	text = {
+		localisation_key = wyvernheart_monarchy_over_40
+		trigger = {
+                OR = {
+                    has_reform = floodborn_council_reform
+                    has_reform = floodborn_council_reform_always_mage
+                }
+                ruler_age = 40
+                NOT = { ruler_age = 50 }
+        }
+	}
+	text = {
+		localisation_key = wyvernheart_monarchy_over_50
+		trigger = {
+                OR = {
+                    has_reform = floodborn_council_reform
+                    has_reform = floodborn_council_reform_always_mage
+                }
+                ruler_age = 50
+                NOT = { ruler_age = 60 }
+        }
+	}
+	text = {
+		localisation_key = wyvernheart_theocracy_under_60
+		trigger = {
+                has_reform = floodborn_council_reform_theocracy
+                NOT = { ruler_age = 60 }
+        }
+	}
+	text = {
+		localisation_key = wyvernheart_over_60
+		trigger = {
+                ruler_age = 60
+                NOT = { ruler_age = 70 }
+        }
+	}
+	text = {
+		localisation_key = wyvernheart_over_70
+		trigger = {
+                ruler_age = 70
+                NOT = { ruler_age = 80 }
+        }
+	}
+	text = {
+		localisation_key = wyvernheart_over_80
+		trigger = {
+                ruler_age = 80
+                NOT = { ruler_age = 90 }
+        }
+	}
+	text = {
+		localisation_key = wyvernheart_over_90
+		trigger = {
+                ruler_age = 90
+                NOT = { ruler_age = 100 }
+        }
+	}
+	text = {
+		localisation_key = wyvernheart_over_100
+		trigger = {
+                ruler_age = 100
+        }
+	}
+}
+defined_text = { #Wyvernheart stuff
+	name = GetFloodbornPowerScaling
+	random = no
+	text = {
+		localisation_key = wyvernheart_minus_0
+		trigger = {
+            OR = {
+                AND = {
+                    OR = {
+                        has_reform = floodborn_council_reform
+                        has_reform = floodborn_council_reform_always_mage
+                    }
+                    NOT = { ruler_age = 40 }
+                }
+                AND = {
+                    has_reform = floodborn_council_reform_theocracy
+                    NOT = { ruler_age = 60 }
+                }
+            }
+        }
+	}
+	text = {
+		localisation_key = wyvernheart_minus_0_1
+		trigger = {
+            OR = {
+                AND = {
+                    OR = {
+                        has_reform = floodborn_council_reform
+                        has_reform = floodborn_council_reform_always_mage
+                    }
+                    ruler_age = 40
+                    NOT = { ruler_age = 50 }
+                }
+                AND = {
+                    has_reform = floodborn_council_reform_theocracy
+                    ruler_age = 60
+                    NOT = { ruler_age = 70 }
+                }
+            }
+        }
+	}
+	text = {
+		localisation_key = wyvernheart_minus_0_2
+		trigger = {
+            OR = {
+                AND = {
+                    OR = {
+                        has_reform = floodborn_council_reform
+                        has_reform = floodborn_council_reform_always_mage
+                    }
+                    ruler_age = 50
+                    NOT = { ruler_age = 60 }
+                }
+                AND = {
+                    has_reform = floodborn_council_reform_theocracy
+                    ruler_age = 70
+                    NOT = { ruler_age = 80 }
+                }
+            }
+        }
+	}
+	text = {
+		localisation_key = wyvernheart_minus_0_45
+		trigger = {
+            OR = {
+                AND = {
+                    OR = {
+                        has_reform = floodborn_council_reform
+                        has_reform = floodborn_council_reform_always_mage
+                    }
+                    ruler_age = 60
+                    NOT = { ruler_age = 70 }
+                }
+                AND = {
+                    has_reform = floodborn_council_reform_theocracy
+                    ruler_age = 80
+                    NOT = { ruler_age = 90 }
+                }
+            }
+        }
+	}
+	text = {
+		localisation_key = wyvernheart_minus_0_7
+		trigger = {
+            OR = {
+                AND = {
+                    OR = {
+                        has_reform = floodborn_council_reform
+                        has_reform = floodborn_council_reform_always_mage
+                    }
+                    ruler_age = 70
+                    NOT = { ruler_age = 80 }
+                }
+                AND = {
+                    has_reform = floodborn_council_reform_theocracy
+                    ruler_age = 90
+                    NOT = { ruler_age = 100 }
+                }
+            }
+        }
+	}
+	text = {
+		localisation_key = wyvernheart_minus_0_95
+		trigger = {
+            OR = {
+                has_reform = floodborn_council_reform
+                has_reform = floodborn_council_reform_always_mage
+            }
+            ruler_age = 80
+            NOT = { ruler_age = 90 }
+        }
+	}
+	text = {
+		localisation_key = wyvernheart_minus_1_15
+		trigger = {
+            OR = {
+                has_reform = floodborn_council_reform
+                has_reform = floodborn_council_reform_always_mage
+            }
+            ruler_age = 90
+            NOT = { ruler_age = 100 }
+        }
+	}
+	text = {
+		localisation_key = wyvernheart_minus_1_2
+		trigger = {
+            has_reform = floodborn_council_reform_theocracy
+            ruler_age = 100
+        }
+	}
+	text = {
+		localisation_key = wyvernheart_minus_1_65
+		trigger = {
+            OR = {
+                has_reform = floodborn_council_reform
+                has_reform = floodborn_council_reform_always_mage
+            }
+            ruler_age = 100
+        }
+	}
+}
+
+
+defined_text = {
+	name = KoboldInitialSetup
+	random = no
+
+	text = {
+		localisation_key = kobold_glidewing_membranes_loc
+		trigger = { has_country_flag = kobildzan_glidewing_membranes }
+	}
+    text = {
+		localisation_key = kobold_claws_of_power_loc
+		trigger = { has_country_flag = kobildzan_claws_of_power }
+	}
+	text = { localisation_key = kobold_empty }
+}
+defined_text = {
+	name = KoboldPrecursorEmpowerment
+	random = no
+
+	text = {
+		localisation_key = kobold_detachable_extra_limbs_loc
+		trigger = { has_country_flag = kobildzan_detachable_extra_limbs }
+	}
+    text = {
+		localisation_key = kobold_ogre_sized_kobolds_loc
+		trigger = { has_country_flag = kobildzan_ogre_sized_kobolds }
+	}
+	text = { localisation_key = kobold_empty }
+}
+defined_text = {
+	name = KoboldEliteEmpowerment
+	random = no
+
+	text = {
+		localisation_key = kobold_malliath_chosen_disciples_loc
+		trigger = { has_country_flag = kobildzan_malliaths_chosen_disciples }
+	}
+	text = { localisation_key = kobold_empty }
+}
+defined_text = {
+	name = KoboldCivilizationalEmpowerment
+	random = no
+
+	text = {
+		localisation_key = kobold_hyperdigestion_loc
+		trigger = { has_country_flag = kobildzan_hyperdigestion }
+	}
+    text = {
+		localisation_key = kobold_dragonfire_sacs_loc
+		trigger = { has_country_flag = kobildzan_dragonfire_sacs }
+	}
+	text = { localisation_key = kobold_empty }
+}
+defined_text = {
+	name = KoboldAlterationEmpowerment
+	random = no
+
+	text = {
+		localisation_key = kobold_biocompatibility_loc
+		trigger = { has_country_flag = kobildzan_biocompatibility }
+	}
+    text = {
+		localisation_key = kobold_intercontinental_ballistic_kobolds_loc
+		trigger = { has_country_flag = kobildzan_intercontinental_ballistic_kobolds }
+	}
+	text = { localisation_key = kobold_empty }
+}
+defined_text = {
+	name = KoboldBodyEmpowerment
+	random = no
+
+	text = {
+		localisation_key = kobold_mana_attunement_glands_loc
+		trigger = { has_country_flag = kobildzan_mana_attunement_glands }
+	}
+    text = {
+		localisation_key = kobold_ebonsteel_shieldscales_loc
+		trigger = { has_country_flag = kobildzan_ebonsteel_shieldscales }
+	}
+	text = { localisation_key = kobold_empty }
+}
+defined_text = {
+	name = KoboldFinalEmpowerment
+	random = no
+
+	text = {
+		localisation_key = kobold_the_body_gestalt_loc
+		trigger = {
+            AND = {
+                has_country_flag = kobildzan_the_protean_form
+                has_country_flag = kobildzan_the_holiest_flesh
+            }     
+        }
+	}
+
+	text = {
+		localisation_key = kobold_the_protean_form_loc
+		trigger = { has_country_flag = kobildzan_the_protean_form }
+	}
+    text = {
+		localisation_key = kobold_the_holiest_flesh_loc
+		trigger = { has_country_flag = kobildzan_the_holiest_flesh }
+	}
+	text = { localisation_key = kobold_empty }
+}
+defined_text = {
+	name = GetSlavesDesc
+	random = no
+
+	text = {
+		localisation_key = L62_prestigious_slave1
+		trigger = { has_country_flag = L62_prestigious_slave_1 }
+	}
+
+    text = {
+		localisation_key = L62_prestigious_slave2
+		trigger = { has_country_flag = L62_prestigious_slave_2 }
+	}
+
+    text = {
+		localisation_key = L62_prestigious_slave3
+		trigger = { has_country_flag = L62_prestigious_slave_3 }
+	}
+
+    text = {
+		localisation_key = L62_prestigious_slave4
+		trigger = { has_country_flag = L62_prestigious_slave_4 }
+	}
+
+    text = {
+		localisation_key = L62_prestigious_slave5
+		trigger = { has_country_flag = L62_prestigious_slave_5 }
+	}
+
+    text = {
+		localisation_key = L62_prestigious_slave6
+		trigger = { has_country_flag = L62_prestigious_slave_6 }
+	}
+
+    text = {
+		localisation_key = L62_prestigious_slave7
+		trigger = { has_country_flag = L62_prestigious_slave_7 }
+	}
+
+    text = {
+		localisation_key = L62_prestigious_slave8
+		trigger = { has_country_flag = L62_prestigious_slave_8 }
+	}
+
+    text = {
+		localisation_key = L62_labourers
+		trigger = { 
+            NOT = {
+                OR = {
+                    has_country_flag = L62_prestigious_slave_1
+                    has_country_flag = L62_prestigious_slave_2
+                    has_country_flag = L62_prestigious_slave_3
+                    has_country_flag = L62_prestigious_slave_4
+                    has_country_flag = L62_prestigious_slave_5
+                    has_country_flag = L62_prestigious_slave_6
+                    has_country_flag = L62_prestigious_slave_7
+                    has_country_flag = L62_prestigious_slave_8
+                }
+            }
+        }
 	}
 }

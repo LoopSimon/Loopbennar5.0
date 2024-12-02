@@ -80,7 +80,7 @@ R38_Pre_Suhan_1 = {
 				target = Y58
 			}
 			hidden_effect = {
-				south_haless_superregion = {
+				vimdatrong_superregion = {
 					limit = { culture = teplin }
 					add_permanent_claim = R38
 				}
@@ -2196,7 +2196,9 @@ R38_Pre_Suhan_3_b = {
 					owned_by = R38
 					OR = {
 						province_has_current_tech_fort_trigger = yes
-						has_influencing_fort = yes
+						any_neighbor_province = {
+							province_has_current_tech_fort_trigger = yes
+						}
 					}
 					has_manpower_building_trigger = yes
 					has_trade_building_trigger = yes
@@ -2230,7 +2232,9 @@ R38_Pre_Suhan_3_b = {
 					has_trade_building_trigger = yes
 					OR = {
 						province_has_current_tech_fort_trigger = yes
-						has_influencing_fort = yes
+						any_neighbor_province = {
+							province_has_current_tech_fort_trigger = yes
+						}
 					}
 				}
 				lower_dhenbasana_area =  {
@@ -2241,7 +2245,9 @@ R38_Pre_Suhan_3_b = {
 					has_trade_building_trigger = yes
 					OR = {
 						province_has_current_tech_fort_trigger = yes
-						has_influencing_fort = yes
+						any_neighbor_province = {
+							province_has_current_tech_fort_trigger = yes
+						}
 					}
 				}
 				satarsaya_area =  {
@@ -2252,7 +2258,9 @@ R38_Pre_Suhan_3_b = {
 					has_trade_building_trigger = yes
 					OR = {
 						province_has_current_tech_fort_trigger = yes
-						has_influencing_fort = yes
+						any_neighbor_province = {
+							province_has_current_tech_fort_trigger = yes
+						}
 					}
 				}
 #			}
@@ -2771,10 +2779,10 @@ R38_Pre_Suhan_4 = {
 							trade_goods = spices
 						}	
 					}
-				}
-				add_permanent_province_modifier = {
-					name = bhuvauri_everything_nice
-					duration = -1
+					add_permanent_province_modifier = {
+						name = bhuvauri_everything_nice
+						duration = -1
+					}
 				}
 			}
 			4577 = {

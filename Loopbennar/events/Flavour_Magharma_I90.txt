@@ -73,7 +73,7 @@ country_event = {
 			remove_province_modifier = I90_goblin_arrivals
 			add_province_modifier = {
 				name = I90_goblin_kelaktar
-				duration = 3650 #10 Years
+				duration = -1
 			}
 		}
 	}
@@ -248,7 +248,7 @@ country_event = {
 			add_dip_power = 100
 			if = {
 				limit = { has_heir = yes }
-				change_heir_dip = 1
+				increase_heir_dip_effect = yes
 				add_heir_personality = charismatic_negotiator_personality
 			}
 			else = {
@@ -343,34 +343,49 @@ country_event = {
 	}
 	option = {
 		name = flavor_maghargma.10.b #Loyalty Has Its Rewards
-		J35 = {
-			add_opinion = {
-				who = ROOT
-				modifier = I90_happy_ogre
+		if = {
+			limit = {
+				J35 = { is_subject_of = ROOT }
 			}
-			add_country_modifier = {
-				name = I90_loyal_ogre
-				duration = 5480 #15 Years
-			}
-		}
-		J36 = {
-			add_opinion = {
-				who = ROOT
-				modifier = I90_happy_ogre
-			}
-			add_country_modifier = {
-				name = I90_loyal_ogre
-				duration = 5480 #15 Years
+			J35 = {
+				add_opinion = {
+					who = ROOT
+					modifier = I90_happy_ogre
+				}
+				add_country_modifier = {
+					name = I90_loyal_ogre
+					duration = 5480 #15 Years
+				}
 			}
 		}
-		J37 = {
-			add_opinion = {
-				who = ROOT
-				modifier = I90_happy_ogre
+		if = {
+			limit = {
+				J36 = { is_subject_of = ROOT }
 			}
-			add_country_modifier = {
-				name = I90_loyal_ogre
-				duration = 5480 #15 Years
+			J36 = {
+				add_opinion = {
+					who = ROOT
+					modifier = I90_happy_ogre
+				}
+				add_country_modifier = {
+					name = I90_loyal_ogre
+					duration = 5480 #15 Years
+				}
+			}
+		}
+		if = {
+			limit = {
+				J37 = { is_subject_of = ROOT }
+			}
+			J37 = {
+				add_opinion = {
+					who = ROOT
+					modifier = I90_happy_ogre
+				}
+				add_country_modifier = {
+					name = I90_loyal_ogre
+					duration = 5480 #15 Years
+				}
 			}
 		}
 		country_event = { id = flavor_maghargma.11 days = 30}
@@ -411,34 +426,49 @@ country_event = {
 	}
 	option = {
 		name = flavor_maghargma.11.b #Demand A Higher Payment
-		J38 = {
-			add_opinion = {
-				who = ROOT
-				modifier = I90_happy_ogre
+		if = {
+			limit = {
+				J38 = { is_subject_of = ROOT }
 			}
-			add_country_modifier = {
-				name = I90_loyal_ogre
-				duration = 5480 #15 Years
-			}
-		}
-		J39 = {
-			add_opinion = {
-				who = ROOT
-				modifier = I90_happy_ogre
-			}
-			add_country_modifier = {
-				name = I90_loyal_ogre
-				duration = 5480 #15 Years
+			J38 = {
+				add_opinion = {
+					who = ROOT
+					modifier = I90_happy_ogre
+				}
+				add_country_modifier = {
+					name = I90_loyal_ogre
+					duration = 5480 #15 Years
+				}
 			}
 		}
-		J40 = {
-			add_opinion = {
-				who = ROOT
-				modifier = I90_happy_ogre
+		if = {
+			limit = {
+				J39 = { is_subject_of = ROOT }
 			}
-			add_country_modifier = {
-				name = I90_loyal_ogre
-				duration = 5480 #15 Years
+			J39 = {
+				add_opinion = {
+					who = ROOT
+					modifier = I90_happy_ogre
+				}
+				add_country_modifier = {
+					name = I90_loyal_ogre
+					duration = 5480 #15 Years
+				}
+			}
+		}
+		if = {
+			limit = {
+				J40 = { is_subject_of = ROOT }
+			}
+			J40 = {
+				add_opinion = {
+					who = ROOT
+					modifier = I90_happy_ogre
+				}
+				add_country_modifier = {
+					name = I90_loyal_ogre
+					duration = 5480 #15 Years
+				}
 			}
 		}
 		add_doom = -20
@@ -763,15 +793,17 @@ province_event = {
 				limit = {
 					owner = { NOT = { has_country_flag = I90_rejected_steel } }
 				}
-				every_known_country = {
-					limit = {
-						has_country_modifier = lake_federation_member
+				owner = {
+					every_known_country = {
+						limit = {
+							has_country_modifier = lake_federation_member
+						}
+						add_country_modifier = {
+							name = I90_metal_shortage
+							duration = 7305 #20 Years
+						}
+						country_event = { id = flavor_maghargma.35 }
 					}
-					add_country_modifier = {
-						name = I90_metal_shortage
-						duration = 7305 #20 Years
-					}
-					country_event = { id = flavor_maghargma.35 }
 				}
 			}
 		}
@@ -848,6 +880,19 @@ country_event = {
 			name = I90_mantle_of_the_giants
 			duration = -1
 		}
+		hidden_effect = {
+			every_subject_country = {
+				northern_pass_region = {
+					discover_country = PREV 
+				}
+				serpents_vale_region = {
+					discover_country = PREV 
+				}
+				nomsyulhan_region = {
+					discover_country = PREV 
+				}
+			}
+		}
 	}
 }
 
@@ -899,6 +944,13 @@ country_event = {
 		bulwar_superregion = {
 			add_permanent_claim = ROOT
 			discover_country = ROOT
+		}
+		hidden_effect = {
+			every_subject_country = {
+				bulwar_superregion = {
+					discover_country = PREV 
+				}
+			}
 		}
 		define_general = {
 			shock = 6
@@ -1081,13 +1133,23 @@ country_event = {
 	option = {
 		name = flavor_maghargma.26.a #
 		add_stability = 1
-		every_owned_province = {
-			limit = {
-				region = nomsyulhan_region
-			}
+		custom_tooltip = I90_reunification_tt
+		tooltip = {
 			add_province_modifier = {
 				name = I90_reunification_jubilee
 				duration = -1
+			}
+		}
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					region = nomsyulhan_region
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				add_province_modifier = {
+					name = I90_reunification_jubilee
+					duration = -1
+				}
 			}
 		}
 		country_event = { id = flavor_maghargma.27 days = 730 }
@@ -1104,12 +1166,19 @@ country_event = {
 	is_triggered_only = yes
 
 	option = {
-		name = flavor_maghargma.27.a 
-		every_owned_province = {
-			limit = {
-				region = nomsyulhan_region
-			}
+		name = flavor_maghargma.27.a
+		custom_tooltip = I90_reunification_tt
+		tooltip = {
 			remove_province_modifier = I90_reunification_jubilee
+		} 
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					region = nomsyulhan_region
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				remove_province_modifier = I90_reunification_jubilee
+			}
 		}
 		6836 = {
 			add_province_modifier = {
@@ -1182,7 +1251,7 @@ country_event = {
 		}
 	}
 	option = {
-		name = flavor_maghargma.28.a 
+		name = flavor_maghargma.28.b 
 		every_owned_province = {
 			limit = {
 				region = nomsyulhan_region
@@ -1279,13 +1348,19 @@ country_event = {
 			tag = Y01
 		}
 		ai_chance = {
-			factor = 1
+			factor = 100
 			modifier = {
 				factor = 0
 				is_subject = yes
+				overlord = {
+					army_strength = {
+						WHO = FROM
+						value = 2
+					}
+				}
 			}
 			modifier = {
-				factor = 2
+				factor = 50
 				FROM = {
 					army_strength = {
 						WHO = ROOT
@@ -1295,9 +1370,12 @@ country_event = {
 			}
 		}
 		FROM = { 
-			vassalize = ROOT 
-			country_event = { id = flavor_maghargma.31 }
+			create_subject = {
+				subject_type = maghargma_special_subject
+				subject = ROOT
+			} 
 			set_country_flag = I90_oni_yes
+			country_event = { id = flavor_maghargma.31 }
 		}
 	}
 
@@ -1309,11 +1387,17 @@ country_event = {
 		ai_chance = {
 			factor = 1
 			modifier = {
-				factor = 1000
+				factor = 100
 				is_subject = yes
+				overlord = {
+					army_strength = {
+						WHO = FROM
+						value = 2
+					}
+				}
 			}
 			modifier = {
-				factor = 2
+				factor = 50
 				NOT = {
 					FROM = {
 						army_strength = {
@@ -1325,8 +1409,8 @@ country_event = {
 			}
 		}
 		FROM = { 
-			country_event = { id = flavor_maghargma.31 }
 			set_country_flag = I90_oni_no	
+			country_event = { id = flavor_maghargma.31 }
 		}
 	}
 
@@ -1336,19 +1420,23 @@ country_event = {
 			NOT = { tag = Y01 }
 		}
 		ai_chance = {
-			factor = 1
+			factor = 100
 			modifier = {
-				factor = 1000
+				factor = 0
 				is_subject = yes
+				overlord = {
+					army_strength = {
+						WHO = FROM
+						value = 2
+					}
+				}
 			}
 			modifier = {
-				factor = 2
-				NOT = {
-					FROM = {
-						army_strength = {
-							WHO = ROOT
-							value = 2
-						}
+				factor = 50
+				FROM = {
+					army_strength = {
+						WHO = ROOT
+						value = 2
 					}
 				}
 			}
@@ -1360,8 +1448,8 @@ country_event = {
 			cede_province = FROM
 		}
 		FROM = { 
-			country_event = { id = flavor_maghargma.31 }
 			set_country_flag = I90_demonhill_yes
+			country_event = { id = flavor_maghargma.31 }
 		}
 	}
 
@@ -1373,11 +1461,17 @@ country_event = {
 		ai_chance = {
 			factor = 1
 			modifier = {
-				factor = 1000
+				factor = 100
 				is_subject = yes
+				overlord = {
+					army_strength = {
+						WHO = FROM
+						value = 2
+					}
+				}
 			}
 			modifier = {
-				factor = 2
+				factor = 50
 				NOT = {
 					FROM = {
 						army_strength = {
@@ -1389,8 +1483,8 @@ country_event = {
 			}
 		}
 		FROM = { 
-			country_event = { id = flavor_maghargma.31 }
 			set_country_flag = I90_demonhill_no
+			country_event = { id = flavor_maghargma.31 }
 		}
 	}
 }
@@ -1431,7 +1525,7 @@ country_event = {
 	}
 
 	option = {
-		name = flavor_maghargma.31.a #Those Bastards!
+		name = flavor_maghargma.31.b #Those Bastards!
 		trigger = {
 			OR = {
 				has_country_flag = I90_oni_no
@@ -1449,6 +1543,13 @@ country_event = {
 			}
 		}
 		demon_hills_region = { add_permanent_claim = ROOT }
+	}
+
+	after = { #Removing bloat flags
+		clr_country_flag = I90_oni_yes
+		clr_country_flag = I90_oni_no
+		clr_country_flag = I90_demonhill_yes
+		clr_country_flag = I90_demonhill_no
 	}
 } 
 

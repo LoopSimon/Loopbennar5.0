@@ -6199,7 +6199,7 @@ country_event = {
 		rahen_superregion = {
 			discover_country = Y99
 		}
-		south_haless_superregion = {
+		vimdatrong_superregion = {
 			discover_country = Y99
 		}
 		add_treasury = 5000

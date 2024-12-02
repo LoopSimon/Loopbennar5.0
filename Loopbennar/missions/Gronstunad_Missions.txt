@@ -758,155 +758,208 @@ gronstunad_1 = {
 		}
 
 		trigger = {
-			if = {
-				limit = {
+			OR = {
+				if = {
+					limit = {
+						calc_true_if = {
+							amount = 6
+							all_country = {
+								NOT = { tag = ROOT }
+								capital_scope = {
+									continent = serpentspine
+								}
+							}
+						}
+					}
 					calc_true_if = {
 						amount = 6
-						all_country = {
+						all_known_country = {
 							capital_scope = {
 								continent = serpentspine
 							}
+							OR = {
+								has_opinion = {
+									who = ROOT
+									value = 100
+								}
+								has_spy_network_from = {
+									who = ROOT
+									value = 25
+								}
+								AND = {
+									is_subject = yes
+									overlord = {
+										has_spy_network_from = {
+											who = ROOT
+											value = 25
+										}
+									}
+								}
+							}
 						}
 					}
 				}
-				calc_true_if = {
-					amount = 6
-					all_known_country = {
-						capital_scope = {
-							continent = serpentspine
-						}
-						OR = {
-							has_opinion = {
-								who = ROOT
-								value = 100
-							}
-							has_spy_network_from = {
-								who = ROOT
-								value = 25
+				else_if = {
+					limit = {
+						calc_true_if = {
+							amount = 5
+							all_country = {
+								NOT = { tag = ROOT }
+								capital_scope = {
+									continent = serpentspine
+								}
 							}
 						}
 					}
-				}
-			}
-			else_if = {
-				limit = {
 					calc_true_if = {
 						amount = 5
-						all_country = {
+						all_known_country = {
 							capital_scope = {
 								continent = serpentspine
 							}
+							OR = {
+								has_opinion = {
+									who = ROOT
+									value = 100
+								}
+								has_spy_network_from = {
+									who = ROOT
+									value = 25
+								}
+								AND = {
+									is_subject = yes
+									overlord = {
+										has_spy_network_from = {
+											who = ROOT
+											value = 25
+										}
+									}
+								}
+							}
 						}
 					}
 				}
-				calc_true_if = {
-					amount = 5
-					all_known_country = {
-						capital_scope = {
-							continent = serpentspine
-						}
-						OR = {
-							has_opinion = {
-								who = ROOT
-								value = 100
-							}
-							has_spy_network_from = {
-								who = ROOT
-								value = 25
+				else_if = {
+					limit = {
+						calc_true_if = {
+							amount = 4
+							all_country = {
+								NOT = { tag = ROOT }
+								capital_scope = {
+									continent = serpentspine
+								}
 							}
 						}
 					}
-				}
-			}
-			else_if = {
-				limit = {
 					calc_true_if = {
 						amount = 4
-						all_country = {
+						all_known_country = {
 							capital_scope = {
 								continent = serpentspine
 							}
+							OR = {
+								has_opinion = {
+									who = ROOT
+									value = 100
+								}
+								has_spy_network_from = {
+									who = ROOT
+									value = 25
+								}
+								AND = {
+									is_subject = yes
+									overlord = {
+										has_spy_network_from = {
+											who = ROOT
+											value = 25
+										}
+									}
+								}
+							}
 						}
 					}
 				}
-				calc_true_if = {
-					amount = 4
-					all_known_country = {
-						capital_scope = {
-							continent = serpentspine
-						}
-						OR = {
-							has_opinion = {
-								who = ROOT
-								value = 100
-							}
-							has_spy_network_from = {
-								who = ROOT
-								value = 25
+				else_if = {
+					limit = {
+						calc_true_if = {
+							amount = 3
+							all_country = {
+								NOT = { tag = ROOT }
+								capital_scope = {
+									continent = serpentspine
+								}
 							}
 						}
 					}
-				}
-			}
-			else_if = {
-				limit = {
 					calc_true_if = {
 						amount = 3
-						all_country = {
+						all_known_country = {
 							capital_scope = {
 								continent = serpentspine
 							}
+							OR = {
+								has_opinion = {
+									who = ROOT
+									value = 100
+								}
+								has_spy_network_from = {
+									who = ROOT
+									value = 25
+								}
+								AND = {
+									is_subject = yes
+									overlord = {
+										has_spy_network_from = {
+											who = ROOT
+											value = 25
+										}
+									}
+								}
+							}
 						}
 					}
 				}
-				calc_true_if = {
-					amount = 3
-					all_known_country = {
-						capital_scope = {
-							continent = serpentspine
-						}
-						OR = {
-							has_opinion = {
-								who = ROOT
-								value = 100
-							}
-							has_spy_network_from = {
-								who = ROOT
-								value = 25
+				else_if = {
+					limit = {
+						calc_true_if = {
+							amount = 2
+							all_country = {
+								NOT = { tag = ROOT }
+								capital_scope = {
+									continent = serpentspine
+								}
 							}
 						}
 					}
-				}
-			}
-			else_if = {
-				limit = {
 					calc_true_if = {
 						amount = 2
-						all_country = {
+						all_known_country = {
 							capital_scope = {
 								continent = serpentspine
 							}
+							OR = {
+								has_opinion = {
+									who = ROOT
+									value = 100
+								}
+								has_spy_network_from = {
+									who = ROOT
+									value = 25
+								}
+								AND = {
+									is_subject = yes
+									overlord = {
+										has_spy_network_from = {
+											who = ROOT
+											value = 25
+										}
+									}
+								}
+							}
 						}
 					}
 				}
-				calc_true_if = {
-					amount = 2
-					all_known_country = {
-						capital_scope = {
-							continent = serpentspine
-						}
-						OR = {
-							has_opinion = {
-								who = ROOT
-								value = 100
-							}
-							has_spy_network_from = {
-								who = ROOT
-								value = 25
-							}
-						}
-					}
-				}
+				has_country_modifier = dwarovkron_amethyst
 			}
 			4266 = { #Hul-az-Krakazol
 				has_dwarven_hold_4 = yes
@@ -1464,13 +1517,15 @@ gronstunad_2 = {
 				value = 80
 			}
 			has_global_flag = serpentspine_gems_happened
-			jade_mines_region = {
-				type = all
-				OR = {
-					NOT = { trade_goods = gems }
-					has_province_modifier = gronstunad_upgraded_mining_operation
-					province_group = hold_province
-					has_terrain = dwarven_road
+			custom_trigger_tooltip = {
+				tooltip = gronstunad_proliferation_tt
+				jade_mines_region = {
+					type = all
+					OR = {
+						has_province_modifier = gronstunad_upgraded_mining_operation
+						NOT = { trade_goods = gems }
+						NOT = { has_terrain = cavern }
+					}
 				}
 			}
 			treasury = 1000
@@ -1640,17 +1695,21 @@ gronstunad_3 = {
 
 		provinces_to_highlight = {
 			OR = {
-				AND = {
-					province_id = 4300
-					NOT = { has_building = ramparts }
-				}
-				AND = {
-					province_id = 4302
-					NOT = { has_manpower_building_trigger = yes }
-				}
+				province_id = 4300
+				province_id = 4302
 			}
 			NOT = {
 				AND = {
+					OR = {
+						AND = {
+							province_id = 4300
+							has_building = ramparts
+						}
+						AND = {
+							province_id = 4302
+							has_manpower_building_trigger = yes
+						}
+					}
 					has_fort_building_trigger = yes
 					is_city = yes
 					owned_by = ROOT
@@ -2110,9 +2169,12 @@ gronstunad_3 = {
 				tilathi_area = {
 					add_permanent_claim = PREV
 				}
-				rahen_superregion = {
-					limit = { culture = PREV }
-					add_permanent_claim = PREV
+				custom_tooltip = gronstunad_culture_claims_tt
+				hidden_effect = {
+					rahen_superregion = {
+						limit = { culture = PREV }
+						add_permanent_claim = PREV
+					}
 				}
 			}
 		}
@@ -2224,14 +2286,20 @@ gronstunad_3 = {
 		}
 
 		trigger = {
-			any_known_country = {
-				culture = ghankedhen
-				has_opinion = {
-					who = ROOT
-					value = 150
+			OR = {
+				any_known_country = {
+					culture = ghankedhen
+					has_opinion = {
+						who = ROOT
+						value = 150
+					}
+					any_owned_province = {
+						has_terrain = highlands
+					}
 				}
-				any_owned_province = {
-					has_terrain = highlands
+				north_ghankedhen_area = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
 				}
 			}
 			treasury = 500
@@ -2243,47 +2311,104 @@ gronstunad_3 = {
 
 		effect = {
 			add_treasury = -500
-			random_known_country = {
+			if = {
 				limit = {
-					culture = ghankedhen
-					has_opinion = {
-						who = ROOT
-						value = 150
-					}
-					any_owned_province = {
-						has_terrain = highlands
+					NOT = {
+						any_known_country = { culture = ghankedhen }
 					}
 				}
-				create_marriage = ROOT
-				random_owned_province = {
-					limit = {
-						has_terrain = highlands
-						NOT = {
-							trade_goods = gold
-							trade_goods = copper
-							trade_goods = iron
-							trade_goods = mithril
-							trade_goods = gems
-							trade_goods = salt
-							trade_goods = damestear
-							trade_goods = coal
+				north_ghankedhen_area = {
+					cede_province = R28
+				}
+				vassalize = R28
+				R28 = {
+					change_government = monarchy
+					change_culture = ghankedhen
+					if = {
+						limit = {
+							4446 = { religion = suhans_praxis }
+						}
+						change_religion = suhans_praxis
+					}
+					else = {
+						change_religion = high_philosophy
+					}
+					create_marriage = ROOT
+					random_owned_province = {
+						limit = {
+							has_terrain = highlands
+							NOT = {
+								trade_goods = gold
+								trade_goods = copper
+								trade_goods = iron
+								trade_goods = mithril
+								trade_goods = gems
+								trade_goods = salt
+								trade_goods = damestear
+								trade_goods = coal
+							}
+						}
+						random_list = {
+							4 = { change_trade_goods = iron }
+							3 = { change_trade_goods = copper }
+							2 = { change_trade_goods = salt }
+							1 = { change_trade_goods = gems }
+							1 = { change_trade_goods = gold }
 						}
 					}
-					random_list = {
-						4 = { change_trade_goods = iron }
-						3 = { change_trade_goods = copper }
-						2 = { change_trade_goods = salt }
-						1 = { change_trade_goods = gems }
-						1 = { change_trade_goods = gold }
+					random_owned_province = {
+						limit = {
+							has_terrain = highlands
+							NOT = { has_manufactory_no_custom_tooltip_trigger = yes }
+						}
+						add_manufactory = yes
+						add_dwarven_minority_size_effect = yes
 					}
 				}
-				random_owned_province = {
+			}
+			else = {
+				random_known_country = {
 					limit = {
-						has_terrain = highlands
-						NOT = { has_manufactory_no_custom_tooltip_trigger = yes }
+						culture = ghankedhen
+						has_opinion = {
+							who = ROOT
+							value = 150
+						}
+						any_owned_province = {
+							has_terrain = highlands
+						}
 					}
-					add_manufactory = yes
-					add_dwarven_minority_size_effect = yes
+					create_marriage = ROOT
+					random_owned_province = {
+						limit = {
+							has_terrain = highlands
+							NOT = {
+								trade_goods = gold
+								trade_goods = copper
+								trade_goods = iron
+								trade_goods = mithril
+								trade_goods = gems
+								trade_goods = salt
+								trade_goods = damestear
+								trade_goods = coal
+							}
+						}
+						random_list = {
+							4 = { change_trade_goods = iron }
+							3 = { change_trade_goods = copper }
+							2 = { change_trade_goods = salt }
+							1 = { change_trade_goods = gems }
+							1 = { change_trade_goods = gold }
+						}
+					}
+					random_owned_province = {
+						limit = {
+							has_terrain = highlands
+							NOT = { has_manufactory_no_custom_tooltip_trigger = yes }
+						}
+						add_manufactory = yes
+						add_dwarven_minority_size_effect = yes
+					}
 				}
 			}
 			4265 = { #Grozumdihr
@@ -2323,7 +2448,17 @@ gronstunad_3 = {
 		position = 10
 
 		provinces_to_highlight = {
-			
+			OR = {
+				trade_company_region = trade_company_xiadao
+				trade_company_region = trade_company_haiban
+			}
+			province_has_center_of_trade_of_level = 1
+			NOT = {
+				num_of_units_in_province = {
+					amount = 5
+					who = ROOT
+				}
+			}
 		}
 
 		trigger = {
@@ -2354,7 +2489,7 @@ gronstunad_3 = {
 			}
 			custom_trigger_tooltip = {
 				tooltip = gronstunad_protect_haiban_tt
-				any_active_trade_node = {
+				any_trade_node = {
 					any_trade_node_member_province = {
 						province_id = 4779
 					}
@@ -2374,7 +2509,7 @@ gronstunad_3 = {
 			}
 			custom_trigger_tooltip = {
 				tooltip = gronstunad_protect_xiadao_tt
-				any_active_trade_node = {
+				any_trade_node = {
 					any_trade_node_member_province = {
 						province_id = 4559
 					}
@@ -2956,7 +3091,7 @@ gronstunad_3 = {
 		provinces_to_highlight = {
 			OR = {
 				superregion = rahen_superregion
-				superregion = south_haless_superregion
+				superregion = vimdatrong_superregion
 				region = demon_hills_region
 				region = upper_yanshen_region
 				superregion = east_serpentspine_superregion
@@ -3015,7 +3150,7 @@ gronstunad_3 = {
 					country_or_subject_holds = ROOT
 				}
 			}
-			south_haless_superregion = {
+			vimdatrong_superregion = {
 				type = all
 				OR = {
 					region = lupulan_rainforest_region
@@ -3141,12 +3276,12 @@ gronstunad_4 = {
 			}
 			all_owned_province = {
 				OR = {
-					NOT = { has_terrain = dwarven_road }
-					NOT = { development = 7 }
 					AND = {
 						has_province_modifier = autonomy_increased
 						has_state_edict = edict_encourage_development
 					}
+					NOT = { has_terrain = dwarven_road }
+					NOT = { development = 7 }
 				}
 			}
 		}
@@ -3479,6 +3614,16 @@ gronstunad_4 = {
 				}
 				if = {
 					limit = {
+						has_country_modifier = dwarovkron_amethyst
+					}
+					add_government_power = {
+						mechanic_type = gronstunad_authority_mechanic
+						power_type = gronstunad_amethyst_power
+						value = 1
+					}
+				}
+				if = {
+					limit = {
 						has_country_flag = gronstunad_found_emerald
 					}
 					add_government_power = {
@@ -3628,8 +3773,15 @@ gronstunad_4 = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
 			}
+			any_subject_country = {
+				culture = ghankedhen
+				is_subject_of_type = personal_union
+			}
 			R74 = { #Ghankedhen
-				is_subject_of = ROOT
+				OR = {
+					is_subject_of = ROOT
+					exists = no
+				}
 			}
 			4438 = { #Dhurasidheni
 				development = 30
@@ -3654,7 +3806,43 @@ gronstunad_4 = {
 			trade_company_dhenbasana = {
 				add_permanent_claim = R74	
 			}
-			R74 = {
+			if = {
+				limit = {
+					NOT = { exists = R74 }
+				}
+				random_subject_country = {
+					limit = {
+						culture = ghankedhen
+						is_subject_of_type = personal_union
+					}
+					change_tag = R74 #Ghankedhen
+					hidden_effect = {
+						hidden_effect = { restore_country_name = yes }
+						swap_non_generic_missions = yes
+						capital_scope = { add_base_tax = 1 add_base_production = 1 add_base_manpower = 1 }
+						hidden_effect = {
+							every_owned_province = {
+								limit = {
+									is_part_of_hre = yes
+								}
+								set_in_empire = no
+							}
+						}
+						set_government_rank = 2
+						add_prestige = 50
+						if = {
+							limit = { has_custom_ideas = no }
+							country_event = { id = ideagroups.1 } #Swap Ideas
+						}
+						add_country_modifier = {
+							name = "centralization_modifier"
+							duration = 7300
+						}
+						set_country_flag = formed_ghankedhen_flag
+					}
+				}
+			}
+			R74 = { #Ghankedhen
 				set_capital = 4438
 			}
 			4438 = {
@@ -4285,6 +4473,33 @@ gronstunad_5 = {
 					}
 					change_culture = owner
 					change_religion = owner
+				}
+				tamvihar_area = {
+					trigger_switch = {
+						on_trigger = culture_group
+						hobgoblin = {
+							change_culture = owner
+							change_religion = owner
+						}
+						wuhyun = {
+							change_culture = khedarid
+							change_religion = high_philosophy
+						}
+					}
+				}
+				kradhungur_area = {
+					trigger_switch = {
+						on_trigger = culture_group
+						hobgoblin = {
+							change_culture = owner
+							change_religion = owner
+						}
+						wuhyun = {
+							change_culture = khedarid
+							change_religion = high_philosophy
+							add_core = R11
+						}
+					}
 				}
 			}
 			every_subject_country = {

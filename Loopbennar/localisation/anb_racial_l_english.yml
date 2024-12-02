@@ -372,6 +372,7 @@
  racial_modifiers.1.r:0 "[Root.Get18thMil]"
  racial_modifiers.1.s:0 "[Root.Get19thMil]"
  racial_modifiers.1.tt:0 "[Root.Get20thMil]"
+ racial_modifiers.1.u:0 "[Root.Get21thMil]"
  
  #Tooltips
  mil_menu_access_tt:0 "Opens the §YRacial Military Selection§! menu."
@@ -702,3 +703,9 @@
  is_long_lived_ruler_tt:0 "Ruler is §Ylong-lived§!."
  is_long_lived_heir_tt:0 "Heir is §Ylong-lived§!."
  is_long_lived_consort_tt:0 "Consort is §Ylong-lived§!."
+ 
+ is_vyzemby_primary_culture_tooltip:0 "Primary Culture is Vyzemby Halfling"
+ is_vyzemby_culture_tooltip:0 "Province Culture is Vyzemby Halfling"
+ 
+ is_cannorian_halfling_primary_culture_tooltip:0 "Primary Culture is Cannorian Halfling"
+ is_cannorian_halfling_culture_tooltip:0 "Province Culture is Cannorian Halfling"

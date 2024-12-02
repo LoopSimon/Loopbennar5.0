@@ -142,6 +142,7 @@ country_event = {
 						has_gnomish_minority_trigger = yes
 						NOT = { has_province_modifier = gnomes_public_lectures_happening }
 						NOT = { has_province_modifier = gnomes_public_lectures_discouraged }
+						
 					}
 				}
 				modifier = {
@@ -202,6 +203,10 @@ country_event = {
 			# Gnomish provocateurs
 			10 = {
 				trigger = {
+					any_owned_province = {
+						has_gnomish_majority_trigger = yes
+						NOT = { region = kheterata_region }
+					}
 					NOT = { has_country_modifier = gnomish_provocateurs }
 				}
 				modifier = {
@@ -296,6 +301,21 @@ country_event = {
 				country_event = {
 					id = gnomish_tolerance_events.11
 				}
+			}
+			30 = {
+				trigger = {
+					ai = no
+					OR = {
+						has_country_modifier = just_lost_war_timer
+						average_unrest = 10
+						is_bankrupt = yes
+						NOT = { stability = 0 }
+					}
+					NOT = { high_tolerance_gnomish_race_trigger = yes }
+					is_not_purging_or_expelling_any_race_trigger = yes
+				}
+				set_country_flag = propflag_gnomish
+				country_event = { id = tolerance_generic.1 }
 			}
 		}
 	}

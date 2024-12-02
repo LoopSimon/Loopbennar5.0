@@ -53,7 +53,12 @@ yingzhen_start_2 = {
 		
 		effect = {
 			if = {
-				limit = { exists = Y01 }
+				limit = { 
+					exists = Y01
+					NOT = {
+						vassal_of = Y01
+					}
+				}
 				Y01 = { country_event = { id = yingzhen.5 } }
 			}
 			else = {

@@ -13,7 +13,7 @@ country_decisions = {
 			is_at_war = no
 			adm_tech = 7
 			if = { #Luciande
-				limit = { tag = B11 ai = no}
+				limit = { tag = B11 ai = no }
 				any_owned_province = {
 					OR = {
 						area = cursewood_area
@@ -23,13 +23,13 @@ country_decisions = {
 				}
 			}
 			if = { #Rogieria
-				limit = { tag = B07 ai = no}
+				limit = { tag = B07 ai = no }
 				any_owned_province = {
 					region =  west_castanor_region
 				}
 			}
 			if = { #Elikhand
-				limit = { tag = B15 ai = no}
+				limit = { tag = B15 ai = no }
 				any_owned_province = {
 					OR = {
 						area = taran_plains_area
@@ -39,7 +39,7 @@ country_decisions = {
 				}
 			}
 			if = { #Ravenmarch
-				limit = { tag = B14 ai = no}
+				limit = { tag = B14 ai = no }
 				any_owned_province = {
 					OR = {
 						area = dostans_way_area
@@ -49,7 +49,7 @@ country_decisions = {
 				}
 			}
 			if = { #Newshire
-				limit = { tag = B10 ai = no}
+				limit = { tag = B10 ai = no }
 				any_owned_province = {
 					OR = {
 						area = adenica_area
@@ -59,7 +59,7 @@ country_decisions = {
 				}
 			}
 			if = { #Esthil
-				limit = { tag = B20 ai = no}
+				limit = { tag = B20 ai = no }
 				any_owned_province = {
 					OR = {
 						area = castonath_area
@@ -69,7 +69,7 @@ country_decisions = {
 				}
 			}
 			if = { #Hammerhome
-				limit = { tag = B18 ai = no}
+				limit = { tag = B18 ai = no }
 				any_owned_province = {
 					OR = {
 						area = castonath_area
@@ -78,8 +78,18 @@ country_decisions = {
 					}
 				}
 			}
+			if = { #Wyvernheart
+				limit = { tag = B12 ai = no }
+				any_owned_province = {
+					OR = {
+						area = ebonmarck_area
+						area = athfork_area
+						area = westwall_approach_area
+					}
+				}
+			}
 			if = { #Covenblad
-				limit = { tag = B19 ai = no}
+				limit = { tag = B19 ai = no }
 				any_owned_province = {
 					OR = {
 						area = castonath_area
@@ -118,6 +128,7 @@ country_decisions = {
 			else_if = { #Wyvernheart
 				limit = { tag = B12 }
 				change_tag = B39
+				swap_non_generic_missions = yes
 			}
 			else_if = { #Alenor
 				limit = { tag = B03 }

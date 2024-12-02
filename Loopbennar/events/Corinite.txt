@@ -155,6 +155,10 @@ country_event = {
 				limit = { exists = H36 }
 				H36 = { country_event = { id = flavor_valorpoint.1 days = 1095 random = 365 } }
 			}
+			if = { 
+				limit = { exists = A45 } #Istralore
+				A45 = { country_event = { id = flavor_istralore.1 days = 730 random = 120 } }
+			}
 			if = {
 				limit = {
 					exists = B60	#Farranean
@@ -1429,7 +1433,7 @@ country_event = {
 			factor = 1
 			modifier = {
 				factor = 2
-				culture_group = halfling
+				is_cannorian_halfling_primary_culture = yes
 			}
 			modifier = {
 				factor = 5
@@ -1537,7 +1541,7 @@ country_event = {
 			}
 			modifier = {
 				factor = 1.5
-				culture_group = halfling
+				is_cannorian_halfling_primary_culture = yes
 			}
 		}
 
@@ -2670,6 +2674,12 @@ province_event = { #Crimson Deluge end
 				capital_scope = { province_event = { id = corinite.4 } }
 			}
 			clr_country_flag = crimson_deluge_repeat
+		}
+		B39 = {
+			country_event = {
+				id = flavour_wyvernheart.200
+				days = 365
+			}
 		}
 	}
 	trigger = {}

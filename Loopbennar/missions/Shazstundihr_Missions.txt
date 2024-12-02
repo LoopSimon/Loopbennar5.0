@@ -626,7 +626,7 @@ marble_2_tng = {
 		provinces_to_highlight = {
 			OR = {
 				province_id = 510
-				area = south_overmarch_area
+				area = oudmarck_area
 			}
 			NOT = { owned_by = ROOT }
 		}
@@ -635,7 +635,7 @@ marble_2_tng = {
 			510 = {
 				owned_by = ROOT
 			}
-			south_overmarch_area = {
+			oudmarck_area = {
 				type = all
 				owned_by = ROOT
 			}

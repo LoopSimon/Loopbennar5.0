@@ -78,7 +78,6 @@ a95_river_reavers = {
 			267 = {
 				has_tax_building_trigger = yes
 				num_of_times_expanded_infrastructure = 1
-				higher_development_than = 266
 			}
 			treasury = 150
 			estate_influence = {
@@ -107,6 +106,12 @@ a95_river_reavers = {
 				limit = { NOT = { has_personal_deity = esmaryal } }
 				add_adm_power = -100
 			}
+			hidden_effect = {
+				change_variable = {
+					which = a95_esmaryal_influence
+					value = 1
+				}
+			}
 		}
 	}
 	##Mission End
@@ -119,9 +124,10 @@ a95_river_reavers = {
 
 		trigger = {
 			267 = {
-				has_building = ramparts
+				has_trade_building_trigger = yes
 				has_manpower_building_trigger = yes
 				num_of_times_expanded_infrastructure = 2
+				higher_development_than = 266
 			}
 			OR = {
 				267 = { is_prosperous = yes }
@@ -141,6 +147,12 @@ a95_river_reavers = {
 					267 = { is_prosperous = no }
 				}
 				add_adm_power = -120
+			}
+			hidden_effect = {
+				change_variable = {
+					which = a95_esmaryal_influence
+					value = 1
+				}
 			}
 		}
 	}
@@ -229,7 +241,13 @@ a95_river_reavers = {
 
 		trigger = {
 			army_professionalism = 0.95
-			has_estate_privilege = estate_nobles_levies
+			custom_trigger_tooltip = {
+				tooltip = levies_privilege_a95.tt
+				OR = {
+					has_estate_privilege = estate_nobles_levies
+					has_estate_privilege = estate_nobles_themarenn_sailors
+				}
+			}
 			num_of_owned_provinces_with = {
 				value = 20
 				has_building = impressment_offices
@@ -379,6 +397,12 @@ a95_river_parties = {
 			}
 			custom_tooltip = ryala_good_boy_points.tt
 			set_country_flag = a95_ryala_seagulls
+			hidden_effect = {
+				change_variable = {
+					which = a95_ryala_influence
+					value = 1
+				}
+			}
 		}
 	}
 	##Mission End
@@ -410,6 +434,11 @@ a95_river_parties = {
 			OR = {
 				army_professionalism = 0.15
 				mil_power = 200
+				has_global_modifier_value = {
+					which = build_cost
+					value = 0.2
+					extra_shortcut = yes
+				}
 			}
 		}
 		effect = {
@@ -485,10 +514,9 @@ a95_river_parties = {
 			custom_trigger_tooltip = {
 				tooltip = esmar_river_prosper_a95.tt
 				esmar_river_group = {
-					type = all
-					country_or_subject_holds = ROOT
-					NOT = { devastation = 1 }
+					owned_by = ROOT
 					is_prosperous = yes
+					NOT = { devastation = 1 }
 				}
 			}
 			
@@ -539,9 +567,9 @@ a95_river_parties = {
 		}
 
 		effect = {
-			264 = {
+			1255 = {
 				kill_units = {
-					who = owner
+					who = ROOT
 					type = transport
 					amount = 10
 				}
@@ -852,6 +880,7 @@ esmaryal_branching = {
 			has_global_modifier_value = {
 				which = improve_relation_modifier
 				value = 0.70
+				extra_shortcut = yes
 			}
 			has_heir = yes
 			has_consort = yes
@@ -907,7 +936,6 @@ esmaryal_branching = {
 	a95_lady_of_the_flows = {
 		icon = kingdom_of_heaven
 		required_missions = {
-			a95_a_night_in_ryalanar
 			a95_the_esmaryan_temple
 		}
 		position = 6
@@ -927,6 +955,10 @@ esmaryal_branching = {
 				}
 				custom_tooltip = a95_esmaryal_upgrade.tt
 				set_country_flag = lady_of_flows_esmaryal
+			}
+			hidden_effect = {
+				remove_country_modifier = a95_way_of_esmaryal2
+				add_country_modifier = { name = a95_way_of_esmaryal3 duration = -1 }
 			}
 		}
 	}
@@ -1154,11 +1186,26 @@ a95_heretics = {
 						}
 					}
 				}
+				AND = {
+					260 = { country_or_non_sovereign_subject_holds = ROOT }
+					A94 = { exists = no }
+				}
 			}
 		}
 
 		effect = {
-			add_treasury = -50
+			if = {
+				limit = {
+					NOT = { 260 = { country_or_non_sovereign_subject_holds = ROOT } }
+				}
+				add_treasury = -50
+			}
+			if = {
+				limit = {
+					260 = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+				add_adm_power = 50
+			}
 			if = {
 				limit = {
 					A94 = {
@@ -1199,6 +1246,12 @@ a95_heretics = {
 			}
 			custom_tooltip = esmaryal_good_boy_points.tt
 			set_country_flag = a95_esmaryal_vultures
+			hidden_effect = {
+				change_variable = {
+					which = a95_esmaryal_influence
+					value = 1
+				}
+			}
 		}
 	}
 	##Mission End
@@ -1266,6 +1319,12 @@ a95_heretics = {
 			}
 			custom_tooltip = ryala_good_boy_points.tt
 			set_country_flag = a95_ryala_immemorial
+			hidden_effect = {
+				change_variable = {
+					which = a95_ryala_influence
+					value = 1
+				}
+			}
 		}
 	}
 	##Mission End
@@ -1580,9 +1639,15 @@ a95_imperial_council = {
 			} 
 			army_size_percentage = 0.9
 			has_mil_advisor_2 = yes
-			estate_territory = {
-				estate = estate_nobles
-				territory = 40
+			AND = {
+				estate_territory = {
+					estate = estate_nobles
+					territory = 25
+				}
+				estate_influence = {
+					estate = estate_nobles
+					influence = 60
+				}
 			}
 		}
 
@@ -1591,6 +1656,12 @@ a95_imperial_council = {
 			custom_tooltip = ryala_good_boy_points.tt
 			custom_tooltip = a95_demand_konwell_subjugation.tt
 			set_country_flag = a95_ryala_ryalanar
+			hidden_effect = {
+				change_variable = {
+					which = a95_ryala_influence
+					value = 1
+				}
+			}
 		}
 	}
 	##Mission End

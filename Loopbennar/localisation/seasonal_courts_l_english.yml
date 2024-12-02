@@ -172,7 +172,7 @@
  eordand_winter_obj2:0 "One big family"
  
  eordand_eordellon_obj1a:0 "Ruler of Eordand"
- eordand_eordellon_obj1b:0 "Ruler of the Eordanis"
+ eordand_eordellon_obj1b:0 "Ruler of the Eordan"
  eordand_eordellon_obj2:0 "Ruler of many crowns"
  
  seasonal_building_embassy:0 "Building the embassy"
@@ -235,7 +235,7 @@
  seasonal_festival_text_eordellon: "Balance in all things!"
  seasonal_festival_text_generic: "Still seems kind of bland, though..."
  
- eordellon.4.t:0 "Eordani Objectives"
+ eordellon.4.t:0 "Eordan Objectives"
  eordellon.4.d:0 "What shall we do to increase our standing with the fey"
  eordellon.4.generic.one:0 "Build an embassy for the feys"
  eordellon.4.generic.two:0 "Become the champion of the fey"
@@ -356,6 +356,8 @@
  summer_kraken_2_desc:0 "Kraken's Resiliance"
  summer_kraken_3:0 "Friendly sea monster"
  summer_kraken_3_desc:0 "Friendly sea monster"
+ 
+ built_embassy_tt: "We have built a fey embassy in our capital."
  
  eordellon.4.generic.one.tt:0 "Has §Y50§!¤\n--------------------------------------------------------------\nOnce we have the funds we can do the following:"
  eordellon.4.embassytt:0 "Start the embassy construction event chain"

@@ -1956,10 +1956,24 @@ phoenix_empire_timer = {
 			change_variable = { which = phoenix_empire_timer_4 value = 1 }
 			change_variable = { which = phoenix_empire_timer_5 value = 1 }
 		}
+		F97 = {
+			change_variable = { which = phoenix_empire_timer_1 value = 1 }
+			change_variable = { which = phoenix_empire_timer_2 value = 1 }
+			change_variable = { which = phoenix_empire_timer_3 value = 1 }
+			change_variable = { which = phoenix_empire_timer_4 value = 1 }
+			change_variable = { which = phoenix_empire_timer_5 value = 1 }
+		}
 	}
 	hidden = yes
 	on_deactivation = {
 		F38 = {
+			change_variable = { which = phoenix_empire_timer_1 value = 1 }
+			change_variable = { which = phoenix_empire_timer_2 value = 1 }
+			change_variable = { which = phoenix_empire_timer_3 value = 1 }
+			change_variable = { which = phoenix_empire_timer_4 value = 1 }
+			change_variable = { which = phoenix_empire_timer_5 value = 1 }
+		}
+		F97 = {
 			change_variable = { which = phoenix_empire_timer_1 value = 1 }
 			change_variable = { which = phoenix_empire_timer_2 value = 1 }
 			change_variable = { which = phoenix_empire_timer_3 value = 1 }
@@ -2524,7 +2538,7 @@ black_kobold_damestear_mine = {
 		trade_goods = damestear
 	}
 
-	picture = "damestar_deposit"
+	picture = "damestear_deposit"
 
 
 	trade_goods_size = 1
@@ -4411,8 +4425,9 @@ G52_nakyra_capital_1 = {
 			capital_scope = { province_id = 2497 }
 		}
 	}
-	all_estate_loyalty_equilibrium = 0.1
+	statewide_governing_cost = -0.2
 	local_defensiveness = 0.15
+	local_tax_modifier = 0.5
 
 	on_activation = {
 	}
@@ -4436,6 +4451,7 @@ G52_nakyra_capital_2 = {
 	}
 	local_development_cost = -0.5
 	local_defensiveness = 0.15
+	local_tax_modifier = 0.5
 
 	on_activation = {
 	}
@@ -6023,7 +6039,7 @@ mb_ap_dauntless_six = {
 	local_unrest = 6
 	trade_goods_size_modifier = -0.6
 	local_tax_modifier = -0.6
-	trade_goods_size = 0.02
+	province_trade_power_value = 0.1
 
 	on_activation = {
 
@@ -6057,7 +6073,7 @@ mb_ap_damned_four = {
 	local_unrest = 4
 	trade_goods_size_modifier = -0.4
 	local_tax_modifier = -0.4
-	trade_goods_size = 0.02
+	province_trade_power_value = 0.1
 
 	on_activation = {
 
@@ -6096,7 +6112,7 @@ mb_ap_desperate_two = {
 	local_unrest = 2
 	trade_goods_size_modifier = -0.2
 	local_tax_modifier = -0.2
-	trade_goods_size = 0.02
+	province_trade_power_value = 0.1
 
 	on_activation = {
 
@@ -6135,7 +6151,7 @@ mb_ap_roypeckers_fury = {
 	local_unrest = 6
 	trade_goods_size_modifier = -0.6
 	local_tax_modifier = -0.6
-	trade_goods_size = 0.02
+	province_trade_power_value = 0.1
 
 	on_activation = {
 
@@ -6164,7 +6180,7 @@ mb_ap_flight_kalas = {
 		}
 	}
 
-	trade_goods_size = 0.02
+	province_trade_power_value = 0.1
 
 	on_activation = {
 
@@ -6175,39 +6191,6 @@ mb_ap_flight_kalas = {
 			id = flavour_maskedbutcher.45
 			days = 30
 			random = 30
-		}
-	}
-}
-
-mb_ap_butcherbane = {
-	hidden = no
-
-	potential = {
-		always = yes
-	}
-
-	trigger = {
-		custom_trigger_tooltip = {
-			tooltip = mb_roypecker_moving_on_tt
-			has_province_modifier = mb_ap_tracker
-		}
-	}
-
-	local_monthly_devastation = 6
-	local_unrest = 6
-	trade_goods_size_modifier = -0.6
-	local_tax_modifier = -0.6
-	trade_goods_size = 0.02
-
-	on_activation = {
-
-	}
-
-	on_deactivation = {
-		province_event = {
-			id = flavour_maskedbutcher.46
-			days = 30
-			random = 15
 		}
 	}
 }
@@ -6233,7 +6216,7 @@ mb_ap_roaming_heroes = {
 	trade_goods_size_modifier = -0.5
 	local_tax_modifier = -0.5
 	supply_limit_modifier = -0.25
-	trade_goods_size = 0.02
+	province_trade_power_value = 0.1
 
 	on_activation = {
 		
@@ -6280,7 +6263,7 @@ mb_ap_world_eaters = {
 	local_unrest = 10
 	trade_goods_size_modifier = -0.75
 	local_tax_modifier = -0.75
-	trade_goods_size = 0.02
+	province_trade_power_value = 0.1
 
 	on_activation = {
 
@@ -6324,7 +6307,7 @@ mb_ap_butcherbane2 = {
 	local_unrest = 10
 	trade_goods_size_modifier = -0.75
 	local_tax_modifier = -0.75
-	trade_goods_size = 0.02
+	province_trade_power_value = 0.1
 
 	on_activation = {
 
@@ -6357,4 +6340,47 @@ mb_blood_moon_randomiser = {
 
 	on_deactivation = {
 	}
+}
+
+giberd_permanent_veridical = {
+	potential = {
+		religion = ravelian
+	}
+	trigger = {
+		religion = ravelian
+		has_owner_religion = yes
+		owner = {
+			capital_scope = {
+				region = esmaria_region
+			}
+		}
+	}
+	picture = "papal_influence_from_cardinals"
+
+	on_activation = {
+	}
+	on_deactivation = {
+	}
+}
+
+giberd_modern_fortress = {
+	potential = {
+		always = yes
+	}
+	trigger = {
+		owner = {
+			estate_loyalty = {
+				estate = estate_artificers
+				loyalty = 60
+			}
+		}
+	}
+	on_activation = {
+	}
+
+	on_deactivation = {
+	}
+
+	local_defensiveness = 0.35
+	local_garrison_size = 0.50
 }

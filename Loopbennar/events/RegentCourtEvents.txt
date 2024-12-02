@@ -890,7 +890,7 @@ country_event = {
 			}
 			modifier = {
 				factor = 1.5
-				culture_group = halfling
+				is_cannorian_halfling_primary_culture = yes
 			}
 		}
 		set_country_flag = regent_court_deity_switch_cooldown
@@ -935,7 +935,7 @@ country_event = {
 			}
 			modifier = {
 				factor = 1.5
-				culture_group = halfling
+				is_cannorian_halfling_primary_culture = yes
 			}
 		}
 		set_country_flag = regent_court_deity_switch_cooldown
@@ -979,7 +979,7 @@ country_event = {
 				}
 				modifier = {
 					factor = 1.5
-					culture_group = halfling
+					is_cannorian_halfling_primary_culture = yes
 				}
 			}
 			set_country_flag = regent_court_deity_switch_cooldown
@@ -1024,7 +1024,7 @@ country_event = {
 				}
 				modifier = {
 					factor = 1.5
-					culture_group = halfling
+					is_cannorian_halfling_primary_culture = yes
 				}
 			}
 			set_country_flag = regent_court_deity_switch_cooldown
@@ -1848,7 +1848,7 @@ country_event = {
 			}
 			modifier = {
 				factor = 2
-				culture_group = halfling
+				is_cannorian_halfling_primary_culture = yes
 			}
 			modifier = {
 				factor = 5
@@ -1883,7 +1883,7 @@ country_event = {
 			}
 			modifier = {
 				factor = 2
-				culture_group = halfling
+				is_cannorian_halfling_primary_culture = yes
 			}
 			modifier = {
 				factor = 5
@@ -1918,7 +1918,7 @@ country_event = {
 			}
 			modifier = {
 				factor = 2
-				culture_group = halfling
+				is_cannorian_halfling_primary_culture = yes
 			}
 			modifier = {
 				factor = 5
@@ -1954,7 +1954,7 @@ country_event = {
 			}
 			modifier = {
 				factor = 2
-				culture_group = halfling
+				is_cannorian_halfling_primary_culture = yes
 			}
 			modifier = {
 				factor = 5

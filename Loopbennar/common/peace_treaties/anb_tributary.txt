@@ -39,7 +39,15 @@ po_anb_tributary = {
 	
 	is_visible = { # Defaults to equivalent of "always = yes"
 		OR = {
-			culture_group = gnollish
+			AND = {
+				culture_group = gnollish
+				NOT = {
+					AND = {
+						ai = yes
+						religion = kvangahga
+					}
+				}
+			}
 			culture_group = ogre
 			has_country_flag = can_use_tributary_cb_flag
 			has_government_attribute = can_use_tributary_cb
@@ -54,6 +62,26 @@ po_anb_tributary = {
 		create_subject = {
 			who = FROM
 			subject_type = tributary_state_anb
+		}
+		#For AI stability
+		hidden_effect = {
+			if = {
+				limit = { 
+					ai = yes 
+					FROM = { ai = yes }
+				}
+				FROM = {
+					add_liberty_desire = -50
+					add_opinion = { who = ROOT modifier = opinion_diplomatic_solution }
+				}
+				every_owned_province = {
+					limit = { 
+						is_core = FROM 
+						NOT = { is_core = ROOT }
+					}
+					add_core = ROOT
+				}
+			}
 		}
 	}
 	ai_weight = { # Defaults to always evaluate to 0

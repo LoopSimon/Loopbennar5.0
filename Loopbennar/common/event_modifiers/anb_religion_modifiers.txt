@@ -311,7 +311,7 @@ dookan_omen_of_wisdom_mil = {
 	church_power_modifier = -0.9
 }
 dookan_omen_of_destiny = {
-	land_morale = 0.1
+	land_morale = 0.2
 	yearly_army_professionalism = -0.01
 	church_power_modifier = -0.25
 }
@@ -327,7 +327,7 @@ dookan_no_omen = {
 	church_power_modifier = -0.9
 }
 dookans_guidance_war = {
-	land_morale = 0.1
+	land_morale = 0.15
 	army_tradition_from_battle = 1
 	shock_damage = 0.1
 	shock_damage_received = -0.1 
@@ -335,7 +335,7 @@ dookans_guidance_war = {
 }
 dookans_guidance_peace = {
 	stability_cost_to_declare_war = 2
-	development_cost = -0.1
+	development_cost = -0.2
 	global_tax_modifier = 0.15
 	global_trade_goods_size_modifier = 0.1
 }
@@ -387,6 +387,7 @@ salvage_shipwrecks = {
 }
 recycled_jewellery = {
 	prestige = 1
+	diplomatic_reputation = 1
 }
 trial_of_the_reforged_chain = {
 	global_unrest = -2
@@ -1560,7 +1561,7 @@ nsc_fifth_calamity_modifier = {
 
 nsc_small_damestear_deposit = {
 	trade_value = 3
-	picture = "damestar_deposit"
+	picture = "damestear_deposit"
 }
 
 nsc_god_king_wish = {
@@ -2519,7 +2520,7 @@ shadow_pact_silat_mod = {
 }
 
 shadow_pact_tree_mod = {
-	attrition = 0.2
+	land_attrition = 0.2
 }
 
 shadow_pact_flayed_man_mod = {
@@ -2638,3 +2639,6 @@ bleed_haless_dry_mod = {
 dvp_temple_devcost = {
 	local_development_cost = -0.1
 }
+origin_of_the_devouring_path = {
+	reverse_relation_with_same_religion = 50
+	}

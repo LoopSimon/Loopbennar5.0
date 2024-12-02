@@ -197,6 +197,52 @@ guiTypes = {
             quadTextureSprite = "GFX_taychendi_vainglory_bg" 
             scripted = yes
         }
+		
+		#Khugra Gov Mechanic
+        iconType = {
+            name = "khugra_araizary_affinity_bg"
+            position = { x= 39 y = 243 }
+            quadTextureSprite = "GFX_khugra_araizary_affinity_bg" 
+            scripted = yes
+        }
+
+		#Corinsfield Gov Mechanic
+		
+        iconType = {
+            name = "corinsfield_paranoia_bg"
+            position = { x= 8 y = 218 }
+            quadTextureSprite = "GFX_corinsfield_paranoia_bg" 
+            scripted = yes
+        }
+		
+        iconType = {
+            name = "corinsfield_paranoia_chicken_1"
+            position = { x= 138 y = 218 }
+            quadTextureSprite = "GFX_corinsfield_paranoia_chicken_1" 
+            scripted = yes
+        }
+		
+        iconType = {
+            name = "corinsfield_paranoia_chicken_2"
+            position = { x= 113 y = 218 }
+            quadTextureSprite = "GFX_corinsfield_paranoia_chicken_2" 
+            scripted = yes
+        }
+		
+        iconType = {
+            name = "corinsfield_paranoia_chicken_3"
+            position = { x= 108 y = 218 }
+            quadTextureSprite = "GFX_corinsfield_paranoia_chicken_3" 
+            scripted = yes
+        }
+		
+		#Wyvernheart Gov Mechanic
+        iconType = {
+            name = "floodborn_council_bg"
+            position = { x= 29 y = 239 }
+            quadTextureSprite = "GFX_floodborn_council_bg" 
+            scripted = yes
+        }
 
 		### ------- Government -------
 
@@ -1068,6 +1114,30 @@ guiTypes = {
 			name = "taychendi_vainglory_taychend_in_bloom"
 			position = { x= 271 y = 306 }
 			quadTextureSprite = "GFX_taychendi_vainglory_taychend_in_bloom" 
+			scripted = yes
+			clicksound = back_click
+		}
+		
+		guiButtonType = {
+			name = "corinsfield_paranoia_be_good_to_your_neighbour"
+			position = { x= 55 y = 290 }
+			quadTextureSprite = "GFX_corinsfield_paranoia_be_good_to_your_neighbour" 
+			scripted = yes
+			clicksound = back_click
+		}
+		
+		guiButtonType = {
+			name = "corinsfield_paranoia_trust_no_one"
+			position = { x= 147 y = 290 }
+			quadTextureSprite = "GFX_corinsfield_paranoia_trust_no_one" 
+			scripted = yes
+			clicksound = back_click
+		}
+		
+		guiButtonType = {
+			name = "corinsfield_paranoia_witch_hunt"
+			position = { x= 239 y = 290 }
+			quadTextureSprite = "GFX_corinsfield_paranoia_witch_hunt" 
 			scripted = yes
 			clicksound = back_click
 		}

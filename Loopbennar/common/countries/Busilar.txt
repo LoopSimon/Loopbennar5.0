@@ -39,10 +39,14 @@ historical_units = {
 
 monarch_names = {
 
-	"Evin #3" = 10
-	"Marion #0" = 100
-	"Marcan #0" = 100
-	"Ardan #2" = 100
+	"Marcante #0" = 80
+    "Ardano #2" = 100
+    "Valente #3" = 100
+    "Anzaro #1" = 100
+    "Ostán #2" = 100
+    "Laurente #0" = 80
+    "Çalis #0" = 80
+    "Brando #1" = 1
 
 	"Adelmar" = 10
 	"Adriá" = 10
@@ -142,6 +146,8 @@ monarch_names = {
 	"Émil" = 10
 	"Ñal" = 10
 	
+	"Nara #1" = -100
+
 	"Adriana" = -10
 	"Alara" = -10
 	"Aldelina" = -10
@@ -196,7 +202,6 @@ monarch_names = {
 	"Marina" = -10
 	"María" = -10
 	"Mica" = -10
-	"Nara" = -10
 	"Nehanda" = -10
 	"Niria" = -10
 	"Omina" = -10

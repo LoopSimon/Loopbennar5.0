@@ -989,7 +989,7 @@ sunijalla_missions_slot_3 = {
 				country_or_non_sovereign_subject_holds = ROOT
 				base_production = 5
 			}
-			5257 = {
+			5256 = {
 				has_great_project = {
 					type = grand_archives
 					tier = 1
@@ -998,7 +998,7 @@ sunijalla_missions_slot_3 = {
 		}
 		
 		effect = {
-			set_capital = 5257
+			set_capital = 5256
 			country_event = { id = flavour_splinter.101 }
 		}
 	}
@@ -1599,7 +1599,7 @@ sunijalla_missions_slot_MT_3 = {
 		position = 13
 		
 		trigger = {
-			north_haless_superregion = {
+			gozengun_superregion = {
 				type = all
 				OR = {
 					country_or_non_sovereign_subject_holds = ROOT

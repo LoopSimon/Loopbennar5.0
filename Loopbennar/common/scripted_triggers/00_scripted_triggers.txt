@@ -577,6 +577,7 @@ was_never_end_game_tag_trigger = {	#Country Scope
 			NOT = { was_tag = A79 }	#Gnomish Hierarchy
 			NOT = { was_tag = B32 }	#Castanor
 			NOT = { was_tag = F38 }	#Phoenix Empire
+			NOT = { was_tag = F97 }	#Phoenix Empire
 			NOT = { was_tag = Z34 }	#Black Castanor
 			NOT = { was_tag = Z38 }	#Kobildzan
 			NOT = { was_tag = Z99 }	#Black Demense
@@ -590,6 +591,7 @@ was_never_end_game_tag_trigger = {	#Country Scope
 			NOT = { tag = A79 }	#Gnomish Hierarchy
 			NOT = { tag = B32 }	#Castanor
 			NOT = { tag = F38 }	#Phoenix Empire
+			NOT = { tag = F97 }	#Phoenix Empire
 			NOT = { tag = Z34 }	#Black Castanor
 			NOT = { tag = Z38 }	#Kobildzan
 			NOT = { tag = Z99 }	#Black Demense
@@ -2668,12 +2670,44 @@ is_not_free_merc_company = {
 		NOT = { mercenary_company = merc_daughters_of_akasik_elite }
 		NOT = { mercenary_company = merc_larankarha_household_cavalry }
 		NOT = { mercenary_company = merc_wolfguard }
+		NOT = { mercenary_company = merc_wyvernheart_burnblood_company_1 }
+		NOT = { mercenary_company = merc_wyvernheart_burnblood_company_2_1 }
+		NOT = { mercenary_company = merc_wyvernheart_burnblood_company_2_2 }
+		NOT = { mercenary_company = merc_wyvernheart_burnblood_company_3_1 }
+		NOT = { mercenary_company = merc_wyvernheart_burnblood_company_3_2 }
+		NOT = { mercenary_company = merc_wyvernheart_burnblood_company_4_1 }
+		NOT = { mercenary_company = merc_wyvernheart_burnblood_company_4_2 }
+		NOT = { mercenary_company = merc_wyvernheart_burnblood_company_4_3 }
+		NOT = { mercenary_company = merc_wyvernheart_burnblood_company_5_1 }
+		NOT = { mercenary_company = merc_wyvernheart_burnblood_company_5_2 }
+		NOT = { mercenary_company = merc_wyvernheart_burnblood_company_5_3 }
+		NOT = { mercenary_company = merc_wyvernheart_burnblood_company_6_1 }
+		NOT = { mercenary_company = merc_wyvernheart_burnblood_company_6_2 }
+		NOT = { mercenary_company = merc_wyvernheart_burnblood_company_6_3 }
+		NOT = { mercenary_company = merc_wyvernheart_burnblood_company_6_4 }
+		NOT = { mercenary_company = merc_stone_army_tier_2 }
+		NOT = { mercenary_company = merc_rock_raiders }
+		NOT = { mercenary_company = merc_rock_raiders_tier_2 }
+		NOT = { mercenary_company = merc_chrome_claws }
+		NOT = { mercenary_company = merc_chrome_claws_tier_2 }
+		NOT = { mercenary_company = merc_dacite_dragons }
+		NOT = { mercenary_company = merc_dacite_dragons_tier_2 }
+		NOT = { mercenary_company = merc_whetstones }
+		NOT = { mercenary_company = merc_whetstones_tier_2 }
+		NOT = { mercenary_company = merc_marble_mounts }
+		NOT = { mercenary_company = merc_marble_mounts_tier_2 }
+		NOT = { mercenary_company = merc_flying_pebbles }
+		NOT = { mercenary_company = merc_flying_pebbles_tier_2 }
+		NOT = { mercenary_company = merc_the_orcish_company }
+		NOT = { mercenary_company = merc_shadowbound_ashama }
+		NOT = { mercenary_company = merc_ameion_kattyam_auxiliary }
 	}
 }
 
 has_free_mercs_trait = {
 	OR = {
 		# has_country_modifier = dan_sca_merc_contract
+		has_idea = seasoned_veterans
 		mission_completed = reign_in_the_knight_errants 
 		has_government_attribute = mercs_do_not_cost_army_professionalism
 		# has_country_flag = fra_free_mercs_bargain_sale_flag
@@ -5017,6 +5051,7 @@ eligble_for_harpy_harem_events = {
 		has_reform = harpy_matriarchy_ayarallen_early_gov_mechanic_reform
 		has_reform = siadan_harpy_empire
 		has_reform = harpy_queendom_reform
+		has_reform = naleni_thalassocracy_reform
 	}
 }
 
@@ -5221,7 +5256,7 @@ is_in_mesoamerica_trigger = {
 	}
 }
 
-num_of_battles = {
+num_of_battles = {			#anbennar: to use it you need to set_country_flag = count_battles_won
 	custom_trigger_tooltip = {
 		tooltip = has_won_at_least_$amount$_battles #in case of adding a new number, localize
 		check_variable = {
@@ -5231,7 +5266,7 @@ num_of_battles = {
 	}
 }
 
-num_of_wars = {
+num_of_wars = {		#anbennar: to use it you need to set_country_flag = count_wars_won
 	custom_trigger_tooltip = {
 		tooltip = has_won_at_least_$amount$_wars #in case of adding a new number, localize
 		check_variable = {
@@ -5448,8 +5483,10 @@ kobold_traps_individual_trigger = {
 		NOT = { 
 			OR = {
 				has_province_modifier = kobold_traps_lvl_4 
+				has_province_modifier = modified_kobold_traps_lvl_4
 				has_province_modifier = kobold_traps_recent_investment
 			}
 		}
+		has_siege = no
 	}
 }

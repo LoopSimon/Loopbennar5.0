@@ -5576,6 +5576,7 @@ war_for_kheterata = {
 	war_name = WAR_FOR_KHETERATA_WAR_NAME	
 }
 
+
 take_capital_eternal_blossom = {
 	type = take_capital
 	
@@ -5629,7 +5630,7 @@ take_province_rending = {
 		allowed_provinces = {
 			OR = {
 				superregion = rahen_superregion
-				superregion = south_haless_superregion
+				superregion = vimdatrong_superregion
 				superregion = yanshen_superregion
 				region = jade_mines_region
 			}
@@ -5828,4 +5829,46 @@ claim_oblations = {
 	}	
 
 	war_name = CLAIM_OBLATIONS_WAR_NAME
+}
+war_for_the_singing_jungle_wg = {
+	type = superiority
+	
+	attacker = {
+		badboy_factor = 0
+		prestige_factor = 0
+		peace_cost_factor = 0.35
+		
+		allowed_provinces = {
+			always = no
+		}
+		
+		peace_options = {
+			po_defeat_the_effelai
+		}
+
+		allowed_provinces_are_eligible = yes
+		deny_annex = yes
+
+		prov_desc = ALL_PROVS
+	}
+	
+	defender = {
+		badboy_factor = 0
+		prestige_factor = 0
+		peace_cost_factor = 0.2
+		
+		allowed_provinces = {
+			always = no
+		}
+		peace_options = {
+			po_defeat_the_effelai
+		}
+
+		allowed_provinces_are_eligible = yes
+		deny_annex = yes
+		
+		prov_desc = ALL_PROVS
+	}	
+	
+	war_name = SINGING_JUNGLE_WAR_NAME	
 }

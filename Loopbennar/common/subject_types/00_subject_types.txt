@@ -72,6 +72,8 @@ nekhei = {}
 loyal_crathanor_subject = {}
 loyal_trade_protectorate = {}
 sanghariyar_trade_state = {}
+dao = {}
+maghargma_special_subject = {}
 
 default = {
 	# Graphics:
@@ -292,16 +294,6 @@ vassal = {
 			}
 		}
 	}
-
-	#Anbennar
-	modifier_overlord = {
-		modifier = kobold_dragon_cult_subjects_modifier
-		trigger = {
-			overlord = {
-				has_church_aspect = gold_dragon_1
-			}
-		}
-	}
 	#Anbennar
 	modifier_overlord = {
 		modifier = Y63_brainwashed
@@ -389,14 +381,23 @@ vassal = {
 		}
 	}
 	modifier_overlord = {
-		modifier = I90_horse_free
 		trigger = {
-			overlord = { tag = I90 }
-			OR = {
-				has_country_modifier = I90_favored_horse
-				has_country_modifier = I90_sponsored_invasion
-			}
+			overlord = { has_government_attribute = draft_sailors_from_subjects }
 		}
+		modifier = L62_sailors_from_subjects
+	}
+	modifier_subject = {
+		trigger = {
+			culture_group = mengi
+			overlord = { has_country_flag = L62_mengi_slaverlords }
+		}
+		modifier = L62_mengi_slaverlord
+	}
+	modifier_subject = {
+		trigger = {
+			overlord = { has_country_modifier = L62_age_of_sarhaly_tiger }
+		}
+		modifier = L62_age_of_sarhaly_tiger_subject
 	}
 
 	overlord_opinion_modifier = is_vassal
@@ -480,15 +481,6 @@ march = {
 			}
 		}
 	}
-	#Anbennar
-	modifier_overlord = {
-		modifier = kobold_dragon_cult_subjects_modifier
-		trigger = {
-			overlord = {
-				has_church_aspect = gold_dragon_1
-			}
-		}
-	}
 	modifier_overlord = {
 		modifier = skewered_drake_troll_upkeep
 		trigger = {
@@ -559,6 +551,13 @@ march = {
 			overlord = {
 				has_government_attribute = dominance_hierarchies_vassal_government_reform
 			}
+		}
+	}
+	modifier_overlord = {
+		modifier = J84_vainglory_march_bonus
+		trigger = {
+			overlord = { has_government_mechanic = taychend_vainglory_mechanic }
+			total_development = 100
 		}
 	}
 }
@@ -1077,6 +1076,12 @@ colony = {
 			overlord = { has_government_attribute = extra_trade_goods_for_colonial_subjects }
 		}
 	}
+	modifier_subject = {
+		modifier = new_world_exploitation_modifier_thought
+		trigger = {
+			overlord = { has_government_attribute = extra_trade_goods_for_colonial_subjects_thought }
+		}
+	}
 	# modifier_subject = {
 	# 	modifier = gbr_colonial_investment
 	# 	trigger = {
@@ -1336,6 +1341,7 @@ tributary_state_anb = {
 			has_country_flag = can_create_tributaries_flag
 			has_government_attribute = can_use_tributary_cb
 			#has_country_flag = can_create_tributaries_flag_estate
+			has_country_flag = G52_mteibhar_tributary
 			is_nomad = yes
 			culture_group = gnollish
 			culture_group = ogre
@@ -3141,6 +3147,18 @@ ynnic_iosahar = {
 	modifier_subject = {
 		modifier = ynnic_iosahar_subject_1
 		trigger = {
+			FROM = { ynnic_iosahar = 1 }
+			NOT = { FROM = { ynnic_iosahar = 2 } }
+			NOT = {
+				AND = {
+					FROM = {
+						tag = U71
+						has_country_modifier = yrw_2b	#Custom trigger created an error
+					}
+					primary_culture = rzentur
+					capital_scope = { OR = { region = rzenta_region area = pomvasonn_area } }
+				}
+			}
 			NOT = {
 				AND = {
 					FROM = {
@@ -3161,14 +3179,24 @@ ynnic_iosahar = {
 					capital_scope = { region = sarda_region }
 				}
 			}
-			FROM = { ynnic_iosahar = 1 }
-			NOT = { FROM = { ynnic_iosahar = 2 } }
 		}
 	}
 
 	modifier_subject = {
 		modifier = ynnic_iosahar_subject_2
 		trigger = {
+			FROM = { ynnic_iosahar = 2 }
+			NOT = { FROM = { ynnic_iosahar = 3 } }
+			NOT = {
+				AND = {
+					FROM = {
+						tag = U71
+						has_country_modifier = yrw_2b	#Custom trigger created an error
+					}
+					primary_culture = rzentur
+					capital_scope = { OR = { region = rzenta_region area = pomvasonn_area } }
+				}
+			}
 			NOT = {
 				AND = {
 					FROM = {
@@ -3189,14 +3217,24 @@ ynnic_iosahar = {
 					capital_scope = { region = sarda_region }
 				}
 			}
-			FROM = { ynnic_iosahar = 2 }
-			NOT = { FROM = { ynnic_iosahar = 3 } }
 		}
 	}
 
 	modifier_subject = {
 		modifier = ynnic_iosahar_subject_3
 		trigger = {
+			FROM = { ynnic_iosahar = 3 }
+			NOT = { FROM = { ynnic_iosahar = 4 } }
+			NOT = {
+				AND = {
+					FROM = {
+						tag = U71
+						has_country_modifier = yrw_2b	#Custom trigger created an error
+					}
+					primary_culture = rzentur
+					capital_scope = { OR = { region = rzenta_region area = pomvasonn_area } }
+				}
+			}
 			NOT = {
 				AND = {
 					FROM = {
@@ -3217,14 +3255,24 @@ ynnic_iosahar = {
 					capital_scope = { region = sarda_region }
 				}
 			}
-			FROM = { ynnic_iosahar = 3 }
-			NOT = { FROM = { ynnic_iosahar = 4 } }
 		}
 	}
 
 	modifier_subject = {
 		modifier = ynnic_iosahar_subject_4
 		trigger = {
+			FROM = { ynnic_iosahar = 4 }
+			NOT = { FROM = { ynnic_iosahar = 5 } }
+			NOT = {
+				AND = {
+					FROM = {
+						tag = U71
+						has_country_modifier = yrw_2b	#Custom trigger created an error
+					}
+					primary_culture = rzentur
+					capital_scope = { OR = { region = rzenta_region area = pomvasonn_area } }
+				}
+			}
 			NOT = {
 				AND = {
 					FROM = {
@@ -3245,14 +3293,24 @@ ynnic_iosahar = {
 					capital_scope = { region = sarda_region }
 				}
 			}
-			FROM = { ynnic_iosahar = 4 }
-			NOT = { FROM = { ynnic_iosahar = 5 } }
 		}
 	}
 
 	modifier_subject = {
 		modifier = ynnic_iosahar_subject_5
 		trigger = {
+			FROM = { ynnic_iosahar = 5 }
+			NOT = { FROM = { ynnic_iosahar = 6 } }
+			NOT = {
+				AND = {
+					FROM = {
+						tag = U71
+						has_country_modifier = yrw_2b	#Custom trigger created an error
+					}
+					primary_culture = rzentur
+					capital_scope = { OR = { region = rzenta_region area = pomvasonn_area } }
+				}
+			}
 			NOT = {
 				AND = {
 					FROM = {
@@ -3273,14 +3331,24 @@ ynnic_iosahar = {
 					capital_scope = { region = sarda_region }
 				}
 			}
-			FROM = { ynnic_iosahar = 5 }
-			NOT = { FROM = { ynnic_iosahar = 6 } }
 		}
 	}
 
 	modifier_subject = {
 		modifier = ynnic_iosahar_subject_6
 		trigger = {
+			FROM = { ynnic_iosahar = 6 }
+			NOT = { FROM = { ynnic_iosahar = 7 } }
+			NOT = {
+				AND = {
+					FROM = {
+						tag = U71
+						has_country_modifier = yrw_2b	#Custom trigger created an error
+					}
+					primary_culture = rzentur
+					capital_scope = { OR = { region = rzenta_region area = pomvasonn_area } }
+				}
+			}
 			NOT = {
 				AND = {
 					FROM = {
@@ -3301,14 +3369,24 @@ ynnic_iosahar = {
 					capital_scope = { region = sarda_region }
 				}
 			}
-			FROM = { ynnic_iosahar = 6 }
-			NOT = { FROM = { ynnic_iosahar = 7 } }
 		}
 	}
 
 	modifier_subject = {
 		modifier = ynnic_iosahar_subject_7
 		trigger = {
+			FROM = { ynnic_iosahar = 7 }
+			NOT = { FROM = { ynnic_iosahar = 8 } }
+			NOT = {
+				AND = {
+					FROM = {
+						tag = U71
+						has_country_modifier = yrw_2b	#Custom trigger created an error
+					}
+					primary_culture = rzentur
+					capital_scope = { OR = { region = rzenta_region area = pomvasonn_area } }
+				}
+			}
 			NOT = {
 				AND = {
 					FROM = {
@@ -3329,14 +3407,24 @@ ynnic_iosahar = {
 					capital_scope = { region = sarda_region }
 				}
 			}
-			FROM = { ynnic_iosahar = 7 }
-			NOT = { FROM = { ynnic_iosahar = 8 } }
 		}
 	}
 
 	modifier_subject = {
 		modifier = ynnic_iosahar_subject_8
 		trigger = {
+			FROM = { ynnic_iosahar = 8 }
+			NOT = { FROM = { ynnic_iosahar = 9 } }
+			NOT = {
+				AND = {
+					FROM = {
+						tag = U71
+						has_country_modifier = yrw_2b	#Custom trigger created an error
+					}
+					primary_culture = rzentur
+					capital_scope = { OR = { region = rzenta_region area = pomvasonn_area } }
+				}
+			}
 			NOT = {
 				AND = {
 					FROM = {
@@ -3357,14 +3445,24 @@ ynnic_iosahar = {
 					capital_scope = { region = sarda_region }
 				}
 			}
-			FROM = { ynnic_iosahar = 8 }
-			NOT = { FROM = { ynnic_iosahar = 9 } }
 		}
 	}
 
 	modifier_subject = {
 		modifier = ynnic_iosahar_subject_9
 		trigger = {
+			FROM = { ynnic_iosahar = 9 }
+			NOT = { FROM = { ynnic_iosahar = 10 } }
+			NOT = {
+				AND = {
+					FROM = {
+						tag = U71
+						has_country_modifier = yrw_2b	#Custom trigger created an error
+					}
+					primary_culture = rzentur
+					capital_scope = { OR = { region = rzenta_region area = pomvasonn_area } }
+				}
+			}
 			NOT = {
 				AND = {
 					FROM = {
@@ -3385,14 +3483,24 @@ ynnic_iosahar = {
 					capital_scope = { region = sarda_region }
 				}
 			}
-			FROM = { ynnic_iosahar = 9 }
-			NOT = { FROM = { ynnic_iosahar = 10 } }
 		}
 	}
 
 	modifier_subject = {
 		modifier = ynnic_iosahar_subject_10
 		trigger = {
+			FROM = { ynnic_iosahar = 10 }
+			NOT = { FROM = { ynnic_iosahar = 11 } }
+			NOT = {
+				AND = {
+					FROM = {
+						tag = U71
+						has_country_modifier = yrw_2b	#Custom trigger created an error
+					}
+					primary_culture = rzentur
+					capital_scope = { OR = { region = rzenta_region area = pomvasonn_area } }
+				}
+			}
 			NOT = {
 				AND = {
 					FROM = {
@@ -3413,14 +3521,24 @@ ynnic_iosahar = {
 					capital_scope = { region = sarda_region }
 				}
 			}
-			FROM = { ynnic_iosahar = 10 }
-			NOT = { FROM = { ynnic_iosahar = 11 } }
 		}
 	}
 
 	modifier_subject = {
 		modifier = ynnic_iosahar_subject_11
 		trigger = {
+			FROM = { ynnic_iosahar = 11 }
+			NOT = { FROM = { ynnic_iosahar = 12 } }
+			NOT = {
+				AND = {
+					FROM = {
+						tag = U71
+						has_country_modifier = yrw_2b	#Custom trigger created an error
+					}
+					primary_culture = rzentur
+					capital_scope = { OR = { region = rzenta_region area = pomvasonn_area } }
+				}
+			}
 			NOT = {
 				AND = {
 					FROM = {
@@ -3441,14 +3559,24 @@ ynnic_iosahar = {
 					capital_scope = { region = sarda_region }
 				}
 			}
-			FROM = { ynnic_iosahar = 11 }
-			NOT = { FROM = { ynnic_iosahar = 12 } }
 		}
 	}
 
 	modifier_subject = {
 		modifier = ynnic_iosahar_subject_12
 		trigger = {
+			FROM = { ynnic_iosahar = 12 }
+			NOT = { FROM = { ynnic_iosahar = 13 } }
+			NOT = {
+				AND = {
+					FROM = {
+						tag = U71
+						has_country_modifier = yrw_2b	#Custom trigger created an error
+					}
+					primary_culture = rzentur
+					capital_scope = { OR = { region = rzenta_region area = pomvasonn_area } }
+				}
+			}
 			NOT = {
 				AND = {
 					FROM = {
@@ -3469,14 +3597,24 @@ ynnic_iosahar = {
 					capital_scope = { region = sarda_region }
 				}
 			}
-			FROM = { ynnic_iosahar = 12 }
-			NOT = { FROM = { ynnic_iosahar = 13 } }
 		}
 	}
 
 	modifier_subject = {
 		modifier = ynnic_iosahar_subject_13
 		trigger = {
+			FROM = { ynnic_iosahar = 13 }
+			NOT = { FROM = { ynnic_iosahar = 14 } }
+			NOT = {
+				AND = {
+					FROM = {
+						tag = U71
+						has_country_modifier = yrw_2b	#Custom trigger created an error
+					}
+					primary_culture = rzentur
+					capital_scope = { OR = { region = rzenta_region area = pomvasonn_area } }
+				}
+			}
 			NOT = {
 				AND = {
 					FROM = {
@@ -3497,14 +3635,24 @@ ynnic_iosahar = {
 					capital_scope = { region = sarda_region }
 				}
 			}
-			FROM = { ynnic_iosahar = 13 }
-			NOT = { FROM = { ynnic_iosahar = 14 } }
 		}
 	}
 
 	modifier_subject = {
 		modifier = ynnic_iosahar_subject_14
 		trigger = {
+			FROM = { ynnic_iosahar = 14 }
+			NOT = { FROM = { ynnic_iosahar = 15 } }
+			NOT = {
+				AND = {
+					FROM = {
+						tag = U71
+						has_country_modifier = yrw_2b	#Custom trigger created an error
+					}
+					primary_culture = rzentur
+					capital_scope = { OR = { region = rzenta_region area = pomvasonn_area } }
+				}
+			}
 			NOT = {
 				AND = {
 					FROM = {
@@ -3525,14 +3673,24 @@ ynnic_iosahar = {
 					capital_scope = { region = sarda_region }
 				}
 			}
-			FROM = { ynnic_iosahar = 14 }
-			NOT = { FROM = { ynnic_iosahar = 15 } }
 		}
 	}
 
 	modifier_subject = {
 		modifier = ynnic_iosahar_subject_15
 		trigger = {
+			FROM = { ynnic_iosahar = 15 }
+			NOT = { FROM = { ynnic_iosahar = 16 } }
+			NOT = {
+				AND = {
+					FROM = {
+						tag = U71
+						has_country_modifier = yrw_2b	#Custom trigger created an error
+					}
+					primary_culture = rzentur
+					capital_scope = { OR = { region = rzenta_region area = pomvasonn_area } }
+				}
+			}
 			NOT = {
 				AND = {
 					FROM = {
@@ -3553,14 +3711,24 @@ ynnic_iosahar = {
 					capital_scope = { region = sarda_region }
 				}
 			}
-			FROM = { ynnic_iosahar = 15 }
-			NOT = { FROM = { ynnic_iosahar = 16 } }
 		}
 	}
 
 	modifier_subject = {
 		modifier = ynnic_iosahar_subject_16
 		trigger = {
+			FROM = { ynnic_iosahar = 16 }
+			NOT = { FROM = { ynnic_iosahar = 17 } }
+			NOT = {
+				AND = {
+					FROM = {
+						tag = U71
+						has_country_modifier = yrw_2b	#Custom trigger created an error
+					}
+					primary_culture = rzentur
+					capital_scope = { OR = { region = rzenta_region area = pomvasonn_area } }
+				}
+			}
 			NOT = {
 				AND = {
 					FROM = {
@@ -3581,14 +3749,24 @@ ynnic_iosahar = {
 					capital_scope = { region = sarda_region }
 				}
 			}
-			FROM = { ynnic_iosahar = 16 }
-			NOT = { FROM = { ynnic_iosahar = 17 } }
 		}
 	}
 
 	modifier_subject = {
 		modifier = ynnic_iosahar_subject_17
 		trigger = {
+			FROM = { ynnic_iosahar = 17 }
+			NOT = { FROM = { ynnic_iosahar = 18 } }
+			NOT = {
+				AND = {
+					FROM = {
+						tag = U71
+						has_country_modifier = yrw_2b	#Custom trigger created an error
+					}
+					primary_culture = rzentur
+					capital_scope = { OR = { region = rzenta_region area = pomvasonn_area } }
+				}
+			}
 			NOT = {
 				AND = {
 					FROM = {
@@ -3609,14 +3787,24 @@ ynnic_iosahar = {
 					capital_scope = { region = sarda_region }
 				}
 			}
-			FROM = { ynnic_iosahar = 17 }
-			NOT = { FROM = { ynnic_iosahar = 18 } }
 		}
 	}
 
 	modifier_subject = {
 		modifier = ynnic_iosahar_subject_18
 		trigger = {
+			FROM = { ynnic_iosahar = 18 }
+			NOT = { FROM = { ynnic_iosahar = 19 } }
+			NOT = {
+				AND = {
+					FROM = {
+						tag = U71
+						has_country_modifier = yrw_2b	#Custom trigger created an error
+					}
+					primary_culture = rzentur
+					capital_scope = { OR = { region = rzenta_region area = pomvasonn_area } }
+				}
+			}
 			NOT = {
 				AND = {
 					FROM = {
@@ -3637,14 +3825,24 @@ ynnic_iosahar = {
 					capital_scope = { region = sarda_region }
 				}
 			}
-			FROM = { ynnic_iosahar = 18 }
-			NOT = { FROM = { ynnic_iosahar = 19 } }
 		}
 	}
 
 	modifier_subject = {
 		modifier = ynnic_iosahar_subject_19
 		trigger = {
+			FROM = { ynnic_iosahar = 19 }
+			NOT = { FROM = { ynnic_iosahar = 20 } }
+			NOT = {
+				AND = {
+					FROM = {
+						tag = U71
+						has_country_modifier = yrw_2b	#Custom trigger created an error
+					}
+					primary_culture = rzentur
+					capital_scope = { OR = { region = rzenta_region area = pomvasonn_area } }
+				}
+			}
 			NOT = {
 				AND = {
 					FROM = {
@@ -3665,14 +3863,23 @@ ynnic_iosahar = {
 					capital_scope = { region = sarda_region }
 				}
 			}
-			FROM = { ynnic_iosahar = 19 }
-			NOT = { FROM = { ynnic_iosahar = 20 } }
 		}
 	}
 
 	modifier_subject = {
 		modifier = ynnic_iosahar_subject_20
 		trigger = {
+			FROM = { ynnic_iosahar = 20 }
+			NOT = {
+				AND = {
+					FROM = {
+						tag = U71
+						has_country_modifier = yrw_2b	#Custom trigger created an error
+					}
+					primary_culture = rzentur
+					capital_scope = { OR = { region = rzenta_region area = pomvasonn_area } }
+				}
+			}
 			NOT = {
 				AND = {
 					FROM = {
@@ -3693,7 +3900,6 @@ ynnic_iosahar = {
 					capital_scope = { region = sarda_region }
 				}
 			}
-			FROM = { ynnic_iosahar = 20 }
 		}
 	}
 
@@ -3843,8 +4049,8 @@ seghdihr_syndicate = {
 	# Properties:
 	can_fight_independence_war = no
 	transfer_trade_power = yes
-	can_be_integrated = yes
-	can_be_annexed = yes
+	can_be_integrated = no
+	can_be_annexed = no
 	can_release_in_peace = no
 	can_transfer_in_peace = no
 	overlord_can_fabricate_for = no
@@ -3887,7 +4093,41 @@ twin_empire = {
 	divert_trade = yes
 	takes_diplo_slot = no
 
+	modifier_overlord = {
+		trigger = {
+			overlord = {
+				mission_completed = Z38_a_pledge 
+				NOT = { mission_completed = Z38_supply_the_crusade }
+			} 
+		}
+		modifier = Z38_gospodh_1
+	}
+
+	modifier_overlord = {
+		trigger = {
+			overlord = {
+				mission_completed = Z38_supply_the_crusade
+				NOT = { mission_completed = Z38_aelantir_as_one }
+			} 
+		}
+		modifier = Z38_gospodh_2
+	}
+
+	modifier_overlord = {
+		trigger = {
+			overlord = { mission_completed = Z38_aelantir_as_one } 
+		}
+		modifier = Z38_gospodh_3
+	}
+
+	modifier_subject = {
+		trigger = { overlord = { mission_completed = Z38_a_pledge } }
+		modifier = Z38_kobolds_dominion
+	}
+
 	relative_power_class = 0.5
+
+
 
 	can_be_integrated = no
 }
@@ -4589,4 +4829,65 @@ sanghariyar_trade_state = {
 		expiration_message_overlord = MARCHTOOLARGE
 		expiration_message_subject = MARCHTOOLARGEUS
 	}
+}
+
+dao = { #Gushuokguan vassals
+    copy_from = vassal
+    
+    # Triggers:
+    is_potential_overlord = {
+		OR = {
+			tag = Y17 #Gushuokguan
+			was_tag = Y17 #Gushuokguan
+		}
+    }
+    
+    # Graphics:
+    sprite = GFX_icon_vassal
+    diplomacy_overlord_sprite = GFX_diplomacy_leadvassal
+    diplomacy_subject_sprite = GFX_diplomacy_amvassal
+    
+    # Properties:
+	can_be_annexed = no
+    military_focus = 4
+	trust_on_start = 0
+    relative_power_class = 1
+    
+    # Subject Interactions:
+	
+    
+    # Modifiers:
+    modifier_overlord = clear #We don't want to duplicate the ones inherited from vassal
+    modifier_subject = clear #Ditto
+    
+    overlord_opinion_modifier = is_vassal
+    subject_opinion_modifier = is_vassal
+
+
+	modifier_overlord = {
+		trigger = { overlord = { has_country_flag = gushuokguan_dao_diplomatic_relations } }
+		modifier = gushuokguan_dao_diplomatic_relations_buff
+	}
+}
+
+maghargma_special_subject = {
+	copy_from = vassal
+
+	# Triggers:
+	is_potential_overlord = {
+		tag = I90
+	}
+	# Properties:
+	takes_diplo_slot = no
+	relative_power_class = 1
+
+	# Modifiers:
+    modifier_overlord = clear
+    modifier_subject = clear
+
+	overlord_opinion_modifier = is_vassal
+	subject_opinion_modifier = is_vassal
+
+	# Subject Interactions:
+	customize_subject = yes
 }

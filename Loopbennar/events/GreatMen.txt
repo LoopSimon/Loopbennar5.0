@@ -181,12 +181,7 @@ country_event = {
 		}
 		set_country_flag = army_reformer
 	}
-	option = {
-        Name = "not rn"
-        ai_chance = {
-            factor = 0
-        }
-    }
+
 	option = {
 		name = "EVTOPTB4023"	# His reputation will reach further than our borders
 		ai_chance = {
@@ -1030,12 +1025,6 @@ country_event = {
 		}		
 		set_country_flag = grand_captain
 	}
-	option = {
-        Name = "not rn"
-        ai_chance = {
-            factor = 0
-        }
-    }
 
 	option = {
 		name = "EVTOPTB4114"	# His reputation will reach further than our borders
@@ -1179,13 +1168,7 @@ country_event = {
 		}		
 		set_country_flag = commandant
 	}
-	option = {
-        Name = "not rn"
-        ai_chance = {
-            factor = 0
-        }
-    }
-	
+
 	option = {
 		name = "EVTOPTB4116"	# His reputation will reach further than our borders
 		ai_chance = {

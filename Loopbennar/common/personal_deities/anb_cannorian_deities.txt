@@ -553,7 +553,6 @@ esmaryal = {
 			religion = regent_court
 		}
 		NOT = { has_country_flag = lady_of_flows_esmaryal }
-
 	}
 	sprite = 8
 	
@@ -583,10 +582,11 @@ esmaryal = {
 		}
 		modifier = {
 			factor = 1.5
-			culture_group = halfling
+			is_cannorian_halfling_primary_culture = yes
 		}
 	}
 }
+
 esmaryal_upgraded_themarenn = {
 	diplomatic_annexation_cost = -0.25
 	advisor_cost = -0.2
@@ -626,7 +626,7 @@ esmaryal_upgraded_themarenn = {
 		}
 		modifier = {
 			factor = 1.5
-			culture_group = halfling
+			is_cannorian_halfling_primary_culture = yes
 		}
 		modifier = {
 			factor = 5
@@ -646,7 +646,6 @@ ryala = {
 		}
 		NOT = { has_country_flag = upgraded_ryala }
 		NOT = { has_country_flag = lady_of_flows_ryala }
-
 	}
 	sprite = 9
 	
@@ -739,7 +738,6 @@ ryala_upgraded_themarenn = {
 		}
 	}
 }
-
 
 minara = {
 	ae_impact = -0.05
@@ -981,7 +979,7 @@ begga = {
 		}
 		modifier = {
 			factor = 2
-			culture_group = halfling
+			is_cannorian_halfling_primary_culture = yes
 		}
 		modifier = {
 			factor = 5
@@ -1017,7 +1015,7 @@ begga_upgraded = {
 		}
 		modifier = {
 			factor = 2
-			culture_group = halfling
+			is_cannorian_halfling_primary_culture = yes
 		}
 		modifier = {
 			factor = 5

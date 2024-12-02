@@ -1594,6 +1594,10 @@ magocracy_reform = {
 			has_country_flag = magic_artificery_artificery_only
 		}
 		NOT = { tag = H74 }
+		OR = {
+			NOT = { has_estate_privilege = estate_mages_organization_rule_of_warlocks }
+			has_country_flag = rakkaz_can_be_magocracy
+		}
 	}
 
 	modifiers = {	#for better spellcasting
@@ -2149,6 +2153,63 @@ irkorzik_dunesworn_council_reform = {
 		move_capital_cost_modifier = -0.9
 	}
 }
+
+raithtall_twilight_court_reform = {
+	lock_level_when_selected = yes
+	allow_normal_conversion = yes
+	icon = "midnight_monarchy"
+	valid_for_nation_designer = no
+	legacy_equivalent = theocratic_government
+
+	potential = {
+		OR = {
+			has_reform = raithtall_twilight_court_reform
+			have_had_reform = raithtall_twilight_court_reform
+		}
+	}
+
+	trigger = {
+		OR = {
+			has_reform = raithtall_twilight_court_reform
+			have_had_reform = raithtall_twilight_court_reform
+		}
+	}
+
+	modifiers = {
+		vassal_forcelimit_bonus = 0.25
+		diplomatic_upkeep = 1
+	}
+	
+	custom_attributes = {
+		enables_aristocratic_idea_group = yes
+		locked_government_type = yes
+		can_change_primary_culture = no
+ 	}
+
+	effect = {
+		custom_tooltip = autumn_tolerance_locked_tt
+ 	}
+	queen = yes
+	royal_marriage = yes
+	
+	conditional = {
+		allow = { has_dlc = "Res Publica" }
+		heir = no
+		election_on_death = yes
+		states_general_mechanic = {
+			monarchists = {
+				nobles_influence_modifier = 0.1
+				global_autonomy = -0.05 
+			}
+
+			theocrats = {
+				church_influence_modifier = 0.1
+				church_power_modifier = 0.1
+			}
+		}
+	}
+}
+
 #Internal vs External Mission
 
 internal_mission_reform = {
@@ -3695,6 +3756,7 @@ monastic_elections_reform = {
 		NOT = { has_reform = papacy_reform }
 		NOT = { has_adventurer_reform = yes } # Anbennar
 		NOT = { ruler_can_revive = yes } # Anbennar
+		NOT = { has_reform = raithtall_twilight_court_reform }
 	}
 	
 	trigger = {
@@ -4822,6 +4884,7 @@ vf_krilavuna_magocracy = {
 	rulers_can_be_generals = yes
 	heirs_can_be_generals = yes
 	has_parliament = yes
+	lock_level_when_selected = yes
 
 	effect = {
 		artifice_magic_switch_to_magic_only_mode = yes
@@ -4988,9 +5051,6 @@ otaric_succession_reform = {
 		monarch_admin_power = 1
 		monarch_diplomatic_power = 1
 	}
-	effect = {
-		custom_tooltip = mb_otaric_bonus_tt
-	}
 }
 
 rights_razorblessed_reform = {
@@ -5010,5 +5070,37 @@ rights_razorblessed_reform = {
 	effect = {
 		custom_tooltip = mb_razorblessed_bonus_tt
 		set_country_flag = prevent_migration_leave
+	}
+}
+
+#Wyvernheart
+
+floodborn_council_reform_theocracy = {
+	icon = "man_on_podium"
+	allow_normal_conversion = no
+	lock_level_when_selected = yes 
+	block_cultural_union = yes
+	legacy_equivalent = despotic_monarchy
+	maintain_dynasty = yes
+	potential = {
+		has_country_flag = scions_completed
+	}
+	valid_for_nation_designer = yes
+	modifiers = {
+		governing_capacity_modifier = 0.15
+		monarch_military_power = 1
+	}
+	government_abilities = {
+		floodborn_council_mechanic
+	}
+	custom_attributes = {
+		always_mage = yes
+		disabled_expelling = yes
+		disabled_purging = yes
+		locked_government_type = yes
+		blocked_call_diet = yes
+	}
+	ai = {
+		factor = 0.75 #generic
 	}
 }

@@ -152,6 +152,7 @@ country_event = {
 				tag = B34 
 				ai = no
 			}
+			has_country_flag = J84_is_mihaela_flag
 		}
 		has_country_flag = hidden_ruler_vampire
 		OR = {
@@ -234,6 +235,33 @@ country_event = {
 		
 		hidden_effect = {
 			if = {
+				limit = { has_country_flag = J84_is_mihaela_flag }
+				define_heir = {
+					name = "Mihaela"
+					dynasty = "Veliara"
+					adm = 4
+					dip = 2
+					mil = 6
+					culture = roilsardi
+					female = yes
+					age = 17
+					hide_skills = yes
+					claim = 80
+				}
+				define_ruler = {
+					name = "Mihaela"
+					dynasty = "Veliara"
+					age = 17
+					adm = 4
+					dip = 2
+					mil = 6
+					culture = roilsardi
+					female = yes
+					hide_skills = yes
+					claim = 80
+				}
+			}
+			else_if = {
 				limit = { has_heir = no }
 				define_heir = {
 					dynasty = ROOT
@@ -1665,11 +1693,17 @@ country_event = {
 		change_dip = -1
 	}
 	
-	#Lucian
+	#Lucian & Mihaela
 	option = {
 		name = vampire_ruler.22.c
 		trigger = {
-			tag = B34
+			OR = {
+				tag = B34
+				custom_trigger_tooltip = {
+					tooltip = J84_mihaela_is_ruler_tt
+					has_country_flag = J84_is_mihaela_flag
+				}
+			}
 		}
 		highlight = yes
 		country_event = { id = vampire_ruler.23 days = 7 }

@@ -700,6 +700,7 @@ fertile_personality = {
 		allow = {
 			NOT = { ruler_has_personality = infertile_personality }
 			NOT = { ruler_age = 35 }
+			NOT = { has_ruler_flag = vf_fatecutter_flg }
 		}
 	
 		chance = {
@@ -3918,6 +3919,65 @@ peasant_revolt_leader_personality = {
 		}
 	}
 	immortal = 0
+}
+
+reaver_personality = {
+	ruler_allow = {
+		allow = {
+			MIL = 3
+		}
+	
+		chance = {
+			modifier = {
+				factor = 1
+				is_monarch_leader = yes
+			}
+			modifier = {
+				factor = 1
+				MIL = 6
+			}
+		}
+	}
+
+	heir_allow = {
+		allow = {
+			heir_MIL = 3
+		}
+	
+		chance = {
+			modifier = {
+				factor = 1
+				is_heir_leader = yes
+			}
+			modifier = {
+				factor = 1
+				heir_MIL = 6
+			}
+		}
+	}
+	
+	consort_allow = {
+		allow = {
+			consort_MIL = 3
+		}
+
+		chance = {
+			modifier = {
+				factor = 1
+				consort_MIL = 6
+			}
+		}
+	}
+	allow = {
+		has_country_flag = unlocked_reaver_personality_flag
+	}
+
+	available_province_loot = 0.15
+	raze_power_gain = 0.2
+	nation_designer_cost = 2
+	
+	gift_chance = -50
+	wants_land = yes
 }
 ## Anbennar
 

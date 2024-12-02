@@ -1,12 +1,15 @@
 namespace = flavour_themarenn
+
 country_event = { #autonomy of the sweetcastles
 	id = flavour_themarenn.1
 	title = flavour_themarenn.1.t
 	desc = flavour_themarenn.1.d
 	picture = GFX_ThirdRome
 	is_triggered_only = yes
+
 	option = {
 		name = flavour_themarenn.1.a
+
 		575 = {
 			set_province_flag = revoked2_a95
 			remove_province_modifier = autonomy_of_the_sweetcastles
@@ -15,6 +18,7 @@ country_event = { #autonomy of the sweetcastles
 		}
 		custom_tooltip = sweetcastle_revoke.tt
 	}
+
 	option = {
 		name = flavour_themarenn.1.b
 		set_country_flag = historic_friend_themaria
@@ -38,15 +42,18 @@ country_event = { #autonomy of the sweetcastles
 			}
 		}
 		custom_tooltip = friendship_with_sweetcastle.tt
-		set_country_flag = themaria_sweetcastle_friendship
+		575 = { set_province_flag = themaria_sweetcastle_friendship }
 	}
 }
+
 country_event = {
 	id = flavour_themarenn.99
 	title = flavour_themarenn.99.t
 	desc = flavour_themarenn.99.d
 	picture = beautiful_cave
+
 	fire_only_once = yes
+
 	trigger = {
 		OR = {
 			tag = A95
@@ -60,9 +67,11 @@ country_event = {
 			}
 		}
 	}
+
 	mean_time_to_happen = {
 		days = 1
 	}
+
 	option = {
 		name = flavour_themarenn.99.a
 		575 = {
@@ -74,13 +83,16 @@ country_event = {
 		}
 	}
 }
+
 country_event = { # Deliberation
 	id = flavour_themarenn.2
 	title = flavour_themarenn.2.t
 	desc = flavour_themarenn.2.d
 	picture = GFX_ArtofWar
 	is_triggered_only = yes
+
 	trigger = {}
+
 	option = {
 		name = flavour_themarenn.2.a
 		define_advisor = {
@@ -91,18 +103,22 @@ country_event = { # Deliberation
 		}
 	}
 }
+
 country_event = { #First Council of themarenn
 	id = flavour_themarenn.3
 	title = flavour_themarenn.3.t
 	desc = flavour_themarenn.3.d
 	picture = GFX_ThirdRome
 	is_triggered_only = yes
+
 	trigger = { }
+
 	option = {
 		name =  flavour_themarenn.3.a
 		trigger = { NOT = { tag = A95 } } # Is not Themerann
 		add_prestige = 5
 	}
+
 	option = {
 		name = flavour_themarenn.3.b
 		trigger = { OR = { tag = A95 was_tag = A95 } } # Is Themerann
@@ -111,6 +127,7 @@ country_event = { #First Council of themarenn
 		333 = { add_permanent_claim = ROOT }
 	}
 }
+
 country_event = { #Wayward Heir
 	id = flavour_themarenn.4
 	title = flavour_themarenn.4.t
@@ -118,9 +135,10 @@ country_event = { #Wayward Heir
 	picture = GFX_Leviathan
 	is_triggered_only = yes
 	fire_only_once = yes
+
 	option = { #Vassalize
 		name = flavour_themarenn.4.a
-		custom_tooltip = vassalize_gabmorionn_a95.tt
+
 		add_legitimacy = -10
 		A94 = {
 			define_heir = {
@@ -131,6 +149,7 @@ country_event = { #Wayward Heir
 			}
 			set_country_flag = vassalize_gabmorionn
 		}
+		custom_tooltip = a95_vassalize_a94
 		hidden_effect = { #she lived for 125 years in one of my games i swear
 			if = { 
 				limit = { 
@@ -144,9 +163,10 @@ country_event = { #Wayward Heir
 			}
 		}
 	}
+
 	option = { # PU
 		name = flavour_themarenn.4.b
-		custom_tooltip = pu_gabmorionn_a95.tt
+
 		A94 = {
 			add_trust = {
 				who = A95
@@ -161,6 +181,7 @@ country_event = { #Wayward Heir
 			}
 			set_country_flag = pu_gabmorionn
 		}
+		custom_tooltip = a95_pu_a94
 		hidden_effect = {
 			if = { 
 				limit = { 
@@ -181,6 +202,7 @@ country_event = { #Wayward Heir
 		}
 	}
 }
+
 country_event = {
 	id = flavour_themarenn.94
 	title = flavour_themarenn.94.t
@@ -188,6 +210,7 @@ country_event = {
 	picture = GFX_Leviathan
 	fire_only_once = yes
 	is_triggered_only = yes
+
 	option = { #accept vassalization
 		name = flavour_themarenn.94.a
 		ai_chance = {
@@ -230,6 +253,7 @@ country_event = {
 		clr_country_flag = vassalize_gabmorionn
 	}
 }
+
 country_event = { #gabmorionn influence crisis
 	id = flavour_themarenn.95
 	title = flavour_themarenn.95.t
@@ -237,6 +261,7 @@ country_event = { #gabmorionn influence crisis
 	picture = beautiful_cave
 	is_triggered_only = yes
 	fire_only_once = yes
+
 	option = {
 		name = flavour_themarenn.95.a
 		ai_chance = {
@@ -257,6 +282,7 @@ country_event = { #gabmorionn influence crisis
 			}
 		}
 	}
+
 	option = {
 		name = flavour_themarenn.95.b
 		ai_chance = {
@@ -265,30 +291,37 @@ country_event = { #gabmorionn influence crisis
 		add_prestige = -5
 	}
 }
+
 country_event = {
 	id = flavour_themarenn.96
 	title = flavour_themarenn.96.t
 	desc = flavour_themarenn.96.d
 	picture = beautiful_cave
 	is_triggered_only = yes
+
 	option = { #join against themarenn
 		name = flavour_themarenn.96.a
 		ai_chance = {
 			factor = 80
 		}
+
 		ROOT = {
 			join_all_offensive_wars_of = A62
 			join_all_offensive_wars_of = A37
 		}
 	}
+
 	option = { #nah
 		name = flavour_themarenn.96.b
 		ai_chance = {
 			factor = 20
 		}
+
 		add_prestige = -5
 	}
+
 }
+
 country_event = { #pu gabmorionn
 	id = flavour_themarenn.97
 	title = flavour_themarenn.97.t
@@ -296,11 +329,13 @@ country_event = { #pu gabmorionn
 	picture = beautiful_cave
 	fire_only_once = yes
 	is_triggered_only = yes
+
 	option = {
 		name = flavour_themarenn.97.a
 		ai_chance = {
 			factor = 100
 		}
+
 		A95 = {
 			create_union = A94
 			add_historical_friend = A94
@@ -350,12 +385,14 @@ country_event = { #pu gabmorionn
 		clr_country_flag = pu_gabmorionn
 	}
 }
+
 country_event = {
 	id = flavour_themarenn.98
 	title = flavour_themarenn.98.t
 	desc = flavour_themarenn.98.d
 	picture = beautiful_cave
 	is_triggered_only = yes
+
 	option = {
 		name = flavour_themarenn.98.a
 		ai_chance = {
@@ -372,6 +409,7 @@ country_event = {
 		A62 = {
 			country_event = {
 				id = flavour_themarenn.96
+
 			}
 		}
 	}
@@ -383,36 +421,44 @@ country_event = {
 		add_prestige = -5
 	}
 }
+
 country_event = { #expose esmaraine episode 1
 	id = flavour_themarenn.5
 	title = flavour_themarenn.5.t
 	desc = flavour_themarenn.5.d
 	picture = beautiful_cave
 	is_triggered_only = yes
-	
-	trigger = { }
+
 	option = { #form a coalition
 		name = flavour_themarenn.5.a
 		every_known_country = {
 			limit = {
 				capital_scope = { region = esmaria_region }
-				has_50_opinion_improved_relation = { target = ROOT }
 				has_country_flag = lilac_wars_moon_party
 				NOT = { tag = A44 }
 			}
 			country_event = { id = flavour_themarenn.38 }
-			add_country_modifier = { name = a95_esmaraine_ep2 duration = 10950 }
-			custom_tooltip = esmaraine_ep1.tt
 		}
+		add_country_modifier = { name = a95_esmaraine_ep2 duration = 10950 }
+		custom_tooltip = esmaraine_ep1.tt
+		add_aggressive_expansion = {
+			who = A44
+			value = 120
+			apply_calc = no
+		}
+		form_coalition_against = A44
 	}
 }
+
 country_event = { # Palace atop a Lake
 	id = flavour_themarenn.6
 	title = flavour_themarenn.6.t
 	desc = flavour_themarenn.6.d
 	picture = centaur_burning_spear_territory
 	is_triggered_only = yes
+
 	trigger = { }
+
 	option = {
 		name = flavour_themarenn.6.a
 		267 = {
@@ -429,6 +475,7 @@ country_event = { # Palace atop a Lake
 			cost_multiplier = 0.5
 		}
 	}
+
 	option = {
 		name = flavour_themarenn.6.b
 		267 = {
@@ -446,12 +493,14 @@ country_event = { # Palace atop a Lake
 		}
 	}
 }
+
 country_event = { #Reign in Esmarine
 	id = flavour_themarenn.8
 	title = flavour_themarenn.8.t
 	desc = flavour_themarenn.8.d
 	picture = high_gardens
 	is_triggered_only = yes
+
 	option = {
 		name = flavour_themarenn.8.a
 		emperor = {
@@ -462,12 +511,14 @@ country_event = { #Reign in Esmarine
 		}
 	}
 }
+
 country_event = { #Envoy Arrives!
 	id = flavour_themarenn.9
 	title = flavour_themarenn.9.t
 	desc = flavour_themarenn.9.d
 	picture = high_gardens
 	is_triggered_only = yes
+
 	option = {
 		name = flavour_themarenn.9.a
 		ai_chance = {
@@ -481,6 +532,7 @@ country_event = { #Envoy Arrives!
 			} 
 		}
 	}
+
 	option = {
 		name = flavour_themarenn.9.b
 		266 = { add_permanent_claim = A95 }
@@ -492,14 +544,18 @@ country_event = { #Envoy Arrives!
 		}
 	}
 }
+
 country_event = { #Down the Commons
 	id = flavour_themarenn.10
 	title = flavour_themarenn.10.t
 	desc = flavour_themarenn.10.d
 	picture = high_gardens
 	is_triggered_only = yes
+
 	trigger = {
+
 	}
+
 	option = {
 		name = flavour_themarenn.10.a
 		328 = {
@@ -510,13 +566,16 @@ country_event = { #Down the Commons
 		}
 	}
 }
+
 country_event = { #Through the Mountain
 	id = flavour_themarenn.11
 	title = flavour_themarenn.11.t
 	desc = flavour_themarenn.11.d
 	picture = GFX_Emperor
 	is_triggered_only = yes
+
 	trigger = { }
+
 	option = {
 		name = flavour_themarenn.11.a 
 		350 = { 
@@ -527,13 +586,16 @@ country_event = { #Through the Mountain
 		}
 	}
 }
+
 country_event = { #Slowly, Slowly!
 	id = flavour_themarenn.12
 	title = flavour_themarenn.12.t
 	desc = flavour_themarenn.12.d
 	picture = infested_hold
 	is_triggered_only = yes
+
 	trigger = { }
+
 	option = {
 		name = flavour_themarenn.12.a
 		308 = {
@@ -545,13 +607,16 @@ country_event = { #Slowly, Slowly!
 		}
 	}
 }
+
 country_event = { #Stewardship of the Rivers
 	id = flavour_themarenn.13
 	title = flavour_themarenn.13.t
 	desc = flavour_themarenn.13.d
 	picture = military_academy
 	is_triggered_only = yes
+
 	trigger = { }
+
 	option = {
 		name = flavour_themarenn.13.a
 		add_country_modifier = {
@@ -561,25 +626,81 @@ country_event = { #Stewardship of the Rivers
 		set_country_flag = steward_of_esmari
 	}
 }
+
 country_event = { # The Right of Succession
 	id = flavour_themarenn.14
 	title = flavour_themarenn.14.t
 	desc = flavour_themarenn.14.d
 	picture = necropolis
 	is_triggered_only = yes
+
 	trigger = { }
+
 	option = {
 		name = flavour_themarenn.14.a
 		add_legitimacy = 100
+		if = {
+			limit = {
+				Z46 = { exists = no }
+			}
+			change_tag = Z46
+			hidden_effect = { restore_country_name = yes }
+			#swap_non_generic_missions = yes
+			#remove_non_electors_emperors_from_empire_effect = yes
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 10
+			if = {
+				limit = {
+					has_custom_ideas = no
+				}
+			}
+			if = {
+				limit = {
+					is_part_of_hre = no
+				}
+				if = {
+					limit = {
+						NOT = { government_rank = 2 }
+					}
+					set_government_rank = 2
+				}
+				set_country_flag = is_a_grand_duchy
+				esmaria_region = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = Z46
+				}
+			}
+			else_if = {
+				limit = {
+					is_part_of_hre = yes
+				}
+				custom_tooltip = grand_duchy_formation_tt
+			}
+
+			set_country_flag = formed_esmaria_flag
+		}
+	}
+	option = {
+		name = flavour_themarenn.14.b
+		add_legitimacy = 100
 	}
 }
+
 country_event = { #Restoration of the Cann Esmari Duchy
 	id = flavour_themarenn.15
 	title = flavour_themarenn.15.t
 	desc = flavour_themarenn.15.d
 	picture = old_gate
 	is_triggered_only = yes
+
 	trigger = { }
+
 	option = {
 		name = flavour_themarenn.15.a
 		override_country_name = CANN_ESMAR_STRING
@@ -597,7 +718,9 @@ country_event = { #Restoration of the Cann Esmari Duchy
 		if = { limit = { 269 = { NOT = { owned_by = ROOT } } } 269 = { add_core = A95 cede_province = A95 } add_dip_power = -25 }
 		if = { limit = { 905 = { NOT = { owned_by = ROOT } } } 905 = { add_core = A95 cede_province = A95 } add_dip_power = -25 }
 		if = { limit = { 275 = { NOT = { owned_by = ROOT } } } 275 = { add_core = A95 cede_province = A95 } add_dip_power = -25 }
+
 	}
+
 	option = {
 		name = flavour_themarenn.15.b
 		custom_tooltip = cann_esmar_integration.tt
@@ -617,13 +740,16 @@ country_event = { #Restoration of the Cann Esmari Duchy
 		if = { limit = { 275 = { NOT = { owned_by = ROOT } } } 275 = { add_core = A95 cede_province = A95 } add_dip_power = -25 }
 	}
 }
+
 country_event = { #Corruption of Esmaria!
 	id = flavour_themarenn.16
 	title = flavour_themarenn.16.t
 	desc = flavour_themarenn.16.d
 	picture = northamericagfx_RELIGIOUS_CONVERSION_eventPicture
 	is_triggered_only = yes
+
 	trigger = { }
+
 	option = {
 		name = flavour_themarenn.16.a
 		266 = {
@@ -638,13 +764,16 @@ country_event = { #Corruption of Esmaria!
 		}
 	}
 }
+
 country_event = { #Demands of Subjugation
 	id = flavour_themarenn.17
 	title = flavour_themarenn.17.t
 	desc = flavour_themarenn.17.d
 	picture = mission_anvil
 	is_triggered_only = yes
+
 	trigger = { }
+
 	option = {
 		name = flavour_themarenn.17.a
 		ai_chance = { factor = 75 }
@@ -655,6 +784,7 @@ country_event = { #Demands of Subjugation
 			} 
 		}
 	}
+
 	option = {
 		name = flavour_themarenn.17.b
 		ai_chance = { 
@@ -667,13 +797,16 @@ country_event = { #Demands of Subjugation
 		A95 = { vassalize = ROOT }
 	}
 }
+
 country_event = { #sons of drosten
 	id = flavour_themarenn.18
 	title = flavour_themarenn.18.t
 	desc = flavour_themarenn.18.d
 	picture = LAND_MILITARY_eventpicture
 	is_triggered_only = yes
+
 	trigger = { }
+
 	option = {
 		name = flavour_themarenn.18.a
 		hidden_effect = { remove_country_modifier = river_reavers_2 }
@@ -681,16 +814,20 @@ country_event = { #sons of drosten
 		add_country_modifier = { name = home_of_the_river_reavers_3 duration = -1 }
 	}
 }
+
 country_event = { #Infernal Pockets!
 	id = flavour_themarenn.19
 	title = flavour_themarenn.19.t
 	desc = flavour_themarenn.19.d
 	picture = mission_burning_man
 	is_triggered_only = yes
+
 	trigger = {
 		capital_scope = { region = esmaria_region }
 		NOT = { religion = infernal_court }
 	}
+
+
 	option = {
 		name = flavour_themarenn.19.a
 		random_owned_province = {
@@ -701,15 +838,18 @@ country_event = { #Infernal Pockets!
 		}
 	}
 }
+
 country_event = { # Esmari Imperial Circle
 	id = flavour_themarenn.20
 	title = flavour_themarenn.20.t
 	desc = flavour_themarenn.20.d
 	picture = GFX_imperial_incident_hre
 	is_triggered_only = yes
+
 	trigger = {
 		any_owned_province = { region = esmaria_region }
 	}
+
 	option = { # They are the rightful protectors!
 		name = flavour_themarenn.20.a
 		
@@ -728,6 +868,7 @@ country_event = { # Esmari Imperial Circle
 				cede_province = A95
 			}
 		}
+
 		ai_chance = {
 			factor = 1
 			modifier = { # Opinion 100-150
@@ -760,6 +901,7 @@ country_event = { # Esmari Imperial Circle
 			}
 		}
 	}
+
 	option = { #lol no
 		name = flavour_themarenn.20.b
 		every_owned_province = {
@@ -798,19 +940,23 @@ country_event = { # Esmari Imperial Circle
 		}
 	}
 }
+
 country_event = {
 	id = flavour_themarenn.21
 	title = flavour_themarenn.21.t
 	desc = flavour_themarenn.21.d
 	picture = beautiful_cave
 	is_triggered_only = yes
+
 	trigger = { }
+
 	option = {
 		name = flavour_themarenn.21.a
 		set_country_flag = upgraded_parties
 		custom_tooltip = grand_party_throwers.c1
 	}
 }
+
 #canal events, fasten your seat belts gentlement, its gonna be a while!
 country_event = { #send out a call
 	id = flavour_themarenn.23
@@ -819,8 +965,10 @@ country_event = { #send out a call
 	picture = beautiful_cave
 	is_triggered_only = yes
 	fire_only_once = yes
+
 	option = {
 		name = flavour_themarenn.23.a
+
 		country_event = { id = flavour_themarenn.24 days = 30 }
 	}
 }
@@ -831,6 +979,7 @@ country_event = { #choosing someone to work on canal
 	picture = beautiful_cave
 	is_triggered_only = yes
 	fire_only_once = yes
+
 	option = { #royal architect valen
 		name = flavour_themarenn.24.a
 		
@@ -841,12 +990,14 @@ country_event = { #choosing someone to work on canal
 	}
 	option = { #gnomish engineer
 		name = flavour_themarenn.24.b
+
 		custom_tooltip = gnome_planning_a95.tt
 		set_country_flag = gnome_canal_candidate
 		hidden_effect = { country_event = { id = flavour_themarenn.25 days = 545 } }
 	}
 	option = { #the twins
 		name = flavour_themarenn.24.c
+
 		custom_tooltip = twin_planning_a95.tt
 		set_country_flag = twins_canal_candidate
 		hidden_effect = { country_event = { id = flavour_themarenn.25 days = 365 } }
@@ -858,9 +1009,12 @@ country_event = { #planning preparations
 	desc = flavour_themarenn.25.d
 	picture = beautiful_cave
 	is_triggered_only = yes
+
 	option = { #securing funds and resources
 		name = flavour_themarenn.25.a
+
 		trigger = { NOT = { has_country_flag = resources_prepared_a95 }}
+
 		set_country_flag = resources_prepared_a95
 		if = {
 			limit = { has_country_flag = twins_canal_candidate }
@@ -875,8 +1029,10 @@ country_event = { #planning preparations
 			country_event = { id = flavour_themarenn.25 days = 55 }
 		}
 	}
+
 	option = { #securing the workforce
 		name = flavour_themarenn.25.b
+
 		trigger = { NOT = { has_country_flag = secured_workforce_a95 } }
 		
 		set_country_flag = secured_workforce_a95
@@ -893,9 +1049,12 @@ country_event = { #planning preparations
 			country_event = { id = flavour_themarenn.25 days = 70 }
 		}
 	}
+
 	option = { #land surveying
 		name = flavour_themarenn.25.c
+
 		trigger = { NOT = { has_country_flag = land_surveydone_a95 } }
+
 		set_country_flag = land_surveydone_a95
 		if = {
 			limit = { has_country_flag = twins_canal_candidate }
@@ -910,9 +1069,11 @@ country_event = { #planning preparations
 			country_event = { id = flavour_themarenn.25 days = 200 }
 		}
 	}
+
 	option = { #move onto next step
 		name = flavour_themarenn.25.b
 		highlight = yes
+
 		trigger = {
 			has_country_flag = land_surveydone_a95
 			has_country_flag = secured_workforce_a95
@@ -932,8 +1093,10 @@ country_event = { #opening ceremony
 	picture = beautiful_cave
 	is_triggered_only = yes
 	fire_only_once = yes
+
 	option = {
 		name = flavour_themarenn.26.a
+
 		267 = {
 			add_permanent_province_modifier = {
 				name = canal_provisions_a95
@@ -961,13 +1124,16 @@ country_event = { #event for mid phase 1 valen
 	picture = beautiful_cave
 	is_triggered_only = yes
 	fire_only_once = yes
+
 	option = { #increase admin burden
 		name = flavour_themarenn.27.a
+
 		themarenn_admin_burden = yes
 		country_event = { id = flavour_themarenn.30 days = 912 }
 	}
 	option = { #keep pace
 		name = flavour_themarenn.27.b
+
 		add_adm_power = 10
 		add_dip_power = 10
 		add_mil_power = 10
@@ -981,14 +1147,17 @@ country_event = { #event for mid phase 1 gnome #invention of the alternoscope
 	picture = beautiful_cave
 	is_triggered_only = yes
 	fire_only_once = yes
+
 	option = { #give him extra resources to work on it
 		name = flavour_themarenn.28.a
+
 		themarenn_admin_burden = yes
 		country_event = { id = flavour_themarenn.30 days = 547 }
 	}
 	
 	option = { #he's on his own
 		name = flavour_themarenn.28.b
+
 		country_event = { id = flavour_themarenn.30 days = 1095 }
 	}
 }
@@ -999,8 +1168,10 @@ country_event = { #event for mid phase 1 twins #departmentalize the digging proj
 	picture = beautiful_cave
 	is_triggered_only = yes
 	fire_only_once = yes
+
 	option = { #use water from lake to transportstuff
 		name = flavour_themarenn.29.a
+
 		add_country_modifier = { name = a95_navy_speed duration = 3650 }
 		country_event = { id = flavour_themarenn.30 days = 1095 }
 	}
@@ -1012,8 +1183,10 @@ country_event = { #phase 1 fin > phase 2 start
 	picture = beautiful_cave
 	is_triggered_only = yes
 	fire_only_once = yes
+
 	option = { #continue the project
 		name = flavour_themarenn.30.a
+
 		add_adm_power = 50
 		add_dip_power = 50
 		add_mil_power = 50
@@ -1035,6 +1208,7 @@ country_event = { #phase 2 intro
 	picture = beautiful_cave
 	is_triggered_only = yes
 	fire_only_once = yes
+
 	option = { #start river-to-river phase
 		if = {
 			limit = { has_country_flag = valen_canal_candidate }
@@ -1057,8 +1231,10 @@ country_event = { #phase 2 challenge valen
 	picture = beautiful_cave
 	is_triggered_only = yes
 	fire_only_once = yes
+
 	option = { #politicking
 		name = flavour_themarenn.32.a
+
 		add_dip_power = -50
 		add_adm_power = -50
 		575 = {
@@ -1070,8 +1246,10 @@ country_event = { #phase 2 challenge valen
 		}
 		country_event = { id = flavour_themarenn.35 days = 1825 }
 	}
+
 	option = { #fukem
 		name = flavour_themarenn.32.b
+
 		575 = {
 			spawn_rebels = {
 				type = noble_rebels
@@ -1102,6 +1280,7 @@ country_event = { #phase 2 challenge gnome
 	picture = beautiful_cave
 	is_triggered_only = yes
 	fire_only_once = yes
+
 	option = { #great fire of loveswood
 		name = flavour_themarenn.33.a
 		917 = {
@@ -1133,6 +1312,7 @@ country_event = { #phase 2 challenge twins
 	picture = beautiful_cave
 	is_triggered_only = yes
 	fire_only_once = yes
+
 	option = { #corruption and fund shortages
 		name = flavour_themarenn.34.a
 		add_corruption = 2
@@ -1143,6 +1323,7 @@ country_event = { #phase 2 challenge twins
 	option = { #have the national bank investigate
 		name = flavour_themarenn.34.b
 		highlight = yes
+
 		trigger = {
 			has_idea = national_bank
 		}
@@ -1155,6 +1336,7 @@ country_event = { #phase 2 challenge twins
 	option = { #a shame the deal was discovered
 		name = flavour_themarenn.34.c
 		highlight = yes
+
 		trigger = {
 			ruler_has_personality = embezzler
 		}
@@ -1166,6 +1348,7 @@ country_event = { #phase 2 challenge twins
 	}
 	option = { #do all you can
 		name = flavour_themarenn.34.e
+
 		add_adm_power = -100
 		add_mil_power = -100
 		add_inflation = 1
@@ -1181,8 +1364,10 @@ country_event = { #phase 2 end
 	picture = beautiful_cave
 	is_triggered_only = yes
 	fire_only_once = yes
+
 	option = {
 		name = flavour_themarenn.35.a
+
 		add_adm_power = 50
 		add_dip_power = 50
 		add_mil_power = 50
@@ -1198,9 +1383,11 @@ country_event = { #phase 3 start
 	picture = beautiful_cave
 	is_triggered_only = yes
 	fire_only_once = yes
+
 	option = {
 		name = flavour_themarenn.36.a
 		themarenn_admin_burden = yes
+
 		265 = {
 			add_permanent_province_modifier = { name = canal_provisions_a95 duration = -1 }
 		}
@@ -1220,8 +1407,10 @@ country_event = { #phase 3 valen handles the situation
 	picture = beautiful_cave
 	is_triggered_only = yes
 	fire_only_once = yes
+
 	option = { #ez
 		name = flavour_themarenn.37.a
+
 		add_estate_loyalty = {
 			estate = estate_church
 			loyalty = 5
@@ -1236,6 +1425,7 @@ country_event = { #phase 3 valen handles the situation
 	}
 	option = { #this is madness
 		name = flavour_themarenn.37.b
+
 		set_country_flag = a95_ryalanar_evacuated
 		add_estate_loyalty = {
 			estate = estate_church
@@ -1257,8 +1447,10 @@ desc = flavour_themarenn.46.d
 picture = beautiful_cave
 is_triggered_only = yes
 fire_only_once = yes
+
 	option = {
 		name = flavour_themarenn.46.a
+
 		set_country_flag = a95_ryalanar_evacuated
 		add_adm_power = -100
 		add_mil_power = -50
@@ -1283,6 +1475,7 @@ desc = flavour_themarenn.47.d
 picture = beautiful_cave
 is_triggered_only = yes
 fire_only_once = yes
+
 	option = {
 		name = flavour_themarenn.47.a
 		265 = {
@@ -1294,6 +1487,10 @@ fire_only_once = yes
 				building = drydock
 				speed = 1
 				cost = 0
+			}
+			add_permanent_province_modifier = {
+				name = a95_tier1_sailors
+				duration = -1
 			}
 		}
 		every_owned_province = {
@@ -1307,6 +1504,7 @@ fire_only_once = yes
 		clr_country_flag = valen_canal_candidate
 		clr_country_flag = gnome_canal_candidate
 		clr_country_flag = twins_canal_candidate
+
 		if = {
 			limit = { has_country_flag = a95_ryalanar_evacuation }
 			265 = {
@@ -1325,6 +1523,39 @@ fire_only_once = yes
 			}
 			clr_country_flag = a95_ryalanar_evacuated
 		}
+		hidden_effect = {
+			if = {
+				limit = { has_country_flag = valen_canal_candidate }
+				country_event = {
+					id = flavour_themarenn.49
+					days = 36500
+					random = 3650
+				}
+				clr_country_flag = valen_canal_candidate
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = { has_country_flag = twins_canal_candidate }
+				country_event = {
+					id = flavour_themarenn.50
+					days = 36500
+					random = 3650
+				}
+				clr_country_flag = twins_canal_candidate
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = { has_country_flag = gnome_canal_candidate }
+				country_event = {
+					id = flavour_themarenn.51
+					days = 36500
+					random = 3650
+				}
+				clr_country_flag = gnome_canal_candidate
+			}
+		}
 	}
 }
 #coalition war vs esmaraine from flavour_themarenn.5
@@ -1334,6 +1565,7 @@ country_event = { #expose esmaraine episode 2
 	desc = flavour_themarenn.38.d
 	picture = beautiful_cave
 	is_triggered_only = yes
+
 	option = {
 		name = flavour_themarenn.38.a
 		ai_chance = { factor = 100 }
@@ -1364,6 +1596,7 @@ country_event = { #taking esmaraine
 	desc = flavour_themarenn.39.d
 	picture = beautiful_cave
 	fire_only_once = yes
+
 	trigger = {
 		OR = {
 			tag = A95
@@ -1400,9 +1633,11 @@ country_event = {
 	desc = flavour_themarenn.40.d
 	picture = beautiful_cave
 	is_triggered_only = yes
+
 	option = {
 		name = flavour_themarenn.40.a
 		highlight = yes
+
 		trigger = {
 			AND = {
 				has_country_flag = a95_esmaryal_stewards
@@ -1422,6 +1657,7 @@ country_event = {
 	option = {
 		name = flavour_themarenn.40.b
 		highlight = yes
+
 		trigger = {
 			AND = {
 				has_country_flag = a95_ryala_seagulls
@@ -1445,8 +1681,10 @@ country_event = { #esmaryal
 	desc = flavour_themarenn.41.d
 	picture = beautiful_cave
 	is_triggered_only = yes
+
 	option = {
 		name = flavour_themarenn.41.a
+
 		custom_tooltip = a95_mother_embrace.tt
 		hidden_effect = {
 			remove_country_modifier = a95_way_of_esmaryal
@@ -1460,8 +1698,10 @@ country_event = { #ryala
 	desc = flavour_themarenn.42.d
 	picture = beautiful_cave
 	is_triggered_only = yes
+
 	option = {
 		name = flavour_themarenn.42.a
+
 		custom_tooltip = a95_ryalan_dream.tt
 		add_country_modifier = { name = a95_ryalan_dream duration = -1 }
 		set_country_flag = a95_ryalan_dream
@@ -1473,8 +1713,10 @@ country_event = { #esmaryal education event
 	desc = flavour_themarenn.43.d
 	picture = beautiful_cave
 	is_triggered_only = yes
+
 	option = {
 		name = flavour_themarenn.43.a
+
 		random_list = {
 			15 = { change_heir_adm = 1 }
 			15 = { change_heir_dip = 1 }
@@ -1494,6 +1736,7 @@ country_event = { #esmaryal education event
 	is_triggered_only = yes
 	fire_only_once = yes
 	hidden = yes
+
 	immediate = {
 		if = {
 			limit = { 
@@ -1509,6 +1752,7 @@ country_event = { #esmaryal education event
 		}
 		else = { clr_country_flag = i_dont_bevar }
 	}
+
 	option = {
 		name = flavour_themarenn.43.a
 	}
@@ -1519,8 +1763,10 @@ country_event = {
 	desc = flavour_themarenn.48.d
 	picture = beautiful_cave
 	is_triggered_only = yes
+
 	option = {
 		name = flavour_themarenn.48.a
+
 	}
 	option = {
 		name = flavour_themarenn.48.b
@@ -1793,5 +2039,63 @@ country_event = {
 			}
 		}
 		country_event = { id = flavour_themarenn.48 days = 1 }
+	}
+}
+
+country_event = {
+	id = flavour_themarenn.49
+	title = flavour_themarenn.49.t
+	desc = flavour_themarenn.49.d
+	picture = beautiful_cave
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = flavour_themarenn.49.a
+
+		267 = { 
+			add_permanent_province_modifier = {
+				name = a95_valen_uni
+				duration = -1
+			}
+		}
+	}
+}
+
+country_event = {
+	id = flavour_themarenn.50
+	title = flavour_themarenn.50.t
+	desc = flavour_themarenn.50.d
+	picture = beautiful_cave
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = flavour_themarenn.50.a
+
+		265 = { 
+			add_permanent_province_modifier = {
+				name = a95_twins_infrastructure
+				duration = -1
+			}
+		}
+	}
+}
+
+country_event = {
+	id = flavour_themarenn.51
+	title = flavour_themarenn.51.t
+	desc = flavour_themarenn.51.d
+	picture = beautiful_cave
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = flavour_themarenn.51.a
+
+		add_country_modifier = {
+			name = a95_gnome_rediscovery
+			duration = -1
+		}
 	}
 }

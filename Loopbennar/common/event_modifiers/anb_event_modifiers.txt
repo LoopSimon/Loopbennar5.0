@@ -851,7 +851,7 @@ rosemetal_mines = {
 
 dragonmarks = {
 	trade_goods_size = 1
-	local_build_cost = -0.25
+	local_build_cost = 0.25
 }
 
 iron_hill = {
@@ -995,6 +995,9 @@ eordand_winter_court = {
 }
 eordand_domandrod = {
 	yearly_absolutism = 0.5
+}
+eordand_twilight_court = {	#Dorcurt
+	land_morale = 0.05
 }
 gawed_regent_court = {
 	local_religious_conversion_resistance = 0.25
@@ -3294,6 +3297,144 @@ brokenjaw_in_perfect_order = {
 	local_tax_modifier = 0.20
 }
 ##
+
+#Rakkaz F71
+rakkaz_new_recruits = {
+	land_morale = 0.1
+	land_maintenance_modifier = -0.1
+}
+
+rakkaz_fighting_pit = {
+	trade_goods_size = 1
+	local_governing_cost = -0.25
+	local_development_cost = -0.05
+	local_build_cost = -0.05
+}
+
+rakkaz_the_shadow_womb = {
+	local_development_cost = -0.1
+	local_defensiveness = 0.1
+	trade_goods_size = 2
+	local_build_cost = -0.1
+}
+
+rakkaz_base_demoncollar_amount = {
+	amount_of_hussars = 6
+}
+
+rakkaz_slave_exploitation = {
+	trade_goods_size = 2
+	trade_goods_size_modifier = 0.2
+}
+
+rakkaz_surge_of_suffering = {
+	trade_goods_size = 3
+	local_development_cost = -0.1
+	local_build_cost = -0.1
+}
+
+rakkaz_surge_of_suffering_upgrade = {
+	trade_goods_size = 3
+	local_development_cost = -0.1
+	local_manpower_modifier = 1
+	local_build_cost = -0.1
+}
+
+rakkaz_pact_overcharge = {
+	local_unrest = -4
+	local_development_cost = -0.1
+	local_build_cost = -0.1
+}
+
+rakkaz_channeling_suffering = {
+	trade_goods_size = 2
+	local_development_cost = -0.05
+	local_monthly_devastation = 0.4
+	local_build_cost = -0.05
+}
+
+rakkaz_channeling_suffering_upgrade = {
+	trade_goods_size = 2
+	local_development_cost = -0.05
+	local_monthly_devastation = 0.4
+	local_manpower_modifier = 1
+	local_build_cost = -0.05
+}
+
+rakkaz_mazu_makhara_more_cav = {
+	amount_of_hussars = 2
+}
+
+rakkaz_mazu_makhara_more_cav_upgrade = {
+	amount_of_hussars = 4
+}
+
+rakkaz_fighting_pit_more_cav = {
+	amount_of_hussars = 1
+}
+
+rakkaz_fighting_pit_more_cav_upgrade = {
+	amount_of_hussars = 2
+}
+
+rakkaz_demonflare_enchantment = {
+	cavalry_shock = 0.5
+	fire_damage_received = -0.2
+	land_maintenance_modifier = 0.25
+	is_hussars_modifier = yes
+}
+
+rakkaz_increase_in_desertions = {
+	morale_damage_received = 0.1
+	manpower_recovery_speed = -0.2
+}
+
+rakkaz_witherling_units = {
+	morale_damage_received = -0.05
+}
+
+rakkaz_seat_of_darkness = {
+	local_tax_modifier = 0.3
+	local_production_efficiency = 0.2
+	local_manpower_modifier = 1
+	min_local_autonomy = -90
+}
+
+rakkaz_power_of_the_curse = {
+	leader_land_shock = 1
+	movement_speed = 0.1
+}
+
+rakkaz_demoncollar_hordes = {
+	morale_damage_received = -0.05
+	cav_to_inf_ratio = 0.2
+	special_unit_forcelimit = 0.2
+}
+
+rakkaz_witherling_army = {
+	morale_damage_received = -0.1
+	fire_damage_received = -0.15
+}
+
+rakkaz_scorching_flames = {
+	cavalry_shock = 1
+	cavalry_fire = 1
+	land_maintenance_modifier = 0.25
+	is_hussars_modifier = yes
+}
+
+rakkaz_soldier_households_1 = {
+	land_forcelimit = 1
+}
+
+rakkaz_soldier_households_2 = {
+	land_forcelimit = 2
+}
+
+rakkaz_soldier_households_3 = {
+	land_forcelimit = 4
+}
+#
 
 #Haraagtseda F72
 haraagtseda_rozherg_the_hammer_of_kvanga = {

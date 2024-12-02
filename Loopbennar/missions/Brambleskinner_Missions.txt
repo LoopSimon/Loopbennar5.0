@@ -24,6 +24,7 @@ brambleskinner_1 = {
 			custom_trigger_tooltip = {
 				tooltip = brambleskinner_repel_orcs_tt
 				deepwoods_superregion = {
+					type = all
 					NOT = {
 						owner = {
 							culture_group = orcish
@@ -109,38 +110,31 @@ brambleskinner_2 = {
 		}
 
 		trigger = {
-			if = {
-				limit = {
-					exists = I36
-				}
-				OR = {
-					AND = {
-						alliance_with = I36
-						reverse_has_opinion = {
-							who = I36
-							value = 150
-						}
+			OR = {
+				AND = {
+					alliance_with = I36
+					reverse_has_opinion = {
+						who = I36
+						value = 150
 					}
-					I36 = { 
-						is_enemy = ROOT
-						has_spy_network_from = {
+				}
+				I36 = { 
+					is_enemy = ROOT
+					has_spy_network_from = {
+						who = ROOT
+						value = 20
+					}
+					OR = {
+						has_opinion_modifier = {
 							who = ROOT
-							value = 20
-						}
-						OR = {
-							has_opinion_modifier = {
-								who = ROOT
-								modifier = insulted
-							}	
-							has_opinion_modifier = {
-								who = ROOT
-								modifier = scornfully_insulted
-							}
+							modifier = insulted
+						}	
+						has_opinion_modifier = {
+							who = ROOT
+							modifier = scornfully_insulted
 						}
 					}
 				}
-			}
-			else = {
 				NOT = { exists = I36 }
 			}
 		}
@@ -153,8 +147,8 @@ brambleskinner_2 = {
 				deepwoods_arrow_grove = { add_permanent_claim = ROOT }
 			}			
 			else = {
-				custom_tooltip = brambleskinner_blackmoon_war_tt
 				I36 = { country_event = { id = flavor_brambleskinner.1 } }
+				custom_tooltip = brambleskinner_blackmoon_war_tt
 			}
 		}
 	}
@@ -314,6 +308,13 @@ brambleskinner_2 = {
 				brambleskinner_building_grove_highlight = { grove = bone building = tax }
 				brambleskinner_building_grove_highlight = { grove = thorn building = tax }
 				brambleskinner_building_grove_highlight = { grove = arrow building = tax }
+				AND = {
+					province_id = 3042
+					NOT = {
+						base_production = 8
+						has_tax_building_trigger = yes
+					}
+				}
 			}
 		}
 
@@ -354,14 +355,18 @@ brambleskinner_2 = {
 				name = brambleskinner_minting_grant_1
 				duration = -1
 			}
-			custom_tooltip = brambleskinner_no_integration_verminhusk
 			I37 = {
 				add_country_modifier = {
 					name = brambleskinner_minting_debuff
 					duration = -1
 				}
+				add_country_modifier = {
+					name = brambleskinner_loyal_vassal
+					duration = -1
+				}
 				set_country_flag = brambleskinner_no_integration
 			}
+			custom_tooltip = brambleskinner_no_integration_verminhusk
 			brambleskinner_upgrade_two_clans_one_boss_priv = yes
 		}
 	}
@@ -384,20 +389,15 @@ brambleskinner_3_1 = {
 		trigger = {
 			army_size_percentage = 0.95
 			is_monarch_leader = yes
-			if = {
-				limit = { exists = U12 }
-				OR = {
-					is_rival = U12
-					U12 = {
-						has_opinion_modifier = {
-							who = ROOT
-							modifier = scornfully_insulted
-						}
+			OR = {
+				is_rival = U12
+				U12 = {
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = scornfully_insulted
 					}
 				}
-				else = {
-					NOT = { exists = U12 }
-				}
+				NOT = { exists = U12 }
 			}
 		}
 
@@ -568,6 +568,7 @@ brambleskinner_3_1 = {
 						value = 20
 					}
 				}
+				B82 = { is_subject_of = ROOT }
 				NOT = { exists = B82 }
 			}
 			OR = {
@@ -577,10 +578,34 @@ brambleskinner_3_1 = {
 						value = 20
 					}
 				}
+				I37 = { is_subject_of = ROOT }
 				NOT = { exists = I37 }
 			}
-			capital_scope = { has_fort_building_trigger = yes }
-			I36 = { capital_scope = { has_fort_building_trigger = yes } }
+			custom_trigger_tooltip = { tooltip = brambleskinner_fort_or_money_tt }
+			if = {
+				limit = {
+					OR = {
+						capital_scope = { has_fort_building_trigger = yes }
+						I36 = { capital_scope = { has_fort_building_trigger = yes } }
+					}
+					NOT = {
+						AND = {
+							capital_scope = { has_fort_building_trigger = yes }
+							I36 = { capital_scope = { has_fort_building_trigger = yes } }
+						}
+					}
+				}
+				treasury = 100
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						capital_scope = { has_fort_building_trigger = yes }
+						I36 = { capital_scope = { has_fort_building_trigger = yes } }
+					}
+				}
+				treasury = 200
+			}
 		}
 
 		effect = {
@@ -662,8 +687,14 @@ brambleskinner_3_1 = {
 				name = brambleskinner_alchemy_grant
 				duration = -1
 			}
+			B82 = {
+				add_country_modifier = {
+					name = brambleskinner_loyal_vassal
+					duration = -1
+				}
+				set_country_flag = brambleskinner_no_integration
+			}
 			custom_tooltip = brambleskinner_no_integration_petalmasher
-			B82 = { set_country_flag = brambleskinner_no_integration }
 			brambleskinner_upgrade_two_clans_one_boss_priv = yes
 		}
 	}
@@ -883,8 +914,14 @@ brambleskinner_4_1 = {
 				name = brambleskinner_treecutting_grant
 				duration = -1
 			}
+			I36 = {
+				add_country_modifier = {
+					name = brambleskinner_loyal_vassal
+					duration = -1
+				}
+				set_country_flag = brambleskinner_no_integration
+			}
 			custom_tooltip = brambleskinner_no_integration_spiked_log
-			I36 = { set_country_flag = brambleskinner_no_integration }
 			brambleskinner_upgrade_two_clans_one_boss_priv = yes
 		}
 	}
@@ -1036,7 +1073,7 @@ brambleskinner_5_1 = {
 				}
 				AND = {
 					NOT = { exists = U11} 
-					area = west_overmarch_area
+					area = lencmarck_area
 					NOT = { owned_by = ROOT }
 				}
 			}
@@ -1053,7 +1090,7 @@ brambleskinner_5_1 = {
 				}
 				AND = {
 					NOT = { exists = U11 }
-					west_overmarch_area = {
+					lencmarck_area = {
 						type = all
 						owned_by = ROOT
 					}
@@ -1186,6 +1223,7 @@ brambleskinner_5_1 = {
 
 		effect = {
 			country_event = { id = flavor_brambleskinner.7 }
+			custom_tooltip = brambleskinner_cede_provinces_to_landshark_tt
 		}
 	}
 
@@ -1242,8 +1280,14 @@ brambleskinner_5_1 = {
 					name = brambleskinner_sea_trade_grant
 					duration = -1
 				}
+				U11 = { 
+					add_country_modifier = {
+						name = brambleskinner_loyal_vassal
+						duration = -1
+					}
+					set_country_flag = brambleskinner_no_integration
+				}
 				custom_tooltip = brambleskinner_no_integration_landshark
-				U11 = { set_country_flag = brambleskinner_no_integration }
 			}
 			else = {
 				add_country_modifier = {
@@ -1301,13 +1345,7 @@ brambleskinner_5_2 = {
 				}
 			}
 			510 = { province_has_center_of_trade_of_level = 2 }
-			if = {
-				limit = {
-					calc_true_if = {
-						amount = 3
-						all_known_country = { capital_scope = { region = bahar_region } }
-					}
-				}
+			OR = {
 				calc_true_if = {
 					amount = 3
 					all_known_country = {
@@ -1315,8 +1353,6 @@ brambleskinner_5_2 = {
 						has_75_opinion_improved_relation = { target = ROOT }
 					}
 				}
-			}
-			else = {
 				all_known_country = {
 					capital_scope = { region = bahar_region }
 					has_75_opinion_improved_relation = { target = ROOT }
@@ -1366,6 +1402,11 @@ brambleskinner_5_3 = {
 				AND = {
 					owned_by = ROOT
 					devastation = 1
+					NOT = {
+						province_group = deepwoods_outward_gladeways
+						province_group = deepwoods_inner_gladeways
+						province_group = deepwoods_feytouched_gladeways
+					}
 				}
 				AND = {
 					OR = {
@@ -1393,7 +1434,14 @@ brambleskinner_5_3 = {
 			NOT = { num_of_rebel_controlled_provinces = 1 }
 			all_subject_country = { NOT = { num_of_rebel_armies = 1 } }
 			all_subject_country = { NOT = { num_of_rebel_controlled_provinces = 1 } }
-			all_owned_province = { NOT = { devastation = 1 } }
+			all_owned_province = { 
+				OR = {
+					NOT = { devastation = 1 }
+					province_group = deepwoods_outward_gladeways
+					province_group = deepwoods_inner_gladeways
+					province_group = deepwoods_feytouched_gladeways
+				}
+			}
 			capital_scope = {
 				has_fort_building_trigger = yes
 				infantry_in_province = 8

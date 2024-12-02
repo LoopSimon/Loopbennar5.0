@@ -287,6 +287,10 @@ duwarkani_2_missions = {
 						is_rival = ROOT
 					}
 				}
+				AND = {
+					power_projection = 50
+					total_development = 300
+				}
 				
 			}
 		}
@@ -337,6 +341,16 @@ duwarkani_2_missions = {
 					change_government = monarchy
 				}
 				create_union = F60
+			}
+			else_if = {
+				limit = {
+					total_development = 300
+					power_projection = 50
+				}
+				add_casus_belli = {
+					type = cb_vassalize_mission
+					target = F60
+				}
 			}
 			else = {
 				add_manpower = 10
@@ -464,6 +478,10 @@ duwarkani_2_missions = {
 				value = 10
 				culture_is_troll = yes
 				religion = nirakhetist
+			}
+			custom_trigger_tooltip = {
+				tooltip = duwarkani_shadowswamp_tt
+				has_country_modifier = duwarkani_beastbane_lives
 			}
 		}
 
@@ -830,7 +848,22 @@ duwarkani_3_missions = {
 		}
 
 		effect = {
-			add_stability = 2
+			if = {
+				limit = {
+					stability = 3
+				}
+				add_adm_power = 200
+			}
+			else_if = {
+				limit = {
+					stability = 2
+				}
+				add_stability = 1
+				add_adm_power = 100
+			}
+			else = {
+				add_stability = 2
+			}
 			remove_country_modifier = duwarkani_hunting_for_grilax
 			set_country_flag = duwarkani_shadow_plane_expedition
 			custom_tooltip = duwarkani_shadow_plane_expedition_tt
@@ -966,9 +999,15 @@ duwarkani_4_missions = {
 
 		trigger = {
 			5483 = { #note to future self to add something here in future about magical infrastructure
-				has_great_project = {
-					type = tower_of_muhaqaar
-					tier = 2
+				OR = {
+					has_great_project = {
+						type = tower_of_muhaqaar
+						tier = 2
+					}
+					has_great_project = {
+						type = tower_of_muhaqaar
+						tier = 3
+					}
 				}
 				has_tax_building_trigger = yes
 			}

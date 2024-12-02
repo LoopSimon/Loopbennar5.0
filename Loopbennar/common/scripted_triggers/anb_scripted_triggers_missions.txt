@@ -2084,3 +2084,128 @@ stalbor_race_opinion_trigger = {
         amount = $amount$
     }
 }
+
+#Wyvernheart
+wyvernheart_is_floodborn_council = {
+	OR = {
+		has_reform = floodborn_council_reform
+		has_reform = floodborn_council_reform_always_mage
+		has_reform = floodborn_council_reform_theocracy
+	}
+}
+
+taychendi_empire_has_production_or_vainglory = {
+	custom_trigger_tooltip = {
+		tooltip = J84_vainglory_or_production_tt
+		OR = {
+			ROOT = {
+				has_government_power = {
+					mechanic_type = taychend_vainglory_mechanic
+					power_type = taychend_vainglory_power
+					value = 80
+				}
+			}
+			AND = {
+				base_production = 1
+				ROOT = {
+					has_government_power = {
+						mechanic_type = taychend_vainglory_mechanic
+						power_type = taychend_vainglory_power
+						value = 70
+					}
+				}
+			}
+			AND = {
+				base_production = 2
+				ROOT = {
+					has_government_power = {
+						mechanic_type = taychend_vainglory_mechanic
+						power_type = taychend_vainglory_power
+						value = 60
+					}
+				}
+			}
+			AND = {
+				base_production = 3
+				ROOT = {
+					has_government_power = {
+						mechanic_type = taychend_vainglory_mechanic
+						power_type = taychend_vainglory_power
+						value = 50
+					}
+				}
+			}
+			AND = {
+				base_production = 4
+				ROOT = {
+					has_government_power = {
+						mechanic_type = taychend_vainglory_mechanic
+						power_type = taychend_vainglory_power
+						value = 40
+					}
+				}
+			}
+			AND = {
+				base_production = 5
+				ROOT = {
+					has_government_power = {
+						mechanic_type = taychend_vainglory_mechanic
+						power_type = taychend_vainglory_power
+						value = 30
+					}
+				}
+			}
+			AND = {
+				base_production = 6
+				ROOT = {
+					has_government_power = {
+						mechanic_type = taychend_vainglory_mechanic
+						power_type = taychend_vainglory_power
+						value = 20
+					}
+				}
+			}
+			AND = {
+				base_production = 7
+				ROOT = {
+					has_government_power = {
+						mechanic_type = taychend_vainglory_mechanic
+						power_type = taychend_vainglory_power
+						value = 10
+					}
+				}
+			}
+			base_production = 8
+		}
+	}
+}
+
+taychendi_empire_raiders_of_the_moon_prov_reqs = {
+	country_or_non_sovereign_subject_holds = ROOT
+	OR = {
+		region = mteibas_valley_region
+		region = chendhya_region
+	}
+	num_of_units_in_province = {
+		amount = 5
+		who = ROOT
+		type = cavalry
+	}
+	trade_goods = livestock
+	has_manpower_building_trigger = yes
+	has_production_building_trigger = yes
+	religion = gods_of_the_taychend_reformed
+	NOT = { has_province_modifier = J84_valley_raider_camps }
+}
+
+owned_by_country_subject_or_trade_league = {
+	custom_trigger_tooltip = {
+		tooltip = owned_by_country_subject_or_trade_league_tooltip
+		OR = {
+			country_or_subject_holds = ROOT
+			owner = {
+				is_in_trade_league_with = ROOT
+			}
+		}
+	}
+}

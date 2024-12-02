@@ -1,7 +1,7 @@
 
 setup_vision = yes
 government = tribal
-add_government_reform = settled_horde
+add_government_reform = kobold_viraxia
 government_rank = 1
 primary_culture = bluescale_kobold
 religion = kobold_dragon_cult
@@ -53,5 +53,5 @@ capital = 189
 	}
 	add_ruler_personality = tactical_genius_personality
 	
-	add_church_aspect = blue_dragon_1
+	add_church_aspect = blue_dragon_1_base
 }

@@ -10552,6 +10552,7 @@ themarenn_refresh_prosperity = {
 	remove_country_modifier = a95_consort_pros_5
 	remove_country_modifier = a95_consort_pros_6
 }
+
 themarenn_admin_burden = {
 	if = {
 		limit = {

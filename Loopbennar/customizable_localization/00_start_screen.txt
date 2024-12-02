@@ -1244,6 +1244,13 @@ defined_text = {
 		}
 	}
 
+	text = {
+		localisation_key = string_start_naleni
+		trigger = {
+			tag = L55
+		}
+	}
+
 	# Adventurer Companies in Escann
 	text = {
 		localisation_key = string_start_escann_adventurer
@@ -1817,6 +1824,13 @@ defined_text = {
 		localisation_key = string_start_religion_devouring_path
 		trigger = {
 			religion = devouring_path
+		}
+	}
+
+	text = {
+		localisation_key = string_start_religion_kobold_dragon_cult
+		trigger = {
+			religion = kobold_dragon_cult
 		}
 	}
 

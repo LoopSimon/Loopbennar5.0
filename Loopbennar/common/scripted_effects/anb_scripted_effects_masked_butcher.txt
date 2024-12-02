@@ -183,28 +183,34 @@ blood_moon_sacrifice_majority = { #Choose five minority provinces of the race an
 		random_owned_province = {
 			limit = { has_$mask_race$_majority_trigger = yes }
 			change_culture = ROOT
+			change_religion = ROOT
 			set_province_flag = sacrificing_flag
 		}
 		random_owned_province = {
 			limit = { has_$mask_race$_majority_trigger = yes NOT = { has_province_flag = sacrificing_flag } }
 			change_culture = ROOT
+			change_religion = ROOT
 			set_province_flag = sacrificing_flag
 		}
 		random_owned_province = {
 			limit = { has_$mask_race$_majority_trigger = yes NOT = { has_province_flag = sacrificing_flag } }
 			change_culture = ROOT
+			change_religion = ROOT
 			set_province_flag = sacrificing_flag
 		}
 		random_owned_province = {
 			limit = { has_$mask_race$_majority_trigger = yes NOT = { has_province_flag = sacrificing_flag } }
 			change_culture = ROOT
+			change_religion = ROOT
 			set_province_flag = sacrificing_flag
 		}
 		random_owned_province = {
 			limit = { has_$mask_race$_majority_trigger = yes NOT = { has_province_flag = sacrificing_flag } }
 			change_culture = ROOT
+			change_religion = ROOT
 		}
 	}
+	custom_tooltip = $mask_race$_ichor_tt
 	set_country_flag = has_$mask_race$_ichor
 }
 
@@ -236,6 +242,7 @@ blood_moon_sacrifice_minority = { #Choose five minority provinces of the race an
 			remove_$mask_race$_minority_size_effect = yes
 		}
 	}
+	custom_tooltip = $mask_race$_ichor_tt
 	set_country_flag = has_$mask_race$_ichor
 }
 
@@ -265,42 +272,6 @@ add_oblations = { # by okman
 	   change_variable = { which = mb_oblations_claimed value = 1 }
 	}
 	clear_global_event_target = oblations_loser
-}
-
-grove_minority_effect = {
-	random_owned_province = {
-		limit = {
-			province_group = deepwoods_$grove$_grove
-			NOT = { 
-				culture = wood_elf
-				culture = forest_goblin
-			}
-		}
-		change_culture = wood_elf
-	}
-	if = {
-		limit = { has_country_flag = mb_buffed_ichortap_flg }
-		random_owned_province = {
-			limit = {
-				province_group = deepwoods_$provs$_grove
-				NOT = { 
-					culture = wood_elf
-					culture = forest_goblin
-				}
-			}
-			change_culture = wood_elf
-		}
-		random_owned_province = {
-			limit = {
-				province_group = deepwoods_$provs$_grove
-				NOT = { 
-					culture = wood_elf
-					culture = forest_goblin
-				}
-			}
-			change_culture = forest_goblin
-		}
-	}
 }
 
 mb_set_ptm = {

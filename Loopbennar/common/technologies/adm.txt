@@ -324,7 +324,6 @@ technology = { #Absolute Rulership
 	
 	republican_dictatorship = yes
 	governing_capacity = 250
-	furnace = yes
 }
 
 technology = { #Land Clearance
@@ -341,6 +340,7 @@ technology = { #Land Clearance
 	
 	#Land Clearance
 	production_efficiency 	=	0.02
+	furnace = yes
 }
 
 technology = { #The Constitution

@@ -170,7 +170,7 @@ country_event = {
 			10 = {
 				trigger = {
 					NOT = { 
-						culture_group = halfling
+						culture_is_halfling = yes
 					}
 					any_owned_province = {
 						has_halfling_minority_trigger = yes
@@ -263,6 +263,21 @@ country_event = {
 				country_event = {
 					id = halfling_tolerance_events.11
 				}
+			}
+			30 = {
+				trigger = {
+					ai = no
+					OR = {
+						has_country_modifier = just_lost_war_timer
+						average_unrest = 10
+						is_bankrupt = yes
+						NOT = { stability = 0 }
+					}
+					NOT = { high_tolerance_halfling_race_trigger = yes }
+					is_not_purging_or_expelling_any_race_trigger = yes
+				}
+				set_country_flag = propflag_halfling
+				country_event = { id = tolerance_generic.1 }
 			}
 		}
 	}
@@ -498,12 +513,12 @@ country_event = {
 			if = {
 				limit = {
 					any_owned_province = {
-						culture_group = halfling
+						culture_is_halfling = yes
 					}
 				}
 				random_owned_province = {
 					limit = { 
-						culture_group = halfling
+						culture_is_halfling = yes
 					}
 					save_event_target_as = halfling_advisor_culture_province
 				}

@@ -73,9 +73,17 @@ B47_stalbor_column_1 = {
 	effect = {
 		banesfork_area = {
 			add_elven_minority_size_effect = yes
+			if = {
+				limit = { fast_has_pop_of_race = { race = human } }
+				add_half_elven_minority_size_effect = yes
+			}
 		}
 		beastgrave_area = {
 			add_elven_minority_size_effect = yes
+			if = {
+				limit = { fast_has_pop_of_race = { race = human } }
+				add_half_elven_minority_size_effect = yes
+			}
 		}
 		west_deepwoods_region = {
 			discover_country = B47
@@ -161,12 +169,12 @@ B47_stalbor_column_1 = {
 	}
 
 	provinces_to_highlight = {
+		region = west_deepwoods_region
 		OR = {
 			fast_has_pop_of_race = { race = elven }
 			fast_has_pop_of_race = { race = orcish }
 			fast_has_pop_of_race = { race = goblin }
 		}
-		region = west_deepwoods_region
 		owner = {
 			NOT = {
 				is_subject_of = ROOT
@@ -261,9 +269,19 @@ B47_stalbor_column_1 = {
 			tooltip = B47_settled_the_deepwood_stuff
 			has_country_flag = B47_the_matters_of_the_deepwoods_event
 		}
-		num_of_owned_provinces_with = {
-			has_upgraded_watch_modifer = yes
-			value = 4
+		if = {
+			limit = { has_dlc = "Leviathan" }
+			num_of_owned_provinces_with = {
+				has_upgraded_watch_modifer = yes
+				value = 5
+			}
+		}
+		else = {
+			num_of_owned_provinces_with = {
+				has_province_modifier = arturos_watch_chapter
+				development = 15
+				value = 5
+			}
 		}
 		813 = {
 			owned_by = ROOT
@@ -440,9 +458,19 @@ B47_stalbor_column_2 = {
 			infantry_in_province = 3
 			infantry_in_province = ROOT
 		}
-		num_of_owned_provinces_with = {
-			has_upgraded_watch_modifer = yes
-			value = 2
+		if = {
+			limit = { has_dlc = "Leviathan" }
+			num_of_owned_provinces_with = {
+				has_upgraded_watch_modifer = yes
+				value = 3
+			}
+		}
+		else = {
+			num_of_owned_provinces_with = {
+				has_province_modifier = arturos_watch_chapter
+				development = 15
+				value = 3
+			}
 		}
 		has_estate_privilege = estate_adventurers_sponsor_monster_hunters
 	}
@@ -567,13 +595,24 @@ B47_stalbor_column_2 = {
 			owned_by = ROOT
 			is_core = ROOT
 		}
-		510 = {
-			has_shipyard_building_trigger = yes
-			has_dock_building_trigger = yes
-			province_has_current_tech_fort_trigger = yes
-			has_great_project = {
-				type = bal_ouord
-				tier = 1
+		if = {
+			limit = { has_dlc = "Leviathan" }
+			510 = {
+				has_shipyard_building_trigger = yes
+				has_dock_building_trigger = yes
+				province_has_current_tech_fort_trigger = yes
+				has_great_project = {
+					type = bal_ouord
+					tier = 1
+				}
+			}
+		}
+		else = {
+			510 = {
+				has_shipyard_building_trigger = yes
+				has_dock_building_trigger = yes
+				province_has_current_tech_fort_trigger = yes
+				development = 30
 			}
 		}
 	}
@@ -633,16 +672,27 @@ B47_stalbor_column_2 = {
 	}
 
 	trigger = {
-		510 = {
-			has_great_project = {
-				type = bal_ouord
-				tier = 2
+		if = {
+			limit = { has_dlc = "Leviathan" }
+			510 = {
+				has_great_project = {
+					type = bal_ouord
+					tier = 2
+				}
+			}
+			441 = {
+				has_great_project = {
+					type = bal_dostan
+					tier = 2
+				}
 			}
 		}
-		441 = {
-			has_great_project = {
-				type = bal_dostan
-				tier = 2
+		else = {
+			510 = {
+				development = 30
+			}
+			441 = {
+				development = 30
 			}
 		}
 		817 = {
@@ -885,10 +935,6 @@ B47_stalbor_column_3 = {
 				NOT = { owned_by = ROOT }
 			}
 			AND = {
-				owned_by = ROOT
-				NOT = { has_manpower_building_trigger = yes }
-			}
-			AND = {
 				owner = {
 					NOT = {
 						has_spy_network_from = {
@@ -919,9 +965,9 @@ B47_stalbor_column_3 = {
 	}
 
 	trigger = {
-		OR = {
-			barracks = 5
-			training_fields = 5
+		num_of_owned_provinces_with = {
+			has_manpower_building_trigger = yes
+			value = 5
 		}
 		OR = {
 			any_known_country = {
@@ -1137,6 +1183,9 @@ B47_stalbor_column_3 = {
 				}
 			}
 		}
+		ourdia_region = {
+			add_permanent_claim = ROOT
+		}
 		hidden_effect = {
 			every_owned_province = {
 				if = {
@@ -1304,6 +1353,7 @@ B47_stalbor_column_4 = {
 
 	effect = {
 		4097 = {
+			change_province_name = "The Everyhold"
 			remove_province_triggered_modifier = human_hold_1
 			remove_province_triggered_modifier = human_hold_2
 			remove_province_triggered_modifier = human_hold_3
@@ -1705,8 +1755,16 @@ B47_stalbor_column_5 = {
 
 	trigger = {
 		religious_unity = 0.90
-		808 = {
-			has_upgraded_watch_modifer = yes
+		if = {
+			limit = { has_dlc = "Leviathan" }
+			808 = {
+				has_upgraded_watch_modifer = yes
+			}
+		}
+		else = {
+			808 = {
+				num_of_buildings_in_province = 5
+			}
 		}
 		num_of_owned_provinces_with = {
 			OR = {

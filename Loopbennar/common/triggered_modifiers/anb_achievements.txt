@@ -355,43 +355,45 @@ ach_shorter_blackbeard = {
 # Kobold Gold
 ######################################
 #unactive
-ach_kobold_gold_g = {
-	potential = {
-		ai = no
-		NOT = { has_global_flag = achievements_disabled }
-		OR = {
-			NOT = { tag = F47 }
-			NOT = { has_country_flag = stole_kobold_hoard  }
-		}
-		NOT = { has_country_modifier = ach_kobold_gold }
-	}
 
-	trigger = {
-		tag = F47
-		custom_trigger_tooltip = {
-			tooltip = ach_stole_kobold_hoard_tt
-			has_country_flag = stole_kobold_hoard
-		}
-	}
-}
-#active
-ach_kobold_gold = {
-	potential = {
-		ai = no
-		NOT = { has_global_flag = achievements_disabled }
-		OR = {
-			AND = {
-				tag = F47
-				has_country_flag = stole_kobold_hoard
-			}
-			has_country_modifier = ach_kobold_gold
-		}
-	}
+# NOTE: Commented out alongside reworked Kobildzan MT because stealing the Hoard with new mechanics is very exploitable. Will be looking into it post-update to see if there's a way to bring it back without huge exploit problems
+# ach_kobold_gold_g = {
+# 	potential = {
+# 		ai = no
+# 		NOT = { has_global_flag = achievements_disabled }
+# 		OR = {
+# 			NOT = { tag = F47 }
+# 			NOT = { has_country_flag = stole_kobold_hoard  }
+# 		}
+# 		NOT = { has_country_modifier = ach_kobold_gold }
+# 	}
 
-	trigger = {
-		always = yes
-	}
-}
+# 	trigger = {
+# 		tag = F47
+# 		custom_trigger_tooltip = {
+# 			tooltip = ach_stole_kobold_hoard_tt
+# 			has_country_flag = stole_kobold_hoard
+# 		}
+# 	}
+# }
+# #active
+# ach_kobold_gold = {
+# 	potential = {
+# 		ai = no
+# 		NOT = { has_global_flag = achievements_disabled }
+# 		OR = {
+# 			AND = {
+# 				tag = F47
+# 				has_country_flag = stole_kobold_hoard
+# 			}
+# 			has_country_modifier = ach_kobold_gold
+# 		}
+# 	}
+
+# 	trigger = {
+# 		always = yes
+# 	}
+# }
 
 ######################################
 # Godfound
@@ -498,6 +500,7 @@ ach_true_heir_of_jaher_g = {
 		NOT = { has_global_flag = achievements_disabled }
 		OR = {
 			NOT = { tag = F38 }
+			NOT = { tag = F97 }
 			is_year = 1571
 			NOT = { has_country_modifier = ach_true_heir_of_jaher }
 			NOT = { bulwar_superregion = { type = all owned_by = ROOT } }
@@ -514,7 +517,10 @@ ach_true_heir_of_jaher_g = {
 	}
 
 	trigger = {
-		tag = F38
+		OR = {
+			tag = F38
+			tag = F97
+		}
 		NOT = { is_year = 1571 }
 		bulwar_superregion = { type = all  owned_by = ROOT }
 		rahen_superregion = { type = all  owned_by = ROOT }
@@ -534,7 +540,10 @@ ach_true_heir_of_jaher = {
 		NOT = { has_global_flag = achievements_disabled }
 		OR = {
 			AND = {
-				tag = F38
+				OR = {
+					tag = F38
+					tag = F97
+				}
 				OR = {
 					NOT = { is_year = 1571 }
 					has_country_modifier = ach_true_heir_of_jaher
@@ -1256,7 +1265,7 @@ ach_chien_ting_rung_g = {
 				}
 			}
 			NOT = { 
-				north_haless_superregion = {
+				gozengun_superregion = {
 					type = all
 					OR = {
 						owned_by = ROOT
@@ -1274,7 +1283,7 @@ ach_chien_ting_rung_g = {
 				}
 			}
 			NOT = { 
-				south_haless_superregion = {
+				vimdatrong_superregion = {
 					type = all
 					OR = {
 						owned_by = ROOT
@@ -1325,7 +1334,7 @@ ach_chien_ting_rung_g = {
 				has_port = no
 			}
 		}
-		north_haless_superregion = {
+		gozengun_superregion = {
 			type = all
 			OR = {
 				owned_by = ROOT
@@ -1339,7 +1348,7 @@ ach_chien_ting_rung_g = {
 				has_port = no
 			}
 		}
-		south_haless_superregion = {
+		vimdatrong_superregion = {
 			type = all
 			OR = {
 				owned_by = ROOT
@@ -1387,7 +1396,7 @@ ach_chien_ting_rung = {
 						has_port = no
 					}
 				}
-				north_haless_superregion = {
+				gozengun_superregion = {
 					type = all
 					OR = {
 						owned_by = ROOT
@@ -1401,7 +1410,7 @@ ach_chien_ting_rung = {
 						has_port = no
 					}
 				}
-				south_haless_superregion = {
+				vimdatrong_superregion = {
 					type = all
 					OR = {
 						owned_by = ROOT

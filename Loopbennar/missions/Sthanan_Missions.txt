@@ -4,9 +4,19 @@ G81_sthanan_column_1 = {
     slot = 1
     generic = no
 	ai = yes
-    potential = {
-		tag = G81
-	}
+	potential = {
+		OR = {
+			tag = G81
+			AND = {
+				tag = J84 #Taychendi Empire
+				was_tag = G81
+			}
+			AND = {
+				tag = U39 #Orenvalyam
+				was_tag = G81
+			}
+		}
+	} 
 	has_country_shield = yes
 
     G81_concealed_knowledge = {
@@ -97,10 +107,7 @@ G81_sthanan_column_1 = {
                 estate = estate_church
                 loyalty = 60
             }
-            custom_trigger_tooltip = {
-				tooltip = G81_passed_reform_2_tt
-				has_country_flag = got_reform_2
-			}
+            taychend_hero_cult_has_passed_reform = { reform = 2 }
         }
 
         effect = {
@@ -115,9 +122,19 @@ G81_sthanan_column_2 = {
     slot = 2
     generic = no
 	ai = yes
-    potential = {
-		tag = G81
-	}
+	potential = {
+		OR = {
+			tag = G81
+			AND = {
+				tag = J84 #Taychendi Empire
+				was_tag = G81
+			}
+			AND = {
+				tag = U39 #Orenvalyam
+				was_tag = G81
+			}
+		}
+	} 
 	has_country_shield = yes
 
     G81_the_land_of_gardens = {
@@ -240,9 +257,19 @@ G81_sthanan_column_3 = {
     slot = 3
     generic = no
 	ai = yes
-    potential = {
-		tag = G81
-	}
+	potential = {
+		OR = {
+			tag = G81
+			AND = {
+				tag = J84 #Taychendi Empire
+				was_tag = G81
+			}
+			AND = {
+				tag = U39 #Orenvalyam
+				was_tag = G81
+			}
+		}
+	} 
 	has_country_shield = yes
 
     G81_a_revenge_overdue = {
@@ -465,10 +492,7 @@ G81_sthanan_column_3 = {
                     }
                 }
             }
-            custom_trigger_tooltip = {
-				tooltip = G67_passed_reform_5_tt
-				has_country_flag = got_reform_5
-			}
+            taychend_hero_cult_has_passed_reform = { reform = 5 }
         }
 
         effect = {
@@ -483,9 +507,19 @@ G81_sthanan_column_4 = {
     slot = 4
     generic = no
 	ai = yes
-    potential = {
-		tag = G81
-	}
+	potential = {
+		OR = {
+			tag = G81
+			AND = {
+				tag = J84 #Taychendi Empire
+				was_tag = G81
+			}
+			AND = {
+				tag = U39 #Orenvalyam
+				was_tag = G81
+			}
+		}
+	} 
 	has_country_shield = yes
 
     G81_united_against_invaders = {
@@ -984,9 +1018,19 @@ G81_sthanan_column_5 = {
     slot = 5
     generic = no
 	ai = yes
-    potential = {
-		tag = G81
-	}
+	potential = {
+		OR = {
+			tag = G81
+			AND = {
+				tag = J84 #Taychendi Empire
+				was_tag = G81
+			}
+			AND = {
+				tag = U39 #Orenvalyam
+				was_tag = G81
+			}
+		}
+	} 
 	has_country_shield = yes
 
     G81_seaward_gaze = {

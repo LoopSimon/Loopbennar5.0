@@ -76,7 +76,7 @@ province_event = {
 	id = flavor_stalbor.2
 	title = flavor_stalbor.2.t
 	desc = flavor_stalbor.2.d
-	picture = BORDER_TENSION_eventPicture
+	picture = FORT_eventPicture
 	
 	is_triggered_only = yes
 	
@@ -149,11 +149,13 @@ province_event = {
 				}	
 			}
 		}
-		owner = {
-			change_variable = {
-				which = B47_adm_branch_count
-				value = 1
-			}			
+		hidden_effect = {
+			owner = {
+				change_variable = {
+					which = B47_adm_branch_count
+					value = 1
+				}			
+			}	
 		}
 	}
 	
@@ -214,17 +216,19 @@ province_event = {
 				}	
 			}
 		}
-		owner = {
-			change_variable = {
-				which = B47_mil_branch_count
-				value = 1
-			}			
+		hidden_effect = {
+			owner = {
+				change_variable = {
+					which = B47_mil_branch_count
+					value = 1
+				}			
+			}	
 		}
 	}
 	
 	#Naval
 	option = {		
-		name = "flavor_stalbor.2.b"
+		name = "flavor_stalbor.2.c"
 		trigger = {
 			has_port = yes
 		}
@@ -282,11 +286,13 @@ province_event = {
 				}
 			}
 		}
-		owner = {
-			change_variable = {
-				which = B47_naval_branch_count
-				value = 1
-			}			
+		hidden_effect = {
+			owner = {
+				change_variable = {
+					which = B47_naval_branch_count
+					value = 1
+				}			
+			}	
 		}
 	}
 
@@ -310,7 +316,7 @@ country_event = {
 	id = flavor_stalbor.3
 	title = flavor_stalbor.3.t
 	desc = flavor_stalbor.3.d
-	picture = BORDER_TENSION_eventPicture
+	picture = FARMING_eventPicture
 	
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -367,7 +373,7 @@ country_event = {
 	id = flavor_stalbor.4
 	title = flavor_stalbor.4.t
 	desc = flavor_stalbor.4.d
-	picture = BORDER_TENSION_eventPicture
+	picture = BIG_BOOK_eventPicture
 	
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -393,6 +399,7 @@ country_event = {
 	option = {		
 		name = "flavor_stalbor.4.b"
 		ai_chance = { factor = 100 }	
+		highlight = yes
 		817 = {
 			add_permanent_province_modifier = {
 				name = arturos_watch_chapter
@@ -410,7 +417,7 @@ country_event = {
 	id = flavor_stalbor.5
 	title = flavor_stalbor.5.t
 	desc = flavor_stalbor.5.d
-	picture = BORDER_TENSION_eventPicture
+	picture = CIVIL_WAR_eventPicture
 	
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -440,7 +447,7 @@ country_event = {
 	
 	#Become Blademarches
 	option = {
-		name = "flavor_stalbor.5.a"
+		name = "flavor_stalbor.5.b"
 		ai_chance = {factor = 50}
 		
 		if = {
@@ -531,7 +538,7 @@ country_event = {
 	id = flavor_stalbor.6
 	title = flavor_stalbor.6.t
 	desc = flavor_stalbor.6.d
-	picture = BORDER_TENSION_eventPicture
+	picture = CIVIL_WAR_eventPicture
 	
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -560,7 +567,7 @@ country_event = {
 	id = flavor_stalbor.8
 	title = flavor_stalbor.8.t
 	desc = flavor_stalbor.8.d
-	picture = BORDER_TENSION_eventPicture
+	picture = DIPLOMACY_eventPicture
 	
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -615,7 +622,7 @@ country_event = {
 	id = flavor_stalbor.9
 	title = flavor_stalbor.9.t
 	desc = flavor_stalbor.9.d
-	picture = BORDER_TENSION_eventPicture
+	picture = ADVISOR_eventPicture
 	
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -690,6 +697,8 @@ country_event = {
 country_event = {
 	id = flavor_stalbor.10
 	title = flavor_stalbor.10.t
+	desc = flavor_stalbor.10.d
+	picture = RELIGIOUS_WARS_eventPicture
 	
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -747,7 +756,7 @@ country_event = {
 	id = flavor_stalbor.12
 	title = flavor_stalbor.12.t
 	desc = flavor_stalbor.12.d
-	picture = BORDER_TENSION_eventPicture
+	picture = RELIGIOUS_WARS_eventPicture
 	
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -790,7 +799,7 @@ country_event = {
 	id = flavor_stalbor.13
 	title = flavor_stalbor.13.t
 	desc = flavor_stalbor.13.d
-	picture = BORDER_TENSION_eventPicture
+	picture = SIEGE_eventPicture
 	
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -815,7 +824,7 @@ country_event = {
 	id = flavor_stalbor.14
 	title = flavor_stalbor.14.t
 	desc = flavor_stalbor.14.d
-	picture = BORDER_TENSION_eventPicture
+	picture = BATTLE_eventPicture
 	
 	is_triggered_only = yes
 	
@@ -849,7 +858,7 @@ country_event = {
 	id = flavor_stalbor.15
 	title = flavor_stalbor.15.t
 	desc = flavor_stalbor.15.d
-	picture = BORDER_TENSION_eventPicture
+	picture = LAND_MILITARY_eventPicture
 	
 	is_triggered_only = yes
 	
@@ -874,7 +883,7 @@ country_event = {
 	id = flavor_stalbor.16
 	title = flavor_stalbor.16.t
 	desc = flavor_stalbor.16.d
-	picture = BORDER_TENSION_eventPicture
+	picture = SCOTTISH_MERCENARIES_eventPicture
 	
 	is_triggered_only = yes
 	
@@ -909,7 +918,7 @@ country_event = {
 	id = flavor_stalbor.17
 	title = flavor_stalbor.17.t
 	desc = flavor_stalbor.17.d
-	picture = BORDER_TENSION_eventPicture
+	picture = BATTLE_eventPicture
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -935,7 +944,7 @@ country_event = {
 	id = flavor_stalbor.18
 	title = flavor_stalbor.18.t
 	desc = flavor_stalbor.18.d
-	picture = BORDER_TENSION_eventPicture
+	picture = BIG_BOOK_eventPicture
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -967,7 +976,7 @@ country_event = {
 	id = flavor_stalbor.19
 	title = flavor_stalbor.19.t
 	desc = flavor_stalbor.19.d
-	picture = BORDER_TENSION_eventPicture
+	picture = COURT_eventPicture
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -998,7 +1007,7 @@ country_event = {
 	id = flavor_stalbor.20
 	title = flavor_stalbor.20.t
 	desc = flavor_stalbor.20.d
-	picture = BORDER_TENSION_eventPicture
+	picture = ADVISOR_eventPicture
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -1041,7 +1050,7 @@ country_event = {
 	id = flavor_stalbor.21
 	title = flavor_stalbor.21.t
 	desc = flavor_stalbor.21.d
-	picture = BORDER_TENSION_eventPicture
+	picture = COURT_eventPicture
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -1055,20 +1064,26 @@ country_event = {
 		name = "flavor_stalbor.21.a"
 		ai_chance = { factor = 100 }
 		set_country_flag = B47_vampire_lords_on_the_run
-		every_owned_province = {
-			limit = {
-				region = dostanor_region
-			}
-			random = {
-				chance = 50
-				spawn_rebels = {
-					type = vampires_thralls
-					size = 1
+		western_cannor_superregion = {
+			discover_country = ROOT
+		}
+		custom_tooltip = B47_old_lord_loyalist_explained
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					region = dostanor_region
 				}
-			}
-			add_province_modifier = {
-				name = B47_old_lord_loyalists
-				duration = -1
+				random = {
+					chance = 50
+					spawn_rebels = {
+						type = vampires_thralls
+						size = 1
+					}
+				}
+				add_province_modifier = {
+					name = B47_old_lord_loyalists
+					duration = -1
+				}
 			}
 		}
 	}
@@ -1079,7 +1094,7 @@ country_event = {
 	id = flavor_stalbor.22
 	title = flavor_stalbor.22.t
 	desc = flavor_stalbor.22.d
-	picture = BORDER_TENSION_eventPicture
+	picture = GENERALS_DISCUSSING_eventPicture
 	
 	is_triggered_only = yes
 	
@@ -1154,7 +1169,7 @@ country_event = {
 	id = flavor_stalbor.23
 	title = flavor_stalbor.23.t
 	desc = flavor_stalbor.23.d
-	picture = BORDER_TENSION_eventPicture
+	picture = GENERALS_DISCUSSING_eventPicture
 	
 	is_triggered_only = yes
 	
@@ -1214,7 +1229,7 @@ country_event = {
 		trigger = { has_country_flag = B47_vampire_hunters_in_lencenor }
 		desc = flavor_stalbor.24.d.5
 	}
-	picture = BORDER_TENSION_eventPicture
+	picture = SPY_eventPicture
 	
 	is_triggered_only = yes
 	
@@ -1253,33 +1268,48 @@ country_event = {
 			}
 		}
 	}
+	#Riverboat Parties
+	option = {	
+		name = "flavor_stalbor.24.c"
+		trigger = { has_country_flag = B47_vampire_hunters_in_esmaria }
+		ai_chance = { factor = 0 }
+		add_treasury = -50
+		add_prestige = 5
+		add_legitimacy_equivalent = { amount = 5 republican_tradition = 2 }
+		random_list = {
+			90 = {
+				country_event = { 
+					id = flavor_stalbor.25 
+					days = 180
+				}
+			}
+			10 = {
+				country_event = { 
+					id = flavor_stalbor.26 
+					days = 180
+				}
+			}
+		}
+	}
+	#Rubyhold
+	option = {	
+		name = "flavor_stalbor.24.e"
+		trigger = { has_country_flag = B47_vampire_hunters_in_lencenor }
+		ai_chance = { factor = 0 }
+		add_army_professionalism = 0.05
+		country_event = { 
+			id = flavor_stalbor.25 
+			days = 365
+		}
+	}
 }
 
 #Capture or Slay!
 country_event = {
 	id = flavor_stalbor.25
 	title = flavor_stalbor.25.t
-	desc = {
-		trigger = { has_country_flag = B47_vampire_hunters_in_borders }
-		desc = flavor_stalbor.25.d.1
-	}
-	desc = {
-		trigger = { has_country_flag = B47_vampire_hunters_in_esmaria }
-		desc = flavor_stalbor.25.d.2
-	}
-	desc = {
-		trigger = { has_country_flag = B47_vampire_hunters_in_dameshead }
-		desc = flavor_stalbor.25.d.3
-	}
-	desc = {
-		trigger = { has_country_flag = B47_vampire_hunters_in_damescrown }
-		desc = flavor_stalbor.25.d.4
-	}
-	desc = {
-		trigger = { has_country_flag = B47_vampire_hunters_in_lencenor }
-		desc = flavor_stalbor.25.d.5
-	}
-	picture = BORDER_TENSION_eventPicture
+	desc = flavor_stalbor.25.d
+	picture = ASSASSINATION_eventPicture
 	
 	is_triggered_only = yes
 	
@@ -1294,42 +1324,41 @@ country_event = {
 		custom_tooltip = B47_reset_hunters
 		hidden_effect = {
 			remove_estate_privilege = estate_adventurers_track_vampire_nobility
-		}
-
-		if = {
-			limit = {
-				has_country_flag = B47_vampire_hunters_in_borders
+			if = {
+				limit = {
+					has_country_flag = B47_vampire_hunters_in_borders
+				}
+				clr_country_flag = B47_vampire_hunters_in_borders
+				set_country_flag = B47_vampires_caught_borders
 			}
-			clr_country_flag = B47_vampire_hunters_in_borders
-			set_country_flag = B47_vampires_caught_borders
-		}
-		else_if = {
-			limit = {
-				has_country_flag = B47_vampire_hunters_in_esmaria
+			else_if = {
+				limit = {
+					has_country_flag = B47_vampire_hunters_in_esmaria
+				}
+				clr_country_flag = B47_vampire_hunters_in_esmaria
+				set_country_flag = B47_vampires_caught_esmaria
 			}
-			clr_country_flag = B47_vampire_hunters_in_esmaria
-			set_country_flag = B47_vampires_caught_esmaria
-		}
-		else_if = {
-			limit = {
-				has_country_flag = B47_vampire_hunters_in_dameshead
+			else_if = {
+				limit = {
+					has_country_flag = B47_vampire_hunters_in_dameshead
+				}
+				clr_country_flag = B47_vampire_hunters_in_dameshead
+				set_country_flag = B47_vampires_caught_dameshead
 			}
-			clr_country_flag = B47_vampire_hunters_in_dameshead
-			set_country_flag = B47_vampires_caught_dameshead
-		}
-		else_if = {
-			limit = {
-				has_country_flag = B47_vampire_hunters_in_damescrown
+			else_if = {
+				limit = {
+					has_country_flag = B47_vampire_hunters_in_damescrown
+				}
+				clr_country_flag = B47_vampire_hunters_in_damescrown
+				set_country_flag = B47_vampires_caught_damescrown
 			}
-			clr_country_flag = B47_vampire_hunters_in_damescrown
-			set_country_flag = B47_vampires_caught_damescrown
-		}
-		else_if = {
-			limit = {
-				has_country_flag = B47_vampire_hunters_in_lencenor
+			else_if = {
+				limit = {
+					has_country_flag = B47_vampire_hunters_in_lencenor
+				}
+				clr_country_flag = B47_vampire_hunters_in_lencenor
+				set_country_flag = B47_vampires_caught_lencenor
 			}
-			clr_country_flag = B47_vampire_hunters_in_lencenor
-			set_country_flag = B47_vampires_caught_lencenor
 		}
 
 	}
@@ -1343,6 +1372,64 @@ country_event = {
 			days = 180
 		}
 	}
+	#Hand them to the Locals
+	option = {	
+		name = "flavor_stalbor.25.c"
+		trigger = { has_country_flag = B47_vampire_hunters_in_borders }
+		ai_chance = { factor = 50 }
+		custom_tooltip = B47_reset_hunters
+		hidden_effect = {
+			remove_estate_privilege = estate_adventurers_track_vampire_nobility
+			if = {
+				limit = {
+					has_country_flag = B47_vampire_hunters_in_borders
+				}
+				clr_country_flag = B47_vampire_hunters_in_borders
+				set_country_flag = B47_vampires_caught_borders
+			}
+			else_if = {
+				limit = {
+					has_country_flag = B47_vampire_hunters_in_esmaria
+				}
+				clr_country_flag = B47_vampire_hunters_in_esmaria
+				set_country_flag = B47_vampires_caught_esmaria
+			}
+			else_if = {
+				limit = {
+					has_country_flag = B47_vampire_hunters_in_dameshead
+				}
+				clr_country_flag = B47_vampire_hunters_in_dameshead
+				set_country_flag = B47_vampires_caught_dameshead
+			}
+			else_if = {
+				limit = {
+					has_country_flag = B47_vampire_hunters_in_damescrown
+				}
+				clr_country_flag = B47_vampire_hunters_in_damescrown
+				set_country_flag = B47_vampires_caught_damescrown
+			}
+			else_if = {
+				limit = {
+					has_country_flag = B47_vampire_hunters_in_lencenor
+				}
+				clr_country_flag = B47_vampire_hunters_in_lencenor
+				set_country_flag = B47_vampires_caught_lencenor
+			}
+		}
+		add_mil_power = 50
+		add_prestige = -10
+	}
+	#They will never Escape
+	option = {	
+		name = "flavor_stalbor.25.e"
+		trigger = { has_country_flag = B47_vampire_hunters_in_dameshead }
+		ai_chance = { factor = 0 }
+		add_treasury = -300
+		country_event = { 
+			id = flavor_stalbor.27 
+			days = 10
+		}
+	}
 }
 
 #Failure
@@ -1350,7 +1437,7 @@ country_event = {
 	id = flavor_stalbor.26
 	title = flavor_stalbor.26.t
 	desc = flavor_stalbor.26.d
-	picture = BORDER_TENSION_eventPicture
+	picture = BANKRUPTCY_eventPicture
 	
 	is_triggered_only = yes
 	
@@ -1618,6 +1705,45 @@ country_event = {
 			days = 90
 		}
 	}
+	#Turn to Local Hunters
+	option = {	
+		name = "flavor_stalbor.25.b"
+		trigger = { has_country_flag = B47_vampire_hunters_in_borders }
+		ai_chance = { factor = 0 }
+		add_prestige = -5
+		add_dip_power = -50
+		country_event = { 
+			id = flavor_stalbor.25 
+			days = 180
+		}
+	}
+	#Aid for anti-slavers
+	option = {	
+		name = "flavor_stalbor.25.c"
+		trigger = { 
+			has_country_flag = B47_vampire_hunters_in_damescrown
+			any_province = {
+				region = damescrown_region
+				trade_goods = slaves
+			}
+		}
+		ai_chance = { factor = 0 }
+		add_treasury = -300
+		random_province = {
+			limit = {
+				region = damescrown_region
+				trade_goods = slaves
+			}
+			spawn_rebels = {
+				size = 2
+				type = leadered_peasant_rebels
+			}
+		}
+		country_event = { 
+			id = flavor_stalbor.25 
+			days = 180
+		}
+	}
 }
 
 #Returned to Die!
@@ -1625,7 +1751,7 @@ country_event = {
 	id = flavor_stalbor.27
 	title = flavor_stalbor.27.t
 	desc = flavor_stalbor.27.d
-	picture = BORDER_TENSION_eventPicture
+	picture = REFORM_eventPicture
 	
 	is_triggered_only = yes
 	
@@ -1691,27 +1817,8 @@ country_event = {
 country_event = {
 	id = flavor_stalbor.28
 	title = flavor_stalbor.28.t
-	desc = {
-		trigger = { has_country_flag = B47_vampire_hunters_in_borders }
-		desc = flavor_stalbor.28.d.1
-	}
-	desc = {
-		trigger = { has_country_flag = B47_vampire_hunters_in_esmaria }
-		desc = flavor_stalbor.28.d.2
-	}
-	desc = {
-		trigger = { has_country_flag = B47_vampire_hunters_in_dameshead }
-		desc = flavor_stalbor.28.d.3
-	}
-	desc = {
-		trigger = { has_country_flag = B47_vampire_hunters_in_damescrown }
-		desc = flavor_stalbor.28.d.4
-	}
-	desc = {
-		trigger = { has_country_flag = B47_vampire_hunters_in_lencenor }
-		desc = flavor_stalbor.28.d.5
-	}
-	picture = BORDER_TENSION_eventPicture
+	desc = flavor_stalbor.28.d
+	picture = DIPLOMACY_eventPicture
 	
 	is_triggered_only = yes
 	
@@ -1738,33 +1845,36 @@ country_event = {
 			days = 365
 		}
 	}
+	#Visit Anbenncóst
+	option = {	
+		name = "flavor_stalbor.28.c"
+		trigger = { has_country_flag = B47_vampire_hunters_in_dameshead }
+		ai_chance = { factor = 0 }
+		add_dip_power = 50
+		country_event = { 
+			id = flavor_stalbor.29 
+			days = 180
+		}
+	}
+	#Visit the Wine Lords
+	option = {	
+		name = "flavor_stalbor.28.e"
+		trigger = { has_country_flag = B47_vampire_hunters_in_lencenor }
+		ai_chance = { factor = 0 }
+		add_legitimacy_equivalent = { amount = 5 republican_tradition = 2 }
+		country_event = { 
+			id = flavor_stalbor.29 
+			days = 270
+		}
+	}
 }
 
 #Finding Evidence
 country_event = {
 	id = flavor_stalbor.29
 	title = flavor_stalbor.29.t
-	desc = {
-		trigger = { has_country_flag = B47_vampire_hunters_in_borders }
-		desc = flavor_stalbor.29.d.1
-	}
-	desc = {
-		trigger = { has_country_flag = B47_vampire_hunters_in_esmaria }
-		desc = flavor_stalbor.29.d.2
-	}
-	desc = {
-		trigger = { has_country_flag = B47_vampire_hunters_in_dameshead }
-		desc = flavor_stalbor.29.d.3
-	}
-	desc = {
-		trigger = { has_country_flag = B47_vampire_hunters_in_damescrown }
-		desc = flavor_stalbor.29.d.4
-	}
-	desc = {
-		trigger = { has_country_flag = B47_vampire_hunters_in_lencenor }
-		desc = flavor_stalbor.29.d.5
-	}
-	picture = BORDER_TENSION_eventPicture
+	desc = flavor_stalbor.29.d
+	picture = TRADE_GOODS_PLANTATION_GOODS_IN_WAREHOUSE_eventPicture
 	
 	is_triggered_only = yes
 	
@@ -1901,6 +2011,34 @@ country_event = {
 			days = 365
 		}
 	}
+	#Attend Riverboat Parties.
+	option = {	
+		name = "flavor_stalbor.29.c"
+		ai_chance = { factor = 0 }
+		add_treasury = -50
+		add_prestige = 5
+		add_legitimacy_equivalent = { amount = 5 republican_tradition = 2 }
+		country_event = { 
+			id = flavor_stalbor.30
+			days = 180
+		}
+	}
+	#Vissit Bal Vertesk.
+	option = {	
+		name = "flavor_stalbor.29.e"
+		ai_chance = { factor = 0 }
+		every_known_country = { 
+			add_aggressive_expansion = {
+				who = ROOT
+				value = -5
+				apply_calc = yes
+			}
+		}
+		country_event = { 
+			id = flavor_stalbor.30
+			days = 90
+		}
+	}
 }
 
 #Unveil the vampires in hiding
@@ -1927,7 +2065,7 @@ country_event = {
 		trigger = { has_country_flag = B47_vampire_hunters_in_lencenor }
 		desc = flavor_stalbor.30.d.5
 	}
-	picture = BORDER_TENSION_eventPicture
+	picture = DIPLOMACY_SIGNING_eventPicture
 	
 	is_triggered_only = yes
 	
@@ -1995,7 +2133,7 @@ country_event = {
 	id = flavor_stalbor.31
 	title = flavor_stalbor.31.t
 	desc = flavor_stalbor.31.d
-	picture = BORDER_TENSION_eventPicture
+	picture = HUSSARS_eventPicture
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -2025,7 +2163,7 @@ country_event = {
 	id = flavor_stalbor.32
 	title = flavor_stalbor.32.t
 	desc = flavor_stalbor.32.d
-	picture = BORDER_TENSION_eventPicture
+	picture = COUNTRY_COLLAPSE_eventPicture
 	
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -2139,7 +2277,7 @@ country_event = {
 	id = flavor_stalbor.33
 	title = flavor_stalbor.33.t
 	desc = flavor_stalbor.33.d
-	picture = BORDER_TENSION_eventPicture
+	picture = PEASANTS_BARTERING_eventPicture
 	
 	is_triggered_only = yes
 	
@@ -2150,27 +2288,12 @@ country_event = {
 	option = {	
 		name = "flavor_stalbor.33.a"
 		ai_chance = { factor = 100 }
+		add_splendor = 50
 		808 = {
 			add_dwarven_minority_size_effect = yes
 		}
-		random_owned_province = {
-			limit = {
-				NOT = {
-					culture_is_dwarven = yes
-				}
-			}
-			add_dwarven_minority_size_effect = yes
-			add_random_development = 1
-		}
-		random_owned_province = {
-			limit = {
-				NOT = {
-					culture_is_dwarven = yes
-				}
-			}
-			add_dwarven_minority_size_effect = yes
-			add_random_development = 1
-		}
+		add_racial_minority_and_dev_preferred_terrain = { race = dwarven dev_amount = 1 }
+		add_racial_minority_and_dev_preferred_terrain = { race = dwarven dev_amount = 1 }
 		hidden_effect = {
 			country_event = {
 				id = flavor_stalbor.34
@@ -2185,7 +2308,7 @@ country_event = {
 	id = flavor_stalbor.34
 	title = flavor_stalbor.34.t
 	desc = flavor_stalbor.34.d
-	picture = BORDER_TENSION_eventPicture
+	picture = PEASANTS_BARTERING_eventPicture
 	
 	is_triggered_only = yes
 	
@@ -2196,27 +2319,13 @@ country_event = {
 	option = {	
 		name = "flavor_stalbor.34.a"
 		ai_chance = { factor = 100 }
+		add_legitimacy_equivalent = { amount = 15 republican_tradition = 7.5 }
 		808 = {
 			add_elven_minority_size_effect = yes
+			add_half_elven_minority_size_effect = yes
 		}
-		random_owned_province = {
-			limit = {
-				NOT = {
-					culture_is_elven = yes
-				}
-			}
-			add_elven_minority_size_effect = yes
-			add_random_development = 1
-		}
-		random_owned_province = {
-			limit = {
-				NOT = {
-					culture_is_elven = yes
-				}
-			}
-			add_elven_minority_size_effect = yes
-			add_random_development = 1
-		}
+		add_racial_minority_and_dev_preferred_terrain = { race = elven dev_amount = 1 }
+		add_racial_minority_and_dev_preferred_terrain = { race = elven dev_amount = 1 }
 		hidden_effect = {
 			country_event = {
 				id = flavor_stalbor.35
@@ -2242,27 +2351,18 @@ country_event = {
 	option = {	
 		name = "flavor_stalbor.35.a"
 		ai_chance = { factor = 100 }
+		define_advisor = {
+			type = natural_scientist
+			skill = 2
+			discount = yes
+			culture = imperial_gnome
+			religion = ROOT
+		}
 		808 = {
 			add_gnomish_minority_size_effect = yes
 		}
-		random_owned_province = {
-			limit = {
-				NOT = {
-					culture_is_gnomish = yes
-				}
-			}
-			add_gnomish_minority_size_effect = yes
-			add_random_development = 1
-		}
-		random_owned_province = {
-			limit = {
-				NOT = {
-					culture_is_gnomish = yes
-				}
-			}
-			add_gnomish_minority_size_effect = yes
-			add_random_development = 1
-		}
+		add_racial_minority_and_dev_preferred_terrain = { race = gnomish dev_amount = 1 }
+		add_racial_minority_and_dev_preferred_terrain = { race = gnomish dev_amount = 1 }
 		hidden_effect = {
 			country_event = {
 				id = flavor_stalbor.36
@@ -2277,7 +2377,7 @@ country_event = {
 	id = flavor_stalbor.36
 	title = flavor_stalbor.36.t
 	desc = flavor_stalbor.36.d
-	picture = BORDER_TENSION_eventPicture
+	picture = PEASANTS_BARTERING_eventPicture
 	
 	is_triggered_only = yes
 	
@@ -2288,27 +2388,12 @@ country_event = {
 	option = {	
 		name = "flavor_stalbor.36.a"
 		ai_chance = { factor = 100 }
+		add_corruption = -1
 		808 = {
 			add_halfling_minority_size_effect = yes
 		}
-		random_owned_province = {
-			limit = {
-				NOT = {
-					culture_is_halfling = yes
-				}
-			}
-			add_halfling_minority_size_effect = yes
-			add_random_development = 1
-		}
-		random_owned_province = {
-			limit = {
-				NOT = {
-					culture_is_halfling = yes
-				}
-			}
-			add_halfling_minority_size_effect = yes
-			add_random_development = 1
-		}
+		add_racial_minority_and_dev_preferred_terrain = { race = halfling dev_amount = 1 }
+		add_racial_minority_and_dev_preferred_terrain = { race = halfling dev_amount = 1 }
 	}
 }
 
@@ -2317,7 +2402,7 @@ country_event = {
 	id = flavor_stalbor.37
 	title = flavor_stalbor.37.t
 	desc = flavor_stalbor.37.d
-	picture = BORDER_TENSION_eventPicture
+	picture = PEASANTS_BARTERING_eventPicture
 	
 	is_triggered_only = yes
 	
@@ -2328,27 +2413,15 @@ country_event = {
 	option = {	
 		name = "flavor_stalbor.37.a"
 		ai_chance = { factor = 100 }
+		add_power_projection = {
+			type = mission_rewards_power_projection
+			amount = 10
+		}
 		808 = {
 			add_gnollish_minority_size_effect = yes
 		}
-		random_owned_province = {
-			limit = {
-				NOT = {
-					culture_is_gnollish = yes
-				}
-			}
-			add_gnollish_minority_size_effect = yes
-			add_random_development = 1
-		}
-		random_owned_province = {
-			limit = {
-				NOT = {
-					culture_is_gnollish = yes
-				}
-			}
-			add_gnollish_minority_size_effect = yes
-			add_random_development = 1
-		}
+		add_racial_minority_and_dev_preferred_terrain = { race = gnollish dev_amount = 1 }
+		add_racial_minority_and_dev_preferred_terrain = { race = gnollish dev_amount = 1 }
 		hidden_effect = {
 			country_event = {
 				id = flavor_stalbor.38
@@ -2363,7 +2436,7 @@ country_event = {
 	id = flavor_stalbor.38
 	title = flavor_stalbor.38.t
 	desc = flavor_stalbor.38.d
-	picture = BORDER_TENSION_eventPicture
+	picture = SHIP_SAILING_eventPicture
 	
 	is_triggered_only = yes
 	
@@ -2374,27 +2447,12 @@ country_event = {
 	option = {	
 		name = "flavor_stalbor.38.a"
 		ai_chance = { factor = 100 }
+		add_mercantilism = 3
 		808 = {
 			add_harpy_minority_size_effect = yes
 		}
-		random_owned_province = {
-			limit = {
-				NOT = {
-					culture_is_harpy = yes
-				}
-			}
-			add_harpy_minority_size_effect = yes
-			add_random_development = 1
-		}
-		random_owned_province = {
-			limit = {
-				NOT = {
-					culture_is_harpy = yes
-				}
-			}
-			add_harpy_minority_size_effect = yes
-			add_random_development = 1
-		}
+		add_racial_minority_and_dev_preferred_terrain = { race = harpy dev_amount = 1 }
+		add_racial_minority_and_dev_preferred_terrain = { race = harpy dev_amount = 1 }
 		hidden_effect = {
 			country_event = {
 				id = flavor_stalbor.39
@@ -2409,7 +2467,7 @@ country_event = {
 	id = flavor_stalbor.39
 	title = flavor_stalbor.39.t
 	desc = flavor_stalbor.39.d
-	picture = BORDER_TENSION_eventPicture
+	picture = SHIP_SAILING_eventPicture
 	
 	is_triggered_only = yes
 	
@@ -2420,27 +2478,12 @@ country_event = {
 	option = {	
 		name = "flavor_stalbor.39.a"
 		ai_chance = { factor = 100 }
+		add_inflation = -2
 		808 = {
 			add_kobold_minority_size_effect = yes
 		}
-		random_owned_province = {
-			limit = {
-				NOT = {
-					culture_is_kobold = yes
-				}
-			}
-			add_kobold_minority_size_effect = yes
-			add_random_development = 1
-		}
-		random_owned_province = {
-			limit = {
-				NOT = {
-					culture_is_kobold = yes
-				}
-			}
-			add_kobold_minority_size_effect = yes
-			add_random_development = 1
-		}
+		add_racial_minority_and_dev_preferred_terrain = { race = kobold dev_amount = 1 }
+		add_racial_minority_and_dev_preferred_terrain = { race = kobold dev_amount = 1 }
 		hidden_effect = {
 			country_event = {
 				id = flavor_stalbor.35
@@ -2455,7 +2498,7 @@ country_event = {
 	id = flavor_stalbor.40
 	title = flavor_stalbor.40.t
 	desc = flavor_stalbor.40.d
-	picture = BORDER_TENSION_eventPicture
+	picture = SHIP_SAILING_eventPicture
 	
 	is_triggered_only = yes
 	
@@ -2466,27 +2509,14 @@ country_event = {
 	option = {	
 		name = "flavor_stalbor.40.a"
 		ai_chance = { factor = 100 }
+		add_adm_power = 25
+		add_dip_power = 25
+		add_mil_power = 25
 		808 = {
 			add_troll_minority_size_effect = yes
 		}
-		random_owned_province = {
-			limit = {
-				NOT = {
-					culture_is_troll = yes
-				}
-			}
-			add_troll_minority_size_effect = yes
-			add_random_development = 1
-		}
-		random_owned_province = {
-			limit = {
-				NOT = {
-					culture_is_troll = yes
-				}
-			}
-			add_troll_minority_size_effect = yes
-			add_random_development = 1
-		}
+		add_racial_minority_and_dev_preferred_terrain = { race = troll dev_amount = 1 }
+		add_racial_minority_and_dev_preferred_terrain = { race = troll dev_amount = 1 }
 	}
 }
 
@@ -2495,7 +2525,7 @@ country_event = {
 	id = flavor_stalbor.41
 	title = flavor_stalbor.41.t
 	desc = flavor_stalbor.41.d
-	picture = BORDER_TENSION_eventPicture
+	picture = SHIP_SAILING_eventPicture
 	
 	is_triggered_only = yes
 	
@@ -2509,30 +2539,10 @@ country_event = {
 		808 = {
 			add_centaur_minority_size_effect = yes
 			add_devastation = -100
-			add_prosperity = 50
+			add_prosperity = 75
 		}
-		random_owned_province = {
-			limit = {
-				NOT = {
-					culture_is_centaur = yes
-				}
-			}
-			add_centaur_minority_size_effect = yes
-			add_random_development = 1
-			add_devastation = -100
-			add_prosperity = 50
-		}
-		random_owned_province = {
-			limit = {
-				NOT = {
-					culture_is_centaur = yes
-				}
-			}
-			add_centaur_minority_size_effect = yes
-			add_random_development = 1
-			add_devastation = -100
-			add_prosperity = 50
-		}
+		add_racial_minority_and_dev_preferred_terrain = { race = centaur dev_amount = 1 }
+		add_racial_minority_and_dev_preferred_terrain = { race = centaur dev_amount = 1 }
 		hidden_effect = {
 			country_event = {
 				id = flavor_stalbor.42
@@ -2547,7 +2557,7 @@ country_event = {
 	id = flavor_stalbor.42
 	title = flavor_stalbor.42.t
 	desc = flavor_stalbor.42.d
-	picture = BORDER_TENSION_eventPicture
+	picture = SHIP_SAILING_eventPicture
 	
 	is_triggered_only = yes
 	
@@ -2562,24 +2572,8 @@ country_event = {
 		808 = {
 			add_harimari_minority_size_effect = yes
 		}
-		random_owned_province = {
-			limit = {
-				NOT = {
-					culture_is_harimari = yes
-				}
-			}
-			add_harimari_minority_size_effect = yes
-			add_random_development = 1
-		}
-		random_owned_province = {
-			limit = {
-				NOT = {
-					culture_is_harimari = yes
-				}
-			}
-			add_harimari_minority_size_effect = yes
-			add_random_development = 1
-		}
+		add_racial_minority_and_dev_preferred_terrain = { race = harimari dev_amount = 1 }
+		add_racial_minority_and_dev_preferred_terrain = { race = harimari dev_amount = 1 }
 		hidden_effect = {
 			country_event = {
 				id = flavor_stalbor.43
@@ -2594,7 +2588,7 @@ country_event = {
 	id = flavor_stalbor.43
 	title = flavor_stalbor.43.t
 	desc = flavor_stalbor.43.d
-	picture = BORDER_TENSION_eventPicture
+	picture = SHIP_SAILING_eventPicture
 	
 	is_triggered_only = yes
 	
@@ -2614,24 +2608,8 @@ country_event = {
 		808 = {
 			add_lizardfolk_minority_size_effect = yes
 		}
-		random_owned_province = {
-			limit = {
-				NOT = {
-					culture_is_lizardfolk = yes
-				}
-			}
-			add_lizardfolk_minority_size_effect = yes
-			add_random_development = 1
-		}
-		random_owned_province = {
-			limit = {
-				NOT = {
-					culture_is_lizardfolk = yes
-				}
-			}
-			add_lizardfolk_minority_size_effect = yes
-			add_random_development = 1
-		}
+		add_racial_minority_and_dev_preferred_terrain = { race = lizardfolk dev_amount = 1 }
+		add_racial_minority_and_dev_preferred_terrain = { race = lizardfolk dev_amount = 1 }
 		hidden_effect = {
 			country_event = {
 				id = flavor_stalbor.44
@@ -2646,7 +2624,7 @@ country_event = {
 	id = flavor_stalbor.44
 	title = flavor_stalbor.44.t
 	desc = flavor_stalbor.44.d
-	picture = BORDER_TENSION_eventPicture
+	picture = SHIP_SAILING_eventPicture
 	
 	is_triggered_only = yes
 	
@@ -2661,24 +2639,8 @@ country_event = {
 			add_ogre_minority_size_effect = yes
 			add_random_development = 3
 		}
-		random_owned_province = {
-			limit = {
-				NOT = {
-					culture_is_ogre = yes
-				}
-			}
-			add_ogre_minority_size_effect = yes
-			add_random_development = 3
-		}
-		random_owned_province = {
-			limit = {
-				NOT = {
-					culture_is_ogre = yes
-				}
-			}
-			add_ogre_minority_size_effect = yes
-			add_random_development = 3
-		}
+		add_racial_minority_and_dev_preferred_terrain = { race = ogre dev_amount = 3 }
+		add_racial_minority_and_dev_preferred_terrain = { race = ogre dev_amount = 3 }
 		hidden_effect = {
 			country_event = {
 				id = flavor_stalbor.45
@@ -2693,7 +2655,7 @@ country_event = {
 	id = flavor_stalbor.45
 	title = flavor_stalbor.45.t
 	desc = flavor_stalbor.45.d
-	picture = BORDER_TENSION_eventPicture
+	picture = SHIP_SAILING_eventPicture
 	
 	is_triggered_only = yes
 	
@@ -2710,24 +2672,8 @@ country_event = {
 		808 = {
 			add_ruinborn_minority_size_effect = yes
 		}
-		random_owned_province = {
-			limit = {
-				NOT = {
-					culture_is_ruinborn = yes
-				}
-			}
-			add_ruinborn_minority_size_effect = yes
-			add_random_development = 1
-		}
-		random_owned_province = {
-			limit = {
-				NOT = {
-					culture_is_ruinborn = yes
-				}
-			}
-			add_ruinborn_minority_size_effect = yes
-			add_random_development = 1
-		}
+		add_racial_minority_and_dev_preferred_terrain = { race = ruinborn dev_amount = 1 }
+		add_racial_minority_and_dev_preferred_terrain = { race = ruinborn dev_amount = 1 }
 		hidden_effect = {
 			country_event = {
 				id = flavor_stalbor.46
@@ -2742,7 +2688,7 @@ country_event = {
 	id = flavor_stalbor.46
 	title = flavor_stalbor.46.t
 	desc = flavor_stalbor.46.d
-	picture = BORDER_TENSION_eventPicture
+	picture = SHIP_SAILING_eventPicture
 	
 	is_triggered_only = yes
 	
@@ -2757,23 +2703,7 @@ country_event = {
 		808 = {
 			add_hobgoblin_minority_size_effect = yes
 		}
-		random_owned_province = {
-			limit = {
-				NOT = {
-					culture_is_hobgoblin = yes
-				}
-			}
-			add_hobgoblin_minority_size_effect = yes
-			add_random_development = 1
-		}
-		random_owned_province = {
-			limit = {
-				NOT = {
-					culture_is_hobgoblin = yes
-				}
-			}
-			add_hobgoblin_minority_size_effect = yes
-			add_random_development = 1
-		}
+		add_racial_minority_and_dev_preferred_terrain = { race = hobgoblin dev_amount = 1 }
+		add_racial_minority_and_dev_preferred_terrain = { race = hobgoblin dev_amount = 1 }
 	}
 }

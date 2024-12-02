@@ -1385,8 +1385,26 @@ country_event = {
 			}
 		}
 	}
+
+	after = {
+		every_subject_country = {
+			limit = { 
+				is_subject_of_type = nekhei 
+				NOT = { num_of_colonists = 1 }
+			}
+			add_country_modifier = {
+				name = nekheis_new_colonies
+				duration = -1
+			}
+			add_country_modifier = {
+				name = nekheis_cheap_colonies
+				duration = 18250 #50 Years
+			}
+		}
+	}
 }
 
+#Choose to grant or refuse war rights
 country_event = {
 	id = kheionai.19
 	title = kheionai.19.t
@@ -1492,6 +1510,7 @@ country_event = {
 	}
 }
 
+#War rights granted
 country_event = {
 	id = kheionai.20
 	title = kheionai.20.t
@@ -1516,6 +1535,7 @@ country_event = {
 	}
 }
 
+#War rights denied
 country_event = {
 	id = kheionai.21
 	title = kheionai.21.t

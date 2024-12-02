@@ -2324,6 +2324,7 @@ anbennar_T5_generic_bottomless_bags = {
 				}
 			}
 		}
+		NOT = { has_country_modifier = human_military }
 		NOT = { has_country_modifier = ruinborn_military }
 	}
 	trigger = {
@@ -2359,6 +2360,7 @@ anbennar_T5_generic_protection_charms = {
 				}
 			}
 		}
+		NOT = { has_country_modifier = human_military }
 		NOT = { has_country_modifier = ruinborn_military }
 	}
 	trigger = {
@@ -2397,6 +2399,7 @@ anbennar_T5_generic_windshapers = {
 				}
 			}
 		}
+		NOT = { has_country_modifier = human_military }
 		NOT = { has_country_modifier = ruinborn_military }
 	}
 	trigger = {
@@ -2434,6 +2437,7 @@ anbennar_T5_generic_war_games = {
 				}
 			}
 		}
+		NOT = { has_country_modifier = human_military }
 		NOT = { has_country_modifier = ruinborn_military }
 	}
 	trigger = {
@@ -2469,6 +2473,7 @@ anbennar_T5_generic_adventurer_contracts = {
 				}
 			}
 		}
+		NOT = { has_country_modifier = human_military }
 		NOT = { has_country_modifier = ruinborn_military }
 	}
 	trigger = {
@@ -2508,6 +2513,7 @@ anbennar_T5_generic_specialized_troops = {
 				}
 			}
 		}
+		NOT = { has_country_modifier = human_military }
 		NOT = { has_country_modifier = ruinborn_military }
 	}
 	trigger = {
@@ -2541,6 +2547,7 @@ anbennar_T5_generic_fodder = {
 				}
 			}
 		}
+		NOT = { has_country_modifier = human_military }
 		NOT = { has_country_modifier = ruinborn_military }
 	}
 	trigger = {
@@ -2575,6 +2582,7 @@ anbennar_T5_generic_mage_shields = {
 				}
 			}
 		}
+		NOT = { has_country_modifier = human_military }
 		NOT = { has_country_modifier = ruinborn_military }
 	}
 	trigger = {
@@ -2592,6 +2600,617 @@ anbennar_T5_generic_mage_shields = {
 }
 
 
+# Human
+anbennar_T5_human_centaur = {
+	icon = "human_centaur"
+	allow_normal_conversion = yes
+	potential = {
+		NOT = { has_adventurer_reform = yes }
+		has_country_modifier = human_military
+		hidden_trigger = {
+			has_high_tolerance_and_pop_with_all_races = no
+		}
+	}
+	trigger = {
+		high_tolerance_centaur_race_trigger = yes
+		fast_owns_num_pops_of_race = { race = centaur amount = 1 }
+	}
+	modifiers = {
+		#Positive
+		cav_to_inf_ratio = 0.25
+		cavalry_cost = -0.15
+		cavalry_shock = 0.2
+		#Negative
+		artillery_power = -0.10
+		cavalry_fire = -0.15
+	}
+	
+	ai = {
+		factor = 1
+	}
+}
+
+anbennar_T5_human_dwarven = {
+	icon = "human_dwarf"
+	allow_normal_conversion = yes
+	potential = {
+		NOT = { has_adventurer_reform = yes }
+		has_country_modifier = human_military
+		hidden_trigger = {
+			has_high_tolerance_and_pop_with_all_races = no
+		}
+	}
+	trigger = {
+		high_tolerance_dwarven_race_trigger = yes
+		fast_owns_num_pops_of_race = { race = dwarven amount = 1 }
+	}
+	modifiers = {
+		#Positive
+		artillery_power = 0.1
+		defensiveness = 0.1
+		artillery_levels_available_vs_fort = 1
+		#Negative
+		global_regiment_cost = 0.1
+		manpower_recovery_speed = -0.1
+	}
+	
+	ai = {
+		factor = 1
+	}
+}
+
+anbennar_T5_human_elven = {
+	icon = "human_elf"
+	allow_normal_conversion = yes
+	potential = {
+		NOT = { has_adventurer_reform = yes }
+		has_country_modifier = human_military
+		hidden_trigger = {
+			has_high_tolerance_and_pop_with_all_races = no
+		}
+	}
+	trigger = {
+		high_tolerance_elven_race_trigger = yes
+		fast_owns_num_pops_of_race = { race = elven amount = 1 }
+	}
+	modifiers = {
+		#Positive
+		discipline = 0.05
+		navy_tradition_decay = -0.01
+		movement_speed = 0.15
+		#Negative
+		global_sailors_modifier = -0.05
+		global_manpower_modifier = -0.1
+		manpower_recovery_speed = -0.15
+	}
+	
+	ai = {
+		factor = 1
+	}
+}
+
+anbennar_T5_human_gnollish = {
+	icon = "human_gnoll"
+	allow_normal_conversion = yes
+	potential = {
+		NOT = { has_adventurer_reform = yes }
+		has_country_modifier = human_military
+		hidden_trigger = {
+			has_high_tolerance_and_pop_with_all_races = no
+		}
+	}
+	trigger = {
+		high_tolerance_gnollish_race_trigger = yes
+		fast_owns_num_pops_of_race = { race = gnollish amount = 1 }
+	}
+	modifiers = {
+		#Positive
+		morale_damage = 0.1
+		loot_amount = 0.5
+		available_province_loot = 0.5
+	}
+	
+	ai = {
+		factor = 1
+	}
+}
+
+anbennar_T5_human_gnomish = {
+	icon = "human_gnome"
+	allow_normal_conversion = yes
+	potential = {
+		NOT = { has_adventurer_reform = yes }
+		has_country_modifier = human_military
+		hidden_trigger = {
+			has_high_tolerance_and_pop_with_all_races = no
+		}
+	}
+	trigger = {
+		high_tolerance_gnomish_race_trigger = yes
+		fast_owns_num_pops_of_race = { race = gnomish amount = 1 }
+	}
+	modifiers = {
+		#Positive
+		allowed_rajput_fraction = 0.1
+		#Negative
+		global_regiment_cost = 0.1
+		infantry_power = -0.1
+	}
+	effect = {
+		custom_tooltip = anbennar_T5_human_gnomish_effect_tt
+		hidden_effect = {
+			add_country_modifier = {
+				name = war_artificery
+				duration = -1
+			}
+		}
+	}
+	removed_effect = {
+		hidden_effect = {
+			remove_country_modifier = war_artificery
+		}
+	}
+	ai = {
+		factor = 1
+	}
+}
+
+anbennar_T5_human_goblin = {
+	icon = "human_goblin"
+	allow_normal_conversion = yes
+	potential = {
+		NOT = { has_adventurer_reform = yes }
+		has_country_modifier = human_military
+		hidden_trigger = {
+			has_high_tolerance_and_pop_with_all_races = no
+		}
+	}
+	trigger = {
+		high_tolerance_goblin_race_trigger = yes
+		fast_owns_num_pops_of_race = { race = goblin amount = 1 }
+	}
+	modifiers = {
+		#Positive
+		fire_damage = 0.15
+		#Negative
+		fire_damage_received = 0.1
+	}
+	
+	ai = {
+		factor = 1
+	}
+}
+
+anbennar_T5_human_half_elven = {
+	icon = "human_helf"
+	allow_normal_conversion = yes
+	potential = {
+		NOT = { has_adventurer_reform = yes }
+		has_country_modifier = human_military
+		hidden_trigger = {
+			has_high_tolerance_and_pop_with_all_races = no
+		}
+	}
+	trigger = {
+		high_tolerance_half_elven_race_trigger = yes
+		fast_owns_num_pops_of_race = { race = half_elven amount = 1 }
+	}
+	modifiers = {
+		#Positive
+		leader_land_fire = 1
+		diplomatic_reputation = 1
+		ae_impact = -0.05
+		#Negative
+		war_taxes_cost_modifier = 0.1
+	}
+	
+	ai = {
+		factor = 1
+	}
+}
+
+anbennar_T5_human_half_orcish = {
+	icon = "human_horc"
+	allow_normal_conversion = yes
+	potential = {
+		NOT = { has_adventurer_reform = yes }
+		has_country_modifier = human_military
+		hidden_trigger = {
+			has_high_tolerance_and_pop_with_all_races = no
+		}
+	}
+	trigger = {
+		high_tolerance_half_orcish_race_trigger = yes
+		fast_owns_num_pops_of_race = { race = half_orcish amount = 1 }
+	}
+	modifiers = {
+		#Positive
+		global_manpower_modifier = 0.1
+		leader_land_shock = 1
+		army_tradition_decay = -0.01
+		may_recruit_female_generals = yes
+		#Negative
+		drill_gain_modifier = -0.25
+		leader_cost = 0.1
+	}
+	
+	ai = {
+		factor = 1
+	}
+}
+
+anbennar_T5_human_halfling = {
+	icon = "human_halfling"
+	allow_normal_conversion = yes
+	potential = {
+		NOT = { has_adventurer_reform = yes }
+		has_country_modifier = human_military
+		hidden_trigger = {
+			has_high_tolerance_and_pop_with_all_races = no
+		}
+	}
+	trigger = {
+		high_tolerance_halfling_race_trigger = yes
+		fast_owns_num_pops_of_race = { race = halfling amount = 1 }
+	}
+	modifiers = {
+		#Positive
+		land_attrition = -0.25
+		land_forcelimit_modifier = 0.1
+		reserves_organisation = 0.1
+		#Negative
+		global_regiment_cost = 0.05
+		fire_damage = -0.025
+		shock_damage = -0.025
+	}
+	
+	ai = {
+		factor = 1
+	}
+}
+
+anbennar_T5_human_harimari = {
+	icon = "human_harimari"
+	allow_normal_conversion = yes
+	potential = {
+		NOT = { has_adventurer_reform = yes }
+		has_country_modifier = human_military
+		hidden_trigger = {
+			has_high_tolerance_and_pop_with_all_races = no
+		}
+	}
+	trigger = {
+		high_tolerance_harimari_race_trigger = yes
+		fast_owns_num_pops_of_race = { race = harimari amount = 1 }
+	}
+	modifiers = {
+		#Positive
+		infantry_power = 0.1
+		shock_damage = 0.05
+		#Negative
+		leader_land_fire = -1
+	}
+	
+	ai = {
+		factor = 1
+	}
+}
+
+anbennar_T5_human_harpy = {
+	icon = "human_harpy"
+	allow_normal_conversion = yes
+	potential = {
+		NOT = { has_adventurer_reform = yes }
+		has_country_modifier = human_military
+		hidden_trigger = {
+			has_high_tolerance_and_pop_with_all_races = no
+		}
+	}
+	trigger = {
+		high_tolerance_harpy_race_trigger = yes
+		fast_owns_num_pops_of_race = { race = harpy amount = 1 }
+	}
+	modifiers = {
+		#Positive
+		siege_ability = 0.10
+		assault_fort_ability = 0.2
+		land_attrition = -0.1
+		#Negative
+		defensiveness = -0.1
+	}
+	
+	ai = {
+		factor = 1
+	}
+}
+
+
+anbennar_T5_human_hobgoblin = {
+	icon = "human_hob"
+	allow_normal_conversion = yes
+	potential = {
+		NOT = { has_adventurer_reform = yes }
+		has_country_modifier = human_military
+		hidden_trigger = {
+			has_high_tolerance_and_pop_with_all_races = no
+		}
+	}
+	trigger = {
+		high_tolerance_hobgoblin_race_trigger = yes
+		fast_owns_num_pops_of_race = { race = hobgoblin amount = 1 }
+	}
+	modifiers = {
+		#Positive
+		military_tactics = 0.1
+		drill_gain_modifier = 1
+		drill_decay_modifier = -0.25
+		#Negative
+		land_forcelimit_modifier = -0.1
+		recover_army_morale_speed = -0.1
+	}
+	
+	ai = {
+		factor = 1
+	}
+}
+
+anbennar_T5_human_human_1 = {
+	icon = "human_human"
+	allow_normal_conversion = yes
+	potential = {
+		NOT = { has_adventurer_reform = yes }
+		has_country_modifier = human_military
+		hidden_trigger = {
+			has_high_tolerance_and_pop_with_all_races = no
+		}
+	}
+	trigger = {
+		always = yes
+	}
+	modifiers = {
+		#Positive
+		infantry_power = 0.05
+		artillery_power = 0.05
+		mil_tech_cost_modifier = -0.05
+		#Negative
+	}
+	
+	ai = {
+		factor = 1
+	}
+}
+
+anbennar_T5_human_human_2 = {
+	icon = "human_human"
+	allow_normal_conversion = yes
+	potential = {
+		NOT = { has_adventurer_reform = yes }
+		has_country_modifier = human_military
+		hidden_trigger = {
+			has_high_tolerance_and_pop_with_all_races = no
+		}
+	}
+	trigger = {
+		always = yes
+	}
+	modifiers = {
+		#Positive
+		cav_to_inf_ratio = 0.1
+		army_tradition = 0.5
+		#Negative
+	}
+	
+	ai = {
+		factor = 1
+	}
+}
+
+anbennar_T5_human_kobold = {
+	icon = "human_kobold"
+	allow_normal_conversion = yes
+	potential = {
+		NOT = { has_adventurer_reform = yes }
+		has_country_modifier = human_military
+		hidden_trigger = {
+			has_high_tolerance_and_pop_with_all_races = no
+		}
+	}
+	trigger = {
+		high_tolerance_kobold_race_trigger = yes
+		fast_owns_num_pops_of_race = { race = kobold amount = 1 }
+	}
+	modifiers = {
+		#Positive
+		global_manpower_modifier = 0.15
+		land_forcelimit_modifier = 0.1
+		allowed_rajput_fraction = 0.05
+		#Negative
+		land_morale = -0.05
+		shock_damage_received = 0.05
+	}
+	
+	ai = {
+		factor = 1
+	}
+}
+
+anbennar_T5_human_lizardfolk = {
+	icon = "human_lizard"
+	allow_normal_conversion = yes
+	potential = {
+		NOT = { has_adventurer_reform = yes }
+		has_country_modifier = human_military
+		hidden_trigger = {
+			has_high_tolerance_and_pop_with_all_races = no
+		}
+	}
+	trigger = {
+		high_tolerance_lizardfolk_race_trigger = yes
+		fast_owns_num_pops_of_race = { race = lizardfolk amount = 1 }
+		num_of_ports = 1
+	}
+	modifiers = {
+		#Positive
+		naval_morale = 0.1
+		allowed_marine_fraction = 0.15
+		#Negative
+		cavalry_cost = 0.1
+	}
+	effect = {
+		custom_tooltip = anbennar_T5_human_lizardfolk_tt
+		hidden_effect = {
+			add_country_modifier = {
+				name = lizardfolk_marines
+				duration = -1
+			}
+		}
+	}
+	removed_effect = {
+		hidden_effect = {
+			remove_country_modifier = lizardfolk_marines
+		}
+	}
+	ai = {
+		factor = 1
+	}
+}
+
+
+# anbennar_T5_human_mechanim = {
+# 	icon = "organized_military_staff"
+# 	allow_normal_conversion = yes
+# 	potential = {
+# 		NOT = { has_adventurer_reform = yes }
+# 		has_country_modifier = human_military
+# 	}
+# 	trigger = {
+# 		high_tolerance_mechanim_race_trigger = yes
+# 	}
+# 	modifiers = {
+# 	}
+	
+# 	ai = {
+# 		factor = 1
+# 	}
+# }
+
+
+anbennar_T5_human_ogre = {
+	icon = "human_ogre"
+	allow_normal_conversion = yes
+	potential = {
+		NOT = { has_adventurer_reform = yes }
+		has_country_modifier = human_military
+		hidden_trigger = {
+			has_high_tolerance_and_pop_with_all_races = no
+		}
+	}
+	trigger = {
+		high_tolerance_ogre_race_trigger = yes
+		fast_owns_num_pops_of_race = { race = ogre amount = 1 }
+	}
+	modifiers = {
+		#Positive
+		shock_damage_received = -0.1
+		fire_damage_received = -0.05
+		#Negative
+		infantry_cost = 0.1
+		reinforce_cost_modifier = 0.1
+	}
+	
+	ai = {
+		factor = 1
+	}
+}
+
+anbennar_T5_human_orcish = {
+	icon = "human_orc"
+	allow_normal_conversion = yes
+	potential = {
+		NOT = { has_adventurer_reform = yes }
+		has_country_modifier = human_military
+		hidden_trigger = {
+			has_high_tolerance_and_pop_with_all_races = no
+		}
+	}
+	trigger = {
+		high_tolerance_orcish_race_trigger = yes
+		fast_owns_num_pops_of_race = { race = orcish amount = 1 }
+	}
+	modifiers = {
+		#Positive
+		shock_damage = 0.15
+		assault_fort_ability = 0.15
+		may_recruit_female_generals = yes
+		#Negative
+		siege_ability = -0.1
+		defensiveness = -0.15
+	}
+	
+	ai = {
+		factor = 1
+	}
+}
+
+
+anbennar_T5_human_ruinborn = {
+	icon = "human_ruinborn"
+	allow_normal_conversion = yes
+	potential = {
+		NOT = { has_adventurer_reform = yes }
+		has_country_modifier = human_military
+		hidden_trigger = {
+			has_high_tolerance_and_pop_with_all_races = no
+		}
+	}
+	trigger = {
+		high_tolerance_ruinborn_race_trigger = yes
+		fast_owns_num_pops_of_race = { race = ruinborn amount = 1 }
+	}
+	modifiers = {
+		#Positive
+		land_attrition = -0.15
+		leader_land_manuever = 1
+		cavalry_power = 0.1
+		#Negative
+		global_sailors_modifier = -0.05
+		defensiveness = -0.15
+	}
+	
+	ai = {
+		factor = 1
+	}
+}
+
+anbennar_T5_human_troll = {
+	icon = "human_troll"
+	allow_normal_conversion = yes
+	potential = {
+		NOT = { has_adventurer_reform = yes }
+		has_country_modifier = human_military
+		hidden_trigger = {
+			has_high_tolerance_and_pop_with_all_races = no
+		}
+	}
+	trigger = {
+		high_tolerance_troll_race_trigger = yes
+		fast_owns_num_pops_of_race = { race = troll amount = 1 }
+	}
+	modifiers = {
+		#Positive
+		recover_army_morale_speed = 0.15
+		reinforce_speed = 0.2
+		artillery_barrage_cost = -0.25	
+		#Negative
+		movement_speed = -0.1
+		cavalry_power = -0.15
+	}
+	
+	ai = {
+		factor = 1
+	}
+}
+
 anbennar_T5_human_army_of_halann = {
 	icon = "human_all"
 	allow_normal_conversion = yes
@@ -2601,54 +3220,14 @@ anbennar_T5_human_army_of_halann = {
 	trigger = {
 		custom_trigger_tooltip = {
 			tooltip = anbennar_T5_human_army_of_halann_tt
-			AND = {
-				high_tolerance_centaur_race_trigger = yes
-				high_tolerance_dwarven_race_trigger = yes
-				high_tolerance_elven_race_trigger = yes
-				high_tolerance_gnollish_race_trigger = yes
-				high_tolerance_gnomish_race_trigger = yes
-				high_tolerance_goblin_race_trigger = yes
-				high_tolerance_half_elven_race_trigger = yes
-				high_tolerance_half_orcish_race_trigger = yes
-				high_tolerance_halfling_race_trigger = yes
-				high_tolerance_harimari_race_trigger = yes
-				high_tolerance_harpy_race_trigger = yes
-				high_tolerance_hobgoblin_race_trigger = yes
-				high_tolerance_human_race_trigger = yes
-				high_tolerance_kobold_race_trigger = yes
-				high_tolerance_lizardfolk_race_trigger = yes
-				high_tolerance_mechanim_race_trigger = yes
-				high_tolerance_ogre_race_trigger = yes
-				high_tolerance_orcish_race_trigger = yes
-				high_tolerance_ruinborn_race_trigger = yes
-				high_tolerance_troll_race_trigger = yes
-				fast_owns_num_pops_of_race = { race = centaur amount = 1 }
-				fast_owns_num_pops_of_race = { race = dwarven amount = 1 }
-				fast_owns_num_pops_of_race = { race = elven amount = 1 }
-				fast_owns_num_pops_of_race = { race = gnollish amount = 1 }
-				fast_owns_num_pops_of_race = { race = gnomish amount = 1 }
-				fast_owns_num_pops_of_race = { race = goblin amount = 1 }
-				fast_owns_num_pops_of_race = { race = half_elven amount = 1 }
-				fast_owns_num_pops_of_race = { race = half_orcish amount = 1 }
-				fast_owns_num_pops_of_race = { race = halfling amount = 1 }
-				fast_owns_num_pops_of_race = { race = harimari amount = 1 }
-				fast_owns_num_pops_of_race = { race = harpy amount = 1 }
-				fast_owns_num_pops_of_race = { race = human amount = 1 }
-				fast_owns_num_pops_of_race = { race = hobgoblin amount = 1 }
-				fast_owns_num_pops_of_race = { race = kobold amount = 1 }
-				fast_owns_num_pops_of_race = { race = lizardfolk amount = 1 }
-				fast_owns_num_pops_of_race = { race = ogre amount = 1 }
-				fast_owns_num_pops_of_race = { race = orcish amount = 1 }
-				fast_owns_num_pops_of_race = { race = ruinborn amount = 1 }
-				fast_owns_num_pops_of_race = { race = troll amount = 1 }
-			}
+			has_high_tolerance_and_pop_with_all_races = yes
 		}
 	}
 	modifiers = {
 		discipline = 0.05
-		military_tactics = 0.25
-		land_morale = 0.05
+		land_morale = 0.1
 		naval_morale = 0.1
+		cav_to_inf_ratio = 0.1
 		fire_damage = 0.05
 		shock_damage = 0.05
 		ship_durability = 0.05
@@ -2756,7 +3335,7 @@ anbennar_T5_ruinborn_cav_quantity = {
 	}
 	modifiers = {
 		#Positive
-		cav_to_inf_ratio = 0.1
+		cav_to_inf_ratio = 0.15
 		movement_speed = 0.1
 		cavalry_cost = -0.2
 		#Negative
@@ -2791,12 +3370,12 @@ anbennar_T5_ruinborn_inf_quality = {
 	}
 	modifiers = {
 		#Positive
-		fire_damage_received = -0.075
+		fire_damage_received = -0.05
 		shock_damage_received = -0.1
 		drill_gain_modifier = 1
 		drill_decay_modifier = -0.25
 		#Negative
-		morale_damage = -0.1
+		morale_damage = -0.05
 		reinforce_speed = -0.15
 		cavalry_power = -0.15
 	}
@@ -2828,11 +3407,12 @@ anbennar_T5_ruinborn_inf_quantity = {
 	}
 	modifiers = {
 		#Positive
-		global_manpower_modifier = 0.15
+		infantry_cost = -0.1
+		reserves_organisation = 0.1
 		land_forcelimit_modifier = 0.15
 		allowed_rajput_fraction = 0.05
 		#Negative
-		infantry_power = -0.025
+		shock_damage = -0.05
 		shock_damage_received = 0.05
 	}
 	
@@ -2952,7 +3532,7 @@ anbennar_T5_ruinborn_fire = {
 	}
 	modifiers = {
 		#Positive
-		fire_damage = 0.075
+		fire_damage = 0.1
 		infantry_fire = 0.15
 		defensiveness = 0.1
 		#Negative
@@ -2981,12 +3561,12 @@ anbennar_T5_ruinborn_cannor = {
 	}
 	modifiers = {
 		#Positive
-		backrow_artillery_damage = 0.15
+		backrow_artillery_damage = 0.1
 		naval_morale = 0.05
 		supply_limit_modifier = 0.15
 		#Negative
 		global_regiment_cost = 0.15
-		land_forcelimit_modifier = -0.1
+		land_forcelimit_modifier = -0.05
 	}
 	
 	ai = {
@@ -6246,7 +6826,7 @@ cultural_colonies = {
 	custom_attributes = {
 		disabled_expelling = yes
 		disabled_purging = yes
-		extra_trade_goods_for_colonial_subjects = yes
+		extra_trade_goods_for_colonial_subjects_thought = yes
 		reduced_gov_cost_in_primary_culture = yes 
 	}
 	effect = {
@@ -6570,5 +7150,74 @@ book_of_stone = {
 	}
 	ai = {
 		factor = 500
+	}
+}
+
+rakkaz_bringers_of_suffering = {
+	icon = "shaman"
+	allow_normal_conversion = yes
+	potential = { 
+		OR = {
+			religion = shadow_pact
+			AND = {
+				religion = xhazobkult
+				NOT = { has_country_modifier = monstrous_nation }
+			}
+		}
+		has_unlocked_government_reform = { government_reform = rakkaz_bringers_of_suffering } 
+	}
+	raze_province = yes
+	modifiers = {
+		raze_power_gain = -0.25
+		church_power_modifier = 0.1
+	}
+}
+
+taychend_warlord_empire = {
+	icon = "war_map"
+	lock_level_when_selected = yes
+	potential = {
+		OR = {
+			has_reform = taychend_warlord_empire
+			have_had_reform = taychend_warlord_empire
+		}
+	}
+	custom_attributes = {
+		maintain_dynasty = yes
+	}
+	government_abilities = {
+		taychend_vainglory_mechanic
+	}
+}
+
+taychend_tailatam_system_reform = {
+	icon = "prussian_monarchy"
+	potential = {
+		OR = {
+			has_reform = taychend_tailatam_system_reform
+			have_had_reform = taychend_tailatam_system_reform
+		}
+	}
+	modifiers = {
+		governing_capacity_modifier = 0.25
+		monthly_taychend_vainglory_power = -0.3
+		nobles_loyalty_modifier = -0.1
+		nobles_influence_modifier = -0.1
+	}
+}
+
+taychend_mudaliar_system_reform = {
+	icon = "prussian_monarchy_2"
+	potential = {
+		OR = {
+			has_reform = taychend_mudaliar_system_reform
+			have_had_reform = taychend_mudaliar_system_reform
+		}
+	}
+	modifiers = {
+		governing_capacity_modifier = 0.15
+		monthly_taychend_vainglory_power = 0.3
+		nobles_loyalty_modifier = 0.1
+		nobles_influence_modifier = 0.1
 	}
 }

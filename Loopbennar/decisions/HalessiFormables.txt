@@ -881,20 +881,21 @@ country_decisions = {
 			capital_scope = {
 				OR = {
 					superregion = yanshen_superregion
-					superregion = north_haless_superregion
-					superregion = south_haless_superregion
+					superregion = gozengun_superregion
+					superregion = vimdatrong_superregion
 				}
 			}
 			NOT = { tag = Y86 }
 			NOT = { exists = Y00 }
 			NOT = { tag = F38 }
+			NOT = { tag = F97 }
 			NOT = { has_country_flag = formed_sunrise_empire_flag }
 			normal_or_historical_nations = yes
 		}
 		provinces_to_highlight = {
 			OR = {
 				superregion = yanshen_superregion
-				superregion = south_haless_superregion
+				superregion = vimdatrong_superregion
 			}
 			NOT = { owned_by = ROOT }
 		}
@@ -920,7 +921,7 @@ country_decisions = {
 				value = 150
 				OR = {
 					superregion = yanshen_superregion
-					superregion = south_haless_superregion
+					superregion = vimdatrong_superregion
 				}
 			}
 		}
@@ -965,7 +966,7 @@ country_decisions = {
 					}
 					add_permanent_claim = ROOT
 				}
-				south_haless_superregion = {
+				vimdatrong_superregion = {
 					limit = {
 						NOT = { is_core = ROOT }
 						NOT = { owned_by = ROOT }
@@ -974,7 +975,7 @@ country_decisions = {
 				}
 			}
 			else_if = {
-				limit = { capital_scope = { superregion = south_haless_superregion } }
+				limit = { capital_scope = { superregion = vimdatrong_superregion } }
 				yanshen_superregion = {
 					limit = {
 						NOT = { is_core = ROOT }
@@ -982,7 +983,7 @@ country_decisions = {
 					}
 					add_claim = ROOT
 				}
-				south_haless_superregion = {
+				vimdatrong_superregion = {
 					limit = {
 						NOT = { is_core = ROOT }
 						NOT = { owned_by = ROOT }

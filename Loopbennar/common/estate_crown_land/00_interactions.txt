@@ -147,6 +147,9 @@ interaction = { # Cast Spell
 		else_if = { limit = { has_estate_privilege = artifice_invention_korashi_tuners }
 			NOT = { has_country_modifier = magic_cooldown }
 		}
+		hidden_trigger = {
+			NOT = { has_country_flag = J84_no_casting_spells_flag }
+		}
     }
     effect = {
 		if = { limit = { has_estate = estate_mages }
@@ -530,6 +533,12 @@ interaction = { # Seize Land
 				}
 			}
 			NOT = { has_estate_privilege = estate_church_statutory_rights }
+		}
+		else_if = {
+			limit = {
+				has_estate = estate_uppercastes
+			}
+			NOT = { has_estate_privilege = estate_uppercastes_statutory_rights }
 		}
         is_at_war = no
 		if = {
@@ -994,13 +1003,7 @@ interaction = { # Research Artificery
 			}
 			has_artificers_organization_privilege = yes
 		}
-		custom_trigger_tooltip = {
-			tooltip = is_not_researching_invention_tt
-			NOT = {
-				has_country_flag = artifice_research_in_progress
-				has_country_flag = artifice_research_menu_open
-			}
-		}
+		is_not_researching_invention = yes
     }
     effect = {
 		custom_tooltip = start_artificery_research_tt

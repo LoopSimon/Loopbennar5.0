@@ -20,7 +20,6 @@ native_hostileness = 10
 
 
 set_province_flag = unsuppressed_infernal_cult
-set_province_flag = escann_iron_province
 
 
 

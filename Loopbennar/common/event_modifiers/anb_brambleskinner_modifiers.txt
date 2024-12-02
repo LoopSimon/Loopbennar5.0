@@ -28,6 +28,10 @@ brambleskinner_sea_trade_grant = {
 	global_prov_trade_power_modifier = 0.1
 }
 
+brambleskinner_loyal_vassal = {
+	liberty_desire = -50
+}
+
 brambleskinner_anti_fey_momentum = {
 	missionaries = 1
 	missionary_maintenance_cost = -0.5

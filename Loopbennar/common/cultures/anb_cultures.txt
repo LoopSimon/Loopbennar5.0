@@ -581,7 +581,7 @@ businori = {
 		male_names = {
 		Adelmar Adrán Adrián Adriá Alonso Alfrido Alós Laín Álvar Ardano Ardor Aril Arturián Arturo Aucán Ostán Aven Borian Breogán Brayan Bregán Calas Castente Castinte Darres Dega Edmón Elrán Erel Eren Erlán Evin Galin Gelmante Laurente Marion Mauriço Olayo Otón Rimán Rican Rimón 
 		Robin Roger Sandor Taelar Çal Çiren Tomé Trían Tristán Varil Varion Varil Varil Vicente Guillén Dostán Alfrido Lucián Dominico Bernal Armán Cecilio Tegán Andrel Federic Valerán Valente Corin Aldrés Émil Cailén Carleón Loçán Anzaro Asur Rafán Arramé Çerin Varrán Haicasor
-		Fardante Lerné Naserte Vasaro Sidueyo Dacarte Mañís Birante Majante Siaz Ñal Anés Cinuyás Bubacre
+		Fardante Lerné Naserte Vasaro Sidueyo Dacarte Mañís Birante Majante Siaz Ñal Anés Cinuyás Bubacre Marcante
 		}
 		female_names = {
 		Adriana Aldelina Alara Aldresia Alisana Açara Omina Amariena María Mariana Mariela Marina Ariana Aucana Arabela Calassa Castentia Castintia Celia Celiadora Clara Eilísa Eilísabeta Erela Galinta Laína Laurentia Lisbana Madalena Rimana Çalia Varina Margarita Cecilia Isabel
@@ -598,7 +598,7 @@ businori = {
 		}
 		male_names = {
 		Adelmar Adrán Adrián Adriá Alonso Alfrido Alós Laín Álvar Ardano Ardor Aril Arturián Arturo Aucán Ostán Aven Borian Breogán Brayan Bregán Calas Castente Castinte Darres Dega Edmón Elrán Erel Eren Erlán Evin Galin Gelmante Laurente Marion Mauriço Olayo Otón Rimán Rican Rimón 
-		Robin Roger Sandor Taelar Çal Çiren Tomé Trían Tristán Varil Varion Varil Varil Vicente Guillén Dostán Alfrido Lucián Dominico Bernal Armán Cecilio Tegán Andrel Federic Valerán Valente Corin Aldrés Émil Cailén Carleón Loçán Anzaro 
+		Robin Roger Sandor Taelar Çal Çiren Tomé Trían Tristán Varil Varion Varil Varil Vicente Guillén Dostán Alfrido Lucián Dominico Bernal Armán Cecilio Tegán Andrel Federic Valerán Valente Corin Aldrés Émil Cailén Carleón Loçán Anzaro Marcante
 		}
 		female_names = {
 		Adriana Aldelina Alara Aldresia Alisana Açara Omina Amariena María Mariana Mariela Marina Ariana Aucana Arabela Calassa Castentia Castintia Celia Celiadora Clara Eilísa Eilísabeta Erela Galinta Laína Laurentia Lisbana Madalena Rimana Çalia Varina Margarita Cecilia Isabel
@@ -614,7 +614,7 @@ businori = {
 		male_names = {
 		Adelmar Adrán Adrián Adriá Alonso Alfrido Alós Laín Álvar Ardano Ardor Aril Arturián Arturo Aucán Ostán Aven Borian Breogán Brayan Bregán Calas Castente Castinte Darres Dega Edmón Elrán Erel Eren Erlán Evin Galin Gelmante Laurente Marion Mauriço Olayo Otón Rimán Rican Rimón 
 		Robin Roger Sandor Taelar Çal Çiren Tomé Trían Tristán Varil Varion Varil Varil Vicente Guillén Dostán Alfrido Lucián Dominico Bernal Armán Cecilio Tegán Andrel Federic Valerán Valente Corin Aldrés Émil Cailén Carleón Loçán Anzaro Asur Rafán Arramé Çerin Varrán Haicasor
-		Fardante Lerné Naserte Vasaro
+		Fardante Lerné Naserte Vasaro Marcante
 		}
 		female_names = {
 		Adriana Aldelina Alara Aldresia Alisana Açara Omina Amariena María Mariana Mariela Marina Ariana Aucana Arabela Calassa Castentia Castintia Celia Celiadora Clara Eilísa Eilísabeta Erela Galinta Laína Laurentia Lisbana Madalena Rimana Çalia Varina Margarita Cecilia Isabel
@@ -628,7 +628,7 @@ businori = {
 			}
 		male_names = {
 			Adelmar Adrán Adrián Adriá Alonso Alfrido Alós Laín Álvar Ardano Ardor Aril Arturián Arturo Aucán Ostán Aven Borian Breogán Brayan Bregán Calas Castente Castinte Darres Dega Edmón Elrán Erel Eren Evin Galin Gelmante Laurente Marion Mauriço Olayo Otón Rimán Rican Rimón
-			Robin Roger Sandor Taelar Çal Çiren Tomé Trían Tristán Varil Varion Varil Vicente Guillén Dostán Alfrido Lucián Dominico Bernal Armán Cecilio Tegán Andrel Federic Valerán Valente Corin Aldrés Émil Cailén Carleón Loçán Anzaro
+			Robin Roger Sandor Taelar Çal Çiren Tomé Trían Tristán Varil Varion Varil Vicente Guillén Dostán Alfrido Lucián Dominico Bernal Armán Cecilio Tegán Andrel Federic Valerán Valente Corin Aldrés Émil Cailén Carleón Loçán Anzaro Marcante
 		}
 		female_names = {
 			Adriana Aldelina Alara Aldresia Alisana Açara Omina Amariena María Mariana Mariela Marina Ariana Aucana Arabela Calassa Castentia Castintia Celia Celiadora Clara Eilísa Eilísabeta Erela Galinta Laína Laurentia Lisbana Madalena Rimana Çalia Varina Margarita Cecilia Isabel
@@ -1324,7 +1324,8 @@ dostanorian_g = {
 	ourdi = {
 		primary = U16 #Ourdia
 		dynasty_names = {
-			"sina Jaherionn" "of Tornsack" "of Haresend"
+			"of Aldwigard" "of Demonsfall" "of Ueleden" "of Withacen" "of Aldanhol" "of Blachyl" "of Landsend" "of Dostonath" "of Dostanesck" "of Humac's Island"
+			"of Grenwoud" "of Fatherwell" "of Southtower" "of Silverpass" "of Akrad-til"
 		}
 		male_names = {
 		Adelan Adran Adrian Adrei Alfonse Alfrede Aloss Alin Alveru Ardac Ardoru Aril Artori Arturu Austane Aweni Borian Brandone Brayane Braydene Calos Castan Castin Davan Devar Edmond Elrac Erel Eren Erlac Evin Galin Gelmac Laurenti Maron 
@@ -3114,8 +3115,8 @@ bulwari = {
 		
 		dynasty_names = {
 			szal-Azarafak szal-Tafandir szal-Marzalan szal-Zirakian szal-Farandis szal-Narzadur szal-Yerfanir szal-Garnatar szal-Fahandur szal-Mardunik szal-Širafik szal-Arenik szal-Nairamis szal-Fanašar szal-Talinir szal-Armazik szal-Surenaš szal-Daranian szal-Azalir szal-Anahar szal-Nafandis szal-Afanir szal-Tigrarik szal-Zafarian szal-Azaril #Old Armenian
-			szel-Baharkand szel-Pasah szel-Yametšes szel-Akal-Uak szel-Birsartansbar szel-Forramaz szel-Deškumar szel-Qasnabor szel-Našru-ean szel-Evran szel-Aqatbar szel-Nisabat szel-Vernat szel-Kaproya-Telen szel-Re-Uyel #Bahari culture provinces
-			szel-Zorntanas Mallahtum szel-Forramaz #Historic Rulers
+			szel-Baharkand szel-Pasah szel-Yametšes szel-Akal-Uak szel-Birsartansbar szel-Farramaz szel-Deškumar szel-Qasnabor szel-Našru-ean szel-Evran szel-Aqatbar szel-Nisabat szel-Vernat szel-Kaproya-Telen szel-Re-Uyel #Bahari culture provinces
+			szel-Zorntanas Mallahtum szel-Farramaz #Historic Rulers
 		}
 		male_names = {
 			Absul Alaris Asur Eril Išeles Kuridan Marud Marudeen Nahrun Aktan Areias Radahn Therin Tazan Aršak Aršavir Aršen Arkam Aghan Barsam Bared Dikran Eškhan Gakig Guregh Kasbar Kišag Mihrtad Mihran Misak Navašart Parsagh Paramaš Vahram Vanuš Yeghšeh Iraskar #Updated existing
@@ -3284,7 +3285,7 @@ bulwari = {
 	bulwari_half_elf = {
 	}
 	dynasty_names = {
-		szal-Duzan szel-Qasnabor szel-Beliqtura szal-Maqet szel-Kumarkand szel-Azanerdu szel-Bulwar szal-Barseen szel-Bazibar szel-Forramaz szel-Gelkalis szel-Zanbar szel-Attalu szel-Harlum szel-Akalšes szal-Aban
+		szal-Duzan szel-Qasnabor szel-Beliqtura szal-Maqet szel-Kumarkand szel-Azanerdu szel-Bulwar szal-Barseen szel-Bazibar szel-Farramaz szel-Gelkalis szel-Zanbar szel-Attalu szel-Harlum szel-Akalšes szal-Aban
 
 	}
 
@@ -3519,6 +3520,18 @@ harpy = {
 			Annika Anke Astrid Aud Erika Gudrun Helle Hulda Ingrid Kelda Liv
 			Marta Matilde Mina Oddveig Ola Olaug Petronilla Ragnhild Ran Rebekka 
 			Runa Sigrid Svanhild Synnove Vilhelmina
+		}
+	}
+
+	nuzenapu_harpy = {
+		primary = Z20 #Zoherin Apunsorya
+		dynasty_names = {
+			Apusorya Banbe Bikenkonen Zokon Buneninu Rupyuoke Yunikinon
+		}
+		male_names = {
+			Anbi Anru Atonrun Banse Banyo Banyun Baranyo Bege Behyakun Bei Benan Benu Bonbon Buge Daban Dabe Dahyu Dangu Danso Dapyun Dazan Doda Dozakan Eken Ensuden Gakeke Gekyo Genbo Genyu Gibya Gio Giza Gobetan Gubu Gupe Guson Habyahen Hagyu Haki Hapya Hehyo Heko Hekon Hesen Hinbu Hinro Hipu Hipyun Ingen Inpen Inyu Kahon Kaken Kaki Kakyun Kani Kano Kapun Kasun Kazu Kebon Kenbin Keton Keza Kiban Kihyu Kinran Kiza Kobyu Kokyu Konbon Konu Kuda Kuen Kuhyon Kupon Kuryunre Naron Nebu Negyo Nekyo Neson Neten Neza Nibi Niha Nihyohya Nina Nine Nipu Non Nongi Noryo Nuhyu Nukin Nukyun Nuni Nunran Nupu Nuse Nuzu Okansu One Opyun Penpu Pohyu Posen Poya Pugyun Punpana Rakun Ranta Raryopu Riranre Ronu Rugan Ruta Sagyun Sapon Sehan Sena Senbun Senun Sepyunbu Sosui Soyu Sozen Sugu Sunpen Sunyo Supu Tabyon Takyun Tanba Tanban Tanyon Tari Tateri Tazuri Tazute Tegi Tento Tobyanan Togaga Tohe Toya Tyonkun Ubi Uhenso Unan Unto Warin Yaku Yanabya Yohyukyu Yohyun Yoka Yoken Yunyun Yuryan Zakuron Zaso Zau Zazon Zoran Zunan Zurshin Zusu    }
+		female_names = {
+			Anru Banse Banyo Bege Behyakun Danso Dapyun Dazan Dodo Enyu Gakeke Gibya Gina Giza Gobetan Gubu Haki Hesen Hikari Hinbu Hito Hogen Hon Hongen Hipyun Iya Kaken Kapon Kayara Kazu Kihyu Kiza Kobyu Koru Kunya Nae Niha Niyan Non Nukin Nuni Nunran Nupu Nuse Rari Ren Renbu Renpo Rigo Rigyu Ronu Ruta Sani Senbun Senun Sonri Sonyun Sunpen Sunyo Takyun Tanba Tanban Tari Toya Uhenso Yaze Yuryan Zeni Zusu
 		}
 	}
 }
@@ -5001,6 +5014,9 @@ taychendi_ruinborn_elf = {
 	bekauta = {
 	}
 	
+	vaikazelhi = {
+	}
+	
 	dynasty_names = {
 
 		#Generic Moon Elf Cannorized
@@ -5024,6 +5040,7 @@ ynnic_ruinborn_elf = {
 	graphical_culture = easterngfx
 
 	rzentur = {
+		primary = U71 #Rzenta
 		dynasty_names = {
 			"yen Ahod" "yen Dolena" "yen Gozhar" "yen Ladja" "yen Polas" "yen Praso" "yen Svemel" "na Trug" "yen Vasonn" "yen Vib" "yen Zhod"
 			#Professions

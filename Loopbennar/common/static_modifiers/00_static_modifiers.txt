@@ -817,6 +817,7 @@ peace = {
 	pen_harmaceuticals_influence = 0.05
 	monthly_caravan_preparation = 0.33
 	monthly_jaddari_zealotry = -0.25
+	monthly_taychend_vainglory_power = -0.275
 }
 
 unconditional_surrender = {
@@ -846,7 +847,7 @@ war_exhaustion = {
 
 	#Anbennar
 	adv_marchers_influence = 0.05
-	tec_brilliance_influence = -0.1
+	tec_brilliance_influence = -0.02
 	pen_cloak_and_swagger_influence = -0.05
 }
 
@@ -1609,6 +1610,9 @@ large_colonial_nation = {
 }
 
 new_world_exploitation_modifier = {
+	global_trade_goods_size_modifier = 0.1
+}
+new_world_exploitation_modifier_thought = {
 	global_trade_goods_size_modifier = 0.1
 }
 
@@ -2430,7 +2434,7 @@ children_of_goxma_tradition_modifier = {
 	religion = yes
 	is_scholar_modifier = yes # Tells the AI and will only show the alert if country has none
 	expire_message_type = "RELIGIOUS_SCHOLAR_EXPIRY"
-	num_accepted_cultures = 2
+	tolerance_heathen = 2
 }
 
 kult_of_the_packmother_tradition_modifier = {

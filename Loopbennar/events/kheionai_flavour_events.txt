@@ -27,9 +27,8 @@ country_event = { # Hounds of Askovoinos / Kimanis Revolt Event
 	}
 	
 	immediate = {
-		add_stability = -1
-		
-		hidden_effect = {		
+		hidden_effect = {	
+			add_stability = -1	
 			2732 = { # cedes kimanis prov to kimanis
 				cede_province = G61
 				add_core = ROOT # for oktikheion if you somehow haven't cored it
@@ -61,7 +60,7 @@ country_event = { # Hounds of Askovoinos / Kimanis Revolt Event
 	option = { # Kimanis revolts
 		name = kheionai_flavour.1.a
 		ai_chance = { factor = 100 }
-		
+		tooltip = { add_stability = -1 }
 		declare_war_with_cb = {
 			who = G61
 			casus_belli = cb_core
@@ -101,7 +100,7 @@ country_event = { # Hounds of Askovoinos / Kimanis Revolt Event
 	option = { # play as Kimanis, same as above but you switch at the end
 		name = kheionai_flavour.1.b
 		ai_chance = { factor = 0 }
-		
+		tooltip = { add_stability = -1 }
 		custom_tooltip = kf_tt_kimanis_switch
 		hidden_effect = {
 			declare_war_with_cb = {
@@ -763,7 +762,7 @@ country_event = { #Politeia
 	trigger = {
 		culture_group = kheionai_ruinborn_elf
 		religion = kheionism
-		has_kheionist_philosophy_advanced = { type = adm }
+		has_kheionist_deity = { deity = adm }
 		adm_tech = 5
 	}
 
@@ -965,7 +964,7 @@ country_event = { #Amadians
 	trigger = {
 		culture_group = kheionai_ruinborn_elf
 		religion = kheionism
-		has_kheionist_philosophy_advanced = { type = dip }
+		has_kheionist_deity = { deity = dip }
 		dip_tech = 12
 	}
 
@@ -1375,7 +1374,7 @@ country_event = { #Fraud Odyssey custom tooltip?
 	trigger = {
 		culture_group = kheionai_ruinborn_elf
 		religion = kheionism
-		has_kheionist_philosophy_advanced = { type = dip }
+		has_kheionist_deity = { deity = dip }
 		dip_tech = 12
 	}
 	

@@ -26,7 +26,9 @@ downgrade_temple_wards = { #Always fired in a temple province scope after the pr
 				limit = { has_province_modifier = derelict_temple_complex }
 				dhurasidheni_temple_area = {
 					clr_province_flag = damaged_wards
+					clr_province_flag = pristine_wards
 				}
+				update_global_ward_strength = yes
 			}
 		}
 		else_if = {
@@ -55,7 +57,9 @@ downgrade_temple_wards = { #Always fired in a temple province scope after the pr
 				limit = { has_province_modifier = derelict_temple_complex }
 				bubhagama_temple_area = {
 					clr_province_flag = damaged_wards
+					clr_province_flag = pristine_wards
 				}
+				update_global_ward_strength = yes
 			}
 		}
 		else_if = {
@@ -84,7 +88,9 @@ downgrade_temple_wards = { #Always fired in a temple province scope after the pr
 				limit = { has_province_modifier = derelict_temple_complex }
 				sharaja_temple_area = {
 					clr_province_flag = damaged_wards
+					clr_province_flag = pristine_wards
 				}
+				update_global_ward_strength = yes
 			}
 		}
 		else_if = {
@@ -113,7 +119,9 @@ downgrade_temple_wards = { #Always fired in a temple province scope after the pr
 				limit = { has_province_modifier = derelict_temple_complex }
 				sighajisbid_temple_area = {
 					clr_province_flag = damaged_wards
+					clr_province_flag = pristine_wards
 				}
+				update_global_ward_strength = yes
 			}
 		}
 		else_if = {
@@ -142,7 +150,9 @@ downgrade_temple_wards = { #Always fired in a temple province scope after the pr
 				limit = { has_province_modifier = derelict_temple_complex }
 				dhenijansar_temple_area = {
 					clr_province_flag = damaged_wards
+					clr_province_flag = pristine_wards
 				}
+				update_global_ward_strength = yes
 			}
 		}
 		else_if = {
@@ -171,7 +181,9 @@ downgrade_temple_wards = { #Always fired in a temple province scope after the pr
 				limit = { has_province_modifier = derelict_temple_complex }
 				mindanan_temple_area = {
 					clr_province_flag = damaged_wards
+					clr_province_flag = pristine_wards
 				}
+				update_global_ward_strength = yes
 			}
 		}
 		else_if = {
@@ -200,7 +212,9 @@ downgrade_temple_wards = { #Always fired in a temple province scope after the pr
 				limit = { has_province_modifier = derelict_temple_complex }
 				sardika_temple_area = {
 					clr_province_flag = damaged_wards
+					clr_province_flag = pristine_wards
 				}
+				update_global_ward_strength = yes
 			}
 		}
 		else_if = {
@@ -229,7 +243,9 @@ downgrade_temple_wards = { #Always fired in a temple province scope after the pr
 				limit = { has_province_modifier = derelict_temple_complex }
 				ghundagar_temple_area = {
 					clr_province_flag = damaged_wards
+					clr_province_flag = pristine_wards
 				}
+				update_global_ward_strength = yes
 			}
 		}
 		else_if = {
@@ -258,7 +274,9 @@ downgrade_temple_wards = { #Always fired in a temple province scope after the pr
 				limit = { has_province_modifier = derelict_temple_complex }
 				sramaya_temple_area = {
 					clr_province_flag = damaged_wards
+					clr_province_flag = pristine_wards
 				}
+				update_global_ward_strength = yes
 			}
 		}
 		else_if = {
@@ -287,7 +305,9 @@ downgrade_temple_wards = { #Always fired in a temple province scope after the pr
 				limit = { has_province_modifier = derelict_temple_complex }
 				maharaaja_temple_area = {
 					clr_province_flag = damaged_wards
+					clr_province_flag = pristine_wards
 				}
+				update_global_ward_strength = yes
 			}
 		}
 		else_if = {
@@ -316,7 +336,9 @@ downgrade_temple_wards = { #Always fired in a temple province scope after the pr
 				limit = { has_province_modifier = derelict_temple_complex }
 				sarnavan_temple_area = {
 					clr_province_flag = damaged_wards
+					clr_province_flag = pristine_wards
 				}
+				update_global_ward_strength = yes
 			}
 		}
 		else_if = {
@@ -345,7 +367,9 @@ downgrade_temple_wards = { #Always fired in a temple province scope after the pr
 				limit = { has_province_modifier = derelict_temple_complex }
 				tughayasa_temple_area = {
 					clr_province_flag = damaged_wards
+					clr_province_flag = pristine_wards
 				}
+				update_global_ward_strength = yes
 			}
 		}
 		else_if = {
@@ -374,7 +398,9 @@ downgrade_temple_wards = { #Always fired in a temple province scope after the pr
 				limit = { has_province_modifier = derelict_temple_complex }
 				sarilavhan_temple_area = {
 					clr_province_flag = damaged_wards
+					clr_province_flag = pristine_wards
 				}
+				update_global_ward_strength = yes
 			}
 		}
 		else_if = {
@@ -403,7 +429,9 @@ downgrade_temple_wards = { #Always fired in a temple province scope after the pr
 				limit = { has_province_modifier = derelict_temple_complex }
 				khadisrapur_temple_area = {
 					clr_province_flag = damaged_wards
+					clr_province_flag = pristine_wards
 				}
+				update_global_ward_strength = yes
 			}
 		}
 		else_if = {
@@ -432,7 +460,9 @@ downgrade_temple_wards = { #Always fired in a temple province scope after the pr
 				limit = { has_province_modifier = derelict_temple_complex }
 				ghatasak_temple_area = {
 					clr_province_flag = damaged_wards
+					clr_province_flag = pristine_wards
 				}
+				update_global_ward_strength = yes
 			}
 		}
 		else_if = {
@@ -461,7 +491,9 @@ downgrade_temple_wards = { #Always fired in a temple province scope after the pr
 				limit = { has_province_modifier = derelict_temple_complex }
 				sir_temple_area = {
 					clr_province_flag = damaged_wards
+					clr_province_flag = pristine_wards
 				}
+				update_global_ward_strength = yes
 			}
 		}
 		else_if = {
@@ -490,7 +522,9 @@ downgrade_temple_wards = { #Always fired in a temple province scope after the pr
 				limit = { has_province_modifier = derelict_temple_complex }
 				bimlau_temple_area = {
 					clr_province_flag = damaged_wards
+					clr_province_flag = pristine_wards
 				}
+				update_global_ward_strength = yes
 			}
 		}
 		else_if = {
@@ -519,7 +553,9 @@ downgrade_temple_wards = { #Always fired in a temple province scope after the pr
 				limit = { has_province_modifier = derelict_temple_complex }
 				khabtei_temple_area = {
 					clr_province_flag = damaged_wards
+					clr_province_flag = pristine_wards
 				}
+				update_global_ward_strength = yes
 			}
 		}
 		else_if = {
@@ -548,7 +584,9 @@ downgrade_temple_wards = { #Always fired in a temple province scope after the pr
 				limit = { has_province_modifier = derelict_temple_complex }
 				mahoang_temple_area = {
 					clr_province_flag = damaged_wards
+					clr_province_flag = pristine_wards
 				}
+				update_global_ward_strength = yes
 			}
 		}
 		else_if = {
@@ -577,7 +615,9 @@ downgrade_temple_wards = { #Always fired in a temple province scope after the pr
 				limit = { has_province_modifier = derelict_temple_complex }
 				lapnam_temple_area = {
 					clr_province_flag = damaged_wards
+					clr_province_flag = pristine_wards
 				}
+				update_global_ward_strength = yes
 			}
 		}
 		else_if = {
@@ -606,7 +646,9 @@ downgrade_temple_wards = { #Always fired in a temple province scope after the pr
 				limit = { has_province_modifier = derelict_temple_complex }
 				khirnadhiman_temple_area = {
 					clr_province_flag = damaged_wards
+					clr_province_flag = pristine_wards
 				}
+				update_global_ward_strength = yes
 			}
 		}
 		else_if = {
@@ -635,7 +677,9 @@ downgrade_temple_wards = { #Always fired in a temple province scope after the pr
 				limit = { has_province_modifier = derelict_temple_complex }
 				jiangshengdian_temple_area = {
 					clr_province_flag = damaged_wards
+					clr_province_flag = pristine_wards
 				}
+				update_global_ward_strength = yes
 			}
 		}
 		else_if = {
@@ -664,7 +708,9 @@ downgrade_temple_wards = { #Always fired in a temple province scope after the pr
 				limit = { has_province_modifier = derelict_temple_complex }
 				samabok_temple_area = {
 					clr_province_flag = damaged_wards
+					clr_province_flag = pristine_wards
 				}
+				update_global_ward_strength = yes
 			}
 		}
 		else_if = {
@@ -693,7 +739,9 @@ downgrade_temple_wards = { #Always fired in a temple province scope after the pr
 				limit = { has_province_modifier = derelict_temple_complex }
 				zyuhung_temple_area = {
 					clr_province_flag = damaged_wards
+					clr_province_flag = pristine_wards
 				}
+				update_global_ward_strength = yes
 			}
 		}
 		else_if = {
@@ -722,7 +770,9 @@ downgrade_temple_wards = { #Always fired in a temple province scope after the pr
 				limit = { has_province_modifier = derelict_temple_complex }
 				luoyi_temple_area = {
 					clr_province_flag = damaged_wards
+					clr_province_flag = pristine_wards
 				}
+				update_global_ward_strength = yes
 			}
 		}
 		else_if = {
@@ -751,7 +801,9 @@ downgrade_temple_wards = { #Always fired in a temple province scope after the pr
 				limit = { has_province_modifier = derelict_temple_complex }
 				yanchung_temple_area = {
 					clr_province_flag = damaged_wards
+					clr_province_flag = pristine_wards
 				}
+				update_global_ward_strength = yes
 			}
 		}
 		else_if = {
@@ -780,7 +832,9 @@ downgrade_temple_wards = { #Always fired in a temple province scope after the pr
 				limit = { has_province_modifier = derelict_temple_complex }
 				lanjincun_temple_area = {
 					clr_province_flag = damaged_wards
+					clr_province_flag = pristine_wards
 				}
+				update_global_ward_strength = yes
 			}
 		}
 		else_if = {
@@ -809,7 +863,9 @@ downgrade_temple_wards = { #Always fired in a temple province scope after the pr
 				limit = { has_province_modifier = derelict_temple_complex }
 				tianlou_temple_area = {
 					clr_province_flag = damaged_wards
+					clr_province_flag = pristine_wards
 				}
+				update_global_ward_strength = yes
 			}
 		}
 		else_if = {
@@ -838,7 +894,9 @@ downgrade_temple_wards = { #Always fired in a temple province scope after the pr
 				limit = { has_province_modifier = derelict_temple_complex }
 				damaogong_temple_area = {
 					clr_province_flag = damaged_wards
+					clr_province_flag = pristine_wards
 				}
+				update_global_ward_strength = yes
 			}
 		}
 		else_if = {
@@ -867,7 +925,9 @@ downgrade_temple_wards = { #Always fired in a temple province scope after the pr
 				limit = { has_province_modifier = derelict_temple_complex }
 				jondang_temple_area = {
 					clr_province_flag = damaged_wards
+					clr_province_flag = pristine_wards
 				}
+				update_global_ward_strength = yes
 			}
 		}
 		else_if = {
@@ -896,7 +956,9 @@ downgrade_temple_wards = { #Always fired in a temple province scope after the pr
 				limit = { has_province_modifier = derelict_temple_complex }
 				keoaden_temple_area = {
 					clr_province_flag = damaged_wards
+					clr_province_flag = pristine_wards
 				}
+				update_global_ward_strength = yes
 			}
 		}
 		else_if = {
@@ -925,7 +987,9 @@ downgrade_temple_wards = { #Always fired in a temple province scope after the pr
 				limit = { has_province_modifier = derelict_temple_complex }
 				brenulan_temple_area = {
 					clr_province_flag = damaged_wards
+					clr_province_flag = pristine_wards
 				}
+				update_global_ward_strength = yes
 			}
 		}
 		else_if = {
@@ -954,7 +1018,9 @@ downgrade_temple_wards = { #Always fired in a temple province scope after the pr
 				limit = { has_province_modifier = derelict_temple_complex }
 				phangban_temple_area = {
 					clr_province_flag = damaged_wards
+					clr_province_flag = pristine_wards
 				}
+				update_global_ward_strength = yes
 			}
 		}
 		else_if = {
@@ -983,7 +1049,9 @@ downgrade_temple_wards = { #Always fired in a temple province scope after the pr
 				limit = { has_province_modifier = derelict_temple_complex }
 				prukakhin_temple_area = {
 					clr_province_flag = damaged_wards
+					clr_province_flag = pristine_wards
 				}
+				update_global_ward_strength = yes
 			}
 		}
 		else_if = {
@@ -1012,7 +1080,9 @@ downgrade_temple_wards = { #Always fired in a temple province scope after the pr
 				limit = { has_province_modifier = derelict_temple_complex }
 				shanyutian_temple_area = {
 					clr_province_flag = damaged_wards
+					clr_province_flag = pristine_wards
 				}
+				update_global_ward_strength = yes
 			}
 		}
 	}
@@ -4056,7 +4126,6 @@ define_temple_to_corrupt = {
 
 begin_temple_corruption = { # province scope
 	owner = { 
-		add_church_power = -100
 		add_adm_power = -50
 		add_dip_power = -50
 		add_mil_power = -50

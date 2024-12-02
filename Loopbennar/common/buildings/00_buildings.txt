@@ -92,7 +92,7 @@ workshop = {
 	cost = 100
 	time = 12
 	modifier = {
-		local_production_efficiency = 0.4
+		local_production_efficiency = 0.5
 	}
 	on_built = {
 		add_development_from_building = {
@@ -144,7 +144,7 @@ temple = {
 	cost = 100
 	time = 12
 	modifier = {
-		local_tax_modifier = 0.6
+		local_tax_modifier = 0.4
 	}
 	on_built = {
 		on_built_tax_building_effect = yes
@@ -506,14 +506,6 @@ fort_15th = {
 		FROM = {
 			if = {
 				limit = {
-					has_church_aspect = white_dragon_1
-				}
-				add_church_power = 5
-			}
-		}
-		FROM = {
-			if = {
-				limit = {
 					religion = winter_court
 				}
 				add_church_power = 10
@@ -825,7 +817,7 @@ regimental_camp = {
 	cost = 200
 	time = 12
 	modifier = {
-		land_forcelimit = 0.5
+		land_forcelimit = 1
 	}
 
 	on_built = {
@@ -962,14 +954,6 @@ fort_16th = {
 		FROM = {
 			if = {
 				limit = {
-					has_church_aspect = white_dragon_1
-				}
-				add_church_power = 5
-			}
-		}
-		FROM = {
-			if = {
-				limit = {
 					religion = winter_court
 				}
 				add_church_power = 10
@@ -1085,7 +1069,7 @@ cathedral = {
 	time = 12
 	modifier = {
 		local_missionary_strength = 0.03
-		local_tax_modifier = 0.9
+		local_tax_modifier = 0.6
 	}
 	on_built = {
 		on_built_tax_building_effect = yes
@@ -1540,14 +1524,6 @@ fort_17th = {
 		FROM = {
 			if = {
 				limit = {
-					has_church_aspect = white_dragon_1
-				}
-				add_church_power = 5
-			}
-		}
-		FROM = {
-			if = {
-				limit = {
 					religion = winter_court
 				}
 				add_church_power = 10
@@ -1918,7 +1894,7 @@ conscription_center = {
 	# THIS = Province, FROM = Builder(not nessecairly owner, can be overlord)
 
 	modifier = {
-		land_forcelimit = 1
+		land_forcelimit = 2
 	}
 	on_built = {
 		add_development_from_upgrading_or_building = {
@@ -2049,14 +2025,6 @@ fort_18th = {
 		FROM = {
 			if = {
 				limit = {
-					has_church_aspect = white_dragon_1
-				}
-				add_church_power = 5
-			}
-		}
-		FROM = {
-			if = {
-				limit = {
 					religion = winter_court
 				}
 				add_church_power = 10
@@ -2127,7 +2095,7 @@ manufactory = {
 	cost = 500
 	time = 60
 	modifier = {
-		trade_goods_size = 0.75
+		trade_goods_size = 1.0
 	}
 }
 
@@ -2531,6 +2499,17 @@ tradecompany = {
 		anbennar_building_effect = yes
 
 		gronstunad_building_authority_effect = { value = 5 }
+
+		if = { #Taychendi Empire
+			limit = {
+				FROM = { has_country_flag = J84_trade_station_bonus_flag }
+				trade_goods = precursor_relics
+			}
+			add_province_modifier = {
+				name = J84_trade_station_buff
+				duration = -1
+			}
+		}
 	}
 
 	on_destroyed = {
@@ -2547,6 +2526,14 @@ tradecompany = {
 		if = {
 			limit = { FROM = { has_reform = kai_diligent_bureucracy } }
 			anb_manufactory_discount_remove = yes
+		}
+
+		if = { #Taychendi Empire
+			limit = {
+				FROM = { has_country_flag = J84_trade_station_bonus_flag }
+				trade_goods = precursor_relics
+			}
+			remove_province_modifier = J84_trade_station_buff
 		}
 	}
 	on_obsolete = {
@@ -2614,6 +2601,23 @@ farm_estate = {
 		owner = { accretive_path_jiangyang_chi_stacking_effect = { amount = 20 } }
 
 		gronstunad_building_authority_effect = { value = 5 }
+		if = {
+			limit = {
+				FROM = { tag = J84 } #Taychendi Empire
+			}
+			hidden_effect = {
+				FROM = {
+					change_variable = {
+						which = J84_num_of_farm_estates_var
+						value = 1
+					}
+				}
+			}
+			if = { 
+				limit = { FROM = { has_country_flag = J84_sanguosynthesis_enabled_flag } }
+				FROM = { calc_sanguosynthesis_modifier = yes }
+			}
+		}
 	}
 
 	on_destroyed = {
@@ -2630,6 +2634,24 @@ farm_estate = {
 		if = {
 			limit = { FROM = { has_reform = kai_diligent_bureucracy } }
 			anb_manufactory_discount_remove = yes
+		}
+
+		if = {
+			limit = {
+				FROM = { tag = J84 } #Taychendi Empire
+			}
+			hidden_effect = {
+				FROM = {
+					change_variable = {
+						which = J84_num_of_farm_estates_var
+						value = -1
+					}
+				}
+			}
+			if = { #Taychendi Empire
+				limit = { FROM = { has_country_flag = J84_sanguosynthesis_enabled_flag } }
+				FROM = { calc_sanguosynthesis_modifier = yes }
+			}
 		}
 	}
 	on_obsolete = {
@@ -2960,6 +2982,20 @@ soldier_households = {
 			limit = { FROM = { mission_completed = R38_raheni_regiments } }
 			add_province_modifier = { name = bhuvauri_adasa_workforce duration = -1 desc = while_soldier_households }
 		}
+
+		#Rakkaz MT 
+		if ={
+			limit = { FROM = { has_country_flag = rakkaz_soldiers_households_bonus } }
+			rakkaz_soldier_household_buffs = yes
+		}
+
+		if = { #Taychendi Empire
+			limit = { FROM =  { has_country_flag = J84_soldiers_households_buff_flag } }
+			add_province_modifier = {
+				name = J84_soldiers_households_buff
+				duration = -1
+			}
+		}
 	}
 
 	on_destroyed = {
@@ -2984,8 +3020,24 @@ soldier_households = {
 			anb_manufactory_discount_remove = yes
 		}
 		if = {
-			limit = { has_province_modifier = bhuvauri_adasa_workforce }
-			remove_province_modifier = bhuvauri_adasa_workforce
+            limit = { has_province_modifier = bhuvauri_adasa_workforce }
+            remove_province_modifier = bhuvauri_adasa_workforce
+        }
+		if = {
+            limit = { has_province_modifier = rakkaz_soldier_households_1 }
+            remove_province_modifier = rakkaz_soldier_households_1
+        }
+		if = {
+            limit = { has_province_modifier = rakkaz_soldier_households_2 }
+            remove_province_modifier = rakkaz_soldier_households_2
+        }
+		if = {
+            limit = { has_province_modifier = rakkaz_soldier_households_3 }
+            remove_province_modifier = rakkaz_soldier_households_3
+        }
+		if = { #Taychendi Empire
+			limit = { FROM =  { has_country_flag = J84_soldiers_households_buff_flag } }
+			remove_province_modifier = J84_soldiers_households_buff
 		}
 	}
 	on_obsolete = {
@@ -3090,7 +3142,7 @@ impressment_offices = {
 			remove_province_modifier = a95_tier1_sailors
 			remove_province_modifier = a95_tier2_sailors
 		}
-	}	
+	}
 	on_obsolete = {
 	}
 
@@ -3238,6 +3290,7 @@ mage_tower = {
 		precursor_relics
 		incense
 		chinaware
+		ivory
 	}
 
 	modifier = {
@@ -3309,6 +3362,29 @@ mage_tower = {
 		anb_add_extra_mage_tower_dev = yes
 
 		gronstunad_building_authority_effect = { value = 1 }
+
+		#Anbennar - Masked Butcher
+		if = {
+			limit = {
+				owner = { has_country_flag = mb_ichortap_flag }
+				NOT = { owner = { has_country_flag = mb_buffed_ichortap_flag } }
+				superregion = deepwoods_superregion
+			}
+			add_province_modifier = {
+				name = mb_ichortap
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				owner = { has_country_flag = mb_buffed_ichortap_flag }
+				superregion = deepwoods_superregion
+			}
+			add_province_modifier = {
+				name = mb_ichortap2
+				duration = -1
+			}
+		}
 	}
 	on_destroyed = {
 		if = {
@@ -3346,6 +3422,16 @@ mage_tower = {
 		}
 		#Anbennar - Irkorzik, but can be used by anyone. Feel free to use
 		anb_remove_extra_mage_tower_dev = yes
+
+		#Anbennar - Masked Butcher
+		if = {
+			limit = { has_province_modifier = mb_ichortap }
+			remove_province_modifier = mb_ichortap
+		}
+		if = {
+			limit = { has_province_modifier = mb_ichortap2 }
+			remove_province_modifier = mb_ichortap2
+		}
 	}
 }
 
@@ -3858,7 +3944,40 @@ railway_work = {
 					name = restored_rail
 					duration = -1
 				}
-				province_event = { id = diggy.36 }
+				FROM = { add_prestige = 1 }
+				if = { 
+					limit = {
+						FROM = { 
+							NOT = { has_country_flag = auto_build_rail }
+							NOT = { has_country_flag = never_auto_build_rail }
+							NOT = { has_country_modifier = temp_auto_build_rail }
+							NOT = { has_country_modifier = no_rail_and_event_notif_for_5_years }
+						}
+					}
+					if = {
+						limit = { 
+							NOT = { has_country_modifier = no_event_notif_for_5_years }
+						}
+						FROM = { country_event = { id = diggy.760 } }
+					}
+					province_event = { id = diggy.36 }
+				}
+				else_if = {
+					limit = {
+						FROM = { 
+							treasury = 15
+							OR = { 
+								has_country_flag = auto_build_rail 
+								has_country_modifier = temp_auto_build_rail
+							}
+						}
+					}
+					construct_every_adjacent_rail_road = {
+						rail = dwarovar_rail
+						speed = 1
+						cost = 1
+					}
+				}
 			}
 			else_if = {
 				limit = { has_province_modifier = restored_rail }
@@ -3867,7 +3986,40 @@ railway_work = {
 					name = advanced_rail
 					duration = -1
 				}
-				province_event = { id = diggy.42 }
+				FROM = { add_prestige = 2 }
+				if = { 
+					limit = {
+						FROM = { 
+							NOT = { has_country_flag = auto_build_rail }
+							NOT = { has_country_flag = never_auto_build_rail }
+							NOT = { has_country_modifier = temp_auto_build_rail }
+							NOT = { has_country_modifier = no_rail_and_event_notif_for_5_years }
+						}
+					}
+					if = {
+						limit = { 
+							NOT = { has_country_modifier = no_event_notif_for_5_years }
+						}
+						FROM = { country_event = { id = diggy.760 } }
+					}
+					province_event = { id = diggy.42 }
+				}
+				else_if = {
+					limit = {
+						FROM = { 
+							treasury = 30
+							OR = { 
+								has_country_flag = auto_build_rail 
+								has_country_modifier = temp_auto_build_rail
+							}
+						}
+					}
+					construct_every_adjacent_rail_road = {
+						rail = restored_rail
+						speed = 1.3
+						cost = 2
+					}
+				}
 			}
 			else_if = {
 				limit = { has_province_modifier = advanced_rail }
@@ -3876,7 +4028,40 @@ railway_work = {
 					name = rocket_rail
 					duration = -1
 				}
-				province_event = { id = allclan.99 }
+				FROM = { add_prestige = 2 }
+				if = { 
+					limit = {
+						FROM = { 
+							NOT = { has_country_flag = auto_build_rail }
+							NOT = { has_country_flag = never_auto_build_rail }
+							NOT = { has_country_modifier = temp_auto_build_rail }
+							NOT = { has_country_modifier = no_rail_and_event_notif_for_5_years }
+						}
+					}
+					if = {
+						limit = { 
+							NOT = { has_country_modifier = no_event_notif_for_5_years }
+						}
+						FROM = { country_event = { id = diggy.760 } }
+					} 
+					province_event = { id = allclan.99 }
+				}
+				else_if = {
+					limit = {
+						FROM = { 
+							treasury = 30
+							OR = { 
+								has_country_flag = auto_build_rail 
+								has_country_modifier = temp_auto_build_rail
+							}
+						}
+					}
+					construct_every_adjacent_rail_road = {
+						rail = advanced_rail
+						speed = 1.3
+						cost = 2
+					}
+				}
 			}
 		}
     }

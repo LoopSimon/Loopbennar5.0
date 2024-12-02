@@ -5,6 +5,7 @@ ancestral_armaments_aspect = {
 
 	potential = {
 		NOT = { has_country_flag = irkorzik_ancestral_armaments_cost_reduction }
+		NOT = { has_country_modifier = ancestral_armaments }
 	}
 
 	trigger = {  	
@@ -32,6 +33,7 @@ ancestral_armaments_irkorzik_aspect = {
 
 	potential = {
 		has_country_flag = irkorzik_ancestral_armaments_cost_reduction
+		NOT = { has_country_modifier = ancestral_armaments }
 	}
 
 
@@ -61,7 +63,8 @@ repurposed_relics_aspect = {
 			NOT = {
 				has_building = temple
 			}
-		}		
+		}
+		NOT = { has_country_modifier = repurposed_relics }		
 	}
 	
 	effect = {
@@ -86,6 +89,7 @@ reconditioned_tools_aspect = {
 	cost = 200
 	
 	trigger = {
+		NOT = { has_country_modifier = reconditioned_tools }
 	}
 	
 	effect = {
@@ -102,6 +106,7 @@ salvage_shipwrecks_aspect = {
 	cost = 100
 	
 	trigger = {
+		NOT = { has_country_modifier = salvage_shipwrecks }
 		AND = {
 			any_owned_province = {
 				has_port = yes
@@ -131,6 +136,7 @@ recycled_jewellery_aspect = {
 		NOT = {
 			treasury = 1000000
 		}
+		NOT = { has_country_modifier = recycled_jewellery }
 	}
 	effect = {
 		custom_tooltip = recycled_jewellery_aspect_tt

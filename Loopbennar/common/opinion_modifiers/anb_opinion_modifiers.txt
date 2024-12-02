@@ -99,7 +99,7 @@ maintained_magisterium_org = {
 
 refused_ravelian_org = { #Aligned with Scornful Insult decay
 	opinion = -100
-	yearly_decay = 5 
+	yearly_decay = 5
 }
 
 expelled_the_magisterium = {
@@ -1429,8 +1429,8 @@ khom_civilwar_pirate_scum = {
 JY_LF_no_natives = {
 	opinion = -25
 }
-seghdihr_opinion_eastern_trade = { 
-	opinion = -100 
+seghdihr_opinion_eastern_trade = {
+	opinion = -100
 	yearly_decay = 2
 }
 khug_opinion_modifier = {
@@ -1711,7 +1711,7 @@ rabhidaraj_setapsim_betrayer = {
 
 rabhidaraj_valiant_guardian_opinion = {
 	opinion = 50
-	yearly_decay = 2	
+	yearly_decay = 2
 }
 
 rabhidaraj_ally_against_rot = {
@@ -2392,7 +2392,7 @@ H90_scouting_ogres = {
 	yearly_decay = 1
 }
 
-H90_scouting_ogres_enemy = { 
+H90_scouting_ogres_enemy = {
 	opinion = -80
 	yearly_decay = 1
 }
@@ -2552,7 +2552,7 @@ L09_human_kolovadoy = {
 	yearly_decay = 1
 }
 
-#kvangahga 
+#kvangahga
 
 no_eating_ally = {
 	opinion = 25
@@ -2641,7 +2641,7 @@ opinion_tolerate_taychendi = {
 	opinion = 25
 	yearly_decay = 2
 	}
-	
+
 opinion_detest_taychendi = {
 	opinion = -25
 	yearly_decay = 2
@@ -2671,10 +2671,29 @@ G79_liberator_of_taychendi = {
 mb_made_mask_opinion = {
 	opinion = -200
 }
-#themarenn
-rejected_themarenn_claims = {
-	opinion = -100
-	yearly_decay = 2
+
+#Giberd
+giberd_wind_tower_opinion_up = {
+	opinion = 50
+}
+
+giberd_wind_tower_opinion_down = {
+	opinion = -50
+}
+
+giberd_potions_bribe = {
+	opinion = 50
+}
+
+giberd_is_restoring_archive = {
+	opinion = 25
+	yearly_decay = 1
+}
+
+giberd_is_stealing_archive = {
+	opinion = -30
+	yearly_decay = 1
+}
 
 #Maghargma
 I90_happy_ogre = {
@@ -2690,4 +2709,151 @@ B47_elven_diplomat = {
 B47_vampire_hunter_overreach = {
 	opinion = -100
 	yearly_decay = 2
+}
+
+##Mihitarab
+L37_hawkish_policy = {
+	opinion = -50
+	yearly_decay = 1
+}
+
+#themarenn
+rejected_themarenn_claims = {
+	opinion = -100
+	yearly_decay = 2
+}
+
+## Esmari flavor
+took_esmaraine = {
+	opinion = -50
+	yearly_decay = 1
+}
+
+#Gushuokguan
+gushuokguan_council_tensions_negative_small = {
+	opinion = -10
+	yearly_decay = 1
+}
+
+gushuokguan_council_tensions_negative_medium = {
+	opinion = -20
+	yearly_decay = 1
+}
+
+gushuokguan_council_tensions_negative_large = {
+	opinion = -25
+	yearly_decay = 1
+}
+
+gushuokguan_council_tensions_positive_small = {
+	opinion = 10
+	yearly_decay = 1
+}
+
+gushuokguan_council_tensions_positive_medium = {
+	opinion = 20
+	yearly_decay = 1
+}
+
+gushuokguan_council_tensions_positive_large = {
+	opinion = 25
+	yearly_decay = 1
+}
+
+#Taychendi Empire
+J84_trading_relics = {
+	opinion = 50
+	yearly_decay = 2
+}
+
+J84_facing_a_second_apocalypse_op = {
+	opinion = -100
+	yearly_decay = 2
+}
+
+J84_ended_the_world = {
+	opinion = -200
+	yearly_decay = 5
+}
+
+#Moonhaven
+A31_religious_ally = {
+	opinion = 50
+	yearly_decay = 1
+}
+
+A31_religious_brethren = {
+	opinion = 25
+	yearly_decay = 1
+}
+
+A31_baashidi_positive = {
+	opinion = 50
+	yearly_decay = 1
+}
+
+A31_baashidi_negative = {
+	opinion = -50
+	yearly_decay = 1
+}
+
+gomuvuri_aramoole_starting_bonus = {
+	opinion = 100
+	yearly_decay = 5
+}
+
+
+#kobildzan
+tribute_to_a_dragon = {
+	opinion = 100
+	yearly_decay = 1
+}
+
+devandi_raided_op = {
+	opinion = -60
+	yearly_decay = 2
+}
+
+L62_sole_middleman = {
+	opinion = 25
+}
+
+L62_baashidi_friend = {
+	opinion = 100
+	yearly_decay = 2
+}
+
+L62_baashidi_foe = {
+	opinion = -200
+	yearly_decay = 2
+}
+
+L62_tried_to_murder_suhan = {
+	opinion = -200
+	yearly_decay = 3
+}
+
+L62_selling_to_ally = {
+	opinion = 100
+	yearly_decay = 2
+}
+
+L62_selling_to_raja = {
+	opinion = 75
+	yearly_decay = 1.5
+}
+
+L62_selling_to_wealthy = {
+	opinion = 25
+	yearly_decay = 0.5
+}
+
+L62_selling_to_powerful = {
+	opinion = 50
+	yearly_decay = 1
+}
+
+L62_offer_rejected = {
+	opinion = -25
+	yearly_decay = 1
 }

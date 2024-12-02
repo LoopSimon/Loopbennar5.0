@@ -928,8 +928,8 @@ country_event = {
 					capital_scope = { 
 						OR = { 
 							superregion = yanshen_superregion
-							superregion = south_haless_superregion
-							superregion = north_haless_superregion
+							superregion = vimdatrong_superregion
+							superregion = gozengun_superregion
 							superregion = rahen_superregion
 						} 
 					}
@@ -990,8 +990,8 @@ country_event = {
 					capital_scope = { 
 						OR = { 
 							superregion = yanshen_superregion
-							superregion = south_haless_superregion
-							superregion = north_haless_superregion
+							superregion = vimdatrong_superregion
+							superregion = gozengun_superregion
 							superregion = rahen_superregion
 						} 
 					}
@@ -2887,7 +2887,7 @@ province_event = { #Yanification of province
 			}
 			if = {
 				limit = {
-					superregion = north_haless_superregion
+					superregion = gozengun_superregion
 				}
 				if = {
 					limit = {
@@ -3125,7 +3125,7 @@ country_event = {
 
 	option = {
 		name = "bianfang.301.a"
-		north_haless_superregion = {
+		gozengun_superregion = {
 			limit = {
 				culture_group = yan
 				NOT = { culture = yan_half_orc }

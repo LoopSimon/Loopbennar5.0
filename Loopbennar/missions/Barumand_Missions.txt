@@ -46,14 +46,14 @@ barumand_1 = {
 			}
 		}
 		trigger = {
-			treasury = 250
+			treasury = 200
 			if = {
 				limit = {
 					has_estate = estate_nobles
 				}
 				estate_loyalty = {
 					estate = estate_nobles
-					loyalty = 65
+					loyalty = 60
 				}
 			}
 			else = {
@@ -71,7 +71,7 @@ barumand_1 = {
 			}
 		}
 		effect = {
-			add_treasury = -250
+			add_treasury = -200
 			800 = {
 				change_trade_goods = iron
 				add_building = weapons
@@ -95,9 +95,9 @@ barumand_1 = {
 				limit = {
 					has_dlc = "Cradle of Civilization"
 				}
-				army_professionalism = 0.2
+				army_professionalism = 0.1
 			}
-			army_tradition = 45
+			army_tradition = 35
 		}
 		effect = {
 			add_country_modifier = {
@@ -146,7 +146,7 @@ barumand_1 = {
 			}
 			estate_loyalty = {
 				estate = estate_nobles
-				loyalty = 60
+				loyalty = 50
 			}
 			has_estate_privilege = estate_nobles_supremacy_over_crown
 			has_estate_privilege = estate_nobles_monopoly_of_livestock
@@ -168,9 +168,9 @@ barumand_1 = {
 		}
 		trigger = {
 			800 = { owned_by = ROOT }
-			adm_power = 150
-			dip_power = 150
-			mil_power = 150
+			adm_power = 100
+			dip_power = 100
+			mil_power = 100
 			OR = {
 				full_idea_group = innovativeness_ideas
 				calc_true_if  = {
@@ -200,9 +200,9 @@ barumand_1 = {
 				add_province_modifier = { name = barumand_tamashrug_university_modifier duration = -1 }
 				add_building = university
 			}
-			add_adm_power = -150
-			add_dip_power = -150
-			add_mil_power = -150
+			add_adm_power = -100
+			add_dip_power = -100
+			add_mil_power = -100
 		}
 	}
 	barumand_their_fruit = {
@@ -410,7 +410,7 @@ barumand_2 = {
 			legitimacy_equivalent = 80
 			development_in_provinces = {
 				region = south_castanor_region
-				value = 600
+				value = 500
 			}
 			if = {
 				limit = {
@@ -426,11 +426,11 @@ barumand_2 = {
 			}
 		}
 		effect = {
-			add_adm_power = 75
+			add_adm_power = 100
 			add_dip_power = 100
-			add_mil_power = 75
+			add_mil_power = 100
 			hidden_effect = {
-				country_event = { id = flavour_barumand.30 days = 1825 }
+				country_event = { id = flavour_barumand.30 days = 365 }
 			}
 		}
 	}
@@ -825,7 +825,7 @@ barumand_2 = {
 		}
 		trigger = {
 			781 = {
-				development = 45
+				development = 40
 				has_building = ramparts
 				has_building = university
 			}

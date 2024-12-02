@@ -46,7 +46,7 @@ orc_rivals = {
 			army_size_percentage = 1
 		}
 		effect = {
-			add_years_of_income = 2
+			add_years_of_income = 3
 		}
 	}
 	
@@ -65,7 +65,7 @@ orc_rivals = {
 		effect = {
 			add_country_modifier = {
 				name = orc_subjugators
-				duration = 3650
+				duration = 7300
 			}
 		}
 	}
@@ -257,7 +257,7 @@ orc_trade = {
 				name = orc_developing_trade_relations
 				duration = 9125
 			}
-			change_government_reform_progress = 10
+			change_government_reform_progress = 20
 		}
 	}
 }

@@ -538,7 +538,6 @@ estate_artificers_organization_sun_elf = {
 	on_granted = {
 		custom_tooltip = ten_year_artifice_research_tt
 		custom_tooltip = artificer_points_hover_over_me_tt
-		debuff_artifice_points_5 = yes
 		if = {
 			limit = {
 				has_artificers_organization_privilege = yes
@@ -571,6 +570,7 @@ estate_artificers_organization_sun_elf = {
     }
 	penalties = {
 		global_unrest = 1
+		artificers_capacity = -5
 	}
 	benefits = {
 		nobles_influence_modifier = 0.10
@@ -730,6 +730,7 @@ estate_artificers_organization_feiten_shuimu_cadre = {
 			movement_speed_in_fleet_modifier = 2
 			allowed_rajput_fraction = 0.025
 			naval_maintenance_modifier = 0.5
+			fire_damage_received = 0.2 # Balloons/airships blowing/burning up result in lots of collateral damage
 		}
 	}
 	# 0% to 50% over cap
@@ -754,6 +755,7 @@ estate_artificers_organization_feiten_shuimu_cadre = {
 			movement_speed_in_fleet_modifier = 1.5
 			allowed_rajput_fraction = 0.025
 			naval_maintenance_modifier = 0.5
+			fire_damage_received = 0.2
 		}
 	}
 	# 50% to 100% over cap
@@ -778,6 +780,7 @@ estate_artificers_organization_feiten_shuimu_cadre = {
 			movement_speed_in_fleet_modifier = 1
 			allowed_rajput_fraction = 0.025
 			naval_maintenance_modifier = 0.5
+			fire_damage_received = 0.2
 		}
 	}
 	# >100% over cap
@@ -796,7 +799,190 @@ estate_artificers_organization_feiten_shuimu_cadre = {
 			movement_speed_in_fleet_modifier = 0.5
 			allowed_rajput_fraction = 0.025
 			naval_maintenance_modifier = 0.5
+			fire_damage_received = 0.2
 		}
+	}
+	ai_will_do = {
+		factor = 5
+	}
+}
+
+
+estate_artificers_organization_giberd_magisterium_oversight = {
+	icon = privilege_promote_maratha_nobility
+	loyalty = 0
+	influence = 0.05
+	is_valid = {
+		has_estate_privilege = estate_artificers_organization_giberd_magisterium_oversight
+		NOT = { has_estate_privilege = estate_artificers_organization_giberd_ravelian_guilds }
+		NOT = { has_estate_privilege = estate_artificers_organization_giberd_beacon_of_harmony }
+	}
+	can_select = {
+		has_estate_privilege = estate_artificers_organization_giberd_magisterium_oversight
+	}
+	can_revoke = {
+		always = no
+	}
+	on_granted = {
+		hidden_effect = {
+			set_country_flag = artifice_research_normal
+		}
+		custom_tooltip = ten_year_artifice_research_tt
+		display_research_limit_tt = yes
+		custom_tooltip = artificer_points_hover_over_me_tt
+	}
+	on_revoked = {
+		hidden_effect = {
+			clr_country_flag = artifice_research_normal
+		}
+		custom_tooltip = ten_year_artifice_research_tt
+		display_research_limit_tt = yes
+		custom_tooltip = artificer_points_hover_over_me_tt
+	}
+	mechanics = {
+        enables_rajput_regiments
+    }
+	penalties = {
+		idea_cost = 0.1
+		global_institution_spread = -0.5
+	}
+	conditional_modifier = {
+		trigger = {
+			has_country_flag = giberd_ravelians_role
+			has_country_flag = giberd_arcane_arts
+		}
+		modifier = {
+			idea_cost = -0.10
+			global_institution_spread = 0.50
+			allowed_rajput_fraction = 0.10
+			artificers_loyalty_modifier = 0.10
+		}
+		is_bad = no
+	}
+	conditional_modifier = {
+		trigger = {
+			OR = {
+				has_country_flag = giberd_arcane_arts
+				has_country_flag = giberd_ravelians_role
+			}
+			NOT = {
+				AND = {
+					has_country_flag = giberd_arcane_arts
+					has_country_flag = giberd_ravelians_role
+				}
+			}
+		}
+		modifier = {
+			idea_cost = -0.05
+			global_institution_spread = 0.25
+			allowed_rajput_fraction = 0.05
+			artificers_loyalty_modifier = 0.05
+		}
+		is_bad = no
+	}
+	benefits = {
+	}
+	ai_will_do = {
+		factor = 5
+	}
+}
+
+estate_artificers_organization_giberd_ravelian_guilds = {
+	icon = privilege_promote_maratha_nobility
+	max_absolutism = 0
+	loyalty = 0.1
+	influence = 0.2
+	is_valid = {
+		has_estate_privilege = estate_artificers_organization_giberd_ravelian_guilds
+		NOT = { has_estate_privilege = estate_artificers_organization_giberd_magisterium_oversight }
+		NOT = { has_estate_privilege = estate_artificers_organization_giberd_beacon_of_harmony }
+	}
+	can_select = {
+		has_estate_privilege = estate_artificers_organization_giberd_ravelian_guilds
+	}
+	can_revoke = {
+		always = no
+	}
+	on_granted = {
+		hidden_effect = {
+			set_country_flag = artifice_research_normal
+		}
+		custom_tooltip = ten_year_artifice_research_tt
+		display_research_limit_tt = yes
+		custom_tooltip = artificer_points_hover_over_me_tt
+	}
+	on_revoked = {
+		hidden_effect = {
+			clr_country_flag = artifice_research_normal
+		}
+		custom_tooltip = ten_year_artifice_research_tt
+		display_research_limit_tt = yes
+		custom_tooltip = artificer_points_hover_over_me_tt
+	}
+	mechanics = {
+        enables_rajput_regiments
+    }
+	penalties = {
+	}
+	conditional_modifier = {
+	}
+	benefits = {
+		global_missionary_strength = 0.02
+		papal_influence = 2
+		production_efficiency = 0.10
+		allowed_rajput_fraction = 0.10
+	}
+	ai_will_do = {
+		factor = 5
+	}
+}
+
+estate_artificers_organization_giberd_beacon_of_harmony = {
+	icon = privilege_promote_maratha_nobility
+	max_absolutism = 0
+	loyalty = 0.1
+	influence = 0.1
+	is_valid = {
+		has_estate_privilege = estate_artificers_organization_giberd_beacon_of_harmony
+		NOT = { has_estate_privilege = estate_artificers_organization_giberd_magisterium_oversight }
+		NOT = { has_estate_privilege = estate_artificers_organization_giberd_ravelian_guilds }
+	}
+	can_select = {
+		has_estate_privilege = estate_artificers_organization_giberd_beacon_of_harmony
+	}
+	can_revoke = {
+		always = no
+	}
+	on_granted = {
+		hidden_effect = {
+			set_country_flag = artifice_research_normal
+		}
+		custom_tooltip = ten_year_artifice_research_tt
+		display_research_limit_tt = yes
+		custom_tooltip = artificer_points_hover_over_me_tt
+	}
+	on_revoked = {
+		hidden_effect = {
+			clr_country_flag = artifice_research_normal
+		}
+		custom_tooltip = ten_year_artifice_research_tt
+		display_research_limit_tt = yes
+		custom_tooltip = artificer_points_hover_over_me_tt
+	}
+	mechanics = {
+        enables_rajput_regiments
+    }
+	penalties = {
+	}
+	conditional_modifier = {
+	}
+	benefits = {
+		artificers_research_time = -0.20
+		allowed_rajput_fraction = 0.10
+		tolerance_heathen = 1
+		tolerance_heretic = 1
+		tolerance_of_heretics_capacity = 1
+		tolerance_of_heathens_capacity = 1
 	}
 	ai_will_do = {
 		factor = 5
@@ -1134,10 +1320,8 @@ estate_artificers_relic_fueled_artificery = {
 	can_revoke = {
 	}
 	on_granted = {
-		custom_tooltip = artifice_research_speed_moderate_tt
 	}
 	on_revoked = {
-		custom_tooltip = artifice_research_speed_moderate_removal_tt
 	}
 	on_invalid = {
 		
@@ -1146,7 +1330,7 @@ estate_artificers_relic_fueled_artificery = {
 		
 	}
 	benefits = {
-
+		artificers_research_time = -0.20
 	}
 	ai_will_do = {
 		factor = 5
@@ -1286,7 +1470,7 @@ estate_artificers_development_tools = {
 	penalties = {
 	}
 	benefits = {
-		development_cost = -0.075
+		development_cost = -0.1
 	}
 	ai_will_do = {
 		factor = 5
@@ -1356,6 +1540,9 @@ estate_artificers_precursor_weapons = { #Not sure how you want this implemented
 					trade_goods = precursor_relics
 				}
 			}
+		}
+		modifier = {
+			allowed_rajput_fraction = 0.05
 		}
 	}
 	conditional_modifier = {
@@ -1659,6 +1846,7 @@ estate_artificers_trained_mage_hunters = {
 			land_morale = 0.1
 			naval_morale = 0.1
 			discipline = 0.05
+			shock_damage_received = -0.1
 		}
 	}
 	conditional_modifier = {
@@ -1716,6 +1904,43 @@ estate_artificers_focus_on_artificer_units = {
 	}
 	ai_will_do = {
 		factor = 5
+	}
+}
+estate_artificers_draft_artificers = {
+	icon = privilege_promote_maratha_nobility
+	max_absolutism = -10
+	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 2 } }
+	loyalty = 0.05
+	influence = 0.05
+	is_valid = {
+
+	}
+	can_revoke = {
+
+	}
+	on_granted = {
+		enable_estate_action = {
+			estate_action = GRANT_DRAFT_ARTIFICERS_ARTIFICE
+		}
+	}
+	on_invalid = {
+		disable_estate_action = {
+			estate_action = GRANT_DRAFT_ARTIFICERS_ARTIFICE
+		}
+	}
+	on_revoked = {
+		disable_estate_action = {
+			estate_action = GRANT_DRAFT_ARTIFICERS_ARTIFICE
+		}
+	}
+	penalties = {
+		
+	}
+	benefits = {
+		
+	}
+	ai_will_do = {
+		factor = 400
 	}
 }
 
@@ -2315,7 +2540,7 @@ artifice_invention_portable_turrets = {
 	benefits = {
 		artificers_privilege_slots = 1
 		dragon_command_privilege_slots = 1
-		siege_ability = 0.075
+		siege_ability = 0.1
 		tec_mechanists_influence = 0.02
 	}
 	ai_will_do = {
@@ -2446,7 +2671,7 @@ artifice_invention_holy_gunblade = {
 	benefits = {
 		artificers_privilege_slots = 1
 		dragon_command_privilege_slots = 1
-		tec_brilliance_influence = 0.01
+		tec_brilliance_influence = 0.02
 	}
 	ai_will_do = {
 		factor = 5
@@ -3192,7 +3417,7 @@ artifice_invention_living_mirrors = {
 		artificers_privilege_slots = 1
 		dragon_command_privilege_slots = 1
 		global_unrest = -2
-		min_autonomy_in_territories = -0.1
+		num_accepted_cultures = 2
 		tec_technomancy_influence = 0.02
 	}
 	ai_will_do = {
@@ -3381,7 +3606,7 @@ artifice_invention_artillery_autoloader = {
 	benefits = {
 		artificers_privilege_slots = 1
 		dragon_command_privilege_slots = 1
-		artillery_power = 0.1
+		artillery_power = 0.15
 		tec_mechanists_influence = 0.06
 	}
 	ai_will_do = {
@@ -3691,7 +3916,7 @@ artifice_invention_prototype_tanks = {
 	benefits = {
 		artificers_privilege_slots = 1
 		dragon_command_privilege_slots = 1
-		cavalry_fire = 1
+		cavalry_fire = 2
 		tec_brilliance_influence = 0.04
 	}
 	ai_will_do = {
@@ -3943,8 +4168,7 @@ artifice_invention_magic_missile_deployer = {
 	benefits = {
 		artificers_privilege_slots = 1
 		dragon_command_privilege_slots = 1
-		shock_damage_received = -0.05
-		shock_damage = 0.05
+		shock_damage_received = -0.1
 		tec_technomancy_influence = 0.02
 	}
 	ai_will_do = {
@@ -4194,7 +4418,7 @@ artifice_invention_balloonboost_packs = {
 	benefits = {
 		artificers_privilege_slots = 1
 		dragon_command_privilege_slots = 1
-		leader_naval_manuever = 1
+		leader_naval_manuever = 2
 		leader_land_manuever = 2
 		tec_brilliance_influence = 0.04
 	}
@@ -4378,7 +4602,7 @@ artifice_invention_box_of_holding = {
 		artificers_privilege_slots = 1
 		dragon_command_privilege_slots = 1
 		#bonuses in paper provinces?
-		global_tariffs = 0.1
+		global_tariffs = 0.4
 		treasure_fleet_income = 0.1
 		tec_technomancy_influence = 0.02
 	}
@@ -4992,7 +5216,7 @@ artifice_invention_think_quik_drink_mix = {
 	}
 	benefits = {
 		artificers_privilege_slots = 1
-		all_power_cost = -0.025
+		all_power_cost = -0.05
 		tec_brilliance_influence = 0.06
 	}
 	ai_will_do = {
@@ -5336,7 +5560,11 @@ artifice_invention_lullaby_cannon = {
 	influence = 0 #artificer privileges must never affect influence due to the fact influence affects points
 	is_valid = {
 		has_country_flag = unlocked_artifice_invention_lullaby_cannon
-		religion = skaldhyrric_faith
+		OR = {
+			religion = skaldhyrric_faith
+			has_country_flag = can_use_lullaby_cannon
+		}
+		
 		OR = {
 			ai = yes
 			has_estate_privilege = artifice_invention_lullaby_cannon
@@ -5345,7 +5573,10 @@ artifice_invention_lullaby_cannon = {
 	can_select = {
         ai = yes
 		artifice_has_points_30 = yes
-		religion = skaldhyrric_faith
+		OR = {
+			religion = skaldhyrric_faith
+			has_country_flag = can_use_lullaby_cannon
+		}
 	}
 	can_revoke = {
 		hidden_trigger = {
@@ -5440,7 +5671,7 @@ artifice_invention_sunbeam_armaments = {
 	}
 	benefits = {
 		artificers_privilege_slots = 1
-		siege_ability = 0.1
+		siege_ability = 0.2
 		tec_brilliance_influence = 0.02
 	}
 	ai_will_do = {
@@ -5971,6 +6202,7 @@ artifice_invention_gyrocopters = {
 	benefits = {
 		artificers_privilege_slots = 1
 		siege_ability = 0.1
+		leader_siege = 1
 		tec_mechanists_influence = 0.04
 	}
 	ai_will_do = {
@@ -6422,7 +6654,7 @@ artifice_invention_chase_em_rockets = {
 	}
 	benefits = {
 		artificers_privilege_slots = 1
-		backrow_artillery_damage = 0.1
+		backrow_artillery_damage = 0.2
 		tec_mechanists_influence = 0.06
 	}
 	ai_will_do = {
@@ -6508,7 +6740,10 @@ artifice_invention_elemental_gunpowder = {
 	influence = 0 #artificer privileges must never affect influence due to the fact influence affects points
 	is_valid = {
 		has_country_flag = unlocked_artifice_invention_elemental_gunpowder
-		has_country_modifier = goblin_military
+		OR = {
+			has_country_modifier = goblin_military
+			has_country_flag = can_use_elemental_gunpowder
+		}
 		OR = {
 			ai = yes
 			has_estate_privilege = artifice_invention_elemental_gunpowder
@@ -6517,7 +6752,10 @@ artifice_invention_elemental_gunpowder = {
 	can_select = {
         ai = yes
 		artifice_has_points_30 = yes
-		has_country_modifier = goblin_military
+		OR = {
+			has_country_modifier = goblin_military
+			has_country_flag = can_use_elemental_gunpowder
+		}
 	}
 	can_revoke = {
 		hidden_trigger = {
@@ -6831,7 +7069,7 @@ artifice_invention_wonderous_lunchbox = {
 	influence = 0 #artificer privileges must never affect influence due to the fact influence affects points
 	is_valid = {
 		has_country_flag = unlocked_artifice_invention_wondrous_lunchbox
-		culture_group = halfling
+		culture_is_halfling = yes
 		OR = {
 			ai = yes
 			has_estate_privilege = artifice_invention_wonderous_lunchbox
@@ -6840,7 +7078,7 @@ artifice_invention_wonderous_lunchbox = {
 	can_select = {
         ai = yes
 		artifice_has_points_20 = yes
-		culture_group = halfling
+		culture_is_halfling = yes
 	}
 	can_revoke = {
 		hidden_trigger = {
@@ -6873,7 +7111,7 @@ artifice_invention_wonderous_lunchbox = {
 	}
 	benefits = {
 		artificers_privilege_slots = 1
-		development_cost = -0.075
+		development_cost = -0.1
 		land_attrition = -0.2
 		tec_brilliance_influence = 0.04
 	}
@@ -6941,7 +7179,7 @@ artifice_invention_divendancer_speedboat = {
 	}
 	benefits = {
 		artificers_privilege_slots = 1
-		naval_moral = 0.2
+		own_coast_naval_combat_bonus = 1
 		movement_speed_onto_off_boat_modifier = -0.2
 		tec_mechanists_influence = 0.06
 	}
@@ -7347,7 +7585,7 @@ artifice_invention_centipedal_chests = {
 		artificers_privilege_slots = 1
 		dragon_command_privilege_slots = 1
 		envoy_travel_time = -0.25
-		shock_damage = 0.05
+		shock_damage_received = -0.05
 		tec_brilliance_influence = 0.02
 	}
 	ai_will_do = {
@@ -7665,7 +7903,7 @@ artifice_invention_prehensile_tail_attachments = {
 	}
 	benefits = {
 		artificers_privilege_slots = 1
-		development_cost = -0.05
+		development_cost = -0.1
 		tec_brilliance_influence = 0.04
 	}
 	ai_will_do = {
@@ -7796,7 +8034,7 @@ artifice_invention_prefabricated_city_constructors = {
 	}
 	benefits = {
 		artificers_privilege_slots = 1
-		development_cost = -0.05
+		development_cost = -0.1
 		tec_mechanists_influence = 0.04
 	}
 	ai_will_do = {
@@ -7926,7 +8164,7 @@ artifice_invention_weather_predicticator = {
 	benefits = {
 		artificers_privilege_slots = 1
 		global_trade_goods_size_modifier = 0.1
-		development_cost = -0.1
+		development_cost = -0.2
 		tec_technomancy_influence = 0.04
 	}
 	ai_will_do = {
@@ -8172,7 +8410,7 @@ artifice_invention_high_velocity_irrigation = {
 	benefits = {
 		artificers_privilege_slots = 1
 		production_efficiency = 0.1
-		development_cost = -0.05
+		development_cost = -0.1
 		tec_mechanists_influence = 0.04
 	}
 	ai_will_do = {
@@ -8362,15 +8600,7 @@ artifice_invention_korashi_drills = {
 	can_select = {
         ai = yes
 		artifice_has_points_10 = yes
-		any_owned_province = {
-			OR = {
-				has_province_modifier = temple_complex
-				has_province_modifier = damaged_temple_complex
-				has_province_modifier = derelict_temple_complex
-				has_province_modifier = corrupted_temple_complex
-				has_province_modifier = ruined_temple_complex
-			}
-		}
+		has_country_flag = owns_high_temple
 	}
 	can_revoke = {
 		hidden_trigger = {
@@ -8440,10 +8670,10 @@ artifice_invention_korashi_drills = {
 		modifier = {
 			factor = 20
 			NOT = {
-				capital_scope = { superregion = south_haless_superregion }
+				capital_scope = { superregion = vimdatrong_superregion }
 				capital_scope = { superregion = yanshen_superregion }
 				capital_scope = { superregion = rahen_superregion }
-				capital_scope = { superregion = north_haless_superregion }
+				capital_scope = { superregion = gozengun_superregion }
 			}
 		}
 		modifier = {
@@ -8458,13 +8688,8 @@ artifice_invention_korashi_drills = {
 			factor = 0
 			NOT = {
 				any_owned_province = {
-					OR = {
-						has_province_modifier = temple_complex
-						has_province_modifier = damaged_temple_complex
-						has_province_modifier = derelict_temple_complex
-						has_province_modifier = corrupted_temple_complex
-						has_province_modifier = ruined_temple_complex
-					}
+					province_group = temple_province_group
+					NOT = { has_province_flag = already_plundered }
 				}
 			}
 		}
@@ -10211,7 +10436,7 @@ artifice_invention_ameion_lift_generator = {
 	loyalty = 0.00
 	influence = 0 #artificer privileges must never affect influence due to the fact influence affects points
 	is_valid = {
-		has_country_modifier = G52_mage_8
+		has_country_modifier = G52_mage_11
 		OR = {
 			ai = yes
 			has_estate_privilege = artifice_invention_ameion_lift_generator
@@ -12883,5 +13108,697 @@ artifice_invention_karakhanbar_black_hearth_torches = {
 			factor = 0
 			over_artifice_capacity = yes
 		}
+	}
+}
+
+#Maghargma
+artifice_invention_ironwraith_weapons_platform = {
+	icon = Artf_Uniq2
+	max_absolutism = 0
+	loyalty = 0.00
+	influence = 0 #artificer privileges must never affect influence due to the fact influence affects points
+	is_valid = {
+		has_country_flag = unlocked_artifice_invention_ironwraith_weapons_platform
+	}
+	can_select = {
+		artifice_has_points_20 = yes
+	}
+	can_revoke = {
+		hidden_trigger = {
+			ai = yes
+		}
+	}
+	on_granted = {
+		hidden_effect = {
+			artifice_inventions_currently_used_increase = yes
+		}
+		artifice_granted_20 = yes
+		#update_artifice_points = yes #is included in the above effect
+	}
+	on_revoked = {
+		hidden_effect = {
+			artifice_inventions_currently_used_decrease = yes
+		}
+		artifice_remove_20 = yes
+		#update_artifice_points = yes #is included in the above effect
+	}
+	on_invalid = {
+		hidden_effect = {
+			artifice_inventions_currently_used_decrease = yes
+		}
+		artifice_remove_20 = yes
+		#update_artifice_points = yes #is included in the above effect
+	}
+	penalties = {
+		#foo
+	}
+	benefits = {
+		artillery_shock = 1
+	}
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 0
+			over_artifice_capacity = yes
+		}
+	}
+}
+
+artifice_invention_spirit_capture_tech = {
+	icon = Artf_Uniq2
+	max_absolutism = 0
+	loyalty = 0.00
+	influence = 0 #artificer privileges must never affect influence due to the fact influence affects points
+	is_valid = {
+		has_country_flag = unlocked_artifice_invention_spirit_capture_tech
+	}
+	can_select = {
+		artifice_has_points_20 = yes
+	}
+	can_revoke = {
+		hidden_trigger = {
+			ai = yes
+		}
+	}
+	on_granted = {
+		hidden_effect = {
+			artifice_inventions_currently_used_increase = yes
+		}
+		artifice_granted_20 = yes
+		#update_artifice_points = yes #is included in the above effect
+	}
+	on_revoked = {
+		hidden_effect = {
+			artifice_inventions_currently_used_decrease = yes
+		}
+		artifice_remove_20 = yes
+		#update_artifice_points = yes #is included in the above effect
+	}
+	on_invalid = {
+		hidden_effect = {
+			artifice_inventions_currently_used_decrease = yes
+		}
+		artifice_remove_20 = yes
+		#update_artifice_points = yes #is included in the above effect
+	}
+	penalties = {
+		#foo
+	}
+	benefits = {
+		infantry_shock = 0.5
+	}
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 0
+			over_artifice_capacity = yes
+		}
+	}
+}
+
+#Bramble-Burners
+artifice_invention_bramble_burners = {
+	icon = Artf_Uniq1
+	max_absolutism = 0
+	loyalty = 0.00
+	influence = 0 #artificer privileges must never affect influence due to the fact influence affects points
+	is_valid = {
+		has_country_flag = unlocked_artifice_invention_bramble_burners
+	}
+	can_select = {
+        ai = yes
+		artifice_has_points_10 = yes
+	}
+	can_revoke = {
+		hidden_trigger = {
+			ai = yes
+		}
+	}
+	on_granted = {
+		hidden_effect = {
+			artifice_inventions_currently_used_increase = yes
+		}
+		add_country_modifier = {
+			name = artifice_bramble_burners
+			duration = -1
+		}
+		artifice_granted_10 = yes
+		#update_artifice_points = yes #is included in the above effect
+	}
+	on_revoked = {
+		hidden_effect = {
+			artifice_inventions_currently_used_decrease = yes
+		}
+		remove_country_modifier = artifice_bramble_burners
+		artifice_remove_10 = yes
+		#update_artifice_points = yes #is included in the above effect
+	}
+	on_invalid = {
+		hidden_effect = {
+			artifice_inventions_currently_used_decrease = yes
+		}
+		remove_country_modifier = artifice_bramble_burners
+		artifice_remove_10 = yes
+		#update_artifice_points = yes #is included in the above effect
+	}
+	penalties = {
+		#foo
+	}
+	benefits = {
+		artificers_privilege_slots = 1
+		tec_brilliance_influence = 0.02
+		leader_land_fire = 1
+	}
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 0
+			over_artifice_capacity = yes
+		}
+	}
+}
+
+artifice_invention_taychend_demon_powered_flame_rigs = {
+	icon = Artf_Uniq3
+	max_absolutism = 0
+	loyalty = 0.00
+	influence = 0 #artificer privileges must never affect influence due to the fact influence affects points
+	is_valid = {
+		has_country_flag = unlocked_artifice_invention_demon_powered_flame_rigs
+		OR = {
+			ai = yes
+			has_estate_privilege = artifice_invention_taychend_demon_powered_flame_rigs
+		}
+	}
+	can_select = {
+        ai = yes
+		artifice_has_points_20 = yes
+	}
+	can_revoke = {
+		hidden_trigger = {
+			ai = yes
+		}
+	}
+	on_granted = {
+		add_country_modifier = {
+			name = J84_demon_powered_flame_rigs
+			duration = -1
+		}
+		hidden_effect = {
+			artifice_inventions_currently_used_increase = yes
+		}
+		artifice_granted_20 = yes
+		#update_artifice_points = yes #is included in the above effect
+	}
+	on_revoked = {
+		hidden_effect = {
+			artifice_inventions_currently_used_decrease = yes
+		}
+		artifice_remove_20 = yes
+		#update_artifice_points = yes #is included in the above effect
+		remove_country_modifier = J84_demon_powered_flame_rigs
+	}
+	on_invalid = {
+		hidden_effect = {
+			artifice_inventions_currently_used_decrease = yes
+		}
+		artifice_remove_20 = yes
+		#update_artifice_points = yes #is included in the above effect
+		remove_country_modifier = J84_demon_powered_flame_rigs
+	}
+	penalties = {
+		#foo
+	}
+	benefits = {
+		artificers_privilege_slots = 1
+		diplomatic_reputation = -2
+	}
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 0
+			over_artifice_capacity = yes
+		}
+	}
+}
+
+artifice_invention_taychend_prism_cored_war_machines = {
+	icon = Artf_Uniq3
+	max_absolutism = 0
+	loyalty = 0.00
+	influence = 0 #artificer privileges must never affect influence due to the fact influence affects points
+	is_valid = {
+		has_country_flag = unlocked_artifice_invention_prism_cored_war_machines
+		OR = {
+			ai = yes
+			has_estate_privilege = artifice_invention_taychend_prism_cored_war_machines
+		}
+	}
+	can_select = {
+        ai = yes
+		artifice_has_points_20 = yes
+	}
+	can_revoke = {
+		hidden_trigger = {
+			ai = yes
+		}
+	}
+	on_granted = {
+		add_country_modifier = {
+			name = J84_prism_cored_war_machines
+			duration = -1
+		}
+		hidden_effect = {
+			artifice_inventions_currently_used_increase = yes
+		}
+		artifice_granted_20 = yes
+		#update_artifice_points = yes #is included in the above effect
+	}
+	on_revoked = {
+		hidden_effect = {
+			artifice_inventions_currently_used_decrease = yes
+		}
+		artifice_remove_20 = yes
+		#update_artifice_points = yes #is included in the above effect
+		remove_country_modifier = J84_prism_cored_war_machines
+	}
+	on_invalid = {
+		hidden_effect = {
+			artifice_inventions_currently_used_decrease = yes
+		}
+		artifice_remove_20 = yes
+		#update_artifice_points = yes #is included in the above effect
+		remove_country_modifier = J84_prism_cored_war_machines
+	}
+	penalties = {
+		#foo
+	}
+	benefits = {
+		artificers_privilege_slots = 1
+	}
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 0
+			over_artifice_capacity = yes
+		}
+	}
+}
+
+artifice_invention_taychend_effelai_growth_stimulants = {
+	icon = Artf_Uniq3
+	max_absolutism = 0
+	loyalty = 0.00
+	influence = 0 #artificer privileges must never affect influence due to the fact influence affects points
+	is_valid = {
+		has_country_flag = unlocked_artifice_invention_effelai_growth_stimulants
+		OR = {
+			ai = yes
+			has_estate_privilege = artifice_invention_taychend_effelai_growth_stimulants
+		}
+	}
+	can_select = {
+        ai = yes
+		artifice_has_points_20 = yes
+	}
+	can_revoke = {
+		hidden_trigger = {
+			ai = yes
+		}
+	}
+	on_granted = {
+		hidden_effect = {
+			artifice_inventions_currently_used_increase = yes
+		}
+		artifice_granted_20 = yes
+		#update_artifice_points = yes #is included in the above effect
+	}
+	on_revoked = {
+		hidden_effect = {
+			artifice_inventions_currently_used_decrease = yes
+		}
+		artifice_remove_20 = yes
+		#update_artifice_points = yes #is included in the above effect
+	}
+	on_invalid = {
+		hidden_effect = {
+			artifice_inventions_currently_used_decrease = yes
+		}
+		artifice_remove_20 = yes
+		#update_artifice_points = yes #is included in the above effect
+	}
+	penalties = {
+		#foo
+	}
+	benefits = {
+		artificers_privilege_slots = 1
+		global_trade_goods_size_modifier = 0.1
+		diplomatic_reputation = -2
+	}
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 0
+			over_artifice_capacity = yes
+		}
+	}
+}
+
+artifice_invention_taychend_imitation_seedthralls = {
+	icon = Artf_Uniq3
+	max_absolutism = 0
+	loyalty = 0.00
+	influence = 0 #artificer privileges must never affect influence due to the fact influence affects points
+	is_valid = {
+		has_country_flag = unlocked_artifice_invention_imitation_seedthralls
+		OR = {
+			ai = yes
+			has_estate_privilege = artifice_invention_taychend_imitation_seedthralls
+		}
+	}
+	can_select = {
+        ai = yes
+		artifice_has_points_20 = yes
+	}
+	can_revoke = {
+		hidden_trigger = {
+			ai = yes
+		}
+	}
+	on_granted = {
+		add_country_modifier = {
+			name = J84_imitation_seedthralls
+			duration = -1
+		}
+		hidden_effect = {
+			artifice_inventions_currently_used_increase = yes
+		}
+		artifice_granted_20 = yes
+		#update_artifice_points = yes #is included in the above effect
+	}
+	on_revoked = {
+		hidden_effect = {
+			artifice_inventions_currently_used_decrease = yes
+		}
+		artifice_remove_20 = yes
+		#update_artifice_points = yes #is included in the above effect
+		remove_country_modifier = J84_imitation_seedthralls
+	}
+	on_invalid = {
+		hidden_effect = {
+			artifice_inventions_currently_used_decrease = yes
+		}
+		artifice_remove_20 = yes
+		#update_artifice_points = yes #is included in the above effect
+		remove_country_modifier = J84_imitation_seedthralls
+	}
+	penalties = {
+		#foo
+	}
+	benefits = {
+		artificers_privilege_slots = 1
+		shock_damage = 0.05
+		diplomatic_reputation = -2
+	}
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 0
+			over_artifice_capacity = yes
+		}
+	}
+}
+
+artifice_invention_taychend_artifice_augmented_kotakompu = {
+	icon = Artf_Uniq3
+	max_absolutism = 0
+	loyalty = 0.00
+	influence = 0 #artificer privileges must never affect influence due to the fact influence affects points
+	is_valid = {
+		has_country_flag = unlocked_artifice_invention_artifice_augmented_kotakompu
+		OR = {
+			ai = yes
+			has_estate_privilege = artifice_invention_taychend_artifice_augmented_kotakompu
+		}
+	}
+	can_select = {
+        ai = yes
+		artifice_has_points_20 = yes
+	}
+	can_revoke = {
+		hidden_trigger = {
+			ai = yes
+		}
+	}
+	on_granted = {
+		add_country_modifier = {
+			name = J84_artifice_augmented_kotakompu
+			duration = -1
+		}
+		hidden_effect = {
+			artifice_inventions_currently_used_increase = yes
+		}
+		artifice_granted_20 = yes
+		#update_artifice_points = yes #is included in the above effect
+	}
+	on_revoked = {
+		hidden_effect = {
+			artifice_inventions_currently_used_decrease = yes
+		}
+		artifice_remove_20 = yes
+		#update_artifice_points = yes #is included in the above effect
+		remove_country_modifier = J84_artifice_augmented_kotakompu
+	}
+	on_invalid = {
+		hidden_effect = {
+			artifice_inventions_currently_used_decrease = yes
+		}
+		artifice_remove_20 = yes
+		#update_artifice_points = yes #is included in the above effect
+		remove_country_modifier = J84_artifice_augmented_kotakompu
+	}
+	penalties = {
+		#foo
+	}
+	benefits = {
+		artificers_privilege_slots = 1
+		build_time = -0.25
+		diplomatic_reputation = -1
+	}
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 0
+			over_artifice_capacity = yes
+		}
+	}
+}
+
+artifice_invention_taychend_relic_lord_prototype_power_armour = {
+	icon = Artf_Uniq3
+	max_absolutism = 0
+	loyalty = 0.00
+	influence = 0 #artificer privileges must never affect influence due to the fact influence affects points
+	is_valid = {
+		has_country_flag = unlocked_artifice_invention_relic_lord_prototype_power_armour
+		OR = {
+			ai = yes
+			has_estate_privilege = artifice_invention_taychend_relic_lord_prototype_power_armour
+		}
+	}
+	can_select = {
+        ai = yes
+		artifice_has_points_30 = yes
+	}
+	can_revoke = {
+		hidden_trigger = {
+			ai = yes
+		}
+	}
+	on_granted = {
+		add_country_modifier = {
+			name = J84_relic_lord_prototype_power_armour
+			duration = -1
+		}
+		hidden_effect = {
+			artifice_inventions_currently_used_increase = yes
+		}
+		artifice_granted_30 = yes
+		#update_artifice_points = yes #is included in the above effect
+	}
+	on_revoked = {
+		hidden_effect = {
+			artifice_inventions_currently_used_decrease = yes
+		}
+		artifice_remove_30 = yes
+		#update_artifice_points = yes #is included in the above effect
+		remove_country_modifier = J84_relic_lord_prototype_power_armour
+	}
+	on_invalid = {
+		hidden_effect = {
+			artifice_inventions_currently_used_decrease = yes
+		}
+		artifice_remove_30 = yes
+		#update_artifice_points = yes #is included in the above effect
+		remove_country_modifier = J84_relic_lord_prototype_power_armour
+	}
+	penalties = {
+		#foo
+	}
+	benefits = {
+		artificers_privilege_slots = 1
+		monarch_lifespan = 0.05
+	}
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 0
+			over_artifice_capacity = yes
+		}
+	}
+}
+
+#Kobildzan Draconic Ascension
+artifice_invention_kobildzan_draconic_ascension = {
+	icon = Artf_Uniq1
+	max_absolutism = 0
+	loyalty = 0.00
+	influence = 0 #artificer privileges must never affect influence due to the fact influence affects points
+	is_valid = {
+		has_country_flag = unlocked_artifice_invention_kobildzan_draconic_ascension
+	}
+	can_select = {
+        always = yes
+	}
+	can_revoke = {
+		custom_trigger_tooltip = {
+			tooltip = upgrading_ascension_tt
+			NOT = {
+				OR = {
+					tag = Z38
+					is_subject_of = Z38
+				}
+			}	
+		}
+	}
+	on_granted = {
+		hidden_effect = {
+			artifice_inventions_currently_used_increase = yes
+		}
+		# NOTE: No artificer points utilized here b/c it depends on the stage of the invention; handled during unlock / upgrade
+	}
+	on_revoked = {
+		hidden_effect = {
+			artifice_inventions_currently_used_decrease = yes
+		}
+		remove_country_modifier = Z38_claws_of_power_regiment_mod
+		remove_country_modifier = Z38_ogre_sized_kobolds_regiment_mod
+		remove_country_modifier = Z38_malliaths_chosen_disciples_regiment_mod
+		remove_country_modifier = Z38_dragonfire_sacs_regiment_mod
+		remove_country_modifier = Z38_ebonsteel_shieldscales_regiment_mod
+		remove_country_modifier = Z38_the_holiest_flesh_regiment_mod
+	}
+	on_invalid = {
+		hidden_effect = {
+			artifice_inventions_currently_used_decrease = yes
+		}
+	}
+	penalties = {
+		
+	}
+	benefits = {
+		artificers_privilege_slots = 1
+		
+	}
+	conditional_modifier = {
+		trigger = { has_country_flag = kobildzan_glidewing_membranes } 
+		modifier = {
+			movement_speed = 0.1
+			siege_ability = 0.1
+		} 
+	}
+	conditional_modifier = {
+		trigger = { has_country_flag = kobildzan_claws_of_power } 
+		modifier = {
+		} 
+	}
+	conditional_modifier = {
+		trigger = { has_country_flag = kobildzan_detachable_extra_limbs } 
+		modifier = {
+			recover_army_morale_speed = 0.1
+			build_cost = -0.1
+		} 
+	}
+	conditional_modifier = {
+		trigger = { has_country_flag = kobildzan_ogre_sized_kobolds } 
+		modifier = {
+
+		} 
+	}
+	conditional_modifier = {
+		trigger = { has_country_flag = kobildzan_malliaths_chosen_disciples } 
+		modifier = {
+			max_absolutism = 10
+		} 
+	}
+	conditional_modifier = {
+		trigger = { has_country_flag = kobildzan_hyperdigestion } 
+		modifier = {
+			land_attrition = -0.15
+			war_exhaustion = -0.05
+			development_cost = -0.05
+		} 
+	}
+	conditional_modifier = {
+		trigger = { has_country_flag = kobildzan_dragonfire_sacs } 
+		modifier = {
+			production_efficiency = 0.05
+		} 
+	}
+	conditional_modifier = {
+		trigger = { has_country_flag = kobildzan_biocompatibility } 
+		modifier = {
+			advisor_cost = -0.1
+			reform_progress_growth = 0.1
+		} 
+	}
+	conditional_modifier = {
+		trigger = { has_country_flag = kobildzan_intercontinental_ballistic_kobolds } 
+		modifier = {
+			max_general_maneuver = 2
+			max_admiral_maneuver = 2
+			leader_land_manuever = 1
+			leader_naval_manuever = 1
+			envoy_travel_time = -0.33
+		} 
+	}
+	conditional_modifier = {
+		trigger = { has_country_flag = kobildzan_mana_attunement_glands } 
+		modifier = {
+			administrative_efficiency = 0.05
+		} 
+	}
+	conditional_modifier = {
+		trigger = { has_country_flag = kobildzan_ebonsteel_shieldscales } 
+		modifier = {
+			siege_ability = 0.1
+		} 
+	}
+	conditional_modifier = {
+		trigger = { has_country_flag = kobildzan_the_protean_form } 
+		modifier = {
+			years_of_nationalism = -10
+			culture_conversion_time = -0.5
+			culture_conversion_cost = -0.25
+		} 
+	}	
+	conditional_modifier = {
+		trigger = { has_country_flag = kobildzan_the_holiest_flesh } 
+		modifier = {
+			church_power_modifier = 0.25
+		} 
+	}
+	ai_will_do = {
+		factor = 400
 	}
 }

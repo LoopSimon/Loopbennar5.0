@@ -40,6 +40,7 @@ estate_adventurers = {
 	# These scale with loyalty & power
 	country_modifier_happy = {
 		mercenary_cost = -0.2
+		mercenary_discipline = 0.1
 	}
 	country_modifier_neutral = {
 		mercenary_cost = -0.2
@@ -276,6 +277,13 @@ estate_adventurers = {
 		}
 	}
 
+	custom_name = {
+		desc = estate_stone_army
+		trigger = {
+			has_reform = gongmin_lianbang
+		}
+	}
+
 	color = { 236 60 123 }
 
 	privileges = {
@@ -311,6 +319,7 @@ estate_adventurers = {
 		estate_adventurers_organization_clodhoppers
 		estate_adventurers_suhuskar_palace
 		estate_adventurers_rangers
+		estate_adventurers_organization_stone_army
 
 		estate_adventurers_sponsor_monster_hunters
 		estate_adventurers_sponsor_beast_slayers

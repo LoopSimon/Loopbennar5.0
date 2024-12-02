@@ -2972,7 +2972,7 @@ country_event = {
 			name = jaddari_ruler_obsession_law
 			duration = 7300
 		}
-		jaddempire_change_leaning_west_massive = yes
+		jaddempire_change_leaning_west_medium = yes
 	}
 	
 	option = { #[Root.Monarch.GetName]'s attention has been captured by Yansheni poetry
@@ -2983,7 +2983,7 @@ country_event = {
 			name = jaddari_ruler_obsession_poetry
 			duration = 7300
 		}
-		jaddempire_change_leaning_east_large = yes
+		jaddempire_change_leaning_east_tiny = yes
 	}
 	
 	option = { #[Root.Monarch.GetName]'s attention has been captured by Sun Elven fashion
@@ -2994,7 +2994,7 @@ country_event = {
 			name = jaddari_ruler_obsession_fashion
 			duration = 7300
 		}
-		jaddempire_change_leaning_west_large = yes
+		jaddempire_change_leaning_west_tiny = yes
 	}
 	
 	option = { #[Root.Monarch.GetName]'s attention has been captured by Raheni architecture
@@ -3005,7 +3005,7 @@ country_event = {
 			name = jaddari_ruler_obsession_architecture
 			duration = 7300
 		}
-		jaddempire_change_leaning_east_large = yes
+		jaddempire_change_leaning_east_tiny = yes
 	}
 	
 	option = { #[Root.Monarch.GetName]'s attention has been captured by Harimari philosophy
@@ -3016,7 +3016,7 @@ country_event = {
 			name = jaddari_ruler_obsession_philosophy
 			duration = 7300
 		}
-		jaddempire_change_leaning_east_massive = yes
+		jaddempire_change_leaning_east_medium = yes
 	}
 	
 	option = { #[Root.Monarch.GetName]'s attention has been captured by Cannorian martial culture
@@ -3027,7 +3027,7 @@ country_event = {
 			name = jaddari_ruler_obsession_strategy
 			duration = 7300
 		}
-		jaddempire_change_leaning_west_large = yes
+		jaddempire_change_leaning_west_tiny = yes
 	}
 }
 
@@ -3103,6 +3103,10 @@ country_event = {
 				else_if = {
 					limit = { is_subject_of_type = client_march }
 					F99 = { create_subject = { subject = PREV subject_type = client_march } }
+				}
+				else_if = {
+					limit = { is_subject_of_type = tributary_state }
+					F99 = { create_subject = { subject = PREV subject_type = tributary_state_anb } }
 				}
 				else = {
 					F99 = { vassalize = PREV }
@@ -3234,6 +3238,10 @@ country_event = {
 				else_if = {
 					limit = { is_subject_of_type = client_march }
 					F99 = { create_subject = { subject = PREV subject_type = client_march } }
+				}
+				else_if = {
+					limit = { is_subject_of_type = tributary_state }
+					F99 = { create_subject = { subject = PREV subject_type = tributary_state_anb } }
 				}
 				else = {
 					F99 = { vassalize = PREV }
@@ -4598,6 +4606,7 @@ country_event = {
 		}
 		2915 = {
 			remove_core = F47
+			add_core = F46
 			change_culture = siadunan_harpy
 			change_religion = the_jadd
 		}

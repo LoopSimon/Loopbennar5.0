@@ -1179,7 +1179,7 @@ setup_vision = {
 			yanshen_superregion = {
 				discover_country = ROOT
 			}
-			south_haless_superregion = {
+			vimdatrong_superregion = {
 				limit = { NOT = { province_group = lupulan_rainforest_interior } }
 				discover_country = ROOT
 			}
@@ -1336,31 +1336,10 @@ setup_vision = {
 			limit = {
 				OR = {
 					capital_scope = {
-						superregion = escann_superregion
-					}
-					capital_scope = {
-						area = cursewood_area
-					}
-					capital_scope = {
-						area = whistlevale_area
+						province_group = escann_proper
 					}
 					tag = A81 #Giberd, for gnomish vision spread
 					tag = A83 #Silent Repose, for elven vision spread
-				}
-				NOT = {
-					capital_scope = {
-						region = dostanor_region
-					}
-				}
-				NOT = {
-					capital_scope = {
-						region = ourdia_region
-					}
-				}
-				NOT = {
-					capital_scope = {
-						region = daravans_folly_region
-					}
 				}
 			}
 			west_castanor_region = {
@@ -1710,6 +1689,7 @@ setup_vision = {
 						superregion = rahen_superregion
 					}
 					tag = R03 #Davharral
+					tag = L62 #Vandipha
 				}
 			}
 			far_salahad_region = {
@@ -1724,7 +1704,7 @@ setup_vision = {
 			yanshen_superregion = {
 				discover_country = ROOT
 			}
-			south_haless_superregion = {
+			vimdatrong_superregion = {
 				limit = { NOT = { province_group = lupulan_rainforest_interior } }
 				discover_country = ROOT
 			}
@@ -1944,7 +1924,7 @@ setup_vision = {
 			yanshen_superregion = {
 				discover_country = ROOT
 			}
-			south_haless_superregion = {
+			vimdatrong_superregion = {
 				limit = { NOT = { province_group = lupulan_rainforest_interior } }
 				discover_country = ROOT
 			}
@@ -2179,7 +2159,7 @@ setup_vision = {
 		if = {
 			limit = {
 				capital_scope = {
-					superregion = south_haless_superregion
+					superregion = vimdatrong_superregion
 					OR = {
 						NOT = { region = lupulan_rainforest_region }
 						owner = { tag = Y64 }
@@ -2193,7 +2173,7 @@ setup_vision = {
 			yanshen_superregion = {
 				discover_country = ROOT
 			}
-			south_haless_superregion = {
+			vimdatrong_superregion = {
 				limit = { NOT = { province_group = lupulan_rainforest_interior } }
 				discover_country = ROOT
 			}
@@ -2381,7 +2361,7 @@ setup_vision = {
 					NOT = { tag = Y64 } #Pinghoi
 					NOT = { tag = Y65 } #Arawkelin
 				}
-				south_haless_superregion = {
+				vimdatrong_superregion = {
 					discover_country = ROOT
 				}
 			}
@@ -2392,7 +2372,7 @@ setup_vision = {
 						tag = Y65 #Arawkelin
 					}
 				}
-				south_haless_superregion = {
+				vimdatrong_superregion = {
 					limit = { NOT = { province_group = lupulan_rainforest_interior } }
 					discover_country = ROOT
 				}
@@ -2529,7 +2509,7 @@ setup_vision = {
 			upper_sorrow_area = {
 				discover_country = ROOT
 			}
-			gnollakaz_area = {
+			garpix_grizaka_area = {
 				discover_country = ROOT
 			}
 			gnolltauz_area = {
@@ -2828,7 +2808,7 @@ setup_vision = {
 			hapmot_area = {
 				discover_country = ROOT
 			}
-			gnollakaz_area = {
+			garpix_grizaka_area = {
 				discover_country = ROOT
 			}
 			gnolltauz_area = {

@@ -490,7 +490,7 @@ country_event = {
 
 		define_general = {
 			name = "Ecaris Ecarizuir"
-			shock = 8
+			shock = 10
 			fire = 3
 			manuever = 3
 			siege = 6

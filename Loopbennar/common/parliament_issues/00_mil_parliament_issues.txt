@@ -449,12 +449,13 @@ the_draft = {
 	
 	effect = {
 		issue_effect_scaling_with_estate_influence = {
-			effect1 = "add_years_of_manpower_scaled_to_seats = 0.4"
-			effect2 = "add_years_of_manpower_scaled_to_seats = 0.5"
-			effect3 = "add_years_of_manpower_scaled_to_seats = 0.6"
-			effect4 = "add_years_of_manpower_scaled_to_seats = 0.7"
-			effect5 = "add_years_of_manpower_scaled_to_seats = 0.8"
-			fallback_effect = "add_years_of_manpower_scaled_to_seats = 0.3"
+			estate = estate_nobles
+			effect1 = "add_years_of_manpower_scaled_to_seats = 0.5"
+			effect2 = "add_years_of_manpower_scaled_to_seats = 0.75"
+			effect3 = "add_years_of_manpower_scaled_to_seats = 1"
+			effect4 = "add_years_of_manpower_scaled_to_seats = 1.25"
+			effect5 = "add_years_of_manpower_scaled_to_seats = 1.5"
+			fallback_effect = "add_years_of_manpower_scaled_to_seats = 1"
 		}
 	}
 	

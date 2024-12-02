@@ -237,23 +237,81 @@ country_event = { #The Feykiller Front
 	option = { #We will find no peace until the Fey influence is gone from the Woods.
 		name = flavor_brambleskinner.5.a
 		if = {
-			limit = { exists = B82 } #Petalmasher
+			limit = {
+				exists = B82 #Petalmasher
+				NOT = { B82 = { is_subject_of = ROOT } }
+			}
 			add_casus_belli = {
 				target = B82
 				type = cb_vassalize_mission
 				months = 240
 			}
 		}
-		else = { deepwoods_flower_grove = { add_claim = ROOT } }
+		else_if = { 
+			limit = { NOT = { exists = B82 } }
+			deepwoods_flower_grove = { add_claim = ROOT }
+		}
 		if = {
-			limit = { exists = I37 } #Verminhusk
+			limit = {
+				exists = I37 #Verminhusk
+				NOT = { I37 = { is_subject_of = ROOT } }
+			}
 			add_casus_belli = {
 				target = I37
 				type = cb_vassalize_mission
 				months = 240
 			}
 		}
-		else = { deepwoods_river_grove = { add_claim = ROOT } }
+		else_if = { 
+			limit = { NOT = { exists = I37 } }
+			deepwoods_river_grove = { add_claim = ROOT }
+		}
+		if = {
+			limit = {
+				OR = {
+					capital_scope = { has_fort_building_trigger = yes }
+					I36 = { capital_scope = { has_fort_building_trigger = yes } }
+				}
+				NOT = {
+					AND = {
+						capital_scope = { has_fort_building_trigger = yes }
+						I36 = { capital_scope = { has_fort_building_trigger = yes } }
+					}
+				}
+			}
+			add_treasury = -100
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					capital_scope = { has_fort_building_trigger = yes }
+					I36 = { capital_scope = { has_fort_building_trigger = yes } }
+				}
+			}
+			add_treasury = -200
+		}
+		if = {
+			limit = { capital_scope = { NOT = { has_fort_building_trigger = yes } } }
+			capital_scope = { 
+				add_building_construction = {
+					building = fort_15th
+					speed = 1
+					cost = 0
+				}
+			}
+		}
+		if = {
+			limit = { I36 = { capital_scope = { NOT = { has_fort_building_trigger = yes } } } }
+			I36 = {
+				capital_scope = { 
+					add_building_construction = {
+						building = fort_15th
+						speed = 1
+						cost = 0
+					}
+				}
+			}
+		}
 		add_country_modifier = {
 			name = brambleskinner_feykiller_front
 			duration = -1
@@ -559,6 +617,7 @@ country_event = { #Fireflower Festival
 	
 	option = { #Hopefully nothing bad will happen this time!
 		name = flavor_brambleskinner.13.a
+		set_country_flag = brambleskinner_subsidiary_cartels_unlocked
 		set_estate_privilege = estate_burghers_subsidiary_cartels
 		custom_tooltip = brambleskinner_unlock_cartel_tt
 		add_country_modifier = {

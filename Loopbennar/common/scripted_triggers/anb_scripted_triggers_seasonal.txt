@@ -198,3 +198,16 @@ has_winter_rotation_celebration = {
 	has_any_fey_winter_aspect = no
 	has_any_fey_eordellon_aspect = no
 }
+
+built_fey_embassy_trigger = {
+	custom_trigger_tooltip = {
+		tooltip = built_embassy_tt
+		any_owned_province = {
+			OR = {
+				has_province_modifier = seasonal_equal_embassy
+				has_province_modifier = seasonal_submit_embassy
+				has_province_modifier = seasonal_ignore_embassy
+			}
+		}
+	}
+}

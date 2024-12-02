@@ -1,7 +1,7 @@
 
 setup_vision = yes
 government = tribal
-add_government_reform = settled_horde
+add_government_reform = kobold_viraxia
 government_rank = 1
 primary_culture = greenscale_kobold
 religion = kobold_dragon_cult
@@ -22,12 +22,12 @@ capital = 200
 		name = "Dervaszix"
 		dynasty = "Korlak"
 		birth_date = 1399.12.12
-		adm = 3
+		adm = 6
 		dip = 4
 		mil = 2
 	}
 	add_ruler_personality = navigator_personality
 	add_ruler_personality = scholar_personality
 	
-	add_church_aspect = green_dragon_1
+	add_church_aspect = green_dragon_1_base
 }

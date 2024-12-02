@@ -10,22 +10,6 @@ country_event = {
 	
 	immediate = {
 		hidden_effect = {
-			random_owned_province = {
-				save_event_target_as = kobold_event_target
-			}
-			random_owned_province = {
-				limit = {
-					religion = kobold_dragon_cult
-				}
-				save_event_target_as = kobold_event_target
-			}
-			random_owned_province = {
-				limit = {
-					religion = kobold_dragon_cult
-					NOT = { has_province_modifier = kdc_donated_to_hoard }
-				}
-				save_event_target_as = kobold_event_target
-			}
 			set_variable = {
 				which = dev2add
 				value = 0
@@ -59,51 +43,478 @@ country_event = {
 					}
 				}
 			}
-		}
-	}
-	
-	after = {
-		if = {
-			limit = {
-				has_unlocked_all_kobold_cults = yes
-
-				NOT = { has_country_flag = kobold_power_of_the_rainbow }
+			random_owned_province = {
+				limit = { region = dragon_coast_region }
+				save_event_target_as = jyntas_kobold_target
 			}
-			country_event = { id = flavour_kobold_dragon_cult.3 }
 		}
 	}
 	
 	# Go back
-	option = {
-		name = flavour_kobold_dragon_cult.1.a
-		highlight = yes
-		
-		add_church_power = 100
-		
-		ai_chance = {
-			factor = 0
-		}
-	}
 	
 	# Contibute to the hoard
 	option = {
 		name = flavour_kobold_dragon_cult.1.b
-		goto = kobold_event_target
 		
 		trigger = {
-			owns = 189
-		}
-		
-		if = {
-			limit = {
-				NOT = { has_global_flag = dragon_roar }
+			OR = {
+				AND = {
+					owns = 189
+					NOT = { has_country_flag = new_hoard }
+				}
+				AND = {
+					owns = 187
+					has_country_flag = new_hoard
+				}
 			}
-			
-			
-			custom_tooltip = church_power_hoard_donation
-			add_prestige = 5
-			hidden_effect = { 
-				REB = { 
+		}
+		if = { #Blue dragon upgrade proc
+			limit = { has_church_aspect = blue_dragon_1_upgraded }
+			custom_tooltip = enhanced_blue_festival_tt
+			if = { #Has all 3 upgraded + active
+				limit = {
+					has_church_aspect = blue_dragon_2_upgraded
+					has_church_aspect = blue_dragon_3_upgraded
+				}
+				custom_tooltip = festival_reward_artificer_1_tt
+				hidden_effect = {
+					change_variable = {
+						which = StaticArtificePoints
+						value = 1
+					}
+					update_artifice_points = yes
+				}
+				add_adm_power = 20
+				add_dip_power = 20
+				add_mil_power = 20
+			}
+			else_if = { #Has 2/3 upgraded + active
+				limit = {
+					OR = {
+						has_church_aspect = blue_dragon_2_upgraded
+						has_church_aspect = blue_dragon_3_upgraded
+					}
+				}
+				add_adm_power = 15
+				add_dip_power = 15
+				add_mil_power = 15
+			}
+			else = { #Only 1 upgraded active
+				add_adm_power = 10
+				add_dip_power = 10
+				add_mil_power = 10	
+			}
+		}
+		if = { #Red dragon upgrade proc
+			limit = { has_church_aspect = red_dragon_1_upgraded }
+			custom_tooltip = enhanced_red_festival_tt
+			if = { #Has all 3 upgraded + active
+				limit = {
+					has_church_aspect = red_dragon_2_upgraded
+					has_church_aspect = red_dragon_3_upgraded
+				}
+				multiply_variable = {
+					which = dev2add
+					value = 2
+				}
+			}
+			else_if = { #Has 2/3 upgraded + active
+				limit = {
+					OR = {
+						has_church_aspect = red_dragon_2_upgraded
+						has_church_aspect = red_dragon_3_upgraded
+					}
+				}
+				multiply_variable = {
+					which = dev2add
+					value = 1.5
+				}
+			}
+			else = { #Only 1 upgraded active
+				multiply_variable = {
+					which = dev2add
+					value = 1.25
+				}
+			}
+		}
+		else_if = { #Green dragon upgrade proc
+			limit = { has_church_aspect = green_dragon_1_upgraded }
+			custom_tooltip = enhanced_green_festival_tt
+			if = { #Has all 3 upgraded + active
+				limit = {
+					has_church_aspect = green_dragon_2_upgraded
+					has_church_aspect = green_dragon_3_upgraded
+				}
+				every_subject_country = {
+					add_liberty_desire = -20
+				}
+			}
+			else_if = { #Has 2/3 upgraded + active
+				limit = {
+					OR = {
+						has_church_aspect = green_dragon_2_upgraded
+						has_church_aspect = green_dragon_3_upgraded
+					}
+				}
+				every_subject_country = {
+					add_liberty_desire = -15
+				}
+			}
+			else = { #Only 1 upgraded active
+				every_subject_country = {
+					add_liberty_desire = -10
+				}
+			}
+		}
+		else_if = { #Black dragon upgrade proc
+			limit = { has_church_aspect = black_dragon_1_upgraded }
+			custom_tooltip = enhanced_black_festival_tt
+			if = { #Has all 3 upgraded + active
+				limit = {
+					has_church_aspect = black_dragon_2_upgraded
+					has_church_aspect = black_dragon_3_upgraded
+				}
+				define_advisor = {
+					type = natural_scientist
+					skill = 5
+					cost_multiplier = 0.5
+				}
+				define_advisor = {
+					type = diplomat
+					skill = 5
+					cost_multiplier = 0.5
+				}
+				define_advisor = {
+					type = fortification_expert
+					skill = 5
+					cost_multiplier = 0.5
+				}
+			}
+			else_if = { #Has 2/3 upgraded + active
+				limit = {
+					OR = {
+						has_church_aspect = black_dragon_2_upgraded
+						has_church_aspect = black_dragon_3_upgraded
+					}
+				}
+				define_advisor = {
+					type = natural_scientist
+					skill = 4
+					cost_multiplier = 0.5
+				}
+				define_advisor = {
+					type = diplomat
+					skill = 4
+					cost_multiplier = 0.5
+				}
+			}
+			else = { #Only 1 upgraded active
+				define_advisor = {
+					type = natural_scientist
+					skill = 3
+					cost_multiplier = 0.5
+				}
+			}
+		}
+		else_if = { #White dragon upgrade proc
+			limit = { has_church_aspect = white_dragon_1_upgraded }
+			custom_tooltip = enhanced_white_festival_tt
+			if = { #Has all 3 upgraded + active
+				limit = {
+					has_church_aspect = white_dragon_2_upgraded
+					has_church_aspect = white_dragon_3_upgraded
+				}
+				add_rebel_progress = {
+					value = -30
+				}
+				custom_tooltip = "Clears all Rebels in owned Provinces"
+				hidden_effect = {
+					every_owned_province = {
+					
+						clear_rebels = yes
+					}					
+				}
+
+			}
+			else_if = { #Has 2/3 upgraded + active
+				limit = {
+					OR = {
+						has_church_aspect = white_dragon_2_upgraded
+						has_church_aspect = white_dragon_3_upgraded
+					}
+				}
+				add_rebel_progress = {
+					value = -20
+				}
+			}
+			else = { #Only 1 upgraded active
+				add_rebel_progress = {
+					value = -10
+				}
+			}
+		}
+		else_if = { #Purple dragon upgrade proc
+			limit = { has_church_aspect = purple_dragon_1_upgraded }
+			custom_tooltip = enhanced_purple_festival_tt
+			if = { #Has all 3 upgraded + active
+				limit = {
+					has_church_aspect = purple_dragon_2_upgraded
+					has_church_aspect = purple_dragon_3_upgraded
+				}
+				every_war_enemy_country = {
+					every_owned_province = {
+						limit = { sieged_by = ROOT }
+						change_siege = 1
+					}
+				}
+				event_target:jyntas_kobold_target = {
+					add_base_tax = 1
+					add_base_production = 1
+					add_base_manpower = 1				
+				}
+			}
+			else_if = { #Has 2/3 upgraded + active
+				limit = {
+					OR = {
+						has_church_aspect = purple_dragon_2_upgraded
+						has_church_aspect = purple_dragon_3_upgraded
+					}
+				}
+				event_target:jyntas_kobold_target = {
+					add_base_tax = 1
+					add_base_production = 1			
+				}
+			}
+			else = { #Only 1 upgraded active
+				event_target:jyntas_kobold_target = {
+					add_base_production = 1
+				}
+			}
+		}
+		else_if = { #Brown dragon upgrade proc
+			limit = { has_church_aspect = brown_dragon_1_upgraded }
+			custom_tooltip = enhanced_brown_festival_tt
+			if = { #Has all 3 upgraded + active
+				limit = {
+					has_church_aspect = brown_dragon_2_upgraded
+					has_church_aspect = brown_dragon_3_upgraded
+				}
+				add_dip_power = 100
+			}
+			else_if = { #Has 2/3 upgraded + active
+				limit = {
+					OR = {
+						has_church_aspect = brown_dragon_2_upgraded
+						has_church_aspect = brown_dragon_3_upgraded
+					}
+				}
+				add_dip_power = 60
+			}
+			else = { #Only 1 upgraded active
+				add_dip_power = 30
+			}
+		}	
+		else_if = { #Brass dragon upgrade proc
+			limit = { has_church_aspect = brass_dragon_1_upgraded }
+			custom_tooltip = enhanced_brass_festival_tt
+			if = { #Has all 3 upgraded + active
+				limit = {
+					has_church_aspect = brass_dragon_2_upgraded
+					has_church_aspect = brass_dragon_3_upgraded
+				}
+				custom_tooltip = jyntas_lose_ae_tt_3
+				hidden_effect = {
+					every_neighbor_country = {
+						add_aggressive_expansion = {
+							who = ROOT
+							value = -10
+							apply_calc = yes
+						}
+					}					
+				}
+			}
+			else_if = { #Has 2/3 upgraded + active
+				limit = {
+					OR = {
+						has_church_aspect = brass_dragon_2_upgraded
+						has_church_aspect = brass_dragon_3_upgraded
+					}
+				}
+				custom_tooltip = jyntas_lose_ae_tt_2
+				hidden_effect = {
+					every_neighbor_country = {
+						add_aggressive_expansion = {
+							who = ROOT
+							value = -6
+							apply_calc = yes
+						}
+					}				
+				}
+			}
+			else = { #Only 1 upgraded active
+				custom_tooltip = jyntas_lose_ae_tt_1
+				hidden_effect = {
+					every_neighbor_country = {
+						add_aggressive_expansion = {
+							who = ROOT
+							value = -3
+							apply_calc = yes
+						}
+					}				
+				}
+			}
+		}
+		else_if = { #Copper dragon upgrade proc
+			limit = { has_church_aspect = copper_dragon_1_upgraded }
+			custom_tooltip = enhanced_copper_festival_tt
+			if = { #Has all 3 upgraded + active
+				limit = {
+					has_church_aspect = copper_dragon_2_upgraded
+					has_church_aspect = copper_dragon_3_upgraded
+				}
+				change_innovativeness = 3
+			}
+			else_if = { #Has 2/3 upgraded + active
+				limit = {
+					OR = {
+						has_church_aspect = copper_dragon_2_upgraded
+						has_church_aspect = copper_dragon_3_upgraded
+					}
+				}
+				change_innovativeness = 2
+			}
+			else = { #Only 1 upgraded active
+				change_innovativeness = 1
+			}
+		}		
+		else_if = { #Bronze dragon upgrade proc
+			limit = { has_church_aspect = bronze_dragon_1_upgraded }
+			custom_tooltip = enhanced_bronze_festival_tt
+			if = { #Has all 3 upgraded + active
+				limit = {
+					has_church_aspect = bronze_dragon_2_upgraded
+					has_church_aspect = bronze_dragon_3_upgraded
+				}
+				add_army_professionalism = 0.03
+			}			
+			else_if = { #Has 2/3 upgraded + active
+				limit = {
+					OR = {
+						has_church_aspect = bronze_dragon_2_upgraded
+						has_church_aspect = bronze_dragon_3_upgraded
+					}
+				}
+				add_army_professionalism = 0.02
+			}
+			else = { #Only 1 upgraded active
+				add_army_professionalism = 0.01
+			}
+		}
+		else_if = { #Silver dragon upgrade proc
+			limit = { has_church_aspect = silver_dragon_1_upgraded }
+			custom_tooltip = enhanced_silver_festival_tt
+			if = { #Has all 3 upgraded + active
+				limit = {
+					has_church_aspect = silver_dragon_2_upgraded
+					has_church_aspect = silver_dragon_3_upgraded
+				}
+				custom_tooltip = silver_dragon_province_mod_3_tt
+				hidden_effect = {
+					every_owned_province = {
+						limit = {
+							OR = {
+								culture_group = alenic
+								culture_group = lencori
+								culture_group = anbennarian
+								is_cannorian_halfling_culture = yes
+							}
+						}
+						remove_province_modifier = silver_dragon_province_mod_1
+						remove_province_modifier = silver_dragon_province_mod_2
+						add_province_modifier = {
+							name = silver_dragon_province_mod_3
+							duration = 1825
+						}
+					}					
+				}
+			}
+			else_if = { #Has 2/3 upgraded + active
+				limit = {
+					OR = {
+						has_church_aspect = silver_dragon_2_upgraded
+						has_church_aspect = silver_dragon_3_upgraded
+					}
+				}
+				custom_tooltip = silver_dragon_province_mod_2_tt
+				hidden_effect = {
+					every_owned_province = {
+						limit = {
+							OR = {
+								culture_group = alenic
+								culture_group = lencori
+								culture_group = anbennarian
+								is_cannorian_halfling_culture = yes
+							}
+						}
+						remove_province_modifier = silver_dragon_province_mod_1
+						remove_province_modifier = silver_dragon_province_mod_3
+						add_province_modifier = {
+							name = silver_dragon_province_mod_2
+							duration = 1825
+						}
+					}					
+				}
+			}
+			else = { #Only 1 upgraded active
+				custom_tooltip = silver_dragon_province_mod_1_tt
+				hidden_effect = {
+					every_owned_province = {
+						limit = {
+							OR = {
+								culture_group = alenic
+								culture_group = lencori
+								culture_group = anbennarian
+								is_cannorian_halfling_culture = yes
+							}
+						}
+						remove_province_modifier = silver_dragon_province_mod_2
+						remove_province_modifier = silver_dragon_province_mod_3
+						add_province_modifier = {
+							name = silver_dragon_province_mod_1
+							duration = 1825
+						}
+					}					
+				}
+			}
+		}
+		else_if = { #Gold dragon upgrade proc
+			limit = { has_church_aspect = gold_dragon_1_upgraded }
+			custom_tooltip = enhanced_gold_festival_tt
+			if = { #Has all 3 upgraded + active
+				limit = {
+					has_church_aspect = gold_dragon_2_upgraded
+					has_church_aspect = gold_dragon_3_upgraded
+				}
+				add_legitimacy_equivalent = { amount = 10 republican_tradition = 10 }
+			}
+			else_if = { #Has 2/3 upgraded + active
+				limit = {
+					OR = {
+						has_church_aspect = gold_dragon_2_upgraded
+						has_church_aspect = gold_dragon_3_upgraded
+					}
+				}
+				add_legitimacy_equivalent = { amount = 6 republican_tradition = 6 }
+			}
+			else = { #Only 1 upgraded active
+				add_legitimacy_equivalent = { amount = 3 republican_tradition = 3 }
+			}
+		}	
+		# Actual hoard effect
+		if = {
+			limit = { has_country_flag = new_hoard }
+			hidden_effect = {
+				187 = {
 					set_variable = {
 						which = dev2add
 						which = PREV
@@ -112,34 +523,57 @@ country_event = {
 						which = dragon_cult_hoard 
 						which = dev2add 
 					} 
+					change_variable = {
+						which = kdc_festivals_held
+						value = 1
+					}
+					upgrade_kobold_hoard = yes 
 				} 
 			}
-			hidden_effect = { 189 = { upgrade_kobold_hoard = yes } }
+			custom_tooltip = church_power_hoard_donation
+		}
+		else_if = {
+			limit = { NOT = { has_country_flag = Z38_had_roar_happen } }
+			hidden_effect = {
+				189 = {
+					set_variable = {
+						which = dev2add
+						which = PREV
+					}
+					change_variable = { 
+						which = dragon_cult_hoard 
+						which = dev2add 
+					} 
+					upgrade_kobold_hoard = yes 
+				} 
+				change_variable = {
+					which = kdc_festivals_held
+					value = 1
+				}
+			}			
+			custom_tooltip = church_power_hoard_donation
 		}
 		else = {
-			var_effect = { effect = add_treasury var = dev2add sign = + } 
+			currency_effect = { currency=treasury addTo=ROOT which=dev2add }
 		}
-		
-		event_target:kobold_event_target = {
-			add_province_modifier = {
-				name = kdc_donated_to_hoard
-				duration = 365
-			}
-		}
+		ai_chance = { factor = 400 }	
 	}
 	
 	option = {
 		name = flavour_kobold_dragon_cult.1.c
 		
 		trigger = {
-			can_unlock_kobold_cult_for_level = {
+			can_unlock_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = red
-				LEVEL = 2
+				SLOT = 2
+				UPGRADE = base
 			}
 		}
-		unlock_kobold_dragon_cult_for_colour_and_level = {
-			LEVEL = 2
+		kdc_remove_aspect_2 = yes
+		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
 			COLOUR = red
+			SLOT = 2
+			UPGRADE = base
 		}
 	}
 	
@@ -147,15 +581,17 @@ country_event = {
 		name = flavour_kobold_dragon_cult.1.c
 		
 		trigger = {
-			can_unlock_kobold_cult_for_level = {
+			can_unlock_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = red
-				LEVEL = 3
+				SLOT = 3
+				UPGRADE = base
 			}
 		}
-		
-		unlock_kobold_dragon_cult_for_colour_and_level = {
-			LEVEL = 3
+		kdc_remove_aspect_3 = yes
+		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
 			COLOUR = red
+			SLOT = 3
+			UPGRADE = base
 		}
 	}
 	
@@ -163,14 +599,17 @@ country_event = {
 		name = flavour_kobold_dragon_cult.1.c
 		
 		trigger = {
-			can_unlock_kobold_cult_for_level = {
+			can_unlock_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = blue
-				LEVEL = 2
+				SLOT = 2
+				UPGRADE = base
 			}
 		}
-		unlock_kobold_dragon_cult_for_colour_and_level = {
-			LEVEL = 2
+		kdc_remove_aspect_2 = yes
+		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
 			COLOUR = blue
+			SLOT = 2
+			UPGRADE = base
 		}
 	}
 	
@@ -178,14 +617,17 @@ country_event = {
 		name = flavour_kobold_dragon_cult.1.c
 		
 		trigger = {
-			can_unlock_kobold_cult_for_level = {
+			can_unlock_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = blue
-				LEVEL = 3
+				SLOT = 3
+				UPGRADE = base
 			}
 		}
-		unlock_kobold_dragon_cult_for_colour_and_level = {
-			LEVEL = 3
+		kdc_remove_aspect_3 = yes
+		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
 			COLOUR = blue
+			SLOT = 3
+			UPGRADE = base
 		}
 	}
 	
@@ -193,14 +635,17 @@ country_event = {
 		name = flavour_kobold_dragon_cult.1.c
 		
 		trigger = {
-			can_unlock_kobold_cult_for_level = {
+			can_unlock_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = green
-				LEVEL = 2
+				SLOT = 2
+				UPGRADE = base
 			}
 		}
-		unlock_kobold_dragon_cult_for_colour_and_level = {
-			LEVEL = 2
+		kdc_remove_aspect_2 = yes
+		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
 			COLOUR = green
+			SLOT = 2
+			UPGRADE = base
 		}
 	}
 	
@@ -208,14 +653,17 @@ country_event = {
 		name = flavour_kobold_dragon_cult.1.c
 		
 		trigger = {
-			can_unlock_kobold_cult_for_level = {
+			can_unlock_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = green
-				LEVEL = 3
+				SLOT = 3
+				UPGRADE = base
 			}
 		}
-		unlock_kobold_dragon_cult_for_colour_and_level = {
-			LEVEL = 3
+		kdc_remove_aspect_3 = yes
+		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
 			COLOUR = green
+			SLOT = 3
+			UPGRADE = base
 		}
 	}
 	
@@ -223,14 +671,17 @@ country_event = {
 		name = flavour_kobold_dragon_cult.1.c
 		
 		trigger = {
-			can_unlock_kobold_cult_for_level = {
+			can_unlock_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = black
-				LEVEL = 2
+				SLOT = 2
+				UPGRADE = base
 			}
 		}
-		unlock_kobold_dragon_cult_for_colour_and_level = {
-			LEVEL = 2
+		kdc_remove_aspect_2 = yes
+		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
 			COLOUR = black
+			SLOT = 2
+			UPGRADE = base
 		}
 	}
 	
@@ -238,14 +689,17 @@ country_event = {
 		name = flavour_kobold_dragon_cult.1.c
 		
 		trigger = {
-			can_unlock_kobold_cult_for_level = {
+			can_unlock_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = black
-				LEVEL = 3
+				SLOT = 3
+				UPGRADE = base
 			}
 		}
-		unlock_kobold_dragon_cult_for_colour_and_level = {
-			LEVEL = 3
+		kdc_remove_aspect_3 = yes
+		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
 			COLOUR = black
+			SLOT = 3
+			UPGRADE = base
 		}
 	}
 	
@@ -253,14 +707,17 @@ country_event = {
 		name = flavour_kobold_dragon_cult.1.c
 		
 		trigger = {
-			can_unlock_kobold_cult_for_level = {
+			can_unlock_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = white
-				LEVEL = 2
+				SLOT = 2
+				UPGRADE = base
 			}
 		}
-		unlock_kobold_dragon_cult_for_colour_and_level = {
-			LEVEL = 2
+		kdc_remove_aspect_2 = yes
+		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
 			COLOUR = white
+			SLOT = 2
+			UPGRADE = base
 		}
 	}
 	
@@ -268,14 +725,17 @@ country_event = {
 		name = flavour_kobold_dragon_cult.1.c
 		
 		trigger = {
-			can_unlock_kobold_cult_for_level = {
+			can_unlock_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = white
-				LEVEL = 3
+				SLOT = 3
+				UPGRADE = base
 			}
 		}
-		unlock_kobold_dragon_cult_for_colour_and_level = {
-			LEVEL = 3
+		kdc_remove_aspect_3 = yes
+		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
 			COLOUR = white
+			SLOT = 3
+			UPGRADE = base
 		}
 	}
 	
@@ -283,14 +743,17 @@ country_event = {
 		name = flavour_kobold_dragon_cult.1.c
 		
 		trigger = {
-			can_unlock_kobold_cult_for_level = {
+			can_unlock_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = purple
-				LEVEL = 2
+				SLOT = 2
+				UPGRADE = base
 			}
 		}
-		unlock_kobold_dragon_cult_for_colour_and_level = {
-			LEVEL = 2
+		kdc_remove_aspect_2 = yes
+		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
 			COLOUR = purple
+			SLOT = 2
+			UPGRADE = base
 		}
 	}
 	
@@ -298,14 +761,17 @@ country_event = {
 		name = flavour_kobold_dragon_cult.1.c
 		
 		trigger = {
-			can_unlock_kobold_cult_for_level = {
+			can_unlock_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = purple
-				LEVEL = 3
+				SLOT = 3
+				UPGRADE = base
 			}
 		}
-		unlock_kobold_dragon_cult_for_colour_and_level = {
-			LEVEL = 3
+		kdc_remove_aspect_3 = yes
+		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
 			COLOUR = purple
+			SLOT = 3
+			UPGRADE = base
 		}
 	}
 	
@@ -313,14 +779,17 @@ country_event = {
 		name = flavour_kobold_dragon_cult.1.c
 		
 		trigger = {
-			can_unlock_kobold_cult_for_level = {
+			can_unlock_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = brown
-				LEVEL = 2
+				SLOT = 2
+				UPGRADE = base
 			}
 		}
-		unlock_kobold_dragon_cult_for_colour_and_level = {
-			LEVEL = 2
+		kdc_remove_aspect_2 = yes
+		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
 			COLOUR = brown
+			SLOT = 2
+			UPGRADE = base
 		}
 	}
 	
@@ -328,14 +797,17 @@ country_event = {
 		name = flavour_kobold_dragon_cult.1.c
 		
 		trigger = {
-			can_unlock_kobold_cult_for_level = {
+			can_unlock_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = brown
-				LEVEL = 3
+				SLOT = 3
+				UPGRADE = base
 			}
 		}
-		unlock_kobold_dragon_cult_for_colour_and_level = {
-			LEVEL = 3
+		kdc_remove_aspect_3 = yes
+		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
 			COLOUR = brown
+			SLOT = 3
+			UPGRADE = base
 		}
 	}
 	
@@ -343,14 +815,17 @@ country_event = {
 		name = flavour_kobold_dragon_cult.1.c
 		
 		trigger = {
-			can_unlock_kobold_cult_for_level = {
+			can_unlock_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = brass
-				LEVEL = 2
+				SLOT = 2
+				UPGRADE = base
 			}
 		}
-		unlock_kobold_dragon_cult_for_colour_and_level = {
-			LEVEL = 2
+		kdc_remove_aspect_2 = yes
+		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
 			COLOUR = brass
+			SLOT = 2
+			UPGRADE = base
 		}
 	}
 	
@@ -358,14 +833,17 @@ country_event = {
 		name = flavour_kobold_dragon_cult.1.c
 		
 		trigger = {
-			can_unlock_kobold_cult_for_level = {
+			can_unlock_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = brass
-				LEVEL = 3
+				SLOT = 3
+				UPGRADE = base
 			}
 		}
-		unlock_kobold_dragon_cult_for_colour_and_level = {
-			LEVEL = 3
+		kdc_remove_aspect_3 = yes
+		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
 			COLOUR = brass
+			SLOT = 3
+			UPGRADE = base
 		}
 	}
 	
@@ -373,14 +851,17 @@ country_event = {
 		name = flavour_kobold_dragon_cult.1.c
 		
 		trigger = {
-			can_unlock_kobold_cult_for_level = {
+			can_unlock_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = copper
-				LEVEL = 2
+				SLOT = 2
+				UPGRADE = base
 			}
 		}
-		unlock_kobold_dragon_cult_for_colour_and_level = {
-			LEVEL = 2
+		kdc_remove_aspect_2 = yes
+		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
 			COLOUR = copper
+			SLOT = 2
+			UPGRADE = base
 		}
 	}
 	
@@ -388,14 +869,17 @@ country_event = {
 		name = flavour_kobold_dragon_cult.1.c
 		
 		trigger = {
-			can_unlock_kobold_cult_for_level = {
+			can_unlock_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = copper
-				LEVEL = 3
+				SLOT = 3
+				UPGRADE = base
 			}
 		}
-		unlock_kobold_dragon_cult_for_colour_and_level = {
-			LEVEL = 3
+		kdc_remove_aspect_3 = yes
+		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
 			COLOUR = copper
+			SLOT = 3
+			UPGRADE = base
 		}
 	}
 	
@@ -403,18 +887,17 @@ country_event = {
 		name = flavour_kobold_dragon_cult.1.c
 		
 		trigger = {
-			has_church_aspect = bronze_dragon_1
-			NOT = { has_country_flag = unlocked_bronze_dragon_2 }
-		}
-		trigger = {
-			can_unlock_kobold_cult_for_level = {
+			can_unlock_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = bronze
-				LEVEL = 2
+				SLOT = 2
+				UPGRADE = base
 			}
 		}
-		unlock_kobold_dragon_cult_for_colour_and_level = {
-			LEVEL = 2
+		kdc_remove_aspect_2 = yes
+		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
 			COLOUR = bronze
+			SLOT = 2
+			UPGRADE = base
 		}
 	}
 	
@@ -422,14 +905,17 @@ country_event = {
 		name = flavour_kobold_dragon_cult.1.c
 		
 		trigger = {
-			can_unlock_kobold_cult_for_level = {
+			can_unlock_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = bronze
-				LEVEL = 3
+				SLOT = 3
+				UPGRADE = base
 			}
 		}
-		unlock_kobold_dragon_cult_for_colour_and_level = {
-			LEVEL = 3
+		kdc_remove_aspect_3 = yes
+		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
 			COLOUR = bronze
+			SLOT = 3
+			UPGRADE = base
 		}
 	}
 	
@@ -437,14 +923,17 @@ country_event = {
 		name = flavour_kobold_dragon_cult.1.c
 		
 		trigger = {
-			can_unlock_kobold_cult_for_level = {
+			can_unlock_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = silver
-				LEVEL = 2
+				SLOT = 2
+				UPGRADE = base
 			}
 		}
-		unlock_kobold_dragon_cult_for_colour_and_level = {
-			LEVEL = 2
+		kdc_remove_aspect_2 = yes
+		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
 			COLOUR = silver
+			SLOT = 2
+			UPGRADE = base
 		}
 	}
 	
@@ -453,14 +942,17 @@ country_event = {
 		
 
 		trigger = {
-			can_unlock_kobold_cult_for_level = {
+			can_unlock_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = silver
-				LEVEL = 3
+				SLOT = 3
+				UPGRADE = base
 			}
 		}
-		unlock_kobold_dragon_cult_for_colour_and_level = {
-			LEVEL = 3
+		kdc_remove_aspect_3 = yes
+		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
 			COLOUR = silver
+			SLOT = 3
+			UPGRADE = base
 		}
 	}
 	
@@ -468,14 +960,17 @@ country_event = {
 		name = flavour_kobold_dragon_cult.1.c
 		
 		trigger = {
-			can_unlock_kobold_cult_for_level = {
+			can_unlock_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = gold
-				LEVEL = 2
+				SLOT = 2
+				UPGRADE = base
 			}
 		}
-		unlock_kobold_dragon_cult_for_colour_and_level = {
-			LEVEL = 2
+		kdc_remove_aspect_2 = yes
+		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
 			COLOUR = gold
+			SLOT = 2
+			UPGRADE = base
 		}
 	}
 	
@@ -483,14 +978,1959 @@ country_event = {
 		name = flavour_kobold_dragon_cult.1.c
 		
 		trigger = {
-			can_unlock_kobold_cult_for_level = {
+			can_unlock_kobold_cult_for_color_slot_upgrade = {
 				COLOUR = gold
-				LEVEL = 3
+				SLOT = 3
+				UPGRADE = base
 			}
 		}
-		unlock_kobold_dragon_cult_for_colour_and_level = {
-			LEVEL = 3
+		kdc_remove_aspect_3 = yes
+		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
 			COLOUR = gold
+			SLOT = 3
+			UPGRADE = base
+		}
+	}
+	## UPGRADED: Successful upgrades
+	option = {
+		name = flavour_kobold_dragon_cult.1.c
+		highlight = yes 
+		trigger = {
+			hidden_trigger = {
+				can_unlock_kobold_cult_for_color_slot_upgrade = {
+					COLOUR = black
+					SLOT = 1
+					UPGRADE = upgraded
+					requirebasic = yes
+				}
+				is_year = 1600			
+			}
+		}
+		custom_tooltip = upgrade_comes_from_insyaa_yes
+		tooltip = {
+			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+				COLOUR = black
+				SLOT = 1
+				UPGRADE = upgraded
+			}
+		}
+		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.4 } }
+	}
+
+	option = {
+		name = flavour_kobold_dragon_cult.1.c
+		highlight = yes
+		trigger = {
+			hidden_trigger = {
+				can_unlock_kobold_cult_for_color_slot_upgrade = {
+					COLOUR = black
+					SLOT = 2
+					UPGRADE = upgraded
+					requirebasic = yes
+				}
+				is_year = 1600
+			}
+		}
+		custom_tooltip = upgrade_comes_from_insyaa_yes
+		tooltip = {
+			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+				COLOUR = black
+				SLOT = 2
+				UPGRADE = upgraded
+			}
+		}
+		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.5 } }
+	}
+
+	option = {
+		name = flavour_kobold_dragon_cult.1.c
+		highlight = yes
+		trigger = {
+			hidden_trigger = {
+				can_unlock_kobold_cult_for_color_slot_upgrade = {
+					COLOUR = black
+					SLOT = 3
+					UPGRADE = upgraded
+					requirebasic = yes
+				}
+				is_year = 1600	
+			}
+		}
+		custom_tooltip = upgrade_comes_from_insyaa_yes
+		tooltip = {
+			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+				COLOUR = black
+				SLOT = 3
+				UPGRADE = upgraded
+			}
+		}
+		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.6 } }
+	}
+
+	option = {
+		name = flavour_kobold_dragon_cult.1.c
+		highlight = yes
+		trigger = {
+			hidden_trigger = {
+				can_unlock_kobold_cult_for_color_slot_upgrade = {
+					COLOUR = brown
+					SLOT = 1
+					UPGRADE = upgraded
+					requirebasic = yes
+				}
+				is_year = 1600
+			}
+		}
+		custom_tooltip = upgrade_comes_from_insyaa_yes
+		tooltip = {
+			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+				COLOUR = brown
+				SLOT = 1
+				UPGRADE = upgraded
+			}
+		}
+		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.7 } }
+	}
+
+	option = {
+		name = flavour_kobold_dragon_cult.1.c
+		highlight = yes
+		trigger = {
+			hidden_trigger = {
+				can_unlock_kobold_cult_for_color_slot_upgrade = {
+					COLOUR = brown
+					SLOT = 2
+					UPGRADE = upgraded
+					requirebasic = yes
+				}
+				is_year = 1600
+			}
+		}
+		custom_tooltip = upgrade_comes_from_insyaa_yes
+		tooltip = {
+			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+				COLOUR = brown
+				SLOT = 2
+				UPGRADE = upgraded
+			}
+		}
+		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.8 } }
+	}
+
+	option = {
+		name = flavour_kobold_dragon_cult.1.c
+		highlight = yes
+		trigger = {
+			hidden_trigger = {
+				can_unlock_kobold_cult_for_color_slot_upgrade = {
+					COLOUR = brown
+					SLOT = 3
+					UPGRADE = upgraded
+					requirebasic = yes
+				}
+				is_year = 1600		
+			}
+		}
+		custom_tooltip = upgrade_comes_from_insyaa_yes
+		tooltip = {
+			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+				COLOUR = brown
+				SLOT = 3
+				UPGRADE = upgraded
+			}
+		}
+		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.9 } }
+	}
+
+	option = {
+		name = flavour_kobold_dragon_cult.1.c
+		highlight = yes
+		trigger = {
+			hidden_trigger = {
+				can_unlock_kobold_cult_for_color_slot_upgrade = {
+					COLOUR = purple
+					SLOT = 1
+					UPGRADE = upgraded
+					requirebasic = yes
+				}
+				OR = {
+					AND = {
+						has_global_flag = delete_west_serpentspine_region
+						is_year = 1600
+					}
+					far_bulwar_region = {
+						has_discovered = ROOT
+					}
+					middle_dwarovar_region = {
+						has_discovered = ROOT
+					}
+				}
+			}
+		}
+		if = {
+			limit = { has_global_flag = delete_west_serpentspine_region }
+			custom_tooltip = upgrade_comes_from_western_dwarovar_yes
+		}
+		else = {
+			custom_tooltip = purple_dragon_upgrade_1_tt_yes
+		}
+		tooltip = {
+			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+				COLOUR = purple
+				SLOT = 1
+				UPGRADE = upgraded
+			}
+		}
+		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.10 } }
+	}
+
+	option = {
+		name = flavour_kobold_dragon_cult.1.c
+		highlight = yes
+		trigger = {
+			hidden_trigger = {
+				can_unlock_kobold_cult_for_color_slot_upgrade = {
+					COLOUR = purple
+					SLOT = 2
+					UPGRADE = upgraded
+					requirebasic = yes
+				}
+				OR = {
+					AND = {
+						has_global_flag = delete_west_serpentspine_region
+						is_year = 1600
+					}
+					any_ally = {
+						any_owned_province = {
+							OR = {
+								region = far_bulwar_region
+								region = middle_dwarovar_region
+							}
+						}	
+					}
+					any_subject_country = { 
+						any_owned_province = {
+							OR = {
+								region = far_bulwar_region
+								region = middle_dwarovar_region
+							}
+						}				
+					}
+					any_owned_province = {
+						OR = {
+							region = middle_dwarovar_region
+							region = far_bulwar_region
+						}
+						OR = {
+							has_terrain = dwarven_hold
+							has_terrain = dwarven_hold_surface
+						}
+					}
+				}
+			}
+		}
+		if = {
+			limit = { has_global_flag = delete_west_serpentspine_region }
+			custom_tooltip = upgrade_comes_from_western_dwarovar_yes
+		}
+		else = {
+			custom_tooltip = purple_dragon_upgrade_2_tt_yes
+		}
+		tooltip = {
+			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+				COLOUR = purple
+				SLOT = 2
+				UPGRADE = upgraded
+			}
+		}
+		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.11 } }
+	}
+
+	option = {
+		name = flavour_kobold_dragon_cult.1.c
+		highlight = yes
+		trigger = {
+			hidden_trigger = {
+				can_unlock_kobold_cult_for_color_slot_upgrade = {
+					COLOUR = purple
+					SLOT = 3
+					UPGRADE = upgraded
+					requirebasic = yes
+				}
+				OR = {
+					AND = {
+						has_global_flag = delete_west_serpentspine_region
+						is_year = 1600
+					}
+					AND = {
+						4217 = {
+							num_of_units_in_province = {
+								who = ROOT
+								amount = 40
+							}
+						}
+						OR = {
+							owns_or_subject_of = 4217
+							any_ally = {
+								owns = 4217
+							}
+						}
+					}
+				}
+			}
+		}
+		if = {
+			limit = { has_global_flag = delete_west_serpentspine_region }
+			custom_tooltip = upgrade_comes_from_western_dwarovar_yes
+		}
+		else = {
+			custom_tooltip = purple_dragon_upgrade_3_tt_yes
+		}
+		tooltip = {
+			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+				COLOUR = purple
+				SLOT = 3
+				UPGRADE = upgraded
+			}
+		}
+		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.12 } }
+	}
+
+	option = {
+		name = flavour_kobold_dragon_cult.1.c
+		highlight = yes 
+		trigger = {
+			hidden_trigger = {
+				can_unlock_kobold_cult_for_color_slot_upgrade = {
+					COLOUR = brass
+					SLOT = 1
+					UPGRADE = upgraded
+					requirebasic = yes
+				}
+				OR = {
+					AND = {
+						has_global_flag = delete_rahen_region
+						is_year = 1600
+					}
+					rahen_coast_region = { 
+						type = all
+						OR = {
+							has_port = no 
+							has_discovered = ROOT
+						}
+					}
+				}
+			}
+		}
+		if = {
+			limit = { has_global_flag = delete_rahen_region }
+			custom_tooltip = upgrade_comes_from_rahen_yes
+		}
+		else = {
+			custom_tooltip = brass_dragon_upgrade_1_tt_yes
+		}
+		tooltip = {
+			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+				COLOUR = brass
+				SLOT = 1
+				UPGRADE = upgraded
+			}
+		}
+		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.13 } }
+	}
+
+	option = {
+		name = flavour_kobold_dragon_cult.1.c
+		highlight = yes
+		trigger = {
+			hidden_trigger = {
+				can_unlock_kobold_cult_for_color_slot_upgrade = {
+					COLOUR = brass
+					SLOT = 2
+					UPGRADE = upgraded
+					requirebasic = yes
+				}
+				OR = {
+					AND = {
+						has_global_flag = delete_rahen_region
+						is_year = 1600
+					}
+					OR = {
+						AND = {
+							has_global_flag = delete_rahen_region
+							is_year = 1600
+						}
+						any_owned_province = {
+							continent = asia
+							OR = {
+								trade_goods = slaves
+								province_id = 4420
+							}
+						}
+					}
+				}
+			}
+		}
+		if = {
+			limit = { has_global_flag = delete_rahen_region }
+			custom_tooltip = upgrade_comes_from_rahen_yes
+		}
+		else = {
+			custom_tooltip = brass_dragon_upgrade_2_tt_yes
+		}
+		tooltip = {
+			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+				COLOUR = brass
+				SLOT = 2
+				UPGRADE = upgraded
+			}
+		}
+		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.14 } }
+	}
+
+	option = {
+		name = flavour_kobold_dragon_cult.1.c
+		highlight = yes
+		trigger = {
+			hidden_trigger = {
+				can_unlock_kobold_cult_for_color_slot_upgrade = {
+					COLOUR = brass
+					SLOT = 3
+					UPGRADE = upgraded
+					requirebasic = yes
+				}
+				OR = {
+					AND = {
+						has_global_flag = delete_rahen_region
+						is_year = 1600
+					}				
+					has_country_flag = Y85_won_old_order_war
+					AND = {
+						rahen_superregion = {
+							type = all
+							OR = {
+								NOT = { trade_goods = slaves }
+								has_port = no
+							}
+						}
+						phaemtuek_area = {
+							OR = {
+								NOT = { trade_goods = slaves }
+								has_port = no
+							}							
+						}
+						amkamsek_area = {
+							OR = {
+								NOT = { trade_goods = slaves }
+								has_port = no
+							}							
+						}
+						east_sarhal_superregion = {
+							OR = {
+								NOT = { trade_goods = slaves }
+								has_port = no
+							}							
+						}
+					}
+				}
+			}
+		}
+		if = {
+			limit = { has_global_flag = delete_rahen_region }
+			custom_tooltip = upgrade_comes_from_rahen_yes
+		}
+		else_if = {
+			limit = { has_country_flag = jyntas_quest_1 }
+			custom_tooltip = brass_dragon_upgrade_3_tt_yes_a
+		}
+		else_if = {
+			limit = { has_country_flag = jyntas_quest_2 }
+			custom_tooltip = brass_dragon_upgrade_3_tt_yes_b
+		}
+		else = {
+			custom_tooltip = brass_dragon_upgrade_3_tt_yes_c
+		}
+		tooltip = {
+			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+				COLOUR = brass
+				SLOT = 3
+				UPGRADE = upgraded
+			}
+		}
+		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.15 } }
+	}
+
+	option = {
+		name = flavour_kobold_dragon_cult.1.c
+		highlight = yes
+		goto = 463
+		trigger = {
+			hidden_trigger = {
+				can_unlock_kobold_cult_for_color_slot_upgrade = {
+					COLOUR = bronze
+					SLOT = 1
+					UPGRADE = upgraded
+					requirebasic = yes
+				}
+				OR = {
+					AND = {
+						has_global_flag = delete_north_sarhal_region
+						is_year = 1600
+					}					
+					kheterata_region = {
+						type = any
+						has_discovered = ROOT
+					}
+				}		
+			}
+		}
+		if = {
+			limit = { has_global_flag = delete_north_sarhal_region }
+			custom_tooltip = upgrade_comes_from_north_sarhal_yes
+		}
+		else = {
+			custom_tooltip = bronze_dragon_upgrade_1_tt_yes
+		}
+		tooltip = {
+			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+				COLOUR = bronze
+				SLOT = 1
+				UPGRADE = upgraded
+			}
+		}
+		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.16 } }
+	}
+
+	option = {
+		name = flavour_kobold_dragon_cult.1.c
+		highlight = yes
+		trigger = {
+			hidden_trigger = {
+				can_unlock_kobold_cult_for_color_slot_upgrade = {
+					COLOUR = bronze
+					SLOT = 2
+					UPGRADE = upgraded
+					requirebasic = yes
+				}
+				OR = {
+					AND = {
+						has_global_flag = delete_north_sarhal_region
+						is_year = 1600
+					}	
+					any_ally = {
+						is_emperor_of_china = yes
+						religion = aakhetist
+					}				
+					owns = 466
+				}		
+			}
+		}
+		if = {
+			limit = { has_global_flag = delete_north_sarhal_region }
+			custom_tooltip = upgrade_comes_from_north_sarhal_yes
+		}
+		else = {
+			custom_tooltip = bronze_dragon_upgrade_2_tt_yes
+		}
+		tooltip = {
+			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+				COLOUR = bronze
+				SLOT = 2
+				UPGRADE = upgraded
+			}
+		}
+		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.17 } }
+	}
+
+	option = {
+		name = flavour_kobold_dragon_cult.1.c
+		highlight = yes
+		trigger = {
+			hidden_trigger = {
+				can_unlock_kobold_cult_for_color_slot_upgrade = {
+					COLOUR = bronze
+					SLOT = 3
+					UPGRADE = upgraded
+					requirebasic = yes
+				}
+				OR = {
+					AND = {
+						has_global_flag = delete_north_sarhal_region
+						is_year = 1600
+					}	
+					had_country_flag = {
+						flag = unlocked_bronze_dragon_2_upgraded
+						days = 1825
+					}
+				}		
+			}
+		}
+		if = {
+			limit = { has_global_flag = delete_north_sarhal_region }
+			custom_tooltip = upgrade_comes_from_north_sarhal_yes
+		}
+		else = {
+			custom_tooltip = bronze_dragon_upgrade_3_tt_yes
+		}
+		tooltip = {
+			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+				COLOUR = bronze
+				SLOT = 3
+				UPGRADE = upgraded
+			}
+		}
+		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.18 } }
+	}
+
+	option = {
+		name = flavour_kobold_dragon_cult.1.c
+		highlight = yes
+		trigger = {
+			hidden_trigger = {
+				can_unlock_kobold_cult_for_color_slot_upgrade = {
+					COLOUR = silver
+					SLOT = 1
+					UPGRADE = upgraded
+					requirebasic = yes
+				}
+				silver_dragon_upgrade_trigger = {
+					AMOUNT = 2
+					castonathspecial = yes
+				}
+			}
+		}
+		custom_tooltip = silver_dragon_upgrade_1_tt_yes
+		tooltip = {
+			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+				COLOUR = silver
+				SLOT = 1
+				UPGRADE = upgraded
+			}
+		}
+		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.19 } }
+	}
+
+	option = {
+		name = flavour_kobold_dragon_cult.1.c
+		highlight = yes
+		trigger = {
+			hidden_trigger = {
+				can_unlock_kobold_cult_for_color_slot_upgrade = {
+					COLOUR = silver
+					SLOT = 2
+					UPGRADE = upgraded
+					requirebasic = yes
+				}
+				silver_dragon_upgrade_trigger = {
+					AMOUNT = 5
+					castonathspecial = yes
+				}
+			}
+
+		}
+		custom_tooltip = silver_dragon_upgrade_2_tt_yes
+		tooltip = {
+			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+				COLOUR = silver
+				SLOT = 2
+				UPGRADE = upgraded
+			}
+		}
+		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.20 } }
+	}
+
+	option = {
+		name = flavour_kobold_dragon_cult.1.c
+		highlight = yes
+		trigger = {
+			hidden_trigger = {
+				can_unlock_kobold_cult_for_color_slot_upgrade = {
+					COLOUR = silver
+					SLOT = 3
+					UPGRADE = upgraded
+					requirebasic = yes
+				}
+				AND = {
+					silver_dragon_upgrade_trigger = {
+						AMOUNT = 9
+					}
+					OR = {
+						owns_or_subject_of = 833
+						any_ally = { owns = 833 }
+					}
+				}		
+			}
+		}
+		custom_tooltip = silver_dragon_upgrade_3_tt_yes
+		tooltip = {
+			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+				COLOUR = silver
+				SLOT = 3
+				UPGRADE = upgraded
+			}
+		}
+		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.21 } }
+	}
+
+	option = {
+		name = flavour_kobold_dragon_cult.1.c
+		highlight = yes
+		trigger = {
+			hidden_trigger = {
+				can_unlock_kobold_cult_for_color_slot_upgrade = {
+					COLOUR = gold
+					SLOT = 1
+					UPGRADE = upgraded
+					requirebasic = yes
+				}
+				OR = {
+					AND = {
+						has_global_flag = delete_haless_region
+						is_year = 1600
+					}
+					any_known_country = {
+						capital_scope = { continent = asia }
+						fast_owns_num_pops_of_race = { race = kobold amount = 1 }
+					}
+				}
+			}
+		}
+		if = {
+			limit = { has_global_flag = delete_haless_region }
+			custom_tooltip = upgrade_comes_from_haless_yes
+		}
+		else = {
+			custom_tooltip = gold_dragon_upgrade_1_tt_yes
+		}
+		tooltip = {
+			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+				COLOUR = gold
+				SLOT = 1
+				UPGRADE = upgraded
+			}
+		}
+		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.22 } }
+	}
+
+	option = {
+		name = flavour_kobold_dragon_cult.1.c
+		highlight = yes
+		trigger = {
+			hidden_trigger = {
+				can_unlock_kobold_cult_for_color_slot_upgrade = {
+					COLOUR = gold
+					SLOT = 2
+					UPGRADE = upgraded
+					requirebasic = yes
+				}
+				OR = {
+					AND = {
+						has_global_flag = delete_haless_region
+						is_year = 1600
+					}
+					AND = {
+						owns_or_subject_of = 4976
+						OR = {
+							NOT = { exists = Y85 }
+							Y85 = { is_subject_of = ROOT }
+						}
+					}
+				}
+			}
+		}
+		if = {
+			limit = { has_global_flag = delete_haless_region }
+			custom_tooltip = upgrade_comes_from_haless_yes
+		}
+		else = {
+			custom_tooltip = gold_dragon_upgrade_2_tt_yes
+		}
+		tooltip = {
+			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+				COLOUR = gold
+				SLOT = 2
+				UPGRADE = upgraded
+			}
+		}
+		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.23 } }
+	}
+
+	option = {
+		name = flavour_kobold_dragon_cult.1.c
+		highlight = yes
+		trigger = {
+			hidden_trigger = {
+				can_unlock_kobold_cult_for_color_slot_upgrade = {
+					COLOUR = gold
+					SLOT = 3
+					UPGRADE = upgraded
+					requirebasic = yes
+				}
+				OR = {
+					AND = {
+						has_global_flag = delete_haless_region
+						is_year = 1600
+					}
+					AND = {
+						owns_or_subject_of = 4323
+						Y85 = { is_subject_of = ROOT }
+						has_country_flag = unlocked_green_dragon_3_upgraded
+						has_country_flag = unlocked_brass_dragon_3_upgraded
+					}
+				}	
+				NOT = { has_country_flag = balris_begun }		
+			}
+		}
+		if = {
+			limit = { has_global_flag = delete_haless_region }
+			custom_tooltip = upgrade_comes_from_haless_yes
+		}
+		else = {
+			custom_tooltip = gold_dragon_upgrade_3_tt_yes
+		}
+		tooltip = {
+			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+				COLOUR = gold
+				SLOT = 3
+				UPGRADE = upgraded
+			}
+		}
+		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.24 } }
+	}
+	## UPGRADED: LOCKED OUT
+	option = {
+		name = flavour_kobold_dragon_cult.1.e
+		trigger = {
+			can_unlock_kobold_cult_for_color_slot_upgrade = {
+				COLOUR = red
+				SLOT = 1
+				UPGRADE = upgraded
+				requirebasic = yes
+			}
+		}
+		custom_tooltip = upgrade_comes_from_mission_tree
+		tooltip = {
+			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+				COLOUR = red
+				SLOT = 1
+				UPGRADE = upgraded
+			}
+		}
+		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.3 } }
+	}
+
+	option = {
+		name = flavour_kobold_dragon_cult.1.e
+		trigger = {
+			can_unlock_kobold_cult_for_color_slot_upgrade = {
+				COLOUR = red
+				SLOT = 2
+				UPGRADE = upgraded
+				requirebasic = yes
+			}
+		}
+		custom_tooltip = upgrade_comes_from_mission_tree
+		tooltip = {
+			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+				COLOUR = red
+				SLOT = 2
+				UPGRADE = upgraded
+			}
+		}
+		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.3 } }
+	}
+
+	option = {
+		name = flavour_kobold_dragon_cult.1.e
+		
+		trigger = {
+			can_unlock_kobold_cult_for_color_slot_upgrade = {
+				COLOUR = red
+				SLOT = 3
+				UPGRADE = upgraded
+				requirebasic = yes
+			}
+		}
+		
+		custom_tooltip = upgrade_comes_from_mission_tree 
+		tooltip = {
+			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+				COLOUR = red
+				SLOT = 3
+				UPGRADE = upgraded
+			}
+		}
+		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.3 } }
+	}
+
+	option = {
+		name = flavour_kobold_dragon_cult.1.e
+		
+		trigger = {
+			can_unlock_kobold_cult_for_color_slot_upgrade = {
+				COLOUR = blue
+				SLOT = 1
+				UPGRADE = upgraded
+				requirebasic = yes
+			}
+		}
+		custom_tooltip = upgrade_comes_from_mission_tree 
+		tooltip = {
+			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+				COLOUR = blue
+				SLOT = 1
+				UPGRADE = upgraded
+			}
+		}
+		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.3 } }
+	}
+
+	option = {
+		name = flavour_kobold_dragon_cult.1.e
+		
+		trigger = {
+			can_unlock_kobold_cult_for_color_slot_upgrade = {
+				COLOUR = blue
+				SLOT = 2
+				UPGRADE = upgraded
+				requirebasic = yes
+			}
+		}
+		custom_tooltip = upgrade_comes_from_mission_tree 
+		tooltip = {
+			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+				COLOUR = blue
+				SLOT = 2
+				UPGRADE = upgraded
+			}
+		}
+		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.3 } }
+	}
+
+	option = {
+		name = flavour_kobold_dragon_cult.1.e
+		
+		trigger = {
+			can_unlock_kobold_cult_for_color_slot_upgrade = {
+				COLOUR = blue
+				SLOT = 3
+				UPGRADE = upgraded
+				requirebasic = yes
+			}
+		}
+		custom_tooltip = upgrade_comes_from_mission_tree #LEX DO THIS
+		tooltip = {
+			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+				COLOUR = blue
+				SLOT = 3
+				UPGRADE = upgraded
+			}
+		}
+		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.3 } }
+	}
+
+	option = {
+		name = flavour_kobold_dragon_cult.1.e
+		
+		trigger = {
+			can_unlock_kobold_cult_for_color_slot_upgrade = {
+				COLOUR = green
+				SLOT = 1
+				UPGRADE = upgraded
+				requirebasic = yes
+			}
+		}
+		custom_tooltip = upgrade_comes_from_mission_tree 
+		tooltip = {
+			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+				COLOUR = green
+				SLOT = 1
+				UPGRADE = upgraded
+			}
+		}
+		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.3 } }
+	}
+
+	option = {
+		name = flavour_kobold_dragon_cult.1.e
+		
+		trigger = {
+			can_unlock_kobold_cult_for_color_slot_upgrade = {
+				COLOUR = green
+				SLOT = 2
+				UPGRADE = upgraded
+				requirebasic = yes
+			}
+		}
+		custom_tooltip = upgrade_comes_from_mission_tree 
+		tooltip = {
+			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+				COLOUR = green
+				SLOT = 2
+				UPGRADE = upgraded
+			}
+		}
+		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.3 } }
+	}
+
+	option = {
+		name = flavour_kobold_dragon_cult.1.e
+		
+		trigger = {
+			can_unlock_kobold_cult_for_color_slot_upgrade = {
+				COLOUR = green
+				SLOT = 3
+				UPGRADE = upgraded
+				requirebasic = yes
+			}
+		}
+		custom_tooltip = upgrade_comes_from_mission_tree 
+		tooltip = {
+			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+				COLOUR = green
+				SLOT = 3
+				UPGRADE = upgraded
+			}
+		}
+		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.3 } }
+	}
+
+	option = {
+		name = flavour_kobold_dragon_cult.1.e
+		
+		trigger = {
+			can_unlock_kobold_cult_for_color_slot_upgrade = {
+				COLOUR = white
+				SLOT = 1
+				UPGRADE = upgraded
+				requirebasic = yes
+			}
+		}
+		custom_tooltip = upgrade_comes_from_mission_tree 
+		tooltip = {
+			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+				COLOUR = white
+				SLOT = 1
+				UPGRADE = upgraded
+			}
+		}
+		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.3 } }
+	}
+
+	option = {
+		name = flavour_kobold_dragon_cult.1.e
+		
+		trigger = {
+			can_unlock_kobold_cult_for_color_slot_upgrade = {
+				COLOUR = white
+				SLOT = 2
+				UPGRADE = upgraded
+				requirebasic = yes
+			}
+		}
+		custom_tooltip = upgrade_comes_from_mission_tree 
+		tooltip = {
+			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+				COLOUR = white
+				SLOT = 2
+				UPGRADE = upgraded
+			}
+		}
+		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.3 } }
+	}
+
+	option = {
+		name = flavour_kobold_dragon_cult.1.e
+		
+		trigger = {
+			can_unlock_kobold_cult_for_color_slot_upgrade = {
+				COLOUR = white
+				SLOT = 3
+				UPGRADE = upgraded
+				requirebasic = yes
+			}
+		}
+		custom_tooltip = upgrade_comes_from_mission_tree 
+		tooltip = {
+			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+				COLOUR = white
+				SLOT = 3
+				UPGRADE = upgraded
+			}
+		}
+		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.3 } }
+	}
+
+	option = {
+		name = flavour_kobold_dragon_cult.1.e
+		
+		trigger = {
+			can_unlock_kobold_cult_for_color_slot_upgrade = {
+				COLOUR = copper
+				SLOT = 1
+				UPGRADE = upgraded
+				requirebasic = yes
+			}
+			custom_trigger_tooltip = {
+				tooltip = upgrade_comes_from_mission_tree 
+				always = no
+			}
+		}
+		tooltip = {
+			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+				COLOUR = copper
+				SLOT = 1
+				UPGRADE = upgraded
+			}
+		}
+		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.3 } }
+	}
+
+	option = {
+		name = flavour_kobold_dragon_cult.1.e
+		
+		trigger = {
+			can_unlock_kobold_cult_for_color_slot_upgrade = {
+				COLOUR = copper
+				SLOT = 2
+				UPGRADE = upgraded
+				requirebasic = yes
+			}
+			custom_trigger_tooltip = {
+				tooltip = upgrade_comes_from_mission_tree 
+				always = no
+			}
+		}
+		tooltip = {
+			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+				COLOUR = copper
+				SLOT = 2
+				UPGRADE = upgraded
+			}
+		}
+		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.3 } }
+	}
+
+	option = {
+		name = flavour_kobold_dragon_cult.1.e
+		
+		trigger = {
+			can_unlock_kobold_cult_for_color_slot_upgrade = {
+				COLOUR = copper
+				SLOT = 3
+				UPGRADE = upgraded
+				requirebasic = yes
+			}
+		}
+		custom_tooltip = upgrade_comes_from_mission_tree 
+		tooltip = {
+			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+				COLOUR = copper
+				SLOT = 3
+				UPGRADE = upgraded
+			}
+		}
+		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.3 } }
+	}
+
+	option = {
+		name = flavour_kobold_dragon_cult.1.e
+		trigger = {
+			can_unlock_kobold_cult_for_color_slot_upgrade = {
+				COLOUR = black
+				SLOT = 1
+				UPGRADE = upgraded
+				requirebasic = yes
+			}
+			NOT = { #NOTE: Placeholder until Insyaa release
+				is_year = 1600
+			}
+		}
+		custom_tooltip = upgrade_comes_from_insyaa
+		tooltip = {
+			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+				COLOUR = black
+				SLOT = 1
+				UPGRADE = upgraded
+			}
+		}
+		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.3 } }
+	}
+
+	option = {
+		name = flavour_kobold_dragon_cult.1.e
+		trigger = {
+			can_unlock_kobold_cult_for_color_slot_upgrade = {
+				COLOUR = black
+				SLOT = 2
+				UPGRADE = upgraded
+				requirebasic = yes
+			}
+			NOT = { #NOTE: Placeholder until Insyaa release
+				is_year = 1600
+			}
+		}
+		custom_tooltip = upgrade_comes_from_insyaa
+		tooltip = {
+			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+				COLOUR = black
+				SLOT = 2
+				UPGRADE = upgraded
+			}
+		}
+		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.3 } }
+	}
+
+	option = {
+		name = flavour_kobold_dragon_cult.1.e
+		
+		trigger = {
+			can_unlock_kobold_cult_for_color_slot_upgrade = {
+				COLOUR = black
+				SLOT = 3
+				UPGRADE = upgraded
+				requirebasic = yes
+			}
+			NOT = { #NOTE: Placeholder until Insyaa release
+				is_year = 1600
+			}
+		}
+		custom_tooltip = upgrade_comes_from_insyaa
+		tooltip = {
+			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+				COLOUR = black
+				SLOT = 3
+				UPGRADE = upgraded
+			}
+		}
+		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.3 } }
+	}
+
+	option = {
+		name = flavour_kobold_dragon_cult.1.e
+		
+		trigger = {
+			can_unlock_kobold_cult_for_color_slot_upgrade = {
+				COLOUR = brown
+				SLOT = 1
+				UPGRADE = upgraded
+				requirebasic = yes
+			}
+			NOT = { #NOTE: Placeholder until Insyaa release
+				is_year = 1600
+			}
+		}
+		custom_tooltip = upgrade_comes_from_insyaa
+		tooltip = {
+			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+				COLOUR = brown
+				SLOT = 1
+				UPGRADE = upgraded
+			}
+		}
+		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.3 } }
+	}
+
+	option = {
+		name = flavour_kobold_dragon_cult.1.e
+		
+		trigger = {
+			can_unlock_kobold_cult_for_color_slot_upgrade = {
+				COLOUR = brown
+				SLOT = 2
+				UPGRADE = upgraded
+				requirebasic = yes
+			}
+			NOT = { #NOTE: Placeholder until Insyaa release
+				is_year = 1600
+			}
+		}
+		custom_tooltip = upgrade_comes_from_insyaa
+		tooltip = {
+			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+				COLOUR = brown
+				SLOT = 2
+				UPGRADE = upgraded
+			}
+		}
+		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.3 } }
+	}
+
+	option = {
+		name = flavour_kobold_dragon_cult.1.e
+		
+		trigger = {
+			can_unlock_kobold_cult_for_color_slot_upgrade = {
+				COLOUR = brown
+				SLOT = 3
+				UPGRADE = upgraded
+				requirebasic = yes
+			}
+			NOT = { #NOTE: Placeholder until Insyaa release
+				is_year = 1600
+			}
+		}
+		custom_tooltip = upgrade_comes_from_insyaa
+		tooltip = {
+			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+				COLOUR = brown
+				SLOT = 3
+				UPGRADE = upgraded
+			}
+		}
+		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.3 } }
+	}
+
+	option = {
+		name = flavour_kobold_dragon_cult.1.e
+		
+		trigger = {
+			can_unlock_kobold_cult_for_color_slot_upgrade = {
+				COLOUR = purple
+				SLOT = 1
+				UPGRADE = upgraded
+				requirebasic = yes
+			}
+			NOT = {
+				OR = {
+					AND = {
+						has_global_flag = delete_west_serpentspine_region
+						is_year = 1600
+					}
+					far_bulwar_region = {
+						has_discovered = ROOT
+					}
+					middle_dwarovar_region = {
+						has_discovered = ROOT
+					}
+				}
+			}
+		}
+		if = {
+			limit = { has_global_flag = delete_west_serpentspine_region }
+			custom_tooltip = upgrade_comes_from_western_dwarovar
+		}
+		else = {
+			custom_tooltip = purple_dragon_upgrade_1_tt_no
+		}
+		tooltip = {
+			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+				COLOUR = purple
+				SLOT = 1
+				UPGRADE = upgraded
+			}
+		}
+		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.3 } }
+	}
+
+	option = {
+		name = flavour_kobold_dragon_cult.1.e
+		
+		trigger = {
+			can_unlock_kobold_cult_for_color_slot_upgrade = {
+				COLOUR = purple
+				SLOT = 2
+				UPGRADE = upgraded
+				requirebasic = yes
+			}
+			NOT = {
+				OR = {
+					AND = {
+						has_global_flag = delete_west_serpentspine_region
+						is_year = 1600
+					}
+					any_ally = {
+						capital_scope = {
+							OR = {
+								region = far_bulwar_region
+								region = middle_dwarovar_region
+							}
+						}
+					}
+					any_subject_country = { 
+						capital_scope = {
+							OR = {
+								region = far_bulwar_region
+								region = middle_dwarovar_region
+							}
+						}					
+					}
+					any_owned_province = {
+						OR = {
+							region = middle_dwarovar_region
+							region = far_bulwar_region
+						}
+					}
+				}
+			}
+		}
+		if = {
+			limit = { has_global_flag = delete_west_serpentspine_region }
+			custom_tooltip = upgrade_comes_from_western_dwarovar
+		}
+		else = {
+			custom_tooltip = purple_dragon_upgrade_2_tt_no
+		}
+		tooltip = {
+			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+				COLOUR = purple
+				SLOT = 2
+				UPGRADE = upgraded
+			}
+		}
+		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.3 } }
+	}
+
+	option = {
+		name = flavour_kobold_dragon_cult.1.e
+		
+		trigger = {
+			can_unlock_kobold_cult_for_color_slot_upgrade = {
+				COLOUR = purple
+				SLOT = 3
+				UPGRADE = upgraded
+				requirebasic = yes
+			}
+			NOT = {
+				OR = {
+					AND = {
+						has_global_flag = delete_west_serpentspine_region
+						is_year = 1600
+					}
+					AND = {
+						4217 = {
+							num_of_units_in_province = {
+								who = ROOT
+								amount = 40
+							}
+						}
+						OR = {
+							owns_or_subject_of = 4217
+							any_ally = {
+								owns = 4217
+							}
+						}
+					}
+				}
+			}
+		}
+		if = {
+			limit = { has_global_flag = delete_west_serpentspine_region }
+			custom_tooltip = upgrade_comes_from_western_dwarovar
+		}
+		else = {
+			custom_tooltip = purple_dragon_upgrade_3_tt_no
+		}
+		tooltip = {
+			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+				COLOUR = purple
+				SLOT = 3
+				UPGRADE = upgraded
+			}
+		}
+		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.3 } }
+	}
+
+	option = {
+		name = flavour_kobold_dragon_cult.1.e
+		trigger = {
+			can_unlock_kobold_cult_for_color_slot_upgrade = {
+				COLOUR = brass
+				SLOT = 1
+				UPGRADE = upgraded
+				requirebasic = yes
+			}
+			NOT = {
+				OR = {
+					AND = {
+						has_global_flag = delete_rahen_region
+						is_year = 1600
+					}
+					rahen_coast_region = { 
+						type = all
+						OR = {
+							has_port = no 
+							has_discovered = ROOT
+						}
+					}
+				}
+			}
+		}
+		if = {
+			limit = { has_global_flag = delete_rahen_region }
+			custom_tooltip = upgrade_comes_from_rahen
+		}
+		else = {
+			custom_tooltip = brass_dragon_upgrade_1_tt_no
+		}
+		tooltip = {
+			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+				COLOUR = brass
+				SLOT = 1
+				UPGRADE = upgraded
+			}
+		}
+		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.3 } }
+	}
+
+	option = {
+		name = flavour_kobold_dragon_cult.1.e
+		
+		trigger = {
+			can_unlock_kobold_cult_for_color_slot_upgrade = {
+				COLOUR = brass
+				SLOT = 2
+				UPGRADE = upgraded
+				requirebasic = yes
+			}
+			NOT = {
+				OR = {
+					AND = {
+						has_global_flag = delete_rahen_region
+						is_year = 1600
+					}
+					any_owned_province = {
+						continent = asia
+						OR = {
+							trade_goods = slaves
+							province_id = 4420
+						}
+					}
+				}
+			}
+		}
+		if = {
+			limit = { has_global_flag = delete_rahen_region }
+			custom_tooltip = upgrade_comes_from_rahen
+		}
+		else = {
+			custom_tooltip = brass_dragon_upgrade_2_tt_no
+		}
+		tooltip = {
+			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+				COLOUR = brass
+				SLOT = 2
+				UPGRADE = upgraded
+			}
+		}
+		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.3 } }
+	}
+
+	option = {
+		name = flavour_kobold_dragon_cult.1.e
+		
+		trigger = {
+			can_unlock_kobold_cult_for_color_slot_upgrade = {
+				COLOUR = brass
+				SLOT = 3
+				UPGRADE = upgraded
+				requirebasic = yes
+			}
+			NOT = {
+				OR = {
+					AND = {
+						has_global_flag = delete_rahen_region
+						is_year = 1600
+					}				
+					has_country_flag = Y85_won_old_order_war
+					AND = {
+						rahen_superregion = {
+							type = all
+							OR = {
+								NOT = { trade_goods = slaves }
+								has_port = no
+							}
+						}
+						phaemtuek_area = {
+							OR = {
+								NOT = { trade_goods = slaves }
+								has_port = no
+							}							
+						}
+						amkamsek_area = {
+							OR = {
+								NOT = { trade_goods = slaves }
+								has_port = no
+							}							
+						}
+						east_sarhal_superregion = {
+							OR = {
+								NOT = { trade_goods = slaves }
+								has_port = no
+							}							
+						}
+					}
+				}
+			}
+		}
+		if = {
+			limit = { has_global_flag = delete_rahen_region }
+			custom_tooltip = upgrade_comes_from_rahen
+		}
+		else_if = {
+			limit = { has_country_flag = jyntas_quest_1 }
+			custom_tooltip = brass_dragon_upgrade_3_tt_no_a
+		}
+		else_if = {
+			limit = { has_country_flag = jyntas_quest_2 }
+			custom_tooltip = brass_dragon_upgrade_3_tt_no_b
+		}
+		else = {
+			custom_tooltip = brass_dragon_upgrade_3_tt_no_c
+		}
+		tooltip = {
+			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+				COLOUR = brass
+				SLOT = 3
+				UPGRADE = upgraded
+			}
+		}
+		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.3 } }
+	}
+
+	option = {
+		name = flavour_kobold_dragon_cult.1.e
+		goto = 463
+		trigger = {
+			can_unlock_kobold_cult_for_color_slot_upgrade = {
+				COLOUR = bronze
+				SLOT = 1
+				UPGRADE = upgraded
+				requirebasic = yes
+			}
+			NOT = {
+				OR = {
+					AND = {
+						has_global_flag = delete_north_sarhal_region
+						is_year = 1600
+					}					
+					kheterata_region = {
+						type = any
+						has_discovered = ROOT
+					}
+				}
+			}
+		}
+		if = {
+			limit = { has_global_flag = delete_north_sarhal_region }
+			custom_tooltip = upgrade_comes_from_north_sarhal
+		}
+		else = {
+			custom_tooltip = bronze_dragon_upgrade_1_tt_no
+		}
+		tooltip = {
+			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+				COLOUR = bronze
+				SLOT = 1
+				UPGRADE = upgraded
+			}
+		}
+		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.3 } }
+	}
+
+	option = {
+		name = flavour_kobold_dragon_cult.1.e
+		
+		trigger = {
+			can_unlock_kobold_cult_for_color_slot_upgrade = {
+				COLOUR = bronze
+				SLOT = 2
+				UPGRADE = upgraded
+				requirebasic = yes
+			}
+			NOT = {
+				OR = {
+					AND = {
+						has_global_flag = delete_north_sarhal_region
+						is_year = 1600
+					}	
+					any_ally = {
+						religion = aakhetist
+						is_emperor_of_china = yes
+					}				
+					owns = 466
+				}
+			}
+		}
+		if = {
+			limit = { has_global_flag = delete_north_sarhal_region }
+			custom_tooltip = upgrade_comes_from_north_sarhal
+		}
+		else = {
+			custom_tooltip = bronze_dragon_upgrade_2_tt_no
+		}
+		tooltip = {
+			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+				COLOUR = bronze
+				SLOT = 2
+				UPGRADE = upgraded
+			}
+		}
+		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.3 } }
+	}
+
+	option = {
+		name = flavour_kobold_dragon_cult.1.e
+		
+		trigger = {
+			can_unlock_kobold_cult_for_color_slot_upgrade = {
+				COLOUR = bronze
+				SLOT = 3
+				UPGRADE = upgraded
+				requirebasic = yes
+			}
+			NOT = {
+				OR = {
+					AND = {
+						has_global_flag = delete_north_sarhal_region
+						is_year = 1600
+					}	
+					had_country_flag = {
+						flag = unlocked_bronze_dragon_2_upgraded
+						days = 1825
+					}
+				}
+			}
+		}
+		if = {
+			limit = { has_global_flag = delete_north_sarhal_region }
+			custom_tooltip = upgrade_comes_from_north_sarhal
+		}
+		else = {
+			custom_tooltip = bronze_dragon_upgrade_3_tt_no
+		}
+		tooltip = {
+			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+				COLOUR = bronze
+				SLOT = 3
+				UPGRADE = upgraded
+			}
+		}
+		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.3 } }
+	}
+
+	option = {
+		name = flavour_kobold_dragon_cult.1.e
+		
+		trigger = {
+			can_unlock_kobold_cult_for_color_slot_upgrade = {
+				COLOUR = silver
+				SLOT = 1
+				UPGRADE = upgraded
+				requirebasic = yes
+			}
+			NOT = {
+				silver_dragon_upgrade_trigger = {
+					AMOUNT = 2
+					castonathspecial = yes
+				}
+			}
+		}
+		custom_tooltip = silver_dragon_upgrade_1_tt_no
+		tooltip = {
+			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+				COLOUR = silver
+				SLOT = 1
+				UPGRADE = upgraded
+			}
+		}
+		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.3 } }
+	}
+
+	option = {
+		name = flavour_kobold_dragon_cult.1.e
+		
+		trigger = {
+			can_unlock_kobold_cult_for_color_slot_upgrade = {
+				COLOUR = silver
+				SLOT = 2
+				UPGRADE = upgraded
+				requirebasic = yes
+			}
+			NOT = {
+				silver_dragon_upgrade_trigger = {
+					AMOUNT = 5
+					castonathspecial = yes
+				}
+			}
+		}
+		custom_tooltip = silver_dragon_upgrade_2_tt_no
+		tooltip = {
+			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+				COLOUR = silver
+				SLOT = 2
+				UPGRADE = upgraded
+			}
+		}
+		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.3 } }
+	}
+
+	option = {
+		name = flavour_kobold_dragon_cult.1.e
+		
+
+		trigger = {
+			can_unlock_kobold_cult_for_color_slot_upgrade = {
+				COLOUR = silver
+				SLOT = 3
+				UPGRADE = upgraded
+				requirebasic = yes
+			}
+			NOT = {
+				AND = {
+					silver_dragon_upgrade_trigger = {
+						AMOUNT = 9
+					}
+					OR = {
+						owns_or_subject_of = 833
+						any_ally = { owns = 833 }
+					}
+				}
+			}
+		}
+		custom_tooltip = silver_dragon_upgrade_3_tt_no
+		tooltip = {
+			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+				COLOUR = silver
+				SLOT = 3
+				UPGRADE = upgraded
+			}
+		}
+		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.3 } }
+	}
+
+	option = {
+		name = flavour_kobold_dragon_cult.1.e
+		
+		trigger = {
+			can_unlock_kobold_cult_for_color_slot_upgrade = {
+				COLOUR = gold
+				SLOT = 1
+				UPGRADE = upgraded
+				requirebasic = yes
+			}
+			NOT = {
+				OR = {
+					AND = {
+						has_global_flag = delete_haless_region
+						is_year = 1600
+					}
+					any_known_country = {
+						capital_scope = { continent = asia }
+						fast_owns_num_pops_of_race = { race = kobold amount = 1 }
+					}
+				}
+			}
+		}
+		if = {
+			limit = { has_global_flag = delete_haless_region }
+			custom_tooltip = upgrade_comes_from_haless
+		}
+		else = {
+			custom_tooltip = gold_dragon_upgrade_1_tt_no
+		}
+		tooltip = {
+			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+				COLOUR = gold
+				SLOT = 1
+				UPGRADE = upgraded
+			}
+		}
+		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.3 } }
+	}
+
+	option = {
+		name = flavour_kobold_dragon_cult.1.e
+		
+		trigger = {
+			can_unlock_kobold_cult_for_color_slot_upgrade = {
+				COLOUR = gold
+				SLOT = 2
+				UPGRADE = upgraded
+				requirebasic = yes
+			}
+			NOT = {
+				OR = {
+					AND = {
+						has_global_flag = delete_haless_region
+						is_year = 1600
+					}
+					AND = {
+						owns_or_subject_of = 4976
+						OR = {
+							NOT = { exists = Y85 }
+							Y85 = { is_subject_of = ROOT }
+						}
+					}
+				}
+			}
+		}
+		if = {
+			limit = { has_global_flag = delete_haless_region }
+			custom_tooltip = upgrade_comes_from_haless
+		}
+		else = {
+			custom_tooltip = gold_dragon_upgrade_2_tt_no
+		}
+		tooltip = {
+			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+				COLOUR = gold
+				SLOT = 2
+				UPGRADE = upgraded
+			}
+		}
+		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.3 } }
+	}
+
+	option = {
+		name = flavour_kobold_dragon_cult.1.e
+		trigger = {
+			can_unlock_kobold_cult_for_color_slot_upgrade = {
+				COLOUR = gold
+				SLOT = 3
+				UPGRADE = upgraded
+				requirebasic = yes
+			}
+			NOT = {
+				OR = {
+					AND = {
+						has_global_flag = delete_haless_region
+						is_year = 1600
+					}
+					AND = {
+						owns_or_subject_of = 4323
+						Y85 = { is_subject_of = ROOT }
+						has_country_flag = unlocked_green_dragon_3_upgraded
+						has_country_flag = unlocked_brass_dragon_3_upgraded
+					}
+					has_country_flag = balris_begun
+				}
+				NOT = { has_country_flag = balris_begun }
+			}
+		}
+		if = {
+			limit = { has_global_flag = delete_haless_region }
+			custom_tooltip = upgrade_comes_from_haless
+		}
+		else = {
+			custom_tooltip = gold_dragon_upgrade_3_tt_no
+		}
+		tooltip = {
+			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+				COLOUR = gold
+				SLOT = 3
+				UPGRADE = upgraded
+			}
+		}
+		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.3 } }
+	}
+	option = {
+		name = flavour_kobold_dragon_cult.1.a
+		
+		add_church_power = 100
+		
+		ai_chance = {
+			factor = 0
 		}
 	}
 }
@@ -506,179 +2946,923 @@ country_event = {
 	
 	trigger = {
 		religion = kobold_dragon_cult
-		NOT = { has_global_flag = dragon_roar }
+		NOT = {
+			AND = {
+				has_global_flag = dragon_roar 
+				has_country_flag = new_hoard
+			}
+		}
 	}
 	
 	# little investment
 	option = {		
 		name = flavour_kobold_dragon_cult.2.a
 		ai_chance = { factor = 50 }	
-		trigger = { treasury = 100 }
-		add_treasury = -100
-		if = {
-			limit = { has_church_aspect = red_dragon_1 }
-			add_church_power = 20
-		}
-		else = {
-			add_church_power = 10
-		}
-		hidden_effect = { REB = { change_variable = { dragon_cult_hoard = 100 } } }
-		tooltip = { random = { chance = 10 add_stability_or_adm_power = yes } }
+		trigger = { treasury = 250 }
+		add_treasury = -250
+		tooltip = { random = { chance = 10 add_stability = 1 } }
 		set_country_flag = hoard_chance_1
-		hidden_effect = { country_event = { id = flavor_kobildzan.100 } }
-		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.4 } }
-		hidden_effect = { 189 = { upgrade_kobold_hoard = yes } }
+		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.26 } }
+		hidden_effect = {
+			kobold_hoard_increase_at_target = {
+				AMOUNT = 250
+			}
+		}
+		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.27 } }
 	}
 	
 	# Normal investment
 	option = {		
 		name = flavour_kobold_dragon_cult.2.b
 		ai_chance = { factor = 50 }	
-		trigger = { treasury = 250 }
-		add_treasury = -250
-		if = {
-			limit = { has_church_aspect = red_dragon_1 }
-			add_church_power = 50
-		}
-		else = {
-			add_church_power = 25
-		}
-		hidden_effect = { REB = { change_variable = { dragon_cult_hoard = 250 } } }
-		add_prestige = 2
-		tooltip = { random = { chance = 25 add_stability_or_adm_power = yes } }
+		trigger = { treasury = 500 }
+		add_treasury = -500
+		tooltip = { random = { chance = 25 add_stability = 1 } }
 		set_country_flag = hoard_chance_2
-		hidden_effect = { country_event = { id = flavor_kobildzan.100 } }
-		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.4 } }
-		hidden_effect = { 189 = { upgrade_kobold_hoard = yes } }
+		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.26 } }
+		hidden_effect = {
+			kobold_hoard_increase_at_target = {
+				AMOUNT = 500
+			}
+		}
+		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.27 } }
 	}
 	
 	# Big investment
 	option = {		
 		name = flavour_kobold_dragon_cult.2.c
 		ai_chance = { factor = 50 }	
-		trigger = { treasury = 500 }
-		add_treasury = -500
-		if = {
-			limit = { has_church_aspect = red_dragon_1 }
-			add_church_power = 100
-		}
-		else = {
-			add_church_power = 50
-		}
-		hidden_effect = { REB = { change_variable = { dragon_cult_hoard = 500 } } }
-		add_prestige = 5
-		tooltip = { random = { chance = 50 add_stability_or_adm_power = yes } }
+		trigger = { treasury = 1000 }
+		add_treasury = -1000
+		tooltip = { random = { chance = 50 add_stability = 1 } }
 		set_country_flag = hoard_chance_3
-		hidden_effect = { country_event = { id = flavor_kobildzan.100 } }
-		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.4 } }
-		hidden_effect = { 189 = { upgrade_kobold_hoard = yes } }
+		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.26 } }
+		hidden_effect = {
+			kobold_hoard_increase_at_target = {
+				AMOUNT = 1000
+			}
+		}
+		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.27 } }
 	}
 	
 	# Huge investment
 	option = {		
 		name = flavour_kobold_dragon_cult.2.e
 		ai_chance = { factor = 50 }	
-		trigger = { treasury = 1000 }
-		add_treasury = -1000
-		if = {
-			limit = { has_church_aspect = red_dragon_1 }
-			add_church_power = 200
-		}
-		else = {
-			add_church_power = 100
-		}
-		hidden_effect = { REB = { change_variable = { dragon_cult_hoard = 1000 } } }
-		add_prestige = 10
+		trigger = { treasury = 2000 }
+		add_treasury = -2000
 		add_stability_or_adm_power = yes
-		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.4 } }
-		hidden_effect = { 189 = { upgrade_kobold_hoard = yes } }
+		hidden_effect = {
+			kobold_hoard_increase_at_target = {
+				AMOUNT = 2000
+			}
+		}
+		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.27 } }
 	}
 	
-	# Colossal investment
+	# Enourmous investment
 	option = {		
 		name = flavour_kobold_dragon_cult.2.f
 		ai_chance = { factor = 50 }
-		trigger = { treasury = 2000 }
-		add_treasury = -2000
-		add_church_power = 200
-		hidden_effect = { REB = { change_variable = { dragon_cult_hoard = 2000 } } }
-		add_prestige = 25
+		trigger = { treasury = 4000 }
+		add_treasury = -4000
+		add_stability = 1
 		add_stability_or_adm_power = yes
-		add_stability_or_adm_power = yes
-		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.4 } }
-		hidden_effect = { 189 = { upgrade_kobold_hoard = yes } }
+		hidden_effect = {
+			kobold_hoard_increase_at_target = {
+				AMOUNT = 4000
+			}
+		}
+		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.27 } }
 	}
 	
-	option = {		
+	option = { #Colossal investment	
 		name = flavour_kobold_dragon_cult.2.g
 		ai_chance = { factor = 50 }
-		trigger = { treasury = 5000 }
-		add_treasury = -5000
-		add_church_power = 200
-		hidden_effect = { REB = { change_variable = { dragon_cult_hoard = 5300 } } }
+		trigger = { treasury = 8000 }
+		add_treasury = -8000
 		add_prestige = 50
+		add_stability = 1
+		add_stability = 1
 		add_stability_or_adm_power = yes
 		add_stability_or_adm_power = yes
-		add_stability_or_adm_power = yes
-		add_stability_or_adm_power = yes
-		add_stability_or_adm_power = yes
-		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.4 } }
-		hidden_effect = { 189 = { upgrade_kobold_hoard = yes } }
+		hidden_effect = {
+			kobold_hoard_increase_at_target = {
+				AMOUNT = 8000
+			}
+		}
+		hidden_effect = { country_event = { id = flavour_kobold_dragon_cult.27 } }
 	}
 	
 	# Go Back
 	option = {		
 		name = flavour_kobold_dragon_cult.2.h
 		ai_chance = { factor = 50 }
-		highlight = yes
 		hidden_effect = { clr_country_flag = kobold_hoard_menu }
 	}
 }
 
-# Unlock malliath
-country_event = {
+country_event = { #Hidden event for festival event menu
 	id = flavour_kobold_dragon_cult.3
 	title = flavour_kobold_dragon_cult.3.t
 	desc = flavour_kobold_dragon_cult.3.d
-	picture = KOBOLD_HOARD_eventPicture
-	
-	is_triggered_only = yes
-	
-	# Coolio
-	option = {		
-		name = flavour_kobold_dragon_cult.3.a
-		ai_chance = { factor = 50 }
-
-		add_country_modifier = {
-			name = rainbow_dragon_1
-			duration = -1
-		}
-		set_country_flag = kobold_power_of_the_rainbow
-		#unlock_kobold_dragon_cult_for_colour_and_level = {
-		#	LEVEL = 1
-		#	COLOUR = rainbow
-		#}
-	}
-}
-
-
-country_event = {
-	id = flavour_kobold_dragon_cult.4
-	title = flavour_kobold_dragon_cult.4.t
-	desc = flavour_kobold_dragon_cult.4.d
 	picture = GREAT_BUILDING_eventPicture
 	
 	is_triggered_only = yes
-	hidden = yes
-	
+
 	trigger = {
-		always = yes
+		ai = no
 	}
 	
-	# Dragon Spawn
+	hidden = yes
+	
+	option = {		
+		name = flavour_kobold_dragon_cult.3.a
+		country_event = { id = flavour_kobold_dragon_cult.1 }
+	}
+}
+
+country_event = { #Black aspect 1
+	id = flavour_kobold_dragon_cult.4
+	title = flavour_kobold_dragon_cult.4.t
+	desc = flavour_kobold_dragon_cult.4.d
+	picture = INCA_CITY_eventPicture
+	is_triggered_only = yes
+	
 	option = {		
 		name = flavour_kobold_dragon_cult.4.a
-		ai_chance = { factor = 50 }	
+		kdc_remove_aspect_1 = yes
+		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+			COLOUR = black
+			SLOT = 1
+			UPGRADE = upgraded
+		}
+	}
+}
+
+country_event = { #Black aspect 2
+	id = flavour_kobold_dragon_cult.5
+	title = flavour_kobold_dragon_cult.5.t
+	desc = flavour_kobold_dragon_cult.5.d
+	picture = INCA_CITY_eventPicture
+	is_triggered_only = yes
+	
+	option = {		
+		name = flavour_kobold_dragon_cult.5.a
+		kdc_remove_aspect_2 = yes
+		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+			COLOUR = black
+			SLOT = 2
+			UPGRADE = upgraded
+		}
+	}
+}
+
+country_event = { #Black aspect 3
+	id = flavour_kobold_dragon_cult.6
+	title = flavour_kobold_dragon_cult.6.t
+	desc = flavour_kobold_dragon_cult.6.d
+	picture = INCA_CITY_eventPicture
+	is_triggered_only = yes
+	
+	option = {		
+		name = flavour_kobold_dragon_cult.6.a
+		kdc_remove_aspect_3 = yes
+		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+			COLOUR = black
+			SLOT = 3
+			UPGRADE = upgraded
+		}
+	}
+}
+
+country_event = { #Brown aspect 1
+	id = flavour_kobold_dragon_cult.7
+	title = flavour_kobold_dragon_cult.7.t
+	desc = flavour_kobold_dragon_cult.7.d
+	picture = NANBAN_INCIDENT_eventPicture
+	is_triggered_only = yes
+	
+	option = {		
+		name = flavour_kobold_dragon_cult.7.a
+		kdc_remove_aspect_1 = yes
+		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+			COLOUR = brown
+			SLOT = 1
+			UPGRADE = upgraded
+		}
+	}
+}
+
+country_event = { #Brown aspect 2
+	id = flavour_kobold_dragon_cult.8
+	title = flavour_kobold_dragon_cult.8.t
+	desc = flavour_kobold_dragon_cult.8.d
+	picture = NANBAN_INCIDENT_eventPicture
+	is_triggered_only = yes
+	
+	option = {		
+		name = flavour_kobold_dragon_cult.8.a
+		kdc_remove_aspect_2 = yes
+		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+			COLOUR = brown
+			SLOT = 2
+			UPGRADE = upgraded
+		}
+	}
+}
+
+country_event = { #Brown aspect 3
+	id = flavour_kobold_dragon_cult.9
+	title = flavour_kobold_dragon_cult.9.t
+	desc = flavour_kobold_dragon_cult.9.d
+	picture = NANBAN_INCIDENT_eventPicture
+	is_triggered_only = yes
+	
+	option = {		
+		name = flavour_kobold_dragon_cult.9.a
+		kdc_remove_aspect_3 = yes
+		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+			COLOUR = brown
+			SLOT = 3
+			UPGRADE = upgraded
+		}
+	}
+}
+
+country_event = { #Purple aspect 1
+	id = flavour_kobold_dragon_cult.10
+	title = flavour_kobold_dragon_cult.10.t
+	desc = flavour_kobold_dragon_cult.10.d
+	picture = THE_COVENANT_eventPicture
+	is_triggered_only = yes
+	
+	option = {		
+		name = flavour_kobold_dragon_cult.10.a
+		kdc_remove_aspect_1 = yes
+		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+			COLOUR = purple
+			SLOT = 1
+			UPGRADE = upgraded
+		}
+	}
+}
+
+country_event = { #Purple aspect 2
+	id = flavour_kobold_dragon_cult.11
+	title = flavour_kobold_dragon_cult.11.t
+	desc = flavour_kobold_dragon_cult.11.d
+	picture = indiangfx_OVEREXTENSION_eventPicture
+	is_triggered_only = yes
+	
+	option = {		
+		name = flavour_kobold_dragon_cult.11.a
+		kdc_remove_aspect_2 = yes
+		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+			COLOUR = purple
+			SLOT = 2
+			UPGRADE = upgraded
+		}
+	}
+}
+
+country_event = { #Purple aspect 3
+	id = flavour_kobold_dragon_cult.12
+	title = flavour_kobold_dragon_cult.12.t
+	desc = flavour_kobold_dragon_cult.12.d
+	picture = TRAILS_BASILISK_eventPicture
+	is_triggered_only = yes
+	
+	option = {		
+		name = flavour_kobold_dragon_cult.12.a
+		kdc_remove_aspect_3 = yes
+		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+			COLOUR = purple
+			SLOT = 3
+			UPGRADE = upgraded
+		}
+		4217 = {
+			kill_units = {
+				who = ROOT
+				amount = 10
+			}
+		}
+	}
+}
+
+country_event = { #Brass aspect 1
+	id = flavour_kobold_dragon_cult.13
+	title = flavour_kobold_dragon_cult.13.t
+	desc = flavour_kobold_dragon_cult.13.d
+	picture = TOLLS_SHIP_CARGO_eventPicture
+	is_triggered_only = yes
+	
+	option = {		
+		name = flavour_kobold_dragon_cult.13.a
+		kdc_remove_aspect_1 = yes
+		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+			COLOUR = brass
+			SLOT = 1
+			UPGRADE = upgraded
+		}
+		add_permanent_claim = 4420
+		asia = {
+			limit = {
+				has_port = yes
+				trade_goods = slaves
+			}
+			add_claim = ROOT
+		}	
+	}
+}
+
+country_event = { #Brass aspect 2
+	id = flavour_kobold_dragon_cult.14
+	title = flavour_kobold_dragon_cult.14.t
+	desc = flavour_kobold_dragon_cult.14.d
+	picture = TOLLS_SHIP_CARGO_eventPicture
+	is_triggered_only = yes
+	
+	option = {		
+		name = flavour_kobold_dragon_cult.14.a
+		trigger = {
+			R62 = {
+				exists = yes
+				total_development = 400
+			}
+		}
+		kdc_remove_aspect_2 = yes
+		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+			COLOUR = brass
+			SLOT = 2
+			UPGRADE = upgraded
+		}
+		hidden_effect = { set_country_flag = Y85_old_order_cb_flag }
+		add_casus_belli = {
+			type = cb_old_order
+			target = R62
+			months = 2400
+		}
+		hidden_effect = { set_country_flag = jyntas_quest_1 }
+		add_country_modifier = {
+			name = the_abolish_slavery_act
+			duration = -1
+		}
+	}
+	option = {		
+		name = flavour_kobold_dragon_cult.14.b
+		kdc_remove_aspect_2 = yes
+		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+			COLOUR = brass
+			SLOT = 2
+			UPGRADE = upgraded
+		}
+		add_country_modifier = {
+			name = the_abolish_slavery_act
+			duration = -1
+		}
+		custom_tooltip = jyntas_quest_2_tt 
+		hidden_effect = {
+			east_sarhal_superregion = {
+				limit = {
+					has_port = yes
+					trade_goods = slaves
+				}
+				add_claim = ROOT
+			}	
+			asia = {
+				limit = {
+					has_port = yes
+					trade_goods = slaves
+				}
+				add_claim = ROOT
+			}	
+			set_country_flag = jyntas_quest_2
+		}
+	}	
+}
+
+country_event = { #Brass aspect 3
+	id = flavour_kobold_dragon_cult.15
+	title = flavour_kobold_dragon_cult.15.t
+	desc = flavour_kobold_dragon_cult.15.d
+	picture = TOLLS_SHIP_CARGO_eventPicture
+	is_triggered_only = yes
+	
+	option = {		
+		name = flavour_kobold_dragon_cult.15.a
+		kdc_remove_aspect_3 = yes
+		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+			COLOUR = brass
+			SLOT = 3
+			UPGRADE = upgraded
+		}
+	}
+}
+
+country_event = { #Bronze aspect 1
+	id = flavour_kobold_dragon_cult.16
+	title = flavour_kobold_dragon_cult.16.t
+	desc = {
+		trigger = {
+			event_target:EmperorOfChina = { religion = aakhetist }
+		}
+		desc = flavour_kobold_dragon_cult.16.desc1
+	}
+	desc = {
+		trigger = {
+			any_known_country = { is_emperor_of_china = yes }
+			event_target:EmperorOfChina = {
+				NOT = { religion = aakhetist }
+				has_estate = estate_ahati
+			}	
+			NOT = { has_global_flag = ahati_disaster_began }
+		}
+		desc = flavour_kobold_dragon_cult.16.desc2
+	}
+	desc = {
+		trigger = {
+			NOT = {
+				OR = {
+					event_target:EmperorOfChina = { religion = aakhetist }
+					AND = {
+						any_known_country = { is_emperor_of_china = yes }
+						event_target:EmperorOfChina = {
+							NOT = { religion = aakhetist }
+							has_estate = estate_ahati
+						}	
+						NOT = { has_global_flag = ahati_disaster_began }
+					}
+				}
+			}
+		}
+		desc = flavour_kobold_dragon_cult.16.desc3
+	}	
+	picture = NAVAL_MILITARY_eventPicture
+	is_triggered_only = yes
+	
+	option = {		
+		name = flavour_kobold_dragon_cult.16.a
+		trigger = {
+			event_target:EmperorOfChina = { religion = aakhetist }	
+		}
+		kdc_remove_aspect_1 = yes
+		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+			COLOUR = bronze
+			SLOT = 1
+			UPGRADE = upgraded
+		}
+		add_years_of_income = -1
+		event_target:EmperorOfChina = {
+			add_historical_friend = ROOT
+			ROOT = {
+				add_historical_friend = PREV
+			}
+			dragon_coast_region = {
+				discover_country = PREV
+			}
+		}
+	}
+	option = {		
+		name = flavour_kobold_dragon_cult.16.b
+		trigger = {
+			any_known_country = { is_emperor_of_china = yes }
+			event_target:EmperorOfChina = {
+				NOT = { religion = aakhetist }
+				has_estate = estate_ahati
+			}	
+			NOT = { has_global_flag = ahati_disaster_began }
+		}
+		kdc_remove_aspect_1 = yes
+		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+			COLOUR = bronze
+			SLOT = 1
+			UPGRADE = upgraded
+		}
+		add_years_of_income = -1
+		event_target:EmperorOfChina = {
+			country_event = { id = ahati_events.34 days = 30 }
+			country_event = { id = ahati_events.35 days = 60 }
+			country_event = { id = ahati_events.36 days = 90 }
+		}
+		set_country_flag = kobolds_helping_bronzies
+	}
+	option = {		
+		name = flavour_kobold_dragon_cult.16.c
+		kdc_remove_aspect_1 = yes
+		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+			COLOUR = bronze
+			SLOT = 1
+			UPGRADE = upgraded
+		}
+		add_permanent_claim = 466
+	}
+}
+
+country_event = { #Bronze aspect 2
+	id = flavour_kobold_dragon_cult.17
+	title = flavour_kobold_dragon_cult.17.t
+	desc = flavour_kobold_dragon_cult.17.d
+	picture = indiangfx_CITY_VIEW_eventPicture
+	is_triggered_only = yes
+	
+	option = {		
+		name = flavour_kobold_dragon_cult.17.a
+		kdc_remove_aspect_2 = yes
+		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+			COLOUR = bronze
+			SLOT = 2
+			UPGRADE = upgraded
+		}
+	}
+}
+
+country_event = { #Bronze aspect 3
+	id = flavour_kobold_dragon_cult.18
+	title = flavour_kobold_dragon_cult.18.t
+	desc = flavour_kobold_dragon_cult.18.d
+	picture = indiangfx_CITY_VIEW_eventPicture
+	is_triggered_only = yes
+
+	option = {		
+		name = flavour_kobold_dragon_cult.18.a
+		custom_tooltip = risk_half_of_hoard_tt
+		country_event = { id = aakhetist.31 }
+	}
+	option = {		
+		name = flavour_kobold_dragon_cult.18.b
+		kdc_remove_aspect_3 = yes
+		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+			COLOUR = bronze
+			SLOT = 3
+			UPGRADE = upgraded
+		}
+		custom_tooltip = lose_fourth_of_hoard_tt
+		hidden_effect = {
+			hidden_effect = {
+				if = {
+					limit = { has_country_flag = new_hoard }
+					187 = { 
+						multiply_variable = {
+							which = dragon_cult_hoard
+							value = 0.75
+						}
+						upgrade_kobold_hoard = yes
+					}
+				}
+				else = {
+					189 = { 
+						multiply_variable = {
+							which = dragon_cult_hoard
+							value = 0.75
+						}
+						upgrade_kobold_hoard = yes
+					}
+				}
+			} 
+		}
+	}
+}
+
+country_event = { #Silver aspect 1
+	id = flavour_kobold_dragon_cult.19
+	title = flavour_kobold_dragon_cult.19.t
+	desc = flavour_kobold_dragon_cult.19.d
+	picture = PRIEST_PHANTOM_eventPicture
+	is_triggered_only = yes
+	
+	option = {		
+		name = flavour_kobold_dragon_cult.19.a
+		kdc_remove_aspect_1 = yes
+		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+			COLOUR = silver
+			SLOT = 1
+			UPGRADE = upgraded
+		}
+	}
+}
+
+country_event = { #Silver aspect 2
+	id = flavour_kobold_dragon_cult.20
+	title = flavour_kobold_dragon_cult.20.t
+	desc = flavour_kobold_dragon_cult.20.d
+	picture = PROTESTANT_CATHOLIC_DEBATE_eventPicture
+	is_triggered_only = yes
+	
+	option = {		
+		name = flavour_kobold_dragon_cult.20.a
+		kdc_remove_aspect_2 = yes
+		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+			COLOUR = silver
+			SLOT = 2
+			UPGRADE = upgraded
+		}
+	}
+}
+
+country_event = { #Silver aspect 3
+	id = flavour_kobold_dragon_cult.21
+	title = flavour_kobold_dragon_cult.21.t
+	desc = {
+		trigger = {
+			AND = {
+				has_country_flag = blue_dragon_3_upgraded
+				has_country_flag = copper_dragon_3_upgraded
+			}
+		}
+		desc = flavour_kobold_dragon_cult.21.desc1
+	}
+	desc = {
+		trigger = {
+			NOT = {
+				AND = {
+					has_country_flag = unlocked_blue_dragon_3_upgraded
+					has_country_flag = unlocked_copper_dragon_3_upgraded
+				}
+			}
+		}
+		desc = flavour_kobold_dragon_cult.21.desc2
+	}
+	picture = PRAYER_IN_MOSQUE_eventPicture
+	is_triggered_only = yes
+	
+	option = {		
+		name = flavour_kobold_dragon_cult.21.a
+		kdc_remove_aspect_3 = yes
+		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+			COLOUR = silver
+			SLOT = 3
+			UPGRADE = upgraded
+		}
+	}
+}
+
+country_event = { #Gold aspect 1
+	id = flavour_kobold_dragon_cult.22
+	title = flavour_kobold_dragon_cult.22.t
+	desc = flavour_kobold_dragon_cult.22.d
+	picture = muslimgfx_TRADEGOODS_eventPicture
+	is_triggered_only = yes
+	
+	option = {		
+		name = flavour_kobold_dragon_cult.22.a
+		kdc_remove_aspect_1 = yes
+		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+			COLOUR = gold
+			SLOT = 1
+			UPGRADE = upgraded
+		}
+		add_permanent_claim = 4871
+		add_permanent_claim = 4879
+		add_permanent_claim = 4976
+	}
+}
+
+country_event = { #Gold aspect 2
+	id = flavour_kobold_dragon_cult.23
+	title = flavour_kobold_dragon_cult.23.t
+	desc = flavour_kobold_dragon_cult.23.d
+	picture = muslimgfx_UNIVERSITY_eventPicture
+	is_triggered_only = yes
+	
+	option = {		
+		name = flavour_kobold_dragon_cult.23.a
+		kdc_remove_aspect_2 = yes
+		unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+			COLOUR = gold
+			SLOT = 2
+			UPGRADE = upgraded
+		}
+		4976 = { add_core = Y85 }
+		if = {
+			limit = { NOT = { exists = Y85 } }
+			release_with_religion_and_culture = { tag = Y85 religion = accretive_path culture = goldscale_kobold }
+		}
+		hidden_effect = {
+			Y85 = {
+				change_government = monarchy
+				add_government_reform = autocracy_reform
+			}
+		}
+		create_subject = {
+			subject_type = twin_empire
+			subject = Y85
+		}
+		Y85 = { add_historical_friend = ROOT }
+		ROOT = { add_historical_friend = Y85 }
+		hidden_effect = {
+			every_subject_country = {
+				subject_ascension_effect = yes
+			}
+		}
+		add_permanent_claim = 4323
+	}
+}
+
+country_event = { #Gold aspect 3
+	id = flavour_kobold_dragon_cult.24
+	title = flavour_kobold_dragon_cult.24.t
+	desc = flavour_kobold_dragon_cult.24.d
+	picture = STRELTSY_MARCHING_eventPicture
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			set_country_flag = balris_begun
+		}
+	}
+
+	option = {		
+		name = flavour_kobold_dragon_cult.24.a
+		if = {
+			limit = {
+				NOT = {
+					any_known_country = { #making sure there's no weirdness with 2 balris searches
+						OR = {
+							has_country_flag = Y85_balris_found
+							has_country_modifier = Y85_fledgeling_expedition
+							has_country_modifier = Y85_70_mile_long_expedition
+							has_country_modifier = Y85_150_mile_long_expedition
+							has_country_modifier = Y85_250_mile_long_expedition
+						}
+					}
+				}
+			}
+			add_country_modifier = {
+				name = Y85_fledgeling_expedition
+				duration = -1
+			}
+			country_event = { id = flavour_balrijin.19 days = 365 }
+		}
+		else = { #bypass if balris has already been found
+			kdc_remove_aspect_3 = yes
+			unlock_kobold_dragon_cult_for_colour_slot_upgrade = {
+				COLOUR = gold
+				SLOT = 3
+				UPGRADE = upgraded
+			}
+		}
+	}
+}
+
+country_event = { #Notified about Ahati disaster
+	id = flavour_kobold_dragon_cult.25
+	title = flavour_kobold_dragon_cult.25.t
+	desc = {
+		trigger = {
+			has_global_flag = ahati_rebellion_succeeded
+		}
+		desc = flavour_kobold_dragon_cult.25.desc_1
+	}
+	desc = {
+		trigger = {
+			NOT = { has_global_flag = ahati_rebellion_succeeded }
+		}
+		desc = flavour_kobold_dragon_cult.25.desc_2
+	}
+	picture = indiangfx_CITY_VIEW_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {		
+		name = flavour_kobold_dragon_cult.25.a
+		trigger = { NOT = { has_global_flag = ahati_rebellion_succeeded } }
+		add_prestige = -5
+		add_permanent_claim = 466
+	}
+	option = {		
+		name = flavour_kobold_dragon_cult.25.b
+		trigger = { has_global_flag = ahati_rebellion_succeeded } 
+		U04 = {
+			add_historical_friend = ROOT 
+			dragon_coast_region = {
+				discover_country = PREV
+			}
+		}
+		ROOT = {
+			add_historical_friend = U04
+	 	}
+	}
+}
+
+#Stability gain for hoard
+country_event = {
+	id = flavour_kobold_dragon_cult.26
+	title = flavour_kobold_dragon_cult.26.t
+	desc = flavour_kobold_dragon_cult.26.d
+	picture = GREAT_BUILDING_eventPicture
+	
+	hidden = yes
+	is_triggered_only = yes
+	
+	after = {
+		clr_country_flag = hoard_chance_1
+		clr_country_flag = hoard_chance_2
+		clr_country_flag = hoard_chance_3
+		clr_country_flag = hoard_chance_4
+	}
+	
+	option = {		
+		name = flavour_kobold_dragon_cult.26.a
+		trigger = {
+			has_country_flag = hoard_chance_1
+		}
+		ai_chance = {
+			factor = 10
+		}
+		
+		add_stability = 1
+	}
+	
+	option = {		
+		name = flavour_kobold_dragon_cult.26.a
+		trigger = {
+			has_country_flag = hoard_chance_1
+		}
+		ai_chance = {
+			factor = 90
+		}
+	}
+	
+	option = {		
+		name = flavour_kobold_dragon_cult.26.a
+		trigger = {
+			has_country_flag = hoard_chance_2
+		}
+		ai_chance = {
+			factor = 25
+		}
+		
+		add_stability = 1
+	}
+	
+	option = {		
+		name = flavour_kobold_dragon_cult.26.a
+		trigger = {
+			has_country_flag = hoard_chance_2
+		}
+		ai_chance = {
+			factor = 75
+		}
+	}
+	
+	option = {		
+		name = flavour_kobold_dragon_cult.26.a
+		trigger = {
+			has_country_flag = hoard_chance_3
+		}
+		ai_chance = {
+			factor = 50
+		}
+		
+		add_stability = 1
+	}
+	
+	option = {		
+		name = flavour_kobold_dragon_cult.26.a
+		trigger = {
+			has_country_flag = hoard_chance_3
+		}
+		ai_chance = {
+			factor = 50
+		}
+	}
+	
+	option = {		
+		name = flavour_kobold_dragon_cult.26.a
+		trigger = {
+			has_country_flag = hoard_chance_4
+		}
+		ai_chance = {
+			factor = 75
+		}
+		
+		add_stability_or_adm_power = yes
+	}
+	
+	option = {		
+		name = flavour_kobold_dragon_cult.26.a
+		trigger = {
+			has_country_flag = hoard_chance_4
+		}
+		ai_chance = {
+			factor = 25
+		}
+	}
+}
+
+country_event = { #Hidden event for hoard event menu
+	id = flavour_kobold_dragon_cult.27
+	title = flavour_kobold_dragon_cult.27.t
+	desc = flavour_kobold_dragon_cult.27.d
+	picture = GREAT_BUILDING_eventPicture
+	
+	is_triggered_only = yes
+	
+	hidden = yes
+	
+	option = {		
+		name = flavour_kobold_dragon_cult.27.a
 		country_event = { id = flavour_kobold_dragon_cult.2 }
 	}
 }

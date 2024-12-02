@@ -686,6 +686,7 @@ estate_nobles = {
 		estate_nobility_forgotten_city # Karshyr
 		estate_nobility_besieged_heart # Rhada
 		estate_noble_monopoly_of_fuel #Karakhanbar MT
+		estate_nobles_ironblood_officer_corp #Gophira
 
 		#Mutation Privileges
 		estate_nobility_boaga_mutation
@@ -700,6 +701,7 @@ estate_nobles = {
 		estate_nobility_covenblad_broken_chain
 
 		estate_nobility_nzeri_standard_bearers #duwarkani
+		estate_nobles_mengi_partners #Vandipha
 	}
 
 	agendas = {
@@ -731,6 +733,10 @@ estate_nobles = {
 		estate_nobles_improve_prestige
 		estate_nobles_hire_advisor
 		estate_nobles_fire_advisor
+		estate_nobles_wyvernheart_invest_in_burblood_production #Wyvernheart
+		estate_nobles_wyvernheart_procure_burnblood_candidates #Wyvernheart
+		estate_nobles_wyvernheart_choose_avenue_of_expansion #Wyvernheart
+		estate_nobles_wyvernheart_remove_corrupt_overseer #Wyvernheart
 		#1.36
 		#estate_nobles_mam_three_privileges 
 		#estate_nobles_mam_recruit_mamluks 

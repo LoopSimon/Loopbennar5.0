@@ -184,7 +184,10 @@ B83 = "countries/Gerwick.txt"
 B84 = "countries/Westmounts.txt"
 B85 = "countries/Varlosen.txt"
 B86 = "countries/Havorton.txt"
+B92 = "countries/Esmaryan Temple.txt"
+B93 = "countries/Ildumar.txt"
 B94 = "countries/Milcorissia.txt"
+B95 = "countries/Uanced.txt"
 
 F21 = "countries/Birsartanses.txt"
 F22 = "countries/Dartaxagerdim.txt"
@@ -261,6 +264,7 @@ F93 = "countries/Arrtukerr.txt"
 F94 = "countries/Zhavekal.txt"
 F95 = "countries/Iskurthid.txt"
 F96 = "countries/Xhurekal.txt"
+F97 = "countries/Bastard Empire.txt"
 F99 = "countries/Jadd Civil War.txt"
 
 G00 = "countries/Ameion Civil War.txt" #Nakyra
@@ -1007,8 +1011,9 @@ U39 = "countries/Orenvalyam.txt"
 U40 = "countries/Drisleak.txt"
 U41 = "countries/Ghrannblath.txt"
 U42 = "countries/Urdea Samrad.txt"
-U43 = "countries/Saraeddun.txt"
-
+U43 = "countries/Seraeddun.txt"
+U44 = "countries/Snecdath.txt"
+U45 = "countries/Daraela.txt"
 U48 = "countries/Cataboek.txt"
 
 U52 = "countries/Endralliande.txt"
@@ -1022,6 +1027,9 @@ U67 = "countries/Daughters of the Hills.txt"
 U68 = "countries/Kiohalen.txt"
 U69 = "countries/Sarda.txt"
 U70 = "countries/Dolindha.txt"
+U71 = "countries/Rzenta.txt"
+
+U76 = "countries/Horizona.txt"
 
 V01 = "countries/Oinukhudi.txt"
 V02 = "countries/Dolontugiin.txt"
@@ -1042,6 +1050,7 @@ V16 = "countries/Samisalik Bolki.txt"
 V17 = "countries/Nirenun Syul.txt"
 V18 = "countries/Samthalsu.txt"
 V19 = "countries/Yanszin.txt"
+V20 = "countries/Zoherin Apunsorya.txt"
 
 V99 = "countries/Kimni Solenh.txt"
 

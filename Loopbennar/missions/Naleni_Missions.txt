@@ -17,10 +17,16 @@ Naleni_branch_one = {
 		trigger = {
 			owns_core_province = 5529
 			5529 = {
-				has_production_building_trigger = yes
+				OR = {
+					has_production_building_trigger = yes
+					trade_goods = gold
+				}
 				has_tax_building_trigger = yes
 				culture = metobesebi
-				province_has_center_of_trade_of_level = 2
+				OR = {
+					province_has_center_of_trade_of_level = 2
+					province_has_center_of_trade_of_level = 3
+				}
 			}
 			treasury = 200
 		}
@@ -78,9 +84,9 @@ Naleni_branch_two = {
 				}
 				AND = {
 					L57 = { exists = NO } 
-					adm_power = 300
-					dip_power = 300
-					mil_power = 300
+					adm_power = 150
+					dip_power = 150
+					mil_power = 150
 				}
 			}
 		}
@@ -130,15 +136,27 @@ Naleni_branch_two = {
 		}
 		provinces_to_highlight = {
 			OR = {
-				area = emot_nepas_area
-				area = riyiwedeb_area
-			}
-			OR = {
 				AND = {
-					culture = ofehibi
-					NOT = { has_building = temple } 
+					OR = {
+						area = emot_nepas_area
+						area = riyiwedeb_area
+					}
+					OR = {
+						AND = {
+							culture = ofehibi
+							NOT = { has_tax_building_trigger = yes } 
+						}
+						NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+					}
 				}
-				NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+				AND = {
+					superregion = east_sarhal_superregion
+					owned_by = ROOT
+					culture = ofehibi
+					NOT = {
+						has_tax_building_trigger = yes
+					}
+				}
 			}
 		}
 
@@ -221,7 +239,10 @@ Naleni_branch_two = {
 			owns_core_province = 5505
 			owns_core_province = 5504
 			5446 = {
-				culture = metobesebi
+				OR = {
+					culture = metobesebi
+					has_province_modifier = harpy_roost
+				}
 				has_tax_building_trigger = yes
 			}
 			5505 = {
@@ -231,6 +252,9 @@ Naleni_branch_two = {
 			5504 = {
 				culture = metobesebi
 				has_tax_building_trigger = yes
+			}
+			custom_trigger_tooltip = {
+				tooltip = along_the_coast_ttt
 			}
 		}
 
@@ -247,10 +271,7 @@ Naleni_branch_two = {
 							area = beri_gnidi_area
 						}
 						NOT = {
-							OR = {
-								culture = naleni_harpy
-								religion = the_hunt
-							}
+							culture = naleni_harpy
 						}
 					}
 					change_culture = metobesebi
@@ -327,14 +348,15 @@ Naleni_branch_three = {
 			ascension_cape_area = {
 				type = ALL
 				OR = {
-					is_looted = yes
+					has_province_modifier = slaves_raided
+					has_building = naval_battery
 					country_or_non_sovereign_subject_holds = ROOT
 				}
 			}
 		}
 
 		effect = {
-			add_prestige = 25
+			add_prestige = 15
 			berihrica_area = { add_nationalism = -5 } 
 			5520 = { add_nationalism = -5 } 
 			5530 = { add_nationalism = -5 } 
@@ -430,10 +452,14 @@ Naleni_branch_three = {
 		provinces_to_highlight = {  } 
 
 		trigger = {
-			OR = {
-				has_country_flag = removing_monstrous
-				NOT = { has_country_modifier = monstrous_nation } 
-			}
+			
+				OR = {
+					custom_trigger_tooltip = {
+                        tooltip = L55_not_monster
+                        has_country_flag = removing_monstrous
+                    }
+					NOT = { has_country_modifier = monstrous_nation } 
+				}
 		}
 		
 		effect = { 
@@ -462,7 +488,7 @@ Naleni_branch_four = {
 			}
 			capital_scope = { has_building = temple } 
 			OR = {
-				navy_tradition = 30
+				navy_tradition = 25
 				dip_power = 100
 			}
 		}
@@ -549,7 +575,7 @@ Naleni_branch_four = {
 			6592 = {
 				NOT = { culture = roaming_harimari } 
 				NOT = { religion = high_philosophy } 
-				has_building = dock
+				has_dock_building_trigger = yes
 				num_of_times_improved_by_owner = 2
 			}
 		}
@@ -576,7 +602,7 @@ Naleni_branch_four = {
 		required_missions = { repurpose_the_slave_port } 
 		provinces_to_highlight = {
 			region = rahen_coast_region
-			NOT = { is_looted = yes } 
+			NOT = { has_province_modifier = slaves_raided } 
 			has_port = yes
 			NOT = { owned_by = ROOT } 
 		}
@@ -588,8 +614,9 @@ Naleni_branch_four = {
 				type = all
 				OR = {
 					owned_by = L55
-					is_looted = yes
+					has_province_modifier = slaves_raided
 					has_port = no
+					has_building = naval_battery
 				}
 			}
 		}
@@ -732,15 +759,15 @@ naleni_branch_one_p2 = {
 				5529 = { num_of_times_expanded_infrastructure = 2 } 
 			}
 			else = {
-				adm_power = 200
-				dip_power = 200
-				mil_power = 200
+				adm_power = 25
+				dip_power = 25
+				mil_power = 25
 			}
 			if = {
 				limit = { NOT = { has_dlc = "Cradle of Civilization" }  } 
-				adm_power = 100
-				dip_power = 100
-				mil_power = 100
+				adm_power = 50
+				dip_power = 50
+				mil_power = 50
 			}
 			else = { has_adm_advisor_4 = yes } 
 		}
@@ -828,7 +855,7 @@ naleni_branch_two_p2 = {
 		effect = {
 			add_country_modifier = {
 				name = "L55_remaking_madrimilak"
-				duration = 36500
+				duration = 18250
 			}
 			every_owned_province = {
 				limit = {
@@ -851,7 +878,7 @@ naleni_branch_two_p2 = {
 			AND = {
 				region = telekenid_region
 				OR = {
-					NOT = { has_building = courthouse } 
+					NOT = { has_courthouse_building_trigger = yes } 
 					NOT = { has_building = temple } 
 					NOT = { culture = metobesebi } 
 					NOT = { culture = naleni_harpy } 
@@ -866,7 +893,7 @@ naleni_branch_two_p2 = {
 					culture = metobesebi
 					culture = naleni_harpy
 				}
-				has_building = courthouse
+				has_courthouse_building_trigger = yes
 				has_tax_building_trigger = yes
 			}
 		}
@@ -900,7 +927,7 @@ naleni_branch_two_p2 = {
 			6118 = {
 				development = 30
 				has_tax_building_trigger = yes
-				has_building = courthouse
+				has_courthouse_building_trigger = yes
 				has_province_modifier = harpy_roost
 				has_great_project = {
 					type = crater_of_the_martyr
@@ -959,8 +986,8 @@ naleni_branch_three_p2 = {
 			has_province_modifier = L55_raiding_port
 			NOT = {
 				AND = {
-					has_building = dock
-					has_building = shipyard
+					has_dock_building_trigger = yes
+					has_shipyard_building_trigger = yes
 				}
 			}
 		}
@@ -972,8 +999,8 @@ naleni_branch_three_p2 = {
 					OR = {
 						AND = {
 							has_province_modifier = L55_raiding_port
-							has_building = dock
-							has_building = shipyard
+							has_dock_building_trigger = yes
+							has_shipyard_building_trigger = yes
 						}
 						NOT = { has_province_modifier = L55_raiding_port } 
 					}
@@ -988,10 +1015,13 @@ naleni_branch_three_p2 = {
 		}
 
 		effect = {
+			hidden_effect = {
+				remove_country_modifier = L55_on_wing_and_wave
+			}
 			6061 = { add_permanent_claim = ROOT } 
 			5581 = { add_permanent_claim = ROOT } 
 			add_country_modifier = {
-				name = "L55_on_wing_and_wave"
+				name = L55_on_wing_and_wave
 				duration = -1
 			}
 			decrease_monstrous_10 = yes
@@ -1017,7 +1047,7 @@ naleni_branch_three_p2 = {
 			stability = 2
 			NOT = { has_country_modifier = monstrous_nation } 
 			capital_scope = {
-				has_building = courthouse
+				has_courthouse_building_trigger = yes
 				development = 40
 			}
 		}
@@ -1091,23 +1121,26 @@ naleni_branch_three_p2 = {
 		}
 
 		effect = {
+			custom_tooltip = across_the_gulf_tt
 			add_country_modifier = {
 				name = "L55_rahens_riches"
-				duration = 36500
+				duration = 18250
 			}
-			every_known_country = {
-				limit = {
-					capital_scope = {
-						OR = {
-							superregion = east_sarhal_superregion
-							superregion = rahen_superregion
+			hidden_effect = {
+				every_known_country = {
+					limit = {
+						capital_scope = {
+							OR = {
+								superregion = east_sarhal_superregion
+								superregion = rahen_superregion
+							}
 						}
 					}
-				}
-				add_aggressive_expansion = {
-					who = ROOT
-					value = -25
-					apply_calc = yes
+					add_aggressive_expansion = {
+						who = ROOT
+						value = -25
+						apply_calc = yes
+					}
 				}
 			}
 		}
@@ -1130,7 +1163,7 @@ naleni_branch_three_p2 = {
 			}
 			if = {
 				limit = { NOT = { has_dlc = "Cradle of Civilization" }  } 
-				mil_power = 300
+				mil_power = 100
 			}
 			else = { has_mil_advisor_4 = yes } 
 			sailors = 50000
@@ -1186,7 +1219,7 @@ naleni_branch_three_p2 = {
 			1347 = { is_strongest_trade_power = L55 } 
 			1343 = { is_strongest_trade_power = L55 } 
 			1366 = { is_strongest_trade_power = L55 } 
-			monthly_trade_income = 80
+			monthly_trade_income = 160
 		}
 
 		effect = { country_event = { id = naleni.18 }  } 
@@ -1204,6 +1237,10 @@ naleni_branch_three_p2 = {
 		trigger = {
 			is_hegemon_of_type = naval_hegemon
 			num_of_marines = 100
+			OR = {
+				in_golden_age = yes
+				has_had_golden_age = yes
+			}
 		}
 
 		effect = {
@@ -1276,7 +1313,7 @@ naleni_branch_four_p2 = {
 					region = ishyamtumu_region
 					region = lupulan_rainforest_region
 				}
-				NOT = { is_looted = yes } 
+				NOT = { has_province_modifier = slaves_raided } 
 				NOT = { owned_by = ROOT } 
 				has_port = yes
 			}
@@ -1287,43 +1324,43 @@ naleni_branch_four_p2 = {
 				owned_by = ROOT
 				is_core = ROOT
 				has_building = impressment_offices
-				has_building = dock
+				has_dock_building_trigger = yes
 			}
 			6061 = {
 				owned_by = ROOT
 				is_core = ROOT
 				has_building = impressment_offices
-				has_building = dock
+				has_dock_building_trigger = yes
 			}
 			bamaliwuni_region = {
 				type = all
 				OR = {
-					owned_by = L55
-					is_looted = yes
+					country_or_non_sovereign_subject_holds = ROOT
+					has_province_modifier = slaves_raided
 					has_port = no
 				}
 			}
 			thidinkai_region = {
 				type = all
 				OR = {
-					owned_by = L55
-					is_looted = yes
+					country_or_non_sovereign_subject_holds = ROOT
+					has_province_modifier = slaves_raided
 					has_port = no
 				}
 			}
 			ishyamtumu_region = {
 				type = all
 				OR = {
-					owned_by = L55
-					is_looted = yes
+					country_or_non_sovereign_subject_holds = ROOT
+					has_province_modifier = slaves_raided
 					has_port = no
 				}
 			}
 			lupulan_rainforest_region = {
 				type = all
 				OR = {
-					owned_by = L55
-					is_looted = yes
+					country_or_non_sovereign_subject_holds = ROOT
+					has_province_modifier = slaves_raided
 					has_port = no
 				}
 			}
@@ -1333,7 +1370,7 @@ naleni_branch_four_p2 = {
 			6040 = {
 				add_permanent_claim = ROOT
 			}
-			4847 = {
+			4837 = {
 				add_permanent_claim = ROOT
 			}
 			6674 = {
@@ -1356,7 +1393,7 @@ naleni_branch_four_p2 = {
 			}
 			add_country_modifier = {
 				name = "L55_astride_the_continents"
-				duration = 36500
+				duration = 18250
 			}
 		}
 	}
@@ -1446,9 +1483,9 @@ naleni_branch_four_p2 = {
 		provinces_to_highlight = {
 			province_id = 6181
 			OR = {
-				NOT = { has_building = courthouse } 
-				NOT = { has_building = dock } 
-				NOT = { has_building = shipyard } 
+				NOT = { has_courthouse_building_trigger = yes } 
+				NOT = { has_dock_building_trigger = yes } 
+				NOT = { has_shipyard_building_trigger = yes } 
 				NOT = { has_building = temple } 
 				NOT = { has_province_modifier = harpy_roost } 
 				NOT = { owned_by = L55 } 
@@ -1460,9 +1497,9 @@ naleni_branch_four_p2 = {
 
 		trigger = {
 			6181 = {
-				has_building = courthouse
-				has_building = dock
-				has_building = shipyard
+				has_courthouse_building_trigger = yes
+				has_dock_building_trigger = yes
+				has_shipyard_building_trigger = yes
 				has_tax_building_trigger = yes
 				has_province_modifier = harpy_roost
 				owned_by = L55
