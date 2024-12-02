@@ -1,5 +1,8 @@
 
 # No previous file for Ilheus
+owner = B23
+controller = B23
+add_core = B23
 culture = green_orc
 religion = great_dookan
 
@@ -20,3 +23,5 @@ is_city = yes
 native_size = 34
 native_ferocity = 8
 native_hostileness = 8
+
+set_province_flag = escann_wine_province

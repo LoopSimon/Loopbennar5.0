@@ -8,7 +8,6 @@ religion = winter_court
 capital = ""
 fort_15th = yes
 add_claim = H16
-add_core = U44
 
 hre = no
 

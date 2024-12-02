@@ -1,6 +1,5 @@
-owner = Y09
-controller = Y09
-add_core = Y09
+owner = Z59
+controller = Z59
 add_core = Z59
 culture = jiangszun
 religion = high_philosophy

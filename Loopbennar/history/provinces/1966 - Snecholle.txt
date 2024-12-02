@@ -7,7 +7,6 @@ culture = snecboth
 religion = autumn_court
 capital = ""
 add_claim = H16
-add_core = U44
 
 hre = no
 
