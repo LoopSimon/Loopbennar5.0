@@ -1,0 +1,144 @@
+country_decisions = {
+	warsforyou = {
+		potential= {
+			has_country_modifier = nowarsforyou
+			AI = no
+		}
+		effect = {
+			remove_country_modifier = nowarsforyou
+		}
+	}	
+
+
+	important_advisor_events = {
+		major = yes
+		potential = {
+			ai = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+		allow = {
+			always = no
+			custom_trigger_tooltip = {
+				tooltip = ArmyReformer
+				NOT = { has_country_flag = military_reforms }
+			}
+			custom_trigger_tooltip = {
+				tooltip = RadicalReforms
+				NOT = { has_country_flag = radical_mercantilist_reforms }
+			}
+			custom_trigger_tooltip = {
+				tooltip = Captain
+				NOT = { has_country_flag = grand_captain }
+			}
+			custom_trigger_tooltip = {
+				tooltip = Commandant
+				NOT = { has_country_flag = commandant }
+			}
+		}
+		effect = {
+		}
+	}
+	portal = {
+		major = yes
+		potential = {
+			capital_scope = { superregion = deepwoods_superregion }
+			NOT = { has_country_flag = portal_opener }
+		}
+		provinces_to_highlight = {
+			superregion = deepwoods_superregion
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			NOT = {
+				ROOT = { 
+					num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+						value = 30
+						superregion = deepwoods_superregion
+					}
+				}
+			}
+		}
+		allow = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 99
+				superregion = deepwoods_superregion
+			}
+			dip_tech = 16
+			dip_power = 200
+		}
+		trigger = {
+			dip_power = 200
+			dip_tech = 16
+		}
+		
+		effect = {
+			custom_tooltip = to_another_forest_tooltip
+			add_dip_power = -200
+			hidden_effect = { country_event = { id = cyranvar.7 days = 10 } }
+			hidden_effect = { set_country_flag = portal_opener }
+		}
+	}
+	add_all_provinces_to_seats = {
+        color = { 166  0  0 }
+		potential = {
+			ai = no 
+			has_parliament = yes
+		}
+		allow = {
+			ai = no 
+			NOT = {
+				all_owned_province = { has_seat_in_parliament = yes }
+			}
+		}
+		effect = {
+			if = {
+				limit = {any_owned_province = { development = 40 has_seat_in_parliament = no }}
+				custom_tooltip = add_all_40_development_provinces_parliament_seats_tt
+				hidden_effect = {
+					every_owned_province = {
+						limit = { development = 40 has_seat_in_parliament = no }
+						set_seat_in_parliament = yes
+					}
+				}
+			}
+			else_if = {
+				limit = {any_owned_province = { development = 30 has_seat_in_parliament = no }}
+				custom_tooltip = add_all_30_development_provinces_parliament_seats_tt
+				hidden_effect = {
+					every_owned_province = {
+						limit = { development = 30 has_seat_in_parliament = no }
+						set_seat_in_parliament = yes
+					}
+				}
+			}
+			else_if = {
+				limit = {any_owned_province = { development = 20 has_seat_in_parliament = no }}
+				custom_tooltip = add_all_20_development_provinces_parliament_seats_tt
+				hidden_effect = {
+					every_owned_province = {
+						limit = { development = 20 has_seat_in_parliament = no }
+						set_seat_in_parliament = yes
+					}
+				}
+			}
+			else = {
+				custom_tooltip = add_all_provinces_parliament_seats_tt
+				hidden_effect = {
+					every_owned_province = {
+						limit = { has_seat_in_parliament = no }
+						set_seat_in_parliament = yes
+					}
+				}
+			}
+			hidden_effect = {
+				every_owned_province = {
+					limit = { has_seat_in_parliament = yes }
+					add_pop_modifier = {race = all class = parliament amount = 25percent resource = tax onbase = base_tax}
+					add_pop_modifier = {race = all class = parliament amount = 25percent resource = goods_produced onbase = base_production}
+					add_pop_modifier = {race = all class = parliament amount = 20percent resource = manpower onbase = base_manpower}
+				}
+			}
+		}
+		ai_will_do = {factor = 1}
+	}
+}
