@@ -964,46 +964,6 @@ country_event = {
 	}
 	
 	option = {
-		name = magic_project_homunculus.7.p
-		ai_chance = {
-			factor = 50
-			modifier = {
-				factor = 2
-				personality = ai_militarist
-			}
-		}
-		trigger = {
-			NOT = { 
-				has_country_flag = employs_mil_homunculus
-			}
-		}
-		add_country_modifier = { name = army_reformer_homunculus duration = -1 }
-		set_country_flag = employs_mil_homunculus
-		magic_project_clear_homunculus_flags = yes
-	}
-	
-	option = {
-		name = magic_project_homunculus.7.q
-		ai_chance = {
-			factor = 50
-			modifier = {
-				factor = 2
-				personality = ai_militarist
-			}
-		}
-		trigger = {
-			NOT = { 
-				has_country_flag = employs_mil_homunculus
-			}
-		}
-		
-		add_country_modifier = { name = commandant_homunculus duration = -1 }
-		set_country_flag = employs_mil_homunculus
-		
-		magic_project_clear_homunculus_flags = yes
-	}
-	
-	option = {
 		name = magic_project_homunculus.7.r
 		ai_chance = {
 			factor = 50
