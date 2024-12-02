@@ -463,8 +463,8 @@ halfling_military = {
 
 	#Positives
 	land_forcelimit_modifier = 0.1
-	manpower_recovery_speed = 0.1
-	sailors_recovery_speed = 0.1
+	manpower_recovery_speed = 0.15
+	sailors_recovery_speed = 0.15
 	fire_damage = 0.05
 	morale_damage_received = -0.1
 	global_supply_limit_modifier = 0.2
