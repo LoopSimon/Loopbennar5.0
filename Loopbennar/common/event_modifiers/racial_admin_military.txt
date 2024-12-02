@@ -341,12 +341,12 @@ goblin_military = {
 	#1 + 1 + 0.75 + 0.75 + 0.75 + 0.75 + 1 + 0.5 = 6.5
 
 	#Negatives
-	morale_damage_received = 0.1		#-.5 A / cowardly goblins
+	morale_damage_received = 0.05		#-.5 A / cowardly goblins
 	fire_damage_received = 0.1			#-1 B / their own cheap explosives damage themselves, particularly when set off by enemy explosives
 	#Short people set
 	galley_power = -0.2					#you need long legs for galleys... and, well..
 	cavalry_cost = 0.2				#-2 B / standard small person cav malus
-	shock_damage_received = 0.1			#-1 B
+	shock_damage_received = 0.05			#-1 B
 	
 	#0.5 + 1 + 2 + 1 = 4.5
 	
