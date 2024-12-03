@@ -1,16 +1,16 @@
-owner = Y46
-controller = Y46
-add_core = Y46
-culture = szitu
+owner = Y40
+controller = Y40
+add_core = Y40
+culture = teplin
 religion = accretive_path
 #73
 hre = no
 
-base_tax = 4
-base_production = 4
+base_tax = 2
+base_production = 2
 base_manpower = 3
 
-trade_goods = damestear
+trade_goods = iron
 
 capital = ""
 
