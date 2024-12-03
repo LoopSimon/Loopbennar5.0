@@ -31,7 +31,6 @@ kobold_traps_lvl_4 = {
 	local_fort_maintenance_modifier = -0.5
 	local_defensiveness = 0.6
 	local_hostile_attrition = 2
-	local_defender_dice_roll_bonus = 1
 	province_trade_power_value = 5
 	local_governing_cost_increase = 10
 }
@@ -65,7 +64,6 @@ modified_kobold_traps_lvl_4 = {
 	trade_value_modifier = 0.2
 	province_trade_power_value = 10
 	local_defensiveness = 0.2
-	local_defender_dice_roll_bonus = 1
 	local_governing_cost_increase = 10
 }
 
