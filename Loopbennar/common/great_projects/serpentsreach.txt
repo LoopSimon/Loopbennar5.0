@@ -342,12 +342,6 @@ ovdal_lodhum_tunnel_of_love = {
 		}
 		on_upgraded = {
 			add_center_of_trade_level = 1
-			owner = {
-				add_country_modifier = {
-					name = ovdal_lodhum_tunnel_of_love_colonizing_the_serpentspine
-					duration = 7300
-				}
-			}
 		}
 	}
 	tier_2 = {
@@ -477,7 +471,6 @@ arg_ordstun_great_clast_shafts = {
 		}
 		country_modifiers = {
 			production_efficiency = 0.025
-			development_cost_in_primary_culture = -0.025
 		}
 		on_upgraded = {
 		}
