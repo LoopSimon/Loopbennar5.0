@@ -1479,7 +1479,6 @@ stone_palace = {
 		province_modifiers = {
 			local_defensiveness = 0.33
 			local_garrison_size = 1
-			local_defender_dice_roll_bonus = 1
 		}
 		area_modifier = {
 		}

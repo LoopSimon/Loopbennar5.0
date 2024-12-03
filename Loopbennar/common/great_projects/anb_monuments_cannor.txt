@@ -150,7 +150,6 @@ bal_dostan = {
 		province_modifiers = {
 			local_defensiveness = 0.5
 			local_hostile_attrition = 1
-			local_defender_dice_roll_bonus = 1
 			fort_level = 1
 		}
 		area_modifier = {
@@ -320,7 +319,6 @@ bal_vroren = {
 		province_modifiers = {
 			local_defensiveness = 0.5
 			local_garrison_size = 0.5
-			local_defender_dice_roll_bonus = 1
 			fort_level = 1
 		}
 		area_modifier = {
@@ -802,7 +800,6 @@ bal_hyl = {
 		}
 		province_modifiers = {
 			local_defensiveness = 0.33
-			local_defender_dice_roll_bonus = 1
 			fort_level = 1
 		}
 		area_modifier = {

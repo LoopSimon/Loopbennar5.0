@@ -917,7 +917,6 @@ khugdihr_bank = {
 		province_modifiers = {
 			local_defensiveness = 0.33
 			local_hostile_attrition = 1
-			local_defender_dice_roll_bonus = 1
 		}
 		area_modifier = {			
 		}
@@ -1054,7 +1053,6 @@ orlazam_food_silos = {
 		province_modifiers = {
 			local_defensiveness = 0.33
 			local_hostile_attrition = 1
-			local_defender_dice_roll_bonus = 1
 		}
 		area_modifier = {
 		}
@@ -1327,7 +1325,6 @@ vazhatun_observatory = {
 		province_modifiers = {
 			local_defensiveness = 0.33
 			local_hostile_attrition = 1
-			local_defender_dice_roll_bonus = 1
 			local_institution_spread = 0.5
 		}
 		area_modifier = {
@@ -1598,7 +1595,6 @@ jorkad_aqueduct = {
 		province_modifiers = {
 			local_defensiveness = 0.33
 			local_hostile_attrition = 1
-			local_defender_dice_roll_bonus = 1
 		}
 		area_modifier = {		
 		}
