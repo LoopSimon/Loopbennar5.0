@@ -848,7 +848,7 @@ xia_onexia_1 = {
 		position = 6
 		
 		provinces_to_highlight = {
-            province_id = 4811
+            province_id = 4793
 			OR = {
 				NOT = { owned_by = ROOT }
 				NOT = { is_core = ROOT }
@@ -862,7 +862,7 @@ xia_onexia_1 = {
 			}
 			#NOT = { dynasty = "of the Order of Keepers" }
 			NOT = { dynasty = "- Keepers Order" }
-			4811 = {
+			4793 = {
 				owned_by = ROOT
 				is_core = ROOT
 			}
@@ -921,7 +921,7 @@ xia_onexia_1 = {
 		required_missions = { }
 		
 		provinces_to_highlight = {
-            province_id = 4811
+            province_id = 4793
 			OR = {
 				NOT = { has_production_building_trigger = yes }
 				NOT = { num_of_times_improved_by_owner = 10 }
@@ -929,7 +929,7 @@ xia_onexia_1 = {
         }
 		
 		trigger = {
-			4811 = {
+			4793 = {
 				has_production_building_trigger = yes
 				num_of_times_improved_by_owner = 5
 			}
@@ -938,7 +938,7 @@ xia_onexia_1 = {
 		
 		effect = {
 			add_mil_power = -100
-			4811 = {
+			4793 = {
 				add_permanent_province_modifier = {
 					name = xia_expanded_mines
 					duration = -1
@@ -955,7 +955,7 @@ xia_onexia_1 = {
 		position = 10
 		
 		provinces_to_highlight = {
-            province_id = 4811
+            province_id = 4793
 			OR = {
 				NOT = { has_trade_building_trigger = yes }
 				NOT = { development = 30 }
@@ -964,7 +964,7 @@ xia_onexia_1 = {
         }
 		
 		trigger = {
-			4811 = {
+			4793 = {
 				has_trade_building_trigger = yes
 				development = 30
 				is_prosperous = yes
@@ -974,10 +974,10 @@ xia_onexia_1 = {
 		
 		effect = {
 			add_dip_power = -100
-			4811 = {
+			4793 = {
 				center_of_trade = 1
 			}
-			4811 = {
+			4793 = {
 				add_permanent_province_modifier = {
 					name = xia_sparkling_market
 					duration = -1
