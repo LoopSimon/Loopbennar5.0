@@ -7443,7 +7443,6 @@ blackmail_nobility_reform = {
 		#maratha_exclusive_influence_modifier = -0.1
 		#rajput_exclusive_influence_modifier = -0.1
 		uppercastes_influence_modifier = -0.1 #Anbennar
-		allow_free_estate_privilege_revocation = yes
 	}
 	custom_attributes = {
 		seizing_land_no_rebels_from_estate_nobles = yes
