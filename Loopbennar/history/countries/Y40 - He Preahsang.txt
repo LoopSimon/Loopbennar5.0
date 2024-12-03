@@ -6,7 +6,7 @@ government_rank = 1
 primary_culture = teplin
 religion = accretive_path
 technology_group = tech_halessi
-capital = 4793
+capital = 4811
 
 1000.1.1 = { set_estate_privilege = estate_mages_organization_religious }
 
