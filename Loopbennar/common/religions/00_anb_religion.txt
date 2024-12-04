@@ -3133,7 +3133,7 @@ bulwari = {
 		allowed_conversion = {
 		}
 		country = {
-			land_morale = 0.5
+			land_morale = 0.05
 			global_unrest = -2
 			recover_army_morale_speed = 0.10
 		}
@@ -3170,7 +3170,7 @@ bulwari = {
 		allowed_conversion = {
 		}
 		country = {
-			land_morale = 0.5
+			land_morale = 0.05
 			garrison_size = 0.4
 			tolerance_own = 2
 		}
