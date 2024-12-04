@@ -13707,7 +13707,7 @@ country_event = {
 				NOT = { mil = 1 }
 			}
 			define_ruler_to_general = {
-				fire = 1
+				fire = 2
 				shock = 4
 				manuever = 0
 				siege = 1
@@ -13720,7 +13720,7 @@ country_event = {
 				NOT = { mil = 2 }
 			}
 			define_ruler_to_general = {
-				fire = 1
+				fire = 2
 				shock = 4
 				manuever = 0
 				siege = 2
@@ -13759,7 +13759,7 @@ country_event = {
 				NOT = { mil = 5 }
 			}
 			define_ruler_to_general = {
-				fire = 2
+				fire = 3
 				shock = 7
 				manuever = 2
 				siege = 4
@@ -13773,7 +13773,7 @@ country_event = {
 			}
 			define_ruler_to_general = {
 				fire = 3
-				shock = 8
+				shock = 7
 				manuever = 3
 				siege = 4
 				trait = war_wizard_personality
@@ -13784,9 +13784,9 @@ country_event = {
 				mil = 6
 			}
 			define_ruler_to_general = {
-				fire = 3
+				fire = 4
 				shock = 8
-				manuever = 5
+				manuever = 4
 				siege = 5
 				trait = war_wizard_personality
 			}
