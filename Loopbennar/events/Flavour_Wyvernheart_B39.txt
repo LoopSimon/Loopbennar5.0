@@ -2009,9 +2009,9 @@ country_event = {#Tyrant's Fall
 		add_ruler_personality = mage_personality
 		define_ruler_to_general = {
 			fire = 4
-			shock = 11
+			shock = 8
 			manuever = 4
-			siege = 7
+			siege = 4
 			trait = war_wizard_personality
 		}
 		set_ruler_flag = evocation_1
