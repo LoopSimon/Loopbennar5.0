@@ -2701,6 +2701,16 @@ I90_happy_ogre = {
 	yearly_decay =1
 }
 
+#averilibet 
+S53_more_enlightened_ruler = {
+	opinion = 100
+	yearly_decay = -5
+}
+
+S53_ceremonial_marriage = {
+	opinion = 25
+}
+
 B47_elven_diplomat = {
 	opinion = 50
 	yearly_decay = 1
@@ -2856,4 +2866,15 @@ L62_selling_to_powerful = {
 L62_offer_rejected = {
 	opinion = -25
 	yearly_decay = 1
+}
+
+heeds_deity_advice = {
+	opinion = 25
+	yearly_decay = 2.5
+}
+
+#averilibet 
+S53_more_enlightened_ruler ={
+	opinion = 100
+	yearly_decay = -5
 }

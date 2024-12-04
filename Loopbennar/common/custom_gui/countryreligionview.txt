@@ -85,13 +85,30 @@ custom_button = {
     trigger = {
     	if = {
     		limit = { religion = regent_court }
-    		custom_trigger_tooltip = {
-				tooltip = swap_deity_tt_2
-				OR = {
-					NOT = { has_country_flag = regent_court_deity_switch_cooldown }
-					had_country_flag = {
-						flag = regent_court_deity_switch_cooldown
-						days = 3500
+			if = {
+				limit = {
+					has_government_attribute = follower_of_many_gods
+				}
+				custom_trigger_tooltip = {
+					tooltip = swap_deity_tt_3
+					OR = {
+						NOT = { has_country_flag = regent_court_deity_switch_cooldown }
+						had_country_flag = {
+							flag = regent_court_deity_switch_cooldown
+							days = 1750
+						}
+					}
+				}
+			}
+			else = {
+				custom_trigger_tooltip = {
+					tooltip = swap_deity_tt_2
+					OR = {
+						NOT = { has_country_flag = regent_court_deity_switch_cooldown }
+						had_country_flag = {
+							flag = regent_court_deity_switch_cooldown
+							days = 3500
+						}
 					}
 				}
 			}
