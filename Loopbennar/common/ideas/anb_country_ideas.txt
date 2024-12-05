@@ -665,6 +665,7 @@ A20_ideas = {
 	start = {
 		garrison_size = 0.2
 		num_accepted_cultures = 2
+		tolerance_heathen = 4
 	}
 	bonus = {
 		global_manpower_modifier = 0.15
@@ -683,7 +684,7 @@ A20_ideas = {
 		production_efficiency = 0.1
 	}
 	A20_dwarves_of_lencenor = {
-		tolerance_heathen = 2
+		num_accepted_cultures = 2
 	}
 	A20_lencori_plan = {
 		spy_offence = 0.1
@@ -694,8 +695,7 @@ A20_ideas = {
 		free_policy = 1
 	}
 	A20_ruby_and_silver = {
-		diplomats = 1
-		diplomatic_reputation = 1
+		discipline = 0.05
 	}
 	A20_rose_party_siege_corp = {
 		leader_siege = 1
