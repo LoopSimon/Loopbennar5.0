@@ -31789,7 +31789,7 @@ gushuokguan_guardians_of_the_stone_state = {
 }
 
 gushuokguan_home_of_the_stone_army = {
-	advisor_cost = -0.1
+	prestige_decay = 0.1
 }
 
 gushuokguan_brothers_in_freedom = {

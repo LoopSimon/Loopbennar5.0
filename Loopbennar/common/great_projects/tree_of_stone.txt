@@ -256,7 +256,7 @@ ovdal_kanzad_cannon_foundry = {
 					trait = goal_oriented_personality
 					fire = 1
 					shock = 1
-					manuever = 10
+					manuever = 8
 					siege = 1
 				}
 			}

@@ -2011,7 +2011,7 @@ country_event = {#Tyrant's Fall
 			fire = 4
 			shock = 8
 			manuever = 4
-			siege = 4
+			siege = 7
 			trait = war_wizard_personality
 		}
 		set_ruler_flag = evocation_1
