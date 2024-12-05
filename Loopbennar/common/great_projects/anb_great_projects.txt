@@ -4773,7 +4773,6 @@ warmrock_bazar = {
 		country_modifiers = {
 			caravan_power = 0.2
 			trade_efficiency = 0.1
-			merchants = 1
 		}
 
 		on_upgraded = {
