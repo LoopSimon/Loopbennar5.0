@@ -107,7 +107,7 @@ harpy_roost = {
 	trigger = {
 		OR = {
 					fort_level = 1
-					building = courthouse
+					has_courthouse_building_trigger = yes
 			}
 		culture_group = harpy
 		controller = {
