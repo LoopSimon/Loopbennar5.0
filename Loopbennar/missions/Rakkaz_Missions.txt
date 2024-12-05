@@ -230,7 +230,6 @@ F71_2_part1 = {
 			OR = {
 				AND = {
 					OR = {
-						area = mattabo_area
 						area = shena_muhaqaar_area
 					}
 					NOT = {
@@ -263,11 +262,6 @@ F71_2_part1 = {
 		}
 
 		trigger = {
-			mattabo_area = {
-				type = all
-				owned_by = ROOT
-				is_core = ROOT
-			}
 			shena_muhaqaar_area = {
 				type = all
 				owned_by = ROOT

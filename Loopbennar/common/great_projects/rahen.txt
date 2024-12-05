@@ -10,8 +10,8 @@ temple_mindanan = {
 	move_days_per_unit_distance = 1
 	starting_tier = 2
 	type = monument
-	build_trigger = {	
-	}
+		build_trigger = {	
+		}
 	on_built = {		
 	}
 	on_destroyed = {	

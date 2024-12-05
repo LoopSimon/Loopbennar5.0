@@ -472,7 +472,6 @@ bal_vertesk = {
 		province_modifiers = {
 			local_defensiveness = 0.33
 			local_garrison_size = 0.33
-			local_defender_dice_roll_bonus = 1
 		}
 		area_modifier = {
 		}
@@ -968,7 +967,6 @@ bal_mire = {
 		province_modifiers = {
 			local_defensiveness = 0.5
 			local_hostile_attrition = 1
-			local_defender_dice_roll_bonus = 1
 			fort_level = 1
 		}
 		area_modifier = {
@@ -1126,7 +1124,6 @@ the_north_citadel = {
 		province_modifiers = {
 			local_defensiveness = 0.33
 			local_hostile_attrition = 1
-			local_defender_dice_roll_bonus = 1
 		}
 		area_modifier = {
 		}
@@ -1367,7 +1364,6 @@ escandar = {
 		province_modifiers = {
 			local_defensiveness = 0.5
 			local_hostile_attrition = 1
-			local_defender_dice_roll_bonus = 1
 			fort_level = 1
 		}
 		area_modifier = {
@@ -1485,7 +1481,6 @@ calascandar = {
 		province_modifiers = {
 			local_defensiveness = 0.5
 			local_hostile_attrition = 1
-			local_defender_dice_roll_bonus = 1
 			fort_level = 1
 		}
 		area_modifier = {
