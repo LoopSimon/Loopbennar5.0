@@ -20,7 +20,6 @@ temple_mindanan = {
 		AND = {
 			OR = {
 				religion = high_philosophy
-				religion = suhans_praxis
 			}
 			has_owner_religion = yes
 			custom_trigger_tooltip = {

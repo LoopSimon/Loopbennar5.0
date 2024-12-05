@@ -302,7 +302,7 @@ chien_binhrung_nha_nuhoanha_temple = {
 		AND = {
 			has_owner_religion = yes
 			OR = {
-				religion = righteous_path
+				religion = accretive_path
 				religion = mystic_accord
 			}
 			custom_trigger_tooltip = {
@@ -323,7 +323,7 @@ chien_binhrung_nha_nuhoanha_temple = {
 		AND = {
 			has_owner_religion = yes
 			OR = {
-				religion = righteous_path
+				religion = accretive_path
 				religion = mystic_accord
 			}
 			custom_trigger_tooltip = {
