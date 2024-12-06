@@ -89,6 +89,7 @@ nimscodd_academy = {
 		country_modifiers = {
 			innovativeness_gain = 0.1
 			artificers_loyalty_modifier = 0.025
+			allowed_rajput_fraction = 0.025
 		}
 		on_upgraded = {
 			owner = {
@@ -114,6 +115,7 @@ nimscodd_academy = {
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.2
+			allowed_rajput_fraction = 0.05
 			artificers_loyalty_modifier = 0.05
 			artificers_influence_modifier = 0.025
 		}
@@ -141,11 +143,22 @@ nimscodd_academy = {
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.33
+			allowed_rajput_fraction = 0.1
 			artificers_loyalty_modifier = 0.1
 			artificers_influence_modifier = 0.05
 		}
 		on_upgraded = {
 			center_of_trade = 1
+			owner = {
+				if = {
+					limit = {
+						NOT = { has_country_flag = artificery_unlocked }
+					}
+					country_event = {
+						id = magic_artificery_setup.1
+						days = 1
+					}
+				}
 				add_estate_loyalty = {
 					estate = estate_artificers
 					loyalty = 15
@@ -398,6 +411,11 @@ kobildzan_kobildzex_guild_of_trapsmiths = {
 		}
 		country_modifiers = {	
 		}
+		on_upgraded = {
+			owner = {
+				
+			}
+		}
 	}
 	tier_3 = {
 		upgrade_time = {
@@ -418,6 +436,11 @@ kobildzan_kobildzex_guild_of_trapsmiths = {
 			local_defensiveness = 0.2
 		}
 		country_modifiers = {	
+		}
+		on_upgraded = {
+			owner = (
+				
+			}
 		}
 	}
 }
