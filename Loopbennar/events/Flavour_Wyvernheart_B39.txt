@@ -168,62 +168,6 @@ country_event = {#Rumours of Power A7
 		increase_witch_king_points_large = yes
 	}
 	option = {
-		name = "flavour_wyvernheart.101.b"
-		ai_chance = { factor = 1 }
-		trigger = {
-			NOT = { religion = infernal_court }
-		}
-		change_religion = infernal_court
-		add_stability = -2
-		add_country_modifier = {
-			name = wyvernheart_khizriel_leads_the_way
-			duration = 3650
-		}
-		227 = {
-			change_trade_goods = gems
-			add_province_modifier = {
-				name = wyvernheart_infernal_bleed
-				duration = -1
-			}
-			add_province_modifier = {
-				name = wyvernheart_burnblood_spawning_pool
-				duration = -1
-			}
-			custom_tooltip = wyvernheart_E5_3_effect_tt
-			hidden_effect = {
-				for = {
-					amount = 20
-					effect = "
-						if = {
-							limit = {
-								any_owned_province = {
-									has_orcish_minority_trigger = yes
-								}
-							}
-							random_owned_province = {
-								limit = {
-									has_orcish_minority_trigger = yes
-								}
-								remove_orcish_minority_size_effect = yes
-							}
-						}
-						else = {
-							add_treasury = -25
-							216 = { owner = { add_treasury = 25 } }
-						}
-					"
-				}
-			}
-		}
-
-		
-		large_decrease_of_half_orcish_tolerance_effect = yes
-		large_decrease_of_orcish_tolerance_effect = yes
-		large_decrease_of_goblin_tolerance_effect = yes
-
-		increase_witch_king_points_large = yes
-	}
-	option = {
 		name = "flavour_wyvernheart.101.c"
 		ai_chance = { factor = 1 }
 		trigger = {
