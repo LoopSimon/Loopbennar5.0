@@ -385,7 +385,7 @@ er_natvir_railyard = {
 					trait = goal_oriented_personality
 					fire = 1
 					shock = 1
-					manuever = 8
+					manuever = 10
 					siege = 1
 				}
 			}

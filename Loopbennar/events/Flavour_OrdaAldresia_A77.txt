@@ -1142,9 +1142,9 @@ country_event = { #The Umbral King
 				mil = 6
 			}
 			define_ruler_to_general = {
-				fire = 8
-				shock = 8
-				manuever = 8
+				fire = 9
+				shock = 11
+				manuever = 9
 				siege = 4
 			}
 			hidden_effect = {

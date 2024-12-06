@@ -855,7 +855,7 @@ country_event = {
 			Y05 = {
 				4871 = { blue_scarves_army_large = yes }
 				define_general = {
-					shock = 8
+					shock = 10
 					fire = 4
 					manuever = 4
 					siege = 6
@@ -963,7 +963,7 @@ country_event = {
 		}
 		Y05 = {
 			define_general = {
-				shock = 8
+				shock = 9
 				fire = 2
 				manuever = 5
 				siege = 4

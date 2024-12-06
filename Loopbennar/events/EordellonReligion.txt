@@ -983,7 +983,7 @@ country_event = {
 			random_list = {
 				50 = {
 					define_general = {
-						shock = 8
+						shock = 10
 						fire = 3
 						manuever = 4
 						siege = 2
@@ -993,7 +993,7 @@ country_event = {
 				}
 				50 = {
 					define_general = {
-						shock = 8
+						shock = 10
 						fire = 3
 						manuever = 4
 						siege = 2
