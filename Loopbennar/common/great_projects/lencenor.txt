@@ -150,7 +150,7 @@ lorentaine_mage_academy = {
 		
 	}
 }
-New Adea Naval School (Lorent)
+#New Adea Naval School (Lorent)
 lorent_new_adea_naval_school = {
 	start = 82
 	date = 01.01.01
