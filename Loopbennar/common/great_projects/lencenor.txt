@@ -169,11 +169,17 @@ lorent_new_adea_naval_school = {
 	on_destroyed = {	
 	}
 	can_use_modifiers_trigger = {
+		development = 25
 		AND = {
 			has_owner_religion = yes
 			religion = regent_court
 			custom_trigger_tooltip = {
 				tooltip = cannorian_monuments_can_use_tooltip_lencenor
+					OR = {
+						culture_group = lencori
+						culture = moon_elf
+						culture = castanorian
+					}
 			}
 			province_is_or_accepts_culture = yes
 		}
