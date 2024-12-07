@@ -164,6 +164,12 @@ country_event = {
 			}
 		}
 	}
+	option = {
+		name = flavor_kumarkand.5.b
+		add_prestige = 1
+		ai_chance = { factor = 1 }
+	
+	}
 }
 
 country_event = {
@@ -187,6 +193,12 @@ country_event = {
 				value = 1
 			}
 		}
+	}
+	option = {
+		name = flavor_kumarkand.6.b
+		add_prestige = 1
+		ai_chance = { factor = 1 }
+	
 	}
 }
 
