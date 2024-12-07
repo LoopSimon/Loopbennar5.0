@@ -239,9 +239,9 @@ country_event = {
 		hidden_effect = {
 			define_general = { # 60 army tradition war wizard
 				fire = 2
-				shock = 9
+				shock = 4
 				manuever = 2
-				siege = 5
+				siege = 4
 				trait = war_wizard_personality
 				name = "Ser Laurens síl Place"
 			}

@@ -3029,9 +3029,9 @@ country_event = {
 			}
 			define_general = {
 				fire = 1
-				shock = 7
+				shock = 5
 				manuever = 0
-				siege = 2
+				siege = 3
 				trait = war_wizard_personality
 				name = F30_sarraka_war_wizard
 			}
@@ -3047,7 +3047,7 @@ country_event = {
 			}
 			define_general = {
 				fire = 2
-				shock = 8
+				shock = 6
 				manuever = 1
 				siege = 4
 				trait = war_wizard_personality
@@ -3065,9 +3065,9 @@ country_event = {
 			}
 			define_general = {
 				fire = 3
-				shock = 8
+				shock = 7
 				manuever = 3
-				siege = 6
+				siege = 5
 				trait = war_wizard_personality
 				name = F30_sarraka_war_wizard
 			}
