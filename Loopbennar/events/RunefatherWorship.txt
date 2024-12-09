@@ -1063,6 +1063,8 @@ country_event = {
 		capital_scope = { continent = serpentspine }
 		total_development = 200
 		NOT = { religion = runefather_worship }
+		NOT = { has_country_modifier = goblin_administration }
+		NOT = { has_country_modifier = orcish_administration }
 		NOT = { has_country_flag = had_runefather_calls_event }
 		NOT = { has_country_flag = dwarven_pantheon_in_rediscovery }
 	}
