@@ -113,6 +113,7 @@ giberd_academy_of_engineering = {
 		area_modifier = {
 		}
 		region_modifier = {
+			local_development_cost = -0.025
 		}
 		country_modifiers = {
 			build_cost = -0.05
@@ -139,6 +140,7 @@ giberd_academy_of_engineering = {
 		area_modifier = {
 		}
 		region_modifier = {
+			local_development_cost = -0.05
 		}
 		country_modifiers = {
 			build_cost = -0.1
@@ -146,11 +148,8 @@ giberd_academy_of_engineering = {
 		}
 		on_upgraded = {
 			add_base_production = 4
-			owner = {
-				change_innovativeness = 3
-				}
-			}
 			center_of_trade = 1
+			add_building = university
 		}
 	}
 }
@@ -242,7 +241,7 @@ telgeir_vanbury_steel_foundry = {
 		area_modifier = {
 		}
 		country_modifiers = {
-			infantry_fire = 0.03
+			infantry_fire = 0.05
 		}
 		on_upgraded = {
 			add_base_production = 2
@@ -262,7 +261,7 @@ telgeir_vanbury_steel_foundry = {
 		area_modifier = {
 		}
 		country_modifiers = {
-			infantry_fire = 0.06
+			infantry_fire = 0.07
 		}
 		on_upgraded = {
 			add_base_production = 2
