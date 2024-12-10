@@ -1334,8 +1334,15 @@ vazhatun_observatory = {
 			dip_tech_cost_modifier = -0.1
 		}
 		on_upgraded = {
-			owner = { 
-				change_innovativeness = 3
+			owner = {
+				define_general = {
+					name = "Judas"
+					trait = defensive_planner_personality
+					fire = 0
+					shock = 6
+					manuever = 6
+					siege = 0
+				}
 			}
 		}
 	}

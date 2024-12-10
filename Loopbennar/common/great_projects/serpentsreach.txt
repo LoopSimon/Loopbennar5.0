@@ -257,6 +257,18 @@ verkal_skomdihr_warding_gate = {
 		country_modifiers = {
 			infantry_fire = 0.1
 		}
+		on_upgraded = {
+			owner = {
+				define_general = {
+					name = "Salmon"
+					trait = goal_oriented_personality
+					fire = 1
+					shock = 1
+					manuever = 10
+					siege = 1
+				}
+			}
+		}
 	}
 }
 #The Tunnel of Love (Ovdal Lodhum)
@@ -520,7 +532,7 @@ arg_ordstun_great_clast_shafts = {
 		region_modifier = {
 		}
 		country_modifiers = {
-			production_efficiency = 0.15
+			production_efficiency = 0.1
 		}
 		
 	}

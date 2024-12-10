@@ -484,9 +484,13 @@ bal_vertesk = {
 		on_upgraded = {
 			add_base_production = 3
 			owner = {
-				add_estate_loyalty = {
-					estate = estate_burghers
-					loyalty = 15
+				define_general = {
+					name = "Luky"
+					trait = cruel_tactician_personality
+					fire = 4
+					shock = 3
+					manuever = 2
+					siege = 1
 				}
 			}
 			remove_province_modifier = A23_black_tower_renovations

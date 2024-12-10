@@ -500,6 +500,16 @@ minara_temple = {
 			ae_impact = -0.025
 		}
 		on_upgraded = {
+			owner = {
+				define_general = {
+					name = "Tombo"
+					trait = siege_specialist_personality
+					fire = 1
+					shock = 2
+					manuever = 3
+					siege = 4
+				}
+			}
 		}
 	}
 	tier_2 = {
