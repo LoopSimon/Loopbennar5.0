@@ -2251,7 +2251,7 @@ effelai_worship_slot_3 = {
 
 		trigger ={
 			capital_scope = {
-				development = 30
+				development = 35
 				if = {
 					limit = {
 						ROOT = { 
@@ -2259,12 +2259,6 @@ effelai_worship_slot_3 = {
 						}
 					}
 					has_building = native_sweat_lodge
-				}
-			}
-			num_of_subjects = 4
-			all_subject_country = {
-				NOT = {
-					liberty_desire = 50
 				}
 			}
 			
