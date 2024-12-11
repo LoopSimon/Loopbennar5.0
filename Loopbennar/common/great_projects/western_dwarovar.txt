@@ -1562,9 +1562,8 @@ jorkad_aqueduct = {
 		area_modifier = {		
 		}
 		country_modifiers = {
-			state_maintenance_modifier = -0.1
+			state_maintenance_modifier = -0.05
 			garrison_size = 0.1
-			garrison_damage = 0.1
 		}
 		on_upgraded = {
 		}
@@ -1584,9 +1583,8 @@ jorkad_aqueduct = {
 			allowed_num_of_buildings = 1
 		}
 		country_modifiers = {
-			state_maintenance_modifier = -0.15
+			state_maintenance_modifier = -0.1
 			garrison_size = 0.2
-			garrison_damage = 0.2
 		}
 		on_upgraded = {
 		}
@@ -1603,12 +1601,12 @@ jorkad_aqueduct = {
 			local_defensiveness = 0.33
 			local_hostile_attrition = 1
 		}
-		area_modifier = {		
-		}
-		region_modifier = {
+		area_modifier = {
 			allowed_num_of_buildings = 1
 		}
+		
 		country_modifiers = {
+			state_maintenance_modifier = -0.15
 			garrison_size = 0.33
 		}
 		on_upgraded = {

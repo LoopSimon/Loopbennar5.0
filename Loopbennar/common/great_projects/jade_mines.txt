@@ -501,7 +501,6 @@ vurdriz_andriz_bastion = {
 		}
 		country_modifiers = {
 			global_garrison_growth = 0.1
-			garrison_damage = 0.1
 			rival_border_fort_maintenance = -0.25
 		}
 		on_upgraded = {
@@ -523,7 +522,6 @@ vurdriz_andriz_bastion = {
 		country_modifiers = {
 			defensiveness = 0.05
 			global_garrison_growth = 0.2
-			garrison_damage = 0.2
 			rival_border_fort_maintenance = -0.5
 		}
 		on_upgraded = {
@@ -545,7 +543,6 @@ vurdriz_andriz_bastion = {
 		country_modifiers = {
 			defensiveness = 0.1
 			global_garrison_growth = 0.33
-			garrison_damage = 0.33
 			rival_border_fort_maintenance = -0.9
 		}
 		on_upgraded = {
