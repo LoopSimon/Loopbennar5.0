@@ -375,7 +375,6 @@ ovdal_lodhum_tunnel_of_love = {
 			auto_explore_adjacent_to_colony = yes
 			global_colonial_growth = 20
 			colonist_placement_chance = 0.05
-			colony_development_boost = 1
 		}
 		on_upgraded = {	
 		}
@@ -398,7 +397,6 @@ ovdal_lodhum_tunnel_of_love = {
 			may_explore = yes
 			global_colonial_growth = 30
 			colonist_placement_chance = 0.1
-			colony_development_boost = 1
 		}
 		on_upgraded = {
 		}
