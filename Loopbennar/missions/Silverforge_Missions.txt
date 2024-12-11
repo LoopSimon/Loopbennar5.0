@@ -1058,11 +1058,11 @@ A73_soldier_up = {
 		
 		provinces_to_highlight = {
 			province_id = 308
-			NOT = { has_building = cathedral }
+			NOT = { has_building = temple }
 		}
 		
 		trigger = {
-			308 = { has_building = cathedral }
+			308 = { has_building = temple }
 			
 			OR = {
 			estate_loyalty = { estate = estate_church loyalty = 50 }
@@ -1732,7 +1732,7 @@ A73_complete_hold = {
 		position = 12
 		
 		trigger = {
-			has_institution = manufactories
+			has_institution = global_trade
 			OR = {
 				estate_influence = { estate = estate_burghers influence = 80 }
 				has_country_modifier = carver_monopoly
@@ -1785,7 +1785,7 @@ A73_complete_hold = {
 			province_id = 912
 			OR = {
 				NOT = { development = 50 }
-				NOT = { has_building = town_hall }
+				NOT = { has_building = university }
 				#NOT = { has_building = counting_house }
 			}
 		}
@@ -1797,7 +1797,7 @@ A73_complete_hold = {
 			}
 			912 = {
 				development = 50
-				has_building = town_hall
+				has_building = university
 				#has_building = counting_house
 			}
 			OR = {
