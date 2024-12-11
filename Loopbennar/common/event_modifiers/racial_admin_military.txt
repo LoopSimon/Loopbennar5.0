@@ -644,7 +644,7 @@ orcish_administration = {
     #Negatives
     improve_relation_modifier = -0.25    #-1 A / theyre orcs
     
-    development_cost = 0.1                #-1 S / orcs don't build cities of their own, instead relying on those left behind by others
+    development_cost = 0.05                #-1 S / orcs don't build cities of their own, instead relying on those left behind by others
     
     spy_offence = -0.2                    #-2 D / orcs do not like schemes
     
