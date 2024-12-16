@@ -4212,14 +4212,15 @@ kruman = {
 
 	# Properties:
 	transfer_trade_if_merchant_republic = yes
-	joins_overlords_wars = no
+	joins_overlords_wars = yes
+	can_use_claims = yes
 	can_be_annexed = no
 	has_power_projection = no
 	gets_help_with_rebels = yes
 	forms_trade_companies = no
 	takes_diplo_slot = no # Don't know if this is correct as doc didn't say but it seems right?
 
-	max_government_rank = 1
+	max_government_rank = 0
 
 	liberty_desire_development_ratio = 0.15 # Slightly lower than vassal
 	liberty_desire_same_dynasty = -5.0
