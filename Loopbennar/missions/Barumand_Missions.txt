@@ -216,8 +216,6 @@ barumand_1 = {
 				region = south_castanor_region
 				region = west_castanor_region
 				region = inner_castanor_region
-				area = whistlevale_area
-				area = cursewood_area
 			}
 			province_has_center_of_trade_of_level = 1
 			NOT = { province_has_center_of_trade_of_level = 2 }
@@ -229,8 +227,6 @@ barumand_1 = {
 					region = inner_castanor_region
 					region = west_castanor_region
 					region = south_castanor_region
-					area = cursewood_area
-					area = whistlevale_area
 				}
 				province_has_center_of_trade_of_level = 2
 				base_production = 8
@@ -499,8 +495,6 @@ barumand_2 = {
 									region = south_castanor_region
 									region = west_castanor_region
 									region = inner_castanor_region
-									area = whistlevale_area
-									area = cursewood_area
 								}
 							}
 						}
@@ -533,8 +527,6 @@ barumand_2 = {
 						region = south_castanor_region
 						region = west_castanor_region
 						region = inner_castanor_region
-						area = whistlevale_area
-						area = cursewood_area
 					}
 				}
 			}
@@ -552,8 +544,6 @@ barumand_2 = {
 									region = south_castanor_region
 									region = west_castanor_region
 									region = inner_castanor_region
-									area = whistlevale_area
-									area = cursewood_area
 								}
 							}
 						}
@@ -583,8 +573,6 @@ barumand_2 = {
 										region = south_castanor_region
 										region = west_castanor_region
 										region = inner_castanor_region
-										area = whistlevale_area
-										area = cursewood_area
 									}
 								}
 							}
@@ -1081,8 +1069,6 @@ barumand_3 = {
 						region = south_castanor_region
 						region = west_castanor_region
 						region = inner_castanor_region
-						area = whistlevale_area
-						area = cursewood_area
 					}
 				}
 			}
@@ -1096,8 +1082,6 @@ barumand_3 = {
 								region = south_castanor_region
 								region = west_castanor_region
 								region = inner_castanor_region
-								area = whistlevale_area
-								area = cursewood_area
 							}
 						}
 					}
@@ -1282,9 +1266,7 @@ barumand_4 = {
 				culture = barumand_orc
 			}
 			OR = {
-			    superregion = escann_superregion 
-			    area = cursewood_area
-				area = whistlevale_area
+			    superregion = escann_superregion
 			}
 		}
 		trigger = {
@@ -1559,8 +1541,6 @@ barumand_4 = {
 						region = south_castanor_region
 						region = west_castanor_region
 						region = inner_castanor_region
-						area = whistlevale_area
-						area = cursewood_area
 					}
 				}
 			}
@@ -1574,8 +1554,6 @@ barumand_4 = {
 								region = south_castanor_region
 								region = inner_castanor_region
 								region = west_castanor_region
-								area = whistlevale_area
-								area = cursewood_area
 							}
 						}
 						NOT = { is_subject_of_type_with_overlord = { type = tributary_state_anb who = Z53 } }
@@ -1605,8 +1583,6 @@ barumand_4 = {
 						region = south_castanor_region
 						region = west_castanor_region
 						region = inner_castanor_region
-						area = whistlevale_area
-						area = cursewood_area
 					}
 				}
 			}
@@ -1623,8 +1599,6 @@ barumand_4 = {
 									region = south_castanor_region
 									region = west_castanor_region
 									region = inner_castanor_region
-									area = whistlevale_area
-									area = cursewood_area
 								}
 							}
 						}
@@ -1670,8 +1644,6 @@ barumand_4 = {
 									region = south_castanor_region
 									region = west_castanor_region
 									region = inner_castanor_region
-									area = cursewood_area
-									area = whistlevale_area
 								}
 							}
 						}
@@ -1687,8 +1659,6 @@ barumand_4 = {
 									region = south_castanor_region
 									region = west_castanor_region
 									region = inner_castanor_region
-									area = cursewood_area
-									area = whistlevale_area
 								}
 							}
 						}
@@ -1704,8 +1674,6 @@ barumand_4 = {
 									region = south_castanor_region
 									region = west_castanor_region
 									region = inner_castanor_region
-									area = cursewood_area
-									area = whistlevale_area
 								}
 							}
 						}
@@ -1721,8 +1689,6 @@ barumand_4 = {
 									region = south_castanor_region
 									region = west_castanor_region
 									region = inner_castanor_region
-									area = cursewood_area
-									area = whistlevale_area
 								}
 							}
 						}
@@ -1738,8 +1704,6 @@ barumand_4 = {
 									region = south_castanor_region
 									region = west_castanor_region
 									region = inner_castanor_region
-									area = cursewood_area
-									area = whistlevale_area
 								}
 							}
 						}
@@ -1760,8 +1724,6 @@ barumand_4 = {
 				region = south_castanor_region
 				region = west_castanor_region
 				region = inner_castanor_region
-				area = whistlevale_area
-				area = cursewood_area
 			}
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
@@ -1769,8 +1731,6 @@ barumand_4 = {
 			south_castanor_region = { type = all country_or_non_sovereign_subject_holds = ROOT }
 			west_castanor_region = { type = all country_or_non_sovereign_subject_holds = ROOT }
 			inner_castanor_region = { type = all country_or_non_sovereign_subject_holds = ROOT }
-			cursewood_area = { type = all country_or_non_sovereign_subject_holds = ROOT }
-			whistlevale_area = { type = all country_or_non_sovereign_subject_holds = ROOT }
 			OR = {
 				OR = {
 					full_idea_group = innovativeness_ideas
@@ -1821,8 +1781,6 @@ barumand_4 = {
 				region = south_castanor_region
 				region = west_castanor_region
 				region = inner_castanor_region
-				area = whistlevale_area
-				area = cursewood_area
 			}
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
@@ -1836,14 +1794,6 @@ barumand_4 = {
 				country_or_non_sovereign_subject_holds = ROOT
 			}
 			west_castanor_region = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-			whistlevale_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-			cursewood_area = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
 			}
@@ -1878,8 +1828,6 @@ barumand_4 = {
 							region = south_castanor_region
 							region = inner_castanor_region
 							region = west_castanor_region
-							area = whistlevale_area
-							area = cursewood_area
 						}
 					}
 				}
@@ -2074,8 +2022,6 @@ barumand_5 = {
 				capital_scope = {
 					OR = {
 						superregion = escann_superregion
-						area = cursewood_area
-						area = whistlevale_area
 					}
 			    }
 			}
@@ -2086,8 +2032,6 @@ barumand_5 = {
 					capital_scope = {
 						OR = {
 							superregion = escann_superregion
-							area = cursewood_area
-							area = whistlevale_area
 						}
 					}
 					has_opinion = {
@@ -2116,8 +2060,6 @@ barumand_5 = {
 					capital_scope = {
 						OR = {
 							superregion = escann_superregion
-							area = cursewood_area
-							area = whistlevale_area
 						}
 					}
 					has_opinion = {
@@ -2134,8 +2076,6 @@ barumand_5 = {
 					capital_scope = {
 						OR = {
 							superregion = escann_superregion
-							area = cursewood_area
-							area = whistlevale_area
 						}
 					}
 					has_opinion = {
@@ -2152,8 +2092,6 @@ barumand_5 = {
 					capital_scope = {
 						OR = {
 							superregion = escann_superregion
-							area = cursewood_area
-							area = whistlevale_area
 						}
 					}
 					has_opinion = {
@@ -2170,8 +2108,6 @@ barumand_5 = {
 					capital_scope = {
 						OR = {
 							superregion = escann_superregion
-							area = cursewood_area
-							area = whistlevale_area
 						}
 					}
 					has_opinion = {
@@ -2188,8 +2124,6 @@ barumand_5 = {
 					capital_scope = {
 						OR = {
 							superregion = escann_superregion
-							area = cursewood_area
-							area = whistlevale_area
 						}
 					}
 					has_opinion = {
