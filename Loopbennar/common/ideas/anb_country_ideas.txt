@@ -23874,7 +23874,7 @@ R80_ideas = {
 R81_ideas = {
 	start = {
 		reinforce_cost_modifier = -0.2 #The oppressive regimes and large quantities of resources allows the Jade March to cheaply reinforce their armies
-		development_cost = -0.1
+		land_morale = 0.1
 	}
 	bonus = {
 		manpower_recovery_speed = 0.2
