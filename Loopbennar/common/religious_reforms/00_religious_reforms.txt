@@ -387,10 +387,6 @@ gods_of_the_taychend_reform_1 = {
 			NOT = { overextension_percentage = 0.01 }
 			NOT = { num_of_rebel_armies = 1 }
 			total_development = 100
-			calc_true_if = {
-				all_subject_country = { NOT = { liberty_desire = 50 } }
-				amount = 2
-			}
 		}
 	}
 
@@ -432,10 +428,6 @@ gods_of_the_taychend_reform_2 = {
 			NOT = { overextension_percentage = 0.01 }
 			NOT = { num_of_rebel_armies = 1 }
 			total_development = 200
-			calc_true_if = {
-				all_subject_country = { NOT = { liberty_desire = 50 } }
-				amount = 3
-			}
 			NOT = { average_autonomy = 80 }
 		}
 	}
@@ -475,10 +467,6 @@ gods_of_the_taychend_reform_3 = {
 			NOT = { overextension_percentage = 0.01 }
 			NOT = { num_of_rebel_armies = 1 }
 			total_development = 300
-			calc_true_if = {
-				all_subject_country = { NOT = { liberty_desire = 50 } }
-				amount = 4
-			}
 			NOT = { average_autonomy = 60 }
 		}
 	}
@@ -518,10 +506,6 @@ gods_of_the_taychend_reform_4 = {
 			NOT = { overextension_percentage = 0.01 }
 			NOT = { num_of_rebel_armies = 1 }
 			total_development = 400
-			calc_true_if = {
-				all_subject_country = { NOT = { liberty_desire = 50 } }
-				amount = 5
-			}
 			NOT = { average_autonomy = 40 }
 		}
 	}
@@ -561,10 +545,6 @@ gods_of_the_taychend_reform_5 = {
 			NOT = { overextension_percentage = 0.01 }
 			NOT = { num_of_rebel_armies = 1 }
 			total_development = 500
-			calc_true_if = {
-				all_subject_country = { NOT = { liberty_desire = 50 } }
-				amount = 6
-			}
 			# num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
 			# 	value = 110
 			# 	superregion = taychend_superregion
