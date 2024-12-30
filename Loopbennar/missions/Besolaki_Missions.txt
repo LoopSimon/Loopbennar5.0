@@ -1403,8 +1403,6 @@ G54_3_missions = {
 		}
 
 		trigger = {
-			G57 = { is_subject_of = ROOT } #Apikhoxi
-			navy_size = G62 #Amgremos
 			NOT = {
 				2681 = { #Kheionai
 					trade_share = {
@@ -1874,7 +1872,6 @@ G54_3_missions = {
 				}
 			}
 			republican_tradition = 95
-			is_great_power = yes
 			has_kheionist_deity = { deity = adm }
 		}
 
@@ -3316,70 +3313,8 @@ G54_5_missions = {
 		}
 
 		trigger = {
-			if = {
-				limit = {
-					NOT = {
-						any_country = {
-							capital_scope = { continent = europe }
-							colony = 1
-							NOT = { is_rival = ROOT }
-							NOT = { is_enemy = ROOT }
-						}
-					}
-				}
-				OR = {
-					any_country = {
-						capital_scope = { continent = europe }
-						NOT = { is_rival = ROOT }
-						NOT = { is_enemy = ROOT }
-						has_opinion = {
-							who = ROOT
-							value = 150
-						}
-					}
-					AND = {
-						faction_in_power = beso_nautabhen
-						any_country = {
-							capital_scope = { continent = europe }
-							NOT = { is_rival = ROOT }
-							NOT = { is_enemy = ROOT }
-							has_opinion = {
-								who = ROOT
-								value = 125
-							}
-						}
-					}
-				}
-			}
-			else = {
-				OR = {
-					any_country = {
-						capital_scope = { continent = europe }
-						colony = 1
-						NOT = { is_rival = ROOT }
-						NOT = { is_enemy = ROOT }
-						has_opinion = {
-							who = ROOT
-							value = 150
-						}
-					}
-					AND = {
-						faction_in_power = beso_nautabhen
-						any_country = {
-							capital_scope = { continent = europe }
-							colony = 1
-							NOT = { is_rival = ROOT }
-							NOT = { is_enemy = ROOT }
-							has_opinion = {
-								who = ROOT
-								value = 125
-							}
-						}
-					}
-				}
-			}
 			OR = {
-				army_professionalism = 0.4
+				army_professionalism = 0.6
 				army_tradition = 80
 				AND = {
 					faction_in_power = beso_dhorbhen
