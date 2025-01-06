@@ -1,0 +1,293 @@
+####################
+#Alenic Reach
+####################
+#Bayvic, Grandest City of the Reach
+bayvic_grandest_city_of_the_reach = {
+	start = 723
+	date = 01.01.01
+	time = {
+		months = 0
+	}
+	build_cost = 0
+	can_be_moved = no
+	move_days_per_unit_distance = 1
+	starting_tier = 1
+	type = monument
+	build_trigger = {	
+	}
+	on_built = {		
+	}
+	on_destroyed = {	
+	}
+	can_use_modifiers_trigger = {
+		AND = {
+			custom_trigger_tooltip = {
+				tooltip = cannorian_monuments_can_use_tooltip_reach_cities
+					OR = {
+						culture_group = alenic
+						culture_group = reachman
+						culture = white_reachman
+						culture = moon_elf
+						culture = city_goblin
+						culture = castanorian
+					}
+			}
+			province_is_or_accepts_culture = yes
+		}
+	}	
+	can_upgrade_trigger = {
+		AND = {
+			custom_trigger_tooltip = {
+				tooltip = cannorian_monuments_can_use_tooltip_reach_cities
+					OR = {
+						culture_group = alenic
+						culture_group = reachman
+						culture = white_reachman
+						culture = moon_elf
+						culture = city_goblin
+						culture = castanorian
+					}
+			}
+			province_is_or_accepts_culture = yes
+		}
+	}	
+	keep_trigger = {
+	}
+	tier_0 = {
+		upgrade_time = {
+			months = 0
+		}
+		cost_to_upgrade = {
+			factor = 0
+		}
+		province_modifiers = {
+		}
+		area_modifier = {
+		}
+		country_modifiers = {	
+		}
+		on_upgraded = {
+		}
+	}
+	tier_1 = {
+		upgrade_time = {
+			months = 120
+		}
+		cost_to_upgrade = {
+			factor = 1000
+		}
+		province_modifiers = {
+			local_development_cost = -0.05
+			trade_goods_size_modifier = 0.1
+		}
+		area_modifier = {
+		}
+		country_modifiers = {
+			global_sailors_modifier = 0.05
+			galley_power = 0.025
+		}
+		on_upgraded = {
+			add_base_production = 1
+		}
+	}
+	tier_2 = {
+		upgrade_time = {
+			months = 240
+		}
+		cost_to_upgrade = {
+			factor = 2500
+		}
+		province_modifiers = {
+			local_development_cost = -0.1
+			trade_goods_size_modifier = 0.15
+		}
+		area_modifier = {
+		}
+		country_modifiers = {
+			global_sailors_modifier = 0.1
+			galley_power = 0.05
+		}
+		on_upgraded = {
+			add_base_production = 2
+		}
+	}
+	tier_3 = {
+		upgrade_time = {
+			months = 480
+		}
+		cost_to_upgrade = {
+			factor = 5000
+		}
+		province_modifiers = {
+			local_development_cost = -0.15
+			trade_goods_size_modifier = 0.25
+		}
+		area_modifier = {
+		}
+		country_modifiers = {
+			global_sailors_modifier = 0.15
+			galley_power = 0.1
+			siege_blockade_progress = 1
+		}
+		on_upgraded = {
+			add_base_production = 3
+			owner = {
+				add_country_modifier = {
+					name = galley_veterans
+					duration = 5475
+				}
+			}
+		}
+	}
+}
+#Icewind Palace of Commerce (Celmaldor)
+celmaldor_icewind_palace_of_commerce = {
+	start = 696
+	date = 01.01.01
+	time = {
+		months = 0
+	}
+	build_cost = 0
+	can_be_moved = no
+	move_days_per_unit_distance = 1
+	starting_tier = 1
+	type = monument
+	build_trigger = {	
+	}
+	on_built = {		
+	}
+	on_destroyed = {	
+	}
+	can_use_modifiers_trigger = {
+		AND = {
+			custom_trigger_tooltip = {
+				tooltip = cannorian_monuments_can_use_tooltip_reach_cities
+					OR = {
+						culture_group = alenic
+						culture_group = reachman
+						culture = white_reachman
+						culture = moon_elf
+						culture = city_goblin
+						culture = castanorian
+					}
+			}
+			province_is_or_accepts_culture = yes
+		}
+	}	
+	can_upgrade_trigger = {
+		AND = {
+			custom_trigger_tooltip = {
+				tooltip = cannorian_monuments_can_use_tooltip_reach_cities
+					OR = {
+						culture_group = alenic
+						culture_group = reachman
+						culture = white_reachman
+						culture = moon_elf
+						culture = city_goblin
+						culture = castanorian
+					}
+			}
+			province_is_or_accepts_culture = yes
+		}
+	}	
+	keep_trigger = {
+	}
+	tier_0 = {
+		upgrade_time = {
+			months = 0
+		}
+		cost_to_upgrade = {
+			factor = 0
+		}
+		province_modifiers = {
+		}
+		area_modifier = {
+		}
+		country_modifiers = {	
+		}
+		on_upgraded = {
+		}
+	}
+	tier_1 = {
+		upgrade_time = {
+			months = 120
+		}
+		cost_to_upgrade = {
+			factor = 1000
+		}
+		province_modifiers = {
+			local_development_cost = -0.1
+			province_trade_power_value = 3
+		}
+		area_modifier = {
+		}
+		country_modifiers = {
+			light_ship_power = 0.025
+			global_ship_trade_power = 0.1
+		}
+		on_upgraded = {
+		}
+	}
+	tier_2 = {
+		upgrade_time = {
+			months = 240
+		}
+		cost_to_upgrade = {
+			factor = 2500
+		}
+		province_modifiers = {
+			local_development_cost = -0.15
+			province_trade_power_value = 5
+		}
+		area_modifier = {
+		}
+		country_modifiers = {
+			light_ship_power = 0.05
+			global_ship_trade_power = 0.15
+		}
+		on_upgraded = {
+			define_advisor = {
+				type = trader
+				skill = 3
+				culture = root
+				religion = root
+				location = 696
+				cost_multiplier = 0.25
+			}
+		}
+	}
+	tier_3 = {
+		upgrade_time = {
+			months = 480
+		}
+		cost_to_upgrade = {
+			factor = 5000
+		}
+		province_modifiers = {
+			local_development_cost = -0.25
+			province_trade_power_value = 10
+			allowed_num_of_buildings = 1
+		}
+		area_modifier = {
+		}
+		country_modifiers = {
+			light_ship_power = 0.1
+			global_ship_trade_power = 0.2
+			merchants = 1
+		}
+		on_upgraded = {
+			owner = {
+				add_country_modifier = {
+					name = anbenncost_trade_fleet_modifier
+					duration = 5475
+				}
+			}
+			add_unit_construction = {
+				type = light_ship
+				amount = 15
+				speed = 0.25
+				cost = 0
+			}
+		}
+	}
+}

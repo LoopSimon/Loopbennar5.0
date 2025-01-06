@@ -1,0 +1,149 @@
+####################
+#Gerudian Coast
+####################
+#The Ebonsteel Armory (Urviksten)
+urviksten_ebonsteel_armory = {
+	start = 984
+	date = 01.01.01
+	time = {
+		months = 0
+	}
+	build_cost = 0
+	can_be_moved = no
+	move_days_per_unit_distance = 1
+	starting_tier = 1
+	type = monument
+	build_trigger = {	
+	}
+	on_built = {		
+	}
+	on_destroyed = {	
+	}
+	can_use_modifiers_trigger = {
+		AND = {
+			custom_trigger_tooltip = {
+				tooltip = cannorian_monuments_can_use_tooltip_dalr
+					OR = {
+						culture_group = gerudian
+						culture_group = reachman
+						culture = fjord_troll
+						culture = black_castanorian
+						culture = castanorian
+						culture = jarnklo_harpy
+					}
+			}
+			province_is_or_accepts_culture = yes
+		}
+	}	
+	can_upgrade_trigger = {
+		AND = {
+			custom_trigger_tooltip = {
+				tooltip = cannorian_monuments_can_use_tooltip_dalr
+					OR = {
+						culture_group = gerudian
+						culture_group = reachman
+						culture = fjord_troll
+						culture = black_castanorian
+						culture = castanorian
+						culture = jarnklo_harpy
+					}
+			}
+			province_is_or_accepts_culture = yes
+		}
+	}
+	keep_trigger = {
+	}
+	tier_0 = {
+		upgrade_time = {
+			months = 0
+		}
+		cost_to_upgrade = {
+			factor = 0
+		}
+		province_modifiers = {
+		}
+		area_modifier = {
+		}
+		country_modifiers = {	
+		}
+		on_upgraded = {
+		}
+	}
+	tier_1 = {
+		upgrade_time = {
+			months = 120
+		}
+		cost_to_upgrade = {
+			factor = 1000
+		}
+		province_modifiers = {
+			local_development_cost = -0.15
+			trade_goods_size = 0.5
+			allowed_num_of_buildings = 1
+		}
+		area_modifier = {
+			supply_limit = 0.5
+		}
+		country_modifiers = {
+			shock_damage_received = -0.025
+		}
+		on_upgraded = {
+			add_base_production = 1
+		}
+	}
+	tier_2 = {
+		upgrade_time = {
+			months = 240
+		}
+		cost_to_upgrade = {
+			factor = 2500
+		}
+		province_modifiers = {
+			local_development_cost = -0.3
+			trade_goods_size = 1.5
+			allowed_num_of_buildings = 2
+		}
+		area_modifier = {
+			supply_limit = 1
+		}
+		country_modifiers = {
+			infantry_cost = -0.05
+			shock_damage_received = -0.025
+		}
+		on_upgraded = {
+			add_base_production = 2
+			define_advisor = {
+				type = army_reformer
+				skill = 3
+				culture = root
+				religion = root
+				location = 984
+				cost_multiplier = 0.25
+			}
+		}
+	}
+	tier_3 = {
+		upgrade_time = {
+			months = 480
+		}
+		cost_to_upgrade = {
+			factor = 5000
+		}
+		province_modifiers = {
+			local_development_cost = -0.45
+			trade_goods_size = 2
+			allowed_num_of_buildings = 3
+		}
+		area_modifier = {
+			supply_limit = 2
+		}
+		country_modifiers = {
+			infantry_cost = -0.1
+			shock_damage_received = -0.05
+		}
+		on_upgraded = {
+			add_base_production = 3
+			center_of_trade = 1
+		}
+	}
+}

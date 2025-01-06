@@ -1,0 +1,715 @@
+#Liusibao (Xiadao)
+xiadao_liusibao = {
+	start = 4559
+	date = 01.01.01
+	time = {
+		months = 0
+	}
+	build_cost = 0
+	can_be_moved = no
+	move_days_per_unit_distance = 1
+	starting_tier = 1
+	type = monument
+	build_trigger = {	
+	}
+	on_built = {		
+	}
+	on_destroyed = {	
+	}
+	can_use_modifiers_trigger = {
+		AND = {
+			custom_trigger_tooltip = {
+				tooltip = halessi_monuments_can_use_tooltip_xianjie
+					OR = {
+						culture_group = yan
+						culture_group = middle_raheni
+						culture_group = harimari
+						culture = goldscale_kobold
+						culture_group = harpy
+						culture_group = hobgoblin
+						culture_group = wuhyun
+					}
+			}
+			province_is_or_accepts_culture = yes
+		}
+	}	
+	can_upgrade_trigger = {
+		AND = {
+			custom_trigger_tooltip = {
+				tooltip = halessi_monuments_can_use_tooltip_xianjie
+					OR = {
+						culture_group = yan
+						culture_group = middle_raheni
+						culture_group = harimari
+						culture = goldscale_kobold
+						culture_group = harpy
+						culture_group = hobgoblin
+						culture_group = wuhyun
+					}
+			}
+			province_is_or_accepts_culture = yes
+		}
+	}		
+	keep_trigger = {
+	}
+	tier_0 = {
+		upgrade_time = {
+			months = 0
+		}
+		cost_to_upgrade = {
+			factor = 0
+		}
+		province_modifiers = {
+		}
+		area_modifier = {
+		}
+		country_modifiers = {	
+		}
+		on_upgraded = {
+		}
+	}
+	tier_1 = {
+		upgrade_time = {
+			months = 120
+		}
+		cost_to_upgrade = {
+			factor = 1000
+		}
+		province_modifiers = {
+			local_defensiveness = 0.1
+		}
+		area_modifier = {
+			trade_goods_size_modifier = 0.05
+		}
+		country_modifiers = {
+			reduced_liberty_desire_on_same_continent = 5
+		}
+		on_upgraded = {
+		}
+	}
+	tier_2 = {
+		upgrade_time = {
+			months = 240
+		}
+		cost_to_upgrade = {
+			factor = 2500
+		}
+		province_modifiers = {
+			local_defensiveness = 0.2
+			local_hostile_attrition = 0.5
+		}
+		area_modifier = {
+			trade_goods_size_modifier = 0.1
+		}
+		country_modifiers = {
+			reduced_liberty_desire_on_same_continent = 10
+			diplomatic_reputation = 0.5
+		}
+		on_upgraded = {
+		}
+	}
+	tier_3 = {
+		upgrade_time = {
+			months = 480
+		}
+		cost_to_upgrade = {
+			factor = 5000
+		}
+		province_modifiers = {
+			local_defensiveness = 0.33
+			local_hostile_attrition = 1
+		}
+		area_modifier = {
+			trade_goods_size_modifier = 0.15
+		}
+		country_modifiers = {
+			reduced_liberty_desire_on_same_continent = 15
+			diplomatic_reputation = 1
+		}
+		on_upgraded = {
+		}
+	}
+}
+#Szienlou (Jilin)
+jilin_szienlou = {
+	start = 4936
+	date = 01.01.01
+	time = {
+		months = 0
+	}
+	build_cost = 0
+	can_be_moved = no
+	move_days_per_unit_distance = 1
+	starting_tier = 1
+	type = monument
+	build_trigger = {	
+	}
+	on_built = {		
+	}
+	on_destroyed = {	
+	}
+	can_use_modifiers_trigger = {
+		AND = {
+			custom_trigger_tooltip = {
+				tooltip = halessi_monuments_can_use_tooltip_xianjie
+					OR = {
+						culture_group = yan
+						culture_group = middle_raheni
+						culture_group = harimari
+						culture = goldscale_kobold
+						culture_group = harpy
+						culture_group = hobgoblin
+						culture_group = wuhyun
+					}
+			}
+			province_is_or_accepts_culture = yes
+		}
+	}	
+	can_upgrade_trigger = {
+		AND = {
+			custom_trigger_tooltip = {
+				tooltip = halessi_monuments_can_use_tooltip_xianjie
+					OR = {
+						culture_group = yan
+						culture_group = middle_raheni
+						culture_group = harimari
+						culture = goldscale_kobold
+						culture_group = harpy
+						culture_group = hobgoblin
+						culture_group = wuhyun
+					}
+			}
+			province_is_or_accepts_culture = yes
+		}
+	}	
+	keep_trigger = {
+	}
+	tier_0 = {
+		upgrade_time = {
+			months = 0
+		}
+		cost_to_upgrade = {
+			factor = 0
+		}
+		province_modifiers = {
+		}
+		area_modifier = {
+		}
+		country_modifiers = {	
+		}
+		on_upgraded = {
+		}
+	}
+	tier_1 = {
+		upgrade_time = {
+			months = 120
+		}
+		cost_to_upgrade = {
+			factor = 1000
+		}
+		province_modifiers = {
+			local_defensiveness = 0.1
+		}
+		area_modifier = {
+			local_unrest = -1
+		}
+		country_modifiers = {
+			global_autonomy = -0.01
+		}
+		on_upgraded = {
+		}
+	}
+	tier_2 = {
+		upgrade_time = {
+			months = 240
+		}
+		cost_to_upgrade = {
+			factor = 2500
+		}
+		province_modifiers = {
+			local_defensiveness = 0.2
+		}
+		area_modifier = {
+			local_unrest = -3
+		}
+		country_modifiers = {
+			global_autonomy = -0.03
+			min_autonomy_in_territories = -0.05
+		}
+		on_upgraded = {
+		}
+	}
+	tier_3 = {
+		upgrade_time = {
+			months = 480
+		}
+		cost_to_upgrade = {
+			factor = 5000
+		}
+		province_modifiers = {
+			local_defensiveness = 0.33
+		}
+		area_modifier = {
+			local_unrest = -5
+		}
+		country_modifiers = {
+			global_autonomy = -0.05
+			min_autonomy_in_territories = -0.1
+		}
+		on_upgraded = {
+		}
+	}
+}
+#Library of Gundhaghidur (Gundhaghidur)
+gundhaghidur_library_of_insight = {
+	start = 4609
+	date = 01.01.01
+	time = {
+		months = 0
+	}
+	build_cost = 0
+	can_be_moved = no
+	move_days_per_unit_distance = 1
+	starting_tier = 1
+	type = monument
+	build_trigger = {	
+	}
+	on_built = {		
+	}
+	on_destroyed = {	
+	}
+	can_use_modifiers_trigger = {
+		AND = {
+			custom_trigger_tooltip = {
+				tooltip = halessi_monuments_can_use_tooltip_xianjie
+					OR = {
+						culture_group = yan
+						culture_group = middle_raheni
+						culture_group = harimari
+						culture = goldscale_kobold
+						culture_group = harpy
+						culture_group = hobgoblin
+						culture_group = wuhyun
+					}
+			}
+			province_is_or_accepts_culture = yes
+		}
+	}
+	can_upgrade_trigger = {
+		AND = {
+			custom_trigger_tooltip = {
+				tooltip = halessi_monuments_can_use_tooltip_xianjie
+					OR = {
+						culture_group = yan
+						culture_group = middle_raheni
+						culture_group = harimari
+						culture = goldscale_kobold
+						culture_group = harpy
+						culture_group = hobgoblin
+						culture_group = wuhyun
+					}
+			}
+			province_is_or_accepts_culture = yes
+		}
+	}	
+	keep_trigger = {
+	}
+	tier_0 = {
+		upgrade_time = {
+			months = 0
+		}
+		cost_to_upgrade = {
+			factor = 0
+		}
+		province_modifiers = {
+		}
+		area_modifier = {
+		}
+		country_modifiers = {	
+		}
+		on_upgraded = {
+		}
+	}
+	tier_1 = {
+		upgrade_time = {
+			months = 120
+		}
+		cost_to_upgrade = {
+			factor = 1000
+		}
+		province_modifiers = {
+			local_institution_spread = 0.1
+		}
+		area_modifier = {
+		}
+		country_modifiers = {
+			innovativeness_gain = 0.1
+			advisor_pool = 1
+		}
+		on_upgraded = {
+			owner = { 
+				change_innovativeness = 1
+			}
+		}
+	}
+	tier_2 = {
+		upgrade_time = {
+			months = 240
+		}
+		cost_to_upgrade = {
+			factor = 2500
+		}
+		province_modifiers = {
+			local_institution_spread = 0.2
+		}
+		area_modifier = {
+		}
+		country_modifiers = {
+			technology_cost = -0.025
+			innovativeness_gain = 0.2
+			advisor_pool = 2
+		}
+		on_upgraded = {
+			define_advisor = {
+				type = court_mage
+				skill = 3
+				culture = root
+				religion = root
+				location = 4609
+				cost_multiplier = 0.25
+			}
+			owner = { 
+				change_innovativeness = 2
+			}
+		}
+	}
+	tier_3 = {
+		upgrade_time = {
+			months = 480
+		}
+		cost_to_upgrade = {
+			factor = 5000
+		}
+		province_modifiers = {
+			local_institution_spread = 0.33
+		}
+		area_modifier = {
+		}
+		country_modifiers = {
+			technology_cost = -0.05
+			innovativeness_gain = 0.33
+			advisor_pool = 3
+		}
+		on_upgraded = {
+			owner = { 
+				change_innovativeness = 3
+			}
+		}
+	}
+}
+#Hanging Temple of Aoshan (Aoshan)
+aoshan_hanging_temple = {
+	start = 4808
+	date = 01.01.01
+	time = {
+		months = 0
+	}
+	build_cost = 0
+	can_be_moved = no
+	move_days_per_unit_distance = 1
+	starting_tier = 2
+	type = monument
+	build_trigger = {	
+	}
+	on_built = {		
+	}
+	on_destroyed = {	
+	}
+	can_use_modifiers_trigger = {		
+		AND = {
+			has_owner_religion = yes
+			religion = accretive_path
+			custom_trigger_tooltip = {
+				tooltip = halessi_monuments_can_use_tooltip_xianjie
+					OR = {
+						culture_group = yan
+						culture_group = middle_raheni
+						culture_group = harimari
+						culture = goldscale_kobold
+						culture_group = harpy
+						culture_group = hobgoblin
+						culture_group = wuhyun
+					}
+			}
+			province_is_or_accepts_culture = yes
+		}
+	}	
+	can_upgrade_trigger = {
+		AND = {
+			has_owner_religion = yes
+			religion = accretive_path
+			custom_trigger_tooltip = {
+				tooltip = halessi_monuments_can_use_tooltip_xianjie
+					OR = {
+						culture_group = yan
+						culture_group = middle_raheni
+						culture_group = harimari
+						culture = goldscale_kobold
+						culture_group = harpy
+						culture_group = hobgoblin
+						culture_group = wuhyun
+					}
+			}
+			province_is_or_accepts_culture = yes
+		}
+	}	
+	keep_trigger = {
+	}
+	tier_0 = {
+		upgrade_time = {
+			months = 0
+		}
+		cost_to_upgrade = {
+			factor = 0
+		}
+		province_modifiers = {
+		}
+		area_modifier = {
+		}
+		country_modifiers = {	
+		}
+		on_upgraded = {
+		}
+	}
+	tier_1 = {
+		upgrade_time = {
+			months = 120
+		}
+		cost_to_upgrade = {
+			factor = 1000
+		}
+		province_modifiers = {
+			local_defensiveness = 0.1
+		}
+		area_modifier = {
+		}
+		country_modifiers = {
+			tolerance_own = 1
+			legitimacy = 0.25
+			republican_tradition = 0.1
+			horde_unity = 0.25
+			devotion = 0.25
+			church_power_modifier = 0.05
+		}
+		on_upgraded = {
+		}
+	}
+	tier_2 = {
+		upgrade_time = {
+			months = 240
+		}
+		cost_to_upgrade = {
+			factor = 2500
+		}
+		province_modifiers = {
+			local_defensiveness = 0.2
+		}
+		area_modifier = {
+		}
+		country_modifiers = {
+			tolerance_own = 1.5
+			legitimacy = 0.5
+			republican_tradition = 0.2
+			horde_unity = 0.5
+			devotion = 0.5
+			church_power_modifier = 0.1
+		}
+		on_upgraded = {
+		}
+	}
+	tier_3 = {
+		upgrade_time = {
+			months = 480
+		}
+		cost_to_upgrade = {
+			factor = 5000
+		}
+		province_modifiers = {
+			local_defensiveness = 0.33
+		}
+		area_modifier = {
+		}
+		country_modifiers = {
+			tolerance_own = 2
+			legitimacy = 1
+			republican_tradition = 0.3
+			horde_unity = 1
+			devotion = 1
+			church_power_modifier = 0.15
+		}
+		on_upgraded = {
+			owner = {
+				add_country_modifier = {
+					name = aoshan_hanging_temple_hokuto_shinken
+					duration = 5475
+				}
+				define_general = {
+					name = "Neko"
+					trait = master_of_arms_personality
+					fire = 1
+					shock = 5
+					manuever = 1
+					siege = 1
+				}
+			}
+		}
+	}
+}
+#Khram Ptaa National Academy (Lapnam Amrik)
+lapnam_amrik_khram_ptaa_national_academy = {
+	start = 4947
+	date = 01.01.01
+	time = {
+		months = 0
+	}
+	build_cost = 0
+	can_be_moved = no
+	move_days_per_unit_distance = 1
+	starting_tier = 0
+	type = monument
+	build_trigger = {	
+	}
+	on_built = {		
+	}
+	on_destroyed = {	
+	}
+	can_use_modifiers_trigger = {
+		AND = {
+			custom_trigger_tooltip = {
+				tooltip = halessi_monuments_can_use_tooltip_bomdan
+					OR = {
+						culture_group = yan
+						culture_group = bom
+						culture_group = harimari		
+						culture_group = hobgoblin
+						culture_group = wuhyun
+						culture = goldscale_kobold
+						culture_group = harpy
+					}
+			}
+			province_is_or_accepts_culture = yes
+		}
+	}		
+	can_upgrade_trigger = {
+		AND = {
+			custom_trigger_tooltip = {
+				tooltip = halessi_monuments_can_use_tooltip_bomdan
+					OR = {
+						culture_group = yan
+						culture_group = bom
+						culture_group = harimari		
+						culture_group = hobgoblin
+						culture_group = wuhyun
+						culture = goldscale_kobold
+						culture_group = harpy
+					}
+			}
+			province_is_or_accepts_culture = yes
+		}
+	}		
+	keep_trigger = {
+	}
+	tier_0 = {
+		upgrade_time = {
+			months = 0
+		}
+		cost_to_upgrade = {
+			factor = 0
+		}
+		province_modifiers = {
+		}
+		area_modifier = {
+		}
+		country_modifiers = {	
+		}
+		on_upgraded = {
+		}
+	}
+	tier_1 = {
+		upgrade_time = {
+			months = 120
+		}
+		cost_to_upgrade = {
+			factor = 1000
+		}
+		province_modifiers = {
+			local_institution_spread = 0.1
+		}
+		area_modifier = {
+		}
+		country_modifiers = {
+			idea_cost = -0.025
+			adm_tech_cost_modifier = -0.025
+			dip_tech_cost_modifier = -0.025
+		}
+		on_upgraded = {
+			owner = { 
+				change_innovativeness = 1
+			}
+		}
+	}
+	tier_2 = {
+		upgrade_time = {
+			months = 240
+		}
+		cost_to_upgrade = {
+			factor = 2500
+		}
+		province_modifiers = {
+			local_institution_spread = 0.2
+		}
+		area_modifier = {
+		}
+		country_modifiers = {
+			idea_cost = -0.05
+			adm_tech_cost_modifier = -0.05
+			dip_tech_cost_modifier = -0.05
+		}
+		on_upgraded = {
+			define_advisor = {
+				type = natural_scientist
+				skill = 3
+				culture = root
+				religion = root
+				location = 4947
+				cost_multiplier = 0.25
+			}
+			owner = { 
+				change_innovativeness = 2
+			}
+		}
+	}
+	tier_3 = {
+		upgrade_time = {
+			months = 480
+		}
+		cost_to_upgrade = {
+			factor = 5000
+		}
+		province_modifiers = {
+			local_institution_spread = 0.33
+		}
+		area_modifier = {
+		}
+		country_modifiers = {
+			idea_cost = -0.075
+			adm_tech_cost_modifier = -0.075
+			dip_tech_cost_modifier = -0.075
+		}
+		on_upgraded = {
+			owner = { 
+				change_innovativeness = 3
+			}
+		}
+	}
+}

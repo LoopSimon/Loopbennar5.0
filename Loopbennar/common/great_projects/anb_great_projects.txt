@@ -1884,8 +1884,8 @@ deepwoods_fey_portal = {
 
 		#what modifiers are added to the province when we have this project here on this tier
 		province_modifiers = {
-			local_friendly_movement_speed = 1
-			local_hostile_movement_speed = 1
+			local_friendly_movement_speed = -0.2
+			local_hostile_movement_speed = -0.2
 		}
 
 		#what modifiers are added to the provinces in the map area when we have this project here on this tier
@@ -1915,8 +1915,8 @@ deepwoods_fey_portal = {
 		#what modifiers are added to the province when we have this project here on this tier
 		province_modifiers = {
 			province_trade_power_value = 10
-			local_friendly_movement_speed = 2
-			local_hostile_movement_speed = 2
+			local_friendly_movement_speed = 0.5
+			local_hostile_movement_speed = 0.5
 		}
 
 		#what modifiers are added to the provinces in the map area when we have this project here on this tier
@@ -1946,8 +1946,8 @@ deepwoods_fey_portal = {
 		#what modifiers are added to the province when we have this project here on this tier
 		province_modifiers = {
 			province_trade_power_value = 25
-			local_friendly_movement_speed = 4
-			local_hostile_movement_speed = 4
+			local_friendly_movement_speed = 1
+			local_hostile_movement_speed = 1
 		}
 
 		#what modifiers are added to the provinces in the map area when we have this project here on this tier
@@ -1977,8 +1977,8 @@ deepwoods_fey_portal = {
 		#what modifiers are added to the province when we have this project here on this tier
 		province_modifiers = {
 			province_trade_power_value = 50
-			local_friendly_movement_speed = 6
-			local_hostile_movement_speed = 6
+			local_friendly_movement_speed = 2
+			local_hostile_movement_speed = 2
 		}
 
 		#what modifiers are added to the provinces in the map area when we have this project here on this tier
@@ -2118,8 +2118,8 @@ domandrod_fey_portal = {
 
 		#what modifiers are added to the province when we have this project here on this tier
 		province_modifiers = {
-			local_friendly_movement_speed = 1
-			local_hostile_movement_speed = 1
+			local_friendly_movement_speed = -0.2
+			local_hostile_movement_speed = -0.2
 		}
 
 		#what modifiers are added to the provinces in the map area when we have this project here on this tier
@@ -2149,8 +2149,8 @@ domandrod_fey_portal = {
 		#what modifiers are added to the province when we have this project here on this tier
 		province_modifiers = {
 			province_trade_power_value = 10
-			local_friendly_movement_speed = 2
-			local_hostile_movement_speed = 2
+			local_friendly_movement_speed = 0.5
+			local_hostile_movement_speed = 0.5
 		}
 
 		#what modifiers are added to the provinces in the map area when we have this project here on this tier
@@ -2180,8 +2180,8 @@ domandrod_fey_portal = {
 		#what modifiers are added to the province when we have this project here on this tier
 		province_modifiers = {
 			province_trade_power_value = 25
-			local_friendly_movement_speed = 4
-			local_hostile_movement_speed = 4
+			local_friendly_movement_speed = 1
+			local_hostile_movement_speed = 1
 		}
 
 		#what modifiers are added to the provinces in the map area when we have this project here on this tier
@@ -2211,8 +2211,8 @@ domandrod_fey_portal = {
 		#what modifiers are added to the province when we have this project here on this tier
 		province_modifiers = {
 			province_trade_power_value = 50
-			local_friendly_movement_speed = 6
-			local_hostile_movement_speed = 6
+			local_friendly_movement_speed = 2
+			local_hostile_movement_speed = 2
 		}
 
 		#what modifiers are added to the provinces in the map area when we have this project here on this tier
@@ -4773,7 +4773,6 @@ warmrock_bazar = {
 		country_modifiers = {
 			caravan_power = 0.2
 			trade_efficiency = 0.1
-			merchants = 1
 		}
 
 		on_upgraded = {
