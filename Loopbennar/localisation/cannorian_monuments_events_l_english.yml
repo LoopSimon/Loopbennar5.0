@@ -1,0 +1,25 @@
+﻿l_english:
+
+cannorian_monuments_bal_dostan.1.t: "The Vampires of Bal Dostan"
+cannorian_monuments_bal_dostan.1.d: "Just after we had put the final touches on the expansion of Bal Dostan, a small delegation of rather unusual people arrived. They introduced themselves as representatives of the vampire clans that have resided in and around the shadows of Bal Dostan for centuries. In exchange for being allowed the freedom to operate within our state, they are offering their services to us as vampires. Should we take them up on this offer?"
+cannorian_monuments_bal_dostan.1.a: "We shall let the seeds of darkness fester..."
+cannorian_monuments_bal_dostan.1.b: "Vampires? Outrageous. Guards, arrest this delegation at once!"
+cannorian_monuments_bal_dostan.1.c: "Vampires? What does he mean? We already have vampires!"
+
+cannorian_monuments_hammerhome_artificers.t: "The Artificers of Hammerhome"
+cannorian_monuments_hammerhome_artificers.d: "With the finishing touches of the new Hammerhome Artificers Guild being put in place, a delegation representing members of the Artifiers Guild has approached us. While thanking us for our continued contributions and investments into encouraging the study and practice of artificery within the state, the guild members are requesting that the Artificers Guild be made an official and integral part of the state apparatus. In return, they promise that their research endeavors into artificery will be at the service of the country. Should we take them up on this offer?"
+cannorian_monuments_hammerhome_artificers.a: "We will give the artificers the full support of the state!"
+cannorian_monuments_hammerhome_artificers.b: "Our resources are better spent elsewhere."
+cannorian_monuments_hammerhome_artificers.c: "The delegation has been living under a rock, we already support artificery!"
+
+cannorian_monuments_nimscodd_artificers.t: "The Artificers of Nimscodd"
+cannorian_monuments_nimscodd_artificers.d: "With the finishing touches of the new improvements and expansion of Nimscodd Academy being put in place, a delegation representing members of the Academy staff has approached us. While thanking us for our continued contributions and investments into encouraging the study and practice of artificery within the state, the academy staff are requesting that the academy's staff, and thus by extension artificery itself, be made an official and integral part of the state apparatus. In return, they promise that their research endeavors and teachings of artificery will be at the service of the country. Should we take them up on this offer?"
+cannorian_monuments_nimscodd_artificers.a: "We will give artificery the full support of the state!"
+cannorian_monuments_nimscodd_artificers.b: "Our resources are better spent elsewhere."
+cannorian_monuments_nimscodd_artificers.c: "The academy staff has been living under a rock, we already support artificery!"
+
+cannorian_monuments_giberd_artificers.t: "The Artificers of Giberd"
+cannorian_monuments_giberd_artificers.d: "With the finishing touches of the Giberdi Academy of Engineering being put in place, a delegation representing members of the Academy has approached us. While thanking us for our continued contributions and investments into encouraging the study and practice of artificery within the state, the professors and academics are requesting that the study of artificery be made an official and integral part of the state apparatus. In return, they promise that their research endeavors into artificery will be at the service of the country. Should we take them up on this offer?"
+cannorian_monuments_giberd_artificers.a: "We will give these academic artificers the necessary funds!"
+cannorian_monuments_giberd_artificers.b: "Our resources are better spent elsewhere."
+cannorian_monuments_giberd_artificers.c: "This delegation has been living under a rock, we already support artificery!"
