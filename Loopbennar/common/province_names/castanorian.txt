@@ -1,3 +1,0 @@
-
-306 = "Bal Hyl"
-441 = "Bal Dostan"

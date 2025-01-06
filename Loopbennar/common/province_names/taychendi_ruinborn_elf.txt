@@ -1,4 +1,0 @@
-
-2463 = "Scemlapatai"
-2467 = "Advapatai"
-2507 = "Tryuppatai"

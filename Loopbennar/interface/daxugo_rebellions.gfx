@@ -1,8 +1,0 @@
-spriteTypes = {
-	spriteType = {
-		  name = "GFX_disaster_daxugo_rebellions"
-		  texturefile = "gfx//interface//disasters//daxugo_rebellions.dds"
-		  noOfFrames = 3
-		  loadType = "INGAME"
-	}
-}
