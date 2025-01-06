@@ -1,0 +1,2662 @@
+
+# Do not change tags in here without changing every other reference to them.
+# If adding new resources, make sure they are uniquely named.
+# Please add price definitions to prices.txt as well.
+
+#Base resources
+grain = {
+	color = { 0.96 0.93 0.58 }
+	modifier = {
+		land_forcelimit_modifier = 0.20
+	}
+	province = {
+		land_forcelimit = 0.5
+	}
+	chance = {
+		factor = 35
+		modifier = {
+			factor = 0
+			OR = {
+				has_terrain = desert
+				has_terrain = glacier
+				has_terrain = coastline
+				has_terrain = cavern
+				has_terrain = dwarven_hold
+				has_terrain = dwarven_hold_surface
+				has_terrain = dwarven_road
+				has_terrain = city_terrain
+				has_terrain = mushroom_forest_terrain
+				has_climate = arctic
+				region = yezel_mora_region
+			}
+		}
+		modifier = {
+			factor = 0.15
+			OR = {
+				has_terrain = mountain
+				has_terrain = coastal_desert
+				has_terrain = forest
+				has_terrain = woods
+				has_terrain = hills
+				has_terrain = jungle
+				has_terrain = ancient_forest
+				has_terrain = gladeway
+				has_terrain = bloodgroves
+			}
+		}
+		modifier = {
+			factor = 0.25
+			OR = {
+				has_terrain = highlands
+				has_terrain = marsh
+			}
+		}
+		modifier = {
+			factor = 0.25
+			OR = {
+				has_climate = arid
+				has_climate = tropical
+			}
+		}
+		modifier = {
+			factor = 0.6
+			OR = {
+				has_terrain = drylands
+				has_terrain = savannah
+				has_terrain = steppe
+			}
+		}
+		modifier = {
+			factor = 0.35
+			has_winter = severe_winter
+		}
+		modifier = {
+			factor = 0.5
+			has_winter = normal_winter
+		}
+		modifier = {
+			factor = 1.5
+			has_terrain = farmlands
+		}
+		modifier = {
+			factor = 2 # new world breadbasket
+			has_terrain = grasslands
+			OR = {
+				region = endralliande_region
+				region = ravenous_isle_region
+			}
+		}
+		modifier = {
+			factor = 1.2 # more grain for the grain gods
+			has_terrain = grasslands
+			OR = {
+				region = trollsbay_region
+				region = dry_coast_region
+			}
+		}
+		modifier = {
+			factor = 0
+			has_terrain = marsh
+			region = leechdens_region
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				province_id = 4236
+				province_id = 2978
+				province_id = 2914
+				region = moduk_region
+				area = somyonghon_area
+				continent = africa #chance is so low its not worth having as a possibility
+			}
+		}
+		modifier = {
+			factor = 2 # mission reward for Apikhoxi
+			owner = {
+				has_country_flag = estate_nobles_G57_land_golden_ears_flag
+			}
+		}
+	}
+}
+
+wine = {
+	color = { 0.36 0.13 0.28 }
+	modifier = {
+		global_unrest = -1
+	}
+	province = {
+		local_unrest = -1
+	}
+	chance = {
+		factor = 5
+		modifier = {
+			factor = 0
+			OR = {
+				has_winter = severe_winter
+				has_climate = arctic
+				has_climate = arid
+				has_climate = tropical
+				has_terrain = jungle
+				has_terrain = drylands
+				has_terrain = steppe
+				has_terrain = desert
+				has_terrain = coastal_desert
+				has_terrain = marsh
+				has_terrain = savannah
+				has_terrain = glacier
+				has_terrain = mushroom_forest_terrain
+				continent = africa
+			}
+		}
+		modifier = {
+			factor = 0.25
+			has_winter = normal_winter
+		}
+		modifier = {
+			factor = 1.25
+			has_terrain = farmlands
+		}
+		modifier = {
+			factor = 1.25
+			OR = {
+				has_terrain = hills
+				has_terrain = highlands
+			}
+		}
+		modifier = {
+			factor = 1.5
+			region = severed_coast_region
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				province_id = 4236
+				province_id = 2978
+				province_id = 2914
+			}
+		}
+		modifier = {
+			factor = 3
+			region = domandrod_region
+		}
+		modifier = {
+			factor = 1.1
+			FROM = { culture_group = lencori }
+		}
+		modifier = {
+			factor = 8
+			region = bloodgroves_region
+		}
+		modifier = {
+			factor = 0.75
+			has_terrain = bloodgroves
+		}
+	}
+}
+
+wool = {
+	color = { 0.83 0.83 0.83  }
+	modifier = {
+		global_ship_cost = -0.05
+	}
+	province = {
+		local_friendly_movement_speed = 0.10
+	}
+	chance = {
+		factor = 30
+		modifier = {
+			factor = 0
+			OR = {
+				has_terrain = glacier
+				has_terrain = marsh
+				has_terrain = jungle
+				has_terrain = farmlands
+				has_terrain = coastline
+				has_terrain = hills
+				has_terrain = forest
+				has_terrain = woods
+				has_terrain = dwarven_hold
+				has_terrain = dwarven_hold_surface
+				has_terrain = city_terrain
+				region = yezel_mora_region
+			}
+		}
+		modifier = {
+			factor = 0.15
+			OR = {
+				has_terrain = grasslands
+				has_terrain = hills
+				has_terrain = forest
+				has_terrain = woods
+				has_terrain = ancient_forest
+				has_terrain = gladeway
+				has_terrain = bloodgroves
+			}
+		}
+		modifier = {
+			factor = 0.4
+			OR = {
+				has_terrain = dwarven_road
+				has_terrain = cavern
+			}
+		}
+		modifier = {
+			factor = 1.25
+			OR = {
+				has_terrain = desert
+				has_terrain = savannah
+				has_terrain = highlands
+				has_terrain = drylands
+				has_climate = arid
+			}
+		}
+		modifier = {
+			factor = 3 # new world farms
+			has_terrain = grasslands
+			OR = {
+				region = endralliande_region
+				region = ravenous_isle_region
+			}
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				province_id = 4236
+				province_id = 2978
+				province_id = 2914
+				region = mushroom_forest_region
+				area = westnest_area
+				area = eastnest_area
+			}
+		}
+	}
+}
+
+cloth = {
+	color = { 0.86 0.19 0.19 }
+	modifier = {
+		merc_maintenance_modifier = -0.15
+	}
+	province = {
+		local_development_cost = -0.1
+	}
+	chance = {
+		factor = 10
+		modifier = {
+			factor = 0
+			OR = {
+				has_terrain = cavern
+				has_terrain = dwarven_road
+				has_terrain = mushroom_forest_terrain
+				AND = {
+					NOT = { development = 18 }
+					NOT = { has_terrain = city_terrain }
+					NOT = { has_terrain = dwarven_hold }
+					NOT = { has_terrain = dwarven_hold_surface }
+                }
+			}
+		}
+		modifier = {
+			factor = 2.0
+			development = 22
+		}
+		modifier = {
+			factor = 2
+			has_terrain = city_terrain
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				province_id = 4236
+				province_id = 2978
+				province_id = 2914
+			}
+		}
+	}
+}
+
+fish = {
+	color = { 0.55 0.82 0.97 }
+	modifier = {
+		global_sailors_modifier = 0.25
+	}
+	province = {
+		local_sailors_modifier = 0.25
+	}
+	chance = {
+		factor = 20
+		modifier = {
+			factor = 0
+			NOT = { has_port = yes }
+			NOT = { province_id = 2978 } #Claxac's Abyss
+		}
+		modifier = {
+			factor = 1.1
+			OR = {
+				has_terrain = coastline
+				has_terrain = coastal_desert
+			}
+		}
+		modifier = {
+			factor = 1.2
+			has_terrain = glacier
+		}
+		modifier = {
+			factor = 1.5
+			is_island = yes # little isolated islands? Have some fish.
+		}
+		modifier = {
+			factor = 1.5 # new world fishing; boost for some island chains
+			OR = {
+				region = ruined_isles_region
+				region = north_ruined_isles_region
+				area = lastsight_islands_area
+				area = molbrotio_area
+				area = nyhofn_area
+				area = scattered_islands_area
+				area = torn_isles_area
+				area = rezailan_area
+				region = tor_nayyi_region
+				region = severed_coast_region
+				region = dry_coast_region
+			}
+		}
+		modifier = {
+			factor = 2
+			has_terrain = marsh
+			region = leechdens_region
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				province_id = 4236
+				province_id = 2914
+			}
+		}
+		modifier = {
+			factor = 0.4
+			continent = africa #fish has too high of a chance
+		}
+		modifier = {
+			factor = 1000
+			province_id = 2978 #Claxac's Abyss
+		}
+	}
+}
+
+fur = {
+	color = { 0.54 0.40 0.31 }
+	modifier = {
+		prestige = 0.5
+	}
+	province = {
+		province_trade_power_modifier = 0.10
+	}
+	chance = {
+		factor = 15
+		modifier = {
+			factor = 0
+			OR = {
+				has_climate = tropical
+				has_climate = arid
+				has_terrain = drylands
+				has_terrain = steppe
+				has_terrain = desert
+				has_terrain = coastal_desert
+				has_terrain = coastline
+			}
+			NOT = { has_winter = normal_winter }
+			NOT = { has_winter = severe_winter }
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				has_terrain = farmlands
+				has_terrain = mountain
+				has_terrain = dwarven_hold
+				has_terrain = dwarven_hold_surface
+				has_terrain = dwarven_road
+				has_terrain = cavern
+				continent = south_america
+				continent = africa
+			}
+		}
+		modifier = {
+			factor = 0.75
+			OR = {
+				has_terrain = savannah
+				has_terrain = grasslands
+				has_terrain = highlands
+			}
+			has_winter = mild_winter
+		}
+		modifier = {
+			factor = 0.5
+            OR = {
+                NOT = { native_size = 1 }
+                has_terrain = city_terrain
+			}
+		}
+		modifier = {
+			factor = 2.0
+			native_size = 1
+		}
+		modifier = {
+			factor = 1.5
+			OR = {
+				has_terrain = forest
+				has_terrain = ancient_forest
+				has_terrain = gladeway
+			}
+		}
+		modifier = {
+			factor = 1.6
+			has_winter = normal_winter
+		}
+		modifier = {
+			factor = 2.5
+			has_winter = severe_winter
+			NOT = { has_terrain = glacier }
+		}
+		modifier = {
+			factor = 1.1
+			superregion = gerudia_superregion
+		}
+
+		modifier = {
+			factor = 0.25
+			superregion = escann_superregion
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				province_id = 4236
+				province_id = 2978
+				province_id = 2914
+			}
+		}
+		modifier = {
+			factor = 2.0
+			FROM = { has_country_flag = encourage_cash_crops_flag }
+		}
+		modifier = {
+			factor = 0.75
+			region = bloodgroves_region
+		}
+	}
+}
+
+salt = {
+	color = { 0.999 0.999 0.999 }
+	modifier = {
+		land_maintenance_modifier = -0.05
+	}
+	province = {
+		local_defensiveness = 0.15
+	}
+	chance = {
+		factor = 5
+		modifier = {
+			factor = 0
+			NOT = { has_terrain = desert }
+			NOT = { has_terrain = marsh }
+			NOT = { has_terrain = mountain }
+			NOT = { has_terrain = highlands }
+			NOT = { has_terrain = cavern }
+			NOT = { has_terrain = dwarven_hold }
+			NOT = { has_terrain = dwarven_road }
+			NOT = { region = dao_nako_region }
+		}
+		modifier = {
+			factor = 2
+			OR = {
+				has_terrain = desert
+				AND = {
+					has_terrain = marsh
+					NOT = { has_climate = arctic } #Hudson Bay
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			region = dao_nako_region
+		}
+		modifier = {
+			factor = 0.5
+			superregion = gerudia_superregion
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				province_id = 4236
+				province_id = 2978
+				province_id = 2914
+			}
+		}
+	}
+}
+
+naval_supplies = {
+	color = { 0.11 0.17 0.4 }
+	modifier = {
+		naval_forcelimit_modifier = 0.20
+	}
+	province = {
+		naval_forcelimit = 0.5
+	}
+	chance = {
+		factor = 15
+		modifier = {
+			factor = 0
+			OR = {
+				has_terrain = glacier
+				has_terrain = desert
+				has_terrain = coastal_desert
+				has_terrain = drylands
+				has_terrain = savannah
+				has_terrain = marsh
+				has_terrain = steppe
+				has_terrain = highlands
+				has_terrain = farmlands
+				has_terrain = cavern
+				has_terrain = dwarven_hold
+				has_terrain = dwarven_hold_surface
+				has_terrain = dwarven_road
+				superregion = northern_expanse_superregion
+				region = yezel_mora_region
+				region = dao_nako_region
+			}
+		}
+		modifier = {
+			factor = 0.5
+			OR = {
+				has_terrain = mountain
+				has_terrain = grasslands
+				has_climate = arctic
+			}
+		}
+		modifier = {
+			factor = 0.5
+			FROM = {
+				NOT = { num_of_ports = 1 }
+			}
+		}
+		modifier = {
+			factor = 0.75
+			OR = {
+				has_terrain = coastline
+				has_climate = tropical
+			}
+		}
+		modifier = {
+			factor = 1.5
+			OR = {
+				region = moduk_region
+				area = somyonghon_area
+			}
+			NOT = { has_terrain = steppe }
+		}
+		modifier = {
+			factor = 1.5
+			OR = {
+				has_terrain = forest
+				has_terrain = woods
+				has_terrain = hills
+				has_terrain = jungle
+				has_terrain = ancient_forest
+				has_terrain = gladeway
+				has_terrain = bloodgroves
+				region = dalaire_region # old frozen trees! 
+			}
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				province_id = 4236
+				province_id = 2978
+				province_id = 2914
+			}
+		}
+	}
+}
+
+
+# metals
+copper = {
+	color = { 0.85 0.46 0.15 }
+	modifier = {
+		global_regiment_recruit_speed = -0.2
+	}
+	province = {
+		regiment_recruit_speed = -0.2
+	}
+	chance = {
+		factor = 15
+		modifier = {
+			factor = 0
+			OR = {
+				has_terrain = steppe
+				has_terrain = desert
+				has_terrain = coastal_desert
+				has_terrain = drylands
+				has_terrain = grasslands
+				has_terrain = savannah
+				has_terrain = coastline
+				has_terrain = glacier
+				has_terrain = jungle
+				has_terrain = farmlands
+				has_terrain = woods
+				has_terrain = mushroom_forest_terrain
+				region = yezel_mora_region
+				region = domandrod_region
+				province_id = 4236 #mithradhum
+				province_id = 2978 #Claxac's Abyss
+				province_id = 2914 #Verkal Gulan
+				region = dao_nako_region
+				AND = {
+					continent = africa
+					province_is_on_an_island = yes
+				}
+			}
+			NOT = {
+				OR = {
+					province_id = 2319 #Copperfell
+					province_id = 2320 #Eresveren
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			is_random_new_world = yes
+			NOT = { continent = new_world }
+		}
+		modifier = {
+			factor = 1.1
+			is_random_new_world = yes
+			OR = {
+				has_terrain = mountain
+				has_terrain = highlands
+				has_terrain = cavern
+			}
+		}
+		modifier = {
+			factor = 1.1
+			superregion = gerudia_superregion
+		}
+		modifier = {
+			factor = 1000
+			province_id = 526
+		}
+		modifier = {
+			factor = 2 # new world mines
+			OR = {
+				region = endralliande_region
+				region = ravenous_isle_region
+				superregion = ynn_superregion
+				region = amadia_region
+			}
+		}
+		modifier = {
+			factor = 2
+			FROM = { has_country_flag = kherkan_prospectors }
+		}
+		modifier = {
+			factor = 2.25
+			OR = {
+				area = gor_burad_area
+				area = buradforge_area
+			}
+		}
+	}
+}
+
+gold = {
+	color = { 1.0 0.84 0.19 }
+	#no modifiers
+
+	chance = {
+		factor = 5
+		modifier = {
+			factor = 0
+			is_random_new_world = yes
+			NOT = { continent = new_world }
+		}
+		modifier = {
+			factor = 0
+			continent = europe
+			OR = {
+				has_terrain = forest
+				has_terrain = woods
+				has_terrain = drylands
+				has_terrain = grasslands
+				has_terrain = savannah
+				has_terrain = steppe
+				has_terrain = jungle
+				has_terrain = coastline
+				has_terrain = coastal_desert
+				has_terrain = marsh
+				has_terrain = city_terrain
+				has_terrain = mushroom_forest_terrain
+			}
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				region = yezel_mora_region
+				AND = {
+					continent = africa
+					province_is_on_an_island = yes
+				}
+			}
+		}
+		modifier = {
+			factor = 0.3
+			OR = {
+				has_terrain = dwarven_hold
+				has_terrain = dwarven_hold_surface
+				superregion = forbidden_lands_superregion
+			}
+		}
+		modifier = {
+			factor = 1.5
+			has_terrain = mountain
+			OR = {
+				continent = north_america
+				continent = south_america
+			}
+		}
+		modifier = {
+			factor = 1.1
+			OR = {
+				superregion = gerudia_superregion
+				region = amadia_region
+			}
+		}
+		modifier = {
+			factor = 1.5
+			normal_or_historical_nations = no
+		}
+		modifier = {
+			factor = 10
+			has_terrain = mountain
+			OR = {
+				region = amadia_region # four provinces
+				region = dalaire_region # three provinces
+			}
+		}
+		modifier = {
+			factor = 5 # not as much as mountains, but still a lot!
+			has_terrain = hills
+			OR = {
+				region = amadia_region # three provinces
+				region = dalaire_region # four provinces
+			}
+		}
+		modifier = {
+			factor = 3 # not as much as mountains, but still a lot!
+			has_terrain = highlands
+			region = amadia_region # four provinces
+		}
+		modifier = {
+			factor = 1.5
+			OR = {
+				area = silvegor_area
+				area = borawid_area
+				area = chaka_nelir_area
+				area = oomu_nelir_area
+				area = paiss_siqum_area
+				area = chaiwafmul_area
+			}
+		}
+		modifier = {
+			factor = 0.6
+			superregion = escann_superregion
+		}
+		modifier = {
+			factor = 0
+			continent = serpentspine
+			FROM = { NOT = { num_of_cities = 2 } }
+			FROM = { ai = yes }
+		}
+		modifier = {
+			factor = 1000	#dragon turtle's hoard
+			OR = {
+				province_id = 2262
+				province_id = 2914 #Verkal Gulan
+			}
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				province_id = 4236
+				province_id = 2978
+			}
+		}
+		modifier = {
+			factor = 1.1
+			region = domandrod_region
+		}
+		modifier = {
+			factor = 0
+			FROM = { has_reform = roadwarrior_great_convoy }
+		}
+		modifier = {
+			factor = 2
+			FROM = { has_reform = dwarovar_treasures_of_our_forefathers }
+		}
+		modifier = {
+			factor = 2.5
+			OR = {
+				area = gor_burad_area
+				area = buradforge_area
+			}
+		}
+		modifier = {
+			factor = 7.5
+			area = greatcavern_area
+		}
+		modifier = {
+			factor = 0
+			province_group = effelai_hub_provinces_group
+		}
+	}
+}
+
+iron = {
+	color = { 0.2 0.2 0.2 }
+	modifier = {
+		global_regiment_cost = -0.05
+	}
+	province = {
+		local_build_time = -0.2
+	}
+	chance = {
+		factor = 10
+		modifier = {
+			factor = 0
+			OR = {
+				region = yezel_mora_region
+				province_id = 4236
+				province_id = 2978
+				province_id = 2914
+				AND = {
+					continent = africa
+					province_is_on_an_island = yes
+				}
+			}
+		}
+		modifier = {
+			factor = 1.2
+			normal_or_historical_nations = no
+			OR = {
+				has_terrain = mountain
+				has_terrain = hills
+				has_terrain = highlands
+				has_terrain = cavern
+				has_terrain = dwarven_hold
+				has_terrain = dwarven_hold_surface
+				has_terrain = dwarven_road
+			}
+		}
+		modifier = {
+			factor = 2
+			FROM = { has_country_flag = kherkan_prospectors }
+		}
+		modifier = {
+			factor = 1.5
+			is_random_new_world = yes
+			has_terrain = mountain
+			continent = new_world #Always in RNW
+		}
+		modifier = {
+			factor = 2 # new world mines
+			OR = {
+				region = endralliande_region
+				region = ravenous_isle_region
+				superregion = ynn_superregion
+				region = dalaire_region
+				region = amadia_region
+				region = leechdens_region
+				region = dry_coast_region
+				region = dao_nako_region
+			}
+		}
+		modifier = {
+			factor = 1000
+			province_id = 6254
+		}
+		modifier = {
+			factor = 3
+			OR = {
+				area = gor_burad_area
+				area = buradforge_area
+			}
+		}
+	}
+}
+
+#African Resources
+slaves = {
+	color = { 0.0 0.0 0.0 }
+	modifier = {
+		global_own_trade_power = 0.1
+	}
+	province = {
+		local_missionary_strength = 0.01
+	}
+	chance = {
+		factor = 7
+		modifier = {
+			factor = 0
+			FROM = { has_country_modifier = the_abolish_slavery_act }
+		}
+		modifier = {
+			factor = 0
+			FROM = { NOT = { has_country_modifier = gnollish_administration } }
+			FROM = { NOT = { has_country_flag = orldhum_slaves } }
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				# NOT = { is_year = 1445 } # For Escann
+				AND = {
+					NOT = { is_city = yes }
+					NOT = { is_colony = yes }
+				}
+				AND = {
+					FROM = { NOT = { has_country_flag = orldhum_slaves } }
+					OR = {
+						has_terrain = dwarven_hold
+						has_terrain = dwarven_hold_surface
+					}
+				} #Only Haraz Orldhum can spawn slaves on holds
+			}
+		}
+		# modifier = {
+			# factor = 0
+			# NOT = { superregion = escann_superregion }
+		# }
+		# modifier = {
+			# factor = 0
+			# superregion = escann_superregion
+			# has_global_flag = orcish_slave_trade_banned_in_cannor
+		# }
+		modifier = {
+			factor = 0
+			OR = {
+				province_id = 4236
+				province_id = 2978
+				province_id = 2914
+				region = serpents_vale_region
+			}
+		}
+		modifier = {
+			factor = 2.0
+			FROM = { has_country_flag = encourage_cash_crops_flag }
+		}
+		modifier = {
+			factor = 2.0
+			FROM = { has_country_flag = orldhum_slaves }
+			OR = {
+				has_terrain = dwarven_road
+				province_group = hold_province
+			}
+		}
+		modifier = {
+			factor = 5.0
+			FROM = { has_country_flag = orldhum_slaves }
+			has_terrain = cavern
+		}
+	}
+}
+
+ivory = {
+	color = { 0.75 0.7 0.63 }
+	modifier = {
+		diplomatic_reputation = 2
+	}
+	province = {
+		local_state_maintenance_modifier = -0.2
+	}
+
+	chance = {
+		factor = 15
+		modifier = {
+			factor = 0
+			NOT = { continent = asia }
+			NOT = { continent = africa }
+			NOT = { superregion = gerudia_superregion }
+			NOT = { region = northern_pass_region }
+			NOT = { region = broken_isles_region }
+			NOT = { region = dalaire_region }
+			NOT = { region = veykoda_region }
+			NOT = { region = domandrod_region }
+		}
+		modifier = {
+            factor = 0
+            NOT = { has_terrain = jungle }
+            NOT = { has_terrain = savannah }
+            NOT = { has_terrain = glacier }
+            NOT = { has_terrain = forest }
+            NOT = { has_terrain = grasslands }
+            NOT = { has_terrain = ancient_forest }
+            NOT = { has_terrain = gladeway }
+            NOT = { region = yezel_mora_region }
+            NOT = { region = dao_nako_region }
+            NOT = { AND = { has_terrain = farmlands region = veykoda_region } }
+        }
+		modifier = {
+			factor = 0
+			continent = africa
+			province_is_on_an_island = yes
+		}
+		modifier = {
+			factor = 1.25
+			OR = {
+				has_terrain = jungle
+				has_terrain = savannah
+			}
+		}
+		modifier = {
+            factor = 1.9
+            region = veykoda_region
+        }
+		modifier = {
+			factor = 1.25
+			OR = {
+				has_terrain = forest
+				has_terrain = grasslands
+			}
+			has_winter = severe_winter
+		}
+		modifier = {
+			factor = 2
+			OR = {
+				has_terrain = glacier
+				has_climate = arctic
+			}
+		}
+		modifier = {
+			factor = 0.8
+			OR = {
+				has_terrain = ancient_forest
+				has_terrain = gladeway
+			}
+		}
+		modifier = {
+			factor = 0
+			region = moduk_region
+			NOT = { province_id = 4988 }
+			NOT = { province_id = 4989 }
+			NOT = { province_id = 4990 }
+			NOT = { province_id = 4992 }
+		}
+		modifier = {
+			factor = 2.0
+			FROM = { has_country_flag = encourage_cash_crops_flag }
+		}
+	}
+}
+
+
+#Eastern Resources
+tea = {
+	color = { 0.07 0.33 0.09 }
+	modifier = {
+		advisor_cost = -0.10
+	}
+	province = {
+		garrison_growth = 0.25
+	}
+	chance = {
+		factor = 15
+		modifier = {
+			factor = 0
+			OR = {
+				has_terrain = mountain
+				has_terrain = desert
+				has_terrain = drylands
+				has_terrain = steppe
+				has_terrain = savannah
+				has_climate = arid
+				has_winter = mild_winter
+				has_winter = normal_winter
+				has_winter = severe_winter
+			}
+			NOT = { region = mushroom_forest_region }
+		}
+		modifier = {
+			factor = 0.5
+			has_terrain = jungle
+		}
+		modifier = {
+			factor = 1.2
+			has_terrain = farmlands
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				continent = serpentspine
+				continent = europe
+				continent = africa
+			}
+		}
+		modifier = {
+			factor = 2 # new world plantations
+			OR = {
+				region = ruined_isles_region
+				superregion = taychend_superregion
+			}
+		}
+		modifier = {
+			factor = 1.5 # new world plantations
+			OR = {
+				region = trollsbay_region
+				region = severed_coast_region
+			}
+		}
+		modifier = {
+			factor = 30 # mushroom tea
+			region = mushroom_forest_region
+		}
+		modifier = {
+			factor = 0.25
+			superregion = ynn_superregion
+		}
+		modifier = {
+			factor = 2.0
+			FROM = { has_country_flag = encourage_cash_crops_flag }
+		}
+		modifier = {
+			factor = 1.1
+			FROM = {
+				OR = {
+					culture_group = elven
+					culture_group = yan
+				}
+			}
+		}
+	}
+}
+
+chinaware = {
+	color = { 0.18 0.57 0.8 }
+	modifier = {
+		legitimacy = 0.25
+		devotion = 0.25
+		horde_unity = 0.25
+		republican_tradition = 0.12
+		meritocracy = 0.1
+	}
+	province = {
+		local_autonomy = -0.1
+	}
+
+	chance = {
+		factor = 0
+		modifier = {
+			factor = 0
+			NOT = { development = 8 }
+		}
+		modifier = {
+			factor = 0
+			continent = europe
+		}
+	}
+}
+
+spices = {
+	color = { 0.4 0.65 0.38 }
+	modifier = {
+		spy_offence = 0.25
+	}
+	province = {
+		local_monthly_devastation = -0.1
+	}
+	chance = {
+		factor = 25
+		modifier = {
+			factor = 0
+			OR  = {
+				has_terrain = mountain
+				has_terrain = cavern
+				has_terrain = dwarven_hold
+				has_terrain = dwarven_hold_surface
+				has_terrain = dwarven_road
+				has_terrain = glacier
+				has_climate = arctic
+				has_winter = severe_winter
+			}
+		}
+		modifier = {
+			factor = 0.25
+			has_winter = normal_winter
+		}
+		modifier = {
+			factor = 0.4
+			region = yezel_mora_region
+		}
+		modifier = {
+			factor = 0.5
+			OR = {
+				continent = north_america
+				continent = south_america
+			}
+			NOT = {
+				superregion = taychend_superregion
+				region = domandrod_region
+			}
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				continent = europe
+				continent = serpentspine
+				superregion = forbidden_lands_superregion
+				superregion = gozengun_superregion
+				superregion = yanshen_superregion
+			}
+		}
+		modifier = {
+			factor = 1.5
+			OR = {
+				superregion = taychend_superregion
+				region = ringlet_isles_region
+			}
+		}
+		modifier = {
+			factor = 1.2 # new world plantations
+			OR = {
+				region = reapers_coast_region
+				region = dry_coast_region
+				region = domandrod_region
+			}
+		}
+		modifier = {
+			factor = 0 # no spices in ynn except the desert side
+			superregion = ynn_superregion
+			NOT = { region = epednan_expanse_region }
+		}
+		modifier = {
+			factor = 2.0
+			FROM = { has_country_flag = encourage_cash_crops_flag }
+		}
+	}
+}
+
+#New World Resources
+coffee = {
+	color = { 0.22 0.15 0.09 }
+	modifier = {
+		global_institution_spread = 0.05
+	}
+	province = {
+		local_institution_spread = 0.1
+	}
+	chance = {
+		factor = 15
+		modifier = {
+			factor = 0
+			NOT = { province_id = 1036 }
+			NOT = { province_id = 1952 }
+			OR = {
+				continent = europe
+				superregion = west_serpentspine_superregion
+				AND = {
+					FROM = { culture_is_ruinborn = yes }
+					NOT = { FROM = { has_institution = new_world_i } }
+				}
+				# Don't get any in tribal land
+				AND = {
+					OR = {
+						continent = north_america
+						continent = south_america
+					}
+					NOT = { is_city = yes }
+					NOT = { is_colony = yes }
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				has_terrain = glacier
+				has_terrain = forest
+				has_terrain = cavern
+				has_terrain = dwarven_road
+				has_terrain = dwarven_hold
+				has_terrain = dwarven_hold_surface
+				has_climate = arctic
+				has_terrain = city_terrain
+				has_winter = severe_winter
+				has_winter = normal_winter
+				has_winter = mild_winter
+			}
+		}
+		modifier = {
+			factor = 0
+			continent = africa
+			NOT = {
+				region = yezel_mora_region
+				superregion = east_sarhal_superregion
+			}
+		}
+		modifier = {
+			factor = 0
+			is_random_new_world = yes
+			continent = new_world #Always in RNW
+			NOT = { has_climate = tropical }
+		}
+		modifier = {
+			factor = 1.5
+			# removed north because too cold; makes north vs south more unique
+			# let's call it soil variation
+			continent = south_america
+		}
+		modifier = {
+			factor = 0.5
+			OR = {
+				superregion = ynn_superregion
+				region = amadia_region
+				superregion = taychend_superregion # they prefer tea
+			}
+		}
+		modifier = {
+			factor = 3 # new world plantations
+			OR = {
+				region = ravenous_isle_region
+				region = turtleback_isle_region
+			}
+		}
+		modifier = {
+			factor = 1.2 # new world plantations
+			OR = {
+				region = reapers_coast_region
+				region = soruin_region
+				region = east_effelai_region
+			}
+		}
+		modifier = {
+			factor = 1.25 #glade of summer
+			area = domandrod_gladeway_2_area
+		}
+		modifier = {
+			factor = 2.0
+			FROM = { has_country_flag = encourage_cash_crops_flag }
+		}
+		modifier = {
+			factor = 1.1
+			FROM = { culture_group = bulwari }
+		}
+		# Jayek beans
+		modifier = {
+			factor = 100
+			province_id = 1036
+		}
+	}
+}
+
+cotton = {
+	color = { 0.52 0.68 0.6 }
+	modifier = {
+		global_colonial_growth = 20
+	}
+	province = {
+		local_development_cost = -0.1
+	}
+	chance = {
+		factor = 20
+		modifier = {
+			factor = 0
+			OR = {
+				continent = europe
+				continent = africa
+				superregion = west_serpentspine_superregion
+			}
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				has_terrain = mountain
+				has_terrain = highlands
+				has_terrain = forest
+				has_terrain = jungle
+				has_terrain = cavern
+				has_terrain = dwarven_hold
+				has_terrain = dwarven_hold_surface
+				has_terrain = dwarven_road
+				has_climate = arctic
+				has_climate = arid
+				has_terrain = glacier
+				has_winter = severe_winter
+				has_winter = normal_winter
+				has_winter = mild_winter
+				has_terrain = desert
+				region = yezel_mora_region
+			}
+		}
+		modifier = {
+			factor = 0
+			has_terrain = marsh
+			region = leechdens_region
+		}
+		modifier = {
+			factor = 0.5
+			is_island = yes # to stop cotton from popping up on all the islands
+		}
+		modifier = {
+			factor = 1.8
+			OR = {
+				has_terrain = farmlands
+				has_terrain = grasslands
+				continent = north_america
+			}
+		}
+		modifier = {
+			factor = 1.15
+			OR = {
+				continent = south_america
+				continent = north_america
+			}
+		}
+		modifier = {
+			factor = 2.0
+			FROM = { has_country_flag = encourage_cash_crops_flag }
+		}
+	}
+}
+
+sugar = {
+	color = { 0.74 0.95 0.68 }
+	modifier = {
+		war_exhaustion_cost = -0.2
+	}
+	province = {
+		local_unrest = -1
+	}
+	chance = {
+		factor = 15
+		modifier = {
+			factor = 0
+			OR = {
+				continent = europe
+				continent = serpentspine
+				region = northern_pass_region
+				region = yezel_mora_region
+				region = dao_nako_region
+			}
+		}
+		modifier = {
+			factor = 0
+			NOT = { has_climate = tropical }
+			OR = {
+				has_winter = severe_winter
+				has_winter = normal_winter
+				has_winter = mild_winter
+				has_terrain = desert
+				has_terrain = mountain
+				has_terrain = hills
+				has_terrain = highlands
+				has_terrain = forest
+				has_terrain = steppe
+			}
+		}
+
+		modifier = {
+			factor = 1.5
+			OR = {
+				continent = north_america
+				continent = south_america
+				region = ringlet_isles_region
+			}
+		}
+		modifier = {
+			factor = 2 # new world plantations
+			OR = {
+				region = ravenous_isle_region
+				region = reapers_coast_region
+				region = haraf_region
+			}
+			#Keyolion exception
+			FROM = {
+				NOT = {
+					has_reform = G58_agronomers_association_reform
+				}
+			}
+		}
+		modifier = {
+			factor = 1.5 # new world plantations
+			OR = {
+                region = trollsbay_region
+				region = tor_nayyi_region
+				region = turtleback_isle_region
+				region = east_effelai_region
+			}
+		}
+		modifier = {
+			factor = 0.5
+			superregion = ynn_superregion
+		}
+		modifier = {
+			factor = 1.25 #summer glade
+			area = domandrod_gladeway_2_area
+		}
+		modifier = {
+			factor = 2.0
+			FROM = { has_country_flag = encourage_cash_crops_flag }
+		}
+		#Keyolion
+		modifier = {
+			factor = 4.0
+			FROM = { has_reform = G58_agronomers_association_reform }
+		}
+	}
+}
+
+tobacco = {
+	color = { 0.33 0.56 0.38 }
+	modifier = {
+		global_spy_defence = 0.25
+	}
+	province = {
+		province_trade_power_modifier = 0.10
+	}
+	chance = {
+		factor = 15
+		modifier = {
+			factor = 0
+			is_random_new_world = yes
+			NOT = { continent = new_world } #Always in RNW
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				AND = {
+					has_climate = arid
+					NOT = { has_terrain = grasslands }
+					NOT = { has_terrain = farmlands }
+				}
+				has_winter = severe_winter
+				has_terrain = glacier
+				has_terrain = mountain
+				has_terrain = drylands
+				has_terrain = desert
+				has_terrain = cavern
+				has_terrain = dwarven_hold
+				has_terrain = dwarven_hold_surface
+				has_terrain = dwarven_road
+				has_terrain = city_terrain
+			}
+		}
+		modifier = {
+			factor = 1.5
+			# removed south because too hot; makes north vs south more unique
+			# let's call it soil variation
+			continent = north_america
+		}
+		modifier = {
+			factor = 0.1
+			continent = europe
+		}
+		modifier = {
+			factor = 0.5
+			superregion = ynn_superregion
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				superregion = gerudia_superregion
+				continent = asia
+				continent = africa
+			}
+		}
+		modifier = {
+			factor = 0 # something about the soil here
+			OR = {
+				region = east_effelai_region
+				region = turtleback_isle_region
+				region = dry_coast_region
+				region = severed_coast_region
+			}
+		}
+		modifier = {
+			factor = 1.5 # new world plantations
+			OR = {
+				region = bloodgroves_region
+				region = trollsbay_region
+				region = haraf_region
+				region = tor_nayyi_region
+				region = severed_coast_region
+			}
+		}
+		modifier = {
+			factor = 2.0
+			FROM = { has_country_flag = encourage_cash_crops_flag }
+		}
+		modifier = {
+			factor = 1.1
+			FROM = { is_cannorian_halfling_primary_culture = yes }
+		}
+	}
+}
+
+cocoa = {
+	color = { 0.45 0.21 0.09 }
+	modifier = {
+		manpower_recovery_speed = 0.05
+	}
+	province = {
+		local_manpower_modifier = 0.10
+	}
+	chance = {
+		factor = 15
+		modifier = {
+			factor = 0
+			OR = {
+				continent = europe
+				continent = serpentspine
+				continent = africa
+				superregion = forbidden_lands_superregion
+			}
+		}
+		modifier = {
+			factor = 0
+			is_random_new_world = yes
+			NOT = { continent = new_world } #Always in RNW
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				has_terrain = glacier
+				has_terrain = steppe
+				has_terrain = forest
+				has_terrain = woods
+				has_terrain = marsh
+				has_climate = arid
+				has_climate = arctic
+				has_terrain = cavern
+				has_terrain = dwarven_hold
+				has_terrain = dwarven_hold_surface
+				has_terrain = dwarven_road
+				has_winter = mild_winter
+				has_winter = normal_winter
+				has_winter = severe_winter
+			}
+		}
+		modifier = {
+			factor = 1.5
+			continent = south_america
+		}
+		modifier = {
+			factor = 2.5 # new world plantations
+			has_terrain = jungle
+			OR = {
+				region = ruined_isles_region
+				region = reapers_coast_region
+				region = haraf_region
+				region = tor_nayyi_region
+			}
+		}
+		modifier = {
+			factor = 0 # something about the soil here
+			OR = {
+				region = east_effelai_region
+				region = turtleback_isle_region
+				region = dry_coast_region
+				region = severed_coast_region
+			}
+		}
+		modifier = {
+			factor = 1.15 #summer glade
+			area = domandrod_gladeway_2_area
+		}
+	}
+}
+
+silk = {
+	color = { 0.72 0.10 0.10 }
+	modifier = {
+		num_accepted_cultures = 1
+	}
+	province = {
+		province_trade_power_value = 2
+	}
+	chance = {
+		factor = 5
+		modifier = {
+			factor = 0
+			NOT = {
+				region = domandrod_region
+				area = westnest_area
+				area = eastnest_area
+			}
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				has_terrain = highlands
+				has_terrain = mountain
+				has_terrain = marsh
+				has_terrain = steppe
+				has_terrain = coastline
+				has_terrain = desert
+				has_terrain = coastal_desert
+				has_terrain = hills
+				has_terrain = drylands
+				has_terrain = glacier
+				has_climate = arid
+				has_climate = arctic
+				has_winter = mild_winter
+				has_winter = normal_winter
+				has_winter = severe_winter
+			}
+		}
+		modifier = {
+			factor = 1.25
+			region = domandrod_region
+		}
+		modifier = {
+			factor = 13
+			OR = {
+				area = westnest_area
+				area = eastnest_area
+			}
+		}
+
+		modifier = {
+			factor = 2.0
+			FROM = { has_country_flag = encourage_cash_crops_flag }
+		}
+	}
+}
+
+dyes = {
+	color = { 0.63 0.17 0.50 }
+	modifier = {
+		heir_chance = 0.33
+	}
+	province = {
+		province_trade_power_modifier = 0.10
+	}
+	chance = {
+		factor = 15
+		modifier = {
+			factor = 0.1
+			continent = europe
+		}
+		modifier = {
+			factor = 0
+			NOT = { has_terrain = jungle }
+			NOT = { province_id = 2939 }
+			NOT = { region = bloodgroves_region }	#Blood-red sap
+			NOT = { continent = africa }
+			NOT = { area = corinsfield_area } #Corinspoppies
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				has_climate = arid
+				has_climate = arctic
+				has_winter = mild_winter
+				has_winter = normal_winter
+				has_winter = severe_winter
+			}
+			NOT = { province_id = 2939 }
+			NOT = { region = bloodgroves_region }
+			NOT = { continent = africa }
+			NOT = { area = corinsfield_area } #Corinspoppies
+		}
+		modifier = {
+			factor = 0
+			continent = africa
+			NOT = {
+				area = velanynosy_area
+				area = porhonozy_area
+				area = bivirir_area
+				area = inner_rankaty_islands_area
+				area = outer_rankaty_islands_area
+			}
+		}
+		modifier = {
+			factor = 1.5
+			region = throden_gokad_region
+		}
+        modifier = {
+            factor = 4
+			has_terrain = city_terrain
+        }
+		modifier = {
+			factor = 1000
+			province_id = 2939
+		}
+		modifier = {
+			factor = 1.25 #summer glade
+			area = domandrod_gladeway_2_area
+		}
+		modifier = {
+			factor = 2.0
+			FROM = { has_country_flag = encourage_cash_crops_flag }
+		}
+		modifier = {
+			factor = 2.6
+			has_terrain = bloodgroves
+		}
+		modifier = {
+			factor = 2.0 #Corinspoppies
+			province_id = 2807
+		}
+	}
+}
+
+tropical_wood = {
+	color = { 0.45 0.47 0.09 }
+	modifier = {
+		development_cost = -0.05
+	}
+	province = {
+		local_build_cost = -0.2
+	}
+	chance = {
+		factor = 25
+		modifier = {
+			factor = 0
+			NOT = { superregion = deepwoods_superregion }
+			continent = europe
+		}
+		modifier = {
+			factor = 0
+			NOT = {
+				has_terrain = jungle
+				has_terrain = ancient_forest
+				has_terrain = gladeway
+				region = mushroom_forest_region
+				region = bloodgroves_region
+				region = yezel_mora_region
+			}
+		}
+		modifier = {
+			factor = 0
+			region = ardimya_region
+		}
+		modifier = {
+			factor = 2 # new world forests
+			OR = {
+				region = ruined_isles_region
+				region = reapers_coast_region
+				region = haraf_region
+				region = tor_nayyi_region
+				region = south_effelai_region
+			}
+		}
+		modifier = {
+			factor = 11.5 # mushroom furniture
+			region = mushroom_forest_region
+		}
+		modifier = {
+			factor = 0
+			has_terrain = mushroom_forest_terrain
+		}
+		modifier = {
+			factor = 0.5
+			region = bloodgroves_region
+			NOT = {
+				has_terrain = forest
+				has_terrain = woods
+				has_terrain = bloodgroves
+			}
+		}
+		modifier = {
+			factor = 1.1
+			region = domandrod_region
+		}
+		modifier = {
+			factor = 1.2
+			region = yezel_mora_region
+		}
+
+		modifier = {
+			factor = 2.0
+			FROM = { has_country_flag = encourage_cash_crops_flag }
+		}
+	}
+}
+
+livestock = {
+	color = { 0.72 0.49 0.44 }
+	modifier = {
+		cavalry_cost = -0.1
+	}
+	province = {
+		supply_limit_modifier = 0.5
+	}
+	chance = {
+		factor = 30
+		modifier = {
+			factor = 0
+			OR = {
+				has_terrain = glacier
+				has_terrain = marsh
+				has_terrain = jungle
+				has_terrain = coastline
+				has_terrain = hills
+				has_terrain = forest
+				has_terrain = woods
+				has_terrain = mountain
+				has_terrain = city_terrain
+				has_terrain = ancient_forest
+				has_terrain = gladeway
+				has_terrain = bloodgroves
+				area = westnest_area
+				area = eastnest_area
+				region = yezel_mora_region
+			}
+			NOT = { region = mushroom_forest_region }
+		}
+		modifier = {
+			factor = 0.05
+			OR = {
+				has_terrain = dwarven_hold
+				has_terrain = dwarven_hold_surface
+			}
+		}
+		modifier = {
+			factor = 0.1
+			has_terrain = dwarven_road
+		}
+
+		modifier = {
+			factor = 0.2
+			has_terrain = cavern
+		}
+		modifier = {
+			factor = 0.75
+			OR = {
+				has_winter = severe_winter
+				has_terrain = mushroom_forest_terrain
+			}
+		}
+		modifier = {
+			factor = 1.25 #Pastoralists
+			OR = {
+				has_terrain = desert
+				has_terrain = savannah
+				has_terrain = highlands
+				has_terrain = drylands
+				has_climate = arid
+			}
+		}
+		modifier = {
+			factor = 1.5
+			has_terrain = steppe
+		}
+		modifier = {
+			factor = 1.25
+			has_terrain = grasslands
+		}
+		modifier = {
+			factor = 2 # ranchland
+			superregion = taychend_superregion
+		}
+		modifier = {
+			factor = 2 # ranchland
+			owner = {
+				has_country_flag = estate_nobles_G57_land_golden_ears_flag
+			}
+		}
+
+
+		modifier = {
+			factor = 3.3 # there's no reference here, go away
+			region = mushroom_forest_region
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				province_id = 4236 #Mithradhum
+				province_id = 2978 #Claxac's Abyss
+				province_id = 2914
+			}
+		}
+	}
+}
+
+incense = {
+	color = { 0.89 0.79 0.47 }
+	modifier = {
+		tolerance_own = 0.5
+	}
+	province = {
+		trade_value_modifier = 0.1
+	}
+	chance = {
+		factor = 8
+		modifier = {
+			factor = 0
+			OR = {
+				continent = europe
+				region = northern_pass_region
+				region = serpents_vale_region
+				region = khaashalg_region
+				region = moduk_region
+				has_climate = arctic
+			}
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				has_terrain = mountain
+				has_terrain = cavern
+				has_terrain = dwarven_hold
+				has_terrain = dwarven_hold_surface
+				has_terrain = dwarven_road
+			}
+		}
+
+		modifier = {
+			factor = 1.25
+			OR = {
+				superregion = bulwar_superregion
+				superregion = ynn_superregion
+			}
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				province_id = 4236
+				province_id = 2978
+				province_id = 2914
+			}
+		}
+		modifier = {
+			factor = 1.25
+			region = domandrod_region
+		}
+		modifier = {
+			factor = 2.0
+			FROM = { has_country_flag = encourage_cash_crops_flag }
+		}
+		modifier = {
+			factor = 3
+			has_terrain = bloodgroves
+		}
+	}
+}
+
+glass = {
+	color = { 0.0 0.60 0.45 }
+	modifier = {
+		dip_tech_cost_modifier = -0.05
+	}
+	province = {
+		local_production_efficiency = 0.1
+	}
+	chance = {
+        factor = 5
+        modifier = {
+            factor = 0
+			NOT = { development = 18 }
+			NOT = { has_terrain = city_terrain }
+			NOT = { has_terrain = dwarven_hold }
+			NOT = { has_terrain = dwarven_hold_surface }
+		}
+		modifier = {
+			factor = 2.0
+			development = 22
+		}
+		modifier = {
+			factor = 2
+			has_terrain = city_terrain
+		}
+		modifier = {
+			factor = 1000
+			province_id = 4238 #Orlghelovar
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				province_id = 4236
+				province_id = 2978
+				province_id = 2914
+			}
+		}
+	}
+}
+
+paper = {
+	color = { 0.9 0.86 0.71 }
+	modifier = {
+		adm_tech_cost_modifier = -0.05
+	}
+	province = {
+		local_state_maintenance_modifier = -0.1
+	}
+	chance = {
+		factor = 5
+		modifier = {
+			factor = 0
+			NOT = { development = 18 }
+			NOT = { has_terrain = city_terrain }
+			NOT = { has_terrain = dwarven_hold }
+			NOT = { has_terrain = dwarven_hold_surface }
+		}
+		modifier = {
+			factor = 2.0
+			development = 22
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				province_id = 4236
+				province_id = 2978
+				province_id = 2914
+			}
+		}
+	}
+}
+
+gems = {
+	color = { 0.96 0.78 0.78 }
+	modifier = {
+		inflation_reduction = 0.05
+	}
+	province = {
+		local_tax_modifier = 0.15
+	}
+	chance = {
+		factor = 5
+		modifier = {
+			factor = 0
+			is_random_new_world = yes
+			NOT = { continent = new_world }
+		}
+		modifier = {
+			factor = 0.1
+			continent = europe
+			OR = {
+				has_terrain = forest
+				has_terrain = woods
+				has_terrain = drylands
+				has_terrain = grasslands
+				has_terrain = savannah
+				has_terrain = steppe
+				has_terrain = coastline
+				has_terrain = coastal_desert
+				has_terrain = marsh
+			}
+		}
+		modifier = {
+			factor = 0
+			NOT = { has_terrain = coastline }
+			continent = oceania #Pearls
+		}
+		modifier = {
+			factor = 0
+			continent = africa
+			NOT = {
+				AND = {
+					has_port = yes
+					OR = {
+						area = bavabetsaro_area
+						area = visage_isles_area
+						area = daagalkauva_area
+						area = merfolk_tip_area
+						area = bariga_vumb_area
+						area = old_djinnakah_area
+						area = mnemba_ziidan_area
+						area = igerya_isles_area
+					}
+				}
+
+			}
+		}
+		modifier = {
+			factor = 1.5
+			OR = {
+				continent = south_america
+				continent = north_america
+			}
+		}
+		modifier = {
+			factor = 1.5
+			OR = {
+				has_terrain = mountain
+				has_terrain = jungle
+				has_terrain = hills
+				has_terrain = highlands
+				has_terrain = dwarven_hold
+				has_terrain = dwarven_hold_surface
+				has_terrain = coastline #Pearls
+			}
+		}
+		modifier = {
+			factor = 1.5
+			is_random_new_world = yes
+			has_terrain = mountain
+			continent = new_world #Always in RNW
+		}
+		modifier = {
+			factor = 1.5
+			normal_or_historical_nations = no
+		}
+		modifier = {
+			factor = 2
+			region = dalaire_region # to make the land more desirable
+		}
+		modifier = {
+			factor = 1.5
+			superregion = gerudia_superregion
+		}
+		modifier = {
+			factor = 0.6
+			superregion = escann_superregion
+		}
+		modifier = {
+			factor = 1.2
+			has_terrain = cavern
+			superregion = west_serpentspine_superregion
+		}
+		modifier = {
+			factor = 1.2	#dragon turtle's hoard
+			region = turtleback_isle_region
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				province_id = 4236
+				province_id = 2978
+				province_id = 2914
+			}
+		}
+		modifier = {
+			factor = 1.25
+			region = domandrod_region
+		}
+		modifier = {
+			factor = 2.0
+			FROM = { has_country_flag = encourage_cash_crops_flag }
+		}
+		modifier = {
+			factor = 10
+			area = arg_ordstun_area
+		}
+		modifier = {
+			factor = 100
+			OR = {
+				province_id = 2948 #diamond quarry
+				province_id = 4338 #emerald spire
+			}
+		}
+		modifier = {
+			factor = 4
+			owner = {
+				has_country_modifier = G55_increased_gem_chance
+			}
+		}
+		modifier = {
+			factor = 4
+			FROM = {
+				has_country_flag = H76_increased_gem_chance
+			}
+		}
+		modifier = {
+			factor = 4
+			FROM = {
+				overlord = {
+					has_country_flag = H76_increased_gem_chance
+				}
+			}
+			continent = serpentspine
+		}
+	}
+}
+
+coal = {
+	color = { 0.0 1.0 1.0 }
+	is_latent = yes
+	is_valuable = yes
+
+	rnw_latent_chance = 7 # Kind of on average how many provinces we want to spawn with it
+
+	trigger = {
+		OR = {
+			development = 20
+			owner = { innovativeness = 20 }
+		}
+		if = {
+			limit = {
+				owner = {
+					NOT = { has_country_flag = earlier_coal_available }
+					NOT = { has_country_flag = even_earlier_coal_available }
+				}
+			}
+			provincial_institution_progress = {
+				which = enlightenment
+				value = 100
+			}
+			owner = { has_institution = enlightenment }
+		}
+		else_if = {
+			limit = { owner = { has_country_flag = even_earlier_coal_available } }
+			provincial_institution_progress = {
+				which = global_trade
+				value = 100
+			}
+			owner = {
+				has_institution = global_trade
+				innovativeness = 50
+			}
+		}
+		else = {
+			provincial_institution_progress = {
+				which = manufactories
+				value = 100
+			}
+			owner = {
+				has_institution = manufactories
+				adm_tech = 23
+			}
+		}
+	}
+	modifier = {
+		global_trade_goods_size_modifier = 0.1
+	}
+	province = {
+		local_state_maintenance_modifier = -0.2
+	}
+	chance = {
+		factor = 1
+	}
+}
+
+cloves = {
+	color = { 1.0 0.5 0.85 }
+	modifier = {
+		trade_efficiency = 0.05
+	}
+	province = {
+		province_trade_power_modifier = 0.2
+	}
+	chance = {
+		factor = 80
+		modifier = {
+			factor = 0
+
+			OR = {
+				NOT = { region = fahvanosy_region }
+				area = havafonosy_area
+				area = bavabetsaro_area
+			}
+		}
+		modifier = {
+			factor = 5
+			area = velanynosy_area
+		}
+		modifier = {
+			factor = 2.0
+			FROM = {
+				has_country_flag = encourage_cash_crops_flag
+			}
+		}
+	}
+}
+
+unknown = {
+	color = { 0.5 0.5 0.5 }
+}
+
+#Anbennar
+
+damestear = {
+	color = { 0 230 230 }
+	# Trading bonus
+	modifier = {
+		all_power_cost = -0.05
+	}
+	province = {
+		local_unrest = 3
+	}
+	chance = {
+		factor = 10000
+		modifier = {
+			factor = 0
+			NOT = { has_province_modifier = the_glowing_city }
+		}
+	}
+}
+
+precursor_relics = {
+	color = { 230 230 30 }
+	# Trading bonus
+	modifier = {
+		trade_efficiency = 0.05
+		technology_cost = -0.05
+	}
+	province = {
+		local_development_cost = -0.15
+	}
+	chance = {
+		factor = 10000
+		modifier = {
+			factor = 0
+			NOT = { has_province_modifier = god_fragment_ruins }
+			NOT = { has_province_modifier = the_dragon_house }
+			NOT = { has_province_modifier = vault_ruins }
+			NOT = { has_province_modifier = portal_nexus }
+			NOT = { has_province_modifier = floating_city_crash_site }
+			NOT = { has_province_flag = permanent_precursor_relics }
+			NOT = { region = domandrod_region }
+			NOT = { province_id = 6838 } #valley portal
+		}
+		modifier = {
+			factor = 0.0001
+			region = domandrod_region
+		}
+	}
+}
+
+mithril = {
+	color = { 220 238 251 }
+	# Trading bonus
+	modifier = {
+		prestige = 1
+	}
+	province = {
+		shock_damage_received = -0.01
+		shock_damage = 0.02
+	}
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 0
+			NOT = { continent = serpentspine }
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				region = northern_pass_region
+				region = serpents_vale_region
+			}
+			NOT = {
+				province_id = 4120 #amldihr entrances
+				province_id = 4121
+				area = lonely_mountains_area
+			}
+		}
+		modifier = {
+			factor = 3
+			province_group = hold_province
+		}
+		modifier = {
+			factor = 1.5
+			has_terrain = dwarven_hold
+		}
+		modifier = {
+			factor = 5
+			has_terrain = cavern
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				province_id = 2978 #Claxac's Abyss
+				province_id = 2914 #Verkal Gulan
+			}
+		}
+		modifier = {
+			factor = 1000
+			OR = {
+				province_id = 4236 #Mithradhum
+				province_id = 4334 #Truesilver hollow
+			}
+		}
+		modifier = {
+			factor = 1000
+			OR = {
+				has_province_modifier = dwarovar_mithrilarm_mine
+				has_province_modifier = dwarovar_huge_mithril_cave
+			}
+		}
+		modifier = {
+			factor = 1.5
+			FROM = { has_country_flag = mithradhum_mithril }
+			NOT = { area = mithradhum_area }
+		}
+		modifier = {
+			factor = 2
+			FROM = { has_reform = dwarovar_treasures_of_our_forefathers }
+		}
+		modifier = {
+			factor = 3
+			OR = {
+				area = gor_burad_area
+				area = buradforge_area
+			}
+		}
+	}
+}
+
+fungi = {
+	color = { 86 51 63 }
+	# Trading bonus
+	modifier = {
+		land_attrition = -0.1
+	}
+	province = {
+		local_development_cost = -0.1
+	}
+	chance = {
+		factor = 5
+		modifier = {
+			factor = 0
+			NOT = { continent = serpentspine }
+			NOT = { region = mushroom_forest_region }
+			NOT = { region = domandrod_region }
+			NOT = { region = yezel_mora_region }
+		}
+		modifier = {
+			factor = 0
+			continent = serpentspine
+			NOT = { has_terrain = cavern }
+			NOT = { has_terrain = dwarven_hold }
+			NOT = { has_terrain = dwarven_hold_surface }
+			NOT = { has_terrain = dwarven_road }
+		}
+		modifier = {
+			factor = 3
+			has_terrain = cavern
+		}
+		modifier = {
+			factor = 0.6
+			has_terrain = dwarven_road
+		}
+		modifier = {
+			factor = 0.25
+			OR = {
+				has_terrain = dwarven_hold
+				has_terrain = dwarven_hold_surface
+			}
+		}
+		modifier = {
+			factor = 100
+			OR = {
+				has_province_modifier = big_fungi
+				region = mushroom_forest_region
+			}
+		}
+		modifier = {
+			factor = 6
+			has_terrain = mushroom_forest_terrain
+		}
+		modifier = {
+			factor = 5
+			region = yezel_mora_region
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				province_id = 4236
+				province_id = 2978
+				province_id = 2914
+			}
+		}
+		modifier = {
+			factor = 20
+			area = drunken_pass_area
+		}
+	}
+}
+
+serpentbloom = {
+	color = { 82 15 106 }
+	# Trading bonus
+	modifier = {
+		global_supply_limit_modifier = 0.10
+	}
+	province = {
+		local_manpower_modifier = 0.10
+	}
+	chance = {
+		factor = 10
+		modifier = {
+			factor = 0
+			NOT = { continent = serpentspine }
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				region = northern_pass_region
+				region = serpents_vale_region
+			}
+			NOT = {
+				province_id = 4120 #amldihr entrances
+				province_id = 4121
+			}
+		}
+		modifier = {
+			factor = 3
+			has_terrain = cavern
+		}
+		modifier = {
+			factor = 0.5
+			province_group = hold_province
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				province_id = 4236
+				province_id = 2978
+				province_id = 2914
+			}
+		}
+		modifier = {
+			factor = 0.5
+			OR = {
+				area = buradforge_area
+				area = arg_ordstun_area
+			}
+		}
+		modifier = {
+			factor = 35
+			area = drunken_pass_area
+		}
+	}
+}

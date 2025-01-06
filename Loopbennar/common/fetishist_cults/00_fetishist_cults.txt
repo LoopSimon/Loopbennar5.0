@@ -1,0 +1,1269 @@
+
+kroozmuta_zemna_cult = {
+	sprite = 1
+
+	land_maintenance_modifier = -0.1
+	land_attrition = -0.075
+
+	allow = {
+		OR = {
+			has_unlocked_cult = kroozmuta_zemna_cult
+			dwarovar_goblin_culture_primary = yes
+			primary_culture = cave_troll
+		}
+		OR = {
+			NOT = { has_country_flag = uses_primary_cult }
+			AND = {
+				has_country_flag = uses_primary_cult
+				has_primary_cult = {
+					cult = kroozmuta_zemna_cult
+				}
+			}
+		}
+	}
+
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			dwarovar_goblin_culture_primary = yes
+			factor = 2
+		}
+		modifier = {
+			personality = ai_balanced
+			factor = 2
+		}
+	}
+}
+
+kroozbuto_nubo_cult = {
+	sprite = 2
+
+	trade_steering = 0.20
+	movement_speed = 0.075
+
+	allow = {
+		OR = {
+			has_unlocked_cult = kroozbuto_nubo_cult
+			dwarovar_goblin_culture_primary = yes
+			primary_culture = cave_troll
+		}
+		OR = {
+			NOT = { has_country_flag = uses_primary_cult }
+			AND = {
+				has_country_flag = uses_primary_cult
+				has_primary_cult = {
+					cult = kroozbuto_nubo_cult
+				}
+			}
+		}
+	}
+
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			dwarovar_goblin_culture_primary = yes
+			factor = 2
+		}
+		modifier = {
+			personality = ai_militarist
+			factor = 2
+		}
+	}
+}
+
+tewaka_sunka_cult = {
+	sprite = 3
+
+	spy_offence = 0.2
+	global_institution_spread = 0.2
+
+	allow = {
+		OR = {
+			has_unlocked_cult = tewaka_sunka_cult
+			primary_culture = exodus_goblin
+		}
+		OR = {
+			NOT = { has_country_flag = uses_primary_cult }
+			AND = {
+				has_country_flag = uses_primary_cult
+				has_primary_cult = {
+					cult = tewaka_sunka_cult
+				}
+			}
+		}
+	}
+
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			primary_culture = exodus_goblin
+			factor = 2
+		}
+		modifier = {
+			personality = ai_balanced
+			factor = 2
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { neighbors_tech_discount = 0.1 }
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.2
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.3
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.4
+		}
+	}
+}
+
+muta_mestika_cult = {
+	sprite = 4
+
+	stability_cost_modifier = -0.15
+	legitimacy = 0.5
+	devotion = 0.5
+	republican_tradition = 0.15
+	horde_unity = 0.5
+
+	allow = {
+		always = no
+		OR = {
+			has_unlocked_cult = muta_mestika_cult
+		}
+		OR = {
+			NOT = { has_country_flag = uses_primary_cult }
+			AND = {
+				has_country_flag = uses_primary_cult
+				has_primary_cult = {
+					cult = muta_mestika_cult
+				}
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 2
+		}
+		modifier = {
+			personality = ai_balanced
+			factor = 2
+		}
+		modifier = { 
+			NOT = { stability = 1 }
+			factor = 2
+		}
+		modifier = { 
+			stability = 2
+			factor = 0.5
+		}
+		modifier = { 
+			NOT = { legitimacy = 50 }
+			factor = 2
+		}
+		modifier = { 
+			legitimacy = 75
+			factor = 0.5
+		}
+	}
+}
+
+apzarko_hrom_cult = {
+	sprite = 5
+		
+	discipline = 0.025
+	leader_land_shock = 1
+
+	allow = {
+		OR = {
+			has_unlocked_cult = apzarko_hrom_cult
+			primary_culture = common_goblin
+		}
+		OR = {
+			NOT = { has_country_flag = uses_primary_cult }
+			AND = {
+				has_country_flag = uses_primary_cult
+				has_primary_cult = {
+					cult = apzarko_hrom_cult
+				}
+			}
+		}
+	}
+	
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			primary_culture = common_goblin
+			factor = 2
+		}
+		modifier = {
+			personality = ai_militarist
+			factor = 2
+		}
+		modifier = {
+			has_idea_group = religious_ideas
+			factor = 2
+		}
+		modifier = {
+			has_idea_group = humanist_ideas
+			factor = 0.5
+		}
+		modifier = {
+			religious_unity = 0.8
+			factor = 2
+		}
+		modifier = {
+			NOT = { religious_unity = 0.5 }
+			factor = 0.5
+		}
+	}
+}
+
+vortza_lesa_cult = {
+	sprite = 6
+	
+	hostile_attrition = 1.0
+	build_cost = -0.05
+	
+	allow  = {
+		OR = {
+			has_unlocked_cult = vortza_lesa_cult
+			primary_culture = forest_goblin
+		}
+		OR = {
+			NOT = { has_country_flag = uses_primary_cult }
+			AND = {
+				has_country_flag = uses_primary_cult
+				has_primary_cult = {
+					cult = vortza_lesa_cult
+				}
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			primary_culture = forest_goblin
+			factor = 2
+		}
+		modifier = {
+			personality = ai_balanced
+			factor = 2
+		}
+	}
+}
+
+vortzo_laukuno_cult = {
+	sprite = 7
+
+	global_manpower_modifier = 0.15
+	global_tax_modifier = 0.05
+	
+	allow = {
+		OR = {
+			has_unlocked_cult = vortzo_laukuno_cult
+			primary_culture = exodus_goblin
+		}
+		OR = {
+			NOT = { has_country_flag = uses_primary_cult }
+			AND = {
+				has_country_flag = uses_primary_cult
+				has_primary_cult = {
+					cult = vortzo_laukuno_cult
+				}
+			}
+		}
+	}
+
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			primary_culture = exodus_goblin
+			factor = 2
+		}
+		modifier = {
+			tax_income_percentage = 0.7
+			factor = 2
+		}
+		modifier = {
+			tax_income_percentage = 0.5
+			factor = 2
+		}
+		modifier = {
+			NOT = { tax_income_percentage = 0.25 }
+			factor = 0.5
+		}
+		modifier = {
+			personality = ai_balanced
+			factor = 2
+		}
+	}
+}
+
+vortza_krpa_cult = {
+	sprite = 8
+
+	trade_efficiency = 0.1
+	development_cost = -0.05
+
+	allow = {
+		OR = {
+			has_unlocked_cult = vortza_krpa_cult	
+			dwarovar_goblin_culture_primary = yes
+			primary_culture = cave_troll
+		}
+		OR = {
+			NOT = { has_country_flag = uses_primary_cult }
+			AND = {
+				has_country_flag = uses_primary_cult
+				has_primary_cult = {
+					cult = vortza_krpa_cult
+				}
+			}
+		}
+	}
+
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			dwarovar_goblin_culture_primary = yes
+			factor = 2
+		}
+		modifier = {
+			trade_income_percentage = 0.7
+			factor = 2
+		}
+		modifier = {
+			trade_income_percentage = 0.5
+			factor = 2
+		}
+		modifier = {
+			NOT = { trade_income_percentage = 0.25 }
+			factor = 0.5
+		}
+		modifier = {
+			personality = ai_capitalist
+			factor = 2
+		}
+	}
+}
+
+zvaiko_udenzo_cult = {
+	sprite = 9
+
+	navy_tradition = 1
+	privateer_efficiency = 0.15
+
+	allow = {
+		OR = {
+			has_unlocked_cult = zvaiko_udenzo_cult
+			primary_culture = exodus_goblin
+		}
+		OR = {
+			NOT = { has_country_flag = uses_primary_cult }
+			AND = {
+				has_country_flag = uses_primary_cult
+				has_primary_cult = {
+					cult = zvaiko_udenzo_cult
+				}
+			}
+		}
+	}
+
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 2
+			primary_culture = exodus_goblin
+		}
+		modifier = {
+			personality = ai_balanced
+			factor = 2
+		}
+	}
+}
+
+zvaika_kirba_cult = {
+	sprite = 10
+
+	global_unrest = -2
+	religious_unity = 0.125
+
+	allow = {
+	OR = {
+		has_unlocked_cult = zvaika_kirba_cult
+		primary_culture = common_goblin
+	}
+	OR = {
+			NOT = { has_country_flag = uses_primary_cult }
+			AND = {
+				has_country_flag = uses_primary_cult
+				has_primary_cult = {
+					cult = zvaika_kirba_cult
+				}
+			}
+		}
+	}
+
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			personality = ai_balanced
+			factor = 2
+		}
+		modifier = {
+			primary_culture = common_goblin
+			factor = 2
+		}
+	}
+}
+
+vortzo_liezmo_cult = {
+	sprite = 11
+
+	production_efficiency = 0.15
+	
+	allow = {
+		OR = {
+			has_unlocked_cult = vortzo_liezmo_cult
+			dwarovar_goblin_culture_primary = yes
+			primary_culture = cave_troll
+		}
+		OR = {
+			NOT = { has_country_flag = uses_primary_cult }
+			AND = {
+				has_country_flag = uses_primary_cult
+				has_primary_cult = {
+					cult = vortzo_liezmo_cult
+				}
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			dwarovar_goblin_culture_primary = yes
+			factor = 2
+		}
+		modifier = {
+			production_income_percentage = 0.7
+			factor = 2
+		}
+		modifier = {
+			production_income_percentage = 0.5
+			factor = 2
+		}
+		modifier = {
+			NOT = { production_income_percentage = 0.25 }
+			factor = 0.5
+		}
+		modifier = {
+			personality = ai_capitalist
+			factor = 2
+		}
+	}
+}
+
+
+muta_kroozpauz_cult = {
+	sprite = 26
+
+	cavalry_power = 0.15
+	shock_damage = 0.05
+	
+	allow = {
+		has_unlocked_cult = muta_kroozpauz_cult
+		OR = {
+			NOT = { has_country_flag = uses_primary_cult }
+			AND = {
+				has_country_flag = uses_primary_cult
+				has_primary_cult = {
+					cult = muta_kroozpauz_cult
+				}
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			personality = ai_militarist
+			factor = 2
+		}
+	}
+}
+
+#foreign cults
+cannorian_cult = {
+	sprite = 12
+
+	prestige = 1
+	tolerance_heathen = 1
+	
+	allow  = {
+		has_unlocked_cult = cannorian_cult
+		OR = {
+			NOT = { has_country_flag = uses_primary_cult }
+			AND = {
+				has_country_flag = uses_primary_cult
+				has_primary_cult = {
+					cult = cannorian_cult
+				}
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			personality = ai_balanced
+			factor = 2
+		}
+	}
+}
+
+cube_cult = {
+	sprite = 28
+
+	build_cost = -0.1
+	prestige = 0.5
+
+	allow = {
+		has_unlocked_cult = cube_cult
+		OR = {
+			NOT = { has_country_flag = uses_primary_cult }
+			AND = {
+				has_country_flag = uses_primary_cult
+				has_primary_cult = {
+					cult = cube_cult
+				}
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			personality = ai_balanced
+			factor = 2
+		}
+	}
+}
+
+ancestor_worship_cult = {
+	sprite = 13
+	
+	tolerance_own = 2
+	legitimacy = 0.5
+	devotion = 0.5
+	horde_unity = 0.5
+	republican_tradition = 0.15
+	
+	allow  = {
+		has_unlocked_cult = ancestor_worship_cult
+		OR = {
+			NOT = { has_country_flag = uses_primary_cult }
+			AND = {
+				has_country_flag = uses_primary_cult
+				has_primary_cult = {
+					cult = ancestor_worship_cult
+				}
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			personality = ai_capitalist
+			factor = 2
+		}
+	}
+}
+
+grobilazk_cult = {
+	sprite = 31
+
+	spy_action_cost_modifier = -0.25
+	artificers_loyalty_modifier = 0.1
+
+	allow = {
+		has_unlocked_cult = grobilazk_cult
+		OR = {
+			NOT = { has_country_flag = uses_primary_cult }
+			AND = {
+				has_country_flag = uses_primary_cult
+				has_primary_cult = {
+					cult = grobilazk_cult
+				}
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			personality = ai_capitalist
+			factor = 2
+		}
+	}
+}
+
+scribble_cult = {
+	sprite = 29
+
+	discipline = 0.05
+
+	allow = {
+		has_unlocked_cult = scribble_cult
+		OR = {
+			NOT = { has_country_flag = uses_primary_cult }
+			AND = {
+				has_country_flag = uses_primary_cult
+				has_primary_cult = {
+					cult = scribble_cult
+				}
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			personality = ai_militarist
+			factor = 2
+		}
+	}
+}
+
+gnomish_cult = {
+	sprite = 14
+	
+	technology_cost = -0.05
+	
+	allow  = {
+		has_unlocked_cult = gnomish_cult
+		OR = {
+			NOT = { has_country_flag = uses_primary_cult }
+			AND = {
+				has_country_flag = uses_primary_cult
+				has_primary_cult = {
+					cult = gnomish_cult
+				}
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			personality = ai_militarist
+			factor = 2
+		}
+	}
+}
+
+godlost_cult = {
+	sprite = 15
+
+	drill_decay_modifier = -0.15
+	global_manpower_modifier = 0.10
+
+	allow = {
+		has_unlocked_cult = godlost_cult
+					OR = {
+			NOT = { has_country_flag = uses_primary_cult }
+			AND = {
+				has_country_flag = uses_primary_cult
+				has_primary_cult = {
+					cult = godlost_cult
+				}
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			personality = ai_militarist
+			factor = 2
+		}
+	}
+}
+
+khetist_cult = {
+	sprite = 16
+
+	great_project_upgrade_cost = -0.25
+	global_unrest = -2
+
+	allow = {
+		has_unlocked_cult = khetist_cult
+					OR = {
+			NOT = { has_country_flag = uses_primary_cult }
+			AND = {
+				has_country_flag = uses_primary_cult
+				has_primary_cult = {
+					cult = khetist_cult
+				}
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			personality = ai_capitalist
+			factor = 2
+		}
+	}
+}
+
+gnollish_cult = {
+	sprite = 17
+
+	land_morale = 0.05
+	reduced_liberty_desire = 10
+
+	allow = {
+		has_unlocked_cult = gnollish_cult
+					OR = {
+			NOT = { has_country_flag = uses_primary_cult }
+			AND = {
+				has_country_flag = uses_primary_cult
+				has_primary_cult = {
+					cult = gnollish_cult
+				}
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			personality = ai_capitalist
+			factor = 2
+		}
+	}
+}
+
+elven_cult = {
+	sprite = 18
+
+	prestige = 1
+	diplomatic_reputation = 1
+
+	allow = {
+		has_unlocked_cult = elven_cult
+					OR = {
+			NOT = { has_country_flag = uses_primary_cult }
+			AND = {
+				has_country_flag = uses_primary_cult
+				has_primary_cult = {
+					cult = elven_cult
+				}
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			personality = ai_capitalist
+			factor = 2
+		}
+	}
+}
+
+bulwari_cult = {
+	sprite = 19
+
+	promote_culture_cost = -0.5
+	advisor_cost = -0.15
+
+	allow = {
+		has_unlocked_cult = bulwari_cult
+					OR = {
+			NOT = { has_country_flag = uses_primary_cult }
+			AND = {
+				has_country_flag = uses_primary_cult
+				has_primary_cult = {
+					cult = bulwari_cult
+				}
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			personality = ai_diplomat
+			factor = 2
+		}
+	}
+}
+
+gerudian_cult = {
+	sprite = 20
+
+	stability_cost_modifier = -0.075
+	ship_durability = 0.05
+
+	allow = {
+		has_unlocked_cult = gerudian_cult
+					OR = {
+			NOT = { has_country_flag = uses_primary_cult }
+			AND = {
+				has_country_flag = uses_primary_cult
+				has_primary_cult = {
+					cult = gerudian_cult
+				}
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			personality = ai_diplomat
+			factor = 2
+		}
+	}
+}
+
+orcish_cult = {
+	sprite = 21
+
+	army_tradition = 0.50
+	prestige_from_land  = 0.50
+
+	allow = {
+		has_unlocked_cult = orcish_cult
+					OR = {
+			NOT = { has_country_flag = uses_primary_cult }
+			AND = {
+				has_country_flag = uses_primary_cult
+				has_primary_cult = {
+					cult = orcish_cult
+				}
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			personality = ai_militarist
+			factor = 2
+		}
+	}
+}
+
+bulgu_cult = {
+	sprite = 30
+
+	prestige_decay = -0.01
+	recover_army_morale_speed = 0.1
+
+	allow = {
+		has_unlocked_cult = bulgu_cult
+					OR = {
+			NOT = { has_country_flag = uses_primary_cult }
+			AND = {
+				has_country_flag = uses_primary_cult
+				has_primary_cult = {
+					cult = bulgu_cult
+				}
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			personality = ai_militarist
+			factor = 2
+		}
+	}
+}
+
+
+harpy_cult = {
+	sprite = 22
+
+	movement_speed = 0.10
+	global_tax_modifier = 0.10
+
+	allow = {
+		has_unlocked_cult = harpy_cult
+					OR = {
+			NOT = { has_country_flag = uses_primary_cult }
+			AND = {
+				has_country_flag = uses_primary_cult
+				has_primary_cult = {
+					cult = harpy_cult
+				}
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			personality = ai_militarist
+			factor = 2
+		}
+	}
+}
+
+fey_cult = {
+	sprite = 23
+
+	global_trade_goods_size_modifier = 0.05
+	spy_offence = 0.15
+
+	allow = {
+		has_unlocked_cult = fey_cult
+					OR = {
+			NOT = { has_country_flag = uses_primary_cult }
+			AND = {
+				has_country_flag = uses_primary_cult
+				has_primary_cult = {
+					cult = fey_cult
+				}
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			personality = ai_capitalist
+			factor = 2
+		}
+	}
+}
+
+raheni_cult = {
+	sprite = 24
+
+	reform_progress_growth = 0.075
+	governing_capacity_modifier = 0.10
+
+	allow = {
+		has_unlocked_cult = raheni_cult
+					OR = {
+			NOT = { has_country_flag = uses_primary_cult }
+			AND = {
+				has_country_flag = uses_primary_cult
+				has_primary_cult = {
+					cult = raheni_cult
+				}
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			personality = ai_capitalist
+			factor = 2
+		}
+	}
+}
+
+giantkin_cult = {
+	sprite = 25
+
+	fort_maintenance_modifier = -0.15
+	land_attrition = -0.10
+
+	allow = {
+		has_unlocked_cult = giantkin_cult
+					OR = {
+			NOT = { has_country_flag = uses_primary_cult }
+			AND = {
+				has_country_flag = uses_primary_cult
+				has_primary_cult = {
+					cult = giantkin_cult
+				}
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			personality = ai_capitalist
+			factor = 2
+		}
+	}
+}
+
+centaur_cult = {
+	sprite = 26
+
+	cavalry_power = 0.15
+	global_prov_trade_power_modifier = 0.1
+
+	allow = {
+		has_unlocked_cult = centaur_cult
+					OR = {
+			NOT = { has_country_flag = uses_primary_cult }
+			AND = {
+				has_country_flag = uses_primary_cult
+				has_primary_cult = {
+					cult = centaur_cult
+				}
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			personality = ai_militarist
+			factor = 2
+		}
+	}
+}
+
+kobold_cult = {
+	sprite = 27
+
+	inflation_reduction = 0.1
+	hostile_attrition = 1
+
+	allow = {
+		has_unlocked_cult = kobold_cult
+					OR = {
+			NOT = { has_country_flag = uses_primary_cult }
+			AND = {
+				has_country_flag = uses_primary_cult
+				has_primary_cult = {
+					cult = kobold_cult
+				}
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			personality = ai_militarist
+			factor = 2
+		}
+	}
+}
+
+ardimya_cult = {
+	sprite = 32
+
+	reform_progress_growth = 0.15
+	stability_cost_modifier = -0.2
+
+	allow = {
+		religion = genie_cult
+	}
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			personality = ai_capitalist
+			factor = 2
+		}
+	}
+}
+
+brasan_cult = {
+	sprite = 33
+
+	infantry_power = 0.1
+	core_creation = -0.05
+
+	allow = {
+		religion = genie_cult
+		has_unlocked_cult = brasan_cult
+	}
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			personality = ai_capitalist
+			factor = 2
+		}
+	}
+}
+
+naqi_cult = {
+	sprite = 38
+
+	global_missionary_strength = 0.02
+	tolerance_own = 2
+
+	allow = {
+		religion = genie_cult
+		has_unlocked_cult = naqi_cult
+	}
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			personality = ai_capitalist
+			factor = 2
+		}
+	}
+}
+
+al_dimiryat_cult = {
+	sprite = 34
+
+	discipline = 0.05
+	legitimacy = 1
+
+	allow = {
+		religion = genie_cult
+		has_unlocked_cult = al_dimiryat_cult
+	}
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			personality = ai_capitalist
+			factor = 2
+		}
+	}
+}
+
+grand_sultan_cult = {
+	sprite = 39
+
+	morale_damage = 0.1
+	all_estate_loyalty_equilibrium = 0.05
+
+	allow = {
+		religion = genie_cult
+		has_unlocked_cult = grand_sultan_cult
+	}
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			personality = ai_capitalist
+			factor = 2
+		}
+	}
+}
+
+dakinshi_cult = {
+	sprite = 40
+
+	ae_impact = -0.1
+	naval_morale = 0.1
+
+	allow = {
+		religion = genie_cult
+		has_unlocked_cult = dakinshi_cult
+	}
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			personality = ai_capitalist
+			factor = 2
+		}
+	}
+}
+
+fidiya_cult = {
+	sprite = 35
+
+	shock_damage_received = -0.1
+	movement_speed = 0.1
+
+	allow = {
+		religion = genie_cult
+		has_unlocked_cult = fidiya_cult
+	}
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			personality = ai_capitalist
+			factor = 2
+		}
+	}
+}
+
+jannu_cult = {
+	sprite = 36
+
+	idea_cost = -0.05
+	embracement_cost = -0.2
+
+	allow = {
+		religion = genie_cult
+		has_unlocked_cult = jannu_cult
+	}
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			personality = ai_capitalist
+			factor = 2
+		}
+	}
+}
+
+tanizuland_cult = {
+	sprite = 41
+
+	siege_ability = 0.1
+	defensiveness = 0.15
+
+	allow = {
+		religion = genie_cult
+		has_unlocked_cult = tanizuland_cult
+	}
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			personality = ai_capitalist
+			factor = 2
+		}
+	}
+}
+
+vyzemby_cult = {
+	sprite = 42
+
+	trade_efficiency = 0.1
+	heavy_ship_power = 0.1
+
+	allow = {
+		religion = genie_cult
+		has_unlocked_cult = vyzemby_cult
+	}
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			personality = ai_capitalist
+			factor = 2
+		}
+	}
+}
+
+darbanar_cult = {
+	sprite = 37
+
+	global_unrest = -2
+	war_taxes_cost_modifier = -0.5
+
+	allow = {
+		religion = genie_cult
+		has_unlocked_cult = darbanar_cult
+	}
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			personality = ai_capitalist
+			factor = 2
+		}
+	}
+}
+
+horasesh_cult = {
+	sprite = 43
+
+	diplomatic_reputation = 2
+	improve_relation_modifier = 0.1
+
+	allow = {
+		religion = genie_cult
+		has_unlocked_cult = horasesh_cult
+	}
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			personality = ai_capitalist
+			factor = 2
+		}
+	}
+}

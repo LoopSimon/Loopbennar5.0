@@ -1,0 +1,220 @@
+
+# Do not change tags in here without changing every other reference to them.
+# If adding new dieties, make sure they are uniquely named.
+
+kazraiel = {
+	land_morale = 0.10
+	harsh_treatment_cost = -0.25
+	
+	potential = {
+		religion = infernal_court
+	}
+	
+	sprite = 34
+	
+	ai_will_do = {
+		factor = 1
+		modifier = {
+		factor = 3
+			personality = ai_balanced
+		}
+		modifier = {
+			factor = 2
+			personality = ai_capitalist
+		}
+		modifier = {
+			factor = 1.2
+			government = monarchy
+		}
+		modifier = {
+			factor = 1.5
+			culture_group = escanni
+		}
+	}
+}
+
+mesner = {
+	global_unrest = -2
+	hostile_attrition = 1
+	
+	potential = {
+		religion = infernal_court
+	}
+	
+	sprite = 35
+	
+	ai_will_do = {
+		factor = 1
+		modifier = {
+		factor = 3
+			personality = ai_balanced
+		}
+		modifier = {
+			factor = 2
+			personality = ai_capitalist
+		}
+		modifier = {
+			factor = 1.2
+			government = monarchy
+		}
+		modifier = {
+			factor = 1.5
+			culture_group = escanni
+		}
+	}
+}
+
+ildran = {
+	country_admin_power = 1
+	development_cost = -0.05
+	
+	potential = {
+		religion = infernal_court
+	}
+	
+	sprite = 37
+	
+	ai_will_do = {
+		factor = 1
+		modifier = {
+		factor = 3
+			personality = ai_balanced
+		}
+		modifier = {
+			factor = 2
+			personality = ai_capitalist
+		}
+		modifier = {
+			factor = 1.2
+			government = monarchy
+		}
+		modifier = {
+			factor = 1.5
+			culture_group = escanni
+		}
+	}
+}
+
+hedine = {
+	diplomatic_reputation = 2
+	diplomatic_upkeep = 1
+	
+	potential = {
+		religion = infernal_court
+	}
+	
+	sprite = 36
+	
+	ai_will_do = {
+		factor = 1
+		modifier = {
+		factor = 3
+			personality = ai_balanced
+		}
+		modifier = {
+			factor = 2
+			personality = ai_capitalist
+		}
+		modifier = {
+			factor = 1.2
+			government = monarchy
+		}
+		modifier = {
+			factor = 1.5
+			culture_group = escanni
+		}
+	}
+}
+
+ibberal = {
+	production_efficiency = 0.1
+	loot_amount = 0.5
+	
+	potential = {
+		religion = infernal_court
+	}
+	
+	sprite = 38
+	
+	ai_will_do = {
+		factor = 1
+		modifier = {
+		factor = 3
+			personality = ai_balanced
+		}
+		modifier = {
+			factor = 2
+			personality = ai_capitalist
+		}
+		modifier = {
+			factor = 1.2
+			government = monarchy
+		}
+		modifier = {
+			factor = 1.5
+			culture_group = escanni
+		}
+	}
+}
+
+canturian = {
+	spy_offence = 0.33
+	diplomats = 1
+	
+	potential = {
+		religion = infernal_court
+	}
+	
+	sprite = 40
+	
+	ai_will_do = {
+		factor = 1
+		modifier = {
+		factor = 3
+			personality = ai_balanced
+		}
+		modifier = {
+			factor = 2
+			personality = ai_capitalist
+		}
+		modifier = {
+			factor = 1.2
+			government = monarchy
+		}
+		modifier = {
+			factor = 1.5
+			culture_group = escanni
+		}
+	}
+}
+
+forsara = {
+	trade_steering = 0.15
+	shock_damage = 0.15
+	
+	potential = {
+		religion = infernal_court
+	}
+	
+	sprite = 39
+	
+	ai_will_do = {
+		factor = 1
+		modifier = {
+		factor = 3
+			personality = ai_balanced
+		}
+		modifier = {
+			factor = 2
+			personality = ai_capitalist
+		}
+		modifier = {
+			factor = 1.2
+			government = monarchy
+		}
+		modifier = {
+			factor = 1.5
+			culture_group = escanni
+		}
+	}
+}

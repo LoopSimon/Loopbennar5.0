@@ -1,0 +1,123 @@
+country_decisions = {
+	escanni_wars_victor_requirements = {
+		major = yes
+		
+		potential = {
+			has_global_flag = escanni_wars_global_flag
+			country_can_participate_in_escanni_wars = yes
+		}
+		
+		provinces_to_highlight = {
+			OR  = {
+				province_is_valid_for_escanni_wars = yes
+			}
+			NOT = { owned_by = ROOT }
+		}
+		
+		allow = {
+			# Hidden trigger to match the potential
+			hidden_trigger = {
+				has_global_flag = escanni_wars_global_flag
+				#country_can_participate_in_escanni_wars = yes #removed because it is a slow check
+			}
+			
+			castonath_area = {
+				type = all
+				owned_by = ROOT
+			}
+
+			num_of_owned_provinces_with = {
+				value = 100
+				province_is_valid_for_escanni_wars = yes
+			}
+			
+			if = {
+				limit = {
+					has_global_flag = escanni_wars_global_flag
+					NOT = {
+						had_global_flag = {
+							flag = escanni_wars_global_flag
+							days = 18250
+						}
+					}
+				}
+				
+				OR = {
+					custom_trigger_tooltip = {
+						had_global_flag = {
+							flag = escanni_wars_global_flag
+							days = 18250
+						}
+						tooltip = escanni_wars_50_years
+					}
+
+					owns_all_escanni_wars_regions = yes
+				}
+			}
+			else = {
+				custom_trigger_tooltip = {
+					had_global_flag = {
+						flag = escanni_wars_global_flag
+						days = 18250
+					}
+					tooltip = escanni_wars_50_years
+				}
+			}
+		}
+		
+		effect = {
+			set_country_flag = ended_escanni_wars
+			country_event = { id = escanni_wars.2 }
+		}
+		
+		ai_importance = 400
+	}
+}
+
+country_decisions = {
+	#Early Bypass Decision
+	escanni_early_bypass_requirements = {
+		major = yes
+
+		potential = {
+			#Won't appear before 1560
+			is_year = 1560
+			#Won't start if the normal Escanni wars have started
+			NOT = {
+				OR = {
+					current_age = age_of_absolutism
+					current_age = age_of_revolutions
+				}
+			}
+			#Must have the right culture/capital location to participate in Escanni wars
+			country_can_participate_in_escanni_wars = yes
+			#Can't fire more than once
+			NOT = { has_global_flag = escanni_wars_bypass }
+		}
+
+		#Highlights needed provinces that are currently unowned
+		provinces_to_highlight = {
+			province_is_valid_for_escanni_wars = yes
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+
+		allow = {
+			#Not allowed for the AI for performance reasons
+			hidden_trigger = { ai = no }
+			#Must directly own Castonath
+			castonath_area = {
+				type = all
+				owned_by = ROOT
+			}
+			#Must own all Escanni regions needed to finish the wars of consolidation
+			owns_all_escanni_wars_regions = yes
+		}
+
+		effect = {
+			set_country_flag = bypassed_escanni_wars
+			country_event = { id = escanni_wars.3 }
+		}
+		
+		ai_importance = 400
+	}
+}

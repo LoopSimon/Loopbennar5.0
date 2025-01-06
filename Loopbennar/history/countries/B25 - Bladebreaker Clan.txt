@@ -1,0 +1,27 @@
+
+setup_vision = yes
+government = tribal
+add_government_reform = greentide_horde
+government_rank = 1
+primary_culture = green_orc
+religion = great_dookan
+technology_group = tech_orcish
+capital = 860
+
+#lore: korgus' most competent warlord, defeated and destroyed the blade marches
+
+1444.11.11 = {
+	monarch = {
+		name = "Varok"
+		dynasty = "Bladebreaker"
+		birth_date = 1401.3.25
+		adm = 4
+		dip = 3
+		mil = 6
+	}
+	
+	add_ruler_personality = bold_fighter_personality
+	add_ruler_personality = inspiring_leader_personality
+	add_ruler_personality = malevolent_personality
+	
+}

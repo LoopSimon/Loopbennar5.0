@@ -1,0 +1,17 @@
+owner = Y60
+controller = Y60
+add_core = Y60
+culture = sikai
+religion = transmutative_path
+#113
+hre = no
+
+base_tax = 3
+base_production = 3
+base_manpower = 2
+
+trade_goods = copper
+
+capital = ""
+
+is_city = yes

@@ -1,0 +1,29 @@
+
+setup_vision = yes
+government = monarchy
+add_government_reform = autocracy_reform
+government_rank = 1
+primary_culture = ourdi
+religion = regent_court
+technology_group = tech_cannorian
+capital = 510 #Bal Ouord
+
+1000.1.1 = { set_estate_privilege = estate_mages_organization_state }
+
+1435.3.8 = {
+	monarch = {
+		name = "Tomás"
+		dynasty = "of Demonsfall"
+		birth_date = 1401.11.12
+		adm = 2
+		dip = 3
+		mil = 1
+	}
+	add_ruler_personality =  martial_educator_personality
+	define_ruler_to_general = {
+		fire = 2
+		shock = 1
+		manuever = 2
+		siege = 1
+	}
+}

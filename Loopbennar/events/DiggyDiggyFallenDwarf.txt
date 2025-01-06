@@ -1,0 +1,2010 @@
+
+namespace = diggy_fallen
+
+#A fantastic place to dig
+country_event = {
+	id = diggy_fallen.1
+	title = diggy_fallen.1.t
+	desc = diggy_fallen.1.d
+	picture = ARTWORK_eventPicture
+	goto = province
+	mean_time_to_happen = {
+		years = 45
+	}
+	
+	trigger = {
+		is_year = 1535
+		NOT = { has_global_flag = onyx_hall_start }
+		num_of_owned_provinces_with = {
+			value = 3
+			province_group = hold_province
+			NOT = { has_province_modifier = ruined_hold }
+			NOT = { has_province_modifier = infested_hold }
+			NOT = { area = amldihr_area } #Balance reasons
+			NOT = { region = jade_mines_region } #Their empire isn't present under here
+			
+		}
+		NOT = { has_country_flag = refused_fallen }
+		dwarovar_orc_culture_primary = no
+		is_subject = no
+	}
+	
+	immediate = {
+		hidden_effect = {
+			hold_province = {
+				limit = {
+					owned_by = ROOT
+					NOT = { has_province_modifier = ruined_hold }
+					NOT = { has_province_modifier = infested_hold }
+					NOT = { area = amldihr_area }
+					NOT = { region = jade_mines_region }
+					is_capital = no
+					continent = serpentspine
+				}
+				save_event_target_as = province
+			}
+		}
+	}
+
+	
+	#Start the great excavation
+	option = {
+        name = diggy_fallen.1.a
+        ai_chance = { factor = 100 }
+		goto = province
+		add_years_of_income = -1
+		event_target:province = {
+			add_permanent_province_modifier = {
+				name = fallen_great_excavation
+				duration = -1
+			}
+		}
+		hidden_effect = { set_global_flag = onyx_hall_start }
+	}
+	#Don't
+	option = {
+        name = diggy_fallen.1.b
+        ai_chance = { factor = 0 }
+		hidden_effect = { set_country_flag = refused_fallen }
+	}
+}
+
+#Rapid hold development
+province_event = {
+	id = diggy_fallen.2
+	title = diggy_fallen.2.t
+	desc = diggy_fallen.2.d
+	picture = ARTWORK_eventPicture
+	goto = root
+	
+	mean_time_to_happen = {
+		years = 3
+		
+	}
+	
+	trigger = {
+		has_province_modifier = fallen_great_excavation
+		owner = { NOT = { has_country_flag = fallen_invasion_ready } }
+		NOT = { has_province_modifier = dig_10 }
+		NOT = { has_province_flag = fallen_diggy_3 }
+		NOT = { has_province_modifier = ruined_hold }
+		NOT = { has_province_modifier = infested_hold }
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				NOT = { has_province_flag = fallen_diggy_1 }
+				NOT = { has_province_flag = fallen_diggy_2 }
+				NOT = { has_province_flag = fallen_diggy_3 }
+			}
+			set_province_flag = fallen_diggy_1
+		}
+		else_if = {
+			limit = { 
+				has_province_flag = fallen_diggy_1
+				NOT = { has_province_flag = fallen_diggy_2 }
+			}
+			set_province_flag = fallen_diggy_2
+		}
+		else_if = {
+			limit = { 
+				has_province_flag = fallen_diggy_2
+			}
+			set_province_flag = fallen_diggy_3
+			owner = { set_country_flag = fallen_invasion_ready }
+		}
+	}
+	
+	#dig through it
+	option = {
+        name = diggy_fallen.2.a
+        ai_chance = { factor = 100 }
+		upgrade_hold = yes
+	}
+}
+
+#Some strange stuff
+country_event = {
+	id = diggy_fallen.3
+	title = diggy_fallen.3.t
+	desc = diggy_fallen.3.d
+	picture = ARTWORK_eventPicture
+	
+	fire_only_once = yes
+	
+	mean_time_to_happen = {
+		years = 15
+	}
+	
+	trigger = {
+		has_country_flag = fallen_invasion_ready
+		num_of_cities = 30
+	}
+	
+	immediate = {
+		hidden_effect = {
+			set_variable = {
+				which = variable:nbFallen
+				value = 0
+			}
+			while = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = variable:nbFallen
+							value = 10
+						}
+					}
+				}
+				change_variable = {
+					which = variable:nbFallen
+					value = 1
+				}
+				random_owned_province = {
+					limit = { 
+						NOT = { has_province_modifier = strange_rumors }
+						NOT = { has_province_modifier = fallen_great_excavation }
+						is_capital = no
+					}
+					add_province_modifier = {
+						name = strange_rumors
+						duration = -1
+					}
+				}
+			}
+			set_variable = {
+				which = variable:nbPortal
+				value = 0
+			}
+			#---
+			while = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = variable:nbPortal
+							value = 4
+						}
+					}
+				}
+				change_variable = {
+					which = variable:nbPortal
+					value = 1
+				}
+				random_owned_province = {
+					limit = { has_province_modifier = strange_rumors NOT = { has_province_flag = fallen_portal } }
+					set_province_flag = fallen_portal
+				}
+			}
+			set_country_flag = fallen_can_start
+		}
+		
+	}
+	
+	#We need to inspect them
+	option = {
+        name = diggy_fallen.3.a
+        ai_chance = { factor = 100 }
+		custom_tooltip = strange_rumors_tooltip
+		hidden_effect = { set_country_flag = investigate_strange_rumors }
+	}
+}
+
+#After investigating
+province_event = {
+	id = diggy_fallen.4
+	title = diggy_fallen.4.t
+	desc = diggy_fallen.4.d
+	picture = ARTWORK_eventPicture
+	goto = root
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_province_modifier = investigating_strange_rumors
+		has_province_modifier = strange_rumors
+		owner = { has_country_flag = investigating }
+	}
+	
+	#There was nothing
+	option = {
+        name = diggy_fallen.4.a
+        ai_chance = { factor = 100 }
+		trigger = { NOT = { has_province_flag = fallen_portal } }
+		owner = { add_prestige = -2.5 }
+		remove_province_modifier = strange_rumors
+		remove_province_modifier = investigating_strange_rumors
+		hidden_effect = { owner = { clr_country_flag = investigating } }
+	}
+	
+	#There was disaster
+	option = {
+        name = diggy_fallen.4.b
+        ai_chance = { factor = 100 }
+		trigger = { has_province_flag = fallen_portal }
+		owner = { add_prestige = 5 }
+		remove_province_modifier = strange_rumors
+		remove_province_modifier = investigating_strange_rumors
+		hidden_effect = { clr_province_flag = fallen_portal }
+		hidden_effect = { owner = { clr_country_flag = investigating } }
+	}
+}
+
+#################
+###Disaster Start
+#################
+country_event = {
+	id = diggy_fallen.5
+	title = diggy_fallen.5.t
+	desc = diggy_fallen.5.d
+	picture = ARTWORK_eventPicture
+	
+	hidden = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	immediate = {
+		hidden_effect = {
+			set_country_flag = obsidian_debug_flag
+		}
+	}
+	
+	option = {
+        name = diggy_fallen.5.a
+        ai_chance = { factor = 100 }
+		random_owned_province = {
+			limit = { has_province_modifier = fallen_great_excavation }
+			add_core = H94
+			every_neighbor_province = {
+				limit = { is_capital = no continent = serpentspine NOT = { has_great_project = { type = dd_stramolgiv } } }
+				add_core = H94
+				every_neighbor_province = {
+					limit = { is_capital = no continent = serpentspine NOT = { has_great_project = { type = dd_stramolgiv } } }
+					add_core = H94
+					every_neighbor_province = {
+						limit = { is_capital = no continent = serpentspine NOT = { has_great_project = { type = dd_stramolgiv } } }
+						add_core = H94
+						every_neighbor_province = {
+							limit = { is_capital = no continent = serpentspine NOT = { has_great_project = { type = dd_stramolgiv } } }
+							add_core = H94
+							if = {
+								limit = { ROOT = { ai = yes } }
+								every_neighbor_province = {
+									limit = { is_capital = no continent = serpentspine NOT = { has_great_project = { type = dd_stramolgiv } } }
+									add_core = H94
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		every_subject_country = {
+			random_owned_province = {
+				limit = { has_province_modifier = fallen_great_excavation }
+				add_core = H94
+				every_neighbor_province = {
+					limit = { is_capital = no continent = serpentspine NOT = { has_great_project = { type = dd_stramolgiv } } }
+					add_core = H94
+					every_neighbor_province = {
+						limit = { is_capital = no continent = serpentspine NOT = { has_great_project = { type = dd_stramolgiv } } }
+						add_core = H94
+						every_neighbor_province = {
+							limit = { is_capital = no continent = serpentspine NOT = { has_great_project = { type = dd_stramolgiv } } }
+							add_core = H94
+							every_neighbor_province = {
+								limit = { is_capital = no continent = serpentspine NOT = { has_great_project = { type = dd_stramolgiv } } }
+								add_core = H94
+								if = {
+									limit = { ROOT = { ai = yes } }
+									every_neighbor_province = {
+										limit = { is_capital = no continent = serpentspine NOT = { has_great_project = { type = dd_stramolgiv } } }
+										add_core = H94
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		every_owned_province = {
+			limit = { has_province_modifier = strange_rumors }
+			if = {
+				limit = { has_province_flag = fallen_portal }
+				add_province_modifier = {
+					name = fallen_portal
+					duration = -1
+				}
+				clr_province_flag = fallen_portal
+			}
+			remove_province_modifier = strange_rumors
+			remove_province_modifier = investigating_strange_rumors
+		}
+		clr_country_flag = investigating
+		country_event = { id = diggy_fallen.6 }
+	}
+}
+
+##The war start
+country_event = {
+	id = diggy_fallen.6
+	title = diggy_fallen.6.t
+	desc = diggy_fallen.6.d
+	picture = ARTWORK_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	immediate = {
+		hidden_effect = {
+			REB = { set_variable = { runeLevel = 1 } }
+			release_with_religion_and_culture = { tag = H94 religion = runefather_worship culture = obsidian_dwarf }
+			H94 = {
+				hidden_effect = {
+					set_variable = { which = RunefathersMightAllegianceVar value = 0 }
+					set_variable = { which = RunefathersMercyAllegianceVar value = 0 }
+					set_variable = { which = RunefathersMajestyAllegianceVar value = 0 }
+				}
+				declare_war_with_cb = {
+					who = ROOT
+					casus_belli = cb_sardonyx_invasion
+				}
+			}
+			H94 = {
+				capital_scope = { the_fallen_invasion_army = yes }
+				random_owned_province = { the_fallen_invasion_army = yes }
+				add_country_modifier = {
+					name = the_fallen_invasion
+					duration = -1
+				}
+				if = {
+					limit = { ROOT = { land_forcelimit = 60 } }
+					random_owned_province = { the_fallen_invasion_army = yes }
+				}
+				if = {
+					limit = { ROOT = { land_forcelimit = 90 } }
+					random_owned_province = { the_fallen_invasion_army = yes }
+				}
+				if = {
+					limit = { ROOT = { land_forcelimit = 120 } }
+					random_owned_province = { the_fallen_invasion_army = yes }
+					remove_country_modifier = the_fallen_invasion
+					add_country_modifier = {
+						name = the_fallen_invasion_2
+						duration = -1
+					}
+					define_general = {
+						shock = 4
+						fire = 5
+						manuever = 3
+						siege = 5
+						female = yes
+						name = "Nargulen Blackbarrel"
+					}
+					add_treasury = 3500
+					add_manpower = 25
+				}
+				if = {
+					limit = { ROOT = { land_forcelimit = 150 } }
+					random_owned_province = { the_fallen_invasion_army = yes }
+				}
+				if = {
+					limit = { ROOT = { land_forcelimit = 180 } }
+					random_owned_province = { the_fallen_invasion_army = yes }
+					remove_country_modifier = the_fallen_invasion_2
+					add_country_modifier = {
+						name = the_fallen_invasion_3
+						duration = -1
+					}
+					define_general = {
+						shock = 6
+						fire = 6
+						manuever = 6
+						siege = 6
+						name = "Dargaron Blackbarrel"
+					}
+					add_treasury = 3500
+					add_manpower = 25
+				}
+				add_treasury = 4500
+				add_manpower = 75
+				define_general = {
+					shock = 6
+					fire = 5
+					manuever = 3
+					siege = 4
+					name = "Ghaimbul Blackbarrel"
+				}
+				define_general = {
+					shock = 3
+					fire = 4
+					manuever = 6
+					siege = 6
+					name = "Raramesh Blackbarrel"
+					female = yes
+				}
+				
+				define_general = {
+					shock = 5
+					fire = 5
+					manuever = 5
+					siege = 2
+					name = "Dazmatir Blackbarrel"
+				}
+				define_ruler = {
+					adm = 5
+					dip = 1
+					mil = 6
+					age = 50
+					claim = 100
+					male = yes
+					culture = obsidian_dwarf
+					religion = runefather_worship
+					name = "Rarzharr"
+					dynasty = "Bedrock"
+				}
+				capital_scope = {
+					change_culture = obsidian_dwarf
+					change_religion = runefather_worship
+				}
+				change_government = monarchy
+				add_government_reform = invasion_forces
+				every_owned_province = {
+					limit = {
+						OR = {
+							has_terrain = dwarven_hold
+							has_terrain = dwarven_hold_surface
+						}
+						NOT = { fort_level = 1 }
+					}
+					add_building = fort_16th
+				}
+				every_owned_province = {
+					limit = { has_province_modifier = fallen_portal }
+					the_fallen_invasion_infiltrator = yes
+				}
+				set_runelink_level = yes
+			}
+		}
+		hidden_effect = {
+			every_owned_province = {
+				limit = { has_province_modifier = fallen_portal }
+				the_fallen_invasion_infiltrator = yes
+			}
+		}
+	}
+	
+	#We need to fight them
+	option = {
+        name = diggy_fallen.6.a
+        ai_chance = { factor = 100 }
+		custom_tooltip = sardonyx_invasion_tooltip
+	}
+	#Play as them
+	option = {
+        name = diggy_fallen.6.b
+        ai_chance = { factor = 0 }
+		custom_tooltip = sardonyx_invasion_play_tooltip
+		ROOT = { switch_tag = H94 }
+		hidden_effect = {
+			if = {
+				limit = { has_country_flag = hoardcurse_happened }
+				H94 = { set_country_flag = hoardcurse_happened }
+			}
+			H94 = { remove_country_modifier = restructuring_administration } # in case they spawned from a non-dwarven nation
+		}
+	}
+}
+
+##End Event
+country_event = {
+	id = diggy_fallen.7
+	title = diggy_fallen.7.t
+	desc = {
+		trigger = { NOT = { exists = H94 } }
+		desc = diggy_fallen.7.d
+	}
+	desc = {
+		trigger = { exists = H94 }
+		desc = diggy_fallen.7.d2
+	}
+	picture = ARTWORK_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	immediate = {
+		hidden_effect = {
+			serpentspine = {
+				clr_province_flag = fallen_portal
+				remove_province_modifier = strange_rumors
+				remove_province_modifier = fallen_portal
+				remove_province_modifier = fallen_great_excavation
+			}
+			set_global_flag = fallen_dwarf_end
+		}
+	}
+	
+	#We've destroyed the invader
+	option = {
+        name = diggy_fallen.7.a
+        ai_chance = { factor = 100 }
+		trigger = { NOT = { exists = H94 } }
+		add_stability = 2
+		add_prestige = 50
+		add_country_modifier = {
+			name = onyx_breaker
+			duration = 36500
+		}
+		every_owned_province = {
+			limit = { religion =  runefather_worship }
+			change_religion = owner
+			change_culture = owner
+		}
+		hidden_effect = {
+			random_owned_province = {
+				limit = { has_province_flag = runefather_maw }
+				destroy_great_project = { type = runefather_maw }
+				clr_province_flag = runefather_maw
+			}
+		}
+	}
+	#We've lost
+	option = {
+        name = diggy_fallen.7.b
+        ai_chance = { factor = 0 }
+		trigger = { exists = H94 }
+		add_stability = -2
+		add_prestige = -50
+	}
+}
+
+###Spearhead established
+country_event = {
+	id = diggy_fallen.8
+	title = diggy_fallen.8.t
+	desc = diggy_fallen.8.d
+	picture = ARTWORK_eventPicture
+	
+	fire_only_once = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	trigger = {
+		tag = H94
+		is_at_war = no
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					has_terrain = dwarven_road
+				}
+				save_event_target_as = province
+			}
+			random_owned_province = {
+				limit = {
+					has_terrain = cavern
+				}
+				save_event_target_as = province
+			}
+			random_owned_province = {
+				limit = {
+					has_terrain = cavern
+					any_neighbor_province = { is_capital_of = ROOT }
+				}
+				save_event_target_as = province
+			}
+		}
+	}
+	
+	option = {
+        name = diggy_fallen.8.a
+        ai_chance = { factor = 100 }
+		goto = province
+		add_stability = 3
+		add_prestige = 30
+		increase_legitimacy_large_effect = yes
+		add_manpower = 30
+		add_treasury = 1500
+		remove_country_modifier = the_fallen_invasion
+		remove_country_modifier = the_fallen_invasion_2
+		remove_country_modifier = the_fallen_invasion_3
+		hidden_effect = {
+			every_owned_province = {
+				limit = { continent = serpentspine }
+				change_culture = obsidian_dwarf
+				change_religion = runefather_worship
+				add_core = ROOT
+			}
+		}
+		event_target:province = {
+			custom_tooltip = runelink_open_tooltip
+			hidden_effect = { set_province_flag = runefather_maw }
+		}
+		every_country = {
+			limit = { capital_scope = { continent = serpentspine } }
+			add_historical_rival = ROOT
+			ROOT = { add_historical_rival = PREV }
+		}
+		if = {
+			limit = { ai = yes }
+			add_country_modifier = {
+				name = fueled_by_the_underempire
+				duration = 18250
+			}
+		}
+		country_event = { id = diggy_fallen.14 days = 60 }
+	}
+}
+
+# Obsidian Elections
+country_event = {
+	id = diggy_fallen.9
+	title = diggy_fallen.9.t
+	desc = diggy_fallen.9.d
+	picture = ELECTION_REPUBLICAN_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_reform = obsidian_council_reform
+	}
+	
+	#Blackbarrel - War dude
+	option = {
+		name = diggy_fallen.9.a
+		ai_chance = { factor = 100 }
+		
+		random_list = {
+			33 = {
+				reduce_stability_or_adm_power = yes
+			}
+			33 = {
+				add_stability_or_adm_power = yes
+			}
+			33 = { }
+		}
+		add_scaled_republican_tradition = -2
+		define_ruler = {
+			change_adm = 2
+			change_mil = 5
+			change_dip = 1
+			dynasty = "Blackbarrel"
+			religion = runefather_worship
+			culture = obsidian_dwarf
+			hide_skills = yes
+			random_gender = yes
+		}
+		add_ruler_modifier = {
+			name = blackbarrel_leadership
+			duration = -1
+		}
+		hidden_effect = {
+			random_list = {
+				20 = {
+					define_ruler_to_general = {
+						fire = 6
+						shock = 4
+						manuever = 2
+						siege = 3
+					}
+				}
+				20 = {
+					define_ruler_to_general = {
+						fire = 5
+						shock = 5
+						manuever = 3
+						siege = 1
+					}
+				}
+				20 = {
+					define_ruler_to_general = {
+						fire = 4
+						shock = 3
+						manuever = 1
+						siege = 2
+					}
+				}
+				20 = {
+					define_ruler_to_general = {
+						fire = 5
+						shock = 1
+						manuever = 1
+						siege = 4
+					}
+				}
+				20 = {
+					define_ruler_to_general = {
+						fire = 7
+						shock = 4
+						manuever = 2
+						siege = 4
+					}
+				}
+			}
+			set_ruler_flag = long_lived_ruler
+			add_ruler_personality = strict_personality
+		}
+	}
+	
+	#Bedrock - Stability dude
+	option = {
+		name = diggy_fallen.9.b
+		ai_chance = { factor = 100 }
+
+		random_list = {
+			33 = {
+				reduce_stability_or_adm_power = yes
+			}
+			33 = {
+				add_stability_or_adm_power = yes
+			}
+			33 = { }
+		}
+		add_scaled_republican_tradition = -2
+		define_ruler = {
+			change_adm = 3
+			change_mil = 3
+			change_dip = 3
+			dynasty = "Bedrock"
+			religion = runefather_worship
+			culture = obsidian_dwarf
+			hide_skills = yes
+			random_gender = yes
+		}
+		add_ruler_modifier = {
+			name = bedrock_leadership
+			duration = -1
+		}
+		hidden_effect = {
+			set_ruler_flag = long_lived_ruler
+			add_ruler_personality = incorruptible_personality
+		}
+	}
+	
+	#Darkstone - Underhanded dude
+	option = {
+		name = diggy_fallen.9.c
+		ai_chance = { factor = 100 }
+
+		random_list = {
+			33 = {
+				reduce_stability_or_adm_power = yes
+			}
+			33 = {
+				add_stability_or_adm_power = yes
+			}
+			33 = { }
+		}
+		add_scaled_republican_tradition = -2
+		define_ruler = {
+			change_adm = 2
+			change_mil = 1
+			change_dip = 5
+			dynasty = "Darkstone"
+			religion = runefather_worship
+			culture = obsidian_dwarf
+			hide_skills = yes
+			random_gender = yes
+		}
+		add_ruler_modifier = {
+			name = darkstone_leadership
+			duration = -1
+		}
+		hidden_effect = {
+			set_ruler_flag = long_lived_ruler
+			add_ruler_personality = malevolent_personality
+		}
+	}
+	
+	#Shadowhammer - Expantionist dude
+	option = {
+		name = diggy_fallen.9.e
+		ai_chance = { factor = 100 }
+
+		random_list = {
+			33 = {
+				reduce_stability_or_adm_power = yes
+			}
+			33 = {
+				add_stability_or_adm_power = yes
+			}
+			33 = { }
+		}
+		add_scaled_republican_tradition = -2
+		define_ruler = {
+			change_adm = 2
+			change_mil = 1
+			change_dip = 5
+			dynasty = "Shadowhammer"
+			religion = runefather_worship
+			culture = obsidian_dwarf
+			hide_skills = yes
+			random_gender = yes
+		}
+		add_ruler_modifier = {
+			name = shadowhammer_leadership
+			duration = -1
+		}
+		hidden_effect = {
+			set_ruler_flag = long_lived_ruler
+			add_ruler_personality = expansionist_personality
+		}
+	}
+	
+	#Runebeard - Religious dude
+	option = {
+		name = diggy_fallen.9.f
+		ai_chance = { factor = 100 }
+
+		random_list = {
+			33 = {
+				reduce_stability_or_adm_power = yes
+			}
+			33 = {
+				add_stability_or_adm_power = yes
+			}
+			33 = { }
+		}
+		add_scaled_republican_tradition = -2
+		define_ruler = {
+			change_adm = 4
+			change_mil = 2
+			change_dip = 4
+			dynasty = "Runebeard"
+			religion = runefather_worship
+			culture = obsidian_dwarf
+			hide_skills = yes
+			random_gender = yes
+		}
+		add_ruler_modifier = {
+			name = runebeard_leadership
+			duration = -1
+		}
+		hidden_effect = {
+			set_ruler_flag = long_lived_ruler
+			add_ruler_personality = zealot_personality
+		}
+	}
+}
+
+# Runefather's Maw Upkeep increase
+country_event = {
+	id = diggy_fallen.10
+	title = diggy_fallen.10.t
+	desc = diggy_fallen.10.d
+	picture = ELECTION_REPUBLICAN_eventPicture
+	
+	is_triggered_only = yes
+	major = yes
+	major_trigger = {
+		religion = runefather_worship
+	}
+	
+	trigger = {
+		NOT = { has_global_flag = runetimer }
+		any_owned_province = {
+			has_great_project = { type =  runefather_maw }
+			NOT = { has_province_modifier = runelink_upkeep_35 }
+		}
+	}
+	
+	option = {
+		name = diggy_fallen.10.a
+		ai_chance = { factor = 100 }
+		random_owned_province = {
+			limit = { has_great_project = { type =  runefather_maw } }
+			increase_runelink_upkeep = yes
+		}
+	}
+}
+
+# Runefather's Maw Crumble
+country_event = {
+	id = diggy_fallen.11
+	title = diggy_fallen.11.t
+	desc = diggy_fallen.11.d
+	picture = ELECTION_REPUBLICAN_eventPicture
+	
+	major = yes
+	major_trigger = {
+		religion = runefather_worship
+	}
+	
+	mean_time_to_happen = {
+		years = 10
+		
+		modifier = {
+			factor = 0.01
+			religion = runefather_worship
+		}
+	}
+	
+	trigger = {
+		religion = runefather_worship
+		NOT = { REB = { NOT = { check_variable = { runeLevel = 0 } }  } } #Lowest Runelink Level
+		NOT = { has_country_modifier = runelink_crumble }
+		any_owned_province = {
+			has_great_project = { type =  runefather_maw }
+			# NOT = { runelink_upkeep_maintained = yes } GO FUCK YOURSELF PARADO
+			NOT = {
+				if = {
+					limit = { has_province_modifier = runelink_upkeep_1 }
+					development = 3
+				}
+				else_if = {
+					limit = { has_province_modifier = runelink_upkeep_2 }
+					development = 6
+				}
+				else_if = {
+					limit = { has_province_modifier = runelink_upkeep_3 }
+					development = 9
+				}
+				else_if = {
+					limit = { has_province_modifier = runelink_upkeep_4 }
+					development = 12
+				}
+				else_if = {
+					limit = { has_province_modifier = runelink_upkeep_5 }
+					development = 15
+				}
+				else_if = {
+					limit = { has_province_modifier = runelink_upkeep_6 }
+					development = 18
+				}
+				else_if = {
+					limit = { has_province_modifier = runelink_upkeep_7 }
+					development = 21
+				}
+				else_if = {
+					limit = { has_province_modifier = runelink_upkeep_8 }
+					development = 24
+				}
+				else_if = {
+					limit = { has_province_modifier = runelink_upkeep_9 }
+					development = 27
+				}
+				else_if = {
+					limit = { has_province_modifier = runelink_upkeep_10 }
+					development = 30
+				}
+				else_if = {
+					limit = { has_province_modifier = runelink_upkeep_11 }
+					development = 33
+				}
+				else_if = {
+					limit = { has_province_modifier = runelink_upkeep_12 }
+					development = 36
+				}
+				else_if = {
+					limit = { has_province_modifier = runelink_upkeep_13 }
+					development = 39
+				}
+				else_if = {
+					limit = { has_province_modifier = runelink_upkeep_14 }
+					development = 42
+				}
+				else_if = {
+					limit = { has_province_modifier = runelink_upkeep_15 }
+					development = 45
+				}
+				else_if = {
+					limit = { has_province_modifier = runelink_upkeep_16 }
+					development = 48
+				}
+				else_if = {
+					limit = { has_province_modifier = runelink_upkeep_17 }
+					development = 51
+				}
+				else_if = {
+					limit = { has_province_modifier = runelink_upkeep_18 }
+					development = 54
+				}
+				else_if = {
+					limit = { has_province_modifier = runelink_upkeep_19 }
+					development = 57
+				}
+				else_if = {
+					limit = { has_province_modifier = runelink_upkeep_20 }
+					development = 60
+				}
+				else_if = {
+					limit = { has_province_modifier = runelink_upkeep_21 }
+					development = 63
+				}
+				else_if = {
+					limit = { has_province_modifier = runelink_upkeep_22 }
+					development = 66
+				}
+				else_if = {
+					limit = { has_province_modifier = runelink_upkeep_23 }
+					development = 69
+				}
+				else_if = {
+					limit = { has_province_modifier = runelink_upkeep_24 }
+					development = 72
+				}
+				else_if = {
+					limit = { has_province_modifier = runelink_upkeep_25 }
+					development = 75
+				}
+				else_if = {
+					limit = { has_province_modifier = runelink_upkeep_26 }
+					development = 78
+				}
+				else_if = {
+					limit = { has_province_modifier = runelink_upkeep_27 }
+					development = 81
+				}
+				else_if = {
+					limit = { has_province_modifier = runelink_upkeep_28 }
+					development = 84
+				}
+				else_if = {
+					limit = { has_province_modifier = runelink_upkeep_29 }
+					development = 87
+				}
+				else_if = {
+					limit = { has_province_modifier = runelink_upkeep_30 }
+					development = 90
+				}
+				else_if = {
+					limit = { has_province_modifier = runelink_upkeep_31 }
+					development = 93
+				}
+				else_if = {
+					limit = { has_province_modifier = runelink_upkeep_32 }
+					development = 96
+				}
+				else_if = {
+					limit = { has_province_modifier = runelink_upkeep_33 }
+					development = 99
+				}
+				else_if = {
+					limit = { has_province_modifier = runelink_upkeep_34 }
+					development = 102
+				}
+				else_if = {
+					limit = { has_province_modifier = runelink_upkeep_35 }
+					development = 105
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = diggy_fallen.11.a
+		ai_chance = { factor = 100 }
+		if = {
+			limit = { religion = runefather_worship }
+			add_prestige = -20
+			add_country_modifier = {
+				name = runelink_crumble
+				duration = 3650
+			}
+		}
+		decrease_runelink_level = yes
+	}
+}
+
+# Runefather's Maw Stabilisation
+country_event = {
+	id = diggy_fallen.12
+	title = diggy_fallen.12.t
+	desc = diggy_fallen.12.d
+	picture = ELECTION_REPUBLICAN_eventPicture
+	
+	major = yes
+	major_trigger = {
+		religion = runefather_worship
+	}
+	
+	mean_time_to_happen = {
+		years = 10
+		
+		modifier = {
+			factor = 0.01
+			religion = runefather_worship
+		}
+	}
+	
+	trigger = {
+		NOT = { REB = { check_variable = { runeLevel = 4 } } } #Max Runelink Level
+		religion = runefather_worship
+		NOT = { has_country_modifier = runelink_upgrade }
+		any_owned_province = {
+			has_great_project = { type =  runefather_maw }
+			# runelink_upkeep_maintained = yes 
+			if = {
+				limit = { has_province_modifier = runelink_upkeep_1 }
+				development = 3
+			}
+			else_if = {
+				limit = { has_province_modifier = runelink_upkeep_2 }
+				development = 6
+			}
+			else_if = {
+				limit = { has_province_modifier = runelink_upkeep_3 }
+				development = 9
+			}
+			else_if = {
+				limit = { has_province_modifier = runelink_upkeep_4 }
+				development = 12
+			}
+			else_if = {
+				limit = { has_province_modifier = runelink_upkeep_5 }
+				development = 15
+			}
+			else_if = {
+				limit = { has_province_modifier = runelink_upkeep_6 }
+				development = 18
+			}
+			else_if = {
+				limit = { has_province_modifier = runelink_upkeep_7 }
+				development = 21
+			}
+			else_if = {
+				limit = { has_province_modifier = runelink_upkeep_8 }
+				development = 24
+			}
+			else_if = {
+				limit = { has_province_modifier = runelink_upkeep_9 }
+				development = 27
+			}
+			else_if = {
+				limit = { has_province_modifier = runelink_upkeep_10 }
+				development = 30
+			}
+			else_if = {
+				limit = { has_province_modifier = runelink_upkeep_11 }
+				development = 33
+			}
+			else_if = {
+				limit = { has_province_modifier = runelink_upkeep_12 }
+				development = 36
+			}
+			else_if = {
+				limit = { has_province_modifier = runelink_upkeep_13 }
+				development = 39
+			}
+			else_if = {
+				limit = { has_province_modifier = runelink_upkeep_14 }
+				development = 42
+			}
+			else_if = {
+				limit = { has_province_modifier = runelink_upkeep_15 }
+				development = 45
+			}
+			else_if = {
+				limit = { has_province_modifier = runelink_upkeep_16 }
+				development = 48
+			}
+			else_if = {
+				limit = { has_province_modifier = runelink_upkeep_17 }
+				development = 51
+			}
+			else_if = {
+				limit = { has_province_modifier = runelink_upkeep_18 }
+				development = 54
+			}
+			else_if = {
+				limit = { has_province_modifier = runelink_upkeep_19 }
+				development = 57
+			}
+			else_if = {
+				limit = { has_province_modifier = runelink_upkeep_20 }
+				development = 60
+			}
+			else_if = {
+				limit = { has_province_modifier = runelink_upkeep_21 }
+				development = 63
+			}
+			else_if = {
+				limit = { has_province_modifier = runelink_upkeep_22 }
+				development = 66
+			}
+			else_if = {
+				limit = { has_province_modifier = runelink_upkeep_23 }
+				development = 69
+			}
+			else_if = {
+				limit = { has_province_modifier = runelink_upkeep_24 }
+				development = 72
+			}
+			else_if = {
+				limit = { has_province_modifier = runelink_upkeep_25 }
+				development = 75
+			}
+			else_if = {
+				limit = { has_province_modifier = runelink_upkeep_26 }
+				development = 78
+			}
+			else_if = {
+				limit = { has_province_modifier = runelink_upkeep_27 }
+				development = 81
+			}
+			else_if = {
+				limit = { has_province_modifier = runelink_upkeep_28 }
+				development = 84
+			}
+			else_if = {
+				limit = { has_province_modifier = runelink_upkeep_29 }
+				development = 87
+			}
+			else_if = {
+				limit = { has_province_modifier = runelink_upkeep_30 }
+				development = 90
+			}
+			else_if = {
+				limit = { has_province_modifier = runelink_upkeep_31 }
+				development = 93
+			}
+			else_if = {
+				limit = { has_province_modifier = runelink_upkeep_32 }
+				development = 96
+			}
+			else_if = {
+				limit = { has_province_modifier = runelink_upkeep_33 }
+				development = 99
+			}
+			else_if = {
+				limit = { has_province_modifier = runelink_upkeep_34 }
+				development = 102
+			}
+			else_if = {
+				limit = { has_province_modifier = runelink_upkeep_35 }
+				development = 105
+			}
+		}
+	}
+	
+	option = {
+		name = diggy_fallen.12.a
+		ai_chance = { factor = 100 }
+		if = {
+			limit = { religion = runefather_worship }
+			add_prestige = 10
+			add_country_modifier = {
+				name = runelink_upgrade
+				duration = 3650
+			}
+		}
+		increase_runelink_level = yes
+	}
+}
+
+# UnderEmpire menu
+country_event = {
+	id = diggy_fallen.13
+	title = diggy_fallen.13.t
+	desc = diggy_fallen.13.d
+	picture = ELECTION_REPUBLICAN_eventPicture
+	goto = province
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { has_country_flag = menu_open }
+	}
+	
+	immediate = {
+		hidden_effect = {
+			set_country_flag = menu_open
+			random_owned_province = {
+				limit = { has_province_flag = runefather_maw }
+				save_event_target_as = province
+			}
+			### runeCost isn't used anywhere really
+			#REB = {
+			#	H94 = {
+			#		set_variable = {
+			#			which = runeLevel
+			#			which = PREV
+			#		}
+			#		multiply_variable = { runeLevel = 2 }
+			#		if = {
+			#			limit = { event_target:province = { has_great_project = { type = runefather_maw tier = 3 } } }
+			#			subtract_variable = { runeLevel = 3 }
+			#		}
+			#		else_if = {
+			#			limit = { event_target:province = { has_great_project = { type = runefather_maw tier = 2 } } }
+			#			subtract_variable = { runeLevel = 2 }
+			#		}
+			#		else_if = {
+			#			limit = { event_target:province = { has_great_project = { type = runefather_maw tier = 1 } } }
+			#			subtract_variable = { runeLevel = 1 }
+			#		}
+			#		if = {
+			#			limit = { NOT = { check_variable = { runeLevel = 0 } } }
+			#			set_variable = { runeLevel = 0 }
+			#		}
+			#		set_variable = {
+			#		which = runeCost
+			#		which = runeLevel
+			#		}
+			#	}
+			#}
+			###
+			REB = {
+				H94 = {     
+					set_variable = {
+						which = runeLevel
+						which = PREV			#Had to do this because apparently which = REB doesn't work while this does
+					}
+					if = {
+						limit = { event_target:province = { has_great_project = { type = runefather_maw tier = 3 } } }
+						change_variable = { runeLevel = 3 }
+					}
+					else_if = {
+						limit = { event_target:province = { has_great_project = { type = runefather_maw tier = 2 } } }
+						change_variable = { runeLevel = 2 }
+					}
+					else_if = {
+						limit = { event_target:province = { has_great_project = { type = runefather_maw tier = 1 } } }
+						change_variable = { runeLevel = 1 }
+					}
+					set_variable = {
+						which = runeSize
+						which = runeLevel
+					}
+				}
+			}
+		}
+	}
+	
+	after = {
+		hidden_effect = {
+			clr_country_flag = menu_open
+		}
+	}
+	
+	#Go Back
+	option = {
+		name = diggy_fallen.13.a
+		ai_chance = { factor = 100 }
+	}
+	
+	#Army Stack
+	option = {
+		name = diggy_fallen.13.b
+		ai_chance = { factor = 100 }
+		if = {
+			limit = { check_variable = { runeSize = 7 } }
+			event_target:province = {
+				hidden_effect = {
+					infantry = ROOT infantry = ROOT infantry = ROOT infantry = ROOT infantry = ROOT
+					infantry = ROOT infantry = ROOT infantry = ROOT infantry = ROOT infantry = ROOT
+					infantry = ROOT infantry = ROOT infantry = ROOT infantry = ROOT infantry = ROOT
+					infantry = ROOT infantry = ROOT infantry = ROOT infantry = ROOT infantry = ROOT
+					infantry = ROOT infantry = ROOT infantry = ROOT infantry = ROOT infantry = ROOT
+					infantry = ROOT infantry = ROOT infantry = ROOT infantry = ROOT infantry = ROOT
+					infantry = ROOT infantry = ROOT infantry = ROOT infantry = ROOT infantry = ROOT
+					infantry = ROOT infantry = ROOT infantry = ROOT infantry = ROOT infantry = ROOT
+					artillery = ROOT artillery = ROOT artillery = ROOT artillery = ROOT artillery = ROOT
+					artillery = ROOT artillery = ROOT artillery = ROOT artillery = ROOT artillery = ROOT
+					artillery = ROOT artillery = ROOT artillery = ROOT artillery = ROOT artillery = ROOT
+					artillery = ROOT artillery = ROOT artillery = ROOT artillery = ROOT artillery = ROOT
+					artillery = ROOT artillery = ROOT artillery = ROOT artillery = ROOT artillery = ROOT
+					artillery = ROOT artillery = ROOT artillery = ROOT artillery = ROOT artillery = ROOT
+					artillery = ROOT artillery = ROOT artillery = ROOT artillery = ROOT artillery = ROOT
+					artillery = ROOT artillery = ROOT artillery = ROOT artillery = ROOT artillery = ROOT
+				}
+				custom_tooltip = runic_army_80_tooltip
+			}
+		}
+		else_if = {
+			limit = { check_variable = { runeSize = 6 } }
+			event_target:province = {
+				hidden_effect = {
+					infantry = ROOT infantry = ROOT infantry = ROOT infantry = ROOT infantry = ROOT
+					infantry = ROOT infantry = ROOT infantry = ROOT infantry = ROOT infantry = ROOT
+					infantry = ROOT infantry = ROOT infantry = ROOT infantry = ROOT infantry = ROOT
+					infantry = ROOT infantry = ROOT infantry = ROOT infantry = ROOT infantry = ROOT
+					infantry = ROOT infantry = ROOT infantry = ROOT infantry = ROOT infantry = ROOT
+					infantry = ROOT infantry = ROOT infantry = ROOT infantry = ROOT infantry = ROOT
+					artillery = ROOT artillery = ROOT artillery = ROOT artillery = ROOT artillery = ROOT
+					artillery = ROOT artillery = ROOT artillery = ROOT artillery = ROOT artillery = ROOT
+					artillery = ROOT artillery = ROOT artillery = ROOT artillery = ROOT artillery = ROOT
+					artillery = ROOT artillery = ROOT artillery = ROOT artillery = ROOT artillery = ROOT
+					artillery = ROOT artillery = ROOT artillery = ROOT artillery = ROOT artillery = ROOT
+					artillery = ROOT artillery = ROOT artillery = ROOT artillery = ROOT artillery = ROOT
+				}
+				custom_tooltip = runic_army_60_tooltip
+			}
+		}
+		else_if = {
+			limit = { check_variable = { runeSize = 5 } }
+			event_target:province = {
+				hidden_effect = {
+					infantry = ROOT infantry = ROOT infantry = ROOT infantry = ROOT infantry = ROOT
+					infantry = ROOT infantry = ROOT infantry = ROOT infantry = ROOT infantry = ROOT
+					infantry = ROOT infantry = ROOT infantry = ROOT infantry = ROOT infantry = ROOT
+					infantry = ROOT infantry = ROOT infantry = ROOT infantry = ROOT infantry = ROOT
+					infantry = ROOT infantry = ROOT infantry = ROOT infantry = ROOT infantry = ROOT
+					artillery = ROOT artillery = ROOT artillery = ROOT artillery = ROOT artillery = ROOT
+					artillery = ROOT artillery = ROOT artillery = ROOT artillery = ROOT artillery = ROOT
+					artillery = ROOT artillery = ROOT artillery = ROOT artillery = ROOT artillery = ROOT
+					artillery = ROOT artillery = ROOT artillery = ROOT artillery = ROOT artillery = ROOT
+					artillery = ROOT artillery = ROOT artillery = ROOT artillery = ROOT artillery = ROOT
+				}
+				custom_tooltip = runic_army_50_tooltip
+			}
+		}
+		else_if = {
+			limit = { check_variable = { runeSize = 4 } }
+			event_target:province = {
+				hidden_effect = {
+					infantry = ROOT infantry = ROOT infantry = ROOT infantry = ROOT infantry = ROOT
+					infantry = ROOT infantry = ROOT infantry = ROOT infantry = ROOT infantry = ROOT
+					infantry = ROOT infantry = ROOT infantry = ROOT infantry = ROOT infantry = ROOT
+					infantry = ROOT infantry = ROOT infantry = ROOT infantry = ROOT infantry = ROOT
+					artillery = ROOT artillery = ROOT artillery = ROOT artillery = ROOT artillery = ROOT
+					artillery = ROOT artillery = ROOT artillery = ROOT artillery = ROOT artillery = ROOT
+					artillery = ROOT artillery = ROOT artillery = ROOT artillery = ROOT artillery = ROOT
+					artillery = ROOT artillery = ROOT artillery = ROOT artillery = ROOT artillery = ROOT
+				}
+				custom_tooltip = runic_army_40_tooltip
+			}
+		}
+		else_if = {
+			limit = { check_variable = { runeSize = 3 } }
+			event_target:province = {
+				hidden_effect = {
+					infantry = ROOT infantry = ROOT infantry = ROOT infantry = ROOT infantry = ROOT
+					infantry = ROOT infantry = ROOT infantry = ROOT infantry = ROOT infantry = ROOT
+					infantry = ROOT infantry = ROOT infantry = ROOT infantry = ROOT infantry = ROOT
+					artillery = ROOT artillery = ROOT artillery = ROOT artillery = ROOT artillery = ROOT
+					artillery = ROOT artillery = ROOT artillery = ROOT artillery = ROOT artillery = ROOT
+					artillery = ROOT artillery = ROOT artillery = ROOT artillery = ROOT artillery = ROOT
+				}
+				custom_tooltip = runic_army_30_tooltip
+			}
+		}
+		else_if = {
+			limit = { check_variable = { runeSize = 2 } }
+			event_target:province = {
+				hidden_effect = {
+					infantry = ROOT infantry = ROOT infantry = ROOT infantry = ROOT infantry = ROOT
+					infantry = ROOT infantry = ROOT infantry = ROOT infantry = ROOT infantry = ROOT
+					artillery = ROOT artillery = ROOT artillery = ROOT artillery = ROOT artillery = ROOT
+					artillery = ROOT artillery = ROOT artillery = ROOT artillery = ROOT artillery = ROOT
+				}
+				custom_tooltip = runic_army_20_tooltip
+			}
+		}
+		else_if = {
+			limit = { check_variable = { runeSize = 1 } }
+			event_target:province = {
+				hidden_effect = {
+					infantry = ROOT infantry = ROOT infantry = ROOT infantry = ROOT infantry = ROOT
+					artillery = ROOT artillery = ROOT artillery = ROOT artillery = ROOT artillery = ROOT
+				}
+				custom_tooltip = runic_army_10_tooltip
+			}
+		}
+		custom_tooltip = runedemand_cost_tooltip
+		hidden_effect = { add_country_modifier = { name = runelink_timer duration = 1825 } }
+		hidden_effect = { event_target:province = { runedemand_effect = yes } }
+	}
+	
+	#Ask for a general
+	option = {
+		name = diggy_fallen.13.c
+		ai_chance = { factor = 100 }
+		if = {
+			limit = { check_variable = { runeSize = 7 } }
+			create_general = { tradition = 100 culture = obsidian_dwarf add_siege = 2 }
+		}
+		else_if = {
+			limit = { check_variable = { runeSize = 6 } }
+			create_general = { tradition = 90 culture = obsidian_dwarf }
+		}
+		else_if = {
+			limit = { check_variable = { runeSize = 5 } }
+			create_general = { tradition = 80 culture = obsidian_dwarf }
+		}
+		else_if = {
+			limit = { check_variable = { runeSize = 4 } }
+			create_general = { tradition = 70 culture = obsidian_dwarf }
+		}
+		else_if = {
+			limit = { check_variable = { runeSize = 3 } }
+			create_general = { tradition = 60 culture = obsidian_dwarf }
+		}
+		else_if = {
+			limit = { check_variable = { runeSize = 2 } }
+			create_general = { tradition = 50 culture = obsidian_dwarf }
+		}
+		else_if = {
+			limit = { check_variable = { runeSize = 1 } }
+			create_general = { tradition = 40 culture = obsidian_dwarf }
+		}
+		custom_tooltip = runedemand_cost_tooltip
+		hidden_effect = { add_country_modifier = { name = runelink_timer duration = 1825 } }
+		hidden_effect = { event_target:province = { runedemand_effect = yes } }
+	}
+	
+	#Ask for Runecarver
+	option = {
+		name = diggy_fallen.13.e
+		ai_chance = { factor = 100 }
+		trigger = {
+			OR = {
+				NOT = { has_country_flag = runecarver_in_the_country }
+				had_country_flag = {
+					flag = runecarver_in_the_country
+					days = 3650
+				}
+			}
+		}
+		if = {
+			limit = { check_variable = { runeSize = 7 } }
+			add_country_modifier = {
+				name = runecarver_7
+				duration = 3650
+			}
+		}
+		else_if = {
+			limit = { check_variable = { runeSize = 6 } }
+			add_country_modifier = {
+				name = runecarver_6
+				duration = 3650
+			}
+		}
+		else_if = {
+			limit = { check_variable = { runeSize = 5 } }
+			add_country_modifier = {
+				name = runecarver_5
+				duration = 3650
+			}
+		}
+		else_if = {
+			limit = { check_variable = { runeSize = 4 } }
+			add_country_modifier = {
+				name = runecarver_4
+				duration = 3650
+			}
+		}
+		else_if = {
+			limit = { check_variable = { runeSize = 3 } }
+			add_country_modifier = {
+				name = runecarver_3
+				duration = 3650
+			}
+		}
+		else_if = {
+			limit = { check_variable = { runeSize = 2 } }
+			add_country_modifier = {
+				name = runecarver_2
+				duration = 3650
+			}
+		}
+		else_if = {
+			limit = { check_variable = { runeSize = 1 } }
+			add_country_modifier = {
+				name = runecarver_1
+				duration = 3650
+			}
+		}
+		custom_tooltip = runedemand_cost_tooltip
+		hidden_effect = { add_country_modifier = { name = runelink_timer duration = 1825 } }
+		hidden_effect = { event_target:province = { runedemand_effect = yes } }
+	}
+	
+	#New Artillery
+	option = {
+		name = diggy_fallen.13.f
+		ai_chance = { factor = 100 }
+		trigger = { mil_tech = 19 check_variable = { runeSize = 6 } } #1648->1700, good until tech 22 included
+		hidden_effect = { set_country_flag = runic_battery }
+		custom_tooltip = runic_battery_tooltip
+		custom_tooltip = runedemand_cost_tooltip
+		hidden_effect = { add_country_modifier = { name = runelink_timer duration = 1825 } }
+		hidden_effect = { event_target:province = { runedemand_effect = yes } }
+	}
+	
+	#Relocate Slaves
+	option = {
+		name = diggy_fallen.13.g
+		ai_chance = { factor = 100 }
+		trigger = {
+			any_owned_province = {
+				has_dwarven_majority_trigger = yes
+				NOT = { culture = obsidian_dwarf }
+			}
+			primary_culture = obsidian_dwarf
+		}
+		if = {
+			limit = { check_variable = { runeSize = 7 } }
+			custom_tooltip = runeclear_25_province_tooltip
+			hidden_effect = { set_variable = { temp = 25 } }
+			while = {
+				limit = { NOT = { check_variable = { temp = 0 } } }
+				random_owned_province = {
+					limit = { has_dwarven_majority_trigger = yes NOT = { culture = obsidian_dwarf } }
+					add_devastation = 90
+					change_culture = obsidian_dwarf
+					change_religion = runefather_worship
+				}
+				subtract_variable = { temp = 1 }
+			}
+		}
+		else_if = {
+			limit = { check_variable = { runeSize = 6 } }
+			custom_tooltip = runeclear_18_province_tooltip
+			hidden_effect = { set_variable = { temp = 18 } }
+			while = {
+				limit = { NOT = { check_variable = { temp = 0 } } }
+				random_owned_province = {
+					limit = { has_dwarven_majority_trigger = yes NOT = { culture = obsidian_dwarf } }
+					add_devastation = 90
+					change_culture = obsidian_dwarf
+					change_religion = runefather_worship
+				}
+				subtract_variable = { temp = 1 }
+			}
+		}
+		else_if = {
+			limit = { check_variable = { runeSize = 5 } }
+			custom_tooltip = runeclear_15_province_tooltip
+			hidden_effect = { set_variable = { temp = 15 } }
+			while = {
+				limit = { NOT = { check_variable = { temp = 0 } } }
+				random_owned_province = {
+					limit = { has_dwarven_majority_trigger = yes NOT = { culture = obsidian_dwarf } }
+					add_devastation = 90
+					change_culture = obsidian_dwarf
+					change_religion = runefather_worship
+				}
+				subtract_variable = { temp = 1 }
+			}
+		}
+		else_if = {
+			limit = { check_variable = { runeSize = 4 } }
+			custom_tooltip = runeclear_12_province_tooltip
+			hidden_effect = { set_variable = { temp = 12 } }
+			while = {
+				limit = { NOT = { check_variable = { temp = 0 } } }
+				random_owned_province = {
+					limit = { has_dwarven_majority_trigger = yes NOT = { culture = obsidian_dwarf } }
+					add_devastation = 90
+					change_culture = obsidian_dwarf
+					change_religion = runefather_worship
+				}
+				subtract_variable = { temp = 1 }
+			}
+		}
+		else_if = {
+			limit = { check_variable = { runeSize = 3 } }
+			custom_tooltip = runeclear_9_province_tooltip
+			hidden_effect = { set_variable = { temp = 9 } }
+			while = {
+				limit = { NOT = { check_variable = { temp = 0 } } }
+				random_owned_province = {
+					limit = { has_dwarven_majority_trigger = yes NOT = { culture = obsidian_dwarf } }
+					add_devastation = 90
+					change_culture = obsidian_dwarf
+					change_religion = runefather_worship
+				}
+				subtract_variable = { temp = 1 }
+			}
+		}
+		else_if = {
+			limit = { check_variable = { runeSize = 2 } }
+			custom_tooltip = runeclear_6_province_tooltip
+			hidden_effect = { set_variable = { temp = 6 } }
+			while = {
+				limit = { NOT = { check_variable = { temp = 0 } } }
+				random_owned_province = {
+					limit = { has_dwarven_majority_trigger = yes NOT = { culture = obsidian_dwarf } }
+					add_devastation = 90
+					change_culture = obsidian_dwarf
+					change_religion = runefather_worship
+				}
+				subtract_variable = { temp = 1 }
+			}
+		}
+		else_if = {
+			limit = { check_variable = { runeSize = 1 } }
+			custom_tooltip = runeclear_3_province_tooltip
+			hidden_effect = { set_variable = { temp = 3 } }
+			while = {
+				limit = { NOT = { check_variable = { temp = 0 } } }
+				random_owned_province = {
+					limit = { has_dwarven_majority_trigger = yes NOT = { culture = obsidian_dwarf } }
+					add_devastation = 90
+					change_culture = obsidian_dwarf
+					change_religion = runefather_worship
+				}
+				subtract_variable = { temp = 1 }
+			}
+		}
+		custom_tooltip = runedemand_cost_tooltip
+		hidden_effect = { add_country_modifier = { name = runelink_timer duration = 1825 } }
+		hidden_effect = { event_target:province = { runedemand_effect = yes } }
+	}
+}
+
+# The RuneLink
+country_event = {
+	id = diggy_fallen.14
+	title = diggy_fallen.14.t
+	desc = diggy_fallen.14.d
+	picture = ELECTION_REPUBLICAN_eventPicture
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = { has_province_flag = runefather_maw }
+				save_event_target_as = province
+			}
+		}
+	}
+	
+	option = {
+		name = diggy_fallen.14.a
+		ai_chance = { factor = 100 }
+		goto = province
+		add_splendor = 10
+		random_owned_province = {
+			limit = { has_province_flag = runefather_maw }
+			random_list = {
+				50 = {
+					add_permanent_province_modifier = {
+						name = runelink_upkeep_2
+						duration = -1
+					}
+				}
+				30 = {
+					add_permanent_province_modifier = {
+						name = runelink_upkeep_3
+						duration = -1
+					}
+				}
+				10 = {
+					add_permanent_province_modifier = {
+						name = runelink_upkeep_4
+						duration = -1
+					}
+				}
+				5 = {
+					add_permanent_province_modifier = {
+						name = runelink_upkeep_5
+						duration = -1
+					}
+				}
+			}
+			add_great_project = {
+				type = runefather_maw
+				instant = no
+			}
+			# add_construction_progress = 1
+		}
+	}
+}
+
+
+
+### AI CHEAT
+# The RuneLink
+country_event = {
+	id = diggy_fallen.100
+	title = diggy_fallen.100.t
+	desc = diggy_fallen.100.d
+	picture = ELECTION_REPUBLICAN_eventPicture
+	
+	mean_time_to_happen = {
+		years = 6
+	}
+	
+	trigger = {
+		religion = runefather_worship
+		any_owned_province = {
+			has_great_project = { type = runefather_maw }
+			# NOT = { runelink_upkeep_maintained = yes } 
+			NOT = {
+				if = {
+					limit = { has_province_modifier = runelink_upkeep_1 }
+					development = 3
+				}
+				else_if = {
+					limit = { has_province_modifier = runelink_upkeep_2 }
+					development = 6
+				}
+				else_if = {
+					limit = { has_province_modifier = runelink_upkeep_3 }
+					development = 9
+				}
+				else_if = {
+					limit = { has_province_modifier = runelink_upkeep_4 }
+					development = 12
+				}
+				else_if = {
+					limit = { has_province_modifier = runelink_upkeep_5 }
+					development = 15
+				}
+				else_if = {
+					limit = { has_province_modifier = runelink_upkeep_6 }
+					development = 18
+				}
+				else_if = {
+					limit = { has_province_modifier = runelink_upkeep_7 }
+					development = 21
+				}
+				else_if = {
+					limit = { has_province_modifier = runelink_upkeep_8 }
+					development = 24
+				}
+				else_if = {
+					limit = { has_province_modifier = runelink_upkeep_9 }
+					development = 27
+				}
+				else_if = {
+					limit = { has_province_modifier = runelink_upkeep_10 }
+					development = 30
+				}
+				else_if = {
+					limit = { has_province_modifier = runelink_upkeep_11 }
+					development = 33
+				}
+				else_if = {
+					limit = { has_province_modifier = runelink_upkeep_12 }
+					development = 36
+				}
+				else_if = {
+					limit = { has_province_modifier = runelink_upkeep_13 }
+					development = 39
+				}
+				else_if = {
+					limit = { has_province_modifier = runelink_upkeep_14 }
+					development = 42
+				}
+				else_if = {
+					limit = { has_province_modifier = runelink_upkeep_15 }
+					development = 45
+				}
+				else_if = {
+					limit = { has_province_modifier = runelink_upkeep_16 }
+					development = 48
+				}
+				else_if = {
+					limit = { has_province_modifier = runelink_upkeep_17 }
+					development = 51
+				}
+				else_if = {
+					limit = { has_province_modifier = runelink_upkeep_18 }
+					development = 54
+				}
+				else_if = {
+					limit = { has_province_modifier = runelink_upkeep_19 }
+					development = 57
+				}
+				else_if = {
+					limit = { has_province_modifier = runelink_upkeep_20 }
+					development = 60
+				}
+				else_if = {
+					limit = { has_province_modifier = runelink_upkeep_21 }
+					development = 63
+				}
+				else_if = {
+					limit = { has_province_modifier = runelink_upkeep_22 }
+					development = 66
+				}
+				else_if = {
+					limit = { has_province_modifier = runelink_upkeep_23 }
+					development = 69
+				}
+				else_if = {
+					limit = { has_province_modifier = runelink_upkeep_24 }
+					development = 72
+				}
+				else_if = {
+					limit = { has_province_modifier = runelink_upkeep_25 }
+					development = 75
+				}
+				else_if = {
+					limit = { has_province_modifier = runelink_upkeep_26 }
+					development = 78
+				}
+				else_if = {
+					limit = { has_province_modifier = runelink_upkeep_27 }
+					development = 81
+				}
+				else_if = {
+					limit = { has_province_modifier = runelink_upkeep_28 }
+					development = 84
+				}
+				else_if = {
+					limit = { has_province_modifier = runelink_upkeep_29 }
+					development = 87
+				}
+				else_if = {
+					limit = { has_province_modifier = runelink_upkeep_30 }
+					development = 90
+				}
+				else_if = {
+					limit = { has_province_modifier = runelink_upkeep_31 }
+					development = 93
+				}
+				else_if = {
+					limit = { has_province_modifier = runelink_upkeep_32 }
+					development = 96
+				}
+				else_if = {
+					limit = { has_province_modifier = runelink_upkeep_33 }
+					development = 99
+				}
+				else_if = {
+					limit = { has_province_modifier = runelink_upkeep_34 }
+					development = 102
+				}
+				else_if = {
+					limit = { has_province_modifier = runelink_upkeep_35 }
+					development = 105
+				}
+			}
+		}
+		ai = yes
+	}
+	
+	option = {
+		name = diggy_fallen.100.a
+		ai_chance = { factor = 100 }
+		random_owned_province = {
+			limit = { has_great_project = { type = runefather_maw } }
+			random = {
+				chance = 50
+				add_base_tax = 1
+			}
+			random = {
+				chance = 50
+				add_base_production = 1
+			}
+			random = {
+				chance = 50
+				add_base_manpower = 1
+			}
+		}
+	}
+}

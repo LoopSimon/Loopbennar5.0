@@ -1,0 +1,18 @@
+# No previous file for Anbennar4730
+owner = Y82
+controller = Y82
+add_core = Y82
+culture = hujan
+religion = mystic_accord
+#126
+hre = no
+
+base_tax = 3
+base_production = 2
+base_manpower = 2
+
+trade_goods = grain
+
+capital = ""
+
+is_city = yes

@@ -1,0 +1,292 @@
+
+country_decisions = {
+
+	gnomish_nation = {
+		major = yes
+		potential = {
+			culture_group = gnomish
+			NOT = { has_country_flag = formed_gnomish_hierarchy_flag }
+			NOT = { tag = A80 } #You're not Iochand
+			num_of_cities = 3 #Portnamm and Giberd don't hate Nimscodd for existing while opms
+			NOT = { exists = A79 } #Gnomish Hierarchy doesn't exist
+			capital_scope = { continent = europe }
+			normal_or_historical_nations = yes
+			was_never_end_game_tag_trigger = yes
+		}
+		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 177		# Oddansbay
+				province_id = 167		# Royvibobb
+				province_id = 172		# Widdechand
+				province_id = 173		# Sildnamm
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		
+		allow = {
+			culture_group = gnomish
+			owns_core_province = 177		# Oddansbay
+			owns_core_province = 167		# Royvibobb
+			owns_core_province = 172		# Widdechand
+			owns_core_province = 173		# Sildnamm
+			adm_tech = 7
+			is_free_or_tributary_trigger = yes
+			is_at_war = no
+			
+		}
+		
+		effect = {
+			177 = {	#Move capital to Oddansbay
+				move_capital_effect = yes
+			}
+			change_tag = A79
+			country_event = { id = ideagroups.1 } #Change ideas
+			hidden_effect = { restore_country_name = yes }
+			swap_non_generic_missions = yes
+			remove_non_electors_emperors_from_empire_effect = yes
+			if = {
+				limit = {
+					NOT = { government_rank = 3 }
+				}
+				set_government_rank = 3
+			}
+			dragon_coast_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = A79
+			}
+			add_prestige = 25
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			set_country_flag = formed_gnomish_hierarchy_flag
+			
+			lock_racial_admin = yes
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	
+	iochand_nation = { #The Gnomeing begins. By: Trin
+		major = yes
+		potential = {
+			OR = {
+				primary_culture = creek_gnome
+				primary_culture = iochander
+			}
+			NOT = { has_country_flag = formed_iochand_flag }
+			NOT = { exists = A80 }
+			NOT = { tag = A79 } #Not the Hierarchy
+			NOT = { tag = A05 }	#Not Reveria
+			capital_scope = { continent = europe }
+			normal_or_historical_nations = yes
+			was_never_end_game_tag_trigger = yes
+		}
+	
+		provinces_to_highlight = {
+			OR = {
+				province_id = 142		# Iochand
+				province_id = 126		# Portnamm
+				province_id = 141		# Turnwell
+				province_id = 143		# Carverhold
+				province_id = 129		# Eldergreen
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		
+		allow = {
+			owns_core_province = 142		# Iochand
+			owns_core_province = 126		# Portnamm
+			owns_core_province = 141		# Turnwell
+			owns_core_province = 143		# Carverhold
+			owns_core_province = 129		# Eldergreen
+			is_at_war = no
+			is_free_or_tributary_trigger = yes		
+			OR = {
+				primary_culture = creek_gnome
+				primary_culture = iochander
+			}
+			OR = {
+				religion = regent_court
+				religion = corinite
+				religion = ravelian
+			}
+		}
+		
+		effect = {
+			hidden_effect = {
+				if = {
+    				limit = {
+       				 tag = A19
+    				}
+    				set_country_flag = portnamm_formed_iochand
+				}
+			}
+			142 = {	#Move capital to Iochand
+				move_capital_effect = yes
+			}
+			change_primary_culture = iochander
+			add_accepted_culture = creek_gnome
+			change_tag = A80
+            if = {
+                limit = { has_custom_ideas = no }
+                country_event = { id = ideagroups.1 } #Swap Ideas
+            }
+			hidden_effect = { restore_country_name = yes }
+			remove_non_electors_emperors_from_empire_effect = yes
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+			hidden_effect = { 
+                if = {
+                    limit = {
+                        ai = yes
+                    }
+                    southroy_area = {
+                        add_permanent_claim = A80
+                    }
+                }
+            }
+			142 = {
+				change_province_name = "Roynoms"
+				rename_capital = "Kongnamm"
+			}
+			add_prestige = 10
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			if = {
+				limit = { NOT = { government = monarchy } }
+				change_government = monarchy
+			}
+			change_technology_group = tech_gnomish
+			
+			#hidden_effect = { 
+				clear_racial_military = yes
+				hidden_effect = {
+					add_country_modifier = { 
+						name = human_military
+						duration = -1  
+						hidden = yes
+					}
+				}
+				tooltip = {
+					add_country_modifier = {
+						name = human_military
+						duration = -1
+					}
+				}
+				add_country_modifier = { 
+					name = restructuring_military
+					duration = 3650
+				}	
+			#}
+
+			add_government_reform = feudalism_reform
+			increase_legitimacy_large_effect = yes
+			set_country_flag = formed_iochand_flag
+			country_event = { 
+				id = iochand.1 #Choose a sil Iochand monarch
+				days = 0
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 500
+	}
+
+	B71_southroy_culture = { 
+		major = yes
+		potential = {
+			tag = B71
+			NOT = { primary_culture = iochander }	#Not Iochander culture already
+			NOT = { has_country_flag = iochander_southroy_flag }
+		}
+	
+		provinces_to_highlight = {
+			OR = {
+				province_id = 142		# Iochand
+				province_id = 128		# Southroy
+				province_id = 123		# Thunderward
+				province_id = 124		# Sildthol
+				province_id = 125		# Haysfield
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		
+		allow = {
+			tag = B71
+			is_at_war = no
+			is_free_or_tributary_trigger = yes
+			owns_core_province = 142		# Iochand
+			owns_core_province = 128		# Southroy
+			owns_core_province = 123		# Thunderward
+			owns_core_province = 124		# Sildthol
+			owns_core_province = 125		# Haysfield
+			128 = {
+				development = 10
+				culture = iochander
+			}
+		}
+		
+		effect = {
+			change_primary_culture = iochander
+			123 = {	
+				change_culture = iochander
+			}
+			124 = {	
+				change_culture = iochander
+			}
+			125 = {	
+				change_culture = iochander
+			}
+			iochand_area = {
+				add_permanent_claim = B71
+			}
+			if = {
+				limit = { 
+					ruler_is_human = yes
+					}
+				set_ruler_culture = iochander
+			}
+			if = {
+				limit = {
+					has_heir = yes
+					heir_is_human = yes
+					}
+				set_heir_culture = iochander
+			}
+			if = {
+				limit = {
+					has_consort = yes
+					consort_is_human = yes
+					}
+				set_consort_culture = iochander
+			}
+			set_country_flag = iochander_southroy_flag
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 500
+	}
+}

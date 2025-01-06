@@ -1,0 +1,44 @@
+setup_vision = yes
+government = tribal
+add_government_reform = gnoll_pack
+government_rank = 1
+primary_culture = sandfang_gnoll
+religion = xhazobkult
+religious_school = demonic_shamans_tradition
+technology_group = tech_gnollish
+national_focus = ADM
+capital = 571
+
+1000.1.1 = { set_estate_privilege = estate_mages_organization_guilds }
+
+1435.6.12 = {
+	monarch = {
+		name = "Zokka I"
+		dynasty = "Devourer-of-Suns"
+		birth_date = 1401.9.2
+		adm = 1
+		dip = 3
+		mil = 5
+	}
+	add_ruler_personality = bold_fighter_personality
+	add_ruler_personality = mage_personality
+	set_ruler_flag = conjuration_1
+	set_ruler_flag = conjuration_2
+	set_ruler_flag = evocation_1
+	set_ruler_flag = evocation_2
+	set_ruler_flag = necromancy_1
+	set_ruler_flag = initialized_magic_flags
+
+	heir = { 
+		name = "Zokka"
+		monarch_name = "Zokka II"
+		dynasty = "Devourer-of-Suns"
+		birth_date = 1428.12.12
+		death_date = 1525.1.1
+		claim = 80
+		adm = 1
+		dip = 4
+		mil = 2
+	}
+	add_heir_personality = careful_personality
+}

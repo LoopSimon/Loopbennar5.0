@@ -1,0 +1,33 @@
+
+setup_vision = yes
+government = tribal
+add_government_reform = kobold_viraxia
+government_rank = 1
+primary_culture = greenscale_kobold
+religion = kobold_dragon_cult
+technology_group = tech_kobold
+
+capital = 200
+
+1000.1.1 = { 
+	set_estate_privilege = estate_mages_organization_guilds 
+	set_variable = {
+		which = trap_mastery_counter
+		value = 2
+	}
+}
+
+1443.2.2 = {
+	monarch = {
+		name = "Dervaszix"
+		dynasty = "Korlak"
+		birth_date = 1399.12.12
+		adm = 6
+		dip = 4
+		mil = 2
+	}
+	add_ruler_personality = navigator_personality
+	add_ruler_personality = scholar_personality
+	
+	add_church_aspect = green_dragon_1_base
+}

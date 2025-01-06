@@ -1,0 +1,254 @@
+
+#Country Name: Please see filename.
+
+graphical_culture = northamericagfx
+
+color = { 160  128  122 }
+
+
+
+historical_idea_groups = {
+	economic_ideas
+	offensive_ideas
+	influence_ideas
+	defensive_ideas	
+	administrative_ideas	
+	trade_ideas
+	quality_ideas
+	innovativeness_ideas
+}
+
+historical_units = {
+	harafic_1_desert_warriors
+	harafic_1_harafe_nomads
+	harafic_9_harafe_herd_guard
+	harafic_10_epednar_raiders
+	harafic_12_silent_stalkers
+	harafic_14_sandstorm_riders
+	harafic_15_smoker_bands
+	harafic_18_epednar_veterans
+	harafic_19_chiefs_own
+	harafic_23_harafe_ambushers
+	harafic_23_harafe_skirmishers
+	harafic_26_dohons_elites
+	harafic_28_harafe_carbines
+	harafic_30_nefnad_company
+}
+
+monarch_names = {
+
+	"Nare'kino #0" = 10
+	"Gan'do #0" = 10
+	"Gelin'do #0" = 10
+	"Har'gahli #0" = 10
+	"Har'ge #0" = 10
+	"Ere'kino #0" = 10
+	"Ere'gahli #0" = 10
+	"Kelsa'do #0" = 10
+	"Kelsa'tseelo #0" = 10
+	"Elah'gahli #0" = 10
+	"Net'gahli #0" = 10
+	"Toine'kino #0" = 10
+	"Hore'gahli #0" = 10
+	"Hare'gahli #0" = 10
+	"Feld'ge #0" = 10
+	"Tah'kino #0" = 10
+	"Fabeh'gahli #0" = 10
+	"Daste'kino #0" = 10
+	"Baon'do #0" = 10
+	"Kelde'gahli #0" = 10
+	"Fenau'gahli #0" = 10
+	"Eldo'gahli #0" = 10
+	"Eldo'kino #0" = 10
+	"A'gahli #0" = 10
+	"Erfeh'gahli #0" = 10
+	"Kahn'ge #0" = 10
+	"Eleet'kino #0" = 10
+	"Eleet'ner #0" = 10
+	"Eleet'gahli #0" = 10
+	"Tehre'ner #0" = 10
+	"Pai'kino #0" = 10
+	"Tahr'kino #0" = 10
+	"Ke'do #0" = 10
+	"Ke'tseelo #0" = 10
+	"Arahne'ner #0" = 10
+	"Re'kino #0" = 10
+	"Redee'ner #0" = 10
+	"Redee'kino #0" = 10
+	"Be'tseelo #0" = 10
+	"Beano'ner #0" = 10
+	"Ela'kino #0" = 10
+	"Doren'do #0" = 10
+	"Enme'tseelo #0" = 10
+	"Eremae'tseelo #0" = 10
+	"Men'ge #0" = 10
+	"Teel'tseelo #0" = 10
+	"Teel'gahli #0" = 10
+	"Eli'gahli #0" = 10
+	"Eli'tseelo #0" = 10
+	"Rene'ge #0" = 10
+	"Kene'ge #0" = 10
+	"Kene'gahli #0" = 10
+	"Kene'do #0" = 10
+	"Kene'tseelo #0" = 10
+	"Gehlen'do #0" = 10
+	"Har'ge #0" = 10
+	"Har'ner #0" = 10
+	"Har'tseelo #0" = 10
+	"Teel'tseelo #0" = 10
+	"Adra'ner #0" = 10
+	"Pai'ner #0" = 10
+	"Gaah'do #0" = 10
+	"Sehteo'do #0" = 10
+	"Sehteo'ge #0" = 10
+	"Sehteo'gahli #0" = 10
+	"Gehlen'ner #0" = 10
+	"Tehree'tseelo #0" = 10
+	"Tehree'do #0" = 10
+	"Ehrne'gahli #0" = 10
+	"Ehrne'kino #0" = 10
+	"Ehrne'do #0" = 10
+	"Ine'do #0" = 10
+	"Olo'gahli #0" = 10
+	"Da'kino #0" = 10
+	"Andee'kino #0" = 10
+	"Andee'tseelo #0" = 10
+
+	"Geli'heo #0" = -1
+	"Ìnalaor'no #0" = -1
+	"Ìnalaor'heo #0" = -1
+	"Ere'hitseo #0" = -1
+	"Fine'no #0" = -1
+	"Kele'kido #0" = -1
+	"Tah'ìlheni #0" = -1
+	"Seole'hitseo #0" = -1
+	"Ìnalaor'ìlheni #0" = -1
+	"Vehr'heo #0" = -1
+	"Vehr'ìlheni #0" = -1
+	"Vehr'ìlan #0" = -1
+	"Pai'no #0" = -1
+	"Liaden'kido #0" = -1
+	"Ineo'no #0" = -1
+	"Eriaht'kido #0" = -1
+	"Eriaht'no #0" = -1
+	"Eriaht'heo #0" = -1
+	"Eriaht'hitseo #0" = -1
+	"Lehdin'kido #0" = -1
+	"Lehdin'hitseo #0" = -1
+	"Ihre'ìlan #0" = -1
+	"Tabe'ìlan #0" = -1
+	"Ihre'ìlheni #0" = -1
+	"Lane'ìlan #0" = -1
+	"Leer'ìlan #0" = -1
+	"Leer'hitseo #0" = -1
+	"Daini'heo #0" = -1
+	"Erai'hitseo #0" = -1
+	"Gene'heo #0" = -1
+	"Aler'ìlheni #0" = -1
+	"Nehta'ìlheni #0" = -1
+	"Dibe'no #0" = -1
+	"Lehne'no #0" = -1
+	"Ahri'no #0" = -1
+	"Erlan'kido #0" = -1
+	"Ehre'no #0" = -1
+	"Kiane'ìlan #0" = -1
+	"Baah'no #0" = -1
+	"Ehte'ìlheni #0" = -1
+	"Erai'kido #0" = -1
+	"Erai'no #0" = -1
+	"Ehrien'kido #0" = -1
+	"Raide'kido #0" = -1
+	"Raide'ìlan #0" = -1
+	"Geede'ìlan #0" = -1
+	"Miahne'ìlheni #0" = -1
+	"Hafe'hitseo #0" = -1
+	"Ise'hitseo #0" = -1
+	"Lehne'heo #0" = -1
+	"Meht'ìlheni #0" = -1
+	"Here'no #0" = -1
+}
+
+leader_names = {
+
+	#Just random native stuff to be honest
+	Awegen Ahaouet
+	Canajoharie Canastigaone Canienga Caughnawaga Cahunghage Canowaroghere
+	Deseroken Dayoitgao Deonundagae Deyodeshot Deyohnegano Deyonongdadagana
+	Gweugwehono Gandasetaigon Ganogeh Gayagaanhe Gewauga Goiogouen Gadoquat Gannentaha
+	Hostayuntwa
+	Kawauka Kente Kanagaro Kowogoconnughariegugharie Kanadaseagea Kanatakowa
+	Neodakheat Nowadaga Nundawaono
+	Onekagoncka Onoalagona Oquaga Osquake Onayotekaono Oriska Ossewingo 
+	Skannayutenate Saratoga Schaunactada Schoharie
+	Teatontaloga Tewanondadon Tionnontoguen Tegasoke Teseroken Tetosweken 
+	Yoroonwago
+	
+	Aisikstukiks
+	Apikaiyikis
+	Emitahpahksaiyiks
+	Motahtosiks
+	Puhksinahmahyiks
+	Saiyiks
+	Siksinokaks
+	Tsiniktsistsoyiks
+	Ahkaisumiks
+	Ahkaipokaks
+	Ahkotahshiks
+	Anepo
+	Apikaiyiks
+	Aputosikainah
+	Inuhksoyistamiks
+	Isissokasimiks
+	Istsikaihan
+	Mameoya
+	Nitikskiks
+	Saksinahmahyiks
+	Sikahpuniks
+	Sikinokaks
+	Ahahpitape
+	Ahkaiyikokakiniks
+	Apikaiyiks
+	Esksinaitupiks
+	Inuksikahpowaiks
+	Inuksiks
+	Ipoksimaiks
+	Kahmitaiks
+	Kiyis
+	Kutaiimiks
+	Kutaisotsiman
+	Miahwahpitsiks
+	Miawkinaiyiks
+	Mokumiks
+	Motahtosiks
+	Motwainaiks
+	Nitakoskitsipupiks
+	Niwayiks
+	Nitikskiks
+	Nitotsiksistaniks
+	Sikokitsimiks
+	Sikopoksimaiks
+	Sikutsipumaiks
+	Susksoyiks
+	Tsiniksistsoyiks
+	
+}
+
+ship_names = {
+	Atahensic Ataensic Adekagagwaa
+	Gaol Gohone Gah-oh Gendenwitha
+	Hahgwehdiyu Hahgwehdaetgan "Ha Wen Neyu"
+	Jogah
+	Losheka
+	Onatha Oki
+	Sosondowah
+	Tarhuhyiawahku
+	Yosheka Ya-o-gah
+}	
+
+army_names = {
+	"Haraf'ne Army" "Army of $PROVINCE$"
+}
+
+fleet_names = {
+	"Haraf'ne Fleet"
+}

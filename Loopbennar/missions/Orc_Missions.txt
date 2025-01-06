@@ -1,0 +1,1205 @@
+
+orc_rivals = {
+	slot = 1
+	generic = yes
+	ai = yes
+	potential = {
+		culture_group = orcish
+		NOT = { tag = I41 }
+		NOT = { tag = I43 }
+		capital_scope = {
+			OR = {
+				region = forlorn_vale_region
+				superregion = escann_superregion
+				superregion = deepwoods_superregion
+			}
+		}
+		NOT = { is_year = 1445 }
+	}
+	
+	orc_successors_of_dookanson = {
+		icon = mission_subdue_rajputana
+		position = 1
+		trigger = {
+			any_rival_country = {
+				culture_group = orcish
+			}
+		}
+		effect = {
+			add_prestige = 10
+		}
+	}
+	
+	orc_subjugation_war = {
+		icon = mission_control_the_ganges_delta
+		position = 2
+		required_missions = {
+			orc_successors_of_dookanson
+		}
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = orc_bully_lesser_tt
+				any_enemy_country = {
+					culture_group = orcish
+				}
+			}
+			army_size_percentage = 1
+		}
+		effect = {
+			add_years_of_income = 2
+		}
+	}
+	
+	orc_spoils_of_war = {
+		icon = mission_spoils_of_war
+		position = 3
+		required_missions = {
+			orc_subjugation_war
+		}
+		trigger = {
+			any_rival_country = { 
+				culture_group = orcish
+				war_with = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = orc_subjugators
+				duration = 3650
+			}
+		}
+	}
+}
+
+orc_pillage_2 = {
+	slot = 1
+	generic = yes
+	ai = yes
+	potential = {
+		culture_group = orcish
+		NOT = { tag = I41 }
+		NOT = { tag = I43 }
+		capital_scope = {
+			OR = {
+				region = forlorn_vale_region
+				superregion = escann_superregion
+				superregion = deepwoods_superregion
+			}
+		}
+		NOT = { is_year = 1445 }
+	}
+	orc_raiding_parties = {
+		icon = mission_abu_saids_dream
+		position = 5
+		trigger = {
+			if = {
+				limit = { ai = yes }
+				army_size = 10
+			}
+			else = {
+				army_size = 15
+				cavalry_fraction = 0.2
+			}
+		}
+		effect = {
+			capital_scope = {
+				add_province_modifier = {
+					name = orc_raiding_parties
+					duration = 18250
+				}
+			}
+		}
+	}
+	orc_axe_is_stronger_than_bullet = {
+		icon = mission_control_the_ganges_delta
+		position = 6
+		trigger = {
+			any_rival_country = {
+				tech_difference = 2
+				war_with = ROOT
+			}
+			war_score = 50
+		}
+		effect = {
+			add_prestige = 25
+			add_mil_power = 300
+		}
+	}
+	orc_woe_to_the_defeated = {
+		icon = mission_native_reductions
+		position = 7
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 3
+				NOT = {
+					culture_group = orcish
+					culture_group = goblin
+				}
+			}
+			num_of_cities = 6
+		}
+		effect = {
+			add_mil_power = 100
+			capital_scope = {
+				add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 1
+			}
+			random_owned_province = {
+				limit = {
+					OR = {
+						culture_group = orcish
+						culture_group = goblin
+						is_capital = no
+					}
+				}
+				add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 1
+			}
+			random_owned_province = {
+				limit = {
+					OR = {
+						culture_group = orcish
+						culture_group = goblin
+						is_capital = no
+					}
+				}
+				add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 1
+			}
+			random_owned_province = {
+				limit = {
+					NOT = {
+						culture_group = orcish
+						culture_group = goblin
+					}
+				}
+				add_base_tax = -1
+				add_base_production = -1
+				add_base_manpower = -1
+				add_devastation = 10
+			}
+			random_owned_province = {
+				limit = {
+					NOT = {
+						culture_group = orcish
+						culture_group = goblin
+					}
+				}
+				add_base_tax = -1
+				add_base_production = -1
+				add_base_manpower = -1
+				add_devastation = 10
+			}
+			random_owned_province = {
+				limit = {
+					NOT = {
+						culture_group = orcish
+						culture_group = goblin
+					}
+				}
+				add_base_tax = -1
+				add_base_production = -1
+				add_base_manpower = -1
+				add_devastation = 10
+			}
+		}
+	}
+}
+
+orc_trade = {
+	slot = 1
+	generic = yes
+	ai = yes
+	potential = {
+		culture_group = orcish
+		NOT = { tag = I41 }
+		NOT = { tag = I43 }
+		capital_scope = {
+			OR = {
+				region = forlorn_vale_region
+				superregion = escann_superregion
+				superregion = deepwoods_superregion
+			}
+		}
+		NOT = { is_year = 1445 }
+	}
+
+	orc_rules_of_exchange = {
+		icon = mission_hanseatic_city
+		position = 8
+		required_missions = {
+			orc_rising_power
+		}
+		trigger = {
+			dip_tech = 5
+			trade_income_percentage = 0.25
+			num_of_owned_provinces_with = {
+				value = 1
+				province_has_center_of_trade_of_level = 2
+				has_trade_building_trigger = yes
+				culture_group = orcish
+			}
+		}
+		effect = {
+			random_owned_province = {
+				limit = {
+					province_has_center_of_trade_of_level = 2
+					has_trade_building_trigger = yes
+					culture_group = orcish
+				}
+				add_base_tax = 1
+				add_base_production = 1
+			}
+			add_country_modifier = {
+				name = orc_developing_trade_relations
+				duration = 9125
+			}
+			change_government_reform_progress = 10
+		}
+	}
+}
+
+orc_domination = {
+	slot = 2
+	generic = yes
+	ai = yes
+	potential = {
+		culture_group = orcish
+		NOT = { tag = I41 }
+		NOT = { tag = I43 }
+		capital_scope = {
+			OR = {
+				region = forlorn_vale_region
+				superregion = escann_superregion
+				superregion = deepwoods_superregion
+			}
+		}
+		NOT = { is_year = 1445 }
+	}
+	
+	orc_clans_reputation = {
+		icon = mission_restore_trade_superiority
+		position = 1
+		trigger = {
+			prestige = 50
+		}
+		effect = {
+			add_country_modifier = {
+				name = orc_clans_reputation
+				duration = 18250
+			}
+		}
+	}
+	
+	orc_contribution_of_other_clans = {
+		icon = mission_restore_caliphate_of_cordoba
+		position = 2
+		required_missions = {
+			orc_clans_reputation
+		}
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = orc_loyal_clans_tooltip
+				calc_true_if = {
+					all_ally = { 
+						culture_group = orcish
+						has_opinion = {
+							who = ROOT
+							value = 150
+						}
+					}
+					amount = 2
+				}
+			}
+		}
+		effect = {
+			random_owned_province = {
+				add_base_tax = 1
+				add_base_manpower = 1
+			}
+			random_owned_province = {
+				add_base_tax = 1
+				add_base_manpower = 1
+			}
+			add_country_modifier = {
+				name = orc_clans_contribution
+				duration = 9125
+			}
+		}
+	}
+}
+
+orc_pillage = {
+	slot = 2
+	generic = yes
+	ai = yes
+	potential = {
+		culture_group = orcish
+		NOT = { tag = I41 }
+		NOT = { tag = I43 }
+		capital_scope = {
+			OR = {
+				region = forlorn_vale_region
+				superregion = escann_superregion
+				superregion = deepwoods_superregion
+			}
+		}
+		NOT = { is_year = 1445 }
+	}
+	orc_pillage_enemy_capital = {
+		icon = mission_spoils_of_war
+		position = 4
+		trigger = {
+			any_neighbor_country = {
+				capital_scope = {
+					is_looted = yes
+					devastation = 10
+					controlled_by = ROOT
+				}
+			}
+		}
+		effect = {
+			add_years_of_income = 2
+			add_country_modifier = {
+				name = orc_raised_morale
+				duration = 9125
+			}
+		}
+	}
+	orc_war_chest = {
+		icon = mission_war_chest
+		position = 5
+		required_missions = {
+			orc_pillage_enemy_capital
+		}
+		trigger = {
+			monthly_income = 3
+		}
+		effect = {
+			add_years_of_income = -1
+			add_country_modifier = {
+				name = orc_funded_army
+				duration = 18250
+			}
+		}
+	}
+}
+
+orc_production = {
+	slot = 2
+	generic = yes
+	ai = yes
+	potential = {
+		culture_group = orcish
+		NOT = { tag = I41 }
+		NOT = { tag = I43 }
+		capital_scope = {
+			OR = {
+				region = forlorn_vale_region
+				superregion = escann_superregion
+				superregion = deepwoods_superregion
+			}
+		}
+		NOT = { is_year = 1445 }
+	}
+	orc_rising_power = {
+		icon = mission_high_income
+		position = 7
+		required_missions = {
+			orc_age_of_power 
+		}
+		trigger = {
+			total_development = 200
+		}
+		effect = {
+			random_owned_province = {
+				add_base_tax = 1
+			}
+			random_owned_province = {
+				add_base_production = 1
+			}
+		}
+	}
+	orc_war_craft = {
+		icon = mission_have_manufactories
+		position = 8
+		required_missions = {
+			orc_rising_power
+		}
+		trigger = {
+			production_income_percentage = 0.25
+			num_of_owned_provinces_with = {
+				value = 1
+				province_has_center_of_trade_of_level = 2
+				has_production_building_trigger = yes
+				culture_group = orcish
+			}
+		}
+		effect = {
+			random_owned_province = {
+				limit = {
+					province_has_center_of_trade_of_level = 2
+					has_production_building_trigger = yes
+					culture_group = orcish
+				}
+				add_base_tax = 1
+				add_base_production = 1
+			}
+			add_country_modifier = {
+				name = orc_war_industry
+				duration = 9125
+			}
+		}
+	}
+}
+
+orc_aftermath_of_the_greentide_branch = {
+	slot = 3
+	generic = yes
+	ai = yes
+	potential = {
+		culture_group = orcish
+		NOT = { tag = I41 }
+		NOT = { tag = I43 }
+		capital_scope = {
+			OR = {
+				region = forlorn_vale_region
+				superregion = escann_superregion
+				superregion = deepwoods_superregion
+			}
+		}
+		NOT = { is_year = 1445 }
+	}
+	orc_aftermath_of_the_greentide = {
+		icon = mission_rb_unite_the_clans
+		position = 1
+		trigger = {
+			manpower_percentage = 1
+		}
+		effect = {
+			add_country_modifier = {
+				name = orc_increased_conscription
+				duration = 9125
+			}
+		}
+	}
+	orc_conquer_surrounding_tribes = {
+		icon = mission_rb_colonise_canada
+		position = 2
+		required_missions = {
+			orc_aftermath_of_the_greentide 
+			orc_stabilize_situation_in_the_clan
+		}
+		trigger = {
+			num_of_cities = 5
+		}
+		effect = {
+			add_adm_power = 75
+			add_dip_power = 75
+			add_country_modifier = {
+				name = orc_integration_of_new_lands
+				duration = 9125
+			}
+		}
+	}
+	orc_new_generation_of_warriors = {
+		icon = mission_levantine_restoration
+		position = 3
+		required_missions = {
+			orc_conquer_surrounding_tribes 
+ 		}
+		trigger = {
+			grown_by_development = 15
+			army_size = 10
+			manpower_percentage = 0.9
+			if = {
+				limit = {
+					ai = no
+				}
+				cavalry_fraction = 0.2
+			}
+		}
+		effect = {
+			random_owned_province = {
+				limit = {
+					is_capital = no
+					culture_group = orcish
+				}
+				add_base_manpower = 1
+			}
+			random_owned_province = {
+				limit = {
+					is_capital = no
+					culture_group = orcish
+				}
+				add_base_manpower = 1
+			}
+			random_owned_province = {
+				limit = {
+					culture_group = orcish
+					is_capital = no
+				}
+				add_base_manpower = 1
+			}
+			add_country_modifier = {
+				name = orc_growing_numbers
+				duration = 9125
+			}
+		}
+	}
+	orc_warlords_of_the_greentide = {
+		icon = mission_fatimid_caliphate
+		position = 4
+		required_missions = {
+			orc_new_generation_of_warriors
+		}
+		trigger = {
+			if = {
+				limit = { ai = yes }
+				num_of_generals = 1
+				mil_power = 50
+			}
+			else = {
+				num_of_generals = 2
+			}
+		}
+		effect = {
+			if = {
+				limit = { ai = yes }
+				add_mil_power = -50
+			}
+			add_army_tradition = 25
+			add_country_modifier = {
+				name = orc_experience_of_the_greentide
+				duration = 9125
+			}
+		}
+	}
+	orc_conflict_with_adventurers = {
+		icon = mission_mayan_conquest
+		position = 5
+		required_missions = {
+			orc_warlords_of_the_greentide
+		}
+		trigger = {
+			OR = {
+				is_in_war = {
+					casus_belli = cb_monster_vs_civ
+				}
+				is_in_war = {
+					casus_belli = cb_civ_vs_monster
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = orc_time_for_revenge_has_come
+				duration = 9125
+			}
+		}
+	}
+}
+
+orc_success_branch = {
+	slot = 3
+	generic = yes
+	ai = yes
+	potential = {
+		culture_group = orcish
+		NOT = { tag = I41 }
+		NOT = { tag = I43 }
+		capital_scope = {
+			OR = {
+				region = forlorn_vale_region
+				superregion = escann_superregion
+				superregion = deepwoods_superregion
+			}
+		}
+		NOT = { is_year = 1445 }
+	}
+	orc_age_of_power = {
+		icon = mission_subdue_rajputana
+		position = 6
+		required_missions = {
+			orc_conflict_with_adventurers
+		}
+		trigger = {
+			prestige = 50	
+			all_neighbor_country = {
+				OR = {
+					AND = {
+						has_reform = adventurer_reform
+						capital_scope = {
+							continent = europe
+						}
+						NOT = {
+							army_size = ROOT
+						}
+					}
+					NOT = { has_adventurer_reform = yes }
+					NOT = {
+						capital_scope = {
+							continent = europe
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			add_mil_power = 150
+			add_army_tradition = 10
+			capital_scope = {
+				add_base_production = 1
+				add_base_manpower = 1
+			}
+			random_owned_province = {
+				limit = {
+					is_capital = no
+					culture_group = orcish
+				}
+				add_base_manpower = 1
+			}
+			random_owned_province = {
+				limit = {
+					is_capital = no
+					culture_group = orcish
+				}
+				add_base_manpower = 1
+			}
+			add_country_modifier = {
+				name = orc_years_of_recovery
+				duration = 9125
+			}
+		}
+	}
+	orc_army_of_conquerors = {
+		icon = mission_assemble_an_army
+		position = 8
+		required_missions = {
+			orc_age_of_power
+		}
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 5
+				OR = {
+					has_building = barracks
+					has_building = training_fields
+					has_building = native_great_trail
+				}
+				culture_group = orcish
+			}
+			army_size = 30
+		}
+		effect = {
+			capital_scope = {
+				add_base_manpower = 1
+			}
+			random_owned_province = {
+				limit = {
+					is_capital = no
+					culture_group = orcish
+				}
+				add_base_manpower = 1
+			}
+			random_owned_province = {
+				limit = {
+					is_capital = no
+					culture_group = orcish
+				}
+				add_base_manpower = 1
+			}
+			add_country_modifier = {
+				name = orc_army_formation
+				duration = 9125
+			}
+		}
+	}
+	orc_on_the_path_to_civilization = {
+		icon = mission_early_game_buildings
+		position = 9
+		required_missions = {
+			orc_war_craft
+			orc_army_of_conquerors 
+			orc_foundation_of_capital
+		}
+		trigger = {
+			capital_scope = {
+				NOT = {
+					num_free_building_slots = 1
+				}
+			}
+			total_development = 250
+			stability = 3
+		}
+		effect = {
+			capital_scope = {
+				add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 2
+				add_province_modifier = {
+					name = orc_growing_production
+					duration = 18250
+				}
+			}
+			random_owned_province = {
+				limit = { is_capital = no }
+				add_base_tax = 1
+				add_base_manpower = 1
+			}
+			random_owned_province = {
+				limit = { is_capital = no }
+				add_base_production = 1
+				add_base_manpower = 1
+			}
+			add_country_modifier = {
+				name = orc_on_the_path_to_civilization
+				duration = 18250
+			}
+			custom_tooltip = orc_path_to_civil_tt
+			hidden_effect = { set_country_flag = orc_path_to_civil }
+		}
+	}
+}
+
+orc_stability = {
+	slot = 4
+	generic = yes
+	ai = yes
+	potential = {
+		culture_group = orcish
+		NOT = { tag = I41 }
+		NOT = { tag = I43 }
+		capital_scope = {
+			OR = {
+				region = forlorn_vale_region
+				superregion = escann_superregion
+				superregion = deepwoods_superregion
+			}
+		}
+		NOT = { is_year = 1445 }
+	}
+	orc_stabilize_situation_in_the_clan = {
+		icon = mission_cope_with_refugees
+		position = 1
+		trigger = {
+			stability = 2
+		}
+		effect = {
+			add_adm_power = 75
+			add_dip_power = 75
+		}
+	}
+}
+
+orc_diplomacy = {
+	slot = 4
+	generic = yes
+	ai = yes
+	potential = {
+		culture_group = orcish
+		NOT = { tag = I41 }
+		NOT = { tag = I43 }
+		capital_scope = {
+			OR = {
+				region = forlorn_vale_region
+				superregion = escann_superregion
+				superregion = deepwoods_superregion
+			}
+		}
+		NOT = { is_year = 1445 }
+	}
+	orc_orcish_alliances = {
+		icon = mission_alliances
+		position = 4
+		required_missions = {
+			orc_new_generation_of_warriors
+		}
+		trigger = {
+			any_ally = {
+				culture_group = orcish
+				
+				has_opinion = {
+					who = ROOT
+					value = 200
+				}
+				reverse_has_opinion = {
+					who = ROOT
+					value = 200
+				}
+			}
+		}
+		effect = {
+			random_ally = {
+				limit = {
+					culture_group = orcish
+					has_opinion = {
+						who = ROOT
+						value = 200
+					}
+					reverse_has_opinion = {
+						who = ROOT
+						value = 200
+					}
+				}
+				capital_scope = {
+					add_base_tax = 1
+					add_base_manpower = 1
+				}
+			}
+			capital_scope = {
+				add_base_tax = 1
+				add_base_manpower = 1
+			}
+		}
+	}
+}
+
+orc_capital = {
+	slot = 4
+	generic = yes
+	ai = yes
+	potential = {
+		culture_group = orcish
+		NOT = { tag = I41 }
+		NOT = { tag = I43 }
+		capital_scope = {
+			OR = {
+				region = forlorn_vale_region
+				superregion = escann_superregion
+				superregion = deepwoods_superregion
+			}
+		}
+		NOT = { is_year = 1445 }
+	}
+	
+	orc_base_of_operations = {
+		icon = mission_control_the_desh
+		position = 7
+		trigger = {
+			total_development = 40
+			adm_power = 100
+			dip_power = 100
+			mil_power = 100
+			capital_scope = {
+				if = { 
+					limit = { owner = { ai = yes } }
+					development = 10
+				}
+				else = {
+					development = 15
+				}
+			}
+		}
+		effect = {
+			add_adm_power = -100
+			add_dip_power = -100
+			add_mil_power = -100
+			capital_scope = {
+				add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 1
+				add_province_modifier = {
+					name = orc_settling_down
+					duration = 9125
+				}
+			}
+		}
+	}
+	
+	orc_foundation_of_capital = {
+		icon = mission_develop_the_capital
+		position = 8
+		required_missions = {
+			orc_base_of_operations 
+		}
+		trigger = {
+			total_development = 100
+			capital_scope = {
+				NOT = { devastation = 0.1 }
+				development = 20
+			}
+		}
+		effect = {
+			capital_scope = {
+				add_base_production = 1
+				random_neighbor_province = {
+					limit = { owned_by = ROOT }
+					add_base_production = 1
+				}
+				random_neighbor_province = {
+					limit = { owned_by = ROOT }
+					add_base_production = 1
+				}
+			}
+			add_country_modifier = {
+				name = growing_economy
+				duration = 9125
+			}
+		}
+	}
+}
+
+orc_development = {
+	slot = 5
+	generic = yes
+	ai = yes
+	potential = {
+		culture_group = orcish
+		NOT = { tag = I41 }
+		NOT = { tag = I43 }
+		capital_scope = {
+			OR = {
+				region = forlorn_vale_region
+				superregion = escann_superregion
+				superregion = deepwoods_superregion
+			}
+		}
+		NOT = { is_year = 1445 }
+	}
+	
+	orc_we_do_sow = {
+		icon = mission_rb_import_potatoes
+		position = 1
+		trigger = {
+			num_of_provinces_in_states = 5
+			grain = 3
+			treasury = 50
+		}
+		effect = {
+			add_treasury = -50
+			add_country_modifier = {
+				name = orc_rich_harvests
+				duration = 9125
+			}
+			random_owned_province = {
+				limit = {
+					trade_goods = grain
+				}
+				add_base_tax = 1
+				add_base_manpower = 1
+				add_base_production = 1
+			}
+			random_owned_province = {
+				limit = {
+					trade_goods = grain
+				}
+				add_base_tax = 1
+				add_base_manpower = 1
+				add_base_production = 1
+			}
+			random_owned_province = {
+				limit = {
+					trade_goods = grain
+				}
+				add_base_tax = 1
+				add_base_manpower = 1
+				add_base_production = 1
+			}
+
+			change_government_reform_progress = 10
+		}
+	}
+	
+	orc_wolf_breeding = {
+		icon = mission_rb_colonise_canada
+		position = 2
+		trigger = {
+			num_of_provinces_in_states = 5
+			livestock = 3
+			treasury = 50
+		}
+		effect = {
+			add_treasury = -50
+			add_country_modifier = {
+				name = orc_warg_cavalry
+				duration = 9125
+			}
+			random_owned_province = {
+				limit = {
+					trade_goods = livestock
+				}
+				add_base_manpower = 1
+				add_base_production = 1
+			}
+			random_owned_province = {
+				limit = {
+					trade_goods = livestock
+				}
+				add_base_manpower = 1
+				add_base_production = 1
+			}
+			random_owned_province = {
+				limit = {
+					trade_goods = livestock
+				}
+				add_base_manpower = 1
+				add_base_production = 1
+			}
+
+			change_government_reform_progress = 10
+		}
+	}
+	
+	orc_fur_production = {
+		icon = mission_rb_colonise_canada
+		position = 3
+		trigger = {
+			num_of_provinces_in_states = 5
+			fur = 3
+			treasury = 50
+		}
+		effect = {
+			add_treasury = -50
+			random_owned_province = {
+				limit = {
+					trade_goods = fur
+					NOT = { has_province_modifier = orc_hunters_settlement }
+				}
+				add_base_manpower = 1
+				add_base_production = 1
+				add_permanent_province_modifier = {
+					name = orc_hunters_settlement
+					duration = 18250
+				}
+			}
+			random_owned_province = {
+				limit = {
+					trade_goods = fur
+					NOT = { has_province_modifier = orc_hunters_settlement }
+				}
+				add_base_manpower = 1
+				add_base_production = 1
+				add_permanent_province_modifier = {
+					name = orc_hunters_settlement
+					duration = 18250
+				}
+			}
+			random_owned_province = {
+				limit = {
+					trade_goods = fur
+					NOT = { has_province_modifier = orc_hunters_settlement }
+				}
+				add_base_manpower = 1
+				add_base_production = 1
+				add_permanent_province_modifier = {
+					name = orc_hunters_settlement
+					duration = 18250
+				}
+			}
+
+			change_government_reform_progress = 10
+		}
+	}
+	
+	orc_iron_for_our_blades = {
+		icon = mission_build_up_to_force_limit
+		position = 4
+		trigger = {
+			num_of_provinces_in_states = 3
+			iron = 1
+			treasury = 100
+		}
+		effect = {
+			add_treasury = -100
+			random_owned_province = {
+				limit = {
+					trade_goods = iron
+				}
+				add_base_production = 2
+				add_base_manpower = 2
+			}
+			add_country_modifier = {
+				name = orc_cheap_blades
+				duration = 9125
+			}
+			change_government_reform_progress = 10
+		}
+	}
+	
+	orc_bronze_cannons = {
+		icon = mission_cannons_firing
+		position = 5
+		trigger = {
+			mil_tech = 7
+			num_of_provinces_in_states = 8
+			copper = 1
+			treasury = 300
+		}
+		effect = {
+			add_treasury = -300
+			random_owned_province = {
+				limit = {
+					trade_goods = copper
+				}
+				add_base_production = 2
+				add_base_manpower = 2
+			}
+			add_country_modifier = {
+				name = orc_first_cannons
+				duration = 9125
+			}
+			change_government_reform_progress = 10
+		}
+	}
+	
+	orc_gold_rush = {
+		icon = mission_african_gold
+		position = 6
+		trigger = {
+			adm_power = 75
+			dip_power = 75
+			mil_power = 75
+			gold = 1
+			treasury = 100
+		}
+		effect = {
+			add_adm_power = -75
+			add_dip_power = -75
+			add_mil_power = -75
+			add_treasury = -100
+			random_owned_province = {
+				limit = {
+					trade_goods = gold
+				}
+				add_base_tax = 2
+				add_base_production = 3
+			}
+			change_government_reform_progress = 10
+		}
+	}
+	
+	orc_advanced_good_production = {
+		icon = mission_asian_trader
+		position = 7
+		trigger = {
+			adm_power = 75
+			dip_power = 75
+			OR = {
+				cloth = 1
+				glass = 1
+				paper = 1
+			}
+			treasury = 100
+		}
+		effect = {
+			add_adm_power = -75
+			add_dip_power = -75
+			add_treasury = -100
+			random_owned_province = {
+				limit = {
+					OR = { 
+						trade_goods = cloth
+						trade_goods = glass
+						trade_goods = paper
+					}
+				}
+				add_base_tax = 2
+				add_base_production = 3
+			}
+			change_government_reform_progress = 10
+		}
+	}
+}

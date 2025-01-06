@@ -1,0 +1,2432 @@
+namespace = marcher
+
+#New Country Formed - default
+country_event = {
+	id = marcher.1
+	title = marcher.1.t
+	desc = marcher.1.d
+	picture = STREET_SPEECH_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		#government_type = adventurer
+		#government_rank = 2
+	}
+	
+	option = {		# Despotic Monarchy
+		name = "marcher.1.a"
+		ai_chance = { 
+			factor = 75
+			modifier = {
+				factor = 10
+				OR = {
+					tag = B07 #Sons of Dameria
+					tag = B37 #Rogieria
+					tag = B58 #Adenica
+					tag = B60 #Farranean
+				}
+			}
+			modifier = {
+				factor = 2
+				OR = {
+					tag = B05 #Pioneer's Guild
+					tag = B53 #Nurcestir
+					tag = B19 #Sword Covenant
+					tag = Z37 #Covenblad
+					tag = B04 #Order of the Ashen Rose
+					tag = Z35 #Rosande
+					tag = B11 #Company of the Thorn
+					tag = B34 #Luciande
+				}
+			}
+			modifier = {
+				factor = 2
+				faction_in_power = adv_marchers
+			}
+			modifier = {
+				factor = 2
+				num_of_cities = 5
+			}
+			modifier = {
+				factor = 10
+				has_country_flag = formed_diggy_formable
+			}
+		}	
+		hidden_effect = {
+			lose_reforms = 10 # Reset reform progress
+		}
+		if = {
+			limit = { NOT = { government = monarchy } }
+			change_government = monarchy
+		}
+		if = {
+			limit = { has_country_flag = formed_diggy_formable }
+			add_government_reform = dwarovar_dwarven_clan_reform
+			define_heir = {
+				dynasty = ROOT
+				claim = 100
+				culture = ROOT
+				change_adm = 1
+				change_dip = 1
+				change_mil = 1
+			}
+		}
+		else_if = {
+			limit = { tag = B37 } #Rogieria
+			add_government_reform = damerian_monarchy
+		}
+		else = {
+			add_government_reform = adventurer_kingdom_reform
+		}
+		
+		#Dynasty name triggers for each country
+		hidden_effect = {
+			#Greentide Adventurers
+			country_event = { id = flavor_ancardia.1 days = 1 }
+			#country_event = { id = flavor_rogieria.1 days = 1 }
+			country_event = { id = flavor_rogieria.2 days = 1 }
+			country_event = { id = flavor_elikhand.1 days = 1 }
+			country_event = { id = flavour_wyvernheart.1 days = 1 }
+			country_event = { id = flavor_alenor.1 days = 1 }
+			country_event = { id = flavor_stalbor.1 days = 1 }
+			country_event = { id = flavor_ravenmarch.1 days = 1 }
+			country_event = { id = flavor_araionn.1 days = 1 }
+			country_event = { id = flavor_newshire.1 days = 1 }
+			country_event = { id = flavor_estaire.1 days = 1 }
+			country_event = { id = flavor_anbenland.1 days = 1 }
+			country_event = { id = flavor_nurcestir.1 days = 1 }
+			country_event = { id = flavor_esthil.1 days = 1 }
+			country_event = { id = flavor_rosande.1 days = 1 }
+			country_event = { id = flavor_hammerhome.1 days = 1 }
+			country_event = { id = flavour_covenblad.1 days = 1 }
+			country_event = { id = flavor_silvermere.1 days = 1 }
+			#Escanni Kingdoms
+			country_event = { id = flavor_adenica.100 days = 1 }
+			country_event = { id = flavor_farranean.1 days = 1 }
+			#Aelantir Adventurers
+			country_event = { id = flavor_sornicande.1 days = 1 }
+			country_event = { id = flavor_neratica.1 days = 1 }
+			#country_event = { id = flavour_beggaston.1 days = 1 }
+			country_event = { id = flavor_istranar.1 days = 1 }
+			#country_event = { id = flavor_tiru_moine.1 days = 1 }
+			country_event = { id = flavor_freemarches.1 days = 1 }
+			#country_event = { id = flavor_pelodaire.1 days = 1 }
+			country_event = { id = flavor_west_tipney.1 days = 1 }
+			#country_event = { id = flavor_new_havoral.1 days = 1 }
+			#country_event = { id = flavor_chippengard.1 days = 1 }
+			#country_event = { id = flavour_plumstead.1 days = 1 }
+			country_event = { id = flavor_nur_dhanaenn.1 days = 1 }
+			#country_event = { id = flavor_tellumtir.1 days = 1 }
+			country_event = { id = rezankand.1 days = 1 }
+
+		}
+	}
+	option = {		# Oligarchic Republic
+		name = "marcher.1.b"
+		trigger = {
+			NOT = { tag = B37 } #rogieria
+			NOT = { tag = Z37 } # Covenblad
+			NOT = { tag = B39 } #Wyvernheart
+			NOT = { tag = I20 } #hul-az-krakazol
+			NOT = { tag = I08 } #Haraz Orldhum
+			NOT = { tag = I16 } #Gor Burad
+			NOT = { tag = B58 } #Adenica
+			NOT = { tag = I22 } #Gronstunad
+			NOT = { tag = I25 } #Verkal Dromak
+			NOT = { tag = Z35 } #Rosande
+		}
+		ai_chance = { 
+			factor = 30
+			modifier = {
+				factor = 1.5
+				faction_in_power = adv_pioneers
+			}
+			modifier = {
+				factor = 2	#Having a poor ruler makes it likely they want an elective country
+				OR = {
+					NOT = { adm = 3 }
+					NOT = { dip = 3 }
+					NOT = { mil = 3 }
+				}
+			}
+		}
+		hidden_effect = {
+			lose_reforms = 10 # Reset reform progress
+			if = {
+				limit = {
+					has_ruler_modifier = heir_mage_personality_mod
+				}
+				remove_country_modifier = heir_mage_personality_mod
+				clr_heir_flag = heir_consort_mage_personality
+			}
+		}
+		if = {
+			limit = { NOT = { government = republic } }
+			change_government = republic
+		}
+		if = {
+			limit = {
+				OR = {
+					has_country_flag = formed_diggy_formable 
+					culture_group = dwarven
+				}
+			}
+			add_government_reform = dwarovar_elected_clans_reform
+		}
+		else = {
+			add_government_reform = adventurer_republic_reform
+		}
+		hidden_effect = { add_republican_tradition = 50 }
+	}
+	option = {		# Merchant Republic
+		name = "marcher.1.c"
+		trigger = {
+			NOT = { tag = B37 } #rogieria
+			NOT = { tag = B50 } #newshire
+			NOT = { tag = B58 } #Adenica
+			NOT = { tag = Z37 } # Covenblad
+			NOT = { tag = B39 } #Wyvernheart
+			NOT = { tag = Z35 } #Rosande
+			NOT = { culture_group = dwarven }
+		}
+		ai_chance = { 
+			factor = 10 
+			modifier = {
+				factor = 3
+				faction_in_power = adv_fortune_seekers
+			}
+			modifier = {
+				factor = 8
+				OR = {
+					tag = B09 #House of Riches
+					tag = B49 #Araionn
+				}
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					has_ruler_modifier = heir_mage_personality_mod
+				}
+				remove_country_modifier = heir_mage_personality_mod
+				clr_heir_flag = heir_consort_mage_personality
+			}
+		}
+		if = {
+			limit = { NOT = { government = republic } }
+			change_government = republic
+		}
+		add_government_reform = merchants_reform
+	}
+	
+	#Optional
+	
+	#Damerian Monarchy
+	
+	
+	option = {		# Magocracy
+		name = "marcher.1.dd"
+		trigger = {
+			NOT = { tag = B37 } #rogieria
+			NOT = { culture_group = dwarven } 
+			NOT = { tag = B50 } #newshire
+			NOT = { tag = B58 } #Adenica
+			NOT = { tag = Z37 } # Covenblad
+			NOT = { tag = B39 } #Wyvernheart
+			NOT = { tag = Z35 } #Rosande
+			OR = {
+				tag = B20 #Iron Sceptre
+				tag = B54 #Esthil
+				ruler_has_mage_personality = yes
+			}
+		}
+		ai_chance = { 
+			factor = 10 
+			modifier = {
+				factor = 1000
+				OR = {
+					tag = B20 #Iron Sceptre
+					tag = B54 #Esthil
+				}
+			}
+			modifier = {
+				factor = 3
+				estate_influence = {
+					estate = estate_mages
+					influence = 75
+				}
+			}
+		}
+		hidden_effect = {
+			lose_reforms = 10 # Reset reform progress
+		}
+		if = {
+			limit = { NOT = { government = theocracy } }
+			change_government = theocracy
+		}
+		add_government_reform = magocracy_reform
+	}
+	
+}
+
+# Culture ties weakened - non-Dwarovar
+# Use scripted effects in scripted_effects\adventurers_spawnables.txt to keep the file cleaner
+country_event = {
+	id = marcher.2
+	title = marcher.2.t
+	desc = marcher.2.d
+	picture = EUROPEAN_REFUGEES_eventPicture
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_country_flag = adventurer_derived_government
+		NOT = { has_country_flag = new_adventurer_culture }
+		NOT = { has_country_flag = no_formable_culture_shift }
+		NOT = { has_country_modifier = legacy_of_adventurers_modifier }
+		
+		capital_scope = { NOT = { continent = serpentspine } }
+	}
+	
+# ESCANNI SHIFTS
+	
+	option = { # Luciande
+		name = marcher.2.a
+		trigger = {
+			OR = {
+				tag = B34
+				was_tag = B34
+			}
+		}
+		
+		ai_chance = {
+			factor = 1000
+		}
+		
+		escanni_culture_shift = { to_culture = luciander }
+		hidden_effect = {
+			every_core_province = {
+				limit = {
+					region = forlorn_vale_region
+				}
+				change_culture = luciander
+			}
+		}
+	}
+	
+	option = { # Ancardia
+		name = marcher.2.a
+		trigger = {
+			OR = {
+				tag = B35
+				was_tag = B35
+			}
+		}
+		
+		ai_chance = {
+			factor = 1000
+		}
+		
+		escanni_culture_shift = { to_culture = ancardian }
+	}
+	
+	option = { # Rogieria
+		name = marcher.2.a
+		trigger = {
+			OR = {
+				tag = B37
+				was_tag = B37
+			}
+		}
+		
+		ai_chance = {
+			factor = 1000
+		}
+		
+		escanni_culture_shift = { to_culture = rogieran }
+	}
+	
+	option = { # Elikhand
+		name = marcher.2.a
+		trigger = {
+			OR = {
+				tag = B38
+				was_tag = B38
+			}
+		}
+		
+		ai_chance = {
+			factor = 1000
+		}
+		
+		escanni_culture_shift = { to_culture = elikhander }
+	}
+	
+	option = { # Wyvernheart
+		name = marcher.2.a
+		trigger = {
+			OR = {
+				tag = B39
+				was_tag = B39
+			}
+		}
+		
+		ai_chance = {
+			factor = 1000
+		}
+		
+		escanni_culture_shift = { to_culture = heartman }
+	}
+	
+	option = { # Alenor
+		name = marcher.2.a
+		trigger = {
+			OR = {
+				tag = B40
+				was_tag = B40
+			}
+		}
+		
+		ai_chance = {
+			factor = 1000
+		}
+		
+		escanni_culture_shift = { to_culture = alenori }
+	}
+	
+	option = { # Stalbor
+		name = marcher.2.a
+		trigger = {
+			OR = {
+				tag = B47
+				was_tag = B47
+			}
+		}
+		
+		ai_chance = {
+			factor = 1000
+		}
+		
+		escanni_culture_shift = { to_culture = stalboric }
+	}
+	
+	option = { # Ravenmarch
+		name = marcher.2.a
+		trigger = {
+			OR = {
+				tag = B48
+				was_tag = B48
+			}
+		}
+		
+		ai_chance = {
+			factor = 1000
+		}
+		
+		escanni_culture_shift = { to_culture = ravenmarcher }
+	}
+	
+	option = { # Araionn
+		name = marcher.2.a
+		trigger = {
+			OR = {
+				tag = B49
+				was_tag = B49
+			}
+		}
+		
+		ai_chance = {
+			factor = 1000
+		}
+		
+		escanni_culture_shift = { to_culture = ionnic }
+	}
+	
+	option = { # Newshire
+		name = marcher.2.a
+		trigger = {
+			OR = {
+				tag = B50
+				was_tag = B50
+			}
+		}
+		
+		ai_chance = {
+			factor = 1000
+		}
+		
+		escanni_culture_shift = { to_culture = newfoot_halfling }
+	}
+	
+	option = { # Estaire
+		name = marcher.2.a
+		trigger = {
+			OR = {
+				tag = B51
+				was_tag = B51
+			}
+		}
+		
+		ai_chance = {
+			factor = 1000
+		}
+		
+		escanni_culture_shift = { to_culture = estairey }
+	}
+	
+	option = { # Anbenland
+		name = marcher.2.a
+		trigger = {
+			OR = {
+				tag = B52
+				was_tag = B52
+			}
+		}
+		
+		ai_chance = {
+			factor = 1000
+		}
+		
+		escanni_culture_shift = { to_culture = anbenlander }
+	}
+	
+	option = { # Nurcestir
+		name = marcher.2.a
+		trigger = {
+			OR = {
+				tag = B53
+				was_tag = B53
+			}
+		}
+		
+		ai_chance = {
+			factor = 1000
+		}
+		
+		escanni_culture_shift = { to_culture = nurcestiran }
+	}
+	
+	option = { # Esthil
+		name = marcher.2.a
+		trigger = {
+			OR = {
+				tag = B54
+				was_tag = B54
+			}
+		}
+		
+		ai_chance = {
+			factor = 1000
+		}
+		
+		escanni_culture_shift = { to_culture = esthili }
+	}
+	
+	option = { # Rosande
+		name = marcher.2.a
+		trigger = {
+			OR = {
+				tag = Z35
+				was_tag = Z35
+			}
+		}
+		
+		ai_chance = {
+			factor = 1000
+		}
+		
+		escanni_culture_shift = { to_culture = rosanda }
+	}
+
+	option = { # Hammerhome
+		name = marcher.2.a
+		trigger = {
+			OR = {
+				tag = Z36
+				was_tag = Z36
+			}
+		}
+		
+		ai_chance = {
+			factor = 1000
+		}
+		
+		escanni_culture_shift = { to_culture = iron_dwarf }
+	}
+	
+	option = { # Covenblad
+		name = marcher.2.a
+		trigger = {
+			OR = {
+				tag = Z37
+				was_tag = Z37
+			}
+		}
+		
+		ai_chance = {
+			factor = 1000
+		}
+		
+		escanni_culture_shift = { to_culture = covenbladic }
+	}
+	
+#YNN RIVER SHIFTS
+	
+	option = { # Istranar
+		name = marcher.2.a
+		trigger = {
+			OR = {
+				tag = H47
+				was_tag = H47
+			}
+		}
+		
+		ai_chance = {
+			factor = 1000
+		}
+		
+		ynn_culture_shift = { to_culture = istranari }
+		
+		hidden_effect = {
+			change_variable = {		#Get accustomed to Ruinborn, well-intentioned
+				which = ruinborn_race_tolerance_ai
+				value = 20
+			}
+			subtract_variable = {	#Elves and half-elves become less prominent than in Cannor.
+				which = elven_race_tolerance_ai
+				value = 5
+			}
+			subtract_variable = {	#Does NOT include half-ruinborn
+				which = half_elven_race_tolerance_ai
+				value = 5
+			}
+		}
+	}
+	
+	option = { # New Havoral
+		name = marcher.2.a
+		trigger = {
+			OR = {
+				tag = H57
+				was_tag = H57
+			}
+		}
+		
+		ai_chance = {
+			factor = 1000
+		}
+		
+		ynn_culture_shift = { to_culture = new_havoric }
+		
+		hidden_effect = {
+			change_variable = {		#Get accustomed to Ruinborn
+				which = ruinborn_race_tolerance_ai
+				value = 10
+			}
+			subtract_variable = {	#Elves and half-elves become less prominent than in Cannor.
+				which = elven_race_tolerance_ai
+				value = 5
+			}
+			subtract_variable = {	#Does NOT include half-ruinborn
+				which = half_elven_race_tolerance_ai
+				value = 5
+			}
+		}
+	}
+	
+	option = { # Southern Expanse
+		name = colonial_culture.1.c
+		trigger = {
+			OR = {
+				tag = H45
+				was_tag = H44
+				tag = H49
+				was_tag = H49
+				tag = H61
+				was_tag = H61
+			}
+		}
+		
+		ai_chance = {
+			factor = 1000
+		}
+		
+		ynn_culture_shift = { to_culture = steadsman }
+		
+		hidden_effect = {
+			change_variable = {		#Get accustomed to Ruinborn, in general more tolerant than the north/Veykoda from NIs
+				which = ruinborn_race_tolerance_ai
+				value = 20
+			}
+			subtract_variable = {	#Elves and half-elves become less prominent than in Cannor.
+				which = elven_race_tolerance_ai
+				value = 5
+			}
+			subtract_variable = {	#Does NOT include half-ruinborn
+				which = half_elven_race_tolerance_ai
+				value = 5
+			}
+		}
+	}
+	
+	option = { # Tellumtir
+		name = colonial_culture.1.c
+		trigger = {
+			OR = {
+				tag = H65
+				was_tag = H65
+			}
+		}
+		
+		ai_chance = {
+			factor = 1000
+		}
+		
+		ynn_culture_shift = { to_culture = dustman }
+		
+		hidden_effect = {
+			change_variable = {		#Get accustomed to Ruinborn
+				which = ruinborn_race_tolerance_ai
+				value = 10
+			}
+			subtract_variable = {	#Elves and half-elves become less prominent than in Cannor.
+				which = elven_race_tolerance_ai
+				value = 5
+			}
+			subtract_variable = {	#Does NOT include half-ruinborn
+				which = half_elven_race_tolerance_ai
+				value = 5
+			}
+		}
+	}
+	
+	option = { # West Tipney
+		name = colonial_culture.1.c
+		trigger = {
+			OR = {
+				tag = H55
+				was_tag = H55
+			}
+		}
+		
+		ai_chance = {
+			factor = 1000
+		}
+		
+		ynn_culture_shift = { to_culture = pipefoot_halfling }
+		
+		hidden_effect = {	#We're friends with everyone
+			change_variable = {		
+				which = ruinborn_race_tolerance_ai
+				value = 100
+			}
+			change_variable = {	
+				which = dwarven_race_tolerance_ai
+				value = 100
+			}
+			change_variable = {	
+				which = human_race_tolerance_ai
+				value = 100
+			}
+			change_variable = {	
+				which = orcish_race_tolerance_ai
+				value = 100
+			}
+			change_variable = {	
+				which = half_orcish_race_tolerance_ai
+				value = 100
+			}
+		}
+	}
+	
+	option = { # Chippengard
+		name = colonial_culture.1.c
+		trigger = {
+			OR = {
+				tag = H59
+				was_tag = H59
+			}
+		}
+		
+		ai_chance = {
+			factor = 1000
+		}
+		
+		ynn_culture_shift = { to_culture = chippengarder_half_orc }
+		
+		hidden_effect = {
+			change_variable = {		#The most Ynnicized
+				which = ruinborn_race_tolerance_ai
+				value = 20
+			}
+			subtract_variable = {	#You don't seem to understand, Aelantir isn't yours to conquer
+				which = elven_race_tolerance_ai
+				value = 10
+			}
+			subtract_variable = {	#Does NOT include half-ruinborn
+				which = half_elven_race_tolerance_ai
+				value = 5
+			}
+		}
+	}
+
+	option = { # Pelodaire
+		name = colonial_culture.1.c
+		trigger = {
+			OR = {
+				tag = H53
+				was_tag = H52
+			}
+		}
+		
+		ai_chance = {
+			factor = 1000
+		}
+		
+		ynn_culture_shift = { to_culture = horizon_elf }
+		
+		hidden_effect = {
+			change_variable = {		#All about integrating ruinborn
+				which = ruinborn_race_tolerance_ai
+				value = 20
+			}
+		}
+	}
+
+#NORTH AELANTIR SHIFTS
+
+	option = { # Sornicande
+		name = colonial_culture.1.a
+		trigger = {
+			OR = {
+				tag = H41
+				was_tag = H40
+			}
+		}
+		
+		ai_chance = {
+			factor = 1000
+		}
+		
+		north_aelantir_culture_shift = { to_culture = sornicandi }
+		
+		hidden_effect = {
+			change_variable = {		#All about integrating ruinborn
+				which = ruinborn_race_tolerance_ai
+				value = 20
+			}
+		}
+	}
+
+	option = { # Neratica
+		name = colonial_culture.1.a
+		trigger = {
+			OR = {
+				tag = H43
+				was_tag = H42
+			}
+		}
+		
+		ai_chance = {
+			factor = 1000
+		}
+		
+		north_aelantir_culture_shift = { to_culture = neratican }
+	}
+
+#SOUTH AELANTIR SHIFTS
+
+	option = { # Nur Dhanaenn
+		name = colonial_culture.1.a
+		trigger = {
+			OR = {
+				tag = H63
+				was_tag = H62
+			}
+		}
+		
+		ai_chance = {
+			factor = 1000
+		}
+		
+		south_aelantir_culture_shift = { to_culture = dhanaenno }
+	}
+		
+	option = { # Rezinkand back up
+	name = colonial_culture.1.a
+	trigger = {
+		OR = {
+			tag = H67
+			was_tag = H66
+		}
+	}
+	
+	ai_chance = {
+		factor = 1000
+	}
+	
+	south_aelantir_culture_shift = { to_culture = dawn_elf }
+}
+
+	option = { # Kiohalen
+		name = colonial_culture.1.a
+		trigger = {
+			OR = {
+				tag = U68
+				was_tag = U68
+			}
+		}
+		
+		ai_chance = {
+			factor = 1000
+		}
+		
+		south_aelantir_culture_shift = { to_culture = kiohan_harpy }
+		
+		hidden_effect = {	#We would not survive without the Ruinborn
+			change_variable = {		
+				which = ruinborn_race_tolerance_ai
+				value = 100
+			}
+		}
+	}
+}
+
+country_event = { #Change culture of conquered adventurer provinces
+	id = marcher.3
+	title = marcher.3.t
+	desc = marcher.3.d
+	picture = EUROPEAN_REFUGEES_eventPicture
+	
+	trigger = {
+		NOT = {current_age = age_of_discovery}
+		NOT = {current_age = age_of_reformation}
+		OR = {
+			NOT = {
+				capital_scope = {
+					region = west_castanor_region
+				}
+				capital_scope = {
+					region = south_castanor_region
+				}
+				capital_scope = {
+					region = inner_castanor_region
+				}
+				capital_scope = {
+					area = whistlevale_area
+				}
+				capital_scope = {
+					area = cursewood_area
+				}
+			}
+			any_owned_province = {
+				OR = {
+					region = west_castanor_region
+					region = south_castanor_region
+					region = inner_castanor_region
+					area = whistlevale_area
+					area = cursewood_area
+				}
+				NOT = { culture = ROOT }
+				OR = {
+					culture = aldresian
+					culture = anbenncoster
+					culture = busilari
+					culture = corvurian
+					culture = crownsman
+					culture = east_damerian
+					culture = esmari
+					culture = gawedi
+					culture = high_lorentish
+					culture = korosheshi
+					culture = redfoot_halfling
+					culture = roilsardi
+					culture = vernman
+					culture = west_damerian
+				}
+			}
+		}
+		any_owned_province = {
+			OR = {
+				region = west_castanor_region
+				region = south_castanor_region
+				region = inner_castanor_region
+				area = whistlevale_area
+				area = cursewood_area
+			}
+			NOT = { has_province_flag = escanni_culture_change }
+			OR = {
+				culture = aldresian
+				culture = anbenncoster
+				culture = busilari
+				culture = corvurian
+				culture = crownsman
+				culture = east_damerian
+				culture = esmari
+				culture = gawedi
+				culture = high_lorentish
+				culture = korosheshi
+				culture = redfoot_halfling
+				culture = roilsardi
+				culture = vernman
+				culture = west_damerian
+			}
+		}
+	}
+	mean_time_to_happen = {
+		months = 12
+	}
+	option = {
+		name = marcher.3.a
+		trigger = {
+			OR = {
+				capital_scope = {
+					region = west_castanor_region
+				}
+				capital_scope = {
+					region = south_castanor_region
+				}
+				capital_scope = {
+					region = inner_castanor_region
+				}
+				capital_scope = {
+					area = whistlevale_area
+				}
+				capital_scope = {
+					area = cursewood_area
+				}
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+		
+		every_owned_province = {
+			limit = {
+				OR = {
+					region = west_castanor_region
+					region = south_castanor_region
+					region = inner_castanor_region
+					area = whistlevale_area
+					area = cursewood_area
+				}
+				NOT = { has_province_flag = escanni_culture_change }
+			}
+			set_province_flag = escanni_culture_change
+			if = { #Esthil
+				limit = {
+					NOT = { culture = ROOT }
+					culture = aldresian
+					OR = {
+						is_core = B20 #Iron Sceptre
+						is_core = B54 #Esthil
+					}
+				}
+				change_culture = esthili
+			}
+			if = { #Covenblad
+				limit = {
+					NOT = { culture = ROOT }
+					culture = aldresian
+					NOT = {
+						is_core = B20
+						is_core = B54
+					}
+				}
+				change_culture = covenbladic
+			}
+			if = { #Anbenland
+				limit = {
+					NOT = { culture = ROOT }
+					culture = anbenncoster
+				}
+				change_culture = anbenlander
+			}
+			if = { #Stalbor
+				limit = {
+					NOT = { culture = ROOT }
+					culture = busilari
+				}
+				change_culture = stalboric
+			}
+			if = { #Ravenmarch
+				limit = {
+					NOT = { culture = ROOT }
+					culture = corvurian
+				}
+				change_culture = ravenmarcher
+			}
+			if = { #Araionn
+				limit = {
+					NOT = { culture = ROOT }
+					culture = crownsman
+				}
+				change_culture = ionnic
+			}
+			if = { #Rogieria
+				limit = {
+					NOT = { culture = ROOT }
+					culture = east_damerian
+					OR = {
+						is_core = B07 #Sons of Dameria
+						is_core = B37 #Rogieria
+					}
+				}
+				change_culture = rogieran
+			}
+			if = { #Nurcestir
+				limit = {
+					NOT = { culture = ROOT }
+					culture = east_damerian
+					NOT = {
+						is_core = B07
+						is_core = B37
+					}
+				}
+				change_culture = nurcestiran
+			}
+			if = { #Estaire
+				limit = {
+					NOT = { culture = ROOT }
+					culture = esmari
+				}
+				change_culture = estairey
+			}
+			if = { #Alenor
+				limit = {
+					NOT = { culture = ROOT }
+					culture = gawedi
+				}
+				change_culture = alenori
+			}
+			if = { #Rosande
+				limit = {
+					NOT = { culture = ROOT }
+					culture = high_lorentish
+				}
+				change_culture = rosanda
+			}
+			if = { #Elikhand
+				limit = {
+					NOT = { culture = ROOT }
+					culture = korosheshi
+				}
+				change_culture = elikhander
+			}
+			if = { #Newshire
+				limit = {
+					NOT = { culture = ROOT }
+					culture = redfoot_halfling
+				}
+				change_culture = newfoot_halfling
+			}
+			if = { #Luciande
+				limit = {
+					NOT = { culture = ROOT }
+					culture = roilsardi
+				}
+				change_culture = luciander
+			}
+			if = { #Wyvernheart
+				limit = {
+					NOT = { culture = ROOT }
+					culture = vernman
+				}
+				change_culture = heartman
+			}
+			if = { #Ancardia
+				limit = {
+					NOT = { culture = ROOT }
+					culture = west_damerian
+				}
+				change_culture = ancardian
+			}
+		}
+	}
+	option = {
+		name = marcher.3.a
+		trigger = {
+			NOT = {
+				capital_scope = {
+					region = west_castanor_region
+				}
+				capital_scope = {
+					region = south_castanor_region
+				}
+				capital_scope = {
+					region = inner_castanor_region
+				}
+				capital_scope = {
+					area = whistlevale_area
+				}
+				capital_scope = {
+					area = cursewood_area
+				}
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+		
+		every_owned_province = {
+			limit = {
+				OR = {
+					region = west_castanor_region
+					region = south_castanor_region
+					region = inner_castanor_region
+					area = whistlevale_area
+					area = cursewood_area
+				}
+				NOT = { has_province_flag = escanni_culture_change }
+			}
+			set_province_flag = escanni_culture_change
+			if = { #Esthil
+				limit = {
+					culture = aldresian
+					OR = {
+						is_core = B20 #Iron Sceptre
+						is_core = B54 #Esthil
+					}
+				}
+				change_culture = esthili
+			}
+			if = { #Covenblad
+				limit = {
+					culture = aldresian
+					NOT = {
+						is_core = B20
+						is_core = B54
+					}
+				}
+				change_culture = covenbladic
+			}
+			if = { #Anbenland
+				limit = {
+					culture = anbenncoster
+				}
+				change_culture = anbenlander
+			}
+			if = { #Stalbor
+				limit = {
+					culture = busilari
+				}
+				change_culture = stalboric
+			}
+			if = { #Ravenmarch
+				limit = {
+					culture = corvurian
+				}
+				change_culture = ravenmarcher
+			}
+			if = { #Araionn
+				limit = {
+					culture = crownsman
+				}
+				change_culture = ionnic
+			}
+			if = { #Rogieria
+				limit = {
+					culture = east_damerian
+					OR = {
+						is_core = B07 #Sons of Dameria
+						is_core = B37 #Rogieria
+					}
+				}
+				change_culture = rogieran
+			}
+			if = { #Nurcestir
+				limit = {
+					culture = east_damerian
+					NOT = {
+						is_core = B07
+						is_core = B37
+					}
+				}
+				change_culture = nurcestiran
+			}
+			if = { #Estaire
+				limit = {
+					culture = esmari
+				}
+				change_culture = estairey
+			}
+			if = { #Alenor
+				limit = {
+					culture = gawedi
+				}
+				change_culture = alenori
+			}
+			if = { #Rosande
+				limit = {
+					culture = high_lorentish
+				}
+				change_culture = rosanda
+			}
+			if = { #Elikhand
+				limit = {
+					culture = korosheshi
+				}
+				change_culture = elikhander
+			}
+			if = { #Newshire
+				limit = {
+					culture = redfoot_halfling
+				}
+				change_culture = newfoot_halfling
+			}
+			if = { #Luciande
+				limit = {
+					culture = roilsardi
+				}
+				change_culture = luciander
+			}
+			if = { #Wyvernheart
+				limit = {
+					culture = vernman
+				}
+				change_culture = heartman
+			}
+			if = { #Ancardia
+				limit = {
+					culture = west_damerian
+				}
+				change_culture = ancardian
+			}
+		}
+	}
+}
+
+country_event = { #Notification
+	id = marcher.4
+	title = marcher.4.t
+	desc = marcher.4.d
+	picture = EUROPEAN_REFUGEES_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = marcher.4.a
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+province_event = { #Change culture of conquered Aelantiri provinces
+	id = marcher.5
+	title = marcher.5.t
+	desc = marcher.5.d
+	picture = EUROPEAN_REFUGEES_eventPicture
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	after = {
+		owner = {
+			country_event = { id = marcher.4 }
+		}
+	}
+	
+	trigger = {
+		NOT = { current_age = age_of_discovery }
+		NOT = { current_age = age_of_reformation }
+		has_owner_culture = no
+		OR = {
+			continent = north_america
+			continent = south_america
+		}
+		NOT = { has_province_flag = aelantir_culture_change }
+		OR = {
+			OR = { # This part of the trigger if for non-colonial nations. It exactly mirrors what that option can actually convert.
+				AND = {
+					culture = esmari
+					OR = {
+						is_core = G97 #Vanbury Guild
+						superregion = torn_gates_superregion
+						region = sarmadfar_region
+					}
+				}
+				AND = {
+					culture = havoric
+					OR = {
+						is_core = H56 #Havoral Band
+						is_core = H57 #New Havoral
+						# colonial_region = colonial_ynn
+						colonial_region = colonial_upper_ynn
+						colonial_region = colonial_lower_ynn
+						colonial_region = colonial_expanse
+					}
+				}
+				AND = {
+					culture = vernman
+					OR = {
+						OR = {
+							region = trollsbay_region
+						}
+						OR = {
+							is_core = H48 #Menibor Free Company
+							is_core = H49 #Tiru Moine
+							# colonial_region = colonial_ynn
+							colonial_region = colonial_upper_ynn
+							colonial_region = colonial_lower_ynn
+							colonial_region = colonial_expanse
+						}
+					}
+				}
+				OR = {
+					AND = {
+						culture = visfoot_halfling
+						region = trollsbay_region
+					}
+					AND = {
+						culture = roilsardi
+						region = trollsbay_region
+					}
+					AND = {
+						culture = bahari
+						region = trollsbay_region
+					}
+				}
+				AND = {
+					culture = arannese
+					OR = {
+						OR = {
+							#is_core = G95 #Marlliande
+							region = trollsbay_region
+							region = bloodgroves_region
+						}
+						OR = {
+							is_core = H64 #Bardswood Band
+							is_core = H65 #Tellumtir
+							# colonial_region = colonial_ynn
+							colonial_region = colonial_upper_ynn
+							colonial_region = colonial_lower_ynn
+							colonial_region = colonial_expanse
+						}
+					}
+				}
+				AND = {
+					culture = east_damerian
+					OR = {
+						OR = {
+							region = trollsbay_region
+							region = bloodgroves_region
+						}
+						AND = {
+							OR = {
+								colonial_region = colonial_upper_ynn
+								colonial_region = colonial_lower_ynn
+								colonial_region = colonial_expanse
+							}
+							NOT = {
+								is_core = H46 #Istralorian Crusaders
+								is_core = H47 #Istranar
+							}
+						}
+						OR = {
+							# colonial_region = colonial_ynn
+							colonial_region = colonial_upper_ynn
+							colonial_region = colonial_lower_ynn
+							colonial_region = colonial_expanse
+							region = broken_isles_region
+							region = randrunnse_region
+							is_core = H46 #Istralorian Crusaders
+							is_core = H47 #Istranar
+						}
+					}
+				}
+				AND = {
+					culture = pashainey
+					OR = {
+						region = trollsbay_region
+						region = bloodgroves_region
+					}
+				}
+				AND = {
+					culture = low_lorentish
+					OR = {
+						is_core = H34 #Ebenmas
+						# colonial_region = colonial_ynn
+						colonial_region = colonial_upper_ynn
+						colonial_region = colonial_lower_ynn
+						colonial_region = colonial_expanse
+					}
+				}
+				AND = {
+					culture = castellyrian
+					OR = {
+						is_core = H35 #Corinsfield
+						# colonial_region = colonial_ynn
+						colonial_region = colonial_upper_ynn
+						colonial_region = colonial_lower_ynn
+						colonial_region = colonial_expanse
+					}
+				}
+				OR = {
+					AND = {
+						culture = stone_dwarf
+						OR = {
+							is_core = G94 #Argezvale
+							# colonial_region = colonial_ynn
+							colonial_region = colonial_upper_ynn
+							colonial_region = colonial_lower_ynn
+							colonial_region = colonial_expanse
+						}
+					}
+				}
+				AND = {
+					culture = crownsman
+					OR = {
+						is_core = H44 #Shining Circle
+						is_core = H45 #Beggaston
+						# colonial_region = colonial_ynn
+						colonial_region = colonial_upper_ynn
+						colonial_region = colonial_lower_ynn
+						colonial_region = colonial_expanse
+					}
+				}
+				AND = {
+					culture = redfoot_halfling
+					OR = {
+						is_core = H54 #Tipney Pioneers
+						is_core = H55 #West Tipney
+						# colonial_region = colonial_ynn
+						colonial_region = colonial_upper_ynn
+						colonial_region = colonial_lower_ynn
+						colonial_region = colonial_expanse
+					}
+				}
+				AND = {
+					culture = half_orc
+					OR = {	#East bank are Freemarchers by default
+						region = epednan_expanse_region
+						province_group = ynn_western_lands
+						is_core = H58 #Chipped Tooth Company
+						is_core = H59 #Chippengard
+					}
+				}
+				AND = {
+					culture = cliff_gnome
+					OR = {
+						is_core = H30 #Gommoport
+						colonial_region = colonial_haraf
+					}
+				}
+				AND = {
+					culture = city_goblin
+					OR = {
+						is_core = H32 #Mestikardu
+						colonial_region = colonial_haraf
+					}
+				}
+				AND = {
+					culture = bluescale_kobold
+					OR = {
+						is_core = H32 #Mestikardu
+						colonial_region = colonial_haraf
+					}
+				}
+				OR = {
+					AND = {
+						culture = sorncosti
+						OR = {
+							is_core = H40 #Sornic Sons
+							is_core = H41 #Sornicande
+							colonial_region = colonial_noruin
+							colonial_region = colonial_isles
+						}
+					}
+				}
+				OR = {
+					AND = {
+						culture = arbarani
+						OR = {
+							is_core = H62 #Brigade Magnificent
+							is_core = H63 #Nur Dhanaenn
+							colonial_region = colonial_lai_peninsula
+							colonial_region = colonial_leechden
+						}
+					}
+				}
+				OR = {
+					AND = {
+						culture = corvurian
+						OR = {
+							is_core = H42 #Onyx Legion
+							is_core = H43 #Neratica
+							colonial_region = colonial_noruin
+							colonial_region = colonial_isles
+						}
+					}
+				}
+				OR = {
+					AND = {
+						culture = zanite
+						OR = {
+							is_core = G92 #Saamirses
+							colonial_region = colonial_noruin
+						}
+					}
+				}
+				OR = {
+					AND = {
+						culture = green_orc
+						OR = {
+							is_core = H39 #Ozgarom
+							colonial_region = colonial_soruin
+						}
+					}
+				}				
+				OR = {
+					AND = {
+						culture = firanyan_harpy
+						OR = {
+							is_core = U68 #Kiohalen
+							colonial_region = colonial_lai_peninsula
+							colonial_region = colonial_leechden
+						}
+					}
+				}
+			} 
+			OR = { # This part of the trigger if for colonial nations. It exactly mirrors what that option can actually convert.
+				AND = {
+					OR = {
+						colonial_region = colonial_upper_ynn
+						colonial_region = colonial_lower_ynn
+						colonial_region = colonial_expanse
+					}
+					OR = {
+						AND = {
+							culture = havoric
+							OR = {
+								is_core = H56 #Havoral Band
+								is_core = H57 #New Havoral
+							}
+						}
+						AND = {
+							culture = vernman
+							OR = {
+								is_core = H48 #Menibor Free Company
+								is_core = H49 #Tiru Moine
+							}
+						}
+						AND = {
+							culture = arannese
+							OR = {
+								is_core = H64 #Bardswood Band
+								is_core = H65 #Tellumtir
+							}
+						}
+						AND = {
+							culture = low_lorentish
+							is_core = H34 #Ebenmas
+						}
+						AND = {
+							culture = castellyrian
+							is_core = H35 #Corinsfield
+						}
+						AND = {
+							culture = stone_dwarf
+							is_core = G94 #Argezvale
+						}
+						AND = {
+							culture = crownsman
+							OR = {
+								is_core = H44 #Shining Circle
+								is_core = H45 #Beggaston
+							}
+						}
+						AND = {
+							culture = redfoot_halfling
+							OR = {
+								is_core = H54 #Tipney Pioneers
+								is_core = H55 #West Tipney
+							}
+						}
+					}
+				}
+				AND = {
+					culture = east_damerian
+					OR = {
+						colonial_region = colonial_upper_ynn
+						colonial_region = colonial_lower_ynn
+						colonial_region = colonial_expanse
+						region = broken_isles_region
+						region = randrunnse_region
+					}
+					OR = {
+						is_core = H46 #Istralorian Crusaders
+						is_core = H47 #Istranar
+					}
+				}
+				AND = {
+					culture = esmari
+					OR = {
+						superregion = torn_gates_superregion
+						region = sarmadfar_region
+					}
+					is_core = G97 #Vanbury Guild
+				}
+				AND = {
+					culture = arannese
+					OR = {
+						region = trollsbay_region
+						region = bloodgroves_region
+					}
+					is_core = G95 #Marlliande
+				}
+				AND = {
+					culture = half_orc
+					OR = {
+						region = epednan_expanse_region
+						province_group = ynn_western_lands
+					}
+					OR = {
+						is_core = H58 #Chipped Tooth Company
+						is_core = H59 #Chippengard
+					}
+				}
+				AND = {
+					colonial_region = colonial_haraf
+					OR = {
+						AND = {
+							culture = cliff_gnome
+							is_core = H30 #Gommoport
+						}
+						AND = {
+							culture = city_goblin
+							is_core = H32 #Mestikardu
+						}
+						AND = {
+							culture = bluescale_kobold
+							is_core = H31 #Zurzumexia
+						}
+					}
+				}
+				AND = {
+					culture = sorncosti
+					OR = {
+						colonial_region = colonial_noruin
+						colonial_region = colonial_isles
+					}
+					OR = {
+						is_core = H40 #Sornic Sons
+						is_core = H41 #Sornicande
+					}
+				}
+				AND = {
+					culture = arbarani
+					OR = {
+						colonial_region = colonial_lai_peninsula
+						colonial_region = colonial_leechden
+					}
+					OR = {
+						is_core = H62 #Brigade Magnificent
+						is_core = H63 #Nur Dhanaenn
+					}
+				}
+				AND = {
+					culture = corvurian
+					OR = {
+						colonial_region = colonial_noruin
+						colonial_region = colonial_isles
+					}
+					OR = {
+						is_core = H42 #Onyx Legion
+						is_core = H43 #Neratica
+					}
+				}
+				AND = {
+					culture = zanite
+					OR = {
+						colonial_region = colonial_isles
+					}
+					OR = {
+						is_core = G92 #Saamirses
+					}
+				}
+				AND = {
+					culture = green_orc
+					OR = {
+						colonial_region = colonial_soruin
+					}
+					OR = {
+						is_core = H39 #Ozgarom
+					}
+				}
+				AND = {
+					culture = firanyan_harpy
+					OR = {
+						colonial_region = colonial_lai_peninsula
+						colonial_region = colonial_leechden
+					}
+					OR = {
+						is_core = U67 #Daughters of the Hills
+						is_core = U68 #Kiohalen
+					}
+				}	
+			}
+		}
+		owner = {
+			OR = {
+				capital_scope = {
+					continent = north_america
+				}
+				capital_scope = {
+					continent = south_america
+				}
+			}
+
+		}
+	}
+	option = {
+		name = marcher.4.a
+		trigger = {
+			owner = {
+				is_colonial_nation = no # This option is for non-colonial nations
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+		
+		if = {
+			limit = {
+				culture = esmari
+			}
+			if = {
+				limit = {
+					OR = {
+						is_core = G97 #Vanbury Guild
+						superregion = torn_gates_superregion
+						region = sarmadfar_region
+					}
+				}
+				aelantir_conversion = { to_culture = vanburian }
+			}
+		}
+		else_if = {
+			limit = {
+				culture = havoric
+			}
+			if = {
+				limit = {
+					 OR = {
+						is_core = H56 #Havoral Band
+						is_core = H57 #New Havoral
+						# colonial_region = colonial_ynn
+						colonial_region = colonial_upper_ynn
+						colonial_region = colonial_lower_ynn
+						colonial_region = colonial_expanse
+					}
+				}
+				aelantir_conversion = { to_culture = new_havoric }
+			}
+		}
+		else_if = {
+			limit = {
+				culture = vernman
+			}
+			if = {
+				limit = {
+					region = trollsbay_region
+				}
+				aelantir_conversion = { to_culture = valorman }
+			}
+			else_if = {
+				limit = {
+					OR = {
+						is_core = H48 #Menibor Free Company
+						is_core = H49 #Tiru Moine
+						# colonial_region = colonial_ynn
+						colonial_region = colonial_upper_ynn
+						colonial_region = colonial_lower_ynn
+						colonial_region = colonial_expanse
+					}
+				}
+				aelantir_conversion = { to_culture = steadsman }
+			}
+		}
+		else_if = {
+			limit = {
+				culture = visfoot_halfling
+				region = trollsbay_region
+			}
+			aelantir_conversion = { to_culture = towerfoot_halfling }
+		}
+		else_if = {
+			limit = {
+				culture = roilsardi
+				region = trollsbay_region
+			}
+			aelantir_conversion = { to_culture = isobeliner }
+		}
+		else_if = {
+			limit = {
+				culture = bahari
+				region = trollsbay_region
+			}
+			aelantir_conversion = { to_culture = zanlibi }
+		}
+		else_if = {
+			limit = {
+				culture = arannese
+			}
+			if = {
+				limit = {
+					OR = {
+						#is_core = G95 #Marlliande
+						region = trollsbay_region
+						region = bloodgroves_region
+					}
+				}
+				aelantir_conversion = { to_culture = marlliander }
+			}
+			else_if = {
+				limit = {
+					OR = {
+						is_core = H64 #Bardswood Band
+						is_core = H65 #Tellumtir
+						# colonial_region = colonial_ynn
+						colonial_region = colonial_upper_ynn
+						colonial_region = colonial_lower_ynn
+						colonial_region = colonial_expanse
+					}
+				}
+				aelantir_conversion = { to_culture = dustman }
+			}
+		}
+		else_if = {
+			limit = {
+				culture = east_damerian
+			}
+			if = {
+				limit = {
+					OR = {
+						region = trollsbay_region
+						region = bloodgroves_region
+					}
+				}
+				aelantir_conversion = { to_culture = cestirmarker }
+			}
+			else_if = {
+				limit = {
+					# colonial_region = colonial_ynn
+					OR = {
+						colonial_region = colonial_upper_ynn
+						colonial_region = colonial_lower_ynn
+						colonial_region = colonial_expanse
+					}
+					NOT = {
+						is_core = H46 #Istralorian Crusaders
+						is_core = H47 #Istranar
+					}
+				}
+				aelantir_conversion = { to_culture = steadsman }
+			}
+			else_if = {
+				limit = {
+					OR = {
+						# colonial_region = colonial_ynn
+						colonial_region = colonial_upper_ynn
+						colonial_region = colonial_lower_ynn
+						colonial_region = colonial_expanse
+						region = broken_isles_region
+						region = randrunnse_region
+						is_core = H46 #Istralorian Crusaders
+						is_core = H47 #Istranar
+					}
+				}
+				aelantir_conversion = { to_culture = istranari }
+			}
+		}
+		else_if = {
+			limit = {
+				culture = pashainey
+			}
+			if = {
+				limit = {
+					OR = {
+						region = trollsbay_region
+						region = bloodgroves_region
+					}
+				}
+				aelantir_conversion = { to_culture = cestirmarker }
+			}
+		}
+		else_if = {
+			limit = {
+				culture = low_lorentish
+				OR = {
+					is_core = H34 #Ebenmas
+					# colonial_region = colonial_ynn
+					colonial_region = colonial_upper_ynn
+					colonial_region = colonial_lower_ynn
+					colonial_region = colonial_expanse
+				}
+			}
+			aelantir_conversion = { to_culture = dustman }
+		}
+		else_if = {
+			limit = {
+				culture = castellyrian
+				OR = {
+					is_core = H35 #Corinsfield
+					# colonial_region = colonial_ynn
+					colonial_region = colonial_upper_ynn
+					colonial_region = colonial_lower_ynn
+					colonial_region = colonial_expanse
+				}
+			}
+			aelantir_conversion = { to_culture = corinsfielder }
+		}
+		else_if = {
+			limit = {
+				culture = stone_dwarf
+				OR = {
+					is_core = G94 #Argezvale
+					# colonial_region = colonial_ynn
+					colonial_region = colonial_upper_ynn
+					colonial_region = colonial_lower_ynn
+					colonial_region = colonial_expanse
+				}
+			}
+			aelantir_conversion = { to_culture = steel_dwarf }
+		}
+		else_if = {
+			limit = {
+				culture = crownsman
+				OR = {
+					is_core = H44 #Shining Circle
+					is_core = H45 #Beggaston
+					# colonial_region = colonial_ynn
+					colonial_region = colonial_upper_ynn
+					colonial_region = colonial_lower_ynn
+					colonial_region = colonial_expanse
+				}
+			}
+			aelantir_conversion = { to_culture = steadsman }
+		}
+		else_if = {
+			limit = {
+				culture = redfoot_halfling
+				OR = {
+					is_core = H54 #Tipney Pioneers
+					is_core = H55 #West Tipney
+					# colonial_region = colonial_ynn
+					colonial_region = colonial_upper_ynn
+					colonial_region = colonial_lower_ynn
+					colonial_region = colonial_expanse
+				}
+			}
+			aelantir_conversion = { to_culture = pipefoot_halfling }
+		}
+		else_if = {
+			limit = {
+				culture = half_orc
+				OR = {	#East bank are Freemarchers by default
+					region = epednan_expanse_region
+					province_group = ynn_western_lands
+					is_core = H58 #Chipped Tooth Company
+					is_core = H59 #Chippengard
+				}
+			}
+			aelantir_conversion = { to_culture = chippengarder_half_orc }
+		}
+		else_if = {
+			limit = {
+				culture = cliff_gnome
+				OR = {
+					is_core = H30 #Gommoport
+					colonial_region = colonial_haraf
+				}
+			}
+			aelantir_conversion = { to_culture = tinker_gnome }
+		}
+		else_if = {
+			limit = {
+				culture = city_goblin
+				OR = {
+					is_core = H32 #Mestikardu
+					colonial_region = colonial_haraf
+				}
+			}
+			aelantir_conversion = { to_culture = soot_goblin }
+		}
+		else_if = {
+			limit = {
+				culture = bluescale_kobold
+				OR = {
+					is_core = H31 #Zurzumexia
+					colonial_region = colonial_haraf
+				}
+			}
+			aelantir_conversion = { to_culture = steelscale_kobold }
+		}
+		else_if = {
+			limit = {
+				culture = sorncosti
+				OR = {
+					is_core = H40 #Sornic Sons
+					is_core = H41 #Sornicande
+					colonial_region = colonial_noruin
+					colonial_region = colonial_isles
+				}
+			}
+			aelantir_conversion = { to_culture = sornicandi }
+		}
+		else_if = {
+			limit = {
+				culture = arbarani
+				OR = {
+					is_core = H62 #Brigade Magnificent
+					is_core = H63 #Nur Dhanaenn
+					colonial_region = colonial_lai_peninsula
+					colonial_region = colonial_leechden
+				}
+			}
+			aelantir_conversion = { to_culture = dhanaenno }
+		}
+		else_if = {
+			limit = {
+				culture = corvurian
+				OR = {
+					is_core = H42 #Onyx Legion
+					is_core = H43 #Neratica
+					colonial_region = colonial_noruin
+					colonial_region = colonial_isles
+				}
+			}
+			aelantir_conversion = { to_culture = neratican }
+		}
+		else_if = {
+			limit = {
+				culture = zanite
+				OR = {
+					is_core = G92 #Saamirses
+					colonial_region = colonial_isles
+				}
+			}
+			aelantir_conversion = { to_culture = abtazari }
+		}
+		else_if = {
+			limit = {
+				culture = green_orc
+				OR = {
+					is_core = H39 #Ozgarom
+					colonial_region = colonial_soruin
+				}
+			}
+			aelantir_conversion = { to_culture = ozgar_orc }
+		}
+		else_if = {
+			limit = {
+				culture = firanyan_harpy
+				OR = {
+					is_core = U67 #Daughters of the Hills
+					is_core = U68 #Kiohalen
+					colonial_region = colonial_lai_peninsula
+					colonial_region = colonial_leechden
+				}
+			}
+			aelantir_conversion = { to_culture = kiohan_harpy }
+		}	
+	}
+	option = {
+		name = marcher.4.a
+		trigger = {
+			owner = {
+				is_colonial_nation = yes # This option is for colonial nations
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+		
+		if = {
+			limit = {
+				culture = esmari
+			}
+			if = {
+				limit = {
+					is_core = G97 #Vanbury Guild
+					OR = {
+						superregion = torn_gates_superregion
+						region = sarmadfar_region
+					}
+				}
+				aelantir_conversion = { to_culture = vanburian }
+			}
+		}
+		else_if = {
+			limit = {
+				culture = havoric
+			}
+			if = {
+				limit = {
+					OR = {
+						is_core = H56 #Havoral Band
+						is_core = H57 #New Havoral
+						# colonial_region = colonial_ynn
+						colonial_region = colonial_upper_ynn
+						colonial_region = colonial_lower_ynn
+						colonial_region = colonial_expanse
+					}
+				}
+				aelantir_conversion = { to_culture = new_havoric }
+			}
+		}
+		else_if = {
+			limit = {
+				culture = vernman
+				OR = {
+					is_core = H48 #Menibor Free Company
+					is_core = H49 #Tiru Moine
+				}
+				OR = {
+					# colonial_region = colonial_ynn
+					colonial_region = colonial_upper_ynn
+					colonial_region = colonial_lower_ynn
+					colonial_region = colonial_expanse
+				}
+			}
+			aelantir_conversion = { to_culture = steadsman }
+		}
+		else_if = {
+			limit = {
+				culture = arannese
+			}
+			if = {
+				limit = {
+					is_core = G95 #Marlliande
+					OR = {
+						region = trollsbay_region
+						region = bloodgroves_region
+					}
+				}
+				aelantir_conversion = { to_culture = marlliander }
+			}
+			else_if = {
+				limit = {
+					OR = {
+						is_core = H64 #Bardswood Band
+						is_core = H65 #Tellumtir
+					}
+					OR = {
+						# colonial_region = colonial_ynn
+						colonial_region = colonial_upper_ynn
+						colonial_region = colonial_lower_ynn
+						colonial_region = colonial_expanse
+					}
+				}
+				aelantir_conversion = { to_culture = dustman }
+			}
+		}
+		else_if = {
+			limit = {
+				culture = east_damerian
+				OR = {
+					# colonial_region = colonial_ynn
+					colonial_region = colonial_upper_ynn
+					colonial_region = colonial_lower_ynn
+					colonial_region = colonial_expanse
+					region = broken_isles_region
+					region = randrunnse_region
+				}
+				OR = {
+					is_core = H46 #Istralorian Crusaders
+					is_core = H47 #Istranar
+				}
+			}
+			aelantir_conversion = { to_culture = istranari }
+		}
+		else_if = {
+			limit = {
+				culture = low_lorentish
+				is_core = H34 #Ebenmas
+				OR = {
+					# colonial_region = colonial_ynn
+					colonial_region = colonial_upper_ynn
+					colonial_region = colonial_lower_ynn
+					colonial_region = colonial_expanse
+				}
+			}
+			aelantir_conversion = { to_culture = dustman }
+		}
+		else_if = {
+			limit = {
+				culture = castellyrian
+				is_core = H35 #Corinsfield
+				OR = {
+					# colonial_region = colonial_ynn
+					colonial_region = colonial_upper_ynn
+					colonial_region = colonial_lower_ynn
+					colonial_region = colonial_expanse
+				}
+			}
+			aelantir_conversion = { to_culture = corinsfielder }
+		}
+		else_if = {
+			limit = {
+				culture = stone_dwarf
+				is_core = G94 #Argezvale
+					# colonial_region = colonial_ynn
+				OR = {
+					colonial_region = colonial_upper_ynn
+					colonial_region = colonial_lower_ynn
+					colonial_region = colonial_expanse
+				}
+			}
+			aelantir_conversion = { to_culture = steel_dwarf }
+		}
+		else_if = {
+			limit = {
+				culture = crownsman
+				OR = {
+					is_core = H44 #Shining Circle
+					is_core = H45 #Beggaston
+				}
+				OR = {
+					# colonial_region = colonial_ynn
+					colonial_region = colonial_upper_ynn
+					colonial_region = colonial_lower_ynn
+					colonial_region = colonial_expanse
+				}
+			}
+			aelantir_conversion = { to_culture = steadsman }
+		}
+		else_if = {
+			limit = {
+				culture = redfoot_halfling
+				OR = {
+					is_core = H54 #Tipney Pioneers
+					is_core = H55 #West Tipney
+				}
+				OR = {
+					# colonial_region = colonial_ynn
+					colonial_region = colonial_upper_ynn
+					colonial_region = colonial_lower_ynn
+					colonial_region = colonial_expanse
+				}
+			}
+			aelantir_conversion = { to_culture = pipefoot_halfling }
+		}
+		else_if = {
+			limit = {
+				culture = half_orc
+				OR = {	#East bank are Freemarchers by default
+					region = epednan_expanse_region
+					province_group = ynn_western_lands
+				}
+				OR = {
+					is_core = H58 #Chipped Tooth Company
+					is_core = H59 #Chippengard
+				}
+			}
+			aelantir_conversion = { to_culture = chippengarder_half_orc }
+		}
+		else_if = {
+			limit = {
+				culture = cliff_gnome
+				is_core = H30 #Gommoport
+				colonial_region = colonial_haraf
+			}
+			aelantir_conversion = { to_culture = tinker_gnome }
+		}
+		else_if = {
+			limit = {
+				culture = city_goblin
+				is_core = H32 #Mestikardu
+				colonial_region = colonial_haraf
+			}
+			aelantir_conversion = { to_culture = soot_goblin }
+		}
+		else_if = {
+			limit = {
+				culture = bluescale_kobold
+				is_core = H31 #Zurzumexia
+				colonial_region = colonial_haraf
+			}
+			aelantir_conversion = { to_culture = steelscale_kobold }
+		}
+		else_if = {
+			limit = {
+				culture = sorncosti
+				OR = {
+					is_core = H40 #Sornic Sons
+					is_core = H41 #Sornicande
+				}
+				OR = {
+					colonial_region = colonial_noruin
+					colonial_region = colonial_isles
+				}
+			}
+			aelantir_conversion = { to_culture = sornicandi }
+		}
+		else_if = {
+			limit = {
+				culture = arbarani
+				OR = {
+					is_core = H62 #Brigade Magnificent
+					is_core = H63 #Nur Dhanaenn
+				}
+				OR = {
+					colonial_region = colonial_lai_peninsula
+					colonial_region = colonial_leechden
+				}
+			}
+			aelantir_conversion = { to_culture = dhanaenno }
+		}
+		else_if = {
+			limit = {
+				culture = corvurian
+				OR = {
+					is_core = H42 #Onyx Legion
+					is_core = H43 #Neratica
+				}
+				OR = {
+					colonial_region = colonial_noruin
+					colonial_region = colonial_isles
+				}
+			}
+			aelantir_conversion = { to_culture = neratican }
+		}
+		else_if = {
+			limit = {
+				culture = zanite
+				OR = {
+					is_core = G92 #Saamirses
+				}
+				OR = {
+					colonial_region = colonial_isles
+				}
+			}
+			aelantir_conversion = { to_culture = abtazari }
+		}
+		else_if = {
+			limit = {
+				culture = green_orc
+				OR = {
+					is_core = H39 #Ozgarom
+					colonial_region = colonial_soruin
+				}
+			}
+			aelantir_conversion = { to_culture = ozgar_orc }
+		}
+		else_if = {
+			limit = {
+				culture = firanyan_harpy
+				OR = {
+					is_core = U67 #Daughters of the Hills
+					is_core = U68 #Kiohalen
+				}
+				OR = {
+					colonial_region = colonial_lai_peninsula
+					colonial_region = colonial_leechden
+				}
+			}
+			aelantir_conversion = { to_culture = kiohan_harpy }
+		}	
+	}
+}

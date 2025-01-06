@@ -1,0 +1,18 @@
+
+# No previous file for Eirminn
+owner = H15
+controller = H15
+add_core = H15
+add_core = U45
+culture = snecboth
+religion = winter_court
+capital = ""
+
+hre = no
+
+base_tax = 3
+base_production = 3
+base_manpower = 1
+
+trade_goods = fish
+

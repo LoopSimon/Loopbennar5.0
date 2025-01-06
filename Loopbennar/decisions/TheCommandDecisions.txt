@@ -1,0 +1,536 @@
+
+country_decisions = {
+	
+	push_thunderfist_clan = {
+		potential = {
+			tag = R62
+			exists = R63
+			mission_completed = R62_calm_down_sir
+		}
+		provinces_to_highlight = {
+			owned_by = R63
+		}
+		allow = {
+			hidden_trigger = {
+				tag = R62
+				NOT = { has_country_flag = command_move_menu_open_flag }
+			}
+			is_at_war = no
+			if = { #Command will be efficient about moving its guys around
+				limit = { ai = yes }
+				OR = {
+					NOT = { has_country_modifier = hobgoblin_thunderfist_enforcers }
+					R63 = { NOT = { overextension_percentage = 0.01 } }
+				}
+				overextension_percentage = 0.01
+			}
+			else = {
+				dip_power = 150
+			}
+			R63 = {
+				is_subject_of_type_with_overlord = {
+					who = R62
+					type = slave_state
+				}
+			}
+		}
+		effect = {
+			country_event = { id = the_command.100 }
+			custom_tooltip = command_moving_slave_states_costs_dip_tt
+		}
+		ai_will_do = {
+			factor = 100
+		}
+	}
+	
+	push_bloodsong_clan = {
+		potential = {
+			tag = R62
+			exists = R64
+			mission_completed = R62_calm_down_sir
+		}
+		provinces_to_highlight = {
+			owned_by = R64
+		}
+		allow = {
+			hidden_trigger = {
+				tag = R62
+				NOT = { has_country_flag = command_move_menu_open_flag }
+			}
+			is_at_war = no
+			if = { #Command will be efficient about moving its guys around
+				limit = { ai = yes }
+				OR = {
+					NOT = { has_country_modifier = hobgoblin_bloodsong_advance_guard }
+					R64 = { NOT = { overextension_percentage = 0.01 } }
+				}
+				overextension_percentage = 0.01
+			}
+			else = {
+				dip_power = 150
+			}
+			R64 = {
+				is_subject_of_type_with_overlord = {
+					who = R62
+					type = slave_state
+				}
+			}
+		}
+		effect = {
+			country_event = { id = the_command.101 }
+			custom_tooltip = command_moving_slave_states_costs_dip_tt
+		}
+		ai_will_do = {
+			factor = 100
+		}
+	}
+
+	command_implementing_the_10_reforms = {
+		potential = {
+			tag = R62
+			has_country_flag = command_the_ten_reforms_flag
+		}
+		
+		allow = {
+			hidden_trigger = {
+				tag = R62
+				NOT = { has_country_flag = command_the_ten_reforms_menu_open_flag }	
+			}
+			NOT = { has_country_modifier =  command_passing_the_10_reforms }
+			government_reform_progress = 25
+		}
+	
+		effect = {
+			country_event = { id = the_command.41 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	command_changing_the_curriculum = {
+		potential = {
+			tag = R62
+			has_country_flag = command_school_curriculums_flag
+		}
+		
+		allow = {
+			adm_power = 50
+			hidden_trigger = {
+				NOT = { has_country_flag = command_school_curriculums_menu_open_flag }
+			}
+		}
+		
+		effect = {
+			add_adm_power = -50
+			country_event = { id = the_command.35 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				always = yes
+			} 
+		}
+	}
+	
+	command_army_powers = {
+		potential = {
+			tag = R62
+			mission_completed = R62_supply_the_kikunin
+		}
+		provinces_to_highlight = {
+			R62 = {
+				any_hired_mercenary_company = {
+					OR = {
+						template = merc_command_wolf_army
+						template = merc_command_boar_army
+						template = merc_command_lion_army
+						template = merc_command_tiger_army
+						template = merc_command_elephant_army
+						template = merc_command_dragon_army
+					}
+				}
+			}
+			num_of_units_in_province = { who = R62 amount = 40 }
+		}
+		
+		allow = {
+			hidden_trigger = {
+				tag = R62
+				ai = no
+				NOT = { has_country_flag = command_armies_main_menu_open }
+			}
+		}
+		
+		effect = {
+			custom_tooltip = command_open_army_menu_tt
+			hidden_effect = { country_event = { id = the_command.310 } }
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				always = yes
+			} 
+		}
+	}
+	
+	command_direct_the_chained_oracle = {
+		potential = {
+			tag = R62
+			NOT = { has_estate_privilege = artifice_invention_korashi_tuners }
+			has_country_flag = command_enslaved_the_oracle_flag
+		}
+		
+		allow = {
+			hidden_trigger = { has_country_flag = command_enslaved_the_oracle_flag }
+			NOT = { has_country_modifier = magic_cooldown }
+			is_at_war = yes
+			years_of_income = 0.5
+			adm_power = 15	
+			mil_power = 15
+		}
+		
+		effect = {
+			add_years_of_income = -0.5
+			add_adm_power = -15	
+			add_mil_power = -15
+			add_country_modifier = {
+				name = magic_estate_scrying_military_intelligence_2
+				duration = 1825	#5 years
+			}
+			every_country = {
+				limit = { war_with = ROOT }
+				remove_fow = 120
+			}
+			add_country_modifier = { name = magic_cooldown duration = 3650 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				always = yes
+			} 
+		}
+	}
+	
+	command_violently_suppress_the_mages = {
+		color = { 161 43 32 }
+		potential = {
+			tag = R62
+			has_disaster = command_rise_of_the_shamans
+			NOT = { has_country_modifier = command_violently_suppressing_mages }
+		}
+		
+		allow = {
+			hidden_trigger = {
+				tag = R62
+			}
+			mil_power = 100
+			NOT = {
+				any_neighbor_country = { has_reform = magocracy_reform }
+			}
+			NOT = { num_of_rebel_controlled_provinces = 1 }
+			stability = 0
+		}
+		
+		effect = {
+			add_mil_power = -100
+			add_country_modifier = {
+				name = command_violently_suppressing_mages
+				duration = -1
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	command_insubordination_menu = {
+		color = { 161 43 32 }
+		major = yes
+		potential = {
+			tag = R62
+			has_country_flag = insubordination_active_flag
+		}
+		allow = {
+			hidden_trigger = { 
+				tag = R62
+				ai = no
+				has_country_flag = insubordination_active_flag 
+				NOT = { has_country_flag = command_insubordination_menu_open_flag }
+				NOT = { has_country_modifier = command_insubordination_menu_ai_cooldown }
+			}
+		}
+
+		effect = {
+			country_event = { id = the_command.1989 }
+			hidden_effect = {
+				set_country_flag = command_insubordination_menu_open_flag
+			}
+		}
+	}
+	
+	command_ease_jade_mines_tension = {
+		potential = {
+			tag = R62
+			NOT = { has_country_flag = command_jade_rivalry_ended }
+			mission_completed = R62_prepare_new_stewards
+			4311 = {
+				check_variable = {
+					which = command_jade_mines_tension
+					value = 1
+				}
+			}
+		}
+		
+		allow = {
+			hidden_trigger = {
+				tag = R62
+			}
+			dip_power = 75
+			4311 = {
+				check_variable = {
+					which = command_jade_mines_tension
+					value = 1
+				}
+			}
+			NOT = { has_country_modifier = command_eased_jade_mines_tension }
+		}
+		
+		effect = {
+			add_dip_power = -75
+			4311 = {
+				change_variable = {
+					which = command_jade_mines_tension
+					value = -2
+				}
+			}
+			add_country_modifier = {
+				name = command_eased_jade_mines_tension
+				duration = 1825
+			}
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	estate_command_special_commissions_decision = {
+		color = { 195 160 20 }
+		potential = {
+			has_enabled_estate_action = {
+				estate_action = SPECIAL_COMMISSIONS_COMMAND
+			}
+		}
+		allow = {
+			hidden_trigger = {
+				has_enabled_estate_action = {
+					estate_action = SPECIAL_COMMISSIONS_COMMAND
+				}
+			}
+			has_not_any_estate_disaster_active = yes
+			custom_trigger_tooltip = {
+				tooltip = SPECIAL_COMMISSIONS_COMMAND_cooldown_tt
+				OR = {
+					estate_action_off_cooldown = {
+						estate_action = SPECIAL_COMMISSIONS_COMMAND
+						days = 1825
+					}
+					has_country_flag = special_commission_cooldown_refresh
+				}
+			}
+		}
+		effect = {
+			hidden_effect = {
+				clr_country_flag = special_commission_cooldown_refresh
+			}
+			set_estate_action_cooldown = {
+				estate_action = SPECIAL_COMMISSIONS_COMMAND
+			}
+			estate_action = {
+				estate_action = SPECIAL_COMMISSIONS_COMMAND
+			}
+			if = {
+				limit = { has_estate_privilege = estate_wolf_command_special_commissions }
+				increase_estate_action_counter = {
+					estate = estate_wolf_command
+				}
+			}
+			if = {
+				limit = { has_estate_privilege = estate_boar_command_special_commissions }
+				increase_estate_action_counter = {
+					estate = estate_boar_command
+				}
+			}
+			if = {
+				limit = { has_estate_privilege = estate_lion_command_special_commissions }
+				increase_estate_action_counter = {
+					estate = estate_lion_command
+				}
+			}
+			if = {
+				limit = { has_estate_privilege = estate_dragon_command_special_commissions }
+				increase_estate_action_counter = {
+					estate = estate_dragon_command
+				}
+			}
+			if = {
+				limit = { has_estate_privilege = estate_elephant_command_special_commissions }
+				increase_estate_action_counter = {
+					estate = estate_elephant_command
+				}
+			}
+			if = {
+				limit = { has_estate_privilege = estate_tiger_command_special_commissions }
+				increase_estate_action_counter = {
+					estate = estate_tiger_command
+				}
+			}
+		}
+		ai_will_do = { factor = 10 }
+	}
+	
+	estate_wolf_command_recruit_logistician_decision = {
+		color = { 195 160 20 }
+		potential = {
+			has_enabled_estate_action = {
+				estate_action = RECRUIT_MINISTER_WOLF_COMMAND
+			}
+			has_estate = estate_wolf_command
+		}
+		allow = {
+			hidden_trigger = {
+				has_enabled_estate_action = {
+					estate_action = RECRUIT_MINISTER_WOLF_COMMAND
+				}
+			}
+			has_not_any_estate_disaster_active = yes
+			estate_action_off_cooldown = {
+				estate_action = RECRUIT_MINISTER_WOLF_COMMAND
+				days = 7300
+			}
+		}
+		effect = {
+			set_estate_action_cooldown = {
+				estate_action = RECRUIT_MINISTER_WOLF_COMMAND
+			}
+			estate_action = {
+				estate_action = RECRUIT_MINISTER_WOLF_COMMAND
+			}
+			increase_estate_action_counter = {
+				estate = estate_wolf_command
+			}
+		}
+		ai_will_do = { factor = 10 }
+	}
+
+	estate_lion_command_exaltations_from_leadership_decision = {
+		color = { 195 160 20 }
+		potential = {
+			has_enabled_estate_action = {
+				estate_action = GRANT_GENERALSHIP_LION_COMMAND
+			}
+			has_estate = estate_lion_command
+		}
+		allow = {
+			hidden_trigger = {
+				has_enabled_estate_action = {
+					estate_action = GRANT_GENERALSHIP_LION_COMMAND
+				}
+			}
+			has_not_any_estate_disaster_active = yes
+			estate_action_off_cooldown = {
+				estate_action = GRANT_GENERALSHIP_LION_COMMAND
+				days = 7300
+			}
+		}
+		effect = {
+			set_estate_action_cooldown = {
+				estate_action = GRANT_GENERALSHIP_LION_COMMAND
+			}
+			estate_action = {
+				estate_action = GRANT_GENERALSHIP_LION_COMMAND
+			}
+			increase_estate_action_counter = {
+				estate = estate_lion_command
+			}
+		}
+		ai_will_do = { factor = 10 }
+	}
+
+	estate_tiger_command_reassess_teachings_decision = {
+		color = { 195 160 20 }
+		potential = {
+			has_enabled_estate_action = {
+				estate_action = REASSESS_TEACHINGS_TIGER_COMMAND
+			}
+			has_estate = estate_tiger_command
+		}
+		allow = {
+			hidden_trigger = {
+				has_enabled_estate_action = {
+					estate_action = REASSESS_TEACHINGS_TIGER_COMMAND
+				}
+			}
+			has_not_any_estate_disaster_active = yes
+			estate_action_off_cooldown = {
+				estate_action = REASSESS_TEACHINGS_TIGER_COMMAND
+				days = 1825
+			}
+		}
+		effect = {
+			set_estate_action_cooldown = {
+				estate_action = REASSESS_TEACHINGS_TIGER_COMMAND
+			}
+			estate_action = {
+				estate_action = REASSESS_TEACHINGS_TIGER_COMMAND
+			}
+			increase_estate_action_counter = {
+				estate = estate_tiger_command
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+
+	estate_tiger_command_invite_wuhyun_philosophers_decision = {
+		color = { 195 160 20 }
+		potential = {
+			has_enabled_estate_action = {
+				estate_action = INVITE_WUHYUN_TIGER_COMMAND
+			}
+			has_estate = estate_tiger_command
+		}
+		allow = {
+			hidden_trigger = {
+				has_enabled_estate_action = {
+					estate_action = INVITE_WUHYUN_TIGER_COMMAND
+				}
+			}
+			has_not_any_estate_disaster_active = yes
+			estate_action_off_cooldown = {
+				estate_action = INVITE_WUHYUN_TIGER_COMMAND
+				days = 3650
+			}
+		}
+		effect = {
+			set_estate_action_cooldown = {
+				estate_action = INVITE_WUHYUN_TIGER_COMMAND
+			}
+			estate_action = {
+				estate_action = INVITE_WUHYUN_TIGER_COMMAND
+			}
+			increase_estate_action_counter = {
+				estate = estate_tiger_command
+			}
+		}
+		ai_will_do = { factor = 10 }
+	}
+}

@@ -1,0 +1,192 @@
+﻿#Made by Ottokard
+
+
+l_english:
+ apikhoxi_show_of_force_title: "Show of Force"
+ apikhoxi_show_of_force_desc: "Our plowshares may bend to the earth, but our spirits stand unbowed. While we seek peace above all, we must show that the humble farmer can defend their own lands against both wolves and men. The sight of our militia drilling in the morning mists serves not as a threat, but as a reminder that we are not Ornam’s beasts to be commanded."
+
+ apikhoxi_better_a_warrior_title: "Better a Warrior"
+ apikhoxi_better_a_warrior_desc: "In an ideal world, we would tend only to our gardens and crops, but our lands are not blessed with such simple peace. The Apikhoxi Guard shall evolve from a simple militia of farmers into a professional force, pioneering new methods of warfare that value each soldier's life. Using specialized armor and coordinated teams, we will create an army that fights smarter, not larger - protecting our people while still maintaining devastating effectiveness against threats like the Amgremósi raiders."
+
+ apikhoxi_the_anger_of_a_calm_people_title: "The Anger of a Calm People"
+ apikhoxi_the_anger_of_a_calm_people_desc: "Though we are peaceful, our anger when roused is like a summer storm - terrible and cleansing. Though we wish nothing but to live unbothered, we cannot stand idle while Amgremos continues its brutal slave trade. Our anger, like the furious summer rain breaking a long drought, will be unleashed against those who chain and torture their fellow ruinborn. The pirates of Amgremos shall learn that even the most stoic people, when faced with such evil, can join in a cold wave of violence."
+
+ apikhoxi_brothers_in_exile_title: "Brothers in Exile"
+ apikhoxi_brothers_in_exile_desc: "From convict chains to schemes in shadows, Besolaki has carved its own path, but we do share the bitter memory of kheionai chains. While they play their games of daggers in the dark, we offer something more substantial: the means to fund their damestear project and seize the island prizes they covet. After all, who better to trust than fellow survivors of Alecandi heavy-handedness?"
+
+ apikhoxi_little_league_title: "Little League"
+ apikhoxi_little_league_desc: "The merchants of Eneion still speak with pride of being the first Nekheis colony, their dreams of controlling the Enionam as grand as their ancestors'. With Degakheion's grip weakening, we could offer them more than mere alliance - a chance to seize Serigastisi and form a league with us, under our distant but understanding guidance."
+
+ apikhoxi_calm_and_reasonable_discussion_title: "Out by The Roots"
+ apikhoxi_calm_and_reasonable_discussion_desc: "While our fields flourish and our granaries overflow, the merchants of Ornam demand ever more. As stewards of the Devandi breadbasket, we must remind our overlords that even the calmest fields can turn bitter under poor management. With our growing strength in both arms and agriculture, perhaps it is time for a pointed renegotiation of what it means to be nekheis."
+
+ apikhoxi_time_to_harvest_title: "Time to Harvest"
+ apikhoxi_time_to_harvest_desc: "The wheat stands golden in our fields, and our resolve has ripened with it. Just as each stalk bends with the weight of its grain, so too must our old loyalties give way to new freedoms. Ornam will find that the grains of cruelty that they have sown are finally ripe for the harvest."
+
+ apikhoxi_share_the_bounty_of_freedom_title: "Share Freedom's Gifts"
+ apikhoxi_share_the_bounty_of_freedom_desc: "Having cast off our own yoke of servitude, Apikhoxi will not stand idly by while others remain enslaved. With solidarity and defiance, we shall share our liberty with all nekheis willing to stand against tyranny, in an uprising to throw off the shackles of the wealthy despotic kheionai who prosper on our suffering."
+
+ apikhoxi_chains_for_grains_title: "Chains for Grains"
+ apikhoxi_chains_for_grains_desc: "While the wealthy Kheions see their slaves and poor as burdens, we see tomorrow's free farmers. We shall trade our harvests for their unwanted - the barges containing grain shipments will return with those they deem worthless. The so-called refuse from their cities will become our new neighbors and fellow farmers."
+
+ apikhoxi_mind_our_own_gardens_title: "Mind Our Own Gardens"
+ apikhoxi_mind_our_own_gardens_desc: "The valleys have their guardians, and the plains have their farmers - each tending to their own sacred spaces. We shall respect the Mteibhar's ancient covenant with their valley spirits, just as they respect our connection to the open fields. Good civilization means knowing where your garden ends and your neighbor's begins."
+mind_our_gardens_tt:0 "\nIfyou should conquer a Mteibhari province, or change a province to Mteibhari culture, you will lose this!"
+
+ apikhoxi_ride_the_river_road_title: "Ride the River Road"
+ apikhoxi_ride_the_river_road_desc: "The Xiktheam shall become more than just water - it shall be the great road that binds our homesteads together. Our barges and riverboats will connect every farm along its banks, carrying crops, goods, and ruinborn swiftly through our heartlands. By developing river stations along its course, we will transform this mighty waterway into the bustling artery feeding every field in the nation."
+
+ apikhoxi_specialty_farms_title: "Specialty Farms"
+ apikhoxi_specialty_farms_desc: "From simple wheat and vegetables, our farmers now dare to dream bigger - as fields of sugar cane and coffee plants rise alongside our oceans of golden wheat, we celebrate each neighbor bold enough to reach beyond necessity. The first Kylaka Day festival will remind us that true prosperity means having the freedom to grow what delights, not just what fills the belly."
+
+ apikhoxi_sweet_deal_title: "A Sweet Deal"
+ apikhoxi_sweet_deal_desc: "Keyolion's single-minded pursuit of the perfect sugar has caught our attention - as has their longing gaze toward Vothelisi's shores. With our agricultural expertise and their specialized devotion, we could forge a mutually beneficial arrangement: they shall join our flock, in exchange for a partnership as sweet as their beloved crop."
+
+ apikhoxi_field_of_the_free_title: "Field of the Free"
+ apikhoxi_field_of_the_free_desc: "From blood and chains, the people of the Devand have risen to become free farmers on their own soil. Not by conquest or inheritance, but by the sacred right of those who nurture the land. Our fields stretch to the horizon, and every furrow, every fence, every farmhouse stands as testament to our independence."
+
+ apikhoxi_widen_the_door_title: "Widen the Door"
+ apikhoxi_widen_the_door_desc: "While Ornam sees only useless mouths to feed among their beggars and destitute, we see future free farmers and neighbors. We will trade our bountiful harvests to rescue those they deem worthless, welcoming every escaped slave and starving peasant into our lands. Let them call us gatherers of dregs - we know that those who work the earth freely work it best."
+
+ apikhoxi_down_by_the_river_title: "Down by the River"
+ apikhoxi_down_by_the_river_desc: "We wave to the transports, each carrying our hopes and future upstream. With our river fleet establishing regular routes, we lay claim to all lands along its banks up to Lake Mteidhan. These ferries and riverboats will be but the first step in binding our nation together through this mighty waterway, creating a transport network that will serve farmer and trader alike."
+
+ apikhoxi_livestock_of_the_sea_title: "Livestock of the Sea"
+ apikhoxi_livestock_of_the_sea_desc: "Our ancestors taught us to nurture the soil; now we must learn to nurture the water. By building special docks and marketplaces along our coast, we'll create new kinds of fields - ones hidden beneath the waves. These carefully tended beds of seabugs and fish will feed our people and satisfy our overlords' endless hunger."
+
+ apikhoxi_no_slaves_among_us_title: "No Slaves Among Us"
+ apikhoxi_no_slaves_among_us_desc: "The markets of Empkheios darken the waters of the Axehead Gulf with misery and torment. Their independence was a chance for reform, squandered for profit.  We have assembled our fleets and armies - they will accept our terms for abolition, or face the consequences of their choices."
+
+ apikhoxi_fertile_earth_title: "Fertile Earth"
+ apikhoxi_fertile_earth_desc: "This blessed land holds more wealth in its soil than any gold mine could offer. Where others see feral wilderness waiting to kill, we see gardens waiting to bloom. Through understanding and patience, we shall coax forth abundance that would make the noble and merchant alike weep with envy."
+
+ apikhoxi_fertile_minds_title: "Fertile Minds"
+ apikhoxi_fertile_minds_desc: "Minds, like good soil, must be carefully prepared to bear fruit. Our new Schools of Immigration and Agriculture will teach freed slaves and refugees not just how to farm, but how to live as free people in harmony with the land. In Gapuleon they will learn our customs and community, while in Apikhoxi proper they will master the sacred arts of working with the earth rather than against it. Each graduate becomes not just a farmer, but a good neighbor."
+
+ apikhoxi_fertile_fields_title: "Fertile Fields"
+ apikhoxi_fertile_fields_desc: "Our ancestors' wisdom of working with the land, not against it, has finally been codified into practical knowledge. Even our nobles maintain these sacred traditions, tending experimental fields alongside common farmers. Through careful cultivation and respect for nature's rhythms, we can now coax sustenance from soil that others would dismiss as barren."
+
+ apikhoxi_fertile_waters_title: "Fertile Waters"
+ apikhoxi_fertile_waters_desc: "As the ancient philosophers spoke of the elements in harmony, we have discovered the subtle rhythms between fish and water, plant and soil in Lake Mteidhan. Through careful cultivation and wisdom, we have transformed the lake waters into Serigagothan - a vast emerald tapestry of life that sustains us all. From the halls of Geneltham's new School of Aquaculture, scholars shall learn to read these waters as others read books, preserving the delicate balance that makes such bounty possible."
+
+ apikhoxi_spring_of_a_new_people_title: "Spring of a New People"
+ apikhoxi_spring_of_a_new_people_desc: "Like seeds scattered on fertile soil, our people take root and flourish in this new land. Each generation grows stronger, more adapted to this soil, more attuned to its seasons. The Apikohbhen are becoming something new - neither of the old world nor of the wild, but a people of our own making."
+
+ apikhoxi_feast_of_the_devand_title: "Feast of the Devand"
+ apikhoxi_feast_of_the_devand_desc: "In every corner of the Devand we see plenty - golden wheat fields stretching to the horizon, prized herds that make foreign kings envious, and a thousand delicacies unknown beyond our shores. From honey-cured freshwater squid of Serigagothan to marbled beef fed on summer flowers and mountain herbs, every farmer brings their own pride to this celebration. What began as a simple market has bloomed into a magnificent celebration of our land's bounty. The Feast of the Devand shall show all that our power flows from both soil and soul."
+
+#missions and descriptions
+
+#Modifiers
+G57_recruiting_growth:0 "Raise the Phalanxes"
+G57_preparing_the_way:0 "Preparing the Way"
+G57_new_deal:0 "The New Deal"
+apikhoxi_good_enighbor:0 "Good Neighbor Policy"
+G57_amdrivos:0 "Amdrivos"
+G57_we_love_day:0 "We Love the Kylakas"
+G57_bribed:0 "Bribed"
+G57_upriver_ferries:0 "Upriver Ferries"
+G57_school_immigration:0 "The School of Immmigration"
+G57_school_agriculture:0 "School of Agriculture"
+G57_school_aquaculture:0 "School of Aquaculture"
+G57_school_history:0 "School of History"
+G57_open_door:0 "An Open Door"
+
+#Events
+flavor_apikhoxi.1.t:0 "Form the Apikhoxi Guard"
+flavor_apikhoxi.1.d:0 "TODO"
+flavor_apikhoxi.1.a:0 "send dudes"
+
+flavor_apikhoxi.2.t:0 "Our Calmer Brothers Have an Offer"
+flavor_apikhoxi.2.d:0 "TODO"
+flavor_apikhoxi.2.a:0 "Yah"
+flavor_apikhoxi.2.b:0 "Nah"
+
+flavor_apikhoxi.3.t:0 "Changing the Deal"
+flavor_apikhoxi.3.d:0 "TODO"
+flavor_apikhoxi.3.a:0 "TODO"
+
+flavor_apikhoxi.4.t:0 "Outgrown Our Shackles"
+flavor_apikhoxi.4.d:0 "TODO"
+flavor_apikhoxi.4.a:0 "TODO"
+
+flavor_apikhoxi.5.t:0 "East Versus West"
+flavor_apikhoxi.5.d:0 "TODO"
+flavor_apikhoxi.5.a:0 "TODO"
+
+flavor_apikhoxi.6.t:0 "In League With the Farmers"
+flavor_apikhoxi.6.d:0 "TODO"
+flavor_apikhoxi.6.a:0 "Yah"
+flavor_apikhoxi.6.b:0 "Nah"
+
+flavor_apikhoxi.7.t:0 "Insincere Acceptance"
+flavor_apikhoxi.7.d:0 "TODO"
+flavor_apikhoxi.7.a:0 "TODO"
+
+flavor_apikhoxi.8.t:0 "We Love the Kylaka Day!"
+flavor_apikhoxi.8.d:0 "TODO"
+flavor_apikhoxi.8.a:0 "TODO"
+
+flavor_apikhoxi.9.t:0 "A Sweet Proposition"
+flavor_apikhoxi.9.d:0 "TODO"
+flavor_apikhoxi.9.a:0 "Yah"
+flavor_apikhoxi.9.b:0 "Nah"
+
+flavor_apikhoxi.10.t:0 "Land of Peaceful Fields"
+flavor_apikhoxi.10.d:0 "TODO"
+flavor_apikhoxi.10.a:0 "TODO"
+
+flavor_apikhoxi.11.t:0 "Opening the Door"
+flavor_apikhoxi.11.d:0 "TODO"
+flavor_apikhoxi.11.a:0 "TODO"
+
+flavor_apikhoxi.12.t:0 "You Gonna Eat That?"
+flavor_apikhoxi.12.d:0 "TODO"
+flavor_apikhoxi.12.a:0 "TODO"
+
+flavor_apikhoxi.13.t:0 "No Quarter to Slavers"
+flavor_apikhoxi.13.d:0 "TODO"
+flavor_apikhoxi.13.a:0 "Yah"
+flavor_apikhoxi.13.b:0 "Nah"
+
+flavor_apikhoxi.14.t:0 "Cradle of the Waters"
+flavor_apikhoxi.14.d:0 "TODO"
+flavor_apikhoxi.14.a:0 "TODO"
+
+flavor_apikhoxi.15.t:0 "Rebels in the Storm"
+flavor_apikhoxi.15.d:0 "TODO"
+flavor_apikhoxi.15.a:0 "TODO"
+
+flavor_apikhoxi.16.t:0 "Clash in the Cornfield"
+flavor_apikhoxi.16.d:0 "TODO"
+flavor_apikhoxi.16.a:0 "TODO"
+
+flavor_apikhoxi.17.t:0 "Talking Things Out"
+flavor_apikhoxi.17.d:0 "TODO"
+flavor_apikhoxi.17.a:0 "TODO"
+
+flavor_apikhoxi.18.t:0 "Spring in the Devand"
+flavor_apikhoxi.18.d:0 "TODO"
+flavor_apikhoxi.18.a:0 "TODO"
+
+flavor_apikhoxi.19.t:0 "Farmer's Festival in the Devand"
+flavor_apikhoxi.19.d:0 "$MONARCH$ poured himself another glass of retsina, savoring the smoky flavour. It was a delicious way to wash down the fried dough balls, dusted with sugar from Empkeios. With a smile, he passed a plate of the balls to young child behind him, who stared wide eye at the food. This was for them, after all. \n\nThe construction of the Devand's new capital was a salute to all its peoples. Slow-cooked board from the Mhteibar, fresh fruits from the Besolaki. Fragrant coffee at the start of the feast, to show that the Devand, too, commanded the new learning from Cannor. The tables groaned under a banquest open to all. At this the tables of the Apikhoxi there was neither lord nor slave, soldier nor farmer. Instead, a feast for where any may eat their fill. \n\nMore struggles would come, of course. But the Devand would face all those struggles with open arms and open hearths.  \n\nMock the sons of slaves and serfs if you wish, but if more of us valued food and cheer and song above hoarded gold, it would be a merrier world."
+flavor_apikhoxi.19.a:0 "I'll have what they're having."
+#Opinion Modifiers
+#flags
+apikhoxi_liberation:0 "Liberation of the East"
+
+##wargoals
+cb_apikhoxi_liberation_wargoal:0 "The Liberation of the Devand"
+cb_apikhoxi_liberation:0 "To Free the Devand"
+cb_apikhoxi_liberation_desc:0 "We shall free the Devand"
+cb_apikhoxi_liberation_wargoal_desc:0 "Seize their capitals to break their chains."
+apikhoxi_liberation_wargoal_peace_option:0 "Break the Chains"
+
+#state privilege
+estate_nobles_G57_emerald_waters:0 "Land of Emerald Waters"
+estate_nobles_G57_emerald_waters_modifier:0 "Bathe By Emerald Waters"
+estate_nobles_G57_land_golden_ears:0 "Land of Golden Ears"
+estate_nobles_G57_land_golden_ears_modifier:0 "The Most Valuable Gold"
+unlock_privilege_estate_nobles_G57_land_golden_ears_tt:0 "Unlock the Land of Golden Ears"
+apikhoxi_golden_ending:0 "The Great and Bountiful Republic"

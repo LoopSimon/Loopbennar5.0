@@ -1,0 +1,112 @@
+country_decisions = {
+
+	gushuokguan_replenish_mercenary_manpower = {
+		potential = {
+			OR = {
+				tag = Y17 #Gushuokguan
+				was_tag = Y17 #Gushuokguan
+			}
+			has_country_flag = gushuokguan_can_replenish_mercenaries
+		}
+		allow = {
+			hidden_trigger = {
+				OR = {
+					tag = Y17 #Gushuokguan
+					was_tag = Y17 #Gushuokguan
+				}
+				has_country_flag = gushuokguan_can_replenish_mercenaries
+			}
+			NOT = { has_country_modifier = gushuokguan_replenish_mercenaries_cooldown } 
+			num_of_hired_mercenary_companies = 1
+		}
+		effect = {
+			random_hired_mercenary_company = {
+				add_company_manpower = 0.15
+			}
+			add_country_modifier = {
+				name = gushuokguan_replenish_mercenaries_cooldown
+				duration = 1825
+			}
+		}
+	}
+
+	gushuokguan_release_dao = {
+		potential = {
+			OR = {
+				tag = Y17 #Gushuokguan
+				was_tag = Y17 #Gushuokguan
+			}
+			OR = {
+				has_country_flag = gushuokguan_can_release_guwaamud
+				has_country_flag = gushuokguan_can_release_hubao
+				has_country_flag = gushuokguan_can_release_zyujyut
+				has_country_flag = gushuokguan_can_release_one_xia
+			}
+		}
+		allow = {
+			OR = {
+				tag = Y17 #Gushuokguan
+				was_tag = Y17 #Gushuokguan
+			}
+			OR = {
+				has_country_flag = gushuokguan_can_release_guwaamud
+				has_country_flag = gushuokguan_can_release_hubao
+				has_country_flag = gushuokguan_can_release_zyujyut
+				has_country_flag = gushuokguan_can_release_one_xia
+			}
+		}
+		provinces_to_highlight = {
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			OR = {
+				AND = {
+					ROOT = { has_country_flag = gushuokguan_can_release_guwaamud }
+					OR = {
+						NOT = { exists = Y96 } #Guwaamud
+						Y96 = { is_subject_of = ROOT } #Guwaamud #Gushuokguan
+					}
+					region = shuvuushudi_region
+				}
+				AND = {
+					ROOT = { has_country_flag = gushuokguan_can_release_hubao }
+					OR = {
+						NOT = { exists = Y03 } #Guwaamud
+						Y03 = { is_subject_of = ROOT } #Guwaamud #Gushuokguan
+					}
+					OR = {
+						area = moryokang_area
+						area = jinqiu_area
+						area = jiangszun_area
+						area = bianfang_area
+						area = bianyuan_area
+					}
+				}
+				AND = {
+					ROOT = { has_country_flag = gushuokguan_can_release_zyujyut }
+					OR = {
+						NOT = { exists = Y23 } #Guwaamud
+						Y23 = { is_subject_of = ROOT } #Guwaamud #Gushuokguan
+					}
+					OR = {
+						area = hungngon_area
+						area = wanglam_area
+						area = jyutsai_area
+						area = lamzung_area
+					}
+				}
+				AND = {
+					ROOT = { has_country_flag = gushuokguan_can_release_one_xia }
+					OR = {
+						NOT = { exists = Y99 } #Guwaamud
+						Y99 = { is_subject_of = ROOT } #Guwaamud #Gushuokguan
+					}
+					region = xianjie_region
+				}
+			}
+		}
+		effect = {
+			country_event = {
+				id = gushuokguan_event.71
+			}
+		}
+	}
+}

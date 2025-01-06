@@ -1,0 +1,1828 @@
+# Added a list of all the races for use in scripting, please add new races (in alphabetical order)
+# races = ["centaur", "dwarven", "elven", "gnollish", "gnomish", "goblin", "halfling", "half_elven", "half_orcish", "harimari", "harpy", "hobgoblin", "human", "kobold", "lizardfolk", "mechanim", "ogre", "orcish", "ruinborn", "troll"]
+
+namespace = racial_pop_misc
+
+#################################
+### dont copy this bro its outdated!
+################################
+
+
+#Pop Control Menu
+country_event = {
+	id = racial_pop_misc.1
+	title = racial_pop_misc.1.t
+	desc = racial_pop_misc.1.d
+	picture = DEBATE_REPUBLICAN_eventPicture
+	
+	trigger = {
+		always = yes
+	}
+	
+	is_triggered_only = yes
+	
+	option = {		#Back
+		name = racial_pop_misc.1.b
+		highlight = yes
+		ai_chance = {
+			factor = 15
+		}
+		
+		hidden_effect = { clr_country_flag = racial_pop_menu_opened }
+		
+		#Prevents AI spamming and revoking too soon
+		hidden_effect = {
+			if = {
+				limit = {
+					ai = yes
+				}
+				add_country_modifier = { 
+					name = racial_pop_menu_cooldown
+					duration = 3650
+					hidden = yes
+				}
+			}
+		}	
+	}
+
+	option = {		#Centaur
+		name = racial_pop_misc.1.p
+		trigger = {
+			if = {
+				limit = {
+					ai = yes
+				}
+				OR = {
+					fast_owns_num_pops_of_race = { race = centaur amount = 1 }
+					has_country_modifier = racial_pop_centaur_purge
+					has_country_modifier = racial_pop_centaur_expulsion
+				}
+				NOT = {
+					AND = {
+						NOT = { can_afford_state_action_diplomat_malus = { action = genocide } }
+						NOT = {
+							has_country_modifier = racial_pop_centaur_expulsion
+							has_country_modifier = racial_pop_centaur_purge
+						}
+					}
+				}
+			}
+		}
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 1.5
+				fast_owns_num_pops_of_race = { race = centaur amount = 10 }
+			}
+		}
+		set_variable = { which = nbCentaurDev value = 1 }
+		set_variable = { which = nbRaceCoredDev value = 1 }
+		set_variable = { which = nbCentaurMinority value = 1 }
+		set_variable = { which = nbCentaurMajority value = 1 }
+		country_event = { 
+			id = racial_pop_events_centaur.12
+		}
+		
+		#Prevents AI spamming and revoking too soon
+		hidden_effect = {
+			if = {
+				limit = {
+					ai = yes
+				}
+				add_country_modifier = { 
+					name = racial_pop_menu_cooldown
+					duration = 3650
+					hidden = yes
+				}
+			}
+		}
+		
+	}
+	option = {		#Dwarves
+		name = racial_pop_misc.1.a
+		trigger = {
+			if = {
+				limit = {
+					ai = yes
+				}
+				OR = {
+					fast_owns_num_pops_of_race = { race = dwarven amount = 1 }
+					has_country_modifier = racial_pop_dwarven_purge
+					has_country_modifier = racial_pop_dwarven_expulsion
+				}
+				NOT = {
+					AND = {
+						NOT = { can_afford_state_action_diplomat_malus = { action = genocide } }
+						NOT = {
+							has_country_modifier = racial_pop_dwarven_expulsion
+							has_country_modifier = racial_pop_dwarven_purge
+						}
+					}
+				}
+			}
+		}
+		ai_chance = {
+			factor = 10
+			
+			modifier = {
+				factor = 1.5
+				fast_owns_num_pops_of_race = { race = dwarven amount = 10 }
+			}
+			
+		}
+		set_variable = { which = nbDwarvenDev value = 1 }
+		set_variable = { which = nbRaceCoredDev value = 1 }
+		set_variable = { which = nbDwarvenMinority value = 1 }
+		set_variable = { which = nbDwarvenMajority value = 1 }
+		country_event = { 
+			id = racial_pop_events_dwarven.12
+		}
+		
+		#Prevents AI spamming and revoking too soon
+		hidden_effect = {
+			if = {
+				limit = {
+					ai = yes
+				}
+				add_country_modifier = { 
+					name = racial_pop_menu_cooldown
+					duration = 3650
+					hidden = yes
+				}
+			}
+		}
+		
+	}
+	option = {		#Elven
+		name = racial_pop_misc.1.c
+		trigger = {
+			if = {
+				limit = {
+					ai = yes
+				}
+				OR = {
+					fast_owns_num_pops_of_race = { race = elven amount = 1 }
+					has_country_modifier = racial_pop_elven_purge
+					has_country_modifier = racial_pop_elven_expulsion
+				}
+				NOT = {
+					AND = {
+						NOT = { can_afford_state_action_diplomat_malus = { action = genocide } }
+						NOT = {
+							has_country_modifier = racial_pop_elven_expulsion
+							has_country_modifier = racial_pop_elven_purge
+						}
+					}
+				}
+			}
+		}
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 1.5
+				fast_owns_num_pops_of_race = { race = elven amount = 10 }
+			}
+		}
+		set_variable = { which = nbElvenDev value = 1 }
+		set_variable = { which = nbRaceCoredDev value = 1 }
+		set_variable = { which = nbElvenMinority value = 1 }
+		set_variable = { which = nbElvenMajority value = 1 }
+		country_event = { 
+			id = racial_pop_events_elven.12
+		}
+		
+		#Prevents AI spamming and revoking too soon
+		hidden_effect = {
+			if = {
+				limit = {
+					ai = yes
+				}
+				add_country_modifier = { 
+					name = racial_pop_menu_cooldown
+					duration = 3650
+					hidden = yes
+				}
+			}
+		}
+		
+		
+	}
+	option = {		#Gnolls
+		name = racial_pop_misc.1.dd
+		trigger = {
+			if = {
+				limit = {
+					ai = yes
+				}
+				OR = {
+					fast_owns_num_pops_of_race = { race = gnollish amount = 1 }
+					has_country_modifier = racial_pop_gnollish_purge
+					has_country_modifier = racial_pop_gnollish_expulsion
+				}
+				NOT = {
+					AND = {
+						NOT = { can_afford_state_action_diplomat_malus = { action = genocide } }
+						NOT = {
+							has_country_modifier = racial_pop_gnollish_expulsion
+							has_country_modifier = racial_pop_gnollish_purge
+						}
+					}
+				}
+			}
+		}
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 1.5
+				fast_owns_num_pops_of_race = { race = gnollish amount = 10 }
+			}
+		}
+		set_variable = { which = nbGnollishDev value = 1 }
+		set_variable = { which = nbRaceCoredDev value = 1 }
+		set_variable = { which = nbGnollishMinority value = 1 }
+		set_variable = { which = nbGnollishMajority value = 1 }
+		country_event = { 
+			id = racial_pop_events_gnollish.12
+		}
+		
+		#Prevents AI spamming and revoking too soon
+		hidden_effect = {
+			if = {
+				limit = {
+					ai = yes
+				}
+				add_country_modifier = { 
+					name = racial_pop_menu_cooldown
+					duration = 3650
+					hidden = yes
+				}
+			}
+		}
+	}
+	option = {		#Gnomish
+		name = racial_pop_misc.1.e
+		trigger = {
+			if = {
+				limit = {
+					ai = yes
+				}
+				OR = {
+					fast_owns_num_pops_of_race = { race = gnomish amount = 1 }
+					has_country_modifier = racial_pop_gnomish_purge
+					has_country_modifier = racial_pop_gnomish_expulsion
+				}
+				NOT = {
+					AND = {
+						NOT = { can_afford_state_action_diplomat_malus = { action = genocide } }
+						NOT = {
+							has_country_modifier = racial_pop_gnomish_expulsion
+							has_country_modifier = racial_pop_gnomish_purge
+						}
+					}
+				}
+			}
+		}
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 1.5
+				fast_owns_num_pops_of_race = { race = gnomish amount = 10 }
+			}
+		}
+		set_variable = { which = nbGnomishDev value = 1 }
+		set_variable = { which = nbRaceCoredDev value = 1 }
+		set_variable = { which = nbGnomishMinority value = 1 }
+		set_variable = { which = nbGnomishMajority value = 1 }
+		country_event = { 
+			id = racial_pop_events_gnomish.12
+		}
+		
+		#Prevents AI spamming and revoking too soon
+		hidden_effect = {
+			if = {
+				limit = {
+					ai = yes
+				}
+				add_country_modifier = { 
+					name = racial_pop_menu_cooldown
+					duration = 3650
+					hidden = yes
+				}
+			}
+		}
+		
+	}
+	option = {		#Goblin
+		name = racial_pop_misc.1.f
+		trigger = {
+			if = {
+				limit = {
+					ai = yes
+				}
+				OR = {
+					fast_owns_num_pops_of_race = { race = goblin amount = 1 }
+					has_country_modifier = racial_pop_goblin_purge
+					has_country_modifier = racial_pop_goblin_expulsion
+				}
+				NOT = {
+					AND = {
+						NOT = { can_afford_state_action_diplomat_malus = { action = genocide } }
+						NOT = {
+							has_country_modifier = racial_pop_goblin_expulsion
+							has_country_modifier = racial_pop_goblin_purge
+						}
+					}
+				}
+			}
+		}
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 1.5
+				fast_owns_num_pops_of_race = { race = goblin amount = 10 }
+			}
+			modifier = {
+				factor = 10
+				culture_group = dwarven
+				any_owned_province = {
+					OR = {
+						has_terrain = dwarven_hold
+						has_terrain = dwarven_hold_surface
+					}
+					has_goblin_majority_trigger = yes
+				}
+			}
+		}
+		set_variable = { which = nbGoblinDev value = 1 }
+		set_variable = { which = nbRaceCoredDev value = 1 }
+		set_variable = { which = nbGoblinMinority value = 1 }
+		set_variable = { which = nbGoblinMajority value = 1 }
+		country_event = { 
+			id = racial_pop_events_goblin.12
+		}
+		
+		#Prevents AI spamming and revoking too soon
+		hidden_effect = {
+			if = {
+				limit = {
+					ai = yes
+				}
+				add_country_modifier = { 
+					name = racial_pop_menu_cooldown
+					duration = 3650
+					hidden = yes
+				}
+			}
+		}
+		
+	}
+	option = {		#Half-elven
+		name = racial_pop_misc.1.g
+		trigger = {
+			if = {
+				limit = {
+					ai = yes
+				}
+				OR = {
+					fast_owns_num_pops_of_race = { race = half_elven amount = 1 }
+					has_country_modifier = racial_pop_half_elven_purge
+					has_country_modifier = racial_pop_half_elven_expulsion
+				}
+				NOT = {
+					AND = {
+						NOT = { can_afford_state_action_diplomat_malus = { action = genocide } }
+						NOT = {
+							has_country_modifier = racial_pop_half_elven_expulsion
+							has_country_modifier = racial_pop_half_elven_purge
+						}
+					}
+				}
+			}
+		}
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 1.5
+				fast_owns_num_pops_of_race = { race = half_elven amount = 10 }
+			}
+		}
+		set_variable = { which = nbHalfElvenDev value = 1 }
+		set_variable = { which = nbRaceCoredDev value = 1 }
+		set_variable = { which = nbHalfElvenMinority value = 1 }
+		set_variable = { which = nbHalfElvenMajority value = 1 }
+		country_event = { 
+			id = racial_pop_events_half_elven.12
+		}
+		
+		#Prevents AI spamming and revoking too soon
+		hidden_effect = {
+			if = {
+				limit = {
+					ai = yes
+				}
+				add_country_modifier = { 
+					name = racial_pop_menu_cooldown
+					duration = 3650
+					hidden = yes
+				}
+			}
+		}
+		
+	}
+	option = {		#Half-orcish
+		name = racial_pop_misc.1.h
+		trigger = {
+			if = {
+				limit = {
+					ai = yes
+				}
+				OR = {
+					fast_owns_num_pops_of_race = { race = half_orcish amount = 1 }
+					has_country_modifier = racial_pop_half_orcish_purge
+					has_country_modifier = racial_pop_half_orcish_expulsion
+				}
+				NOT = {
+					AND = {
+						NOT = { can_afford_state_action_diplomat_malus = { action = genocide } }
+						NOT = {
+							has_country_modifier = racial_pop_half_orcish_expulsion
+							has_country_modifier = racial_pop_half_orcish_purge
+						}
+					}
+				}
+			}
+		}
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 1.5
+				fast_owns_num_pops_of_race = { race = half_orcish amount = 10 }
+			}
+		}
+		set_variable = { which = nbHalfOrcishDev value = 1 }
+		set_variable = { which = nbRaceCoredDev value = 1 }
+		set_variable = { which = nbHalfOrcishMinority value = 1 }
+		set_variable = { which = nbHalfOrcishMajority value = 1 }
+		country_event = { 
+			id = racial_pop_events_half_orcish.12
+		}
+		
+		#Prevents AI spamming and revoking too soon
+		hidden_effect = {
+			if = {
+				limit = {
+					ai = yes
+				}
+				add_country_modifier = { 
+					name = racial_pop_menu_cooldown
+					duration = 3650
+					hidden = yes
+				}
+			}
+		}
+		
+	}
+	option = {		#Halfling
+		name = racial_pop_misc.1.i
+		trigger = {
+			if = {
+				limit = {
+					ai = yes
+				}
+				OR = {
+					fast_owns_num_pops_of_race = { race = halfling amount = 1 }
+					has_country_modifier = racial_pop_halfling_purge
+					has_country_modifier = racial_pop_halfling_expulsion
+				}
+				NOT = {
+					AND = {
+						NOT = { can_afford_state_action_diplomat_malus = { action = genocide } }
+						NOT = {
+							has_country_modifier = racial_pop_halfling_expulsion
+							has_country_modifier = racial_pop_halfling_purge
+						}
+					}
+				}
+			}
+		}
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 1.5
+				fast_owns_num_pops_of_race = { race = halfling amount = 10 }
+			}
+		}
+		set_variable = { which = nbHalflingDev value = 1 }
+		set_variable = { which = nbRaceCoredDev value = 1 }
+		set_variable = { which = nbHalflingMinority value = 1 }
+		set_variable = { which = nbHalflingMajority value = 1 }
+		country_event = { 
+			id = racial_pop_events_halfling.12
+		}
+		
+		#Prevents AI spamming and revoking too soon
+		hidden_effect = {
+			if = {
+				limit = {
+					ai = yes
+				}
+				add_country_modifier = { 
+					name = racial_pop_menu_cooldown
+					duration = 3650
+					hidden = yes
+				}
+			}
+		}
+		
+	}
+	option = {		#Harimari
+		name = racial_pop_misc.1.r
+		trigger = {
+			if = {
+				limit = {
+					ai = yes
+				}
+				OR = {
+					fast_owns_num_pops_of_race = { race = harimari amount = 1 }
+					has_country_modifier = racial_pop_harimari_purge
+					has_country_modifier = racial_pop_harimari_expulsion
+				}
+				NOT = {
+					AND = {
+						NOT = { can_afford_state_action_diplomat_malus = { action = genocide } }
+						NOT = {
+							has_country_modifier = racial_pop_harimari_expulsion
+							has_country_modifier = racial_pop_harimari_purge
+						}
+					}
+				}
+			}
+		}
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 1.5
+				fast_owns_num_pops_of_race = { race = harimari amount = 10 }
+			}
+		}
+		set_variable = { which = nbHarimariDev value = 1 }
+		set_variable = { which = nbRaceCoredDev value = 1 }
+		set_variable = { which = nbHarimariMinority value = 1 }
+		set_variable = { which = nbHarimariMajority value = 1 }
+		country_event = { 
+			id = racial_pop_events_harimari.12
+		}
+		
+		#Prevents AI spamming and revoking too soon
+		hidden_effect = {
+			if = {
+				limit = {
+					ai = yes
+				}
+				add_country_modifier = { 
+					name = racial_pop_menu_cooldown
+					duration = 3650
+					hidden = yes
+				}
+			}
+		}
+		
+	}
+	
+	option = {		#Harpies
+		name = racial_pop_misc.1.j
+		trigger = {
+			if = {
+				limit = {
+					ai = yes
+				}
+				OR = {
+					fast_owns_num_pops_of_race = { race = harpy amount = 1 }
+					has_country_modifier = racial_pop_harpy_purge
+					has_country_modifier = racial_pop_harpy_expulsion
+				}
+				NOT = {
+					AND = {
+						NOT = { can_afford_state_action_diplomat_malus = { action = genocide } }
+						NOT = {
+							has_country_modifier = racial_pop_harpy_expulsion
+							has_country_modifier = racial_pop_harpy_purge
+						}
+					}
+				}
+			}
+		}
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 1.5
+				fast_owns_num_pops_of_race = { race = harpy amount = 10 }
+			}
+		}
+		set_variable = { which = nbHarpyDev value = 1 }
+		set_variable = { which = nbRaceCoredDev value = 1 }
+		set_variable = { which = nbHarpyMinority value = 1 }
+		set_variable = { which = nbHarpyMajority value = 1 }
+		country_event = { 
+			id = racial_pop_events_harpy.12
+		}
+		
+		#Prevents AI spamming and revoking too soon
+		hidden_effect = {
+			if = {
+				limit = {
+					ai = yes
+				}
+				add_country_modifier = { 
+					name = racial_pop_menu_cooldown
+					duration = 3650
+					hidden = yes
+				}
+			}
+		}
+		
+	}
+	
+	option = {		#Hobgoblin
+		name = racial_pop_misc.1.s
+		trigger = {
+			if = {
+				limit = {
+					ai = yes
+				}
+				OR = {
+					fast_owns_num_pops_of_race = { race = hobgoblin amount = 1 }
+					has_country_modifier = racial_pop_hobgoblin_purge
+					has_country_modifier = racial_pop_hobgoblin_expulsion
+				}
+				NOT = {
+					AND = {
+						NOT = { can_afford_state_action_diplomat_malus = { action = genocide } }
+						NOT = {
+							has_country_modifier = racial_pop_hobgoblin_expulsion
+							has_country_modifier = racial_pop_hobgoblin_purge
+						}
+					}
+				}
+			}
+		}
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 1.5
+				fast_owns_num_pops_of_race = { race = hobgoblin amount = 10 }
+			}
+		}
+		set_variable = { which = nbHobgoblinDev value = 1 }
+		set_variable = { which = nbRaceCoredDev value = 1 }
+		set_variable = { which = nbHobgoblinMinority value = 1 }
+		set_variable = { which = nbHobgoblinMajority value = 1 }
+		country_event = { 
+			id = racial_pop_events_hobgoblin.12
+		}
+		
+		#Prevents AI spamming and revoking too soon
+		hidden_effect = {
+			if = {
+				limit = {
+					ai = yes
+				}
+				add_country_modifier = { 
+					name = racial_pop_menu_cooldown
+					duration = 3650
+					hidden = yes
+				}
+			}
+		}
+		
+	}
+	
+	option = {		#Human
+		name = racial_pop_misc.1.k
+		trigger = {
+			if = {
+				limit = {
+					ai = yes
+				}
+				OR = {
+					fast_owns_num_pops_of_race = { race = human amount = 1 }
+					has_country_modifier = racial_pop_human_purge
+					has_country_modifier = racial_pop_human_expulsion
+				}
+				NOT = {
+					AND = {
+						NOT = { can_afford_state_action_diplomat_malus = { action = genocide } }
+						NOT = {
+							has_country_modifier = racial_pop_human_expulsion
+							has_country_modifier = racial_pop_human_purge
+						}
+					}
+				}
+			}
+		}
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 1.5
+				fast_owns_num_pops_of_race = { race = human amount = 10 }
+			}
+		}
+		set_variable = { which = nbHumanDev value = 1 }
+		set_variable = { which = nbRaceCoredDev value = 1 }
+		set_variable = { which = nbHumanMinority value = 1 }
+		set_variable = { which = nbHumanMajority value = 1 }
+		country_event = { 
+			id = racial_pop_events_human.12
+		}
+		
+		#Prevents AI spamming and revoking too soon
+		hidden_effect = {
+			if = {
+				limit = {
+					ai = yes
+				}
+				add_country_modifier = { 
+					name = racial_pop_menu_cooldown
+					duration = 3650
+					hidden = yes
+				}
+			}
+		}
+		
+	}
+	option = {		#Kobold
+		name = racial_pop_misc.1.l
+		trigger = {
+			if = {
+				limit = {
+					ai = yes
+				}
+				OR = {
+					fast_owns_num_pops_of_race = { race = kobold amount = 1 }
+					has_country_modifier = racial_pop_kobold_purge
+					has_country_modifier = racial_pop_kobold_expulsion
+				}
+				NOT = {
+					AND = {
+						NOT = { can_afford_state_action_diplomat_malus = { action = genocide } }
+						NOT = {
+							has_country_modifier = racial_pop_kobold_expulsion
+							has_country_modifier = racial_pop_kobold_purge
+						}
+					}
+				}
+			}
+		}
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 1.5
+				fast_owns_num_pops_of_race = { race = kobold amount = 10 }
+			}
+		}
+		set_variable = { which = nbKoboldDev value = 1 }
+		set_variable = { which = nbRaceCoredDev value = 1 }
+		set_variable = { which = nbKoboldMinority value = 1 }
+		set_variable = { which = nbKoboldMajority value = 1 }
+		country_event = { 
+			id = racial_pop_events_kobold.12
+		}
+		
+		#Prevents AI spamming and revoking too soon
+		hidden_effect = {
+			if = {
+				limit = {
+					ai = yes
+				}
+				add_country_modifier = { 
+					name = racial_pop_menu_cooldown
+					duration = 3650
+					hidden = yes
+				}
+			}
+		}
+		
+	}
+	option = {		#Lizardfolk
+		name = racial_pop_misc.1.tt
+		trigger = {
+			if = {
+				limit = {
+					ai = yes
+				}
+				OR = {
+					fast_owns_num_pops_of_race = { race = lizardfolk amount = 1 }
+					has_country_modifier = racial_pop_lizardfolk_purge
+					has_country_modifier = racial_pop_lizardfolk_expulsion
+				}
+				NOT = {
+					AND = {
+						NOT = { can_afford_state_action_diplomat_malus = { action = genocide } }
+						NOT = {
+							has_country_modifier = racial_pop_lizardfolk_expulsion
+							has_country_modifier = racial_pop_lizardfolk_purge
+						}
+					}
+				}
+			}
+		}
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 1.5
+				fast_owns_num_pops_of_race = { race = lizardfolk amount = 10 }
+			}
+		}
+		set_variable = { which = nbLizardfolkDev value = 1 }
+		set_variable = { which = nbRaceCoredDev value = 1 }
+		set_variable = { which = nbLizardfolkMinority value = 1 }
+		set_variable = { which = nbLizardfolkMajority value = 1 }
+		country_event = { 
+			id = racial_pop_events_lizardfolk.12
+		}
+		
+		#Prevents AI spamming and revoking too soon
+		hidden_effect = {
+			if = {
+				limit = {
+					ai = yes
+				}
+				add_country_modifier = { 
+					name = racial_pop_menu_cooldown
+					duration = 3650
+					hidden = yes
+				}
+			}
+		}
+		
+	}
+	option = {		#Orcish
+		name = racial_pop_misc.1.m
+		trigger = {
+			if = {
+				limit = {
+					ai = yes
+				}
+				OR = {
+					fast_owns_num_pops_of_race = { race = orcish amount = 1 }
+					has_country_modifier = racial_pop_orcish_purge
+					has_country_modifier = racial_pop_orcish_expulsion
+				}
+				NOT = {
+					AND = {
+						NOT = { can_afford_state_action_diplomat_malus = { action = genocide } }
+						NOT = {
+							has_country_modifier = racial_pop_orcish_expulsion
+							has_country_modifier = racial_pop_orcish_purge
+						}
+					}
+				}
+			}
+		}
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 1.5
+				fast_owns_num_pops_of_race = { race = orcish amount = 10 }
+			}
+			modifier = {
+				factor = 10
+				culture_group = dwarven
+				any_owned_province = {
+					OR = {
+						has_terrain = dwarven_hold
+						has_terrain = dwarven_hold_surface
+					}
+					has_orcish_majority_trigger = yes
+				}
+			}
+			modifier = {
+				factor = 0
+				tag = A73
+			}
+		}
+		set_variable = { which = nbOrcishDev value = 1 }
+		set_variable = { which = nbRaceCoredDev value = 1 }
+		set_variable = { which = nbOrcishMinority value = 1 }
+		set_variable = { which = nbOrcishMajority value = 1 }
+		country_event = { 
+			id = racial_pop_events_orcish.12
+		}
+		
+		#Prevents AI spamming and revoking too soon
+		hidden_effect = {
+			if = {
+				limit = {
+					ai = yes
+				}
+				add_country_modifier = { 
+					name = racial_pop_menu_cooldown
+					duration = 3650
+					hidden = yes
+				}
+			}
+		}
+		
+	}
+	
+	option = {		#Ogre
+		name = racial_pop_misc.1.q
+		trigger = {
+			if = {
+				limit = {
+					ai = yes
+				}
+				OR = {
+					fast_owns_num_pops_of_race = { race = ogre amount = 1 }
+					has_country_modifier = racial_pop_ogre_purge
+					has_country_modifier = racial_pop_ogre_expulsion
+				}
+				NOT = {
+					AND = {
+						NOT = { can_afford_state_action_diplomat_malus = { action = genocide } }
+						NOT = {
+							has_country_modifier = racial_pop_ogre_expulsion
+							has_country_modifier = racial_pop_ogre_purge
+						}
+					}
+				}
+			}
+		}
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 1.5
+				fast_owns_num_pops_of_race = { race = ogre amount = 10 }
+			}
+		}
+		set_variable = { which = nbOgreDev value = 1 }
+		set_variable = { which = nbRaceCoredDev value = 1 }
+		set_variable = { which = nbOgreMinority value = 1 }
+		set_variable = { which = nbOgreMajority value = 1 }
+		country_event = { 
+			id = racial_pop_events_ogre.12
+		}
+		
+		#Prevents AI spamming and revoking too soon
+		hidden_effect = {
+			if = {
+				limit = {
+					ai = yes
+				}
+				add_country_modifier = { 
+					name = racial_pop_menu_cooldown
+					duration = 3650
+					hidden = yes
+				}
+			}
+		}
+		
+	}
+	option = {		#Ruinborn
+		name = racial_pop_misc.1.n
+		trigger = {
+			if = {
+				limit = {
+					ai = yes
+				}
+				OR = {
+					fast_owns_num_pops_of_race = { race = ruinborn amount = 1 }
+					has_country_modifier = racial_pop_ruinborn_purge
+					has_country_modifier = racial_pop_ruinborn_expulsion
+				}
+				NOT = {
+					AND = {
+						NOT = { can_afford_state_action_diplomat_malus = { action = genocide } }
+						NOT = {
+							has_country_modifier = racial_pop_ruinborn_expulsion
+							has_country_modifier = racial_pop_ruinborn_purge
+						}
+					}
+				}
+			}
+		}
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 1.5
+				fast_owns_num_pops_of_race = { race = ruinborn amount = 10 }
+			}
+		}
+		set_variable = { which = nbRuinbornDev value = 1 }
+		set_variable = { which = nbRaceCoredDev value = 1 }
+		set_variable = { which = nbRuinbornMinority value = 1 }
+		set_variable = { which = nbRuinbornMajority value = 1 }
+		country_event = { 
+			id = racial_pop_events_ruinborn.12
+		}
+		
+		#Prevents AI spamming and revoking too soon
+		hidden_effect = {
+			if = {
+				limit = {
+					ai = yes
+				}
+				add_country_modifier = { 
+					name = racial_pop_menu_cooldown
+					duration = 3650
+					hidden = yes
+				}
+			}
+		}
+		
+	}
+	option = {		#Troll
+		name = racial_pop_misc.1.o
+		trigger = {
+			if = {
+				limit = {
+					ai = yes
+				}
+				OR = {
+					fast_owns_num_pops_of_race = { race = troll amount = 1 }
+					has_country_modifier = racial_pop_troll_purge
+					has_country_modifier = racial_pop_troll_expulsion
+				}
+				NOT = {
+					AND = {
+						NOT = { can_afford_state_action_diplomat_malus = { action = genocide } }
+						NOT = {
+							has_country_modifier = racial_pop_troll_expulsion
+							has_country_modifier = racial_pop_troll_purge
+						}
+					}
+				}
+			}
+		}
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 1.5
+				fast_owns_num_pops_of_race = { race = troll amount = 10 }
+			}
+		}
+		set_variable = { which = nbTrollDev value = 1 }
+		set_variable = { which = nbRaceCoredDev value = 1 }
+		set_variable = { which = nbTrollMinority value = 1 }
+		set_variable = { which = nbTrollMajority value = 1 }
+		country_event = { 
+			id = racial_pop_events_troll.12
+		}
+		
+		#Prevents AI spamming and revoking too soon
+		hidden_effect = {
+			if = {
+				limit = {
+					ai = yes
+				}
+				add_country_modifier = { 
+					name = racial_pop_menu_cooldown
+					duration = 3650
+					hidden = yes
+				}
+			}
+		}
+		
+	}
+
+	option = {		#Mechanim
+		name = racial_pop_misc.1.u
+		trigger = {
+			if = {
+				limit = {
+					ai = yes
+				}
+				OR = {
+					fast_owns_num_pops_of_race = { race = mechanim amount = 1 }
+					has_country_modifier = racial_pop_mechanim_purge
+					has_country_modifier = racial_pop_mechanim_expulsion
+				}
+				NOT = {
+					AND = {
+						NOT = { can_afford_state_action_diplomat_malus = { action = genocide } }
+						NOT = {
+							has_country_modifier = racial_pop_mechanim_expulsion
+							has_country_modifier = racial_pop_mechanim_purge
+						}
+					}
+				}
+			}
+		}
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 1.5
+				fast_owns_num_pops_of_race = { race = mechanim amount = 10 }
+			}
+		}
+		set_variable = { which = nbMechanimDev value = 1 }
+		set_variable = { which = nbRaceCoredDev value = 1 }
+		set_variable = { which = nbMechanimMinority value = 1 }
+		set_variable = { which = nbMechanimMajority value = 1 }
+		country_event = { 
+			id = racial_pop_events_mechanim.12
+		}
+		
+		#Prevents AI spamming and revoking too soon
+		hidden_effect = {
+			if = {
+				limit = {
+					ai = yes
+				}
+				add_country_modifier = { 
+					name = racial_pop_menu_cooldown
+					duration = 3650
+					hidden = yes
+				}
+			}
+		}
+		
+	}
+	
+	#AddNewRaceHere
+	
+}
+
+#Half-orc Creation
+country_event = {
+	id = racial_pop_misc.2
+	title = racial_pop_misc.2.t
+	desc = racial_pop_misc.2.d
+	picture = REFUGEES_ESCAPING_eventPicture
+	goto = racial_pop_province_target
+	
+	trigger = {
+		#Not available in Silverforge while Orcs slaves are oppressed
+		NOT = {
+			tag = A73
+			NOT = {
+				check_variable = {
+					which = orcish_race_tolerance
+					value = 31
+				}
+			}
+		}
+		NOT = { tag = Z57 } # Karashar
+		any_core_province = {
+			OR = {
+				AND = { #Orc primary culture, human minority
+					has_human_minority_trigger = yes
+					culture_group = orcish
+				}
+				AND = { #Human primary culture, orc minority
+					has_orcish_minority_trigger = yes
+					culture_is_human = yes
+				}
+			}
+			NOT = { has_half_orcish_minority_trigger = yes }
+			# is_core = ROOT
+		}
+		
+	}
+	
+	mean_time_to_happen = {
+		days = 7300
+		modifier = {
+			factor = 0.25
+			calc_true_if = {
+				all_owned_province = {
+					has_orcish_minority_trigger = yes
+					culture_is_human = yes
+					is_core = ROOT
+				}
+				amount = 20
+			}
+		}
+		modifier = {
+			factor = 0.25
+			calc_true_if = {
+				all_owned_province = {
+					has_human_minority_trigger = yes
+					culture_group = orcish
+					is_core = ROOT
+				}
+				amount = 20
+			}
+		}
+		modifier = {
+			factor = 0.9
+			any_owned_province = {
+				has_coexisting_orcish_minority_trigger = yes
+			}
+		}
+		modifier = {
+			factor = 0.9
+			any_owned_province = {
+				has_coexisting_human_minority_trigger = yes
+			}
+		}
+		modifier = {
+			factor = 0.9
+			any_owned_province = {
+				has_integrated_orcish_minority_trigger = yes
+			}
+		}
+		modifier = {
+			factor = 0.9
+			any_owned_province = {
+				has_integrated_human_minority_trigger = yes
+			}
+		}
+		modifier = {
+			factor = 0.9
+			any_owned_province = {
+				has_half_orcish_minority_trigger = yes
+			}
+		}
+	}
+	
+	immediate = {
+	
+		#Origin Province Setter
+		
+		#Make this the monstrous purge thing
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					has_human_minority_trigger = yes
+					culture_group = orcish
+					NOT = { has_half_orcish_minority_trigger = yes }
+					is_core = ROOT
+				}
+				save_event_target_as = racial_pop_province_target
+			}
+			random_owned_province = {
+				limit = {
+					has_human_minority_trigger = yes
+					culture_group = orcish
+					NOT = { has_half_orcish_minority_trigger = yes }
+					development = 10
+					is_core = ROOT
+				}
+				save_event_target_as = racial_pop_province_target
+			}
+			random_owned_province = {
+				limit = {
+					has_human_minority_trigger = yes
+					culture_group = orcish
+					NOT = { has_half_orcish_minority_trigger = yes }
+					development = 20
+					is_core = ROOT
+				}
+				save_event_target_as = racial_pop_province_target
+			}
+			
+			random_owned_province = {
+				limit = {
+					has_orcish_minority_trigger = yes
+					culture_is_human = yes
+					NOT = { has_half_orcish_minority_trigger = yes }
+					is_core = ROOT
+				}
+				save_event_target_as = racial_pop_province_target
+			}
+			random_owned_province = {
+				limit = {
+					has_orcish_minority_trigger = yes
+					culture_is_human = yes
+					NOT = { has_half_orcish_minority_trigger = yes }
+					development = 10
+					is_core = ROOT
+				}
+				save_event_target_as = racial_pop_province_target
+			}
+			random_owned_province = {
+				limit = {
+					has_orcish_minority_trigger = yes
+					culture_is_human = yes
+					NOT = { has_half_orcish_minority_trigger = yes }
+					development = 20
+					is_core = ROOT
+				}
+				save_event_target_as = racial_pop_province_target
+			}
+			if = {
+				limit = {
+					event_target:racial_pop_province_target = {
+						has_orcish_minority_trigger = yes
+						culture_is_human = yes
+					}
+				}
+				event_target:racial_pop_province_target = {
+					remove_orcish_minority_size_effect = yes
+					add_half_orcish_minority_size_effect = yes
+				}
+			}
+			
+			if = {
+				limit = {
+					event_target:racial_pop_province_target = {
+						has_human_minority_trigger = yes
+						culture_group = orcish
+					}
+				}
+				event_target:racial_pop_province_target = {
+					remove_human_minority_size_effect = yes
+					add_half_orcish_minority_size_effect = yes
+				}
+			}
+
+		}
+	}
+	
+	#Make em
+	option = {		
+		name = racial_pop_misc.2.a
+		
+		tooltip = {
+			if = {
+				limit = {
+					event_target:racial_pop_province_target = {
+						culture_is_human = yes
+					}
+				}
+				event_target:racial_pop_province_target = {
+					remove_orcish_minority_size_effect = yes
+					add_half_orcish_minority_size_effect = yes
+				}
+			}
+			
+			if = {
+				limit = {
+					event_target:racial_pop_province_target = {
+						culture_group = orcish
+					}
+				}
+				event_target:racial_pop_province_target = {
+					remove_human_minority_size_effect = yes
+					add_half_orcish_minority_size_effect = yes
+				}
+			}
+		}
+		
+	}
+	
+}
+
+#pop menu for players
+country_event = {
+	id = racial_pop_misc.3
+	title = racial_pop_misc.3.t
+	desc = racial_pop_misc.3.d
+	picture = POP_MENU_eventPicture
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			pop_menu_main_setup = yes
+		}
+	}
+	
+	#Close menu
+	option = {		
+		name = racial_pop_misc.3.z
+		clr_country_flag = racial_pop_menu_opened
+	}
+	
+	#Most present race
+	option = {
+		name = racial_pop_misc.3.a
+		pop_menu_rank_effect = {
+			ORDER = 1
+		}
+	}
+	
+	#Second most present race
+	option = {
+		name = racial_pop_misc.3.b
+		pop_menu_rank_effect = {
+			ORDER = 2
+		}
+	}
+	
+	#Third...
+	option = {
+		name = racial_pop_misc.3.c
+		pop_menu_rank_effect = {
+			ORDER = 3
+		}
+	}
+	
+	option = {
+		name = racial_pop_misc.3.dd
+		pop_menu_rank_effect = {
+			ORDER = 4
+		}
+	}
+	
+	option = {
+		name = racial_pop_misc.3.e
+		pop_menu_rank_effect = {
+			ORDER = 5
+		}
+	}
+	
+	option = {
+		name = racial_pop_misc.3.f
+		pop_menu_rank_effect = {
+			ORDER = 6
+		}
+	}
+	
+	option = {
+		name = racial_pop_misc.3.g
+		pop_menu_rank_effect = {
+			ORDER = 7
+		}
+	}
+	
+	option = {
+		name = racial_pop_misc.3.h
+		pop_menu_rank_effect = {
+			ORDER = 8
+		}
+	}
+	
+	option = {
+		name = racial_pop_misc.3.i
+		pop_menu_rank_effect = {
+			ORDER = 9
+		}
+	}
+	
+	option = {
+		name = racial_pop_misc.3.j
+		pop_menu_rank_effect = {
+			ORDER = 10
+		}
+	}
+	
+	option = {
+		name = racial_pop_misc.3.k
+		pop_menu_rank_effect = {
+			ORDER = 11
+		}
+	}
+	
+	option = {
+		name = racial_pop_misc.3.l
+		pop_menu_rank_effect = {
+			ORDER = 12
+		}
+	}
+	
+	option = {
+		name = racial_pop_misc.3.m
+		pop_menu_rank_effect = {
+			ORDER = 13
+		}
+	}
+	
+	option = {
+		name = racial_pop_misc.3.n
+		pop_menu_rank_effect = {
+			ORDER = 14
+		}
+	}
+	
+	option = {
+		name = racial_pop_misc.3.o
+		pop_menu_rank_effect = {
+			ORDER = 15
+		}
+	}
+	
+	option = {
+		name = racial_pop_misc.3.p
+		pop_menu_rank_effect = {
+			ORDER = 16
+		}
+	}
+	
+	option = {
+		name = racial_pop_misc.3.q
+		pop_menu_rank_effect = {
+			ORDER = 17
+		}
+	}
+	
+	option = {
+		name = racial_pop_misc.3.r
+		pop_menu_rank_effect = {
+			ORDER = 18
+		}
+	}
+
+	option = {
+		name = racial_pop_misc.3.s
+		pop_menu_rank_effect = {
+			ORDER = 19
+		}
+	}
+
+	option = {
+		name = racial_pop_misc.3.tt
+		pop_menu_rank_effect = {
+			ORDER = 20
+		}
+	}
+	
+	#Close menu
+	option = {		
+		name = racial_pop_misc.3.z
+		clr_country_flag = racial_pop_menu_opened
+	}
+}
+
+country_event = {
+	id = racial_pop_misc.4
+	title = racial_pop_misc.4.t
+	desc = racial_pop_misc.4.d
+	picture = OVEREXTENSION_eventPicture
+
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { num_of_diplomats = 2 }
+		OR = {
+			AND = {
+				has_racial_focus = yes
+				if = {
+					limit = { ai = yes }
+					NOT = { check_variable = { remaining_free_focus = -1 } }
+				}
+				else = {
+					NOT = { check_variable = { remaining_free_focus = 0 } }
+				}
+			}
+			AND = {
+				is_not_purging_or_expelling_any_race_trigger = no
+				if = {
+					limit = { ai = yes }
+					NOT = { check_variable = { remaining_free_focus = -1 } }
+				}
+				else = {
+					NOT = { check_variable = { remaining_free_focus = 0 } }
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = racial_pop_misc.4.a
+		random_list = {
+			1 = {
+				trigger = { has_country_modifier = racial_pop_elven_purge }
+				generic_end_purge = { race = elven }
+			}
+			1 = {
+				trigger = { has_country_modifier = racial_pop_dwarven_purge }
+				generic_end_purge = { race = dwarven }
+			}
+			1 = {
+				trigger = { has_country_modifier = racial_pop_halfling_purge }
+				generic_end_purge = { race = halfling }
+			}
+			1 = {
+				trigger = { has_country_modifier = racial_pop_gnomish_purge }
+				generic_end_purge = { race = gnomish }
+			}
+			1 = {
+				trigger = { has_country_modifier = racial_pop_kobold_purge }
+				generic_end_purge = { race = kobold }
+			}
+			1 = {
+				trigger = { has_country_modifier = racial_pop_orcish_purge }
+				generic_end_purge = { race = orcish }
+			}
+			1 = {
+				trigger = { has_country_modifier = racial_pop_half_orcish_purge }
+				generic_end_purge = { race = half_orcish }
+			}
+			1 = {
+				trigger = { has_country_modifier = racial_pop_human_purge }
+				generic_end_purge = { race = human }
+			}
+			1 = {
+				trigger = { has_country_modifier = racial_pop_gnollish_purge }
+				generic_end_purge = { race = gnollish }
+			}
+			1 = {
+				trigger = { has_country_modifier = racial_pop_ruinborn_purge }
+				generic_end_purge = { race = ruinborn }
+			}
+			1 = {
+				trigger = { has_country_modifier = racial_pop_goblin_purge }
+				generic_end_purge = { race = goblin }
+			}
+			1 = {
+				trigger = { has_country_modifier = racial_pop_harpy_purge }
+				generic_end_purge = { race = harpy }
+			}
+			1 = {
+				trigger = { has_country_modifier = racial_pop_troll_purge }
+				generic_end_purge = { race = troll }
+			}
+			1 = {
+				trigger = { has_country_modifier = racial_pop_half_elven_purge }
+				generic_end_purge = { race = half_elven }
+			}
+			1 = {
+				trigger = { has_country_modifier = racial_pop_harimari_purge }
+				generic_end_purge = { race = harimari }
+			}
+			1 = {
+				trigger = { has_country_modifier = racial_pop_hobgoblin_purge }
+				generic_end_purge = { race = hobgoblin }
+			}
+			1 = {
+				trigger = { has_country_modifier = racial_pop_centaur_purge }
+				generic_end_purge = { race = centaur }
+			}
+			1 = {
+				trigger = { has_country_modifier = racial_pop_ogre_purge }
+				generic_end_purge = { race = ogre }
+			}
+			1 = {
+				trigger = { has_country_modifier = racial_pop_lizardfolk_purge }
+				generic_end_purge = { race = lizardfolk }
+			}
+			1 = {
+				trigger = { has_country_modifier = racial_pop_mechanim_purge }
+				generic_end_purge = { race = mechanim }
+			}
+			1 = {
+				trigger = { has_country_modifier = racial_pop_elven_expulsion }
+				generic_end_expulsion = { race = elven }
+			}
+			1 = {
+				trigger = { has_country_modifier = racial_pop_dwarven_expulsion }
+				generic_end_expulsion = { race = dwarven }
+			}
+			1 = {
+				trigger = { has_country_modifier = racial_pop_halfling_expulsion }
+				generic_end_expulsion = { race = halfling }
+			}
+			1 = {
+				trigger = { has_country_modifier = racial_pop_gnomish_expulsion }
+				generic_end_expulsion = { race = gnomish }
+			}
+			1 = {
+				trigger = { has_country_modifier = racial_pop_kobold_expulsion }
+				generic_end_expulsion = { race = kobold }
+			}
+			1 = {
+				trigger = { has_country_modifier = racial_pop_orcish_expulsion }
+				generic_end_expulsion = { race = orcish }
+			}
+			1 = {
+				trigger = { has_country_modifier = racial_pop_half_orcish_expulsion }
+				generic_end_expulsion = { race = half_orcish }
+			}
+			1 = {
+				trigger = { has_country_modifier = racial_pop_human_expulsion }
+				generic_end_expulsion = { race = human }
+			}
+			1 = {
+				trigger = { has_country_modifier = racial_pop_gnollish_expulsion }
+				generic_end_expulsion = { race = gnollish }
+			}
+			1 = {
+				trigger = { has_country_modifier = racial_pop_ruinborn_expulsion }
+				generic_end_expulsion = { race = ruinborn }
+			}
+			1 = {
+				trigger = { has_country_modifier = racial_pop_goblin_expulsion }
+				generic_end_expulsion = { race = goblin }
+			}
+			1 = {
+				trigger = { has_country_modifier = racial_pop_harpy_expulsion }
+				generic_end_expulsion = { race = harpy }
+			}
+			1 = {
+				trigger = { has_country_modifier = racial_pop_troll_expulsion }
+				generic_end_expulsion = { race = troll }
+			}
+			1 = {
+				trigger = { has_country_modifier = racial_pop_half_elven_expulsion }
+				generic_end_expulsion = { race = half_elven }
+			}
+			1 = {
+				trigger = { has_country_modifier = racial_pop_harimari_expulsion }
+				generic_end_expulsion = { race = harimari }
+			}
+			1 = {
+				trigger = { has_country_modifier = racial_pop_hobgoblin_expulsion }
+				generic_end_expulsion = { race = hobgoblin }
+			}
+			1 = {
+				trigger = { has_country_modifier = racial_pop_centaur_expulsion }
+				generic_end_expulsion = { race = centaur }
+			}
+			1 = {
+				trigger = { has_country_modifier = racial_pop_ogre_expulsion }
+				generic_end_expulsion = { race = ogre }
+			}
+			1 = {
+				trigger = { has_country_modifier = racial_pop_lizardfolk_expulsion }
+				generic_end_expulsion = { race = lizardfolk }
+			}
+			1 = {
+				trigger = { has_country_modifier = racial_pop_mechanim_expulsion }
+				generic_end_expulsion = { race = mechanim }
+			}
+			1 = {
+				trigger = { has_country_modifier = racial_focus_elven }
+				generic_end_focus = { race = elven }
+			}
+			1 = {
+				trigger = { has_country_modifier = racial_focus_dwarven }
+				generic_end_focus = { race = dwarven }
+			}
+			1 = {
+				trigger = { has_country_modifier = racial_focus_halfling }
+				generic_end_focus = { race = halfling }
+			}
+			1 = {
+				trigger = { has_country_modifier = racial_focus_gnomish }
+				generic_end_focus = { race = gnomish }
+			}
+			1 = {
+				trigger = { has_country_modifier = racial_focus_kobold }
+				generic_end_focus = { race = kobold }
+			}
+			1 = {
+				trigger = { has_country_modifier = racial_focus_orcish }
+				generic_end_focus = { race = orcish }
+			}
+			1 = {
+				trigger = { has_country_modifier = racial_focus_half_orcish }
+				generic_end_focus = { race = half_orcish }
+			}
+			1 = {
+				trigger = { has_country_modifier = racial_focus_human }
+				generic_end_focus = { race = human }
+			}
+			1 = {
+				trigger = { has_country_modifier = racial_focus_gnollish }
+				generic_end_focus = { race = gnollish }
+			}
+			1 = {
+				trigger = { has_country_modifier = racial_focus_ruinborn }
+				generic_end_focus = { race = ruinborn }
+			}
+			1 = {
+				trigger = { has_country_modifier = racial_focus_goblin }
+				generic_end_focus = { race = goblin }
+			}
+			1 = {
+				trigger = { has_country_modifier = racial_focus_harpy }
+				generic_end_focus = { race = harpy }
+			}
+			1 = {
+				trigger = { has_country_modifier = racial_focus_troll }
+				generic_end_focus = { race = troll }
+			}
+			1 = {
+				trigger = { has_country_modifier = racial_focus_half_elven }
+				generic_end_focus = { race = half_elven }
+			}
+			1 = {
+				trigger = { has_country_modifier = racial_focus_harimari }
+				generic_end_focus = { race = harimari }
+			}
+			1 = {
+				trigger = { has_country_modifier = racial_focus_hobgoblin }
+				generic_end_focus = { race = hobgoblin }
+			}
+			1 = {
+				trigger = { has_country_modifier = racial_focus_centaur }
+				generic_end_focus = { race = centaur }
+			}
+			1 = {
+				trigger = { has_country_modifier = racial_focus_ogre }
+				generic_end_focus = { race = ogre }
+			}
+			1 = {
+				trigger = { has_country_modifier = racial_focus_lizardfolk }
+				generic_end_focus = { race = lizardfolk }
+			}
+			1 = {
+				trigger = { has_country_modifier = racial_focus_mechanim }
+				generic_end_focus = { race = mechanim }
+			}
+		}
+		ai_chance = { factor = 2 }
+	}
+	option = {
+		name = racial_pop_misc.4.b
+		add_adm_power = -50
+		add_dip_power = -50
+		ai_chance = { factor = 1 }
+	}
+}

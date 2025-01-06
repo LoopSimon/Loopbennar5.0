@@ -1,0 +1,25 @@
+# No previous file for Nakhchivan
+
+owner = S18
+controller = S18
+add_core = S18
+culture = dhebiji
+religion = rinta_seekers
+capital = ""
+
+hre = no
+
+base_tax = 7
+base_production = 10
+base_manpower = 6
+
+trade_goods = ivory
+
+center_of_trade = 2
+
+set_variable = { which = jasiirJadidMerfolkCap value = 3 }
+set_variable = { which = ardimyaMerfolkCap value = 2 }
+set_variable = { which = throdenGokadMerfolkCap value = 1 }
+set_variable = { which = ringletIslesMerfolkCap value = 1 }
+set_variable = { which = bamaliwuniMerfolkCap value = 1 }
+set_variable = { which = ishyamtumuMerfolkCap value = 1 }

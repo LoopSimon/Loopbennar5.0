@@ -1,0 +1,178 @@
+
+
+
+#mission modifiers
+
+cave_goblin_wine = {
+	manpower_recovery_speed = 0.15
+}
+cave_goblin_fungus_prov = {
+	trade_goods_size_modifier = 0.2
+}
+cave_goblin_weapons = {
+	shock_damage = 0.15
+}
+
+cave_goblin_new_tithes = {
+	global_tax_income = 24
+}
+
+cave_goblin_numbers = {
+	diplomatic_reputation = 1
+	improve_relation_modifier = 0.2
+}
+
+cave_goblin_thieving_arrow = {
+	trade_company_governing_cost = -0.1
+}
+cave_goblin_spiderwretch = {
+	cavalry_fire = 0.25
+}
+cave_goblin_mountainshark = {
+	available_province_loot = 0.1
+}
+cave_goblin_absorption = {
+	native_assimilation = 1.5
+}
+cave_goblin_expanding_influence = {
+	colonist_placement_chance = 0.1
+}
+cave_goblin_expansionism = {
+	global_colonial_growth = 15
+	colonists = 1
+}
+cave_goblin_extra_colonist = {
+	colonists = 1
+}
+cave_goblin_conquest = {
+	province_warscore_cost = -0.15
+}
+cave_goblin_reforming = {
+	reform_progress_growth = 1
+}
+cave_goblin_squatter_get_deeper = {
+	local_development_cost = -0.1
+	local_build_cost = -0.1
+	local_build_time = -0.1
+}
+cave_goblin_er_natvir_farms = {
+	local_manpower_modifier = 0.1
+	trade_value_modifier = 0.1
+}
+cave_goblin_art_installation = {
+	prestige = 0.2
+	prestige_decay = -0.01
+}
+cave_goblin_booming_capital = {
+	local_production_efficiency = 0.1
+	local_tax_modifier = 0.1
+	province_trade_power_modifier = 0.1
+}
+cave_goblin_looting = {
+	available_province_loot = 0.25
+}
+cave_goblin_victory = {
+	land_morale = 0.1
+	available_province_loot = 0.1
+}
+cave_goblin_conquerors = {
+	core_creation = -0.1
+	loot_amount = 0.25
+}
+cave_goblin_ravagers = {
+	province_warscore_cost = -0.1
+	available_province_loot = 0.15
+}
+cave_goblin_our_clan_capital = {
+	local_development_cost = -0.1
+}
+cave_goblin_hobbit_journey = {
+	#migration_cooldown = -0.2
+	global_colonial_growth = 15
+}
+cave_goblin_peter_jackson = {
+	army_tradition_from_battle = 2
+	prestige_from_land = 2
+}
+cave_goblin_spider_colonies = {
+	global_colonial_growth = 15
+}
+cave_goblin_spider_trainers = {
+	cavalry_cost = -0.1
+	cavalry_fire = 0.1
+}
+cave_goblin_spider_khan = {
+	cavalry_cost = -0.1
+	cavalry_fire = 0.2
+}
+cave_goblin_deepwood_dividends = {
+	production_efficiency = 0.1
+}
+cave_goblin_verdant_conquest = {
+	province_warscore_cost = -0.1
+}
+cave_goblin_serpentreach_fights = {
+	land_morale = 0.1
+}
+cave_goblin_skomdihr_claiming = {
+	global_colonial_growth = 5
+	build_cost = -0.1
+}
+
+cave_goblin_fellowship_of_the_gun = {
+	infantry_fire = 0.1
+}
+cave_goblin_the_silver_menace = {
+	land_morale = 0.15
+}
+cave_goblin_kill_the_orcs = {
+	land_morale = 0.1
+}
+cave_goblin_no_more_black_orcs = {
+	land_morale = 0.1
+	province_warscore_cost = -0.1
+}
+cave_goblin_purging_escann = {
+	ae_impact = -0.25
+}
+cave_goblin_every_last_orc = {
+	land_morale = 0.1
+	province_warscore_cost = -0.1
+}
+cave_goblin_all_orcs_dead = {
+	land_morale = 0.05
+}
+cave_goblin_diplo = {
+	diplomatic_reputation = 1
+}
+cave_goblin_artillery = {
+	artillery_cost = -0.1
+}
+cave_goblin_have_economy = {
+	inflation_reduction = 0.01
+}
+
+#Reform modifiers
+
+goblin_citizens = {
+	local_governing_cost = -0.1
+}
+legitimacy_equivalent_absolutism_from_idea_groups_mod0 = { prestige_decay = 0.01 picture = "prestige" }
+legitimacy_equivalent_absolutism_from_idea_groups_mod1 = { legitimacy = 0.2 republican_tradition = 0.08 devotion = 0.2 horde_unity = 0.2 meritocracy = 0.1 yearly_absolutism = 0.2 max_absolutism = 2 picture = "prestige" }
+legitimacy_equivalent_absolutism_from_idea_groups_mod2 = { legitimacy = 0.4 republican_tradition = 0.16 devotion = 0.4 horde_unity = 0.4 meritocracy = 0.2 yearly_absolutism = 0.4 max_absolutism = 4 picture = "prestige" }
+legitimacy_equivalent_absolutism_from_idea_groups_mod3 = { legitimacy = 0.6 republican_tradition = 0.24 devotion = 0.6 horde_unity = 0.6 meritocracy = 0.3 yearly_absolutism = 0.6 max_absolutism = 6 picture = "prestige" }
+legitimacy_equivalent_absolutism_from_idea_groups_mod4 = { legitimacy = 0.8 republican_tradition = 0.32 devotion = 0.8 horde_unity = 0.8 meritocracy = 0.4 yearly_absolutism = 0.8 max_absolutism = 8 picture = "prestige" }
+legitimacy_equivalent_absolutism_from_idea_groups_mod5 = { legitimacy = 1 republican_tradition = 0.4 devotion = 1 horde_unity = 1 meritocracy = 0.5 yearly_absolutism = 1 max_absolutism = 10 picture = "prestige" }
+legitimacy_equivalent_absolutism_from_idea_groups_mod6 = { legitimacy = 1.2 republican_tradition = 0.48 devotion = 1.2 horde_unity = 1.2 meritocracy = 0.6 yearly_absolutism = 1.2 max_absolutism = 12 picture = "prestige" }
+legitimacy_equivalent_absolutism_from_idea_groups_mod7 = { legitimacy = 1.4 republican_tradition = 0.56 devotion = 1.4 horde_unity = 1.4 meritocracy = 0.7 yearly_absolutism = 1.4 max_absolutism = 14 picture = "prestige" }
+legitimacy_equivalent_absolutism_from_idea_groups_mod8 = { legitimacy = 1.6 republican_tradition = 0.64 devotion = 1.6 horde_unity = 1.6 meritocracy = 0.8 yearly_absolutism = 1.6 max_absolutism = 16 picture = "prestige" }
+
+#exodus
+
+exodus_goblin_invasion = {
+	global_manpower = 10
+	#land_forcelimit = 5 #this made the AI too confident, and made them ignore their quality disadvantage to their own demise
+	#global_regiment_cost = -0.25
+	#mercenary_cost = -0.25	#I get this makes sense from a survival POV
+	land_morale = 0.1
+}

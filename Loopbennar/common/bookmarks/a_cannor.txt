@@ -1,0 +1,23 @@
+
+bookmark =
+{
+	name = "CANNOR_NAME"
+	desc = "CANNOR_DESC"
+	date = 1444.11.11
+	
+	center = 8
+	default = yes
+	
+	country = A33	#Verne
+	country = A06	#Nimscodd
+	country = A26	#Redscale Clan
+	country = A31	#Moonhaven
+	country = Z15	#Urviksten
+	country = A45	#Istralore
+	country = Z26	#Adshaw
+	country = A95	#Themarenn
+
+	easy_country = A33	#Verne
+	easy_country = A06	#Nimscodd
+
+}

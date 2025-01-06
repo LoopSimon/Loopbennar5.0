@@ -1,0 +1,55 @@
+edict_encourage_development = {
+	potential = {
+		always = yes		#we support "potential" if modders want to have lots and just show some.
+	}
+	
+	allow = {
+		always = yes
+	}
+	
+	years_to_notify = 3 #specifies how many years an edict needs to be active to show an alert
+	
+	modifier = {
+		local_development_cost = -0.1
+	}
+	
+	color = {  244 184 12  }
+
+	on_state_edict_enacted = {
+		if = {
+			limit = {
+				FROM = {
+					tag = A81
+				}
+				ROOT = {
+					area = bennonhill_area
+				}
+			}
+			FROM = {
+				set_country_flag = giberd_bennonhill_development_edict
+			}
+		}
+	}
+
+	on_state_edict_revoked = {
+		if = {
+			limit = {
+				FROM = {
+					tag = A81
+				}
+				ROOT = {
+					area = bennonhill_area
+				}
+			}
+			FROM = {
+				clr_country_flag = giberd_bennonhill_development_edict
+			}
+		}
+	}
+
+	
+	ai_will_do = {
+		factor = 0
+	}
+	
+}

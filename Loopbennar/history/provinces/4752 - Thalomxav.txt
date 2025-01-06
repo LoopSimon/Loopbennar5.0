@@ -1,0 +1,18 @@
+# No previous file for Anbennar4752
+owner = Y71
+controller = Y71
+add_core = Y71
+culture = bokai
+religion = transmutative_path
+#130
+hre = no
+
+base_tax = 3
+base_production = 2
+base_manpower = 2
+
+trade_goods = fish
+
+capital = ""
+
+is_city = yes

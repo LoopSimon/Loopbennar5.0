@@ -1,0 +1,683 @@
+#Yanzhong Events
+
+namespace = yanzhong
+
+country_event = { #The Starlit Path
+	id = yanzhong.1
+	title = yanzhong.1.t
+	desc = yanzhong.1.d
+	picture = BUDDHISM_GOOD_eventPicture
+	
+	is_triggered_only = yes
+
+	trigger =	{
+		always = yes
+	}
+	
+	option = { #ok cool
+		name = yanzhong.1.a
+		
+
+	}
+}
+
+country_event = { #Yingzhen Offer
+	id = yanzhong.2
+	title = yanzhong.2.t
+	desc = yanzhong.2.d
+	picture = GENERALS_DISCUSSING_eventPicture
+	
+	is_triggered_only = yes
+
+	trigger =	{
+		always = yes
+	}
+	
+	option = { #ok cool
+		name = yanzhong.2.a
+		
+		ai_chance = {
+			factor = 100
+		}
+		
+		add_treasury = 250
+		
+		Y08 = {
+			country_event = {
+				id = yanzhong.3
+			}
+		}
+		
+		Y04 = {
+			country_event = {
+				id = yanzhong.4
+				days = 1
+			}
+		}
+		
+		
+
+	}
+	
+	option = { #player opt out
+		name = yanzhong.2.b
+		
+		ai_chance = {
+			factor = 0
+		}
+		
+		Y06 = { country_event = { id = yanzhong.6 } }
+		
+	}
+}
+
+country_event = { #They Accept
+	id = yanzhong.3
+	title = yanzhong.3.t
+	desc = yanzhong.3.d
+	picture = GENERALS_DISCUSSING_eventPicture
+	
+	is_triggered_only = yes
+
+	trigger =	{
+		always = yes
+	}
+	
+	option = { #ok cool
+		name = yanzhong.3.a
+		
+
+	}
+}
+
+country_event = { #Anjiang Assassination
+	id = yanzhong.4
+	title = yanzhong.4.t
+	desc = yanzhong.4.d
+	picture = ASSASSINATION_eventPicture
+	
+	is_triggered_only = yes
+
+	trigger =	{
+		always = yes
+	}
+	
+	option = { #rip me
+		name = yanzhong.4.a
+		
+		ai_chance = {
+			factor = 100
+		}
+		
+		kill_ruler = yes
+		
+		if = {
+			limit = {
+				4853 = { owned_by = Y04 }
+			}
+			4853 =  { cede_province = Y10 }
+		}
+		if = {
+			limit = {
+				4851 = { owned_by = Y04 }
+			}
+			4851 =  { cede_province = Y10 }
+		}
+		if = {
+			limit = {
+				4933 = { owned_by = Y04 }
+			}
+			4933 =  { cede_province = Y08 }
+		}
+		if = {
+			limit = {
+				4854 = { owned_by = Y04 }
+			}
+			4854 =  { cede_province = Y08 }
+		}
+		
+		Y10 = { country_event = { id = yanzhong.5 } }
+		Y08 = { country_event = { id = yanzhong.5 } }
+		
+	}
+	
+	option = { #player opt out
+		name = yanzhong.4.b
+		
+		ai_chance = {
+			factor = 0
+		}
+		
+		reduce_stability_or_adm_power = yes
+	
+		Y08 = { country_event = { id = yanzhong.6 } }
+	
+	}
+}
+
+country_event = { #Anjiang is dead
+	id = yanzhong.5
+	title = yanzhong.5.t
+	desc = yanzhong.5.d
+	picture = ASSASSINATION_eventPicture
+	
+	is_triggered_only = yes
+
+	trigger =	{
+		always = yes
+	}
+	
+	option = { #ok cool
+		name = yanzhong.5.a
+		
+
+	}
+}
+
+country_event = { #Player opted out
+	id = yanzhong.6
+	title = yanzhong.6.t
+	desc = yanzhong.6.d
+	picture = CIVIL_WAR_eventPicture
+	
+	is_triggered_only = yes
+
+	trigger =	{
+		always = yes
+	}
+	
+	option = { #ok cool
+		name = yanzhong.6.a
+		
+		add_treasury = 250
+		
+
+	}
+}
+
+## Econ Integration Events ## 
+
+country_event = { #Yanzhong Integration Notice
+	id = yanzhong.7
+	title = yanzhong.7.t
+	desc = yanzhong.7.d
+	picture = BURGHER_ESTATE_UPSET_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = { #ok cool
+		name = yanzhong.7.a
+	}
+}
+
+country_event = { #Yanzhong Integration
+	id = yanzhong.8
+	title = yanzhong.8.t
+	desc = yanzhong.8.d
+	picture = ECONOMICALLY_TALLANTED_RULER_eventPicture
+
+	is_triggered_only = yes
+	
+	after = {
+		if = {
+			limit = {
+				NOT = {
+					has_country_flag = yanzhong_yangcheng_econ
+					has_country_flag = yanzhong_guhe_econ
+					has_country_flag = yanzhong_yingzhen_econ
+				}
+			}
+			clr_country_flag = yanzhong_econ
+		}
+	}
+	
+	option = { #ok cool
+		name = yanzhong.8.a
+		
+		if = {
+			limit = {
+				check_variable = {
+					which = yanzhong_yangcheng 
+					value = 10
+				}
+				exists = Y06
+			}
+			inherit = Y06
+			clr_country_flag = yanzhong_yangcheng_econ
+			set_variable = { yanzhong_yangcheng = 0 }
+			if = {
+				limit = { 4861 = { owned_by = ROOT } }
+				4861 = { 
+					add_province_modifier = {
+						name = yanzhong_strengthened_trade_center
+						duration = -1
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = yanzhong_guhe 
+					value = 10
+				}
+				exists = Y07
+			}
+			inherit = Y07
+			clr_country_flag = yanzhong_guhe_econ
+			set_variable = { yanzhong_guhe = 0 }
+			if = {
+				limit = { 4950 = { owned_by = ROOT } }
+				4950 = { 
+					add_province_modifier = {
+						name = yanzhong_strengthened_trade_center
+						duration = -1
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = yanzhong_yingzhen 
+					value = 10
+				}
+				exists = Y10
+			}
+			inherit = Y10
+			clr_country_flag = yanzhong_yingzhen_econ
+			set_variable = { yanzhong_yingzhen = 0 }
+			if = {
+				limit = { 4849 = { owned_by = ROOT } }
+				4849 = { 
+					add_province_modifier = {
+						name = yanzhong_strengthened_trade_center
+						duration = -1
+					}
+				}
+			}
+		}
+	}
+}
+
+#Yangcheng
+
+country_event = { #Yanzhong integration hidden event
+	id = yanzhong.9
+	title = yanzhong.9.t
+	desc = yanzhong.9.d
+	picture = ECONOMY_eventPicture
+
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		tag = Y08
+		has_country_flag = yanzhong_econ
+		is_subject = no
+	}
+
+	option = { #Fallback
+		name = flavor_castanor_go_back
+		ai_chance = { factor = 1 }
+	}
+
+	option = {
+		name = yanzhong.9.a
+		ai_chance = { factor = 10 }
+		trigger = {
+			has_country_flag = yanzhong_yangcheng_econ
+			Y06 = {
+				exists = yes
+				NOT = { is_subject_of = ROOT }
+			}
+		}
+
+		if = {
+			limit = { check_variable = { which = yanzhong_yangcheng value = 10 } }
+			country_event = { id = yanzhong.8 }
+		}
+		else = {
+			country_event = { id = yanzhong.10 }
+		}
+	}
+
+	option = {
+		name = yanzhong.9.b
+		ai_chance = { factor = 10 }
+		trigger = {
+			has_country_flag = yanzhong_guhe_econ
+			Y07 = {
+				exists = yes
+				NOT = { is_subject_of = ROOT }
+			}
+		}
+
+		if = {
+			limit = { check_variable = { which = yanzhong_guhe value = 10 } }
+			country_event = { id = yanzhong.8 }
+		}
+		else = {
+			country_event = { id = yanzhong.11 }
+		}
+	}
+
+	option = {
+		name = yanzhong.9.c
+		ai_chance = { factor = 10 }
+		trigger = {
+			has_country_flag = yanzhong_yingzhen_econ
+			Y10 = {
+				exists = yes
+				NOT = { is_subject_of = ROOT }
+			}
+		}
+
+		if = {
+			limit = { check_variable = { which = yanzhong_yingzhen value = 10 } }
+			country_event = { id = yanzhong.8 }
+		}
+		else = {
+			country_event = { id = yanzhong.12 }
+		}
+	}
+}
+
+country_event = { #Yangcheng Economy
+	id = yanzhong.10
+	title = yanzhong.10.t
+	desc = yanzhong.10.d
+	picture = ECONOMY_eventPicture
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			random = {
+				chance = 50
+				if = {
+					limit = { Y06 = { any_owned_province = { has_trade_building_trigger = no } } }
+					set_country_flag = yanzhong_yangcheng_marketplace_flag
+				}
+			}
+		}
+	}
+	
+	option = { #Do it
+		name = yanzhong.10.a
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				NOT = { treasury = 50 }
+			}
+		}
+		trigger = { NOT = { has_country_flag = yanzhong_yangcheng_marketplace_flag } }
+		
+		add_treasury = -50
+		Y06 = {
+			random_owned_province = {
+				add_random_development = 1
+			}
+			country_event = { id = yanzhong.7 }
+		}
+		
+		change_variable = {
+			which = yanzhong_yangcheng
+			value = 1
+		}
+	}
+	
+	option = { #Do it - Marketplace
+		name = yanzhong.10.a
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				NOT = { treasury = 75 }
+			}
+		}
+		trigger = { has_country_flag = yanzhong_yangcheng_marketplace_flag }
+		
+		add_treasury = -75
+		Y06 = {
+			random_owned_province = {
+				limit = { NOT = { has_trade_building_trigger = yes } }
+				add_building_construction = {
+					building = marketplace
+					speed = 1
+					cost = 0
+				}
+			}
+			country_event = { id = yanzhong.7 }
+		}
+		
+		change_variable = {
+			which = yanzhong_yangcheng
+			value = 1
+		}
+	}
+	
+	option = { #Dont do it
+		name = yanzhong.10.b
+		ai_chance = { factor = 1 }
+	}
+
+}
+
+country_event = { #Guhe Economy
+	id = yanzhong.11
+	title = yanzhong.11.t
+	desc = yanzhong.11.d
+	picture = ECONOMY_eventPicture
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			random = {
+				chance = 50
+				if = {
+					limit = { Y07 = { any_owned_province = { has_trade_building_trigger = no } } }
+					set_country_flag = yanzhong_guhe_marketplace_flag
+				}
+			}
+		}
+	}
+	
+	option = { #Do it
+		name = yanzhong.11.a
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				NOT = { treasury = 50 }
+			}
+		}
+		trigger = { NOT = { has_country_flag = yanzhong_guhe_marketplace_flag } }
+		
+		add_treasury = -50
+		Y07 = {
+			random_owned_province = {
+				add_random_development = 1
+			}
+			country_event = { id = yanzhong.7 }
+		}
+		
+		change_variable = {
+			which = yanzhong_guhe
+			value = 1
+		}
+	}
+	
+	option = { #Do it - Marketplace
+		name = yanzhong.11.a
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				NOT = { treasury = 75 }
+			}
+		}
+		trigger = { has_country_flag = yanzhong_guhe_marketplace_flag }
+		
+		add_treasury = -75
+		Y07 = {
+			random_owned_province = {
+				limit = { NOT = { has_trade_building_trigger = yes } }
+				add_building_construction = {
+					building = marketplace
+					speed = 1
+					cost = 0
+				}
+			}
+			country_event = { id = yanzhong.7 }
+		}
+		
+		change_variable = {
+			which = yanzhong_guhe
+			value = 1
+		}
+	}
+	
+	option = { #Dont do it
+		name = yanzhong.11.b
+		ai_chance = { factor = 1 }
+	}
+
+}
+
+country_event = { #Yingzhen Economy
+	id = yanzhong.12
+	title = yanzhong.12.t
+	desc = yanzhong.10.d
+	picture = ECONOMY_eventPicture
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			random = {
+				chance = 50
+				if = {
+					limit = { Y10 = { any_owned_province = { has_trade_building_trigger = no } } }
+					set_country_flag = yanzhong_yingzhen_marketplace_flag
+				}
+			}
+		}
+	}
+	
+	option = { #Do it
+		name = yanzhong.10.a
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				NOT = { treasury = 50 }
+			}
+		}
+		trigger = { NOT = { has_country_flag = yanzhong_yingzhen_marketplace_flag } }
+		
+		add_treasury = -50
+		Y10 = {
+			random_owned_province = {
+				add_random_development = 1
+			}
+			country_event = { id = yanzhong.7 }
+		}
+		
+		change_variable = {
+			which = yanzhong_yingzhen
+			value = 1
+		}
+	}
+	
+	option = { #Do it - Marketplace
+		name = yanzhong.10.a
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				NOT = { treasury = 75 }
+			}
+		}
+		trigger = { has_country_flag = yanzhong_yingzhen_marketplace_flag }
+		
+		add_treasury = -75
+		Y10 = {
+			random_owned_province = {
+				limit = { NOT = { has_trade_building_trigger = yes } }
+				add_building_construction = {
+					building = marketplace
+					speed = 1
+					cost = 0
+				}
+			}
+			country_event = { id = yanzhong.7 }
+		}
+		
+		change_variable = {
+			which = yanzhong_yingzhen
+			value = 1
+		}
+	}
+	
+	option = { #Dont do it
+		name = yanzhong.10.b
+		ai_chance = { factor = 1 }
+	}
+}
+
+## Pulse Events
+
+country_event = { #Money Pulse
+	id = yanzhong.22
+	title = yanzhong.22.t
+	desc = yanzhong.22.d
+	picture = CIVIL_WAR_eventPicture
+
+	is_triggered_only = yes
+	
+	option = { #Do it
+		name = yanzhong.22.a
+		
+		add_years_of_income = 0.4
+	}
+}
+
+country_event = { #Rebuild The Highway
+	id = yanzhong.23
+	title = yanzhong.23.t
+	desc = yanzhong.23.d
+	picture = URBANISATION_INCIDENT_eventPicture
+
+	is_triggered_only = yes
+	
+	option = { #Do it
+		name = yanzhong.23.a
+		
+		random_owned_province = {
+			limit = { has_province_modifier = golden_highway_under_construction }
+			province_event = { id = golden_highway.1 }
+		}	
+	}
+
+}
+
+country_event = { #Trade Boom!
+	id = yanzhong.24
+	title = yanzhong.24.t
+	desc = yanzhong.24.d
+	picture = PORTUGUESE_MERCHANTS_eventPicture
+
+	is_triggered_only = yes
+	
+	option = { #Do it
+		name = yanzhong.24.a
+		
+		add_country_modifier = {
+			name = yanzhong_pulse_bonus
+			duration = 3640
+		}
+	}
+}

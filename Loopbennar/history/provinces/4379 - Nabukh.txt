@@ -1,0 +1,20 @@
+
+# 143
+owner = R52
+controller = R52
+add_core = R52
+add_core = R56
+culture = rabhidarubsad
+religion = high_philosophy
+
+hre = no
+
+base_tax = 4
+base_production = 4
+base_manpower = 3
+
+trade_goods = grain
+
+capital = ""
+
+is_city = yes

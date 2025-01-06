@@ -1,0 +1,82 @@
+country_decisions = {
+	
+	konolkhatep_nation = {
+		major = yes
+		potential = {
+			culture_group = gnollish
+			has_dlc = "Mandate of Heaven"
+			NOT = { has_country_flag = formed_konolkhatep_flag }
+			NOT = { exists = F66 }
+			is_colonial_nation = no
+			normal_or_historical_nations = yes
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = no_mandate }
+		}
+		
+		provinces_to_highlight = {
+			OR = {	
+				province_id = 475	# Kheterat
+				province_id = 479	# Golkora
+				province_id = 473	# Nirat
+				province_id = 463	# Koroshesh
+				province_id = 5481 #Niramit
+			}
+			NOT = { owned_by = ROOT }
+		}
+		
+		allow = {
+			hidden_trigger = { owns_core_province = 475 }
+			culture_group = gnollish
+			is_at_war = no
+			is_subject = no
+			is_emperor_of_china = yes
+			custom_trigger_tooltip = {
+				tooltip = not_xhazob_tt
+				NOT = { has_ruler_flag = undergoing_xhazob_ritual }
+			}
+			if = {
+				limit = { ruler_has_personality = xhazobs_chosen_personality }
+				NOT = { ruler_has_personality = xhazobs_chosen_personality }
+			}
+			owns_core_province = 475	# Kheterat
+			num_of_owned_provinces_with = {
+				value = 2
+				OR = {
+					province_id = 463 #Koroshesh
+					province_id = 473 #Nirat
+					province_id = 479 #Golkora
+					province_id = 5481 #Niramit
+				}
+			}
+			if = {
+				limit = { OR = { has_country_modifier = racial_pop_human_expulsion has_country_modifier = racial_pop_human_purge } }
+				NOT = { has_country_modifier = racial_pop_human_expulsion has_country_modifier = racial_pop_human_purge }
+			}
+
+		}
+		
+		effect = {
+			change_tag = F66
+			hidden_effect = { restore_country_name = yes }
+			add_prestige = 50
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			if = {
+				limit = { is_tribal = yes }
+				change_government = monarchy
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			set_country_flag = formed_konolkhatep_flag
+			swap_non_generic_missions = yes
+			country_event = { id = flavor_konolkhatep.8 }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

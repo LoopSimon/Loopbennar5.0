@@ -1,0 +1,49 @@
+
+vassal = {
+	first = G52 # ameion
+	second = G83 # korrimutren
+	start_date = 1442.1.1
+	end_date = 1544.4.22
+}
+
+vassal = {
+	first = G64 # larankar
+	second = G73 # ahartadyam
+	start_date = 1442.1.1
+	end_date = 1644.4.22
+}
+
+vassal = {
+	first = G64 # larankar
+	second = G78 # ethanamara
+	start_date = 1442.1.1
+	end_date = 1644.4.22
+}
+
+vassal = {
+	first = G68 # nakar mlerek
+	second = J81 # parahechend
+	start_date = 1442.1.1
+	end_date = 1644.4.22
+}
+
+vassal = {
+	first = G69 # nakar kilaek
+	second = J80 # vettakaramai
+	start_date = 1442.1.1
+	end_date = 1644.4.22
+}
+
+vassal = {
+	first = G70 # nakar kriadvai
+	second = J82 # Varamraya
+	start_date = 1442.1.1
+	end_date = 1644.4.22
+}
+
+#vassal = {
+#	first = G64
+#	second = G66
+#	start_date = 1420.1.1
+#	end_date = 1644.4.22
+#}

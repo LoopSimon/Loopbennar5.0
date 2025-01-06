@@ -1,0 +1,996 @@
+countsleague_first_slot = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = B55 } 
+
+	cl_bonds_bluetusk = {
+		icon = mission_diplomatic_relation
+		position = 1
+		provinces_to_highlight = {  } 
+
+		trigger = { 
+			OR = {
+				AND = {
+					reverse_has_opinion = {
+						who = B02
+						value = 200
+					}
+					OR = {
+						B02 = { guaranteed_by = ROOT }
+						alliance_with = B02
+					}
+				}
+				AND = {
+					B02 = { is_enemy = ROOT }
+					reverse_has_opinion = {
+						who = B02
+						value = 50
+					}
+					reverse_has_opinion_modifier = {
+						who = B02
+						modifier = sent_gift
+					}
+				}
+			}
+		} 
+
+		effect = { 
+			if = {
+				limit = {
+					B02 = { is_enemy = ROOT }
+				}
+				B02 = { 
+					force_remove_rival = B55
+					add_historical_friend = B55
+					add_trust = {
+						who = B55
+						value = 20
+					}
+				}
+				B55 = { add_historical_friend = B02 }
+			}
+			else = {
+				B02 = { 
+					add_historical_friend = B55
+					add_trust = {
+						who = B55
+						value = 20
+					}
+				}
+				B55 = { add_historical_friend = B02 }
+			}
+		 } 
+	}
+
+	cl_dragon_cannot_hear = {
+		icon = mission_monarch_diplomacy
+		position = 4
+		required_missions = {
+			cl_bonds_bluetusk
+			cl_encourage_fidelity
+		}
+		provinces_to_highlight = {
+			region = inner_castanor_region
+			is_empty = no
+			NOT = {
+				owner = {
+					OR = {
+						hidden_trigger = {
+							tag = B55
+						}
+						is_subject_of = B55
+						has_opinion_modifier = {
+							who = B55
+							modifier = insulted
+						}
+						has_opinion_modifier = {
+							who = B55
+							modifier = scornfully_insulted
+						}
+						AND = {
+							alliance_with = B55
+							has_opinion = {
+								who = ROOT
+								value = 180
+							}
+							trust = { who = B55 value = 60 }
+						}
+					}
+				}
+			}
+		} 
+
+		trigger = { 
+			custom_trigger_tooltip = { 
+				tooltip = cl_dragon_hearing_requirements_tt
+				all_known_country = {
+					OR = {
+						NOT = { capital_scope = { region = inner_castanor_region } }
+						OR = {
+							hidden_trigger = {
+								tag = B55
+							}
+							is_subject_of = B55
+							has_opinion_modifier = {
+								who = B55
+								modifier = insulted
+							}
+							has_opinion_modifier = {
+								who = B55
+								modifier = scornfully_insulted
+							}
+							AND = {
+								alliance_with = B55
+								has_opinion = {
+									who = ROOT
+									value = 180
+								}
+								trust = { who = B55 value = 60 }
+							}
+						}
+					}
+				}
+			}
+		 } 
+
+		effect = {
+			custom_tooltip = cl_dragon_hearing_effects_tt
+			hidden_effect = {
+				every_known_country = {
+					if = {
+						limit = {
+							capital_scope = { region = inner_castanor_region }
+							OR = {
+								has_opinion_modifier = {
+									who = B55
+									modifier = insulted
+								}
+								has_opinion_modifier = {
+									who = B55
+									modifier = scornfully_insulted
+								}
+							}
+						}
+						reverse_add_casus_belli = {
+							target = B55
+							type = cb_vassalize_mission
+							months = 360
+						}
+					}
+					else_if = {
+						limit = {
+							capital_scope = { region = inner_castanor_region }
+							AND = {
+								alliance_with = ROOT
+								has_opinion = {
+									who = ROOT
+									value = 180
+								}
+								trust = { who = B55 value = 60 }
+						}
+						}
+						B55 = {
+							add_adm_power = -50
+						}
+						country_event = {
+							id = flavour_counts_league.20
+							days = 10
+						}
+					}
+				}
+			}
+		 }
+	}
+
+	cl_centre_holds = {
+		icon = mission_white_tower
+		position = 5
+		required_missions = { cl_dragon_cannot_hear } 
+		provinces_to_highlight = {  } 
+
+		trigger = { 
+			all_subject_country = { 
+				NOT = { liberty_desire = 50 }
+				has_opinion = {
+					who = B55
+					value = 170
+				}
+			}
+			OR = {
+				has_estate_privilege = estate_nobles_strong_duchies
+				NOT = { num_of_subjects = 2 }
+			}
+		 } 
+
+		effect = { 
+			country_event = {
+				id = flavour_counts_league.4
+				days = 10
+			}
+			if = {
+				limit = {
+					has_country_flag =  cl_hag_curse
+				}
+				hidden_effect = {
+					country_event = {
+						id = flavour_counts_league.8
+						days = 40
+					}
+				}
+			}
+		 } 
+	}
+}
+countsleague_second_slot = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = B55 } 
+
+	cl_delineating_borders = {
+		icon = mission_discussion_arch
+		position = 2
+		required_missions = {
+			cl_bonds_bluetusk
+			cl_first_steps
+		}
+		provinces_to_highlight = { 
+			OR = {
+				province_id = 855
+				province_id = 828
+			}
+		 } 
+
+		trigger = { 
+			855 = {
+				is_city = yes
+				development = 10
+			}
+			OR = {
+				828 = {
+					is_empty = yes
+				}
+				B55 = { owns = 828 }
+				AND = {
+					NOT = { B55 = { owns = 828 } }
+					B55 = {
+						dip_power = 50
+					}
+				}
+			}
+		 } 
+
+		effect = { 
+			add_country_modifier = {
+				name = CL_hope_rekindled
+				duration = 10950
+			}
+			if = {
+				limit = {
+					828 = {
+						is_empty = yes
+					}
+				}
+				828 = {
+					create_colony = 200
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = { B55 = { owns = 828 } }
+					B55 = { dip_power = 50 }
+				}
+				add_dip_power = -50
+				828 = {
+					add_core = B55
+				}
+			}
+		 } 
+	}
+
+	cl_encourage_fidelity = {
+		icon = mission_swear_fealty_knight
+		position = 3
+		required_missions = { cl_delineating_borders } 
+		provinces_to_highlight = {  } 
+
+		trigger = { 
+			OR = {
+				calc_true_if = {
+					all_ally = {
+						has_reform = adventurer_reform
+					}
+					amount = 2
+				}
+				calc_true_if = {
+					all_subject_country = {
+						has_opinion = {
+							who = B55
+							value = 0
+						}
+					}
+					amount = 2
+				}
+			}
+			diplomatic_reputation = 1
+			OR = {
+				OR = {
+					advisor = diplomat
+					advisor = statesman
+				}
+				AND = {
+					employed_advisor = {
+						category = dip
+					}
+					dip_power = 50
+				}
+			}
+		 } 
+
+		effect = { 
+			add_country_modifier = {
+				name = CL_castellyrian_obeisance
+				duration = 10950
+			}
+		 } 
+	}
+}
+countsleague_third_slot = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = B55 } 
+
+	cl_first_steps = {
+		icon = mission_corin
+		position = 1
+		provinces_to_highlight = {  } 
+
+		trigger = { 
+			treasury = 25
+			manpower_percentage = 0.50
+			has_personal_deity = corin
+			873 = {
+				is_colony = yes
+			}
+		 } 
+
+		effect = { 
+			add_manpower = -1
+			add_treasury = -25
+			873 = {
+				add_permanent_province_modifier = { 
+    				name = CL_step_back
+    				duration = 3650
+				}
+			}
+		 } 
+	}
+
+	cl_costly_efforts = {
+		icon = mission_smith
+		position = 2
+		required_missions = { cl_first_steps } 
+		provinces_to_highlight = { 
+			province_id = 872
+			NOT = { owned_by = ROOT }
+		} 
+
+		trigger = { 
+			B28 = { exists = no }
+			owns = 872
+			if = {
+				limit = {
+					B24 = { exists = yes }
+				}
+				has_spy_network_in = {
+					who = B24
+					value = 30
+				}
+			}
+			if = {
+				limit = {
+					B25 = { exists = yes }
+				}
+				has_spy_network_in = {
+					who = B25
+					value = 30
+				}
+			}
+		 } 
+
+		effect = { 
+			country_event = {
+				id = flavour_counts_league.2
+				days = 10
+			}
+		 } 
+	}
+
+	cl_up_the_river = {
+		icon = mission_se_along_the_river
+		position = 4
+		required_missions = { cl_costly_efforts } 
+		provinces_to_highlight = { 
+			OR = {
+				area = upper_nath_area
+				area = southgate_area
+			}
+			NOT = { owned_by = ROOT }
+		 } 
+
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = cl_up_the_river_requirements_tt
+				upper_nath_area = {
+					type = all
+					infantry_in_province = 1
+				}
+				southgate_area = {
+					type = all
+					infantry_in_province = 1
+				}
+			}
+			upper_nath_area = {
+				type = all
+				owned_by = ROOT
+				is_core = ROOT
+				NOT = { unrest = 2 }
+				NOT = { local_autonomy = 25 }
+			}
+			southgate_area = {
+				type = all
+				owned_by = ROOT
+				is_core = ROOT
+				NOT = { unrest = 2 }
+				NOT = { local_autonomy = 25 }
+			}
+			dip_power = 100
+			B44 = { exists = no }
+		 } 
+
+		effect = { 
+			custom_tooltip = cl_up_river_tt
+			hidden_effect = {
+				upper_nath_area = {
+					kill_units = {
+						who = owner
+						type = infantry
+						amount = 1
+					}
+					add_base_production = 1 
+					if = {
+						limit = {
+							NOT = { culture = castellyrian }
+						}
+						change_culture = castellyrian
+						change_religion = ROOT
+					}
+					else = {
+						add_base_manpower = 1 
+					}
+				}
+				southgate_area = {
+					kill_units = {
+						who = owner
+						type = infantry
+						amount = 1
+					}
+					add_base_production = 1
+					if = {
+						limit = {
+							NOT = { culture = castellyrian }
+						}
+						change_culture = castellyrian
+						change_religion = ROOT
+					}
+					else = {
+						add_base_manpower = 1 
+					}
+				}
+			}
+		 } 
+	}
+
+	cl_another_legacy = {
+		icon = mission_magnificent_castle
+		position = 5
+		required_missions = { cl_up_the_river } 
+		provinces_to_highlight = { 
+			area = castonath_area
+			NOT = { owned_by = ROOT }
+		 } 
+
+		trigger = { 
+			castonath_area = {
+				type = all
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			if = {
+				limit = { 
+					has_estate = estate_castonath_patricians
+				}
+				estate_loyalty = {
+					estate = estate_castonath_patricians
+					loyalty = 60
+				}
+				estate_influence = {
+					estate = estate_castonath_patricians
+					influence = 30
+				}
+			}
+			else = {
+				estate_loyalty = {
+					estate = estate_nobles
+					loyalty = 60
+				}
+				estate_loyalty = {
+    				estate = estate_burghers
+    				loyalty = 60
+				}
+			}
+		 } 
+
+		effect = {
+			if = {
+				limit = {
+					NOT = { has_estate = estate_castonath_patricians }
+				}
+				set_country_flag = castonath_patricians_reinstated
+				custom_tooltip = reinstated_patricians_tt
+				custom_tooltip = remove_burghers_for_patricians_tt
+			}
+			custom_tooltip = cl_semi_patrician_tt
+			hidden_effect = {
+				set_country_flag = cl-semi-patrician
+				831 = {
+					remove_province_modifier = castonath_patrician_influence_full
+					remove_province_modifier = castonath_patrician_influence_significant
+					remove_province_modifier = castonath_patrician_influence_considerable
+					remove_province_modifier = castonath_patrician_influence_some
+				}
+				832 = {
+					remove_province_modifier = castonath_patrician_influence_full
+					remove_province_modifier = castonath_patrician_influence_significant
+					remove_province_modifier = castonath_patrician_influence_considerable
+					remove_province_modifier = castonath_patrician_influence_some
+				}
+				833 = {
+					remove_province_modifier = castonath_patrician_influence_full
+					remove_province_modifier = castonath_patrician_influence_significant
+					remove_province_modifier = castonath_patrician_influence_considerable
+					remove_province_modifier = castonath_patrician_influence_some
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag =  cl_hag_curse
+				}
+				hidden_effect = {
+					country_event = {
+						id = flavour_counts_league.10
+						days = 10
+					}
+				}
+			}
+		 } 
+	}
+
+	cl_old_estates = {
+		icon = mission_sinister_castle
+		position = 6
+		required_missions = {
+			cl_another_legacy
+			cl_kindness_entrusted
+		}
+		provinces_to_highlight = { 
+			area = ebonmarck_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		 } 
+
+		trigger = { 
+			ebonmarck_area = {	
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			crown_land_share = 40
+			adm_power = 100
+		 } 
+
+		effect = { 
+			country_event = {
+				id = flavour_counts_league.5
+				days = 10
+			}
+			ebonmarck_area = {	
+				add_core = ROOT
+			}
+		 } 
+	}
+
+	cl_ascending_mount = {
+		icon = prosper_in_piedmont
+		position = 7
+		required_missions = { cl_old_estates } 
+		provinces_to_highlight = { 
+			area = trialmount_area
+			NOT = { owned_by = ROOT }
+		 } 
+
+		trigger = { 
+			trialmount_area = {
+				type = all
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			840 = { 
+				development = 16
+			}
+			custom_trigger_tooltip = { 
+				tooltip = cl_curse_ended_tt
+				NOT = { has_country_flag = cl_hag_curse }
+			}
+			if = {
+				limit = { 
+					has_estate = estate_church
+				}
+				num_of_estate_agendas_completed = {
+					estate = estate_church
+					value = 1
+				}
+			}
+			if = {
+				limit = { 
+					has_estate = estate_mages
+				}
+				num_of_estate_agendas_completed = {
+					estate = estate_mages
+					value = 1
+				}
+			}
+			if = {
+				limit = { 
+					has_estate = estate_adventurers
+				}
+				num_of_estate_agendas_completed = {
+					estate = estate_adventurers
+					value = 1
+				}
+			}
+			if = {
+				limit = { 
+					has_estate = estate_nobles
+				}
+				num_of_estate_agendas_completed = {
+					estate = estate_nobles
+					value = 1
+				}
+			}
+			if = {
+				limit = { 
+					has_estate = estate_castonath_patricians
+				}
+				num_of_estate_agendas_completed = {
+					estate = estate_castonath_patricians
+					value = 1
+				}
+			}
+			else = {
+				num_of_estate_agendas_completed = {
+					estate = estate_burghers
+					value = 1
+				}
+			}
+		 } 
+
+		effect = { 
+			country_event = {
+				id = flavour_counts_league.6
+				days = 10
+			}
+		} 
+	}
+}
+countsleague_fourth_slot = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = B55 } 
+
+	cl_forcing_atonement = {
+		icon = mission_orc_chillin
+		position = 3
+		required_missions = {
+			cl_costly_efforts
+			cl_stony_sleep
+		}
+		provinces_to_highlight = {  } 
+
+		trigger = { 
+			army_size = 15 
+			calc_true_if = {
+				all_subject_country = {
+					primary_culture = green_orc
+				}
+				amount = 2
+			}
+			all_subject_country = {
+				OR = {
+					NOT = { primary_culture = green_orc }
+					has_opinion = {
+						who = ROOT
+						value = 50
+					}
+				}
+			}
+		 } 
+
+		effect = { 
+			every_subject_country = {
+				limit = {
+					primary_culture = green_orc
+				}
+				add_liberty_desire = -20
+				country_event = {
+					id = flavour_counts_league.21
+					days = 10
+				}
+			}
+			every_subject_country = {
+				limit = {
+					primary_culture = green_orc
+					NOT = { religion  = regent_court }
+				}
+				B55 = {
+					add_dip_power = -40
+				}
+			}
+		} 
+	}
+
+	cl_sundering_society = {
+		icon = mission_nomad
+		position = 4
+		required_missions = {
+			cl_forcing_atonement
+			cl_determined_hold
+		}
+		provinces_to_highlight = {  } 
+
+		trigger = { 
+			all_subject_country = {
+				NOT = { primary_culture = green_orc }
+			}
+			NOT = { has_country_modifier = racial_pop_orcish_expulsion }
+			NOT = { has_country_modifier = racial_pop_orcish_purge }
+		 } 
+
+		effect = { 
+			custom_tooltip = cl_orcs_sundered_tt
+			small_increase_of_orcish_tolerance_effect = yes
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						culture = green_orc
+					}
+					change_culture = castellyrian
+					change_religion = regent_court
+				}
+				every_owned_province = {
+					add_orcish_minority_size_effect = yes
+				}
+			}
+		 } 
+	}
+}
+countsleague_fifth_slot = {
+	slot = 5
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = B55 } 
+
+	cl_blacktower_legacy = {
+		icon = mission_dark_book
+		position = 1
+		provinces_to_highlight = {  } 
+
+		trigger = { 
+			has_heir = yes
+			stability = 2
+			is_at_war = no
+		 } 
+
+		effect = { 
+			add_country_modifier = {
+				name = CL_blacktower_history
+				duration = 7300
+			}
+			change_heir_dip = 1
+			if = {
+				limit = {
+					has_heir = "Kalista"
+				}
+				change_heir_mil = 1
+			}
+		 } 
+	}
+
+	cl_stony_sleep = {
+		icon = mission_moon_moon
+		position = 2
+		required_missions = { cl_blacktower_legacy } 
+		provinces_to_highlight = { 
+			province_group = southern_walls
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		 } 
+
+		trigger = { 
+			calc_true_if = {
+				southern_walls = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				amount = 7
+			}
+			calc_true_if = {
+				southern_walls = {
+					type = all
+					owned_by = ROOT
+					has_building = fort_15th
+				}
+				amount = 2
+			}
+			monthly_mil = 9
+		 } 
+
+		effect = { 
+			random_owned_province = {
+				limit = {
+					province_group = southern_walls
+					has_building = fort_15th
+					is_city = yes
+					NOT = { has_construction = workshop }
+				}
+				add_building_construction = {
+    				building = workshop
+    				speed = 2.0
+   					cost = 0.0
+				}
+			}
+			random_owned_province = {
+				limit = {
+					province_group = southern_walls
+					has_building = fort_15th
+					is_city = yes
+					NOT = { has_construction = workshop }
+				}
+				add_building_construction = {
+    				building = workshop
+    				speed = 2.0
+   					cost = 0.0
+				}
+			}
+		 } 
+	}
+
+	cl_determined_hold = {
+		icon = mission_green_village
+		position = 3
+		required_missions = { cl_stony_sleep } 
+		provinces_to_highlight = {  } 
+
+		trigger = { 
+			865 = {
+				is_core = ROOT
+				owned_by = ROOT
+				development = 16
+				num_of_buildings_in_province = 2
+			}
+			dip_power = 100
+		 } 
+
+		effect = { 
+			add_dip_power = -100
+			change_estate_land_share = {
+    			estate = estate_nobles
+    			share = -5
+			}
+			set_capital = 865
+			random_list = {
+				40 = {
+					865 = { change_trade_goods = cloth }
+				}
+				30 = {
+					865 = { change_trade_goods = glass }
+				}
+				30 = {
+					865 = { change_trade_goods = paper }
+				}
+			}
+		 } 
+	}
+
+	cl_ahead_of_you = {
+		icon = mission_female_throne
+		position = 4
+		required_missions = { cl_determined_hold } 
+		provinces_to_highlight = { 
+			region = inner_castanor_region
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		 } 
+
+		trigger = { 
+			southern_walls = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			calc_true_if = {
+				inner_castanor_region = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				amount = 30
+			}
+			legitimacy = 90
+		 } 
+
+		effect = { 
+			country_event = {
+				id = flavour_counts_league.3
+				days = 10
+			}
+			southern_walls = {
+				limit = {
+					NOT = { is_core  = B55 }
+				}
+				add_core = B55
+				B55 = {
+					add_adm_power = -30
+				}
+			} 
+		} 
+	}
+
+	cl_kindness_entrusted = {
+		icon = mission_tree_fishing
+		position = 5
+		required_missions = { cl_ahead_of_you } 
+		provinces_to_highlight = {  } 
+
+		trigger = { 
+			NOT = { has_ruler = "Carleon" }
+			estate_loyalty = {
+    			estate = all
+   				loyalty = 50
+			}
+			reform_level = 2
+			has_adm_advisor_2  = yes
+			has_dip_advisor_2 = yes
+			has_mil_advisor_2 = yes
+			if = {
+				limit = {
+					NOT = { reform_level = 3 }
+				}
+				government_reform_progress = 50
+			}
+		 } 
+
+		effect = {
+			if = {
+				limit = {
+					NOT = { reform_level = 3 }
+				}
+				change_government_reform_progress = -50
+			}
+			set_country_flag = cl_kindness_of_the_future
+			add_government_reform = trust_of_the_future
+		 } 
+	}
+}

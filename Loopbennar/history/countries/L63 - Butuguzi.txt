@@ -1,0 +1,30 @@
+setup_vision = yes
+government = republic
+add_government_reform = seventeen_families_reform
+government_rank = 1
+primary_culture = antmvura
+add_accepted_culture = wakoodak
+religion = transmutative_path
+technology_group = tech_inyaswarosa
+
+historical_friend = Y23 #Zyuhungwok
+historical_friend = Y64 #Pinghoi
+
+capital = 5545
+
+1000.1.1 = { set_estate_privilege = estate_mages_organization_guilds }
+1000.1.1 = { set_estate_privilege = estate_church_beast_memory_guaranteed_autonomy }
+
+
+1442.1.1 = {
+	monarch = {
+		name = "Ka Gunam"
+		dynasty = "Zong"
+		adm = 4
+		dip = 2
+		mil = 4
+		birth_date = 1410.7.15
+		female = yes
+	}
+	add_ruler_personality = martial_educator_personality
+}

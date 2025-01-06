@@ -1,0 +1,67 @@
+country_can_trigger_escanni_wars = {
+	country_can_participate_in_escanni_wars = yes
+	
+	total_development = 150
+}
+
+country_can_participate_in_escanni_wars = {
+	OR = {
+		capital_scope = {
+			province_is_valid_for_escanni_wars = yes
+		}
+		has_country_flag = luciande_escanni_wars_flag
+	}
+	
+	country_culture_can_participate_in_escanni_wars = yes
+	
+	is_free_or_tributary_trigger = yes
+}
+
+province_is_valid_for_escanni_wars = {
+	province_group = escann_proper
+}
+
+country_culture_can_participate_in_escanni_wars = {
+	OR = {
+		culture_group = escanni
+		primary_culture = marrodic
+		primary_culture = stone_dwarf
+		primary_culture = iron_dwarf
+		primary_culture = newfoot_halfling
+		primary_culture = rugan_orc
+		primary_culture = barumand_orc
+		primary_culture = ungulan_orc
+		primary_culture = forest_goblin
+		primary_culture = common_goblin
+		primary_culture = green_orc
+	}
+	num_of_cities = 1
+}
+
+# If these are update the decision must also be updated
+owns_all_escanni_wars_regions = {
+	escann_proper = {
+		type = all
+		country_or_non_sovereign_subject_holds = ROOT
+	}
+}
+
+has_won_escanni_wars = {
+	castonath_area = {
+		type = all
+		owned_by = PREV
+	}
+	
+	num_of_owned_provinces_with = {
+		value = 100
+		province_group = escann_proper
+	}
+}
+
+escanni_wars_can_trigger = {
+	country_can_participate_in_escanni_wars = yes
+
+	any_known_country = {
+		country_can_participate_in_escanni_wars = yes
+	}
+}

@@ -1,0 +1,39 @@
+
+setup_vision = yes
+government = republic
+government_rank = 1
+primary_culture = metsamic
+add_government_reform = lake_republic
+religion = enuuk_followers
+technology_group = tech_triunic
+capital = 5248
+fixed_capital = 5248
+
+historical_friend = J10 #Vahjevgiiv
+historical_rival = J31 #Akuutengen
+
+1430.1.1 = {
+	add_country_modifier = {
+		name = lake_federation_member
+		duration = -1
+	}
+	set_variable = {
+		which = FederationPoints
+		value = 3
+	}
+	set_country_flag = LF_mages_banned
+}
+
+1442.11.12 = {
+	monarch = {
+		name = "Elkot"
+		dynasty = "Ivo"
+		birth_date = 1404.10.26
+		adm = 2
+		dip = 3
+		mil = 3
+	}
+	add_ruler_personality = careful_personality
+}
+
+#Focused on establishing decent relations with his neighbors, the nation became a melting pot for the Metsamic and Khamgunai firmly integrating both cultures

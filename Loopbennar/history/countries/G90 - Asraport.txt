@@ -1,0 +1,12 @@
+
+setup_vision = yes
+government = republic
+add_government_reform = aelantiri_corporate_state_reform
+government_rank = 1
+primary_culture = silver_dwarf
+religion = regent_court
+technology_group = tech_west_dwarven
+capital = 1058
+mercantilism = 25
+
+1000.1.1 = { set_estate_privilege = estate_mages_organization_state }

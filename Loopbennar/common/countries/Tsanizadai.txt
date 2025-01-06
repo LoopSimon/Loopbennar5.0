@@ -1,0 +1,148 @@
+#Country Name: Please see filename.
+
+graphical_culture = africangfx
+
+color = { 255 118 13 }
+
+
+
+historical_idea_groups = {
+	economic_ideas
+	offensive_ideas
+	exploration_ideas
+	defensive_ideas	
+	administrative_ideas	
+	maritime_ideas
+	quality_ideas
+	innovativeness_ideas
+}
+
+historical_units = {
+	vyzemby_1_inf
+	vyzemby_1_cav_dog
+	vyzemby_5_inf_trad
+	vyzemby_6_cav_dog
+	vyzemby_9_inf_trad
+	vyzemby_10_cav_dog
+	vyzemby_12_inf_trad
+	vyzemby_14_cav_dog
+	vyzemby_15_inf_trad
+	vyzemby_18_cav_dog
+	vyzemby_19_inf_trad
+	vyzemby_23_inf_trad
+	vyzemby_23_cav_dog
+	vyzemby_26_inf_trad
+	vyzemby_28_cav_dog
+	vyzemby_30_inf_trad
+}
+
+monarch_names = {
+
+
+	#Generic Vyzemby Name List
+	"Ralambo #0" = 10
+	"Andrianjaka #0" = 10
+	"Andriamanelo #0" = 10
+	"Radama #0" = 10
+	"Masana #0" = 10
+	"Andrianjafy #0" = 10
+	"Ratsimamanga #0" = 10
+	"Andriamihaja #0" = 10
+	"Rainiharo #0" = 10
+	"Rasanjy #0" = 10
+	"Rainilaiarivony #0" = 10
+	"Monja #0" = 10
+	"Rainijohary #0" = 10
+	"Andrianisa #0" = 10
+	"Andriamamba #0" = 10
+	"Haingo #0" = 10
+	"Lalaoarisoa #0" = 10
+	"Zafimahaleo #0" = 10
+	"Rivomanantsoa #0" = 10
+	"Solo #0" = 10
+	"Rakoto #0" = 10
+	"Manandafy #0" = 10
+	"Mamisoa #0" = 10
+	"Lalaïna #0" = 10
+	"Naka #0" = 10
+	"Andrianary #0" = 10
+	"Andrianabela #0" = 10
+	"Rasoanaivo #0" = 10
+	"Sengemanana #0" = 10
+	"Azaly #0" = 10
+	"Ralijaona #0" = 10
+	
+	"Ranavalona #0" = -1
+	"Rangita #0" = -1
+	"Rafohy #0" = -1
+	"Ramisindrazana #0" = -1
+	"Tsiomeko #0" = -1
+	"Rasoherina #0" = -1
+	"Fanirisoa #0" = -1
+	"Sahondra #0" = -1
+	"Lalao #0" = -1
+	"Vaiavy #0" = -1
+	"Malala #0" = -1
+	"Vonjiniaina #0" = -1
+	"Zalifa #0" = -1
+	"Ratsitatanina #0" = -1
+	"Aina #0" = -1
+	"Felana #0" = -1
+	"Hasimbola #0" = -1
+	"Lanitra #0" = -1
+	"Mirantsoa #0" = -1
+	"Volana #0" = -1
+	"Tahiry #0" = -1
+	"Nyantsa #0" = -1
+	"Mialy #0" = -1
+	"Bakoly #0" = -1
+	"Andoniaina #0" = -1
+	"Ravaka #0" = -1
+}
+
+leader_names = {
+	
+	#Country Specific
+	
+	
+	#Province Neighbours
+	
+	
+	#Country Neighbours
+	
+	
+	#Geographic Neighbours
+	
+	
+	#Noble Families
+
+	
+	#Titles
+	
+	
+	#Occupational Surnames
+	Coastrunner Seadog Whistlestick Mouthersbane Beastrider	Cliffleaper	Manyclove Houndtamer
+	Applefarmer	Stonecarver	Hullmaker Seadreamer Foolshand Volcanowatch Cakemason Homeseeker
+	Cheerdrum Seagaze Lonehouse Foamrider Trunkbellow Fieldsteward Jungleraised Manystride Potcarver Wearyfeet
+	Feastangler Dogheart Fleawrangler Boldsong Mirthvoice Wordweaver Beetlebiter Elephantfriend Bananabrewer
+	Ashfarmer Pigbutcher Clothweaver Tallfriend Spicetrader Sharkfisher Glassblower Wisewords
+}
+
+ship_names = {
+	#Generic Vyzemby Ship Names
+	Nyvava "Ltram Tond" "Ranmasi Mihipha" "Afomapobo Fahazavana" Enaheibe "Masana Meblic" Azaly Seagaze 
+	"Alaotra Rano" "Sira Bamdivy" "Marikivy Mboibidi" "Mirana Mpitaingefela" "Trepo Mahafinaritra" 
+	"Mazava Sambo" "Tsiry Voninkazo" "Vony Tanora" "Yuye Fitarihana" "Ytrai Fialam-boly" "Lels Fitia" 
+	"Kolo Voafidy" "Rahavavin'ny Sidina" "Elinalo Fanambinana" "Drongray Fankasitrahana" "Turozi Afonafona" 
+	"Ozamdi Fo" "Nakinta Eritra" "Jyva nofy" "Kibo Feno" "Mazava Ola" "Antsifotsy Trano" "Dipoavatra" 
+	"Ambarakizay Mahamay" "Vadin-tsaikiro Ravina" "Mamy Fahamarinana" "Ny fitetezana farany" "Onjan-dra" 
+	"Ilay Mahagaga" "Kapoaka Volamena"
+}
+
+army_names = {
+	"Army of $PROVINCE$"
+}
+
+fleet_names = {
+	"Tsanizy Fleet"
+}

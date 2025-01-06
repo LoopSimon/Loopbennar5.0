@@ -1,0 +1,182 @@
+
+#Country Name: Please see filename.
+
+graphical_culture = westerngfx
+
+color = { 159 158 159 }
+
+
+historical_idea_groups = {
+	economic_ideas
+	offensive_ideas
+	exploration_ideas
+	defensive_ideas	
+	administrative_ideas	
+	maritime_ideas
+	quality_ideas
+	innovativeness_ideas
+}
+
+historical_units = {
+	wood_elf_1_salla_archer
+	wood_elf_1_stag_riders
+	wood_elf_5_foreign_bows
+	wood_elf_6_fealgarn_warriors
+	wood_elf_9_ayeth_ambushers
+	wood_elf_10_stag_chargers
+	wood_elf_12_ash_children
+	wood_elf_14_howlers
+	wood_elf_15_drennen_formations
+	wood_elf_18_underbrush_outriders
+	wood_elf_19_ceannasai_infantry
+	wood_elf_23_oakoath_loyalists
+	wood_elf_23_verdant_stags
+	wood_elf_26_verdantcoat_infantry
+	wood_elf_28_cyfelim_saisth
+	wood_elf_30_model_elf_infantry
+}
+
+monarch_names = {
+
+	"Adrahel #0" = 10
+	"Alendir #0" = 10
+	"Arahir #0" = 10
+	"Aranaris #0" = 10
+	"Arfil #0" = 10
+	"Barahor #0" = 10
+	"Bolrdil #0" = 10
+	"Caenlin #0" = 10
+	"Camnar #0" = 10
+	"Celadil #0" = 10
+	"Celmon #0" = 10
+	"Cinrthir #0" = 10
+	"Daenmir #0" = 10
+	"Eledas #0" = 10
+	"Elorgaer #0" = 10
+	"Erasnir #0" = 10
+	"Erelas #0" = 10
+	"Erendil #0" = 10
+	"Faevir #0" = 10
+	"Faldnas #0" = 10
+	"Falfin #0" = 10
+	"Filliath #0" = 10
+	"Galyndor #0" = 10
+	"Galynel #0" = 10
+	"Gwidulain #0" = 10
+	"Imheros #0" = 10
+	"Iras #0" = 10
+	"Ivrandir #0" = 10
+	"Khadoris #0" = 10
+	"Khaltec #0" = 10
+	"Khoras #0" = 10
+	"Meldaer #0" = 10
+	"Minelir #0" = 10
+	"Narkan #0" = 10
+	"Oberon #0" = 10
+	"Oloris #0" = 10
+	"Paerian #0" = 10
+	"Pannreth #0" = 10
+	"Panreth #0" = 10
+	"Scoraen #0" = 10
+	"Tavdan #0" = 10
+	"Thalanor #0" = 10
+	"Thelrion #0" = 10
+	"Thirendil #0" = 10
+	"Thocris #0" = 10
+	"Trakkath #0" = 10
+	"Urion #0" = 10
+	"Vaergan #0" = 10
+	"Vallorn #0" = 10
+	"Varymel #0" = 10
+	"Vindal #0" = 10
+	"Vucras #0" = 10
+	"Vusciran #0" = 10
+	"Vyriath #0" = 10
+	"Zoriver #0" = 10
+
+	"Aerie #0" = -5
+	"Aeriene #0" = -5
+	"Alara #0" = -5
+	"Amarien #0" = -5
+	"Arabeth #0" = -5
+	"Arerein #0" = -5
+	"Ariathra #0" = -5
+	"Bricena #0" = -5
+	"Celadora #0" = -5
+	"Degindra #0" = -5
+	"Dredwaen #0" = -5
+	"Elaria #0" = -5
+	"Elethen #0" = -5
+	"Farathia #0" = -5
+	"Farwen #0" = -5
+	"Imariel #0" = -5
+	"Ingeneth #0" = -5
+	"Irann #0" = -5
+	"Irvah #0" = -5
+	"Isehris #0" = -5
+	"Ivrandyel #0" = -5
+	"Larelaen #0" = -5
+	"Larradhel #0" = -5
+	"Liandel #0" = -5
+	"Liedir #0" = -5
+	"Maberin #0" = -5
+	"Maregil #0" = -5
+	"Metgael #0" = -5
+	"Mialee #0" = -5
+	"Mithriel #0" = -5
+	"Narawen #0" = -5
+	"Nathaleera #0" = -5
+	"Nathruviel #0" = -5
+	"Nilauin #0" = -5
+	"Obera #0" = -5
+	"Olfyra #0" = -5
+	"Orilenna #0" = -5
+	"Pinrynna #0" = -5
+	"Selsusa #0" = -5
+	"Titariel #0" = -5
+	"Trylenna #0" = -5
+	"Urariel #0" = -5
+	"Varinna #0" = -5
+	"Vehari #0" = -5
+	"Velacryn #0" = -5
+	"Vyhiel #0" = -5
+}
+
+leader_names = {
+	Warsinger Bladedancer Redblade Redsun Shadowweaver Shadowdancer Shadowblade Crimsonspear Seadancer Seasail Doomdancer Stronghunter Whiteblade Whitedagger Brightdagger Brighteyes
+	Silverhair Whisperwind Shadowsong Stormrage Ravencrest Stagwalker Forestwalker Gladewalker Gladehunter Gladedancer Gladeblade Bladewalker
+	Felsong Bloodsong Firesong Seasong Goodsong Goldsong Windrunner Windwalker Windblade Winddancer Windsail Bloodsworn Lovesworn Bowsworn
+	Bowfeather Bowmaster Stringhair Bowhair Longhair Longbow Longsword Daggerdancer Shadowfury Elderdream Spellseer Spelldancer Spellblade Spelldagger Spellweaver Spellrunner Spellstrider
+	Magehand Hornblade Stargazer Stardancer Starblade Starwatcher Starweaver Leafhunter Nightbranch Duskblade Duskspear Duskrunner Duskdancer
+	Duskhand Skydancer Skyblade Skyseeker Skyfury Skyspinner Silverarrow Goldarrow Blackarrow Shadowarrow Skyarrow Magearrow Elderarrow Redarrow Bluearrow Gladearrow Woodarrow Whitearrow Brightarrow Bloodarrow
+	Searrow Windarrow Truearrow Truesight Trueblade Truehair Truebow Truespell Trueseer Truehunter Truehand 
+	
+	Woodrunner Woodguard Woodguardian Woodbow Woodarrow Woodheart Woodfury Woodseer Woodspell Woodsinger Woodvale Woodriver
+	Treewatcher Treerunner Treestalker Treespinner Treedancer Treeblade Treespirit
+	Seedgrow Seedwatcher Seedhand Seedsong Seedhair Seedsinger Seedarrow Seedsight Seedbranch
+	Oakheart Oakwatcher Oakfeather Oakstrider
+	Leafarrow Leafbow Elderleaf Blackleaf Redleaf Leafblade Leafdagger Leafsinger Leafstrider
+	Greenwind Greenarrow Greenleaf Greenseer Greenwatcher Greenrunner Greenwatcher Greendreamer Greenbow
+	Mosswind Mossrunner Mosshair Mosswhispher
+	
+	Arrowrunner Arrowspinner Arrowfletcher Arrowdancer Arrowheart Arrowfury
+	Bowseeker Bowsorrow Bowhand Bowsinger Bowhair Bowhunter Truebow Truearrow 
+}
+
+ship_names = {
+	# Wood Elf
+	"Hofónn" "Elynáile" "Drennethílle" Ciranmyna "Ciranghúl" Ayethstir "Taráile" Emmylscotha Ymyhain Yfelorr
+	Elyn "Cenág" Drennen Myna Ayeth Scotha Ahain "Ghúl" Faelgarn Cyranvar
+	Statir "Siubálrn" "Yntynú" Symh "Sélody" "Sáwel" Salla "Sàisth" "Vyr Sàisth" Loen
+	"Gaethneán" Enya "Enya Ciran" Elf Dirgel Dael "Córyn" "Cínar" "Ceannasaí" Baechar
+	Elfllann "Ciranynir" "Ciran Cohtyd" "Arsyd Dael" Chylch "Dirgel Dethryn" Hanwrg "Ciran Loen" Conta "Sáwel Scrén"
+
+}
+
+army_names = {
+	"Ayethi Army" "Army of $PROVINCE$"
+}
+
+fleet_names = {
+	"Ayethi Navy" "Tree Squadron" "Bark Squadron" "Bush Squadron" "Grass Squadron"
+}

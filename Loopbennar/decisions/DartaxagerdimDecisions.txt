@@ -1,0 +1,32 @@
+country_decisions = {
+	#Reform the Legions
+	F22_reform_legions = {
+		major = yes
+		potential = {
+			OR = {
+				tag = F22
+				was_tag = F22
+			}
+			has_country_flag = ash_legion_lessons
+			has_country_flag = curbed_sebhuliam
+			NOT = { has_country_flag = dartaxian_legions }
+		}
+		
+		allow = {
+			owns_core_province = 625
+			NOT = { exists = F25 }
+			mil_power = 400
+			treasury = 10000
+			NOT = { num_of_rebel_armies = 1 }
+		}
+		
+		effect = {
+			country_event = { id = dartaxagerdim_events.30 }
+			add_mil_power = -400
+			add_treasury = -10000
+			set_country_flag = dartaxian_legions
+			remove_country_modifier = dartaxagerdim_sebhuliam_revolt
+			clr_country_flag = dartax_mage_sebhuliam
+		}
+	}
+}

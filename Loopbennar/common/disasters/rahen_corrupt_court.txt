@@ -1,0 +1,107 @@
+
+rahen_corrupt_court = {
+	potential = {
+		# always = no #Disabling the event temporarily
+		has_government_attribute = is_raja
+		NOT = { has_global_flag = rahen_corrupt_court_completed }
+	}
+
+	
+	
+	can_start = {
+		capital_scope = {
+			NOT = { has_province_modifier = raj_manavas_influence }
+			OR = {
+				has_province_modifier = rahen_corrupt_ministery_of_agriculture
+				has_province_modifier = rahen_corrupt_ministery_of_philosophy
+				has_province_modifier = rahen_corrupt_ministery_of_internal_relations
+				has_province_modifier = rahen_corrupt_ministery_of_foreign_relations
+			}
+		}
+	}
+	
+	
+	can_stop = {
+        always = no
+	}
+	
+	
+	
+	progress = {
+		modifier = {
+			factor = 100
+			capital_scope = { has_province_modifier = rahen_corrupt_ministery_of_agriculture }
+		}
+		modifier = {
+			factor = 100
+			capital_scope = { has_province_modifier = rahen_corrupt_ministery_of_philosophy }
+		}
+		modifier = {
+			factor = 100
+			capital_scope = { has_province_modifier = rahen_corrupt_ministery_of_internal_relations }
+		}
+		modifier = {
+			factor = 100
+			capital_scope = { has_province_modifier = rahen_corrupt_ministery_of_foreign_relations }
+		}
+	}
+	
+	
+	
+	can_end = {
+		OR = {
+			AND = {
+				capital_scope = {
+					NOT = {
+						has_province_modifier = rahen_corrupt_ministery_of_agriculture
+						has_province_modifier = rahen_corrupt_ministery_of_philosophy
+						has_province_modifier = rahen_corrupt_ministery_of_internal_relations
+						has_province_modifier = rahen_corrupt_ministery_of_foreign_relations
+					}
+				}
+				if = { 
+					limit = { ai = no }
+					NOT = { corruption = 1 }
+				}
+			}
+			NOT = { has_government_attribute = is_raja }
+		}
+	}
+	
+
+	modifier = {
+		legitimacy = -1
+		yearly_corruption = 0.5
+		vassal_income = -0.1
+		administrative_efficiency = -0.5
+		global_manpower_modifier = -0.2
+		diplomatic_reputation = -1
+		reduced_liberty_desire = -10
+		all_power_cost = 0.05
+		advisor_cost = 0.1
+	}
+	
+	
+	on_start = rahenraj.98
+	on_end = rahenraj.99
+	
+	on_monthly = {
+		events = {
+			rahenraj.100
+			rahenraj.109
+		}
+		random_events = {
+			300 = 0
+			50 = rahenraj.102
+			25 = rahenraj.103
+			25 = rahenraj.104
+			25 = rahenraj.105
+			10 = rahenraj.106
+			25 = rahenraj.107
+			25 = rahenraj.108
+		}
+		
+		rahen_ai_disaster_progress_effect = yes
+	}
+}
+

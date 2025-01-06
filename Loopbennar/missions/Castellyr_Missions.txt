@@ -1,0 +1,757 @@
+
+castellyr_first_slot = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = B31
+		
+	}
+	has_country_shield = yes
+	
+	CA_recover_west = {
+		icon = sweep_the_po
+		position = 2
+		required_missions = { CA_reclaim_capital } 
+		provinces_to_highlight = {
+			OR = {
+				area = westgate_area
+				area = nortmere_area
+				area = lower_nath_area
+				area = northyl_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			westgate_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			nortmere_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			lower_nath_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			northyl_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			westgate_area = {
+				add_permanent_province_modifier = {
+					name = castellyr_reclamation
+					duration = 5475
+				}
+				add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 1
+			}
+			nortmere_area = {
+				add_permanent_province_modifier = {
+					name = castellyr_reclamation
+					duration = 5475
+				}
+				add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 1
+			}
+			lower_nath_area = {
+				add_permanent_province_modifier = {
+					name = castellyr_reclamation
+					duration = 5475
+				}
+				add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 1
+			}
+			northyl_area = {
+				add_permanent_province_modifier = {
+					name = castellyr_reclamation
+					duration = 5475
+				}
+				add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 1
+			}
+		}
+	}
+
+	CA_goods_of_castellyr = {
+		icon = mission_dominate_home_trade_node
+		position = 3
+		required_missions = { } 
+		provinces_to_highlight = {
+			
+		}
+		trigger = {
+			calc_true_if = {
+				all_owned_province = {
+					has_production_building_trigger = yes
+				}
+				amount = 10
+			}
+			
+		}
+		effect = {
+			add_country_modifier = {
+				name = growing_economy
+				duration = 10950
+			}
+		}
+	}
+	
+	CA_birth_of_an_economy = {
+		icon = chater_the_voc
+		position = 4
+		required_missions = { CA_goods_of_castellyr } 
+		provinces_to_highlight = {
+			
+		}
+		trigger = {
+			calc_true_if = {
+				all_owned_province = {
+					has_manufactory_trigger = yes
+				}
+				amount = 10
+			}
+			
+		}
+		effect = {
+			add_country_modifier = {
+				name = escanni_industry
+				duration = 10950
+			}
+		}
+	}	
+}
+	
+castellyr_second_slot = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = B31
+		
+	}
+	has_country_shield = yes
+	
+	CA_cliffs_of_serpentspine = {
+		icon = prosper_in_piedmont
+		position = 2
+		required_missions = { CA_reclaim_capital } 
+		provinces_to_highlight = {
+			OR = {
+				area = serpentsmarck_area
+				area = coalwoud_area
+				area = steelhyl_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			serpentsmarck_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			coalwoud_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			steelhyl_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			serpentsmarck_area = {
+				add_permanent_province_modifier = {
+					name = castellyr_reclamation
+					duration = 5475
+				}
+				add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 1
+			}
+			coalwoud_area = {
+				add_permanent_province_modifier = {
+					name = castellyr_reclamation
+					duration = 5475
+				}
+				add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 1
+			}
+			steelhyl_area = {
+				add_permanent_province_modifier = {
+					name = castellyr_reclamation
+					duration = 5475
+				}
+				add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 1
+			}
+		}
+	}
+	
+	CA_western_fortifications = {
+		icon = mission_white_tower
+		position = 3
+		required_missions = { CA_recover_west }
+		provinces_to_highlight = {
+			OR = {  
+				province_id = 755
+				province_id = 747
+				province_id = 850
+			}
+		}
+		trigger = {
+			755 = { 
+				has_fort_building_trigger = yes
+				owned_by = ROOT
+			}
+			747 = { 
+				has_fort_building_trigger = yes
+				owned_by = ROOT
+			}
+			850 = { 
+				has_fort_building_trigger = yes
+				owned_by = ROOT
+			}
+		}
+		effect = {
+			755 = {
+				add_permanent_province_modifier = {
+					name = walls_of_castellyr
+					duration = -1
+				}
+			}
+			747 = {
+				add_permanent_province_modifier = {
+					name = walls_of_castellyr
+					duration = -1
+				}
+			}
+			850 = {
+				add_permanent_province_modifier = {
+					name = walls_of_castellyr
+					duration = -1
+				}
+			}
+			ebonmarck_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			athfork_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			westwall_approach_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			silvervord_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	CA_pushing_west = {
+		icon = unite_the_realm
+		position = 4
+		required_missions = { CA_western_fortifications CA_castellyr_reunited } 
+		provinces_to_highlight = {
+			OR = {
+				area = ebonmarck_area
+				area = athfork_area
+				area = westwall_approach_area
+				area = silvervord_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			ebonmarck_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			athfork_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			westwall_approach_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			silvervord_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			west_castanor_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+}
+	
+castellyr_third_slot = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = B31
+		
+	}
+	has_country_shield = yes
+	
+	CA_reclaim_capital = {
+		icon = mission_magnificent_castle
+		position = 1
+		required_missions = { } 
+		provinces_to_highlight = {
+			OR = {
+				area = castonath_area
+				area = trialmount_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			castonath_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			trialmount_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			castonath_area = {
+				add_permanent_province_modifier = {
+					name = castellyr_reclamation
+					duration = 5475
+				}
+				add_base_tax = 2
+				add_base_production = 2
+				add_base_manpower = 2
+			}
+			trialmount_area = {
+				add_permanent_province_modifier = {
+					name = castellyr_reclamation
+					duration = 5475
+				}
+				add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 1
+			}
+			840 = {
+				add_permanent_province_modifier = {
+					name = north_citadel
+					duration = -1
+				}
+			}
+			inner_castanor_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	
+	}
+	
+	CA_center_must_hold = {
+		icon = mission_city_prosperity
+		position = 2
+		required_missions = { CA_reclaim_capital } 
+		provinces_to_highlight = {
+			OR = {
+				area = southgate_area
+				area = upper_nath_area
+				area = bradescker_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			southgate_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			upper_nath_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			bradescker_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			bradescker_area = {
+				add_permanent_province_modifier = {
+					name = castellyr_reclamation
+					duration = 5475
+				}
+				add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 1
+			}
+			southgate_area = {
+				add_permanent_province_modifier = {
+					name = castellyr_reclamation
+					duration = 5475
+				}
+				add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 1
+			}
+			upper_nath_area = {
+				add_permanent_province_modifier = {
+					name = castellyr_reclamation
+					duration = 5475
+				}
+				add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 1
+			}
+		}
+	}
+	
+	
+	CA_castellyr_reunited = {
+		icon = mission_empire
+		position = 3
+		required_missions = { CA_recover_west CA_great_keeps CA_center_must_hold CA_eastern_forests CA_cliffs_of_serpentspine } 
+		provinces_to_highlight = {
+			region = inner_castanor_region
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			inner_castanor_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = castellyr_masters_of_escann
+				duration = -1
+			}
+		}
+	
+	}	
+}
+	
+castellyr_fourth_slot = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = B31
+		
+	}
+	has_country_shield = yes
+	
+	CA_great_keeps = {
+		icon = fortress_of_belgrade
+		position = 2
+		required_missions = { CA_reclaim_capital } 
+		provinces_to_highlight = {
+			OR = {
+				area = ardent_glade_area
+				area = oldhaven_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			ardent_glade_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			oldhaven_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			ardent_glade_area = {
+				add_permanent_province_modifier = {
+					name = castellyr_reclamation
+					duration = 5475
+				}
+				add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 1
+			}
+			oldhaven_area = {
+				add_permanent_province_modifier = {
+					name = castellyr_reclamation
+					duration = 5475
+				}
+				add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 1
+			}
+		}
+	}
+	
+	CA_army_of_escann = {
+		icon = moravian_arms
+		position = 3
+		required_missions = { CA_eastern_forests CA_great_keeps }
+		trigger = { army_size = 100 }
+		effect = { 
+			burnoll_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			humacvord_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			escerfork_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			medirleigh_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			dryadsdale_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	
+	CA_pushing_south = {
+		icon = secure_the_sava
+		position = 4
+		required_missions = { CA_castellyr_reunited CA_army_of_escann } 
+		provinces_to_highlight = {
+			OR = {
+				area = burnoll_area
+				area = humacvord_area
+				area = escerfork_area
+				area = medirleigh_area
+				area = dryadsdale_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			burnoll_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			humacvord_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			escerfork_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			medirleigh_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			dryadsdale_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			south_castanor_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+}
+	
+castellyr_fifth_slot = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		tag = B31
+		
+	}
+	has_country_shield = yes
+	
+	CA_eastern_forests = {
+		icon = mission_alone_in_the_forest
+		position = 2
+		required_missions = { CA_reclaim_capital }
+		provinces_to_highlight = {
+			OR = {
+				area = clouded_wood_area
+				area = sarwood_area
+				area = nortessord_area
+				area = esshyl_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}		
+		trigger = {
+			clouded_wood_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			sarwood_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			nortessord_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			esshyl_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			clouded_wood_area = {
+				add_permanent_province_modifier = {
+					name = castellyr_reclamation
+					duration = 5475
+				}
+				add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 1
+			}
+			sarwood_area = {
+				add_permanent_province_modifier = {
+					name = castellyr_reclamation
+					duration = 5475
+				}
+				add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 1
+			}
+			nortessord_area = {
+				add_permanent_province_modifier = {
+					name = castellyr_reclamation
+					duration = 5475
+				}
+				add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 1
+			}
+			esshyl_area = {
+				add_permanent_province_modifier = {
+					name = castellyr_reclamation
+					duration = 5475
+				}
+				add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 1
+			}
+		}
+	
+	}
+
+	CA_the_corinite_reformation = {
+		icon = league_of_the_public_weal
+		position = 3
+		required_missions = { }
+		trigger = {
+			hre_leagues_enabled = yes
+			OR = {
+				AND = {
+					religion = regent_court
+					in_or_leading_regent_court_league = yes
+				}
+        
+				AND = {
+					religion = corinite
+					in_or_leading_corinite_league = yes
+				}
+			}
+		}
+
+		effect = {
+			if = {
+				limit = {
+					religion = regent_court
+					in_or_leading_regent_court_league = yes
+				}
+				add_country_modifier = {
+					name = adeanic_castellyr
+					duration = -1
+				}
+			}
+			else_if = {
+				limit = {
+					religion = corinite
+					in_or_leading_corinite_league = yes
+				}
+				add_country_modifier = {
+					name = corinite_castellyr
+					duration = -1
+				}
+			}
+		}
+	}
+}
+	

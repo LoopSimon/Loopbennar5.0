@@ -1,0 +1,133 @@
+
+#Country Name: Please see filename.
+
+graphical_culture = africangfx
+
+color = { 120  10  10 }
+
+
+
+historical_idea_groups = {
+	exploration_ideas
+	maritime_ideas
+	economic_ideas
+	offensive_ideas
+	expansion_ideas
+	quality_ideas	
+	administrative_ideas	
+	influence_ideas
+}
+
+historical_units = {
+}
+
+monarch_names = {
+
+	#Sorrowmane Names
+	"Amazyz #0" = 1
+	"Annunak #0" = 1
+	"Axhom #0" = 1
+	"Bauv #0" = 1
+	"Cheoz #0" = 1
+	"Emvotep #0" = 1
+	"Ghafer #0" = 1
+	"Gheztep #0" = 1
+	"Hekaiv #0" = 1
+	"Horuxh #0" = 1
+	"Inykh #0" = 1
+	"Ivek #0" = 1
+	"Khev #0" = 1
+	"Koxhar #0" = 1
+	"Menexh #0" = 1
+	"Narver #0" = 1
+	"Neverkaar #0" = 1
+	"Nevertep #0" = 1
+	"Okhenat #0" = 1
+	"Omun #0" = 1
+	"Ozokronn #0" = 1
+	"Ramexhez #0" = 1
+	"Reneb #0" = 1
+	"Rhebek #0" = 1
+	"Tevnarkt #0" = 1
+	"Tsedever #0" = 1
+	"Tsenervo #0" = 1
+	"Tsokar #0" = 1
+	"Tsozer #0" = 1
+	"Tsutankharm #0" = 1
+	"Uznek #0" = 1
+	"Vazenrek #0" = 1
+	"Vehemmez #0" = 1
+	"Verneb #0" = 1
+	"Xhotep #0" = 1
+	"Xhutmos #0" = 1
+	"Xuvu #0" = 1
+	"Zazobek #0" = 1
+	"Zet #0" = 1
+	"Zobak #0" = 1
+	
+	"Abtera #0" = -10
+	"Azet #0" = -10
+	"Baket #0" = -10
+	"Baztet #0" = -10
+	"Djezera #0" = -10
+	"Enekzunamun #0" = -10
+	"Grizaka #0" = -10
+	"Grizret #0" = -10
+	"Inenek #0" = -10
+	"Izet #0" = -10
+	"Khazet #0" = -10
+	"Khleoptra #0" = -10
+	"Kyztzehr #0" = -50
+	"Mazhora #0" = -10
+	"Meretzega #0" = -10
+	"Nedzemut #0" = -10
+	"Neverta #0" = -10
+	"Nevertiri #0" = -10
+	"Neverzenet #0" = -10
+	"Onkhara #0" = -10
+	"Onkhenez #0" = -10
+	"Pyaza #0" = -10
+	"Rhatzeten #0" = -10
+	"Tavret #0" = -10
+	"Tsetaka #0" = -10
+	"Tsilehr #0" = -10
+	"Tsujera #0" = -10
+	"Veketamun #0" = -10
+	"Veneriv #0" = -10
+	"Venthap #0" = -10
+	"Xennut #0" = -10
+	"Xeryt #0" = -10
+	"Xheneva #0" = -10
+	"Xhenutsen #0" = -10
+	"Xukret #0" = -10
+	"Yeretamun #0" = -10
+	"Zaba #0" = -10
+	"Zathapy #0" = -10
+	"Zekhem #0" = -10
+	"Zeneva #0" = -10
+}
+
+leader_names = {
+
+	#Sorrowmane Surnames
+	Blessedfur Cleverwhip Dragoneater Fineclaw Foolmocker Gemeye Giftpaw Goldhide Grandjaw 
+	Greatpelt Jeweltooth Marvelcrest Mightymaw Peasantcrusher Silverfang Teardrinker Wealthmaker Wisetongue Wonderborn Wordcutter
+			
+	#Sorrowmane Titles
+	Boldest-of-Blades Chosen-of-the-Khet Claimer-of-Victories Grandest-of-Masters Greatest-of-All 
+	Guardian-of-the-Sorrow Sharpest-of-Tongues Shiniest-of-Fur Truest-of-Lords Warden-of-the-Rivers
+}
+
+ship_names = {
+	#Gnollish
+	Buuz Eraga Ezi Fshu Gaz Glaxhur Golud Gox Gradir Gvad Habt Igrax Ikkev Iti Izer Kahon Keddax Kerxhur Krah Krysag Kverag Macaso Mak
+    Mazu Mekza Nakkad Narakk Pyaz Rabo Raboag Rarzo Tadaz Tuk Udzal Ukka Uzzu Vid Voger Xamed Xom Zatan Zelag Zik Zorrag
+}
+
+army_names = {
+	"Teardrinker Tseradza" "Goldhide Tseradza" "Dragoneater Tseradza" "$PROVINCE$ Tseradza"
+}
+
+fleet_names = {
+	"Cleverwhip Fleet" "Silverfang Squadron" "Mightymaw Squadron" "Jeweltooth Raiders" "Wordcutter Fleet"
+}

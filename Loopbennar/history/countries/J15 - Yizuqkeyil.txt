@@ -1,0 +1,35 @@
+
+setup_vision = yes
+government = republic
+government_rank = 1
+primary_culture = zabatlari
+add_government_reform = lake_republic
+religion = yukel_followers
+technology_group = tech_triunic
+capital = 5262
+fixed_capital = 5262
+1430.1.1 = {
+	add_country_modifier = {
+		name = lake_federation_member
+		duration = -1
+	}
+	set_variable = {
+		which = FederationPoints
+		value = 6
+	}
+	set_country_flag = LF_mages_banned
+}
+
+1443.3.5 = {
+	monarch = {
+		name = "Bhíl"
+		dynasty = "Targuun"
+		birth_date = 1388.1.25
+		adm = 4
+		dip = 5
+		mil = 2
+	}
+	add_ruler_personality = midas_touched_personality
+}
+
+#Great merchant and administrator, his efforts allowed for the city to stand for a long period of time during the Great Incursion

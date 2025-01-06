@@ -1,0 +1,34 @@
+
+# No previous file for Banten #34
+owner = R38
+controller = R38
+add_core = R38
+add_core = R90
+culture = chengrong
+religion = high_philosophy
+
+hre = no
+
+base_tax = 6
+base_production = 6
+base_manpower = 3
+
+trade_goods = silk
+
+capital = ""
+
+is_city = yes
+fort_15th = yes
+
+add_permanent_province_modifier = {
+	name = harimari_minority_integrated_small
+	duration = -1
+}
+
+infantry = R38
+infantry = R38
+infantry = R38
+infantry = R38
+infantry = R38
+cavalry = R38
+cavalry = R38

@@ -1,0 +1,24 @@
+
+setup_vision = yes
+government = tribal
+add_government_reform = dwarovar_warband
+government_rank = 1
+primary_culture = rustroad_goblin
+religion = goblinic_shamanism
+technology_group = tech_cave_goblin
+capital = 4144
+
+1000.1.1 = { set_estate_privilege = estate_mages_organization_guilds }
+
+1442.3.17 = {
+	monarch = {
+		name = "Peon 'No-nose'"
+		dynasty = "Truedagger"
+		birth_date = 1392.11.4
+		adm = 4
+		dip = 6
+		mil = 2
+	}
+	add_ruler_personality = malevolent_personality
+	add_ruler_personality = secretive_personality
+}

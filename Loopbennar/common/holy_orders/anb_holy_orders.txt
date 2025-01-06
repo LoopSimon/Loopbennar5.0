@@ -1,0 +1,2555 @@
+
+
+#Sun Cult
+order_of_judges_order = {
+    icon = GFX_holy_order_judges
+    trigger = {
+		OR = {
+			religion = bulwari_sun_cult
+			has_country_flag = updating_isolationism_window
+			religion = old_bulwari_sun_cult
+		}
+	}
+    cost = 50
+    cost_type = adm_power
+    per_province_effect = {
+        add_base_tax = 1
+
+        custom_tooltip = removes_slaves_tooltip
+        hidden_effect = {
+            if = {
+                limit = {
+                    trade_goods = slaves
+                }
+                change_trade_goods = unknown
+            }
+        }
+    }
+    per_province_abandon_effect = {
+        add_base_tax = -1
+        hidden_effect = {
+            if = {
+                limit = { NOT = { base_tax = 1 } }
+                set_base_tax = 1
+            }
+        }
+    }
+    modifier = {
+        local_governing_cost = -0.1
+		local_unrest = -2
+    }
+    ai_priority = {
+        factor = 2
+        modifier = {
+            factor = 2.0
+            unrest = 5
+        }
+    }
+    localization = holy_order
+}
+
+servants_of_surael_order = {
+	icon = GFX_holy_order_servants_of_surael
+	trigger = {
+		OR = {
+			religion = bulwari_sun_cult
+			has_country_flag = updating_isolationism_window
+		}
+	}
+	cost = 50
+	cost_type = dip_power
+	per_province_effect = {
+		add_base_production = 1
+		custom_tooltip = removes_slaves_tooltip
+		hidden_effect = {
+			if = {
+				limit = {
+					trade_goods = slaves
+				}
+				change_trade_goods = unknown
+			}
+		}
+		if = {
+			limit = { owner = { has_reform = bulwar_sponsor_the_servants } }
+			add_province_modifier = {
+				name = bulwar_sponsor_the_servants_modifier
+				duration = -1
+			}
+		}
+	}
+	per_province_abandon_effect = {
+		add_base_production = -1
+        hidden_effect = {
+            if = {
+                limit = { NOT = { base_production = 1 } }
+                set_base_production = 1
+            }
+        }
+		remove_province_modifier = bulwar_sponsor_the_servants_modifier
+	}
+	modifier = {
+		trade_goods_size_modifier = 0.05
+		local_build_cost = -0.1
+	}
+	ai_priority = {
+		factor = 2
+		modifier = {
+			factor = 2.0
+			trade_goods = slaves
+		}
+		modifier = {
+			factor = 2.0
+			trade_goods = silk
+		}
+		modifier = {
+			factor = 2.0
+			trade_goods = coffee
+		}
+		modifier = {
+			factor = 2.0
+			trade_goods = cocoa
+		}
+		modifier = {
+			factor = 2.0
+			trade_goods = dyes
+		}
+		modifier = {
+			factor = 2.0
+			trade_goods = gems
+		}
+		modifier = {
+			factor = 3.0
+			trade_goods = coal
+		}
+		modifier = {
+			factor = 4.0
+			trade_goods = damestear
+		}
+		modifier = {
+			factor = 4.0
+			trade_goods = precursor_relics
+		}
+		modifier = {
+			factor = 4.0
+			trade_goods = mithril
+		}
+	}
+	localization = holy_order
+}
+
+order_of_exemplars_order = {
+    icon = GFX_holy_order_exemplars
+    trigger = {
+		OR = {
+			religion = bulwari_sun_cult
+			has_country_flag = updating_isolationism_window
+		}
+    }
+    cost = 50
+    cost_type = mil_power
+    per_province_effect = {
+        add_base_manpower = 1
+        custom_tooltip = removes_slaves_tooltip
+        hidden_effect = {
+            if = {
+                limit = {
+                    trade_goods = slaves
+                }
+                change_trade_goods = unknown
+            }
+        }
+    }
+    per_province_abandon_effect = {
+        add_base_manpower = -1
+        hidden_effect = {
+            if = {
+                limit = { NOT = { base_manpower = 1 } }
+                set_base_manpower = 1
+            }
+        }
+    }
+    modifier = {
+        local_manpower_modifier = 0.2
+		local_defensiveness = 0.15
+    }
+    ai_priority = {
+        factor = 1
+        modifier = {
+            factor = 1.5
+            fort_level = 2
+        }
+        modifier = {
+            factor = 1.5
+            base_manpower = 5
+        }
+        modifier = {
+            factor = 2
+            base_manpower = 10
+        }
+    }
+    localization = holy_order
+}
+
+#Jadd
+lightbringers_order = {
+    icon = GFX_holy_order_lightbringers
+    trigger = {
+        religion = the_jadd
+		has_country_modifier = jaddari_lightbringers
+    }
+    cost = 50
+    cost_type = adm_power
+    per_province_effect = {
+        add_base_tax = 1
+    }
+    per_province_abandon_effect = {
+        add_base_tax = -1
+        hidden_effect = {
+            if = {
+                limit = { NOT = { base_tax = 1 } }
+                set_base_tax = 1
+            }
+        }
+    }
+    modifier = {
+        local_missionary_strength = 0.02
+        local_governing_cost = -0.25
+        local_build_cost = 0.1
+    }
+    ai_priority = {
+        factor = 10
+        modifier = {
+            factor = 0
+            religion = the_jadd 
+        }
+    }
+    localization = holy_order
+}
+
+jasienes_daughters_order = {
+    icon = GFX_holy_order_jasienes_daughters
+    trigger = {
+        religion = the_jadd
+    }
+    cost = 50
+    cost_type = dip_power
+    per_province_effect = {
+        add_base_production = 1
+
+        custom_tooltip = removes_slaves_tooltip
+        hidden_effect = {
+            if = {
+                limit = {
+                    trade_goods = slaves
+                }
+                change_trade_goods = unknown
+            }
+        }
+    }
+    per_province_abandon_effect = {
+        add_base_production = -1
+        hidden_effect = {
+            if = {
+                limit = { NOT = { base_production = 1 } }
+                set_base_production = 1
+            }
+        }
+    }
+    modifier = {
+        local_development_cost = -0.1
+        local_monthly_devastation = -0.1
+        local_manpower_modifier = -0.15
+    }
+    ai_priority = {
+        factor = 1
+        modifier = {
+            factor = 4
+            trade_goods = slaves
+        }
+        modifier = {
+            factor = 3
+            unrest = 5
+        }
+        modifier = {
+            factor = 1.5
+            devastation = 50
+        }
+    }
+    localization = holy_order
+}
+
+militant_jadd_order = {
+    icon = GFX_holy_order_militant_jadd
+    trigger = {
+        religion = the_jadd
+    }
+    cost = 50
+    cost_type = mil_power
+    per_province_effect = {
+        add_base_manpower = 1
+    }
+    per_province_abandon_effect = {
+        add_base_manpower = -1
+        hidden_effect = {
+            if = {
+                limit = { NOT = { base_manpower = 1 } }
+                set_base_manpower = 1
+            }
+        }
+    }
+    modifier = {
+        land_forcelimit = 0.2
+        local_manpower = 0.5
+        trade_goods_size = -1
+    }
+    ai_priority = {
+        factor = 4
+		modifier = {
+			factor = 0.5
+			development = 9
+		}
+		modifier = {
+			factor = 0
+			development = 12
+		}
+    }
+    localization = holy_order
+}
+
+#Old Sun Cult
+#Order of Judges reused from NSC
+servants_of_surakel_order = {
+	icon = GFX_holy_order_servants_of_surael
+    	trigger = {
+		religion = old_bulwari_sun_cult
+	}
+	cost = 50
+	cost_type = dip_power
+	per_province_effect = {
+		add_base_production = 1
+		custom_tooltip = removes_slaves_tooltip
+		hidden_effect = {
+			if = {
+				limit = {
+					trade_goods = slaves
+				}
+				change_trade_goods = unknown
+			}
+		}
+		if = {
+			limit = { owner = { has_reform = bulwar_sponsor_the_servants } }
+			add_province_modifier = {
+				name = bulwar_sponsor_the_servants_modifier
+				duration = -1
+			}
+		}
+	}
+	per_province_abandon_effect = {
+		add_base_production = -1
+        hidden_effect = {
+            if = {
+                limit = { NOT = { base_production = 1 } }
+                set_base_production = 1
+            }
+        }
+		remove_province_modifier = bulwar_sponsor_the_servants_modifier
+	}
+	modifier = {
+		trade_goods_size_modifier = 0.05
+		local_build_cost = -0.1
+	}
+	ai_priority = {
+		factor = 2
+		modifier = {
+			factor = 2.0
+			trade_goods = slaves
+		}
+		modifier = {
+			factor = 2.0
+			trade_goods = silk
+		}
+		modifier = {
+			factor = 2.0
+			trade_goods = coffee
+		}
+		modifier = {
+			factor = 2.0
+			trade_goods = cocoa
+		}
+		modifier = {
+			factor = 2.0
+			trade_goods = dyes
+		}
+		modifier = {
+			factor = 2.0
+			trade_goods = gems
+		}
+		modifier = {
+			factor = 3.0
+			trade_goods = coal
+		}
+		modifier = {
+			factor = 4.0
+			trade_goods = damestear
+		}
+		modifier = {
+			factor = 4.0
+			trade_goods = precursor_relics
+		}
+		modifier = {
+			factor = 4.0
+			trade_goods = mithril
+		}
+	}
+	localization = holy_order
+}
+
+eduz_nabari_order = {
+    icon = GFX_holy_order_eduz_nabari
+    trigger = {
+		religion = old_bulwari_sun_cult
+		NOT = {
+			OR = {
+				tag = Z57
+				is_subject_of = Z57
+			}
+		}
+    }
+    cost = 50
+    cost_type = mil_power
+    per_province_effect = {
+        add_base_manpower = 1
+    }
+    per_province_abandon_effect = {
+        add_base_manpower = -1
+        hidden_effect = {
+            if = {
+                limit = { NOT = { base_manpower = 1 } }
+                set_base_manpower = 1
+            }
+        }
+    }
+    modifier = {
+        local_hostile_attrition = 2
+		local_regiment_cost = -0.25
+    }
+    ai_priority = {
+        factor = 1
+        modifier = {
+            factor = 5
+            fort_level = 2
+        }
+    }
+    localization = holy_order
+}
+
+the_unforgivable_order = {
+    icon = GFX_holy_order_unforgivable
+    trigger = {
+		religion = old_bulwari_sun_cult
+		OR = {
+			tag = Z57
+			is_subject_of = Z57
+		}
+    }
+    cost = 50
+    cost_type = mil_power
+    per_province_effect = {
+        add_base_manpower = 1
+    }
+    per_province_abandon_effect = {
+        add_base_manpower = -1
+        hidden_effect = {
+            if = {
+                limit = { NOT = { base_manpower = 1 } }
+                set_base_manpower = 1
+            }
+        }
+    }
+    modifier = {
+		local_unrest = 2
+        local_manpower_modifier = 0.25
+		local_monthly_devastation = -0.10
+    }
+    ai_priority = {
+        factor = 1
+        modifier = {
+            factor = 1.5
+            devastation = 50
+        }
+        modifier = {
+            factor = 1.5
+            base_manpower = 5
+        }
+        modifier = {
+            factor = 2
+            base_manpower = 10
+        }
+		modifier = {
+			factor = 0
+			unrest = 3
+		}
+    }
+    localization = holy_order
+}
+
+#Infernal Court
+agrados_passion_order = {
+    icon = GFX_holy_order_passionates
+    trigger = {
+        religion = infernal_court
+		has_reform = infernal_autocracy
+    }
+    cost = 50
+    cost_type = adm_power
+    per_province_effect = {
+        add_base_tax = 1
+    }
+    per_province_abandon_effect = {
+        add_base_tax = -1
+        hidden_effect = {
+            if = {
+                limit = { NOT = { base_tax = 1 } }
+                set_base_tax = 1
+            }
+        }
+    }
+    modifier = {
+        # local_missionary_strength = 0.15
+        # local_culture_conversion_cost = -0.25
+        # inf_ildran_hedine_influence = 0.01
+    }
+    ai_priority = {
+        factor = 10
+        modifier = {
+            factor = 0
+            religion = infernal_court 
+        }
+    }
+    localization = holy_order
+}
+
+triadic_devotees_order = {
+    icon = GFX_holy_order_devotees
+    trigger = {
+        religion = infernal_court
+        has_reform = infernal_autocracy
+    }
+    cost = 50
+    cost_type = dip_power
+    per_province_effect = {
+        add_base_production = 1
+
+        custom_tooltip = removes_slaves_tooltip
+        hidden_effect = {
+            if = {
+                limit = {
+                    OR = {
+                        trade_goods = grain
+                        trade_goods = livestock
+                        trade_goods = fish
+                    }
+                }
+                change_trade_goods = slaves
+            }
+        }
+    }
+    per_province_abandon_effect = {
+        add_base_production = -1
+        hidden_effect = {
+            if = {
+                limit = { NOT = { base_production = 1 } }
+                set_base_production = 1
+            }
+        }
+    }
+    modifier = {
+        trade_goods_size_modifier = 0.25
+        inf_triad_influence = 0.01
+    }
+    ai_priority = {
+        factor = 1
+        modifier = {
+            factor = 4
+            OR = {
+                trade_goods = grain
+                trade_goods = livestock
+                trade_goods = fish 
+            }
+        }
+        modifier = {
+            factor = 3
+            unrest = 5
+        }
+        modifier = {
+            factor = 1.5
+            devastation = 50
+        }
+    }
+    localization = holy_order
+}
+
+grudgeknights_order = {
+    icon = GFX_holy_order_grudgeknights
+    trigger = {
+        religion = infernal_court
+        has_reform = infernal_autocracy
+    }
+    cost = 50
+    cost_type = mil_power
+    per_province_effect = {
+        add_base_manpower = 1
+    }
+    per_province_abandon_effect = {
+        add_base_manpower = -1
+        hidden_effect = {
+            if = {
+                limit = { NOT = { base_manpower = 1 } }
+                set_base_manpower = 1
+            }
+        }
+    }
+    modifier = {
+		local_unrest = -1
+		local_hostile_attrition = 3
+        inf_kaz_mesner_influence = 0.01
+    }
+    ai_priority = {
+        factor = 4
+		modifier = {
+			factor = 0.5
+			development = 9
+		}
+		modifier = {
+			factor = 0
+			development = 12
+		}
+    }
+    localization = holy_order
+}
+
+#Corinite
+begga_order = {
+    icon = GFX_holy_order_passionates
+    trigger = {
+        religion = corinite
+		has_country_flag = begga_order_picked
+    }
+    cost = 50
+    cost_type = adm_power
+    per_province_effect = {
+        add_base_tax = 1
+        custom_tooltip = begga_order_event_tt
+        if = {
+			limit = { has_dlc = "Common Sense" }
+			custom_tooltip = corinite_adm_order_event_karma_tt
+		}
+        if = {
+            limit = {
+                owner = {
+                    has_government_attribute = patronise_the_corinite_orders
+                }
+            }
+            corinite_improved_holy_order_adm = yes
+        }
+        hidden_effect = {
+            if = {
+                limit = { NOT = { has_province_modifier = corinite_order_event_block } }
+                owner = { country_event = { id = corinite.312 } }
+                area = {
+                    add_province_modifier = {
+                        name = corinite_order_event_block
+                        hidden = yes
+                        duration = -1
+                    }
+                }
+            }
+        }
+    }
+    per_province_abandon_effect = {
+        add_base_tax = -1
+        corinite_improved_holy_order_remove = yes
+        hidden_effect = {
+            if = {
+                limit = { NOT = { base_tax = 1 } }
+                set_base_tax = 1
+            }
+        }
+    }
+    modifier = {
+        local_governing_cost = -0.15
+        local_monthly_devastation = -0.3
+    }
+    ai_priority = {
+        factor = 10
+        #modifier = {
+        #}
+    }
+    localization = holy_order
+}
+
+dame_order = {
+    icon = GFX_holy_order_Corinite_Adm_Order
+    trigger = {
+        religion = corinite
+		has_country_flag = dame_order_picked
+    }
+    cost = 50
+    cost_type = adm_power
+    per_province_effect = {
+        add_base_tax = 1
+        if = {
+            limit = { has_dlc = "Rule Britannia" }
+            custom_tooltip = dame_order_event_tt
+        }
+        else = { custom_tooltip = dame_order_event_no_dlc_tt }
+        if = {
+			limit = { has_dlc = "Common Sense" }
+			custom_tooltip = corinite_adm_order_event_karma_tt
+		}
+        if = {
+            limit = {
+                owner = {
+                    has_government_attribute = patronise_the_corinite_orders
+                }
+            }
+            corinite_improved_holy_order_adm = yes
+        }
+        hidden_effect = {
+            if = {
+                limit = { NOT = { has_province_modifier = corinite_order_event_block } }
+                owner = { country_event = { id = corinite.314 } }
+                area = {
+                    add_province_modifier = {
+                        name = corinite_order_event_block
+                        hidden = yes
+                        duration = -1
+                    }
+                }
+            }
+        }
+    }
+    per_province_abandon_effect = {
+        add_base_tax = -1
+        corinite_improved_holy_order_remove = yes
+        hidden_effect = {
+            if = {
+                limit = { NOT = { base_tax = 1 } }
+                set_base_tax = 1
+            }
+        }
+    }
+    modifier = {
+        local_governing_cost = -0.15
+        local_institution_spread = 0.2
+    }
+    ai_priority = {
+        factor = 10
+        #modifier = {
+        #}
+    }
+    localization = holy_order
+}
+
+esmaryal_order = {
+    icon = GFX_holy_order_Corinite_Adm_Order
+    trigger = {
+        religion = corinite
+		has_country_flag = esmaryal_order_picked
+    }
+    cost = 50
+    cost_type = adm_power
+    per_province_effect = {
+        add_base_tax = 1
+        custom_tooltip = esmaryal_order_event_tt
+        if = {
+			limit = { has_dlc = "Common Sense" }
+			custom_tooltip = corinite_adm_order_event_karma_tt
+		}
+        if = {
+            limit = {
+                owner = {
+                    has_government_attribute = patronise_the_corinite_orders
+                }
+            }
+            corinite_improved_holy_order_adm = yes
+        }
+        hidden_effect = {
+            if = {
+                limit = { NOT = { has_province_modifier = corinite_order_event_block } }
+                owner = { country_event = { id = corinite.315 } }
+                area = {
+                    add_province_modifier = {
+                        name = corinite_order_event_block
+                        hidden = yes
+                        duration = -1
+                    }
+                }
+            }
+        }
+    }
+    per_province_abandon_effect = {
+        add_base_tax = -1
+        corinite_improved_holy_order_remove = yes
+        hidden_effect = {
+            if = {
+                limit = { NOT = { base_tax = 1 } }
+                set_base_tax = 1
+            }
+        }
+    }
+    modifier = {
+        local_governing_cost = -0.15
+        supply_limit_modifier = 0.25
+    }
+    ai_priority = {
+        factor = 10
+        #modifier = {
+        #}
+    }
+    localization = holy_order
+}
+
+nerat_order = {
+    icon = GFX_holy_order_Corinite_Adm_Order
+    trigger = {
+        religion = corinite
+		has_country_flag = nerat_order_picked
+    }
+    cost = 50
+    cost_type = adm_power
+    per_province_effect = {
+        add_base_tax = 1
+        custom_tooltip = nerat_order_event_tt
+        if = {
+			limit = { has_dlc = "Common Sense" }
+			custom_tooltip = corinite_adm_order_event_karma_tt
+		}
+        if = {
+            limit = {
+                owner = {
+                    has_government_attribute = patronise_the_corinite_orders
+                }
+            }
+            corinite_improved_holy_order_adm = yes
+        }
+        hidden_effect = {
+            if = {
+                limit = { NOT = { has_province_modifier = corinite_order_event_block } }
+                owner = { country_event = { id = corinite.320 } }
+                area = {
+                    add_province_modifier = {
+                        name = corinite_order_event_block
+                        hidden = yes
+                        duration = -1
+                    }
+                }
+            }
+        }
+    }
+    per_province_abandon_effect = {
+        add_base_tax = -1
+        corinite_improved_holy_order_remove = yes
+        hidden_effect = {
+            if = {
+                limit = { NOT = { base_tax = 1 } }
+                set_base_tax = 1
+            }
+        }
+    }
+    modifier = {
+        local_governing_cost = -0.15
+        local_autonomy = -0.1
+    }
+    ai_priority = {
+        factor = 10
+        #modifier = {
+        #}
+    }
+    localization = holy_order
+}
+
+ara_order = {
+    icon = GFX_holy_order_Corinite_Dip_Order
+    trigger = {
+        religion = corinite
+		has_country_flag = ara_order_picked
+    }
+    cost = 50
+    cost_type = dip_power
+    per_province_effect = {
+        add_base_production = 1
+        custom_tooltip = ara_order_event_tt
+        if = {
+			limit = { has_dlc = "Common Sense" }
+			custom_tooltip = corinite_dip_order_event_karma_tt
+		}
+        if = {
+            limit = {
+                owner = {
+                    has_government_attribute = patronise_the_corinite_orders
+                }
+            }
+            corinite_improved_holy_order_dip = yes
+        }
+        hidden_effect = {
+            if = {
+                limit = { NOT = { has_province_modifier = corinite_order_event_block } }
+                owner = { country_event = { id = corinite.310 } }
+                area = {
+                    add_province_modifier = {
+                        name = corinite_order_event_block
+                        hidden = yes
+                        duration = -1
+                    }
+                }
+            }
+        }
+    }
+    per_province_abandon_effect = {
+        add_base_production = -1
+        corinite_improved_holy_order_remove = yes
+        hidden_effect = {
+            if = {
+                limit = { NOT = { base_production = 1 } }
+                set_base_production = 1
+            }
+        }
+    }
+    modifier = {
+        local_tax_modifier = 0.2
+        trade_goods_size_modifier = 0.05
+    }
+    ai_priority = {
+        factor = 10
+        #modifier = {
+        #}
+    }
+    localization = holy_order
+}
+
+minara_order = {
+    icon = GFX_holy_order_Corinite_Dip_Order
+    trigger = {
+        religion = corinite
+		has_country_flag = minara_order_picked
+    }
+    cost = 50
+    cost_type = dip_power
+    per_province_effect = {
+        add_base_production = 1
+        custom_tooltip = minara_order_event_tt
+        if = {
+			limit = { has_dlc = "Common Sense" }
+			custom_tooltip = corinite_dip_order_event_karma_tt
+		}
+        if = {
+            limit = {
+                owner = {
+                    has_government_attribute = patronise_the_corinite_orders
+                }
+            }
+            corinite_improved_holy_order_dip = yes
+        }
+        hidden_effect = {
+            if = {
+                limit = { NOT = { has_province_modifier = corinite_order_event_block } }
+                owner = { country_event = { id = corinite.317 } }
+                area = {
+                    add_province_modifier = {
+                        name = corinite_order_event_block
+                        hidden = yes
+                        duration = -1
+                    }
+                }
+            }
+        }
+    }
+    per_province_abandon_effect = {
+        add_base_production = -1
+        corinite_improved_holy_order_remove = yes
+        hidden_effect = {
+            if = {
+                limit = { NOT = { base_production = 1 } }
+                set_base_production = 1
+            }
+        }
+    }
+    modifier = {
+        local_tax_modifier = 0.2
+        local_culture_conversion_cost = -0.25
+        local_culture_conversion_time = -0.25
+    }
+    ai_priority = {
+        factor = 10
+        #modifier = {
+        #}
+    }
+    localization = holy_order
+}
+
+munas_order = {
+    icon = GFX_holy_order_Corinite_Dip_Order
+    trigger = {
+        religion = corinite
+        OR = {
+		    has_country_flag = munas_order_picked
+		    has_country_flag = upgraded_munas
+        }
+    }
+    cost = 50
+    cost_type = dip_power
+    per_province_effect = {
+        add_base_production = 1
+        if = {
+            limit = { owner = { has_country_flag = upgraded_munas } }
+            custom_tooltip = munas_order_upgrade_tt
+        }
+        custom_tooltip = munas_order_event_tt
+        if = {
+			limit = { has_dlc = "Common Sense" }
+			custom_tooltip = corinite_dip_order_event_karma_tt
+		}
+        if = {
+            limit = { owner = { has_country_flag = upgraded_munas } }
+            add_permanent_province_modifier = {
+                name = corinite_munas_upgraded
+                duration = -1
+            }
+        }
+        if = {
+            limit = {
+                owner = {
+                    has_government_attribute = patronise_the_corinite_orders
+                }
+            }
+            corinite_improved_holy_order_dip = yes
+        }
+        hidden_effect = {
+            if = {
+                limit = { NOT = { has_province_modifier = corinite_order_event_block } }
+                owner = { country_event = { id = corinite.318 } }
+                area = {
+                    add_province_modifier = {
+                        name = corinite_order_event_block
+                        hidden = yes
+                        duration = -1
+                    }
+                }
+            }
+        }
+    }
+    per_province_abandon_effect = {
+        add_base_production = -1
+        corinite_improved_holy_order_remove = yes
+        hidden_effect = {
+            if = {
+                limit = { NOT = { base_production = 1 } }
+                set_base_production = 1
+            }
+        }
+        if = {
+            limit = { has_province_modifier = corinite_munas_upgraded }
+            remove_province_modifier = corinite_munas_upgraded
+        }
+    }
+    modifier = {
+        local_tax_modifier = 0.2
+        local_sailors_modifier = 0.2
+        naval_forcelimit = 0.5
+    }
+    ai_priority = {
+        factor = 10
+        #modifier = {
+        #}
+    }
+    localization = holy_order
+}
+
+ryala_order = {
+    icon = GFX_holy_order_Corinite_Dip_Order
+    trigger = {
+        religion = corinite
+        OR = {
+            has_country_flag = ryala_order_picked
+            has_country_flag = upgraded_ryala
+        }
+    }
+    cost = 50
+    cost_type = dip_power
+    per_province_effect = {
+        add_base_production = 1
+        if = {
+            limit = { owner = { has_country_flag = upgraded_ryala } }
+            custom_tooltip = ryala_order_upgrade_tt
+        }
+        if = {
+            limit = { has_dlc = "The Cossacks" }
+            custom_tooltip = ryala_order_event_tt
+        }
+        else = { custom_tooltip = ryala_order_event_no_dlc_tt }
+        if = {
+			limit = { has_dlc = "Common Sense" }
+			custom_tooltip = corinite_dip_order_event_karma_tt
+		}
+        if = {
+            limit = { owner = { has_country_flag = upgraded_ryala } }
+            add_permanent_province_modifier = {
+                name = corinite_ryala_upgraded
+                duration = -1
+            }
+        }
+        if = {
+            limit = {
+                owner = {
+                    has_government_attribute = patronise_the_corinite_orders
+                }
+            }
+            corinite_improved_holy_order_dip = yes
+        }
+        hidden_effect = {
+            if = {
+                limit = { NOT = { has_province_modifier = corinite_order_event_block } }
+                add_province_triggered_modifier = cerisian_sisterhood_random_favors
+                # since the randomness here is fixed, use a PTM removed after 1 day to make it actually pick a random ally 
+                area = {
+                    add_province_modifier = {
+                        name = corinite_order_event_block
+                        hidden = yes
+                        duration = -1
+                    }
+                }
+            }
+        }
+    }
+    per_province_abandon_effect = {
+        add_base_production = -1
+        corinite_improved_holy_order_remove = yes
+        hidden_effect = {
+            if = {
+                limit = { NOT = { base_production = 1 } }
+                set_base_production = 1
+            }
+        }
+        if = {
+            limit = { has_province_modifier = corinite_ryala_upgraded }
+            remove_province_modifier = corinite_ryala_upgraded
+        }
+    }
+    modifier = {
+        local_tax_modifier = 0.2
+        province_trade_power_modifier = 0.25
+    }
+    ai_priority = {
+        factor = 10
+        #modifier = {
+        #}
+    }
+    localization = holy_order
+}
+
+balgar_order = {
+    icon = GFX_holy_order_Corinite_Mil_Order
+    trigger = {
+        religion = corinite
+        OR = {
+            has_country_flag = balgar_order_picked
+			has_country_flag = upgraded_balgar
+        }
+    }
+    cost = 50
+    cost_type = mil_power
+    per_province_effect = {
+        add_base_manpower = 1
+        if = {
+            limit = { owner = { has_country_flag = upgraded_balgar } }
+            custom_tooltip = balgar_order_upgrade_tt
+        }
+        custom_tooltip = balgar_order_event_tt
+        if = {
+			limit = { has_dlc = "Common Sense" }
+			custom_tooltip = corinite_mil_order_event_karma_tt
+		}
+        if = {
+            limit = { owner = { has_country_flag = upgraded_balgar } }
+            add_permanent_province_modifier = {
+                name = corinite_balgar_upgraded
+                duration = -1
+            }
+        }
+        if = {
+            limit = {
+                owner = {
+                    has_government_attribute = patronise_the_corinite_orders
+                }
+            }
+            corinite_improved_holy_order_mil = yes
+        }
+        hidden_effect = {
+            if = {
+                limit = { NOT = { has_province_modifier = corinite_order_event_block } }
+                owner = { country_event = { id = corinite.311 } }
+                area = {
+                    add_province_modifier = {
+                        name = corinite_order_event_block
+                        hidden = yes
+                        duration = -1
+                    }
+                }
+            }
+        }
+    }
+    per_province_abandon_effect = {
+        add_base_manpower = -1
+        corinite_improved_holy_order_remove = yes
+        hidden_effect = {
+            if = {
+                limit = { NOT = { base_manpower = 1 } }
+                set_base_manpower = 1
+            }
+        }
+        if = {
+            limit = { has_province_modifier = corinite_balgar_upgraded }
+            remove_province_modifier = corinite_balgar_upgraded
+        }
+    }
+    modifier = {
+        local_manpower_modifier = 0.1
+        local_defensiveness = 0.1
+        local_fort_maintenance_modifier = -0.1
+    }
+    ai_priority = {
+        factor = 10
+        #modifier = {
+        #}
+    }
+    localization = holy_order
+}
+
+corin_order = {
+    icon = GFX_holy_order_Corinite_Mil_Order
+    trigger = {
+        religion = corinite
+        OR = {
+            has_country_flag = corin_order_picked
+			has_country_flag = upgraded_corin
+        }
+    }
+    cost = 50
+    cost_type = mil_power
+    per_province_effect = {
+        add_base_manpower = 1
+        if = {
+            limit = { owner = { has_country_flag = upgraded_corin } }
+            custom_tooltip = corin_order_upgrade_tt
+        }
+        if = {
+            limit = { has_dlc = "Cradle of Civilization" }
+            custom_tooltip = corin_order_event_tt
+        }
+        else = { custom_tooltip = corin_order_event_no_dlc_tt }
+        if = {
+			limit = { has_dlc = "Common Sense" }
+			custom_tooltip = corinite_mil_order_event_karma_tt
+		}
+        if = {
+            limit = { owner = { has_country_flag = upgraded_corin } }
+            add_permanent_province_modifier = {
+                name = corinite_corin_upgraded
+                duration = -1
+            }
+        }
+        if = {
+            limit = {
+                owner = {
+                    has_government_attribute = patronise_the_corinite_orders
+                }
+            }
+            corinite_improved_holy_order_mil = yes
+        }
+        hidden_effect = {
+            if = {
+                limit = { NOT = { has_province_modifier = corinite_order_event_block } }
+                owner = { country_event = { id = corinite.313 } }
+                area = {
+                    add_province_modifier = {
+                        name = corinite_order_event_block
+                        hidden = yes
+                        duration = -1
+                    }
+                }
+            }
+        }
+    }
+    per_province_abandon_effect = {
+        add_base_manpower = -1
+        corinite_improved_holy_order_remove = yes
+        hidden_effect = {
+            if = {
+                limit = { NOT = { base_manpower = 1 } }
+                set_base_manpower = 1
+            }
+        }
+        if = {
+            limit = { has_province_modifier = corinite_corin_upgraded }
+            remove_province_modifier = corinite_corin_upgraded
+        }
+    }
+    modifier = {
+        local_manpower_modifier = 0.1
+        local_missionary_strength = 0.05
+    }
+    ai_priority = {
+        factor = 10
+        #modifier = {
+        #}
+    }
+    localization = holy_order
+}
+
+falah_order = {
+    icon = GFX_holy_order_Corinite_Mil_Order
+    trigger = {
+        religion = corinite
+        OR = {
+            has_country_flag = falah_order_picked
+			has_country_flag = upgraded_falah
+        }
+    }
+    cost = 50
+    cost_type = mil_power
+    per_province_effect = {
+        add_base_manpower = 1
+        if = {
+            limit = { owner = { has_country_flag = upgraded_falah } }
+            custom_tooltip = falah_order_upgrade_tt
+        }
+        custom_tooltip = falah_order_event_tt
+        if = {
+			limit = { has_dlc = "Common Sense" }
+			custom_tooltip = corinite_mil_order_event_karma_tt
+		}
+        if = {
+            limit = { owner = { has_country_flag = upgraded_falah } }
+            add_permanent_province_modifier = {
+                name = corinite_falah_upgraded
+                duration = -1
+            }
+        }
+        if = {
+            limit = {
+                owner = {
+                    has_government_attribute = patronise_the_corinite_orders
+                }
+            }
+            corinite_improved_holy_order_mil = yes
+        }
+        hidden_effect = {
+            if = {
+                limit = { NOT = { has_province_modifier = corinite_order_event_block } }
+                owner = { country_event = { id = corinite.316 } }
+                area = {
+                    add_province_modifier = {
+                        name = corinite_order_event_block
+                        hidden = yes
+                        duration = -1
+                    }
+                }
+            }
+        }
+    }
+    per_province_abandon_effect = {
+        add_base_manpower = -1
+        corinite_improved_holy_order_remove = yes
+        hidden_effect = {
+            if = {
+                limit = { NOT = { base_manpower = 1 } }
+                set_base_manpower = 1
+            }
+        }
+        if = {
+            limit = { has_province_modifier = corinite_falah_upgraded }
+            remove_province_modifier = corinite_falah_upgraded
+        }
+    }
+    modifier = {
+        local_manpower_modifier = 0.1
+        local_friendly_movement_speed = 0.1
+    }
+    ai_priority = {
+        factor = 10
+        #modifier = {
+        #}
+    }
+    localization = holy_order
+}
+
+nathalyne_order = {
+    icon = GFX_holy_order_Corinite_Mil_Order
+    trigger = {
+        religion = corinite
+		has_country_flag = nathalyne_order_picked
+    }
+    cost = 50
+    cost_type = mil_power
+    per_province_effect = {
+        add_base_manpower = 1
+        custom_tooltip = removes_slaves_tooltip
+        hidden_effect = {
+            if = {
+                limit = {
+                    trade_goods = slaves
+                }
+                change_trade_goods = unknown
+            }
+        }
+        custom_tooltip = nathalyne_order_event_tt
+        if = {
+			limit = { has_dlc = "Common Sense" }
+			custom_tooltip = corinite_mil_order_event_karma_tt
+		}
+        if = {
+            limit = {
+                owner = {
+                    has_government_attribute = patronise_the_corinite_orders
+                }
+            }
+            corinite_improved_holy_order_mil = yes
+        }
+        hidden_effect = {
+            if = {
+                limit = { NOT = { has_province_modifier = corinite_order_event_block } }
+                owner = { country_event = { id = corinite.319 } }
+                area = {
+                    add_nationalism = -10
+                    add_province_modifier = {
+                        name = corinite_order_event_block
+                        hidden = yes
+                        duration = -1
+                    }
+                }
+            }
+        }
+    }
+    per_province_abandon_effect = {
+        add_base_manpower = -1
+        corinite_improved_holy_order_remove = yes
+        hidden_effect = {
+            if = {
+                limit = { NOT = { base_manpower = 1 } }
+                set_base_manpower = 1
+            }
+        }
+    }
+    modifier = {
+        local_manpower_modifier = 0.1
+        local_hostile_attrition = 1
+        block_slave_raid = yes
+    }
+    ai_priority = {
+        factor = 10
+        #modifier = {
+        #}
+    }
+    localization = holy_order
+}
+
+dookan_order = {
+    icon = GFX_holy_order_Corinite_Mil_Order
+    trigger = {
+        religion = corinite
+        OR = {
+            tag = H58    #Chipped Tooth Company
+			was_tag = H58
+        }
+    }
+    cost = 50
+    cost_type = mil_power
+    per_province_effect = {
+        add_base_manpower = 1
+        custom_tooltip = dookan_order_event_tt
+        if = {
+			limit = { has_dlc = "Common Sense" }
+			custom_tooltip = corinite_mil_order_event_karma_tt
+		}
+        if = {
+            limit = {
+                owner = {
+                    has_government_attribute = patronise_the_corinite_orders
+                }
+            }
+            corinite_improved_holy_order_mil = yes
+        }
+        hidden_effect = {
+            if = {
+                limit = { NOT = { has_province_modifier = corinite_order_event_block } }
+                owner = { country_event = { id = corinite.322 } }
+                area = {
+                    add_province_modifier = {
+                        name = corinite_order_event_block
+                        hidden = yes
+                        duration = -1
+                    }
+                }
+            }
+        }
+    }
+    per_province_abandon_effect = {
+        add_base_manpower = -1
+        corinite_improved_holy_order_remove = yes
+        hidden_effect = {
+            if = {
+                limit = { NOT = { base_manpower = 1 } }
+                set_base_manpower = 1
+            }
+        }
+    }
+    modifier = {
+        local_manpower_modifier = 0.1
+        local_regiment_cost = -0.25
+        regiment_recruit_speed = -0.25
+    }
+    ai_priority = {
+        factor = 10
+        #modifier = {
+        #}
+    }
+    localization = holy_order
+}
+
+adean_order = {
+    icon = GFX_holy_order_Corinite_Mil_Order
+    trigger = {
+        religion = corinite
+		has_government_attribute = two_rulers_one_people_cor
+    }
+    cost = 50
+    cost_type = mil_power
+    per_province_effect = {
+        add_base_manpower = 1
+        custom_tooltip = adean_order_event_tt
+        if = {
+			limit = { has_dlc = "Common Sense" }
+			custom_tooltip = corinite_mil_order_event_karma_tt
+		}
+        if = {
+            limit = {
+                owner = {
+                    has_government_attribute = patronise_the_corinite_orders
+                }
+            }
+            corinite_improved_holy_order_mil = yes
+        }
+        hidden_effect = {
+            if = {
+                limit = { NOT = { has_province_modifier = corinite_order_event_block } }
+                owner = { country_event = { id = corinite.323 } }
+                area = {
+                    add_nationalism = -10
+                    add_province_modifier = {
+                        name = corinite_order_event_block
+                        hidden = yes
+                        duration = -1
+                    }
+                }
+            }
+        }
+    }
+    per_province_abandon_effect = {
+        add_base_manpower = -1
+        corinite_improved_holy_order_remove = yes
+        hidden_effect = {
+            if = {
+                limit = { NOT = { base_manpower = 1 } }
+                set_base_manpower = 1
+            }
+        }
+    }
+    modifier = {
+        local_manpower_modifier = 0.1
+        land_forcelimit = 0.25
+    }
+    ai_priority = {
+        factor = 10
+        #modifier = {
+        #}
+    }
+    localization = holy_order
+}
+
+#Runefather Worship
+clan_shadowhammer_order = {
+    icon = GFX_holy_order_clan_shadowhammer
+    trigger = {
+		religion = runefather_worship
+	}
+    cost = 50
+    cost_type = mil_power
+    per_province_effect = {
+        add_base_manpower = 1
+        shadowhammer_allegiance_increase_scripted_effect = yes
+    }
+    per_province_abandon_effect = {
+        add_base_manpower = -1
+        shadowhammer_allegiance_decrease_scripted_effect = yes
+    }
+    modifier = {
+        local_manpower_modifier = 0.25
+        local_hostile_attrition = 1
+    }
+    ai_priority = {
+        factor = 1
+        
+    }
+    localization = obsidian_order
+}
+clan_darkstone_order = {
+    icon = GFX_holy_order_clan_darkstone
+    trigger = {
+		religion = runefather_worship
+	}
+    cost = 50
+    cost_type = dip_power
+    per_province_effect = {
+        add_base_production = 1
+        darkstone_allegiance_increase_scripted_effect = yes
+    }
+    per_province_abandon_effect = {
+        add_base_production = -1
+        darkstone_allegiance_decrease_scripted_effect = yes
+    }
+    modifier = {
+        trade_value_modifier = 0.1
+        local_prosperity_growth = 0.25
+    }
+    ai_priority = {
+        factor = 1
+        
+    }
+    localization = obsidian_order
+}
+groedi_az_an_order = {
+    icon = GFX_holy_order_groedi_az_an
+    trigger = {
+		OR = {
+			religion = runefather_worship
+		}
+	}
+    cost = 50
+    cost_type = adm_power
+    per_province_effect = {
+        add_base_tax = 1
+        groedi_az_an_allegiance_increase_scripted_effect = yes
+    }
+    per_province_abandon_effect = {
+        add_base_tax = -1
+        groedi_az_an_allegiance_decrease_scripted_effect = yes
+    }
+    modifier = {
+        local_tax_modifier = 0.1
+        local_governing_cost = -0.15
+    }
+    ai_priority = {
+        factor = 1
+        
+    }
+    localization = obsidian_order
+}
+amlruzskappa_order = {
+    icon = GFX_holy_order_amlruzskappa
+    trigger = {
+		OR = {
+			religion = runefather_worship
+		}
+	}
+    cost = 50
+    cost_type = dip_power
+    per_province_effect = {
+        add_base_production = 1
+        amlruzskappa_allegiance_increase_scripted_effect = yes
+    }
+    per_province_abandon_effect = {
+        add_base_production = -1
+        amlruzskappa_allegiance_decrease_scripted_effect = yes
+    }
+    modifier = {
+        local_build_cost = -0.1
+        trade_goods_size_modifier = 0.05
+    }
+    ai_priority = {
+        factor = 1
+        
+    }
+    localization = obsidian_order
+}
+furdanhund_order = {
+    icon = GFX_holy_order_furdanhund
+    trigger = {
+		OR = {
+			religion = runefather_worship
+		}
+	}
+    cost = 50
+    cost_type = mil_power
+    per_province_effect = {
+        add_base_manpower = 1
+        furdanhund_allegiance_increase_scripted_effect = yes
+    }
+    per_province_abandon_effect = {
+        add_base_manpower = -1
+        furdanhund_allegiance_decrease_scripted_effect = yes
+    }
+    modifier = {
+        local_garrison_size = 0.25
+        local_state_maintenance_modifier = -0.2
+    }
+    ai_priority = {
+        factor = 1
+        
+    }
+    localization = obsidian_order
+}
+
+#Kheionist
+#Adm Orders
+maederitic_rule_order_level_1 = {
+    icon = GFX_holy_order_maederitic_rule_1
+    trigger = {
+        religion = kheionism
+        NOT = { has_kheionist_deity = { deity = adm } }
+    }
+    color = { 0 255 0 }
+    cost = 0
+    cost_type = adm_power
+    per_province_effect = {
+        kheionist_ho_added_effect = { deity = maederitic_rule }
+    }
+    per_province_abandon_effect = {
+        kheionist_ho_removed_effect = { deity = maederitic_rule }
+    }
+    modifier = {
+        local_tax_modifier = 0.15
+        local_governing_cost = -0.15
+    }
+    ai_priority = {
+        factor = 10
+        modifier = {
+            factor = 0
+            NOT = { owned_by = ROOT }
+        }
+    }
+    localization = kheionist_philosophy
+}
+
+maederitic_rule_order_level_2 = {
+    icon = GFX_holy_order_maederitic_rule_2
+    trigger = {
+        religion = kheionism
+        OR = {
+            has_kheionist_deity = { deity = schaal_onitheia }
+            has_kheionist_deity = { deity = teachings_of_varamelas }
+        }
+    }
+    color = { 0 255 0 }
+    cost = 0
+    cost_type = adm_power
+    per_province_effect = {
+        kheionist_ho_added_effect = { deity = maederitic_rule }
+    }
+    per_province_abandon_effect = {
+        kheionist_ho_removed_effect = { deity = maederitic_rule }
+    }
+    modifier = {
+        local_tax_modifier = 0.25
+        local_governing_cost = -0.15
+    }
+    ai_priority = {
+        factor = 10
+        modifier = {
+            factor = 0
+            NOT = { owned_by = ROOT }
+        }
+    }
+    localization = kheionist_philosophy
+}
+
+maederitic_rule_order_level_3 = {
+    icon = GFX_holy_order_maederitic_rule_3
+    trigger = {
+        religion = kheionism
+        has_kheionist_deity = { deity = maederitic_rule }
+    }
+    color = { 0 255 0 }
+    cost = 0
+    cost_type = adm_power
+    per_province_effect = {
+        kheionist_ho_added_effect = { deity = maederitic_rule }
+    }
+    per_province_abandon_effect = {
+        kheionist_ho_removed_effect = { deity = maederitic_rule }
+    }
+    modifier = {
+        local_tax_modifier = 0.25
+        local_governing_cost = -0.15
+        local_centralize_state_cost = -0.25
+    }
+    ai_priority = {
+        factor = 10
+        modifier = {
+            factor = 0
+            NOT = { owned_by = ROOT }
+        }
+    }
+    localization = kheionist_philosophy
+}
+
+schaal_onitheia_order_level_1 = {
+    icon = GFX_holy_order_schaal_onitheia_1
+    trigger = {
+        religion = kheionism
+        NOT = { has_kheionist_deity = { deity = adm } }
+    }
+    color = { 0 128 0 }
+    cost = 0
+    cost_type = adm_power
+    per_province_effect = {
+        kheionist_ho_added_effect = { deity = schaal_onitheia }
+    }
+    per_province_abandon_effect = {
+        kheionist_ho_removed_effect = { deity = schaal_onitheia }
+    }
+    modifier = {
+        local_tax_modifier = 0.15
+        local_monthly_devastation = -0.05
+    }
+    ai_priority = {
+        factor = 10
+        modifier = {
+            factor = 0
+            NOT = { owned_by = ROOT }
+        }
+    }
+    localization = kheionist_philosophy
+}
+
+schaal_onitheia_order_level_2 = {
+    icon = GFX_holy_order_schaal_onitheia_2
+    trigger = {
+        religion = kheionism
+        OR = {
+            has_kheionist_deity = { deity = maederitic_rule }
+            has_kheionist_deity = { deity = teachings_of_varamelas }
+        }
+    }
+    color = { 0 128 0 }
+    cost = 0
+    cost_type = adm_power
+    per_province_effect = {
+        kheionist_ho_added_effect = { deity = schaal_onitheia }
+    }
+    per_province_abandon_effect = {
+        kheionist_ho_removed_effect = { deity = schaal_onitheia }
+    }
+    modifier = {
+        local_tax_modifier = 0.25
+        local_monthly_devastation = -0.05
+    }
+    ai_priority = {
+        factor = 10
+        modifier = {
+            factor = 0
+            NOT = { owned_by = ROOT }
+        }
+    }
+    localization = kheionist_philosophy
+}
+
+schaal_onitheia_order_level_3 = {
+    icon = GFX_holy_order_schaal_onitheia_3
+    trigger = {
+        religion = kheionism
+        has_kheionist_deity = { deity = schaal_onitheia }
+    }
+    color = { 0 128 0 }
+    cost = 0
+    cost_type = adm_power
+    per_province_effect = {
+        kheionist_ho_added_effect = { deity = schaal_onitheia }
+    }
+    per_province_abandon_effect = {
+        kheionist_ho_removed_effect = { deity = schaal_onitheia }
+    }
+    modifier = {
+        local_tax_modifier = 0.25
+        local_monthly_devastation = -0.05
+        local_development_cost = -0.05
+    }
+    ai_priority = {
+        factor = 10
+        modifier = {
+            factor = 0
+            NOT = { owned_by = ROOT }
+        }
+    }
+    localization = kheionist_philosophy
+}
+
+teachings_of_varamelas_order_level_1 = {
+    icon = GFX_holy_order_teachings_of_varamelas_1
+    trigger = {
+        religion = kheionism
+        NOT = { has_kheionist_deity = { deity = adm } }
+    }
+    color = { 0 64 0 }
+    cost = 0
+    cost_type = adm_power
+    per_province_effect = {
+        kheionist_ho_added_effect = { deity = teachings_of_varamelas }
+    }
+    per_province_abandon_effect = {
+        kheionist_ho_removed_effect = { deity = teachings_of_varamelas }
+    }
+    modifier = {
+        local_tax_modifier = 0.15
+        local_build_cost = -0.1
+    }
+    ai_priority = {
+        factor = 10
+        modifier = {
+            factor = 0
+            NOT = { owned_by = ROOT }
+        }
+    }
+    localization = kheionist_philosophy
+}
+
+teachings_of_varamelas_order_level_2 = {
+    icon = GFX_holy_order_teachings_of_varamelas_2
+    trigger = {
+        religion = kheionism
+        OR = {
+            has_kheionist_deity = { deity = maederitic_rule }
+            has_kheionist_deity = { deity = schaal_onitheia }
+        }
+    }
+    color = { 0 64 0 }
+    cost = 0
+    cost_type = adm_power
+    per_province_effect = {
+        kheionist_ho_added_effect = { deity = teachings_of_varamelas }
+    }
+    per_province_abandon_effect = {
+        kheionist_ho_removed_effect = { deity = teachings_of_varamelas }
+    }
+    modifier = {
+        local_tax_modifier = 0.25
+        local_build_cost = -0.1
+    }
+    ai_priority = {
+        factor = 10
+        modifier = {
+            factor = 0
+            NOT = { owned_by = ROOT }
+        }
+    }
+    localization = kheionist_philosophy
+}
+
+teachings_of_varamelas_order_level_3 = {
+    icon = GFX_holy_order_teachings_of_varamelas_3
+    trigger = {
+        religion = kheionism
+        has_kheionist_deity = { deity = teachings_of_varamelas }
+    }
+    color = { 0 64 0 }
+    cost = 0
+    cost_type = adm_power
+    per_province_effect = {
+        kheionist_ho_added_effect = { deity = teachings_of_varamelas }
+    }
+    per_province_abandon_effect = {
+        kheionist_ho_removed_effect = { deity = teachings_of_varamelas }
+    }
+    modifier = {
+        local_tax_modifier = 0.25
+        local_build_cost = -0.1
+        local_build_time = -0.15
+    }
+    ai_priority = {
+        factor = 10
+        modifier = {
+            factor = 0
+            NOT = { owned_by = ROOT }
+        }
+    }
+    localization = kheionist_philosophy
+}
+
+#Dip Orders
+dictats_of_isparokaeus_order_level_1 = {
+    icon = GFX_holy_order_dictats_of_isparokaeus_1
+    trigger = {
+        religion = kheionism
+        NOT = { has_kheionist_deity = { deity = dip } }
+    }
+    color = { 0 0 255 }
+    cost = 0
+    cost_type = dip_power
+    per_province_effect = {
+        kheionist_ho_added_effect = { deity = dictats_of_isparokaeus }
+    }
+    per_province_abandon_effect = {
+        kheionist_ho_removed_effect = { deity = dictats_of_isparokaeus }
+    }
+    modifier = {
+        province_trade_power_modifier = 0.1
+        local_sailors_modifier = 0.2
+    }
+    ai_priority = {
+        factor = 10
+        modifier = {
+            factor = 0
+            NOT = { owned_by = ROOT }
+        }
+    }
+    localization = kheionist_philosophy
+}
+
+dictats_of_isparokaeus_order_level_2 = {
+    icon = GFX_holy_order_dictats_of_isparokaeus_2
+    trigger = {
+        religion = kheionism
+        OR = {
+            has_kheionist_deity = { deity = archatiradist_doctrine }
+            has_kheionist_deity = { deity = anagbheism }
+        }
+    }
+    color = { 0 0 255 }
+    cost = 0
+    cost_type = dip_power
+    per_province_effect = {
+        kheionist_ho_added_effect = { deity = dictats_of_isparokaeus }
+    }
+    per_province_abandon_effect = {
+        kheionist_ho_removed_effect = { deity = dictats_of_isparokaeus }
+    }
+    modifier = {
+        province_trade_power_modifier = 0.2
+        local_sailors_modifier = 0.2
+    }
+    ai_priority = {
+        factor = 10
+        modifier = {
+            factor = 0
+            NOT = { owned_by = ROOT }
+        }
+    }
+    localization = kheionist_philosophy
+}
+
+dictats_of_isparokaeus_order_level_3 = {
+    icon = GFX_holy_order_dictats_of_isparokaeus_3
+    trigger = {
+        religion = kheionism
+        has_kheionist_deity = { deity = dictats_of_isparokaeus }
+    }
+    color = { 0 0 255 }
+    cost = 0
+    cost_type = dip_power
+    per_province_effect = {
+        kheionist_ho_added_effect = { deity = dictats_of_isparokaeus }
+    }
+    per_province_abandon_effect = {
+        kheionist_ho_removed_effect = { deity = dictats_of_isparokaeus }
+    }
+    modifier = {
+        province_trade_power_modifier = 0.2
+        local_sailors_modifier = 0.2
+        local_ship_repair = 0.2
+    }
+    ai_priority = {
+        factor = 10
+        modifier = {
+            factor = 0
+            NOT = { owned_by = ROOT }
+        }
+    }
+    localization = kheionist_philosophy
+}
+
+archatiradist_doctrine_order_level_1 = {
+    icon = GFX_holy_order_archatiradist_doctrine_1
+    trigger = {
+        religion = kheionism
+        NOT = { has_kheionist_deity = { deity = dip } }
+    }
+    color = { 0 0 128 }
+    cost = 0
+    cost_type = dip_power
+    per_province_effect = {
+        kheionist_ho_added_effect = { deity = archatiradist_doctrine }
+    }
+    per_province_abandon_effect = {
+        kheionist_ho_removed_effect = { deity = archatiradist_doctrine }
+    }
+    modifier = {
+        province_trade_power_modifier = 0.1
+        local_missionary_strength = 0.02
+    }
+    ai_priority = {
+        factor = 10
+        modifier = {
+            factor = 0
+            NOT = { owned_by = ROOT }
+        }
+    }
+    localization = kheionist_philosophy
+}
+
+archatiradist_doctrine_order_level_2 = {
+    icon = GFX_holy_order_archatiradist_doctrine_2
+    trigger = {
+        religion = kheionism
+        OR ={
+            has_kheionist_deity = { deity = dictats_of_isparokaeus }
+            has_kheionist_deity = { deity = anagbheism }
+        }
+    }
+    color = { 0 0 128 }
+    cost = 0
+    cost_type = dip_power
+    per_province_effect = {
+        kheionist_ho_added_effect = { deity = archatiradist_doctrine }
+    }
+    per_province_abandon_effect = {
+        kheionist_ho_removed_effect = { deity = archatiradist_doctrine }
+    }
+    modifier = {
+        province_trade_power_modifier = 0.2
+        local_missionary_strength = 0.02
+    }
+    ai_priority = {
+        factor = 10
+        modifier = {
+            factor = 0
+            NOT = { owned_by = ROOT }
+        }
+    }
+    localization = kheionist_philosophy
+}
+
+archatiradist_doctrine_order_level_3 = {
+    icon = GFX_holy_order_archatiradist_doctrine_3
+    trigger = {
+        religion = kheionism
+        has_kheionist_deity = { deity = archatiradist_doctrine }
+    }
+    color = { 0 0 128 }
+    cost = 0
+    cost_type = dip_power
+    per_province_effect = {
+        kheionist_ho_added_effect = { deity = archatiradist_doctrine }
+    }
+    per_province_abandon_effect = {
+        kheionist_ho_removed_effect = { deity = archatiradist_doctrine }
+    }
+    modifier = {
+        province_trade_power_modifier = 0.2
+        local_missionary_strength = 0.02
+        local_missionary_maintenance_cost = -0.5
+    }
+    ai_priority = {
+        factor = 10
+        modifier = {
+            factor = 0
+            NOT = { owned_by = ROOT }
+        }
+    }
+    localization = kheionist_philosophy
+}
+
+anagbheism_order_level_1 = {
+    icon = GFX_holy_order_anagbheism_1
+    trigger = {
+        religion = kheionism
+        NOT = { has_kheionist_deity = { deity = dip } }
+    }
+    color = { 0 0 64 }
+    cost = 0
+    cost_type = dip_power
+    per_province_effect = {
+        kheionist_ho_added_effect = { deity = anagbheism }
+    }
+    per_province_abandon_effect = {
+        kheionist_ho_removed_effect = { deity = anagbheism }
+    }
+    modifier = {
+        province_trade_power_modifier = 0.1
+        trade_value_modifier = 0.1
+    }
+    ai_priority = {
+        factor = 10
+        modifier = {
+            factor = 0
+            NOT = { owned_by = ROOT }
+        }
+    }
+    localization = kheionist_philosophy
+}
+
+anagbheism_order_level_2 = {
+    icon = GFX_holy_order_anagbheism_2
+    trigger = {
+        religion = kheionism
+        OR = {
+            has_kheionist_deity = { deity = dictats_of_isparokaeus }
+            has_kheionist_deity = { deity = archatiradist_doctrine }
+        }
+    }
+    color = { 0 0 64 }
+    cost = 0
+    cost_type = dip_power
+    per_province_effect = {
+        kheionist_ho_added_effect = { deity = anagbheism }
+    }
+    per_province_abandon_effect = {
+        kheionist_ho_removed_effect = { deity = anagbheism }
+    }
+    modifier = {
+        province_trade_power_modifier = 0.2
+        trade_value_modifier = 0.1
+    }
+    ai_priority = {
+        factor = 10
+        modifier = {
+            factor = 0
+            NOT = { owned_by = ROOT }
+        }
+    }
+    localization = kheionist_philosophy
+}
+
+anagbheism_order_level_3 = {
+    icon = GFX_holy_order_anagbheism_3
+    trigger = {
+        religion = kheionism
+        has_kheionist_deity = { deity = anagbheism }
+    }
+    color = { 0 0 64 }
+    cost = 0
+    cost_type = dip_power
+    per_province_effect = {
+        kheionist_ho_added_effect = { deity = anagbheism }
+    }
+    per_province_abandon_effect = {
+        kheionist_ho_removed_effect = { deity = anagbheism }
+    }
+    modifier = {
+        province_trade_power_modifier = 0.2
+        trade_value_modifier = 0.1
+        local_institution_spread = 0.25
+    }
+    ai_priority = {
+        factor = 10
+        modifier = {
+            factor = 0
+            NOT = { owned_by = ROOT }
+        }
+    }
+    localization = kheionist_philosophy
+}
+
+#Mil Orders
+axierophonic_mandate_order_level_1 = {
+    icon = GFX_holy_order_axierophonic_mandate_1
+    trigger = {
+        religion = kheionism
+        NOT = { has_kheionist_deity = { deity = mil } }
+    }
+    color = { 255 0 0 }
+    cost = 0
+    cost_type = mil_power
+    per_province_effect = {
+        kheionist_ho_added_effect = { deity = axierophonic_mandate }
+    }
+    per_province_abandon_effect = {
+        kheionist_ho_removed_effect = { deity = axierophonic_mandate }
+    }
+    modifier = {
+        local_manpower_modifier = 0.075
+        local_garrison_size = 0.15
+    }
+    ai_priority = {
+        factor = 10
+        modifier = {
+            factor = 0
+            NOT = { owned_by = ROOT }
+        }
+    }
+    localization = kheionist_philosophy
+}
+
+axierophonic_mandate_order_level_2 = {
+    icon = GFX_holy_order_axierophonic_mandate_2
+    trigger = {
+        religion = kheionism
+        OR = {
+            has_kheionist_deity = { deity = drivos_rochos }
+            has_kheionist_deity = { deity = laskaris_creed }
+        }
+    }
+    color = { 255 0 0 }
+    cost = 0
+    cost_type = mil_power
+    per_province_effect = {
+        kheionist_ho_added_effect = { deity = axierophonic_mandate }
+    }
+    per_province_abandon_effect = {
+        kheionist_ho_removed_effect = { deity = axierophonic_mandate }
+    }
+    modifier = {
+        local_manpower_modifier = 0.15
+        local_garrison_size = 0.15
+    }
+    ai_priority = {
+        factor = 10
+        modifier = {
+            factor = 0
+            NOT = { owned_by = ROOT }
+        }
+    }
+    localization = kheionist_philosophy
+}
+
+axierophonic_mandate_order_level_3 = {
+    icon = GFX_holy_order_axierophonic_mandate_3
+    trigger = {
+        religion = kheionism
+        has_kheionist_deity = { deity = axierophonic_mandate }
+    }
+    color = { 255 0 0 }
+    cost = 0
+    cost_type = mil_power
+    per_province_effect = {
+        kheionist_ho_added_effect = { deity = axierophonic_mandate }
+    }
+    per_province_abandon_effect = {
+        kheionist_ho_removed_effect = { deity = axierophonic_mandate }
+    }
+    modifier = {
+        local_manpower_modifier = 0.15
+        local_garrison_size = 0.15
+        local_hostile_movement_speed = -0.1
+    }
+    ai_priority = {
+        factor = 10
+        modifier = {
+            factor = 0
+            NOT = { owned_by = ROOT }
+        }
+    }
+    localization = kheionist_philosophy
+}
+
+drivos_rochos_order_level_1 = {
+    icon = GFX_holy_order_drivos_rochos_1
+    trigger = {
+        religion = kheionism
+        NOT = { has_kheionist_deity = { deity = mil } }
+    }
+    color = { 128 0 0 }
+    cost = 0
+    cost_type = mil_power
+    per_province_effect = {
+        kheionist_ho_added_effect = { deity = drivos_rochos }
+    }
+    per_province_abandon_effect = {
+        kheionist_ho_removed_effect = { deity = drivos_rochos }
+    }
+    modifier = {
+        local_manpower_modifier = 0.075
+        local_hostile_attrition = 2
+    }
+    ai_priority = {
+        factor = 10
+        modifier = {
+            factor = 0
+            NOT = { owned_by = ROOT }
+        }
+    }
+    localization = kheionist_philosophy
+}
+
+drivos_rochos_order_level_2 = {
+    icon = GFX_holy_order_drivos_rochos_2
+    trigger = {
+        religion = kheionism
+        OR = {
+            has_kheionist_deity = { deity = axierophonic_mandate }
+            has_kheionist_deity = { deity = laskaris_creed }
+        }
+    }
+    color = { 128 0 0 }
+    cost = 0
+    cost_type = mil_power
+    per_province_effect = {
+        kheionist_ho_added_effect = { deity = drivos_rochos }
+    }
+    per_province_abandon_effect = {
+        kheionist_ho_removed_effect = { deity = drivos_rochos }
+    }
+    modifier = {
+        local_manpower_modifier = 0.15
+        local_hostile_attrition = 2
+    }
+    ai_priority = {
+        factor = 10
+        modifier = {
+            factor = 0
+            NOT = { owned_by = ROOT }
+        }
+    }
+    localization = kheionist_philosophy
+}
+
+drivos_rochos_order_level_3 = {
+    icon = GFX_holy_order_drivos_rochos_3
+    trigger = {
+        religion = kheionism
+        has_kheionist_deity = { deity = drivos_rochos }
+    }
+    color = { 128 0 0 }
+    cost = 0
+    cost_type = mil_power
+    per_province_effect = {
+        kheionist_ho_added_effect = { deity = drivos_rochos }
+    }
+    per_province_abandon_effect = {
+        kheionist_ho_removed_effect = { deity = drivos_rochos }
+    }
+    modifier = {
+        local_manpower_modifier = 0.15
+        local_hostile_attrition = 2
+        supply_limit_modifier = 0.25
+    }
+    ai_priority = {
+        factor = 10
+        modifier = {
+            factor = 0
+            NOT = { owned_by = ROOT }
+        }
+    }
+    localization = kheionist_philosophy
+}
+
+laskaris_creed_order_level_1 = {
+    icon = GFX_holy_order_laskaris_creed_1
+    trigger = {
+        religion = kheionism
+        NOT = { has_kheionist_deity = { deity = mil } }
+    }
+    color = { 64 0 0 }
+    cost = 0
+    cost_type = mil_power
+    per_province_effect = {
+        kheionist_ho_added_effect = { deity = laskaris_creed }
+    }
+    per_province_abandon_effect = {
+        kheionist_ho_removed_effect = { deity = laskaris_creed }
+    }
+    modifier = {
+        local_manpower_modifier = 0.075
+        local_regiment_cost = -0.15
+    }
+    ai_priority = {
+        factor = 10
+        modifier = {
+            factor = 0
+            NOT = { owned_by = ROOT }
+        }
+    }
+    localization = kheionist_philosophy
+}
+
+laskaris_creed_order_level_2 = {
+    icon = GFX_holy_order_laskaris_creed_2
+    trigger = {
+        religion = kheionism
+        OR = {
+            has_kheionist_deity = { deity = axierophonic_mandate }
+            has_kheionist_deity = { deity = drivos_rochos }
+        }
+    }
+    color = { 64 0 0 }
+    cost = 0
+    cost_type = mil_power
+    per_province_effect = {
+        kheionist_ho_added_effect = { deity = laskaris_creed }
+    }
+    per_province_abandon_effect = {
+        kheionist_ho_removed_effect = { deity = laskaris_creed }
+    }
+    modifier = {
+        local_manpower_modifier = 0.15
+        local_regiment_cost = -0.15
+    }
+    ai_priority = {
+        factor = 10
+        modifier = {
+            factor = 0
+            NOT = { owned_by = ROOT }
+        }
+    }
+    localization = kheionist_philosophy
+}
+
+laskaris_creed_order_level_3 = {
+    icon = GFX_holy_order_laskaris_creed_3
+    trigger = {
+        religion = kheionism
+        has_kheionist_deity = { deity = laskaris_creed }
+    }
+    color = { 64 0 0 }
+    cost = 0
+    cost_type = mil_power
+    per_province_effect = {
+        kheionist_ho_added_effect = { deity = laskaris_creed }
+    }
+    per_province_abandon_effect = {
+        kheionist_ho_removed_effect = { deity = laskaris_creed }
+    }
+    modifier = {
+        local_manpower_modifier = 0.15
+        local_regiment_cost = -0.15
+        regiment_recruit_speed = -0.2
+    }
+    ai_priority = {
+        factor = 10
+        modifier = {
+            factor = 0
+            NOT = { owned_by = ROOT }
+        }
+    }
+    localization = kheionist_philosophy
+}
+
+#A holy order you can set a province to so it loses it's current holy order, a workaround of the fact that there's no remove_holy_order effect
+no_holy_order = {
+    icon = GFX_holy_orders_button
+    trigger = {
+        always = no
+    }
+    color = { 255 255 255 }
+    cost = 0
+    cost_type = adm_power
+    per_province_effect = {
+    }
+    per_province_abandon_effect = {
+    }
+    modifier = {
+    }
+    ai_priority = {
+        factor = 0
+    }
+    localization = holy_order
+}

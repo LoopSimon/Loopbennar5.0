@@ -1,0 +1,9 @@
+
+setup_vision = yes
+government = republic
+technology_group = tech_cannorian
+primary_culture = tefori
+religion = regent_court
+capital = 2175
+
+1000.1.1 = { set_estate_privilege = estate_mages_organization_guilds }

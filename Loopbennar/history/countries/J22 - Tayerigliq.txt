@@ -1,0 +1,35 @@
+
+setup_vision = yes
+government = republic
+government_rank = 1
+primary_culture = zabatlari
+add_government_reform = lake_republic
+religion = yukel_followers
+technology_group = tech_triunic
+capital = 5276
+fixed_capital = 5276
+1430.1.1 = {
+	add_country_modifier = {
+		name = lake_federation_member
+		duration = -1
+	}
+	set_variable = {
+		which = FederationPoints
+		value = 6
+	}
+	set_country_flag = LF_mages_banned
+}
+
+1444.5.14 = {
+	monarch = {
+		name = "Ampo"
+		dynasty = "O'ldoshqev"
+		birth_date = 1390.2.13
+		adm = 4
+		dip = 4
+		mil = 3
+	}
+	add_ruler_personality = navigator_personality
+}
+
+#Made siegieng the city impossible during the Great Incurssion with a naval supply line.

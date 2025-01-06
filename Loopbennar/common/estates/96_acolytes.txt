@@ -1,0 +1,200 @@
+estate_acolytes = {
+	icon = 15
+
+	# If true, country will get estate
+	trigger = {
+		OR = {
+			AND = {
+				has_reform = black_demesne_reform
+				has_country_flag = black_acolyte_estate
+			}
+			has_reform = black_acolyte_reform
+		}
+	}
+
+	# These scale with loyalty & power
+	country_modifier_happy = {
+		land_morale = 0.1
+		yearly_absolutism = 0.1
+		devotion = 1
+	}
+	country_modifier_neutral = {
+		land_morale = 0.05
+	}	
+	country_modifier_angry = {
+		land_morale = -0.1
+		yearly_absolutism = -0.1
+		devotion = -1
+		reduced_liberty_desire = -25
+	}
+
+	land_ownership_modifier = {
+		acolytes_loyalty_modifier = 0.1
+	}
+	
+	province_independence_weight = {
+		factor = 1
+		modifier = {
+			factor = 0.5
+			NOT = { development = 10 }
+		}
+		modifier = {
+			factor = 1.2
+			development = 10
+		}
+		modifier = {
+			factor = 1.5
+			development = 20
+		}
+		modifier = {
+			factor = 2
+			has_building = university
+		}
+		modifier = {
+			factor = 2
+			OR = {
+				trade_goods = damestear
+				trade_goods = precursor_relics
+			}
+		}
+	}
+	
+	# Influence modifiers
+	base_influence = 20
+	
+	influence_modifier = {
+		desc = EST_VAL_UNIVERSITY
+		trigger = {
+			any_owned_province = {
+				has_building = university
+			}
+		}
+		influence = 5
+	}
+	
+	influence_modifier = {
+		desc = EST_VAL_MAGE_TOWER
+		trigger = {
+			any_owned_province = {
+				has_building = mage_tower
+			}
+		}
+		influence = 5
+	}
+	
+	influence_modifier = {
+		desc = EST_VAL_MAGE_ADVISOR
+		trigger = {
+			advisor = court_mage
+		}
+		influence = 5
+	}
+	
+	influence_modifier = {
+		desc = EST_VAL_OTHER_ESTATE_IN_POWER
+		trigger = {
+			OR = {
+				has_disaster = estate_nobility_disaster
+				has_disaster = estate_church_disaster
+				has_disaster = estate_burghers_disaster
+				has_disaster = estate_artificers_disaster
+				has_disaster = estate_adventurers_disaster
+				#has_disaster = estate_brahmins_disaster
+				#has_disaster = estate_jains_disaster
+			}
+		}	
+		influence = -40
+	}
+	
+	influence_modifier = {
+		desc = EST_VAMPIRIC_LORD
+		trigger = {
+			has_estate_privilege = estate_vampires_organization_vampires_lord
+		}	
+		influence = -10
+	}
+	
+	#Loyalty
+	
+	loyalty_modifier = {
+		desc = EST_VAL_OTHER_ESTATE_IN_POWER_LOY
+		trigger = {
+			OR = {
+				has_disaster = estate_nobility_disaster
+				has_disaster = estate_church_disaster
+				has_disaster = estate_burghers_disaster
+				has_disaster = estate_artificers_disaster
+				has_disaster = estate_adventurers_disaster
+				#has_disaster = estate_brahmins_disaster
+				#has_disaster = estate_jains_disaster
+			}
+		}
+		loyalty = -20
+	}	
+
+
+	color = { 10 10 10 }
+
+	privileges = {
+		#Special
+		estate_acolytes_the_black_host
+		estate_acolytes_dominion_laws
+		estate_acolytes_cast_spells
+		estate_mages_battlemage_academies	# acolytes are allowed to use this privilege too
+		
+		# Land Share
+		estate_acolytes_land_share_10
+		estate_acolytes_land_share_20
+		estate_acolytes_land_share_30
+		estate_acolytes_land_share_40
+		estate_acolytes_land_share_50
+		
+		# Dominions Laws
+		estate_acolytes_dominions_law_army_decentralisation
+		estate_acolytes_dominions_law_army_centralisation
+		estate_acolytes_dominions_law_the_dark_tithe
+		estate_acolytes_dominions_law_centralized_banking
+		estate_acolytes_dominions_law_power_split
+		estate_acolytes_dominions_law_ibevaries_lab_rats
+		estate_acolytes_dominions_law_gnomish_brain
+		estate_acolytes_dominions_law_kobold_slaves
+		estate_acolytes_dominions_law_warden_of_the_state_mage_minions
+		estate_acolytes_dominions_law_warden_of_the_state_children_of_war
+		estate_acolytes_dominions_law_warden_of_the_state_envoy_of_heart
+		estate_acolytes_dominions_law_absolute_power
+		estate_acolytes_dominions_law_timed_research
+		estate_acolytes_dominions_law_sanguine_knowledge
+		
+		# estate_mages_cast_spells
+		# estate_mages_patronage_of_the_magical_arts
+		# estate_mages_battlemage_academies
+		# estate_mages_reduced_research_regulations
+		# estate_mages_monopoly_of_damestear
+		
+		# estate_mages_organization_magisterium
+		# estate_mages_organization_state
+		# estate_mages_organization_guilds
+		# estate_mages_organization_religious
+		# estate_mages_organization_covenant
+		# estate_mages_organization_elissa
+	}
+
+	agendas = {
+		# estate_mages_fire_advisor
+		# estate_mages_relations_with_magisterium
+		# estate_mages_relations_with_pro_mage_countries
+		# estate_mages_spy_on_rival
+		# estate_mages_build_university_in_y
+		# estate_mages_conquer_damestear
+		# estate_mages_conquer_precursor_relics
+		# estate_mages_build_fort_building_on_damestear
+		# estate_mages_build_fort_building_on_precursor_relics
+		# estate_mages_condottieri_rivals
+		# estate_mages_ally_pro_mage_countries
+		# estate_mages_develop_damestear_in_y
+		# estate_mages_develop_precursor_relics_in_y
+		# estate_mages_build_mage_tower_in_y
+		# estate_mages_develop_x
+	}
+	influence_from_dev_modifier = 0.5
+}

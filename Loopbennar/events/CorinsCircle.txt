@@ -1,0 +1,1447 @@
+
+namespace = corins_circle
+
+#Main
+country_event = {
+	id = corins_circle.100
+	title = corins_circle.100.t	
+	desc = corins_circle.100.d
+	picture = BIG_BOOK_eventPicture
+	
+	hidden = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		owns = 8
+		NOT = { is_year = 1500 }
+		is_year = 1453
+	}
+	
+	option = {
+		name = corins_circle.100.a
+		ai_chance = { factor = 100 }
+		#Choosing a random target country
+		random_list = {
+			95 = { #more likely if adventurer
+				random_country = {
+					limit = {
+						OR = {
+							capital_scope = { region = west_castanor_region }
+							capital_scope = { region = south_castanor_region }
+							capital_scope = { region = inner_castanor_region }
+							capital_scope = { area = whistlevale_area }
+							capital_scope = { area = cursewood_area }
+						}
+						NOT = { has_country_modifier = monstrous_nation }
+						has_reform = adventurer_reform
+					}
+					save_event_target_as = corins_circle_target
+				}
+			}
+			5 = {
+				random_country = {
+					limit = {
+						OR = {
+							capital_scope = { region = west_castanor_region }
+							capital_scope = { region = south_castanor_region }
+							capital_scope = { region = inner_castanor_region }
+							capital_scope = { area = whistlevale_area }
+							capital_scope = { area = cursewood_area }
+						}
+						NOT = { has_country_modifier = monstrous_nation }
+						NOT = { has_adventurer_reform = yes }
+					}
+					save_event_target_as = corins_circle_target
+				}
+			}
+		}
+	}
+	
+	after = {
+		#Choosing a random circle member
+		event_target:corins_circle_target = {	 
+			random_list = { 
+				20 = {
+					trigger = { NOT = { has_global_flag = lauren_sil_place } }
+					country_event = { id = corins_circle.1 }
+					set_global_flag = lauren_sil_place
+				}
+				20 = {
+					trigger = { NOT = { has_global_flag = winston_foolfoot } }
+					modifier = { # More likely for high ruler ADM/DIP
+						factor = 2
+						OR = {
+							adm = 5
+							dip = 5
+						}
+					}
+					country_event = { id = corins_circle.3 }
+					set_global_flag = winston_foolfoot
+				}
+				20 = {
+					trigger = { NOT = { has_global_flag = aucan_sil_versil } }
+					country_event = { id = corins_circle.4 }
+					set_global_flag = aucan_sil_versil
+				}
+				20 = {
+					trigger = { NOT = { has_global_flag = dominic_of_gallowpeak } }
+					modifier = { # Higher for low ruler adm/dip/mil
+						factor = 2
+						NOT = {
+							adm = 3
+							dip = 3	
+							mil = 3
+						}
+					}
+					country_event = { id = corins_circle.5 }
+					set_global_flag = dominic_of_gallowpeak
+				}
+				20 = {
+					trigger = { NOT = { has_global_flag = cecil_sapphire_eye } }
+					modifier = { # More likely for low stat monarchs, more likely for controller of Sapphirewatch.
+						factor = 2
+						NOT = {
+							adm = 3
+							dip = 3	
+							mil = 3
+						}
+					}
+					modifier = {
+						factor = 5
+						ROOT = { owns = 834 } #Sapphirewatch
+					}
+					country_event = { id = corins_circle.6 }
+					set_global_flag = cecil_sapphire_eye
+				}
+				20 = {
+					trigger = { 
+						NOT = { has_global_flag = nesterin_the_gaunt }
+						is_year = 1478 #long lived members come back from retirement latter
+					}
+					modifier = { # Less likely for high mil/martial educator/brave/tactical genius
+						factor = 0.5
+						OR = {
+							mil = 5
+							ruler_has_personality = martial_educator_personality
+							ruler_has_personality = tactical_genius_personality
+							ruler_has_personality = bold_fighter_personality
+						} 
+					}
+					country_event = { id = corins_circle.7 }
+					set_global_flag = nesterin_the_gaunt
+				}
+				20 = {
+					trigger = { 
+						NOT = { has_global_flag = iacobb_creekwhistle }
+						is_year = 1478
+					}
+					modifier = { # More likely for high mil/adm ruler, more likely for low prestige
+						factor = 2
+						OR = {
+							adm = 5
+							mil = 5
+							NOT = { prestige = 0 }
+						} 
+					}
+					country_event = { id = corins_circle.8 }
+					set_global_flag = iacobb_creekwhistle
+				}
+				20 = {
+					trigger = { 
+						NOT = { has_global_flag = rethag_ironbrow }
+						is_year = 1478
+					}
+					modifier = {
+						factor = 2
+						OR = {
+							tag = B02 #Corintar
+							tag = B18 #Iron Hammers
+							tag = Z36 #Hammerhome
+						} 
+					}
+					country_event = { id = corins_circle.10 }
+					set_global_flag = rethag_ironbrow
+				}
+			}
+		}
+	}
+}
+
+#Designating country for Arosha
+country_event = {
+	id = corins_circle.101
+	title = corins_circle.101.t
+	desc = corins_circle.101.d
+	picture = BIG_BOOK_eventPicture
+
+	hidden = yes
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = {
+		owns = 8
+		NOT = { is_year = 1500 }
+		is_year = 1453
+	}
+
+	immediate = {
+		random_country = {
+			limit = {
+				OR = {
+					capital_scope = { region = west_castanor_region }
+					capital_scope = { region = south_castanor_region }
+					capital_scope = { region = inner_castanor_region }
+					capital_scope = { area = whistlevale_area }
+					capital_scope = { area = cursewood_area }
+				}
+				has_country_modifier = monstrous_nation
+				culture_group = orcish
+			}
+			save_event_target_as = arosha_target
+		}
+	}	
+
+	option = {
+		name = corins_circle.101.a
+		ai_chance = { factor = 100 }
+		event_target:arosha_target = {
+			country_event = { id = corins_circle.14 }
+		}
+	}
+}
+
+#Ser Laurens sil Place
+country_event = {
+	id = corins_circle.1
+	title = corins_circle.1.t	
+	desc = corins_circle.1.d
+	picture = ADVISOR_eventPicture
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	option = {
+		name = corins_circle.1.a
+		ai_chance = {
+			factor = 10
+		}
+		add_army_tradition = 10
+		add_government_power = {
+			mechanic_type = anb_adventurer_unity 
+			power_type = adventurer_unity 
+			value = 10
+		}
+		custom_tooltip = war_wizard_tooltip
+		hidden_effect = {
+			define_general = { # 60 army tradition war wizard
+				fire = 2
+				shock = 9
+				manuever = 2
+				siege = 5
+				trait = war_wizard_personality
+				name = "Ser Laurens síl Place"
+			}
+		}
+		hidden_effect = {
+			country_event = { id = corins_circle.2 days = 1825 random = 1825 }
+		}
+	}
+	
+	option = {
+		name = corins_circle.1.b
+		ai_chance = {
+			factor = 5
+		}
+		add_country_modifier = {
+			name = lauren_sil_place_modifier_1
+			duration = 3650
+		}
+		hidden_effect = {
+			country_event = { id = corins_circle.2 days = 1825 random = 1825 }
+		}
+	}
+	
+	option = {
+		name = corins_circle.1.c
+		ai_chance = {
+			factor = 0
+		}
+		add_prestige = 10
+	}
+}
+
+#Ser Laurens sil Place does Witch King stuff
+country_event = {
+	id = corins_circle.2
+	title = corins_circle.2.t	
+	desc = corins_circle.2.d
+	picture = IMPALED_SOLDIERS_eventPicture
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	option = {
+		name = corins_circle.2.a
+		ai_chance = {
+			factor = 1
+		}
+		add_stability = -1
+		country_event = { id = corins_circle.13 days = 15 }
+	}
+}
+
+#Winston Foolfoot
+country_event = {
+	id = corins_circle.3
+	title = corins_circle.3.t
+	desc = corins_circle.3.d
+	picture = ADVISOR_eventPicture
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	option = {
+		name = corins_circle.3.a
+		ai_chance = {
+			factor = 10
+		}
+		add_country_modifier = {
+			name = winston_foolfoot_modifier
+			duration = 3650
+		}
+	}
+	
+	option = {
+		name = corins_circle.3.b
+		ai_chance = {
+			factor = 2
+			modifier = {
+				factor = 0
+				is_in_deficit = yes
+			}
+		}
+		define_advisor = {
+			type = spymaster
+			name = "Winston Foolfoot"
+			skill = 2
+			culture = imperial_halfling
+			religion = regent_court
+			cost_multiplier = 0.50
+		}
+		random_neighbor_country = {
+			limit = { 
+				NOT = { 
+					alliance_with = ROOT
+					is_subject_of = ROOT
+				}
+			}
+			add_spy_network_from = {
+				who = ROOT
+				value = 40
+			}
+		}
+	}
+	
+	option = {
+		name = corins_circle.3.c
+		trigger = { NOT = { tag = B10 } } #Small Fellows
+		ai_chance = {
+			factor = 1
+		}
+		add_prestige = 10
+		small_decrease_of_halfling_tolerance_effect = yes
+	}
+}
+
+#Aucan sil Versil
+country_event = {
+	id = corins_circle.4
+	title = corins_circle.4.t	
+	desc = corins_circle.4.d
+	picture = ADVISOR_eventPicture
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	option = {
+		name = corins_circle.4.a
+		ai_chance = {
+			factor = 2
+			modifier = {
+				factor = 0
+				is_in_deficit = yes
+			}
+		}
+		define_advisor = {
+			type = artist
+			name = "Aucan síl Versil"
+			skill = 2
+			culture = farrani_half_elf
+			religion = regent_court
+			cost_multiplier = 0.50
+		}
+		add_government_power = {
+			mechanic_type = anb_adventurer_unity 
+			power_type = adventurer_unity 
+			value = 10
+		}
+	}
+	
+	option = {
+		name = corins_circle.4.b
+		ai_chance = {
+			factor = 10
+		}
+		add_legitimacy = 10
+		add_republican_tradition = 3
+		add_devotion = 10
+		add_country_modifier = {
+			name = aucan_sil_versil_modifier
+			duration = 3650
+		}
+	}
+	
+	option = {
+		name = corins_circle.4.c
+		ai_chance = {
+			factor = 1
+		}
+		add_prestige = 10
+	}
+}
+
+#Dominic of Gallowspeak
+country_event = {
+	id = corins_circle.5
+	title = corins_circle.5.t	
+	desc = corins_circle.5.d
+	picture = ADVISOR_eventPicture
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	option = {
+		name = corins_circle.5.a
+		ai_chance = {
+			factor = 3
+			modifier = {
+				factor = 0
+				is_in_deficit = yes
+			}
+		}
+		define_advisor = {
+			type = theologian
+			name = "Dominic of Gallowspeak"
+			skill = 2
+			culture = farrani_half_elf
+			religion = regent_court
+			cost_multiplier = 0.50
+		}
+		add_country_modifier = {
+			name = dominic_of_gallowpeak_modifier_1
+			duration = 3650
+		}
+	}
+	
+	option = {
+		name = corins_circle.5.b
+		ai_chance = {
+			factor = 10
+		}
+		add_ruler_modifier = {
+			name = dominic_of_gallowpeak_modifier_2
+			duration = -1
+		}
+	}
+	
+	option = {
+		name = corins_circle.5.c
+		ai_chance = {
+			factor = 1
+		}
+		add_prestige = 10
+	}
+}
+
+#Ser Cecil of the Sapphire Eye
+country_event = {
+	id = corins_circle.6
+	title = corins_circle.6.t	
+	desc = corins_circle.6.d
+	picture = ADVISOR_eventPicture
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	option = {
+		name = corins_circle.6.a
+		ai_chance = {
+			factor = 5
+		}
+		add_ruler_modifier = {
+			name = cecil_sapphire_eye_modifier
+			duration = -1
+		}
+	}
+	
+	option = {
+		name = corins_circle.6.b
+		ai_chance = {
+			factor = 2
+			modifier = {
+				factor = 2
+				NOT = { mil = 3 }
+			}
+			modifier = {
+				factor = 2
+				NOT = { ruler_age = 30 }
+			}
+			modifier = {
+				factor = 5
+				NOT = { ruler_age = 20 }
+			}
+			modifier = {
+				factor = 0
+				mil = 6
+			}
+		}
+		random_list = {
+			75 = { increase_ruler_mil_effect = yes }
+			25 = { add_mil_power = 50 }
+		}
+	}
+	
+	option = {
+		name = corins_circle.6.c
+		ai_chance = {
+			factor = 1
+		}
+		add_prestige = 5
+		add_army_tradition = 5
+	}
+}
+
+#Nesterin the Gaunt
+country_event = {
+	id = corins_circle.7
+	title = corins_circle.7.t	
+	desc = corins_circle.7.d
+	picture = ADVISOR_eventPicture
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	option = {
+		name = corins_circle.7.a
+		ai_chance = {
+			factor = 2
+			modifier = {
+				factor = 0
+				is_in_deficit = yes
+			}
+		}
+		define_advisor = {
+			type = commandant
+			name = "Nesterin the Gaunt"
+			skill = 2
+			culture = moon_elf
+			religion = elven_forebears
+			cost_multiplier = 0.50
+		}
+		add_army_tradition = 10
+	}
+	
+	option = {
+		name = corins_circle.7.b
+		ai_chance = {
+			factor = 10
+		}
+		add_country_modifier = {
+			name = nesterin_the_gaunt_modifier
+			duration = 9125
+		}
+	}
+	
+	option = {
+		name = corins_circle.7.c
+		ai_chance = {
+			factor = 1
+		}
+		add_mil_power = 50
+		add_prestige = 10
+	}
+}
+
+#Iacobb Creekwhistle
+country_event = {
+	id = corins_circle.8
+	title = corins_circle.8.t	
+	desc = corins_circle.8.d
+	picture = ADVISOR_eventPicture
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	option = {
+		name = corins_circle.8.a
+		ai_chance = {
+			factor = 5
+		}
+		add_country_modifier = {
+			name = iacobb_creekwhistle_modifier_1
+			duration = 3650
+		}
+		small_increase_of_gnomish_tolerance_effect = yes
+		hidden_effect = {
+			country_event = { id = corins_circle.9 days = 3650 random = 1825 }
+		}
+	}
+	
+	option = {
+		name = corins_circle.8.b
+		ai_chance = {
+			factor = 5
+		}
+		add_country_modifier = {
+			name = iacobb_creekwhistle_modifier_2
+			duration = 3650
+		}
+		small_increase_of_gnomish_tolerance_effect = yes
+		hidden_effect = {
+			country_event = { id = corins_circle.9 days = 3650 random = 1825 }
+		}
+	}
+	
+	option = {
+		name = corins_circle.8.c
+		ai_chance = {
+			factor = 2
+			modifier = {
+				factor = 0
+				is_in_deficit = yes
+			}
+		}
+		add_years_of_income = -0.25
+		add_ruler_modifier = { 
+			name = iacobb_creekwhistle_modifier_3
+			duration = -1  
+		}
+		hidden_effect = {
+			country_event = { id = corins_circle.9 days = 3650 random = 1825 }
+		}
+	}
+	
+	option = {
+		name = corins_circle.8.e
+		ai_chance = {
+			factor = 0
+		}
+		add_country_modifier = {
+			name = iacobb_creekwhistle_modifier_4
+			duration = 1825
+		}
+		small_decrease_of_gnomish_tolerance_effect = yes
+	}
+}
+
+#Iacobb's Rifles
+country_event = {
+	id = corins_circle.9
+	title = corins_circle.9.t	
+	desc = corins_circle.9.d
+	picture = SCOTTISH_MERCENARIES_eventPicture
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	option = {
+		name = corins_circle.9.a
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 5
+				personality = ai_militarist
+			}
+		}
+		random_owned_province = {
+			add_gnomish_minority_size_effect = yes
+			add_gnomish_minority_size_effect = yes
+			add_devastation = 50 
+		}
+		large_increase_of_gnomish_tolerance_effect = yes
+		add_country_modifier = {
+			name = iacobbs_riffles_modifier_1
+			duration = 3650
+		}
+	}
+	
+	option = {
+		name = corins_circle.9.b
+		ai_chance = {
+			factor = 3
+			modifier = {
+				factor = 0
+				is_in_deficit = yes
+			}
+		}
+		add_years_of_income = -0.2
+		random_owned_province = {
+			add_gnomish_minority_size_effect = yes
+			add_gnomish_minority_size_effect = yes
+			add_devastation = 50
+			add_province_modifier = {
+				name = iacobbs_riffles_modifier_2
+				duration = -1
+			}
+		}
+		large_increase_of_gnomish_tolerance_effect = yes
+		
+	}
+}
+
+#Rethag Ironbrow
+country_event = {
+	id = corins_circle.10
+	title = corins_circle.10.t	
+	desc = corins_circle.10.d
+	picture = ADVISOR_eventPicture
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	option = {
+		name = corins_circle.10.a
+		ai_chance = {
+			factor = 10
+		}
+		add_country_modifier = {
+			name = rethag_ironbrow_modifier
+			duration = 3650
+		}
+		small_increase_of_dwarven_tolerance_effect = yes
+	}
+	
+	option = {
+		name = corins_circle.10.b
+		ai_chance = {
+			factor = 2
+			modifier = {
+				factor = 0
+				is_in_deficit = yes
+			}
+		}
+		define_advisor = {
+			type = army_reformer
+			name = "Rethag Ironbrow"
+			skill = 2
+			culture = ruby_dwarf
+			religion = dwarven_pantheon
+			cost_multiplier = 0.50
+		}
+		small_increase_of_dwarven_tolerance_effect = yes
+		add_government_power = {
+			mechanic_type = anb_adventurer_unity 
+			power_type = adventurer_unity 
+			value = 10
+		}
+	}
+	
+	option = {
+		name = corins_circle.10.c
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 2
+				NOT = { prestige = 0 }
+			}
+			modifier = {
+				factor = 3
+				NOT = { army_tradition = 21 }
+			}
+			
+		}
+		add_army_tradition = 10
+		add_prestige = 10
+	}
+}
+
+#Rethag Ironbrow: For Corin!
+country_event = {
+	id = corins_circle.11
+	title = corins_circle.11.t	
+	desc = corins_circle.11.d
+	picture = ADVISOR_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		is_in_league_war = yes
+		in_or_leading_corinite_league = yes 
+		religion = corinite
+	}
+	
+	mean_time_to_happen = {
+		months = 5
+		modifier = {
+			factor = 0.4
+			is_league_leader = yes
+		}
+	}
+	
+	option = {
+		name = corins_circle.11.a
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				NOT = { mil_power = 50 }
+			}
+		}
+		add_mil_power = -50
+		define_general = {
+			name = "Rethag Ironbrow"
+			shock = 4
+			fire = 3
+			manuever = 2
+			siege = 4
+		}
+	}
+	
+	option = {
+		name = corins_circle.11.b
+		ai_chance = {
+			factor = 1
+		}
+		add_prestige = 10
+	}
+}
+
+#Dominic of Gallowspeak : after
+country_event = {
+	id = corins_circle.12
+	title = corins_circle.12.t	
+	desc = corins_circle.12.d
+	picture = ADVISOR_eventPicture
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	option = {
+		name = corins_circle.12.a
+		ai_chance = {
+			factor = 1
+		}
+		add_country_modifier = {
+			name = dominic_of_gallowpeak_modifier_3
+			duration = 3650
+		}
+	}
+	
+	option = {
+		name = corins_circle.12.b
+		ai_chance = {
+			factor = 1
+		}
+		add_country_modifier = {
+			name = dominic_of_gallowpeak_modifier_4
+			duration = 3650
+		}
+	}
+}
+
+#Ser Laurens' Fate
+country_event = {
+	id = corins_circle.13
+	title = corins_circle.13.t	
+	desc = corins_circle.13.d
+	picture = COURT_eventPicture
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	option = {
+		name = corins_circle.13.a
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				OR = {
+					ruler_has_personality = benevolent_personality
+					ruler_has_personality = careful_personality
+					ruler_has_personality = just_personality
+					ruler_has_personality = kind_hearted_personality
+				}
+				NOT = { has_ruler_modifier = witch_king_modifier }
+			}
+			modifier = {
+				factor = 100
+				OR = {
+					ruler_has_personality = cruel_personality
+					ruler_has_personality = malevolent_personality
+					has_ruler_modifier = witch_king_modifier
+				}
+			}
+		}
+		add_mil_power = -100
+		add_country_modifier = {
+			name = lauren_sil_place_modifier_2
+			duration = 3650
+		}
+		increase_witch_king_points_large = yes
+	}
+	
+	option = {
+		name = corins_circle.13.b
+		ai_chance = {
+			factor = 1
+		}
+		if = { limit = { has_country_modifier = lauren_sil_place_modifier_1 }
+			remove_country_modifier = lauren_sil_place_modifier_1
+		}
+		if = { limit = { has_leader = "Ser Laurens síl Place" }
+			kill_leader = { type = "Ser Laurens síl Place" }
+		}
+		add_country_modifier = {
+			name = lauren_sil_place_modifier_3
+			duration = 3650
+		}
+	}
+}
+
+#Arosha Oakbreaker shows up
+country_event = {
+	id = corins_circle.14
+	title = corins_circle.14.t
+	desc = corins_circle.14.d
+	picture = ADVISOR_eventPicture
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = { always = yes}
+
+	option = {
+		name = corins_circle.14.a
+		ai_chance = {
+			factor = 10
+		}
+		add_country_modifier = {
+			name = arosha_oakbreaker_modifier1
+			duration = 3650
+		}
+		hidden_effect = {
+			country_event = { id = corins_circle.15 days = 1095 random = 1095}
+		}
+	}
+
+	option = {
+		name = corins_circle.14.b
+		ai_chance = {
+			factor = 10
+		}
+		add_country_modifier = {
+			name = arosha_oakbreaker_modifier2
+			duration = 3650
+		}
+		hidden_effect = {
+			country_event = { id = corins_circle.15 days = 1095 random = 1095}
+		}
+	}
+
+	option = {
+		name = corins_circle.14.c
+		ai_chance = {
+			factor = 1
+		}
+		add_legitimacy = 10
+	}
+}
+
+# Arosha begins preaching the word of Corin
+country_event = {
+	id = corins_circle.15
+	title = corins_circle.15.t
+	desc = corins_circle.15.d
+	picture = RELIGION_eventPicture
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = {
+		always = yes
+	}
+
+	option = {
+		name = corins_circle.15.a
+		ai_chance = {
+			factor = 10
+		}
+		add_country_modifier = {
+			name = arosha_oakbreaker_modifier3
+			duration = 3650
+		}
+		hidden_effect = {
+			country_event = { id = corins_circle.16 days = 1095 random = 1095}
+		}
+	}
+
+	option = {
+		name = corins_circle.15.b
+		ai_chance = {
+			factor = 10
+		}
+		add_country_modifier = {
+			name = arosha_oakbreaker_modifier4
+			duration = 3650
+		}
+		hidden_effect = {
+			country_event = { id = corins_circle.17 days = 60 random = 60}
+		}
+	}
+}
+
+# Arosha encourages your ruler to embrace Corin
+country_event = {
+	id = corins_circle.16
+	title = corins_circle.16.t
+	desc = corins_circle.16.d
+	picture = RELIGION_eventPicture
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger= {
+		always = yes
+	}
+
+	option = {
+		name = corins_circle.16.a
+		ai_chance = {
+			factor = 10
+		}
+		add_country_modifier = {
+			name = arosha_oakbreaker_modifier5
+			duration = -1
+		}
+		set_country_flag = influence_of_arosha_oakbreaker
+	}
+
+	option = {
+		name = corins_circle.16.b
+		ai_chance = {
+			factor = 10
+		}
+		add_country_modifier = {
+			name = arosha_oakbreaker_modifier4
+			duration = 3650
+		}
+		hidden_effect = {
+			country_event = { id = corins_circle.17 days = 60 random = 60}
+		}
+	}
+}
+
+# Ozarm'chadash against Arosha - Fight Start
+country_event = {
+	id = corins_circle.17
+	title = corins_circle.17.t
+	desc = corins_circle.17.d
+	picture = ACCUSATION_eventPicture
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = {
+		always = yes
+	}
+
+	# Give up claims to the throne
+	option = {
+		name = corins_circle.17.a
+		ai_chance = {
+			factor = 30
+		}
+		set_country_flag = influence_of_arosha_oakbreaker
+		reduce_stability_or_adm_power = yes
+		add_prestige = -25
+		define_ruler = {
+      			name = "Arosha"
+    			dynasty = "Oakbreaker"
+      			adm = 2
+			dip = 4
+			mil = 6
+			claim = 90
+			culture = ROOT
+			female = yes
+		}
+		add_ruler_personality = inspiring_leader_personality
+     		add_ruler_personality = just_personality
+		kill_consort = yes
+		kill_heir = { allow_new_heir = no } 
+		add_ruler_modifier = {
+			name = ozarm_chadash_without_fight	#+50% stability cost
+			duration = 1825
+		}
+		add_country_modifier = {
+			name = arosha_oakbreaker_modifier5
+			duration = -1
+		}
+	}
+
+	#Fight!
+	option = {
+		name = corins_circle.17.b
+		ai_chance = {
+			factor = 70
+		}
+		custom_tooltip = lets_fight_tooltip
+		hidden_effect = {
+			if = {
+				limit = { NOT = { mil = 1 } }
+				random_list = {
+					99 = {
+						country_event = { id = corins_circle.18 }	# Fight lost
+					}
+					1 = {
+						country_event = { id = corins_circle.19 }	# Fight won
+					}
+				}
+			}
+			if = {
+				limit = { mil = 1 NOT = { mil = 2 } }
+				random_list = {
+					99 = {
+						country_event = { id = corins_circle.18 }	# Fight lost
+					}
+					1 = {
+						country_event = { id = corins_circle.19 }	# Fight won
+					}
+				}
+			}
+			if = {
+				limit = { mil = 2 NOT = { mil = 3 } }
+				random_list = {
+					90 = {
+						country_event = { id = corins_circle.18 }	# Fight lost
+					}
+					10 = {
+						country_event = { id = corins_circle.19 }	# Fight won
+					}
+				}
+			}
+			if = {
+				limit = { mil = 3 NOT = { mil = 4 } }
+				random_list = {
+					90 = {
+						country_event = { id = corins_circle.18 }	# Fight lost
+					}
+					10 = {
+						country_event = { id = corins_circle.19 }	# Fight won
+					}
+				}
+			}
+			if = {
+				limit = { mil = 4 NOT = { mil = 5 } }
+				random_list = {
+					75 = {
+						country_event = { id = corins_circle.18 }	# Fight lost
+					}
+					25 = {
+						country_event = { id = corins_circle.19 }	# Fight won
+					}
+				}
+			}
+			if = {
+				limit = { mil = 5 NOT = { mil = 6 } }
+				random_list = {
+					66 = {
+						country_event = { id = corins_circle.18 }	# Fight lost
+					}
+					33 = {
+						country_event = { id = corins_circle.19 }	# Fight won
+					}
+				}
+			}
+			if = {
+				limit = { mil = 6 }
+				random_list = {
+					50 = {
+						country_event = { id = corins_circle.18 }	# Fight lost
+					}
+					50 = {
+						country_event = { id = corins_circle.19 }	# Fight won
+					}
+				}
+			}
+		}
+	}
+}
+
+#Ozarm'chadash against Arosha - Fight Lost!
+country_event = {
+	id = corins_circle.18
+	title = corins_circle.18.t
+	desc = corins_circle.18.d
+	picture = DEATH_OF_HEIR_eventPicture
+
+	is_triggered_only = yes
+
+	trigger = { 
+		always = yes 
+	}
+
+	#Death of the ruler
+	option = {
+		name = corins_circle.18.a
+		custom_tooltip = ozarm_chadash_fight_lost_tooltip
+		add_prestige = -10
+		reduce_stability_or_adm_power = yes
+		define_ruler = {
+			name = "Arosha"
+			dynasty = "Oakbreaker"
+			adm = 2
+			dip = 4
+			mil = 6
+			claim = 90
+			culture = ROOT
+			female = yes
+		}
+		set_ruler_flag = orc_winner_of_ozarmchadash
+		add_ruler_personality = inspiring_leader_personality
+		add_ruler_personality = just_personality
+		add_mil_power = 100
+		kill_consort = yes
+		kill_heir = { allow_new_heir = no } 
+		add_ruler_modifier = { #+33% stability cost
+			name = ozarm_chadash_shift_of_power
+			duration = 1825
+		}
+		add_estate_loyalty = {
+			estate = estate_monstrous_tribes
+			loyalty = 20
+		}
+		add_country_modifier = {
+			name = arosha_oakbreaker_modifier5
+			duration = -1
+		}
+		set_country_flag = influence_of_arosha_oakbreaker
+	}
+}
+
+#Ozarm'chadash against Arosha - Fight Won!
+country_event = {
+	id = corins_circle.19
+	title = corins_circle.19.t
+	desc = corins_circle.19.d
+	picture = REFORM_eventPicture
+
+	is_triggered_only = yes
+
+	trigger = {
+		always = yes
+	}
+
+	immediate = {
+		if = {
+			limit = { NOT = { mil = 1 } }
+			set_country_flag = mil_0
+		}
+		else_if = {
+			limit = { mil = 1 NOT = { mil = 2 } }
+			set_country_flag = mil_1
+		}
+		else_if = {
+			limit = { mil = 2 NOT = { mil = 3 } }
+			set_country_flag = mil_2
+		}
+		else_if = {
+			limit = { mil = 3 NOT = { mil = 4 } }
+			set_country_flag = mil_3
+		}
+		else_if = {
+			limit = { mil = 4 NOT = { mil = 5 } }
+			set_country_flag = mil_4
+		}
+		else_if = {
+			limit = { mil = 5 NOT = { mil = 6 } }
+			set_country_flag = mil_5
+		}
+		else = {
+			set_country_flag = mil_6
+		}
+	}
+
+	#Victory!
+	option = {
+		name = corins_circle.19.a
+		custom_tooltip = ozarm_chadash_fight_won_tooltip
+		add_stability_or_adm_power = yes
+		increase_religious_currency_effect = yes
+		if = {
+			limit = { has_country_flag = mil_0 }
+			change_mil = 2
+			add_prestige = 25
+			add_mil_power = 100
+			clr_country_flag = mil_0
+		}
+		else_if = {
+			limit = { has_country_flag = mil_1 }
+			change_mil = 1
+			add_prestige = 20
+			add_mil_power = 80
+			clr_country_flag = mil_1
+		}
+		else_if = {
+			limit = { has_country_flag = mil_2 }
+			change_mil = 1
+			add_prestige = 16
+			add_mil_power = 60
+			clr_country_flag = mil_2
+		}
+		else_if = {
+			limit = { has_country_flag = mil_3 }
+			change_mil = 1
+			add_prestige = 10
+			add_mil_power = 40
+			clr_country_flag = mil_3
+		}
+		else_if = {
+			limit = { has_country_flag = mil_4 }
+			change_mil = 1
+			add_prestige = 5
+			add_mil_power = 20
+			clr_country_flag = mil_4
+		}
+		else_if = {
+			limit = { has_country_flag = mil_5 }
+			change_mil = 1
+			add_prestige = 5
+			add_mil_power = 10
+			clr_country_flag = mil_5
+		}
+		else = {
+			add_prestige = 5
+			add_mil_power = 5
+			clr_country_flag = mil_6
+		}
+		add_ruler_modifier = {	#+5% morale of armies
+			name = ozarm_chadash_defeated_pretender
+			duration = -1
+		}
+		add_ruler_modifier = {
+			name = defeated_arosha_oakbreaker
+			duration = -1
+		}
+		add_estate_loyalty = {
+			estate = estate_monstrous_tribes
+			loyalty = 20
+		}
+	}
+}
+
+#Arosha's Influence makes the lads go Corinite
+country_event = {
+	id = corins_circle.20
+	title = corins_circle.20.t
+	desc = corins_circle.20.d
+	picture = REFORM_eventPicture
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = {
+		is_religion_enabled = corinite
+		has_country_flag = influence_of_arosha_oakbreaker
+	}
+
+	option = {
+		name = corins_circle.20.a
+		ai_chance = {
+			factor = 10
+		}
+		change_religion = corinite
+		remove_country_modifier = arosha_oakbreaker_modifier5
+		add_country_modifier = {
+			name = arosha_oakbreaker_modifier6
+			duration = 7300
+		}
+	}
+	option = {
+		name = corins_circle.20.b
+		ai_chance = {
+			factor = 0
+		}
+		add_legitimacy = 10
+	}
+}
+
+#Arosha's Influence makes the lads stop being monstrous
+country_event = {
+	id = corins_circle.21
+	title = corins_circle.21.t
+	desc = corins_circle.21.d
+	picture = REFORM_eventPicture
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_country_flag = influence_of_arosha_oakbreaker
+		has_country_flag = removing_monstrous
+	}
+
+	option = {
+		name = corins_circle.21.a
+		custom_tooltip = decrease_monstrous_10_tooltip
+		decrease_monstrous_10 = yes
+	}
+}
+

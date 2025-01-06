@@ -1,0 +1,724 @@
+namespace = witch_king
+
+# Activation
+country_event = {
+	id =  witch_king.0
+	title =  witch_king.0.t
+	desc =  witch_king.0.d
+	picture = COMET_SIGHTED_eventPicture
+	
+	trigger = {
+		ruler_has_mage_personality = yes
+		OR = {
+			check_variable = {
+				which = pointsWitchKing
+				value = 13
+			}
+			has_government_attribute = always_witch_king
+		}
+		
+		OR = {
+			NOT = { has_country_flag = witch_king_flag }
+			NOT = { has_ruler_modifier = witch_king_modifier }
+		}
+		
+		# Doesn't fire before previous king's Witch King points are cleared in magic school initalization magic_ruler.102
+		OR = {
+			has_ruler_flag = abjuration_1
+			has_ruler_flag = conjuration_1
+			has_ruler_flag = divination_1
+			has_ruler_flag = enchantment_1
+			has_ruler_flag = evocation_1
+			has_ruler_flag = illusion_1
+			has_ruler_flag = necromancy_1
+			has_ruler_flag = transmutation_1
+		}
+		
+		has_regency = no
+		
+	}
+	
+	# immediate = {
+		# hidden_effect = {
+			
+		# }
+	# }
+	
+	mean_time_to_happen = {
+		months = 600
+		
+		#Excess Witch King points
+		modifier = {
+			factor = 0.75
+			check_variable = {
+				which = pointsWitchKing
+				value = 26
+			}
+		}
+		modifier = {
+			factor = 0.5
+			check_variable = {
+				which = pointsWitchKing
+				value = 39
+			}
+		}
+		
+		#Necromancy
+		modifier = {
+			factor = 0.7
+			has_ruler_flag = necromancy_1
+		}
+		modifier = {
+			factor = 0.5
+			has_ruler_flag = necromancy_2
+		}
+		modifier = {
+			factor = 0.2
+			has_ruler_flag = necromancy_3
+		}
+		modifier = {
+			factor = 0.8
+			has_ruler_modifier = magic_witch_king_drain_life
+		}
+		modifier = {
+			factor = 0.001
+			has_country_modifier = undead_military
+		}
+		modifier = {
+			factor = 0.7
+			has_ruler_flag = magic_project_lichdom_started
+		}
+		modifier = {
+			factor = 0.5
+			has_ruler_flag = is_a_lich
+		}
+		
+		#Enchantment
+		modifier = {
+			factor = 0.8
+			has_ruler_modifier = magic_realm_enchantment_modify_memories_overlook_national_blunders
+		}
+		modifier = {
+			factor = 0.8
+			has_ruler_modifier = magic_realm_enchantment_modify_memories_encourage_subservience
+		}
+		modifier = {
+			factor = 0.8
+			has_ruler_modifier = magic_realm_enchantment_modify_memories_forget_atrocities
+		}
+		modifier = {
+			factor = 0.5
+			has_country_modifier = magic_enchantment_hysteria
+		}
+		
+		#Transmutation
+		modifier = {
+			factor = 0.9
+			has_ruler_flag = magic_project_homunculus_started
+		}
+		
+		#Siege
+		modifier = {
+			factor = 0.9
+			has_ruler_modifier = magic_witch_king_thunderstorm
+		}
+		modifier = {
+			factor = 0.7
+			has_ruler_modifier = magic_witch_king_dominate_surrender
+		}
+		modifier = {
+			factor = 0.8
+			has_ruler_modifier = magic_witch_king_earthquake
+		}
+		modifier = {
+			factor = 0.7
+			has_ruler_modifier = magic_witch_king_meteor_strike
+		}
+		
+		#Study
+		modifier = {
+			factor = 0.9
+			has_ruler_flag = ruler_studying_necromancy
+		}
+		modifier = {
+			factor = 0.9
+			has_ruler_flag = ruler_studying_unregulated_research
+		}
+		modifier = {
+			factor = 0.9
+			has_ruler_flag = ruler_studying_unsafe_experiments
+		}
+		modifier = {
+			factor = 0.8
+			has_ruler_flag = ruler_studying_live_experiments
+		}
+		modifier = {
+			factor = 0.8
+			has_ruler_modifier = ruler_studying_live_experiments
+		}
+		
+		#Estate
+		modifier = {
+			factor = 0.9
+			has_estate_privilege = estate_mages_reduced_research_regulations
+		}
+		
+		#Gov Attribute
+		modifier = {
+			factor = 0.001
+			has_government_attribute = always_witch_king
+		}
+	}
+
+	option = {
+		name = witch_king.0.a
+		
+		add_ruler_modifier = {
+			name = witch_king_modifier
+			duration = -1
+		}
+		
+		set_country_flag = witch_king_flag
+		
+		hidden_effect = {
+			country_event = { id = anbennar_setup.7 days = 1 }
+			if = {
+				limit = { has_government_attribute = always_witch_king }
+				change_variable = { pointsWitchKing = 50 }
+			}
+			if = {
+				limit = {
+					NOT = { has_global_flag = imperial_witch_king_active }
+					is_part_of_hre = yes
+					is_emperor = no
+					NOT = { emperor = { overlord_of = ROOT } }
+				}
+				save_global_event_target_as = imperial_witch_king
+				set_global_flag = imperial_witch_king_active
+				if = {
+					limit = {
+						has_dlc = "Emperor"
+					}
+					set_imperial_incident = incident_witch_prince
+				}
+				else = {
+					emperor = {
+						country_event = {
+							id = witch_king.4
+						}
+					}
+				}
+			}
+			G91 = {
+				country_event = {
+					id = flavor_isobelin.23 #refugees from witch king
+					days = 180
+				}
+			}
+			#invite mages back, forces you out of artificery only mode
+			if = {
+				limit = { has_country_flag = magic_artificery_artificery_only }
+				artifice_magic_switch_to_mixed_mode = yes
+			}
+		}
+	}
+}
+
+# Death of Witch King - Collapse
+country_event = {
+	id =  witch_king.1
+	title =  witch_king.1.t
+	desc =  witch_king.1.d
+	picture = DEATH_OF_HEIR_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		#had_ruler_flag = { flag = witch_king_flag days = 12 }
+		has_country_flag = witch_king_flag
+		NOT = { ruler_is_immortal = yes }
+		NOT = { has_country_flag = nsc_ruler_will_come_back }	#nsc event that temporally exile your ruler should not trigger this
+	}
+
+	option = {
+		name = witch_king.1.a
+		trigger = {
+			OR = {
+				ruler_has_mage_personality = yes
+				has_ruler_flag = heir_consort_mage_personality
+				has_government_attribute = always_mage
+			}
+		}
+		
+		add_ruler_modifier = {
+			name = witch_king_modifier
+			duration = -1
+		}
+		
+		set_country_flag = witch_king_flag
+		
+		add_country_modifier = {
+			name = witch_king_death
+			duration = 1825
+		}
+	}
+	
+	option = {
+		name = witch_king.1.b
+		trigger = {
+			NOT = {
+				ruler_has_mage_personality = yes
+				has_ruler_flag = heir_consort_mage_personality
+				has_government_attribute = always_mage
+			}
+		}
+		
+		add_country_modifier = {
+			name = witch_king_death
+			duration = 3650
+		}
+		
+		clr_country_flag = witch_king_flag
+		
+		#Removes opinion malus
+		hidden_effect = {
+			country_event = { id = anbennar_setup.8 days = 1 }
+		}
+	}
+	
+	#This only releases subjects, so if you have no vassals this means nothing
+	# option = {
+		# name = witch_king.1.c
+		# trigger = {
+			# NOT = {
+				# heir_has_mage_personality = yes
+				# has_heir_flag = heir_consort_mage_personality
+			# }
+		# }
+		
+		# release_all_subjects = yes
+		
+		# add_stability = 2
+		
+		# add_country_modifier = {
+			# name = witch_king_a_new_hope
+			# duration = 3650
+		# }
+	# }
+}
+
+#Evil Ruler Removed Through Peacedeal
+country_event = {
+	id =  witch_king.2
+	title =  witch_king.2.t
+	desc =  witch_king.2.d
+	picture = DEATH_OF_HEIR_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		OR = {
+			has_country_flag = witch_king_flag
+			has_country_flag = exposed_vampire_ruler
+			has_country_flag = exposed_lich_ruler
+			religion = infernal_court
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			FROM = { country_event = { id = witch_king.3 } }
+		}
+	}
+	
+	option = {
+		name = witch_king.2.a
+		
+		#Witch King Stuff, should fire for lich also
+		if = {
+			limit = {
+				has_country_flag = witch_king_flag	
+			}
+			#No more mages for Witch Kings
+			if = {
+				limit = {
+					OR = {
+						has_heir_flag = heir_consort_mage_personality
+						heir_has_mage_personality = yes 
+					}
+				}
+				exile_heir_as = exiled_evil_heir_@ROOT
+			}
+			add_country_modifier = {
+				name = witch_king_death
+				duration = 3650
+			}
+			
+			#Removes opinion malus
+			hidden_effect = {
+				country_event = { id = anbennar_setup.8 days = 1}
+			}
+		}
+		#Lich Stuff
+		if = {
+			limit = { has_country_flag = lich_ruler }
+			#Gov Change Back
+			hidden_effect = { country_event = { id = magic_project_lichdom.16 days = 7 } }
+		}
+		#Vampire stuff
+		if = {
+			limit = { has_country_flag = vampire_heir }
+			clr_country_flag = vampire_heir
+		}
+		#Infernalist stuff
+		if = {
+			limit = { religion = infernal_court }
+			change_religion = FROM
+		}
+		#varamhar stuff
+		if = {
+			limit = { has_reform = varamhar_eternal_empire }
+			if = {
+				limit = { has_country_modifier = varamhar_phoenix_empire_restored }
+				remove_government_reform = varamhar_eternal_empire
+				remove_country_modifier = varamhar_phoenix_empire_restored
+				add_government_reform = phoenix_empire
+			}
+			else = {
+				remove_government_reform = varamhar_eternal_empire
+				add_government_reform = phoenix_akalate
+			}
+		}
+		if = {
+			limit = { has_reform = varamhar_eternal_empire_mandate }
+			if = {
+				limit = { has_country_modifier = varamhar_phoenix_empire_restored }
+				remove_government_reform = varamhar_eternal_empire_mandate
+				remove_country_modifier = varamhar_phoenix_empire_restored
+				add_government_reform = phoenix_empire_mandate
+			}
+			else = {
+				remove_government_reform = varamhar_eternal_empire_mandate
+				add_government_reform = phoenix_akalate
+				add_government_reform = appease_khet
+			}
+		}
+		hidden_effect = {
+			#Witch King
+			clr_country_flag = witch_king_flag
+		
+			#Vampire
+			clear_ruler_vampire_flags = yes
+			clr_country_flag = vampire_heir
+			
+			#Lich
+			clr_country_flag = lich_ruler
+			clr_country_flag = lich_ruler_has_phylactery
+			clr_country_flag = lich_ruler_female
+			clr_country_flag = lich_ruler_male
+			clr_country_flag = exposed_lich_ruler
+			
+			#No Spells 4 u
+			if = {
+				limit = { NOT = { has_government_attribute = inherits_magic } }
+				ruler_clear_saved_spell_schools = yes
+			}
+		}
+		
+		exile_ruler_as = { name = exiled_evil_ruler_@ROOT }
+		
+		add_stability = -3
+		add_prestige = -50
+	}
+}
+
+#Evil Ruler Removed Through Peacedeal
+country_event = {
+	id =  witch_king.3
+	title =  witch_king.3.t
+	desc =  witch_king.3.d
+	picture = DEATH_OF_HEIR_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = witch_king.3.a
+		
+		add_country_modifier = {
+			name = defeated_evil_ruler
+			duration = 3650
+		}
+
+		add_karma = 20
+		
+		#Little bonus for the emperor for removing witch-princes
+		if = {
+			limit = {
+				is_emperor = yes
+				FROM = {
+					is_part_of_hre = yes
+				}
+			}
+			add_imperial_influence = 5
+		}
+	}
+}
+
+#Imperial incident for removing Witch Princes
+country_event = {
+	id = witch_king.4
+	title = witch_king.4.t
+	desc = witch_king.4.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+	major = yes
+	
+	after = {
+		hidden_effect = {
+			country_event = {
+				id = witch_king.6
+				days = 1
+			}
+		}
+	}
+	
+	option = { # They have forfeited their right to rule [target.GetName]
+		name = witch_king.4.a
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 2
+				OR = {
+					ai_attitude = {
+						who = event_target:imperial_witch_king
+						attitude = attitude_rivalry
+					}
+					ai_attitude = {
+						who = event_target:imperial_witch_king
+						attitude = attitude_hostile
+					}
+					ai_attitude = {
+						who = event_target:imperial_witch_king
+						attitude = attitude_threatened
+					}
+					ai_attitude = {
+						who = event_target:imperial_witch_king
+						attitude = attitude_outraged
+					}
+					ai_attitude = {
+						who = event_target:imperial_witch_king
+						attitude = attitude_rebellious
+					}
+				}
+			}
+		}
+		emperor = {
+			declare_war_with_cb = {
+				who = event_target:imperial_witch_king
+				casus_belli = cb_evil_ruler
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					event_target:imperial_witch_king = {
+						tag = A85
+					}
+				}
+				exists = A85
+			}
+			custom_tooltip = magisterium_may_join_war_tt
+			hidden_effect = {
+				A85 = {
+					country_event = { id = witch_king.5 }
+				}
+			}
+		}
+		event_target:imperial_witch_king = {
+			add_ruler_modifier = {
+				name = denounced_witch_king
+				duration = 3650
+			}
+		}
+		
+	}
+	
+	option = { # Denounce them
+		name = witch_king.4.b
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 2
+				OR = {
+					has_opinion = {
+						who = event_target:imperial_witch_king
+						value = 100
+					}				
+					ai_attitude = {
+						who = event_target:imperial_witch_king
+						attitude = attitude_friendly
+					}
+					ai_attitude = {
+						who = event_target:imperial_witch_king
+						attitude = attitude_loyal
+					}
+					ai_attitude = {
+						who = event_target:imperial_witch_king
+						attitude = attitude_allied
+					}
+				}
+			}
+		}
+		add_imperial_influence = -20
+		add_ruler_modifier = {
+			name = cowardly_emperor
+			duration = -1
+		}
+		event_target:imperial_witch_king = {
+			add_ruler_modifier = {
+				name = denounced_witch_king
+				duration = 3650
+			}
+		}
+	}
+}
+
+#Imperial incident for removing Witch Princes
+country_event = {
+	id = witch_king.5
+	title = witch_king.5.t
+	desc = witch_king.5.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = {
+			war_with = emperor
+		}
+	}
+	
+	option = { # We will join the emperor
+		name = witch_king.5.a
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 2
+				OR = {
+					ai_attitude = {
+						who = event_target:imperial_witch_king
+						attitude = attitude_rivalry
+					}
+					ai_attitude = {
+						who = event_target:imperial_witch_king
+						attitude = attitude_hostile
+					}
+					ai_attitude = {
+						who = event_target:imperial_witch_king
+						attitude = attitude_threatened
+					}
+					ai_attitude = {
+						who = event_target:imperial_witch_king
+						attitude = attitude_outraged
+					}
+					ai_attitude = {
+						who = event_target:imperial_witch_king
+						attitude = attitude_rebellious
+					}
+				}
+			}
+			modifier = {
+				factor = 0.75
+				is_at_war = yes
+			}
+		}
+		join_all_offensive_wars_of = emperor
+	}
+	
+	option = { # Denounce them
+		name = witch_king.5.b
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 2
+				OR = {
+					has_opinion = {
+						who = event_target:imperial_witch_king
+						value = 100
+					}				
+					ai_attitude = {
+						who = event_target:imperial_witch_king
+						attitude = attitude_friendly
+					}
+					ai_attitude = {
+						who = event_target:imperial_witch_king
+						attitude = attitude_loyal
+					}
+					ai_attitude = {
+						who = event_target:imperial_witch_king
+						attitude = attitude_allied
+					}
+				}
+			}
+		}
+		add_ruler_modifier = {
+			name = shirked_imperial_responsibility
+			duration = -1
+		}
+	}
+}
+
+#Clears the stuff later so the popups make sense
+country_event = {
+	id = witch_king.6
+	title = witch_king.6.t
+	desc = witch_king.6.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	hidden = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = witch_king.6.a
+		hidden_effect = {
+			clr_global_flag = imperial_witch_king_active
+			clear_global_event_target = imperial_witch_king
+		}
+	}
+}
+
+country_event = {
+	id = witch_king.7
+	title = witch_king.7.t
+	desc = witch_king.7.d
+	picture = BIG_BOOK_eventPicture
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		current_age = age_of_absolutism
+		has_country_modifier = witch_king_modifier
+		NOT = { religion = black_doctrine }
+	}
+
+	option = {
+		name = witch_king.7.a
+		change_religion = black_doctrine
+		capital_scope = {
+			change_religion = black_doctrine
+		}
+		set_ruler_religion = black_doctrine
+		add_country_modifier = {
+			name = black_converting_zeal
+			duration = 7300
+		}
+	}
+	option = {
+		name = witch_king.7.b
+		ai_chance = {
+			factor = 0
+		}
+	}
+}

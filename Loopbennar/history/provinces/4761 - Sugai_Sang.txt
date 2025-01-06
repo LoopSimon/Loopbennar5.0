@@ -1,0 +1,21 @@
+# No previous file for Anbennar4761
+owner = Y97
+controller = Y97
+add_core = Y97
+add_core = Y70
+culture = phonan
+religion = transmutative_path
+
+hre = no
+
+base_tax = 2
+base_production = 1
+base_manpower = 1
+
+trade_goods = ivory
+
+capital = ""
+
+is_city = yes
+
+#Sugai Sang is hidden Elephant, for here is where the elephants supposed hide and wait

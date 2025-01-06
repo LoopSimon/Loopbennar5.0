@@ -1,0 +1,220 @@
+
+
+
+xhazobkult_calc_tributary_proportion = {
+	if = {
+		limit = { #total development of every tributary subject / current subject => 1
+			check_variable = {
+				which = tributary_dev_proportion
+				value = 1
+			}
+		}
+		add_country_modifier = {
+			name = xhazobkult_tributaries_10
+			duration = -1
+			hidden = yes
+		}
+	}
+	else_if = {
+		limit = { #total development of every tributary subject / current subject => 1
+			check_variable = {
+				which = tributary_dev_proportion
+				value = 0.9
+			}
+		}
+		add_country_modifier = {
+			name = xhazobkult_tributaries_9
+			duration = -1
+			hidden = yes
+		}
+	}
+	else_if = {
+		limit = { #total development of every tributary subject / current subject => 1
+			check_variable = {
+				which = tributary_dev_proportion
+				value = 0.8
+			}
+		}
+		add_country_modifier = {
+			name = xhazobkult_tributaries_8
+			duration = -1
+			hidden = yes
+		}
+	}
+	else_if = {
+		limit = { #total development of every tributary subject / current subject => 1
+			check_variable = {
+				which = tributary_dev_proportion
+				value = 0.7
+			}
+		}
+		add_country_modifier = {
+			name = xhazobkult_tributaries_7
+			duration = -1
+			hidden = yes
+		}
+	}
+	else_if = {
+		limit = { #total development of every tributary subject / current subject => 1
+			check_variable = {
+				which = tributary_dev_proportion
+				value = 0.6
+			}
+		}
+		add_country_modifier = {
+			name = xhazobkult_tributaries_6
+			duration = -1
+			hidden = yes
+		}
+	}
+	else_if = {
+		limit = { #total development of every tributary subject / current subject => 1
+			check_variable = {
+				which = tributary_dev_proportion
+				value = 0.5
+			}
+		}
+		add_country_modifier = {
+			name = xhazobkult_tributaries_5
+			duration = -1
+			hidden = yes
+		}
+	}
+	else_if = {
+		limit = { #total development of every tributary subject / current subject => 1
+			check_variable = {
+				which = tributary_dev_proportion
+				value = 0.4
+			}
+		}
+		add_country_modifier = {
+			name = xhazobkult_tributaries_4
+			duration = -1
+			hidden = yes
+		}
+	}
+	else_if = {
+		limit = { #total development of every tributary subject / current subject => 1
+			check_variable = {
+				which = tributary_dev_proportion
+				value = 0.3
+			}
+		}
+		add_country_modifier = {
+			name = xhazobkult_tributaries_3
+			duration = -1
+			hidden = yes
+		}
+	}
+	else_if = {
+		limit = { #total development of every tributary subject / current subject => 1
+			check_variable = {
+				which = tributary_dev_proportion
+				value = 0.2
+			}
+		}
+		add_country_modifier = {
+			name = xhazobkult_tributaries_2
+			duration = -1
+			hidden = yes
+		}
+	}
+	else_if = {
+		limit = { #total development of every tributary subject / current subject => 1
+			check_variable = {
+				which = tributary_dev_proportion
+				value = 0.1
+			}
+		}
+		add_country_modifier = {
+			name = xhazobkult_tributaries_1
+			duration = -1
+			hidden = yes
+		}
+	}
+}
+
+xhazobkult_terrain_razing = {
+	if = {
+		limit = {
+			OR = {
+				has_terrain = city_terrain
+				province_group = hold_province
+			}
+		}
+		owner = { 
+			add_patriarch_authority = 0.05 
+			hidden_effect = {
+				change_variable = {
+					which = demonicPowerGained
+					value = 5
+				}
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			has_terrain = farmlands
+		}
+		owner = { 
+			add_patriarch_authority = 0.03 
+			hidden_effect = {
+				change_variable = {
+					which = demonicPowerGained
+					value = 3
+				}
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			OR = {
+				has_terrain = grasslands
+				has_terrain = hills
+				has_terrain = woods
+				has_terrain = drylands
+			}	
+		}
+		owner = { 
+			add_patriarch_authority = 0.025 
+			hidden_effect = {
+				change_variable = {
+					which = demonicPowerGained
+					value = 2.5
+				}
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			OR = {
+				has_terrain = mountain
+				has_terrain = highlands
+				has_terrain = steppe
+				has_terrain = forest
+				has_terrain = ancient_forest
+				has_terrain = jungle
+			}	
+		}
+		owner = { 
+			add_patriarch_authority = 0.02 
+			hidden_effect = {
+				change_variable = {
+					which = demonicPowerGained
+					value = 2
+				}
+			}
+		}
+	}
+	else = {
+		owner = { 
+			add_patriarch_authority = 0.01 
+			hidden_effect = {
+				change_variable = {
+					which = demonicPowerGained
+					value = 1
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,30 @@
+
+setup_vision = yes
+government = republic
+add_government_reform = free_city
+government_rank = 1
+mercantilism = 25
+primary_culture = east_damerian
+religion = regent_court
+technology_group = tech_cannorian
+capital = 587
+
+
+1000.1.1 = { 
+	set_estate_privilege = estate_mages_organization_magisterium 
+	set_country_flag = new_imperial_candidate_gain_magisterium
+}
+
+1440.1.1 = {
+	monarch = {
+		name = "Aldresia"
+		dynasty = "síl na Deir Stíal"
+		adm = 2
+		dip = 6
+		mil = 0
+		female = yes
+		birth_date = 1400.1.1
+	}
+	add_ruler_personality = entrepreneur_personality
+	add_ruler_personality = architectural_visionary_personality
+}

@@ -1,0 +1,69 @@
+#Country Name: Please see filename.
+
+graphical_culture = africangfx
+
+color = { 89  73  29 }
+
+
+
+historical_idea_groups = {
+	exploration_ideas
+	maritime_ideas
+	economic_ideas
+	offensive_ideas
+	expansion_ideas
+	quality_ideas	
+	administrative_ideas	
+	influence_ideas
+}
+
+historical_units = {
+	western_medieval_infantry
+	chevauchee
+	western_men_at_arms
+	swiss_landsknechten
+	dutch_maurician
+	french_caracolle
+	anglofrench_line
+	french_dragoon
+	french_bluecoat
+	french_cuirassier
+	french_impulse
+	mixed_order_infantry
+	open_order_cavalry
+	napoleonic_square
+	napoleonic_lancers
+}
+
+monarch_names = {
+
+	#Irkorzik Names
+	"Irkorzik #1" = 100
+
+	"Irkorzik #1" = -100
+}
+
+leader_names = {
+
+	#Windhowler Surnames
+	Bonegatherer Breezebiter Carrioneater Corpsepicker Deathdealer Dirgehowl Duneborn Dustpelt Galechaser 
+	Goatchewer Mystictooth Nighthunter Pathfinder Quietfang Sandhide Secretkeeper Silentpaw Skullcollector Stormfang Windmaw 
+	
+	#Windhowler Titles
+	Ender-of-Bloodlines Eye-of-the-Storm Harbinger-of-Silence Pointer-of-the-Way Scourer-of-Bones Seeker-of-Secrets Shaper-of-Dunes 
+	Splitter-of-Sands Stalker-of-Shadows Whirlwind-of-Blades
+}
+
+ship_names = {
+	#Gnollish
+	Buuz Eraga Ezi Fshu Gaz Glaxhur Golud Gox Gradir Gvad Habt Igrax Ikkev Iti Izer Kahon Keddax Kerxhur Krah Krysag Kverag Macaso Mak
+    Mazu Mekza Nakkad Narakk Pyaz Rabo Raboag Rarzo Tadaz Tuk Udzal Ukka Uzzu Vid Voger Xamed Xom Zatan Zelag Zik Zorrag
+}
+
+army_names = {
+	"Duneborn Tseradza" "Pathfinder Tseradza" "Mystictooth Tseradza" "$PROVINCE$ Tseradza"
+}
+
+fleet_names = {
+	"Sandhide Fleet" "Goatchewer Squadron" "Galechaser Fleet" "Stormfang Raiders"
+}

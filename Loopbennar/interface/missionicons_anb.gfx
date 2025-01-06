@@ -1,0 +1,1125 @@
+	### Anbennar Mission Icons ###	
+	
+	# Example of animated sprite!
+	#frameAnimatedSpriteType = {
+    #    name = "mission_well_of_majesty"
+    #    texturefile = "gfx//interface//missions//black_demesne//mission_well_of_majesty.dds"
+    #    noOfFrames = 101
+    #    loadType = "INGAME"
+    #    transparencecheck = yes
+    #    animation_rate_fps = 12
+    #    looping = yes
+    #    play_on_show = yes
+    #}
+	
+spriteTypes = {
+	# Base
+
+	spriteType = {
+		name = "mission_magic_tower"
+		texturefile = "gfx//interface//missions//mission_magic_tower.dds"
+	}
+	
+	# Magisterium
+	
+	spriteType = {
+		name = "mission_magisterium_fold_zero"
+		texturefile = "gfx//interface//missions//magisterium//mission_magisterium_fold_zero.dds"
+	}
+	
+	spriteType = {
+		name = "mission_magisterium_fold_one"
+		texturefile = "gfx//interface//missions//magisterium//mission_magisterium_fold_one.dds"
+	}
+	
+	spriteType = {
+		name = "mission_magisterium_fold_two"
+		texturefile = "gfx//interface//missions//magisterium//mission_magisterium_fold_two.dds"
+	}
+	
+	spriteType = {
+		name = "mission_magisterium_fold_three"
+		texturefile = "gfx//interface//missions//magisterium//mission_magisterium_fold_three.dds"
+	}
+	
+	spriteType = {
+		name = "mission_magisterium_fold_four"
+		texturefile = "gfx//interface//missions//magisterium//mission_magisterium_fold_four.dds"
+	}
+	
+	spriteType = {
+		name = "mission_magisterium_fold_five"
+		texturefile = "gfx//interface//missions//magisterium//mission_magisterium_fold_five.dds"
+	}
+	
+	spriteType = {
+		name = "mission_magisterium_fold_six"
+		texturefile = "gfx//interface//missions//magisterium//mission_magisterium_fold_six.dds"
+	}
+	
+	spriteType = {
+		name = "mission_magisterium_fold_seven"
+		texturefile = "gfx//interface//missions//magisterium//mission_magisterium_fold_seven.dds"
+	}
+	
+	spriteType = {
+		name = "mission_magisterium_fold_eight"
+		texturefile = "gfx//interface//missions//magisterium//mission_magisterium_fold_eight.dds"
+	}
+	
+	spriteType = {
+		name = "mission_magical_forest"
+		texturefile = "gfx//interface//missions//mission_magical_forest.dds"
+	}
+	
+	spriteType = {
+		name = "mission_crystal_cave"
+		texturefile = "gfx//interface//missions//mission_crystal_cave.dds"
+	}
+	
+	# Aelnar
+	spriteType = {
+		name = "mission_star_ascendency"
+		texturefile = "gfx//interface//missions//aelnar//mission_star_ascendency.dds"
+	}
+	
+	spriteType = {
+		name = "mission_arca_ore"
+		texturefile = "gfx//interface//missions//aelnar//mission_arca_ore.dds"
+	}
+	
+	spriteType = {
+		name = "mission_manifest_destiny"
+		texturefile = "gfx//interface//missions//aelnar//mission_manifest_destiny.dds"
+	}
+	
+	spriteType = {
+		name = "mission_racial"
+		texturefile = "gfx//interface//missions//aelnar//mission_racial.dds"
+	}
+	
+	spriteType = {
+		name = "mission_silblaidd"
+		texturefile = "gfx//interface//missions//aelnar//mission_silblaidd.dds"
+	}
+
+	spriteType = {
+		name = "mission_silblaidd_2"
+		texturefile = "gfx//interface//missions//aelnar//mission_silblaidd_2.dds"
+	}
+		
+	spriteType = {
+		name = "mission_frozen_star"
+		texturefile = "gfx//interface//missions//aelnar//mission_frozen_star.dds"
+	}
+	
+	spriteType = {
+		name = "mission_the_crystal_tiara"
+		texturefile = "gfx//interface//missions//aelnar//mission_the_crystal_tiara.dds"
+	}
+	
+	#Rezankand
+	spriteType = {
+		name = "mission_new_dawn"
+		texturefile = "gfx//interface//missions//rezankand//mission_new_dawn.dds"
+	}
+
+	spriteType = {
+		name = "mission_a_crown"
+		texturefile = "gfx//interface//missions//rezankand//mission_a_crown.dds"
+	}
+	
+	spriteType = {
+		name = "mission_arise_ashes"
+		texturefile = "gfx//interface//missions//rezankand//mission_arise_ashes.dds"
+	}
+	
+	# Dameria
+	spriteType = {
+		name = "mission_moon_throne"
+		texturefile = "gfx//interface//missions//dameria//mission_moon_throne.dds"
+	}
+	
+	spriteType = {
+		name = "mission_fleet"
+		texturefile = "gfx//interface//missions//dameria//mission_fleet.dds"
+	}
+	
+	# Commun
+	spriteType = {
+		name = "mission_alone_in_the_forest"
+		texturefile = "gfx//interface//missions//mission_alone_in_the_forest.dds"
+	}
+	
+	spriteType = {
+		name = "mission_armor_choice"
+		texturefile = "gfx//interface//missions//mission_armor_choice.dds"
+	}
+	
+	spriteType = {
+		name = "mission_armoury"
+		texturefile = "gfx//interface//missions//mission_armoury.dds"
+	}
+	
+	spriteType = {
+		name = "mission_assassination"
+		texturefile = "gfx//interface//missions//mission_assassination.dds"
+	}
+	
+	spriteType = {
+		name = "mission_beheading"
+		texturefile = "gfx//interface//missions//mission_beheading.dds"
+	}
+	
+	spriteType = {
+		name = "mission_big_house"
+		texturefile = "gfx//interface//missions//mission_big_house.dds"
+	}
+	
+	spriteType = {
+		name = "mission_burning_castle"
+		texturefile = "gfx//interface//missions//mission_burning_castle.dds"
+	}
+	
+	spriteType = {
+		name = "mission_burning_man"
+		texturefile = "gfx//interface//missions//mission_burning_man.dds"
+	}
+	
+	spriteType = {
+		name = "mission_burning_parthenon"
+		texturefile = "gfx//interface//missions//mission_burning_parthenon.dds"
+	}
+	
+	spriteType = {
+		name = "mission_captured"
+		texturefile = "gfx//interface//missions//mission_captured.dds"
+	}
+	
+	spriteType = {
+		name = "mission_city_prosperity"
+		texturefile = "gfx//interface//missions//mission_city_prosperity.dds"
+	}
+	
+	spriteType = {
+		name = "mission_dark_book"
+		texturefile = "gfx//interface//missions//mission_dark_book.dds"
+	}
+	
+	spriteType = {
+		name = "mission_dark_ritual"
+		texturefile = "gfx//interface//missions//mission_dark_ritual.dds"
+	}
+	
+	spriteType = {
+		name = "mission_destroyed_city"
+		texturefile = "gfx//interface//missions//mission_destroyed_city.dds"
+	}
+	
+	spriteType = {
+		name = "mission_diplomacy_missive"
+		texturefile = "gfx//interface//missions//mission_diplomacy_missive.dds"
+	}
+	
+	spriteType = {
+		name = "mission_discussion_arch"
+		texturefile = "gfx//interface//missions//mission_discussion_arch.dds"
+	}
+	
+	spriteType = {
+		name = "mission_door_trade"
+		texturefile = "gfx//interface//missions//mission_door_trade.dds"
+	}
+	
+	spriteType = {
+		name = "mission_dual_diplomacy"
+		texturefile = "gfx//interface//missions//mission_dual_diplomacy.dds"
+	}
+	
+	spriteType = {
+		name = "mission_female_throne"
+		texturefile = "gfx//interface//missions//mission_female_throne.dds"
+	}
+	
+	spriteType = {
+		name = "mission_fire_judgement"
+		texturefile = "gfx//interface//missions//mission_fire_judgement.dds"
+	}
+	
+	spriteType = {
+		name = "mission_fleet_arrival"
+		texturefile = "gfx//interface//missions//mission_fleet_arrival.dds"
+	}
+	
+	spriteType = {
+		name = "mission_guarded_market"
+		texturefile = "gfx//interface//missions//mission_guarded_market.dds"
+	}
+	
+	spriteType = {
+		name = "mission_heated_battle"
+		texturefile = "gfx//interface//missions//mission_heated_battle.dds"
+	}
+	
+	spriteType = {
+		name = "mission_homeless_children"
+		texturefile = "gfx//interface//missions//mission_homeless_children.dds"
+	}
+	
+	spriteType = {
+		name = "mission_magnificent_castle"
+		texturefile = "gfx//interface//missions//mission_magnificent_castle.dds"
+	}
+	
+	spriteType = {
+		name = "mission_marriage"
+		texturefile = "gfx//interface//missions//mission_marriage.dds"
+	}
+	
+	spriteType = {
+		name = "mission_monarch_diplomacy"
+		texturefile = "gfx//interface//missions//mission_monarch_diplomacy.dds"
+	}
+	
+	spriteType = {
+		name = "mission_mounted_battle"
+		texturefile = "gfx//interface//missions//mission_mounted_battle.dds"
+	}
+	
+	spriteType = {
+		name = "mission_princess_writing"
+		texturefile = "gfx//interface//missions//mission_princess_writing.dds"
+	}
+	
+	spriteType = {
+		name = "mission_science"
+		texturefile = "gfx//interface//missions//mission_science.dds"
+	}
+	
+	spriteType = {
+		name = "mission_sinister_castle"
+		texturefile = "gfx//interface//missions//mission_sinister_castle.dds"
+	}
+	
+	spriteType = {
+		name = "mission_smith"
+		texturefile = "gfx//interface//missions//mission_smith.dds"
+	}
+	
+	spriteType = {
+		name = "mission_star_comet"
+		texturefile = "gfx//interface//missions//mission_star_comet.dds"
+	}
+	
+	spriteType = {
+		name = "mission_swear_fealty_knight"
+		texturefile = "gfx//interface//missions//mission_swear_fealty_knight.dds"
+	}
+	
+	spriteType = {
+		name = "mission_approach_throne"
+		texturefile = "gfx//interface//missions//mission_approach_throne.dds"
+	}
+	
+	
+	spriteType = {
+		name = "mission_warrior_gold"
+		texturefile = "gfx//interface//missions//mission_warrior_gold.dds"
+	}
+	
+	spriteType = {
+		name = "mission_writing_book"
+		texturefile = "gfx//interface//missions//mission_writing_book.dds"
+	}
+	
+	spriteType = {
+		name = "mission_alone_in_the_wood"
+		texturefile = "gfx//interface//missions//mission_alone_in_the_wood.dds"
+	}
+	
+	spriteType = {
+		name = "mission_artificier_experience"
+		texturefile = "gfx//interface//missions//mission_artificier_experience.dds"
+	}
+	
+	spriteType = {
+		name = "mission_blood_sacrifice"
+		texturefile = "gfx//interface//missions//mission_blood_sacrifice.dds"
+	}
+	
+	spriteType = {
+		name = "mission_burning_separation"
+		texturefile = "gfx//interface//missions//mission_burning_separation.dds"
+	}
+	
+	spriteType = {
+		name = "mission_burning_witch"
+		texturefile = "gfx//interface//missions//mission_burning_witch.dds"
+	}
+	
+	spriteType = {
+		name = "mission_candide_letter"
+		texturefile = "gfx//interface//missions//mission_candide_letter.dds"
+	}
+	
+	spriteType = {
+		name = "mission_confrontation"
+		texturefile = "gfx//interface//missions//mission_confrontation.dds"
+	}
+	
+	spriteType = {
+		name = "mission_crowning"
+		texturefile = "gfx//interface//missions//mission_crowning.dds"
+	}
+	
+	spriteType = {
+		name = "mission_dancing_with_dead"
+		texturefile = "gfx//interface//missions//mission_dancing_with_dead.dds"
+	}
+	
+	spriteType = {
+		name = "mission_desert_pilgrim"
+		texturefile = "gfx//interface//missions//mission_desert_pilgrim.dds"
+	}
+	
+	spriteType = {
+		name = "mission_desert_rider"
+		texturefile = "gfx//interface//missions//mission_desert_rider.dds"
+	}
+	
+	spriteType = {
+		name = "mission_duel_snow"
+		texturefile = "gfx//interface//missions//mission_duel_snow.dds"
+	}
+	
+	spriteType = {
+		name = "mission_face_off"
+		texturefile = "gfx//interface//missions//mission_face_off.dds"
+	}
+	
+	spriteType = {
+		name = "mission_forest_pilgrim"
+		texturefile = "gfx//interface//missions//mission_forest_pilgrim.dds"
+	}
+	
+	spriteType = {
+		name = "mission_forest_shrine"
+		texturefile = "gfx//interface//missions//mission_forest_shrine.dds"
+	}
+	
+	spriteType = {
+		name = "mission_four_men"
+		texturefile = "gfx//interface//missions//mission_four_men.dds"
+	}
+	
+	spriteType = {
+		name = "mission_ghost_town"
+		texturefile = "gfx//interface//missions//mission_ghost_town.dds"
+	}
+	
+	spriteType = {
+		name = "mission_green_village"
+		texturefile = "gfx//interface//missions//mission_green_village.dds"
+	}
+	
+	spriteType = {
+		name = "mission_hanged_tree"
+		texturefile = "gfx//interface//missions//mission_hanged_tree.dds"
+	}
+	
+	spriteType = {
+		name = "mission_head_on_spike"
+		texturefile = "gfx//interface//missions//mission_head_on_spike.dds"
+	}
+	
+	spriteType = {
+		name = "mission_horse_siege"
+		texturefile = "gfx//interface//missions//mission_horse_siege.dds"
+	}
+	
+	spriteType = {
+		name = "mission_jungle_pilgrim"
+		texturefile = "gfx//interface//missions//mission_jungle_pilgrim.dds"
+	}
+	
+	spriteType = {
+		name = "mission_machine_of_war"
+		texturefile = "gfx//interface//missions//mission_machine_of_war.dds"
+	}
+	
+	spriteType = {
+		name = "mission_merchant_trip"
+		texturefile = "gfx//interface//missions//mission_merchant_trip.dds"
+	}
+	
+	spriteType = {
+		name = "mission_missive"
+		texturefile = "gfx//interface//missions//mission_missive.dds"
+	}
+	
+	spriteType = {
+		name = "mission_moon_moon"
+		texturefile = "gfx//interface//missions//mission_moon_moon.dds"
+	}
+	
+	spriteType = {
+		name = "mission_mountain_castle"
+		texturefile = "gfx//interface//missions//mission_mountain_castle.dds"
+	}
+	
+	spriteType = {
+		name = "mission_murder"
+		texturefile = "gfx//interface//missions//mission_murder.dds"
+	}
+	
+	spriteType = {
+		name = "mission_nomad"
+		texturefile = "gfx//interface//missions//mission_nomad.dds"
+	}
+	
+	spriteType = {
+		name = "mission_pray_light"
+		texturefile = "gfx//interface//missions//mission_pray_light.dds"
+	}
+	
+	spriteType = {
+		name = "mission_priest_church"
+		texturefile = "gfx//interface//missions//mission_priest_church.dds"
+	}
+	
+	spriteType = {
+		name = "mission_shady_encounter"
+		texturefile = "gfx//interface//missions//mission_shady_encounter.dds"
+	}
+	
+	spriteType = {
+		name = "mission_skull"
+		texturefile = "gfx//interface//missions//mission_skull.dds"
+	}
+	
+	spriteType = {
+		name = "mission_sun_temple"
+		texturefile = "gfx//interface//missions//mission_sun_temple.dds"
+	}
+	
+	spriteType = {
+		name = "mission_thinking_king"
+		texturefile = "gfx//interface//missions//mission_thinking_king.dds"
+	}
+	
+	spriteType = {
+		name = "mission_three_death"
+		texturefile = "gfx//interface//missions//mission_three_death.dds"
+	}
+	
+	spriteType = {
+		name = "mission_treasure_room"
+		texturefile = "gfx//interface//missions//mission_treasure_room.dds"
+	}
+	
+	spriteType = {
+		name = "mission_tree_fishing"
+		texturefile = "gfx//interface//missions//mission_tree_fishing.dds"
+	}
+	
+	spriteType = {
+		name = "mission_viking"
+		texturefile = "gfx//interface//missions//mission_viking.dds"
+	}
+	
+	spriteType = {
+		name = "mission_whisper"
+		texturefile = "gfx//interface//missions//mission_whisper.dds"
+	}
+
+	spriteType = {
+		name = "mission_lotus_flower"
+		texturefile = "gfx//interface//missions//mission_lotus_flower.dds"
+	}
+	
+	spriteType = {
+		name = "mission_white_tower"
+		texturefile = "gfx//interface//missions//mission_white_tower.dds"
+	}
+	spriteType = {
+		name = "mission_women_prayer"
+		texturefile = "gfx//interface//missions//mission_women_prayer.dds"
+	}
+	
+	spriteType = {
+		name = "mission_market"
+		texturefile = "gfx//interface//missions//mission_market.dds"
+	}
+	
+	spriteType = {
+		name = "mission_sunset"
+		texturefile = "gfx//interface//missions//mission_sunset.dds"
+	}
+	
+	spriteType = {
+		name = "mission_desert_city"
+		texturefile = "gfx//interface//missions//mission_desert_city.dds"
+	}
+	
+	spriteType = {
+		name = "mission_runeforged_cannons"
+		texturefile = "gfx//interface//missions//mission_runeforged_cannons.dds"
+	}
+	
+	spriteType = {
+		name = "mission_alone_in_the_forest_2"
+		texturefile = "gfx//interface//missions//mission_alone_in_the_forest_2.dds"
+	}
+	
+	spriteType = {
+		name = "mission_mithril_cannons"
+		texturefile = "gfx//interface//missions//mission_mithril_cannons.dds"
+	}
+	
+	spriteType = {
+		name = "mission_mechanical_mining"
+		texturefile = "gfx//interface//missions//mission_mechanical_mining.dds"
+	}
+	
+	spriteType = {
+		name = "mission_feast"
+		texturefile = "gfx//interface//missions//mission_feast.dds"
+	}
+
+	spriteType = {
+		name = "mission_ramsteel_crest"
+		texturefile = "gfx//interface//missions//orlazam-az-dihr//mission_ramsteel_crest.dds"
+	}
+
+	spriteType = {
+		name = "mission_ramsteel_gunpowder"
+		texturefile = "gfx//interface//missions//orlazam-az-dihr//mission_ramsteel_gunpowder.dds"
+	}
+
+	spriteType = {
+		name = "mission_hill_gnoll_auxilaries"
+		texturefile = "gfx//interface//missions//sugamber//mission_hill_gnoll_auxilaries.dds"
+	}
+
+	spriteType = {
+		name = "mission_flamemarked_gnoll_auxilaries"
+		texturefile = "gfx//interface//missions//sugamber//mission_flamemarked_gnoll_auxilaries.dds"
+	}
+
+	spriteType = {
+		name = "mission_assemble_an_army_and_factory_smoke"
+		texturefile = "gfx//interface//missions//sugamber//mission_assemble_an_army_and_factory_smoke.dds"
+	}
+	
+	spriteType = {
+		name = "mission_go_for_broke"
+		texturefile = "gfx//interface//missions//mission_go_for_broke.dds"
+	}
+	
+	spriteType = {
+		name = "mission_holy_star"
+		texturefile = "gfx//interface//missions//aelnar//mission_holy_star.dds"
+	}
+	
+	spriteType = {
+		name = "mission_seren_cathedral"
+		texturefile = "gfx//interface//missions//aelnar//mission_seren_cathedral.dds"
+	}
+	
+	spriteType = {
+		name = "mission_divine_legion"
+		texturefile = "gfx//interface//missions//aelnar//mission_divine_legion.dds"
+	}
+		
+	spriteType = {
+		name = "mission_aelantir"
+		texturefile = "gfx//interface//missions//mission_aelantir.dds"
+	}
+	
+	spriteType = {
+		name = "mission_aelnar"
+		texturefile = "gfx//interface//missions//aelnar//mission_aelnar.dds"
+	}
+	
+	spriteType = {
+		name = "mission_the_covenant"
+		texturefile = "gfx//interface//missions//aelnar//mission_the_covenant.dds"
+	}
+	
+	spriteType = {
+		name = "mission_three_elve"
+		texturefile = "gfx//interface//missions//aelnar//mission_three_elve.dds"
+	}
+	
+	spriteType = {
+		name = "mission_dha_thatchil"
+		texturefile = "gfx//interface//missions//aelnar//mission_dha_thatchil.dds"
+	}
+	
+	spriteType = {
+		name = "mission_dha_thatchil_2"
+		texturefile = "gfx//interface//missions//aelnar//mission_dha_thatchil_2.dds"
+	}
+	
+	spriteType = {
+		name = "mission_magy"
+		texturefile = "gfx//interface//missions//aelnar//mission_magy.dds"
+	}
+	
+	spriteType = {
+		name = "mission_geainne"
+		texturefile = "gfx//interface//missions//aelnar//mission_geainne.dds"
+	}
+	
+	spriteType = {
+		name = "mission_thirsting_queen"
+		texturefile = "gfx//interface//missions//mission_thirsting_queen.dds"
+	}
+
+	spriteType = {
+		name = "mission_thirsting_queen_2"
+		texturefile = "gfx//interface//missions//aelnar//mission_thirsting_queen_2.dds"
+	}
+	
+	spriteType = {
+		name = "mission_aelnar_corps"
+		texturefile = "gfx//interface//missions//aelnar//mission_aelnar_corps.dds"
+	}
+	
+	spriteType = {
+		name = "mission_empowerment"
+		texturefile = "gfx//interface//missions//mission_empowerment.dds"
+	}
+	
+	spriteType = {
+		name = "mission_delighted_mage"
+		texturefile = "gfx//interface//missions//mission_delighted_mage.dds"
+	}
+	
+	spriteType = {
+		name = "mission_transmutation"
+		texturefile = "gfx//interface//missions//mission_transmutation.dds"
+	}
+	
+	spriteType = {
+		name = "mission_necromancy"
+		texturefile = "gfx//interface//missions//mission_necromancy.dds"
+	}
+	
+	spriteType = {
+		name = "mission_harimar"
+		texturefile = "gfx//interface//missions//mission_harimar.dds"
+	}
+	
+	spriteType = {
+		name = "mission_harpy_diplomats"
+		texturefile = "gfx//interface//missions//mission_harpy_diplomats.dds"
+	}
+	
+	spriteType = {
+		name = "mission_oni"
+		texturefile = "gfx//interface//missions//mission_oni.dds"
+	}
+	
+	spriteType = {
+		name = "mission_misty_forest"
+		texturefile = "gfx//interface//missions//mission_misty_forest.dds"
+	}
+	
+	spriteType = {
+		name = "mission_elephant_war"
+		texturefile = "gfx//interface//missions//mission_elephant_war.dds"
+	}
+	
+	spriteType = {
+		name = "mission_elephant_king"
+		texturefile = "gfx//interface//missions//mission_elephant_king.dds"
+	}
+	
+	spriteType = {
+		name = "mission_elephant_herd"
+		texturefile = "gfx//interface//missions//mission_elephant_herd.dds"
+	}
+	
+	spriteType = {
+		name = "mission_rice_farming"
+		texturefile = "gfx//interface//missions//mission_rice_farming.dds"
+	}
+	
+	spriteType = {
+		name = "mission_well_of_majesty"
+		texturefile = "gfx//interface//missions//black_demesne//mission_well_of_majesty.dds"
+	}
+	
+	spriteType = {
+		name = "mission_solaris"
+		texturefile = "gfx//interface//missions//black_demesne//mission_solaris.dds"
+	}
+	
+	spriteType = {
+		name = "mission_mage_general"
+		texturefile = "gfx//interface//missions//black_demesne//mission_mage_general.dds"
+	}
+	
+	spriteType = {
+		name = "mission_gone_with_the_old"
+		texturefile = "gfx//interface//missions//black_demesne//mission_gone_with_the_old.dds"
+	}
+	
+	spriteType = {
+		name = "mission_jorgurem_the_frozen"
+		texturefile = "gfx//interface//missions//black_demesne//mission_jorgurem_the_frozen.dds"
+	}
+	
+	spriteType = {
+		name = "mission_arise"
+        texturefile = "gfx//interface//missions//black_demesne//mission_arise.dds"
+	}
+	
+	spriteType = {
+		name = "mission_the_surge"
+        texturefile = "gfx//interface//missions//black_demesne//mission_the_surge.dds"
+	}
+	
+	spriteType = {
+		name = "mission_the_ascension"
+        texturefile = "gfx//interface//missions//black_demesne//mission_the_ascension.dds"
+	}
+	
+	spriteType = {
+		name = "mission_scepter_of_scepters"
+		texturefile = "gfx//interface//missions//black_demesne//mission_scepter_of_scepters.dds"
+	}
+	
+	spriteType = {
+		name = "mission_crystal_focus"
+        texturefile = "gfx//interface//missions//mission_crystal_focus.dds"
+	}
+	
+	spriteType = {
+		name = "mission_the_dame_tears"
+		texturefile = "gfx//interface//missions//black_demesne//mission_the_dame_tears.dds"
+	}
+	
+	spriteType = {
+		name = "mission_secret_of_the_veil"
+		texturefile = "gfx//interface//missions//black_demesne//mission_secret_of_the_veil.dds"
+	}
+	
+	spriteType = {
+		name = "mission_underground_cave"
+		texturefile = "gfx//interface//missions//mission_underground_cave.dds"
+	}
+	
+	spriteType = {
+		name = "mission_verdant_secret"
+		texturefile = "gfx//interface//missions//black_demesne//mission_verdant_secret.dds"
+	}
+	
+	spriteType = {
+		name = "mission_stormy_seas"
+		texturefile = "gfx//interface//missions//mission_stormy_seas.dds"
+	}
+	
+	spriteType = {
+		name = "mission_kobold"
+		texturefile = "gfx//interface//missions//mission_kobold.dds"
+	}
+	
+	spriteType = {
+		name = "mission_blackpurgis"
+		texturefile = "gfx//interface//missions//black_demesne//mission_blackpurgis.dds"
+	}
+	
+	spriteType = {
+		name = "mission_bluefoot"
+		texturefile = "gfx//interface//missions//halflings//mission_bluefoot.dds"
+	}
+	
+	spriteType = {
+		name = "mission_redfoot"
+		texturefile = "gfx//interface//missions//halflings//mission_redfoot.dds"
+	}
+	
+	spriteType = {
+		name = "mission_conquer_uelaire"
+		texturefile = "gfx//interface//missions//halflings//mission_conquer_uelaire.dds"
+	}
+	
+	spriteType = {
+		name = "mission_unite_the_small_country"
+		texturefile = "gfx//interface//missions//halflings//mission_unite_the_small_country.dds"
+	}
+	
+	spriteType = {
+		name = "mission_baihon_xinh_bland"
+		texturefile = "gfx//interface//missions//honsai//mission_baihon_xinh_bland.dds"
+	}
+	
+	spriteType = {
+		name = "mission_baihon_xinh_silver"
+		texturefile = "gfx//interface//missions//honsai//mission_baihon_xinh_silver.dds"
+	}
+	
+	spriteType = {
+		name = "mission_baihon_xinh_gold"
+		texturefile = "gfx//interface//missions//honsai//mission_baihon_xinh_gold.dds"
+	}
+
+	spriteType = {
+		name = "mission_faceless_queen"
+		texturefile = "gfx//interface//missions//mission_faceless_queen.dds"
+	}
+
+	spriteType = {
+		name = "mission_tianlou"
+		texturefile = "gfx//interface//missions//mission_tianlou.dds"
+	}
+	
+	spriteType = {
+		name = "mission_corin"
+		texturefile = "gfx//interface//missions//mission_corin.dds"
+	}
+	
+	spriteType = {
+		name = "mission_greentide"
+		texturefile = "gfx//interface//missions//mission_greentide.dds"
+	}
+	
+	spriteType = {
+		name = "mission_frost_troll"
+		texturefile = "gfx//interface//missions//mission_frost_troll.dds"
+	}
+	
+	spriteType = {
+		name = "mission_centaur_shooting"
+		texturefile = "gfx//interface//missions//mission_centaur_shooting.dds"
+	}
+	
+	spriteType = {
+		name = "mission_dwarf"
+		texturefile = "gfx//interface//missions//mission_dwarf.dds"
+	}
+	
+	spriteType = {
+		name = "mission_elf_smiling"
+		texturefile = "gfx//interface//missions//mission_elf_smiling.dds"
+	}
+	
+	spriteType = {
+		name = "mission_gnome_tinkering"
+		texturefile = "gfx//interface//missions//mission_gnome_tinkering.dds"
+	}
+	
+	spriteType = {
+		name = "mission_beautiful_hobgoblin_stache"
+		texturefile = "gfx//interface//missions//mission_beautiful_hobgoblin_stache.dds"
+	}
+	
+	spriteType = {
+		name = "mission_orc_chillin"
+		texturefile = "gfx//interface//missions//mission_orc_chillin.dds"
+	}
+	
+	spriteType = {
+		name = "mission_kwineh"
+		texturefile = "gfx//interface//missions//mission_kwineh.dds"
+	}
+
+	spriteType = {
+		name = "mission_potion"
+		texturefile = "gfx//interface//missions//mission_potion.dds"
+	}
+	
+	spriteType = {
+		name = "mission_ynnic_knights"
+		texturefile = "gfx//interface//missions//mission_ynnic_knights.dds"
+	}
+	
+	spriteType = {
+		name = "mission_arverynn_street"
+		texturefile = "gfx//interface//missions//mission_arverynn_street.dds"
+	}
+	
+	spriteType = {
+		name = "mission_kirin"
+		texturefile = "gfx//interface//missions//mission_kirin.dds"
+	}	
+	
+	spriteType = {
+		name = "mission_hydra"
+		texturefile = "gfx//interface//missions//mission_hydra.dds"
+	}
+	spriteType = {
+		name = "mission_redscales"
+		texturefile = "gfx//interface//missions//mission_kobold_red.dds"
+	}
+	spriteType = {
+		name = "mission_bluescales"
+		texturefile = "gfx//interface//missions//mission_kobold_blue.dds"
+	}
+	spriteType = {
+		name = "mission_greenscales"
+		texturefile = "gfx//interface//missions//mission_kobold_green.dds"
+	}
+	
+	spriteType = {
+		name = "mission_dwarf_close_up"
+		texturefile = "gfx//interface//missions//mission_dwarf_close_up.dds"
+	}
+	
+	spriteType = {
+        name = "mission_grain_throne_nuzrandu"
+        texturefile = "gfx//interface//missions//mission_grain_throne_nuzrandu.dds"
+    }
+	
+	spriteType = {
+        name = "mission_fire_acolyte"
+        texturefile = "gfx//interface//missions//mission_fire_acolyte.dds"
+    }
+	
+	spriteType = {
+        name = "mission_trollsbay"
+        texturefile = "gfx//interface//missions//mission_trollsbay.dds"
+    }
+
+	spriteType = {
+        name = "mission_sunset_alternative"
+        texturefile = "gfx//interface//missions//mission_sunset_alternative.dds"
+	}
+	
+	spriteType = {
+        name = "mission_recruiting_only_the_best"
+        texturefile = "gfx//interface//missions//aelnar//mission_recruiting_only_the_best.dds"
+	}
+	
+	spriteType = {
+        name = "mission_rebirth_of_our_saviour"
+        texturefile = "gfx//interface//missions//mission_rebirth_of_our_saviour.dds"
+	}
+
+	spriteType = {
+        name = "mission_thorned_lady"
+        texturefile = "gfx//interface//missions//mission_thorned_lady.dds"
+    }
+	
+	spriteType = {
+        name = "mission_harmaceuticals"
+        texturefile = "gfx//interface//missions//allclan//mission_harmaceuticals.dds"
+	}
+
+	spriteType = {
+        name = "mission_harmaceuticals_2"
+        texturefile = "gfx//interface//missions//allclan//mission_harmaceuticals_2.dds"
+	}
+
+	spriteType = {
+        name = "mission_erectors"
+        texturefile = "gfx//interface//missions//allclan//mission_erectors.dds"
+	}
+
+	spriteType = {
+        name = "mission_cute_fella"
+        texturefile = "gfx//interface//missions//allclan//mission_cute_fella.dds"
+	}
+
+	spriteType = {
+        name = "mission_dapper_goblin"
+        texturefile = "gfx//interface//missions//allclan//mission_dapper_goblin.dds"
+	}
+
+	spriteType = {
+        name = "mission_goblin_rocket"
+        texturefile = "gfx//interface//missions//allclan//mission_goblin_rocket.dds"
+	}
+	spriteType = {
+        name = "mission_globlin"
+        texturefile = "gfx//interface//missions//allclan//mission_globlin.dds"
+	}
+
+	spriteType = {
+        name = "mission_mushroom_cloud"
+        texturefile = "gfx//interface//missions//allclan//mission_mushroom_cloud.dds"
+	}
+
+	spriteType = {
+        name = "mission_tech_stuff"
+        texturefile = "gfx//interface//missions//allclan//mission_tech_stuff.dds"
+	}
+
+	spriteType = {
+        name = "mission_tidal_wave"
+        texturefile = "gfx//interface//missions//allclan//mission_tidal_wave.dds"
+	}
+
+	spriteType = {
+        name = "mission_anvil"
+        texturefile = "gfx//interface//missions//allclan//mission_anvil.dds"
+	}
+
+	spriteType = {
+        name = "mission_machine"
+        texturefile = "gfx//interface//missions//allclan//mission_machine.dds"
+	}
+
+	spriteType = {
+        name = "mission_button"
+        texturefile = "gfx//interface//missions//allclan//mission_button.dds"
+	}
+
+	spriteType = {
+        name = "mission_rail"
+        texturefile = "gfx//interface//missions//allclan//mission_rail.dds"
+	}
+
+	spriteType = {
+        name = "mission_forge"
+        texturefile = "gfx//interface//missions//allclan//mission_forge.dds"
+	}
+	
+	spriteType = {
+        name = "mission_haless_map"
+        texturefile = "gfx//interface//missions//mission_haless_map.dds"
+	}
+
+	spriteType = {
+        name = "mission_sunyanin"
+        texturefile = "gfx//interface//missions//mission_sunyanin.dds"
+	}
+	spriteType = {
+        name = "mission_west_serpentspine_map"
+        texturefile = "gfx//interface//missions//mission_west_serpentspine_map.dds"
+	}
+	spriteType = {
+        name = "mission_kuiika_gamyi"
+        texturefile = "gfx//interface//missions//mission_kuiika_gamyi.dds"
+	}
+	spriteType = {
+        name = "mission_heunthume"
+        texturefile = "gfx//interface//missions//mission_heunthume.dds"
+	}
+	spriteType = {
+		name = "mission_goddess_heart"
+		texturefile = "gfx//interface//missions//effelai//mission_goddess_heart.dds"
+	}
+	spriteType = {
+		name = "mission_kheionai_laskaris"
+		texturefile = "gfx//interface//missions//mission_kheionai_laskaris.dds"
+	}
+	spriteType = {
+		name = "mission_taychend_nanru_nakar_city"
+		texturefile = "gfx//interface//missions//mission_taychend_nanru_nakar_city.dds"
+	}
+	spriteType = {
+		name = "mission_taychend_nanru_nakar_city_entrance"
+		texturefile = "gfx//interface//missions//mission_taychend_nanru_nakar_city_entrance.dds"
+	}
+	spriteType = {
+		name = "mission_precursor_relics"
+		texturefile = "gfx//interface//missions//mission_precursor_relics.dds"
+	}
+	spriteType = {
+		name = "mission_verne_flag"
+		texturefile = "gfx//interface//missions//mission_verne_flag.dds"
+	}
+}

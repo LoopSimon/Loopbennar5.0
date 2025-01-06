@@ -1,0 +1,36 @@
+
+#Bergslagen, contains Falun, Västerås etc. -3
+#lol
+
+owner = A41
+controller = A41
+add_core = A41
+culture = east_damerian
+religion = regent_court
+
+hre = yes
+
+base_tax = 5
+base_production = 4
+base_manpower = 4
+
+trade_goods = wool
+
+capital = ""
+
+is_city = yes
+latent_trade_goods = {
+	coal
+}
+
+set_province_flag = active_cannorian_holy_site
+add_permanent_province_modifier = {
+	name = highest_moon
+	duration = -1
+}
+
+
+
+
+
+

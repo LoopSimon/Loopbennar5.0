@@ -1,0 +1,31 @@
+
+setup_vision = yes
+government = republic
+add_government_reform = kai_township
+government_rank = 1
+primary_culture = sikai
+add_accepted_culture = sunrise_elf
+religion = transmutative_path
+technology_group = tech_halessi
+capital = 4789
+fixed_capital = 4789
+
+historical_friend = Y59 #Thirabnir
+
+1000.1.1 = { set_estate_privilege = estate_mages_organization_guilds }
+
+1438.2.2 = {
+	monarch = {
+		name = "Hiderion"	#toyotomi hideyoshi initial inspiration
+		dynasty = "Tonanzuir"
+		birth_date = 1369.11.4
+		culture = sunrise_elf
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+	
+	add_ruler_personality = just_personality
+	set_ruler_flag = long_lived_ruler
+	set_ruler_flag = is_hiderion
+}

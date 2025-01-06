@@ -1,0 +1,24 @@
+
+setup_vision = yes
+government = tribal
+add_government_reform = greentide_horde
+government_rank = 1
+primary_culture = green_orc
+religion = great_dookan
+technology_group = tech_orcish
+capital = 839
+
+#lore: a rabid beserker clan
+
+1444.11.11 = {
+	monarch = {
+		name = "Gurzan"
+		dynasty = "Bloodgorger"
+		birth_date = 1424.1.2
+		adm = 4
+		dip = 4
+		mil = 4
+	}
+	
+	add_ruler_personality = inspiring_leader_personality
+}

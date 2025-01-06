@@ -1,0 +1,149 @@
+
+country_decisions = {
+
+	form_jadd_empire = {
+		major = yes
+		potential = {
+			religion = the_jadd
+			NOT = { exists = F51 }
+			normal_or_historical_nations = yes
+			was_never_end_game_tag_trigger = yes
+			OR = {
+				ai = no
+				AND = {
+					ai = yes
+					num_of_cities = 30
+				}
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					OR = {
+						superregion = bulwar_superregion
+						superregion = rahen_superregion
+					}
+					NOT = { owned_by = ROOT }
+					NOT = {
+						ROOT = {
+							num_of_owned_provinces_with = {
+								value = 150
+								OR = {
+									superregion = bulwar_superregion
+									superregion = rahen_superregion
+								}
+							}
+						}
+					}
+				}
+				AND = {
+					OR = {
+						province_id = 2909
+						province_id = 643
+						province_id = 625
+						province_id = 601
+						province_id = 4411
+						province_id = 4435
+						province_id = 4391
+					}
+					OR = {
+						NOT = { owned_by = ROOT }
+						NOT = { is_core = ROOT }
+					}
+				}
+			}
+		}
+		allow = {
+			hidden_trigger = { religion = the_jadd }
+			is_at_war = no
+			is_free_or_tributary_trigger = yes
+			if = {
+				limit = { ai = yes }
+				num_of_owned_provinces_with = {
+					value = 100
+					OR = {
+						superregion = bulwar_superregion
+						superregion = rahen_superregion
+					}
+				}
+			}
+			else = {
+				num_of_owned_provinces_with = {
+					value = 150
+					OR = {
+						superregion = bulwar_superregion
+						superregion = rahen_superregion
+					}
+				}
+				owns_core_province = 2909
+				owns_core_province = 643
+				owns_core_province = 625
+				owns_core_province = 601
+				owns_core_province = 4411
+				owns_core_province = 4435
+				owns_core_province = 4391
+			}
+			
+		}
+		effect = {
+			change_tag = F51
+			hidden_effect = { restore_country_name = yes }
+			if = {
+				limit = {
+					or = {
+						tag = F46
+						was_tag = F46 
+					} 	
+				} 
+				swap_non_generic_missions = yes
+			}
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						is_part_of_hre = yes
+					}
+					set_in_empire = no
+				}
+			}
+			set_government_rank = 3
+			add_prestige = 50
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			if = {
+				limit = {
+					NOT = {
+						government = monarchy
+					}
+				}
+				change_government = monarchy
+			}
+			add_government_reform = jadd_empire
+			# if = {
+			# 	limit = {
+			# 		has_dlc = "Dharma"
+			# 	}
+			# 	add_government_reform = jadd_nobility
+			# }
+			country_event = { id = jadd_empire.1 }
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			if = {
+				limit = { OR = { tag = F46 was_tag = F46 } }
+				add_country_modifier = {
+					name = jaddari_legacy_of_the_desert_legion
+					duration = 7300
+				}
+			}
+			set_country_flag = formed_jadd_empire_flag
+			# set_country_flag = no_mandate
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+}

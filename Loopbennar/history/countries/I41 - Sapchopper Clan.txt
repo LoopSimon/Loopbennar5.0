@@ -1,0 +1,25 @@
+
+setup_vision = yes
+government = tribal
+add_government_reform = deepwoods_horde
+government_rank = 1
+primary_culture = green_orc
+religion = great_dookan
+technology_group = tech_orcish
+capital = 3013
+
+1000.1.1 = { set_estate_privilege = estate_mages_organization_guilds }
+
+1442.7.19 = {
+	monarch = {
+		name = "Khagor"
+		dynasty = "Sapchopper"
+		birth_date = 1422.4.10
+		adm = 3
+		dip = 1
+		mil = 5
+	}
+	add_ruler_personality = bold_fighter_personality
+	add_ruler_personality = conqueror_personality
+	add_ruler_personality = cruel_personality
+}

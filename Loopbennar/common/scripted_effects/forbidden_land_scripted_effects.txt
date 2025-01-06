@@ -1,0 +1,1741 @@
+
+lake_federation_gain_15_points = {
+	custom_tooltip = lake_15_points_tooltip
+	hidden_effect = {
+		change_variable = {
+			which = FederationPoints
+			value = 15
+		}
+		every_country = {
+			limit = { has_country_modifier = lake_federation_member }
+			change_variable = {
+				which = TotalFederationPoints
+				value = 15
+			}
+		}
+	}
+}
+
+
+lake_federation_gain_10_points = {
+	custom_tooltip = lake_10_points_tooltip
+	hidden_effect = {
+		change_variable = {
+			which = FederationPoints
+			value = 10
+		}
+		every_country = {
+			limit = { has_country_modifier = lake_federation_member }
+			change_variable = {
+				which = TotalFederationPoints
+				value = 10
+			}
+		}
+	}
+}
+
+lake_federation_gain_5_points = {
+	custom_tooltip = lake_5_points_tooltip
+	hidden_effect = {
+		change_variable = {
+			which = FederationPoints
+			value = 5
+		}
+		every_country = {
+			limit = { has_country_modifier = lake_federation_member }
+			change_variable = {
+				which = TotalFederationPoints
+				value = 5
+			}
+		}
+	}
+}
+
+lake_federation_gain_2_points = {
+	custom_tooltip = lake_2_points_tooltip
+	hidden_effect = {
+		change_variable = {
+			which = FederationPoints
+			value = 2.5
+		}
+		every_country = {
+			limit = { has_country_modifier = lake_federation_member }
+			change_variable = {
+				which = TotalFederationPoints
+				value = 2.5
+			}
+		}
+	}
+}
+
+lake_federation_gain_1_points = {
+	custom_tooltip = lake_1_points_tooltip
+	hidden_effect = {
+		change_variable = {
+			which = FederationPoints
+			value = 1
+		}
+		every_country = {
+			limit = { has_country_modifier = lake_federation_member }
+			change_variable = {
+				which = TotalFederationPoints
+				value = 1
+			}
+		}
+	}
+}
+
+lake_federation_lose_15_points = {
+	custom_tooltip = lake_minus_15_points_tooltip
+	hidden_effect = {
+		subtract_variable = {
+			which = FederationPoints
+			value = 15
+		}
+		every_country = {
+			limit = { has_country_modifier = lake_federation_member }
+			subtract_variable = {
+				which = TotalFederationPoints
+				value = 15
+			}
+		}
+	}
+}
+
+lake_federation_lose_10_points = {
+	custom_tooltip = lake_minus_10_points_tooltip
+	hidden_effect = {
+		subtract_variable = {
+			which = FederationPoints
+			value = 10
+		}
+		every_country = {
+			limit = { has_country_modifier = lake_federation_member }
+			subtract_variable = {
+				which = TotalFederationPoints
+				value = 10
+			}
+		}
+	}
+}
+
+lake_federation_lose_5_points = {
+	custom_tooltip = lake_minus_5_points_tooltip
+	hidden_effect = {
+		subtract_variable = {
+			which = FederationPoints
+			value = 5
+		}
+		every_country = {
+			limit = { has_country_modifier = lake_federation_member }
+			subtract_variable = {
+				which = TotalFederationPoints
+				value = 5
+			}
+		}
+	}
+}
+
+lake_federation_lose_2_points = {
+	custom_tooltip = lake_minus_2_points_tooltip
+	hidden_effect = {
+		subtract_variable = {
+			which = FederationPoints
+			value = 2.5
+		}
+		every_country = {
+			limit = { has_country_modifier = lake_federation_member }
+			subtract_variable = {
+				which = TotalFederationPoints
+				value = 2.5
+			}
+		}
+	}
+}
+
+lake_federation_lose_1_points = {
+	custom_tooltip = lake_minus_1_points_tooltip
+	hidden_effect = {
+		subtract_variable = {
+			which = FederationPoints
+			value = 1
+		}
+		every_country = {
+			limit = { has_country_modifier = lake_federation_member }
+			subtract_variable = {
+				which = TotalFederationPoints
+				value = 1
+			}
+		}
+	}
+}
+
+lake_federation_gain_politics = {
+	if = {
+		limit = { has_global_flag = federation_assembly_house_build }
+		if = {
+			limit = { any_owned_province = { has_province_modifier = federation_assembly_house } }
+			hidden_effect = { change_variable = { FederationPolitics = 0.5 } }
+			custom_tooltip = fed_politics_own_assembly_house_tooltip
+		}
+		if = {
+			limit = { federation_has_high_standing = yes }
+			hidden_effect = { change_variable = { FederationPolitics = 1.5 } }
+			custom_tooltip = fed_politics_high_standing_tooltip
+		}
+		else = {
+			hidden_effect = { change_variable = { FederationPolitics = 1 } }
+			custom_tooltip = fed_politics_tooltip
+		}
+		if = {
+			limit = { has_country_modifier = victor_fed_religious_war }
+			hidden_effect = { change_variable = { FederationPolitics = 0.5 } }
+			custom_tooltip = fed_politics_religious_war_winner_tooltip
+		}
+		if = {
+			limit = { any_owned_province = { has_province_modifier = federation_central_bank } }
+			hidden_effect = { change_variable = { FederationPolitics = 0.5 } }
+			custom_tooltip = fed_politics_own_central_bank_tooltip
+		}
+	}
+}
+
+lake_federation_lose_1_politics = {
+	custom_tooltip = lose_federation_1_politic_tooltip
+	hidden_effect = { subtract_variable = { FederationPolitics = 1 } }
+}
+
+lake_federation_lose_2_politics = {
+	custom_tooltip = lose_federation_2_politic_tooltip
+	hidden_effect = { subtract_variable = { FederationPolitics = 2 } }
+}
+
+lake_federation_lose_3_politics = {
+	custom_tooltip = lose_federation_3_politic_tooltip
+	hidden_effect = { subtract_variable = { FederationPolitics = 3 } }
+}
+
+lake_federation_lose_4_politics = {
+	custom_tooltip = lose_federation_4_politic_tooltip
+	hidden_effect = { subtract_variable = { FederationPolitics = 4 } }
+}
+
+lake_federation_lose_5_politics = {
+	custom_tooltip = lose_federation_5_politic_tooltip
+	hidden_effect = { subtract_variable = { FederationPolitics = 5 } }
+}
+
+lake_federation_lose_7_politics = {
+	custom_tooltip = lose_federation_7_politic_tooltip
+	hidden_effect = { subtract_variable = { FederationPolitics = 7 } }
+}
+
+clear_federation_global_flag = {
+	clr_global_flag = lake_linguistic_academy
+	clr_global_flag = lake_islander_declaration
+	clr_global_flag = lake_clothing_for_everyone
+	clr_global_flag = lake_agricultural_reform
+	clr_global_flag = lake_preservation_act
+	clr_global_flag = lake_judiciary_system
+	clr_global_flag = lake_federation_artisan
+	clr_global_flag = lake_implement_regulation
+	clr_global_flag = lake_every_man_a_landlord
+	clr_global_flag = lake_the_federation_needs
+	clr_global_flag = lake_a_united_federation
+	clr_global_flag = lake_free_trade
+	clr_global_flag = lake_the_place_of_everyone
+	clr_global_flag = lake_federation_soldier_first
+	clr_global_flag = lake_military_reform
+	clr_global_flag = lake_the_mainland_question
+	clr_global_flag = lake_the_pirate_act
+	clr_global_flag = lake_cohesion_1
+	clr_global_flag = lake_cohesion_2
+	clr_global_flag = lake_cohesion_3
+	clr_global_flag = lake_cohesion_4
+	clr_global_flag = lake_cohesion_5
+	clr_global_flag = federation_crisis
+	clr_country_flag = federation_mil_article_1
+	clr_country_flag = federation_industry_article_1
+	clr_country_flag = federation_trade_article_1
+	clr_country_flag = federation_mil_article_2
+	clr_country_flag = federation_industry_article_2
+	clr_country_flag = federation_trade_article_2
+	clr_country_flag = federation_mil_article_3
+	clr_country_flag = federation_industry_article_3
+	clr_country_flag = federation_trade_article_3
+	clr_country_flag = federation_mil_article_4
+	clr_country_flag = federation_industry_article_4
+	clr_country_flag = federation_trade_article_4
+	clr_country_flag = federation_mil_article_5
+	clr_country_flag = federation_industry_article_5
+	clr_country_flag = federation_trade_article_5
+	clr_country_flag = federation_mil_article_6
+	clr_country_flag = federation_industry_article_6
+	clr_country_flag = federation_trade_article_6
+	clr_country_flag = federation_mil_article_7
+	clr_country_flag = federation_industry_article_7
+	clr_country_flag = federation_trade_article_7
+	clr_country_flag = federation_mil_article_8
+	clr_country_flag = federation_industry_article_8
+	clr_country_flag = federation_trade_article_8
+	clr_country_flag = building_museum
+	clr_country_flag = federation_cohesion_triumph
+	clr_country_flag = cohesion_J49_former
+	clr_country_flag = cohesion_J50_former
+	clr_country_flag = cohesion_J51_former
+	clr_country_flag = cohesion_J52_former
+	clr_country_flag = cohesion_J53_former
+	clr_country_flag = cohesion_rejected_formation
+	hidden_effect = {
+		remove_country_modifier = lake_federation_member
+		remove_country_modifier = lake_federation_5_cohesion
+		remove_country_modifier = federation_mainland_operation
+		remove_country_modifier = lake_military_marine
+		remove_country_modifier = lake_commercial_marine
+		remove_country_modifier = ultakal_decree
+		remove_country_modifier = federation_islander_declaration
+		remove_country_modifier = lake_trade
+		remove_country_modifier = lake_diplomatic_corps
+		remove_country_modifier = federation_linguistic_academy
+		remove_country_modifier = lake_growing_administration
+		remove_country_modifier = lake_mainland_trade_established
+		remove_country_modifier = federation_judiciary_system
+		remove_country_modifier = federation_free_trade
+		remove_country_modifier = federation_fighter
+		remove_country_modifier = federation_subventionner
+		#remove_country_modifier = federation_leecher_mod
+		remove_country_modifier = federation_fighter_conscription
+		remove_country_modifier = federation_conscription
+		remove_country_modifier = federation_military_reform
+		remove_country_modifier = federation_war_mandat
+		remove_country_modifier = federation_cutdown
+		remove_country_modifier = lake_ideas_melting_pot
+		remove_country_modifier = lake_federation_observer
+		remove_country_modifier = lake_cover_piracy
+		remove_country_modifier = lake_anti_piracy_act
+		remove_country_modifier = lake_caravan_act
+		remove_country_modifier = lake_unrestricted_trade_route
+		remove_country_modifier = victor_fed_religious_war
+		remove_country_modifier = loser_fed_religious_war
+		remove_country_modifier = lake_strike_hard
+		remove_country_modifier = lake_attrition_war
+	}
+}
+
+centaur_colonization = {
+	# custom_tooltip = centaur_colonization_tooltip
+	hidden_effect = {
+		random_owned_province = {
+			limit = { has_empty_adjacent_province = yes is_city = yes superregion = forbidden_lands_superregion }
+			random_empty_neighbor_province = {
+				limit = { is_city = no superregion = forbidden_lands_superregion NOT = { has_province_modifier = cant_colonize } }
+				create_colony = 1000
+				random_list = {
+					50 = {
+						add_base_tax = 1
+						add_base_manpower = 1
+					}
+					50 = {
+						add_base_manpower = 2
+					}
+					50 = {
+						add_base_production = 1
+						add_base_manpower = 1
+					}
+				}
+				add_core = ROOT
+			}
+		}
+	}
+}
+
+centaur_battle_count_win = {
+	if = {
+		limit = { has_country_modifier = centaur_administration }
+		change_variable = { nbCharge = 1 }
+		change_variable = { totalBattle = 1 }
+		set_variable = {
+			which = battleWinRate
+			which = nbCharge
+		}
+		divide_variable = {
+			which = battleWinRate
+			which = totalBattle
+		}
+		multiply_variable = {
+			which = battleWinRate
+			value = 100
+		}
+		if = {
+			limit = { FROM = { has_country_modifier = human_military } }
+			change_variable = { nbBattleHuman = 1 }
+		}
+		else_if = {
+			limit = { FROM = { has_country_modifier = dwarven_military } }
+			change_variable = { nbBattleDwarf = 1 }
+		}
+		else_if = {
+			limit = { FROM = { has_country_modifier = elven_military } }
+			change_variable = { nbBattleElf = 1 }
+		}
+		else_if = {
+			limit = { FROM = { has_country_modifier = ogre_military } }
+			change_variable = { nbBattleOgre = 1 }
+		}
+		else_if = {
+			limit = { FROM = { has_country_modifier = orcish_military } }
+			change_variable = { nbBattleOrc = 1 }
+		}
+		else_if = {
+			limit = { FROM = { has_country_modifier = hobgoblin_military } }
+			change_variable = { nbBattleHobgoblin = 1 }
+		}
+		else_if = {
+			limit = { FROM = { has_country_modifier = harimari_military } }
+			change_variable = { nbBattleHarimari = 1 }
+		}
+		else_if = {
+			limit = { FROM = { has_country_modifier = kobold_military } }
+			change_variable = { nbBattleKobold = 1 }
+		}
+		else_if = {
+			limit = { FROM = { has_country_modifier = goblin_military } }
+			change_variable = { nbBattleGoblin = 1 }
+		}
+		else_if = {
+			limit = { FROM = { has_country_modifier = gnomish_military } }
+			change_variable = { nbBattleGnome = 1 }
+		}
+	}
+	
+}
+
+centaur_battle_count_lost = {
+	if = {
+		limit = { has_country_modifier = centaur_administration }
+		change_variable = { nbChargeLose = 1 }
+		change_variable = { totalBattle = 1 }
+		set_variable = {
+			which = battleWinRate
+			which = nbCharge
+		}
+		divide_variable = {
+			which = battleWinRate
+			which = totalBattle
+		}
+		multiply_variable = {
+			which = battleWinRate
+			value = 100
+		}
+	}
+}
+
+centaur_won_war_count = {
+	if = {
+		limit = { has_country_modifier = centaur_administration }
+		change_variable = { nbWarWon = 1 }
+	}
+}
+
+centaur_battle_won = {
+	ROOT = {
+		if = { 
+			limit = { has_estate_privilege = estate_monstrous_tribes_caehns_valor }
+			set_variable = {
+				which = centaur_horde_unity
+				value = 0
+			}
+			export_to_variable = {
+				which = centaur_horde_unity
+				value = trigger_value:horde_unity
+				who = ROOT
+			}
+			if = {
+				limit = { has_country_flag = centaur_caehns_valor_3 }
+				multiply_variable = {
+					which = centaur_horde_unity
+					value = 6
+				}
+			}
+			else_if = {
+				limit = { has_country_flag = centaur_caehns_valor_2 }
+				multiply_variable = {
+					which = centaur_horde_unity
+					value = 4
+				}
+			}
+			else_if = {
+				limit = { has_country_flag = centaur_caehns_valor_1 }
+				multiply_variable = {
+					which = centaur_horde_unity
+					value = 2
+				}
+			}
+			while = {
+				limit = {
+					check_variable = {
+						which = centaur_horde_unity
+						value = 1
+					}
+				}
+				subtract_variable = {
+					which = centaur_horde_unity
+					value = 1
+				}
+				add_manpower = 0.001
+			}
+		}
+	}
+}
+
+centaur_siege_won = {
+	ROOT = {
+		if = { 
+			limit = { 
+				has_estate_privilege = estate_monstrous_tribes_caehns_valor 
+				FROM = { fort_level = 1 }
+			}
+			set_variable = {
+				which = centaur_horde_unity
+				value = 0
+			}
+			export_to_variable = {
+				which = centaur_horde_unity
+				value = trigger_value:horde_unity
+				who = ROOT
+			}
+			if = {
+				limit = { has_country_flag = centaur_caehns_valor_3 }
+				multiply_variable = {
+					which = centaur_horde_unity
+					value = 12
+				}
+			}
+			else_if = {
+				limit = { has_country_flag = centaur_caehns_valor_2 }
+				multiply_variable = {
+					which = centaur_horde_unity
+					value = 8
+				}
+			}
+			else_if = {
+				limit = { has_country_flag = centaur_caehns_valor_1 }
+				multiply_variable = {
+					which = centaur_horde_unity
+					value = 4
+				}
+			}
+			while = {
+				limit = {
+					check_variable = {
+						which = centaur_horde_unity
+						value = 1
+					}
+				}
+				subtract_variable = {
+					which = centaur_horde_unity
+					value = 1
+				}
+				add_manpower = 0.001
+			}
+		}
+	}
+}
+
+federation_representative_setup = {
+	#Kodave Representative
+	random_country = {
+		limit = {
+			has_country_flag = kodave_faction
+		}
+		save_event_target_as = kodaveRepresentative
+	}
+	random_country = {
+		limit = {
+			has_country_flag = kodave_faction
+			federation_has_low_standing = yes
+		}
+		save_event_target_as = kodaveRepresentative
+	}
+	random_country = {
+		limit = {
+			has_country_flag = kodave_faction
+			federation_has_normal_standing = yes
+		}
+		save_event_target_as = kodaveRepresentative
+	}
+	random_country = {
+		limit = {
+			has_country_flag = kodave_faction
+			federation_has_high_standing = yes
+		}
+		save_event_target_as = kodaveRepresentative
+	}
+	random_country = {
+		limit = {
+			has_country_flag = kodave_faction
+			federation_has_very_high_standing = yes
+		}
+		save_event_target_as = kodaveRepresentative
+	}
+	random_country = {
+		limit = {
+			has_country_flag = kodave_faction
+			is_lake_federation_leader = yes
+		}
+		save_event_target_as = kodaveRepresentative
+	}
+	event_target:kodaveRepresentative = {
+		set_country_flag = kodave_leader
+		set_variable = { FedWarWin = 0 }
+	}
+	#Enuuk Representative
+	random_country = {
+		limit = {
+			has_country_flag = enuuk_faction
+		}
+		save_event_target_as = enuukRepresentative
+	}
+	random_country = {
+		limit = {
+			has_country_flag = enuuk_faction
+			federation_has_low_standing = yes
+		}
+		save_event_target_as = enuukRepresentative
+	}
+	random_country = {
+		limit = {
+			has_country_flag = enuuk_faction
+			federation_has_normal_standing = yes
+		}
+		save_event_target_as = enuukRepresentative
+	}
+	random_country = {
+		limit = {
+			has_country_flag = enuuk_faction
+			federation_has_high_standing = yes
+		}
+		save_event_target_as = enuukRepresentative
+	}
+	random_country = {
+		limit = {
+			has_country_flag = enuuk_faction
+			federation_has_very_high_standing = yes
+		}
+		save_event_target_as = enuukRepresentative
+	}
+	random_country = {
+		limit = {
+			has_country_flag = enuuk_faction
+			is_lake_federation_leader = yes
+		}
+		save_event_target_as = enuukRepresentative
+	}
+	event_target:enuukRepresentative = {
+		set_country_flag = enuuk_leader
+		set_variable = { FedWarWin = 0 }
+	}
+	#Yukel Representative
+	random_country = {
+		limit = {
+			has_country_flag = yukel_faction
+		}
+		save_event_target_as = yukelRepresentative
+	}
+	random_country = {
+		limit = {
+			has_country_flag = yukel_faction
+			federation_has_low_standing = yes
+		}
+		save_event_target_as = yukelRepresentative
+	}
+	random_country = {
+		limit = {
+			has_country_flag = yukel_faction
+			federation_has_normal_standing = yes
+		}
+		save_event_target_as = yukelRepresentative
+	}
+	random_country = {
+		limit = {
+			has_country_flag = yukel_faction
+			federation_has_high_standing = yes
+		}
+		save_event_target_as = yukelRepresentative
+	}
+	random_country = {
+		limit = {
+			has_country_flag = yukel_faction
+			federation_has_very_high_standing = yes
+		}
+		save_event_target_as = yukelRepresentative
+	}
+	random_country = {
+		limit = {
+			has_country_flag = yukel_faction
+			is_lake_federation_leader = yes
+		}
+		save_event_target_as = yukelRepresentative
+	}
+	event_target:yukelRepresentative = {
+		set_country_flag = yukel_leader
+		set_variable = { FedWarWin = 0 }
+	}
+}
+
+#federation_triunic_goddess_apostle = {
+#	hidden_effect = {
+#		random_country = {
+#			limit = { has_country_modifier = lake_federation_member ai = yes }
+#			save_event_target_as = triunic_goddess
+#		}
+#		random_country = {
+#			limit = { has_country_flag = yukel_faction ai = yes }
+#			save_event_target_as = triunic_goddess
+#		}
+#		random_country = {
+#			limit = { has_country_flag = yukel_leader ai = yes }
+#			save_event_target_as = triunic_goddess
+#		}
+#		random_country = {
+#			limit = { has_country_modifier = lake_federation_member ai = no }
+#			save_event_target_as = triunic_goddess
+#		}
+#		random_country = {
+#			limit = { has_country_flag = yukel_faction ai = no }
+#			save_event_target_as = triunic_goddess
+#		}
+#		random_country = {
+#			limit = { has_country_flag = yukel_leader ai = no }
+#			save_event_target_as = triunic_goddess
+#		}
+#		clr_global_flag = fed_religious_war
+#		event_target:triunic_goddess = { country_event = { id = fed_religious.18 days = 7300 } }
+#	}
+#}
+
+kalyin_representative_setup = {
+	random_country = {
+		limit = {
+			religion = kalyin_worshippers
+		}
+		save_event_target_as = kalyinRepresentative
+	}
+	random_country = {
+		limit = {
+			religion = kalyin_worshippers
+			federation_has_low_standing = yes
+		}
+		save_event_target_as = kalyinRepresentative
+	}
+	random_country = {
+		limit = {
+			religion = kalyin_worshippers
+			federation_has_normal_standing = yes
+		}
+		save_event_target_as = kalyinRepresentative
+	}
+	random_country = {
+		limit = {
+			religion = kalyin_worshippers
+			federation_has_high_standing = yes
+		}
+		save_event_target_as = kalyinRepresentative
+	}
+	random_country = {
+		limit = {
+			religion = kalyin_worshippers
+			federation_has_very_high_standing = yes
+		}
+		save_event_target_as = kalyinRepresentative
+	}
+	random_country = {
+		limit = {
+			religion = kalyin_worshippers
+			is_lake_federation_leader = yes
+		}
+		save_event_target_as = kalyinRepresentative
+	}
+}
+
+increase_kodave_resolve_20 = {
+	custom_tooltip = increase_kodave_resolve_20_tooltip
+	hidden_effect = { REB = { change_variable = { kodave_resolve = 20 } } }
+}
+
+increase_kodave_resolve_10 = {
+	custom_tooltip = increase_kodave_resolve_10_tooltip
+	hidden_effect = { REB = { change_variable = { kodave_resolve = 10 } } }
+}
+
+increase_kodave_resolve_5 = {
+	custom_tooltip = increase_kodave_resolve_5_tooltip
+	hidden_effect = { REB = { change_variable = { kodave_resolve = 5 } } }
+}
+
+decrease_kodave_resolve_20 = {
+	custom_tooltip = decrease_kodave_resolve_20_tooltip
+	hidden_effect = { REB = { subtract_variable = { kodave_resolve = 20 } } }
+}
+
+decrease_kodave_resolve_10 = {
+	custom_tooltip = decrease_kodave_resolve_10_tooltip
+	hidden_effect = { REB = { subtract_variable = { kodave_resolve = 10 } } }
+}
+
+decrease_kodave_resolve_5 = {
+	custom_tooltip = decrease_kodave_resolve_5_tooltip
+	hidden_effect = { REB = { subtract_variable = { kodave_resolve = 5 } } }
+}
+
+increase_enuuk_resolve_20 = {
+	custom_tooltip = increase_enuuk_resolve_20_tooltip
+	hidden_effect = { REB = { change_variable = { enuuk_resolve = 20 } } }
+}
+
+increase_enuuk_resolve_10 = {
+	custom_tooltip = increase_enuuk_resolve_10_tooltip
+	hidden_effect = { REB = { change_variable = { enuuk_resolve = 10 } } }
+}
+
+increase_enuuk_resolve_5 = {
+	custom_tooltip = increase_enuuk_resolve_5_tooltip
+	hidden_effect = { REB = { change_variable = { enuuk_resolve = 5 } } }
+}
+
+decrease_enuuk_resolve_20 = {
+	custom_tooltip = decrease_enuuk_resolve_20_tooltip
+	hidden_effect = { REB = { subtract_variable = { enuuk_resolve = 20 } } }
+}
+
+decrease_enuuk_resolve_10 = {
+	custom_tooltip = decrease_enuuk_resolve_10_tooltip
+	hidden_effect = { REB = { subtract_variable = { enuuk_resolve = 10 } } }
+}
+
+decrease_enuuk_resolve_5 = {
+	custom_tooltip = decrease_enuuk_resolve_5_tooltip
+	hidden_effect = { REB = { subtract_variable = { enuuk_resolve = 5 } } }
+}
+
+increase_yukel_resolve_20 = {
+	custom_tooltip = increase_yukel_resolve_20_tooltip
+	hidden_effect = { REB = { change_variable = { yukel_resolve = 20 } } }
+}
+
+increase_yukel_resolve_10 = {
+	custom_tooltip = increase_yukel_resolve_10_tooltip
+	hidden_effect = { REB = { change_variable = { yukel_resolve = 10 } } }
+}
+
+increase_yukel_resolve_5 = {
+	custom_tooltip = increase_yukel_resolve_5_tooltip
+	hidden_effect = { REB = { change_variable = { yukel_resolve = 5 } } }
+}
+
+decrease_yukel_resolve_20 = {
+	custom_tooltip = decrease_yukel_resolve_20_tooltip
+	hidden_effect = { REB = { subtract_variable = { yukel_resolve = 20 } } }
+}
+
+decrease_yukel_resolve_10 = {
+	custom_tooltip = decrease_yukel_resolve_10_tooltip
+	hidden_effect = { REB = { subtract_variable = { yukel_resolve = 10 } } }
+}
+
+decrease_yukel_resolve_5 = {
+	custom_tooltip = decrease_yukel_resolve_5_tooltip
+	hidden_effect = { REB = { subtract_variable = { yukel_resolve = 5 } } }
+}
+
+decrease_enuuk_resolve_1 = {
+	custom_tooltip = decrease_enuuk_resolve_1_tooltip
+	hidden_effect = { REB = { subtract_variable = { enuuk_resolve = 1 } } }
+}
+
+decrease_yukel_resolve_1 = {
+	custom_tooltip = decrease_yukel_resolve_1_tooltip
+	hidden_effect = { REB = { subtract_variable = { yukel_resolve = 1 } } }
+}
+
+decrease_kodave_resolve_1 = {
+	custom_tooltip = decrease_kodave_resolve_1_tooltip
+	hidden_effect = { REB = { subtract_variable = { kodave_resolve = 1 } } }
+}
+
+increase_yukel_resolve_1 = {
+	custom_tooltip = increase_yukel_resolve_1_tooltip
+	hidden_effect = { REB = { change_variable = { yukel_resolve = 1 } } }
+}
+
+increase_kodave_resolve_1 = {
+	custom_tooltip = increase_kodave_resolve_1_tooltip
+	hidden_effect = { REB = { change_variable = { kodave_resolve = 1 } } }
+}
+
+increase_enuuk_resolve_1 = {
+	custom_tooltip = increase_enuuk_resolve_1_tooltip
+	hidden_effect = { REB = { change_variable = { enuuk_resolve = 1 } } }
+}
+
+clr_lake_religious_war_flag = {
+	clr_country_flag = yukel_faction
+	clr_country_flag = enuuk_faction
+	clr_country_flag = kodave_faction
+	clr_country_flag = yukel_leader
+	clr_country_flag = kodave_leader
+	clr_country_flag = enuuk_leader
+}
+
+kill_all_centaur = {
+	change_culture = ROOT
+	change_religion = ROOT
+	add_devastation = 85
+	random_list = {
+		50 = { add_base_manpower = -1 }
+		30 = { add_base_manpower = -2 }
+		20 = { add_base_manpower = -3 }
+	}
+	owner = { add_years_of_income = -0.05 }
+	remove_racial_majority = { race = centaur }
+	remove_racial_minority_any_size = { race = centaur }
+}
+
+# governing_point_adm = {
+# 	if = {
+# 		limit = { has_enough_governing_point = yes }
+# 		add_base_tax = 1
+# 		trigger_switch = {
+# 			on_trigger = development
+# 			70 = { owner = { subtract_variable = { governing_points = 100 } } }
+# 			65 = { owner = { subtract_variable = { governing_points = 90 } } }
+# 			60 = { owner = { subtract_variable = { governing_points = 75 } } }
+# 			55 = { owner = { subtract_variable = { governing_points = 60 } } }
+# 			50 = { owner = { subtract_variable = { governing_points = 50 } } }
+# 			40 = { owner = { subtract_variable = { governing_points = 40 } } }
+# 			30 = { owner = { subtract_variable = { governing_points = 30 } } }
+# 			20 = { owner = { subtract_variable = { governing_points = 20 } } }
+# 			10 = { owner = { subtract_variable = { governing_points = 10 } } }
+# 			3 = { owner = { subtract_variable = { governing_points = 3 } } }
+# 		}
+# 	}
+# }
+
+# governing_point_dip = {
+# 	if = {
+# 		limit = { has_enough_governing_point = yes }
+# 		add_base_production = 1
+# 		trigger_switch = {
+# 			on_trigger = development
+# 			70 = { owner = { subtract_variable = { governing_points = 100 } } }
+# 			65 = { owner = { subtract_variable = { governing_points = 90 } } }
+# 			60 = { owner = { subtract_variable = { governing_points = 75 } } }
+# 			55 = { owner = { subtract_variable = { governing_points = 60 } } }
+# 			50 = { owner = { subtract_variable = { governing_points = 50 } } }
+# 			40 = { owner = { subtract_variable = { governing_points = 40 } } }
+# 			30 = { owner = { subtract_variable = { governing_points = 30 } } }
+# 			20 = { owner = { subtract_variable = { governing_points = 20 } } }
+# 			10 = { owner = { subtract_variable = { governing_points = 10 } } }
+# 			3 = { owner = { subtract_variable = { governing_points = 3 } } }
+# 		}
+# 	}
+# }
+
+# governing_point_mil = {
+# 	if = {
+# 		limit = { has_enough_governing_point = yes }
+# 		add_base_manpower = 1
+# 		trigger_switch = {
+# 			on_trigger = development
+# 			70 = { owner = { subtract_variable = { governing_points = 100 } } }
+# 			65 = { owner = { subtract_variable = { governing_points = 90 } } }
+# 			60 = { owner = { subtract_variable = { governing_points = 75 } } }
+# 			55 = { owner = { subtract_variable = { governing_points = 60 } } }
+# 			50 = { owner = { subtract_variable = { governing_points = 50 } } }
+# 			40 = { owner = { subtract_variable = { governing_points = 40 } } }
+# 			30 = { owner = { subtract_variable = { governing_points = 30 } } }
+# 			20 = { owner = { subtract_variable = { governing_points = 20 } } }
+# 			10 = { owner = { subtract_variable = { governing_points = 10 } } }
+# 			3 = { owner = { subtract_variable = { governing_points = 3 } } }
+# 		}
+# 	}
+# }
+
+lake_legislative_work_effect = {
+	trigger_switch = {
+		on_trigger = adm
+		
+		6 = { add_country_modifier = { name = lake_legislative_work duration = 1825 } }
+		5 = { add_country_modifier = { name = lake_legislative_work duration = 2190 } }
+		4 = { add_country_modifier = { name = lake_legislative_work duration = 2555 } }
+		3 = { add_country_modifier = { name = lake_legislative_work duration = 2920 } }
+		2 = { add_country_modifier = { name = lake_legislative_work duration = 3285 } }
+		1 = { add_country_modifier = { name = lake_legislative_work duration = 3650 } }
+		0 = { add_country_modifier = { name = lake_legislative_work duration = 4015 } }
+	}
+}
+
+refresh_religious_war_leader = {
+	hidden_effect = {
+		if = {
+			limit = { event_target:global_enuuk_leader = { exists = no } }
+			#Enuuk Representative
+			random_country = {
+				limit = {
+					has_country_flag = enuuk_faction
+				}
+				save_global_event_target_as = global_enuuk_leader
+			}
+			random_country = {
+				limit = {
+					has_country_flag = enuuk_faction
+					federation_has_low_standing = yes
+				}
+				save_global_event_target_as = global_enuuk_leader
+			}
+			random_country = {
+				limit = {
+					has_country_flag = enuuk_faction
+					federation_has_normal_standing = yes
+				}
+				save_global_event_target_as = global_enuuk_leader
+			}
+			random_country = {
+				limit = {
+					has_country_flag = enuuk_faction
+					federation_has_high_standing = yes
+				}
+				save_global_event_target_as = global_enuuk_leader
+			}
+			random_country = {
+				limit = {
+					has_country_flag = enuuk_faction
+					federation_has_very_high_standing = yes
+				}
+				save_global_event_target_as = global_enuuk_leader
+			}
+			random_country = {
+				limit = {
+					has_country_flag = enuuk_faction
+					is_lake_federation_leader = yes
+				}
+				save_global_event_target_as = global_enuuk_leader
+			}
+			event_target:global_enuuk_leader = { set_country_flag = enuuk_leader }
+		}
+		
+		if = {
+			limit = { event_target:global_kodave_leader = { exists = no } }
+			#Kodave Representative
+			random_country = {
+				limit = {
+					has_country_flag = kodave_faction
+				}
+				save_global_event_target_as = global_kodave_leader
+			}
+			random_country = {
+				limit = {
+					has_country_flag = kodave_faction
+					federation_has_low_standing = yes
+				}
+				save_global_event_target_as = global_kodave_leader
+			}
+			random_country = {
+				limit = {
+					has_country_flag = kodave_faction
+					federation_has_normal_standing = yes
+				}
+				save_global_event_target_as = global_kodave_leader
+			}
+			random_country = {
+				limit = {
+					has_country_flag = kodave_faction
+					federation_has_high_standing = yes
+				}
+				save_global_event_target_as = global_kodave_leader
+			}
+			random_country = {
+				limit = {
+					has_country_flag = kodave_faction
+					federation_has_very_high_standing = yes
+				}
+				save_global_event_target_as = global_kodave_leader
+			}
+			random_country = {
+				limit = {
+					has_country_flag = kodave_faction
+					is_lake_federation_leader = yes
+				}
+				save_global_event_target_as = global_kodave_leader
+			}
+			event_target:global_kodave_leader = { set_country_flag = kodave_leader }
+		}
+		if = {
+			limit = { event_target:global_yukel_leader = { exists = no } }
+			#yukel Representative
+			random_country = {
+				limit = {
+					has_country_flag = yukel_faction
+				}
+				save_global_event_target_as = global_yukel_leader
+			}
+			random_country = {
+				limit = {
+					has_country_flag = yukel_faction
+					federation_has_low_standing = yes
+				}
+				save_global_event_target_as = global_yukel_leader
+			}
+			random_country = {
+				limit = {
+					has_country_flag = yukel_faction
+					federation_has_normal_standing = yes
+				}
+				save_global_event_target_as = global_yukel_leader
+			}
+			random_country = {
+				limit = {
+					has_country_flag = yukel_faction
+					federation_has_high_standing = yes
+				}
+				save_global_event_target_as = global_yukel_leader
+			}
+			random_country = {
+				limit = {
+					has_country_flag = yukel_faction
+					federation_has_very_high_standing = yes
+				}
+				save_global_event_target_as = global_yukel_leader
+			}
+			random_country = {
+				limit = {
+					has_country_flag = yukel_faction
+					is_lake_federation_leader = yes
+				}
+				save_global_event_target_as = global_yukel_leader
+			}
+			event_target:global_yukel_leader = { set_country_flag = yukel_leader }
+		}
+	}
+}
+
+federation_increase_cohesion = {
+	if = {
+		limit = { 
+			has_global_flag = lake_cohesion_5
+			ai = no
+		}
+		custom_tooltip = lake_federation_cohesion_up_5
+		add_adm_power = 50
+		add_dip_power = 50
+		add_mil_power = 50
+	}
+	else = { custom_tooltip = lake_federation_cohesion_up }
+	if = {
+		limit = { is_lake_federation_leader = yes }
+		hidden_effect = {
+			if = {
+				limit = { has_global_flag = lake_cohesion_5 }
+				every_country = {
+					limit = { 
+						has_country_modifier = lake_federation_member
+						ai = no
+					}
+					add_adm_power = 50
+					add_dip_power = 50
+					add_mil_power = 50
+				}
+			}
+			else_if = {
+				limit = { has_global_flag = lake_cohesion_4 }
+				set_global_flag = lake_cohesion_5
+				clr_global_flag = lake_cohesion_4
+				every_country = {
+					limit = { has_country_modifier = lake_federation_member }
+					add_country_modifier = { 
+						name = lake_federation_5_cohesion
+						duration = -1
+						hidden = yes
+					}
+				}
+			}
+			else_if = {
+				limit = { has_global_flag = lake_cohesion_3 }
+				set_global_flag = lake_cohesion_4
+				clr_global_flag = lake_cohesion_3
+			}
+			else_if = {
+				limit = { has_global_flag = lake_cohesion_2 }
+				set_global_flag = lake_cohesion_3
+				clr_global_flag = lake_cohesion_2
+			}
+			else_if = {
+				limit = { has_global_flag = lake_cohesion_1 }
+				set_global_flag = lake_cohesion_2
+				clr_global_flag = lake_cohesion_1
+			}
+		}
+	}
+}
+
+federation_increase_cohesion_all = { #works for not-president
+	if = {
+		limit = { 
+			has_global_flag = lake_cohesion_5
+			ai = no
+		}
+		custom_tooltip = lake_federation_cohesion_up_5
+		add_adm_power = 50
+		add_dip_power = 50
+		add_mil_power = 50
+	}
+	else = { custom_tooltip = lake_federation_cohesion_up }
+	if = {
+		limit = { has_country_modifier = lake_federation_member }
+		hidden_effect = {
+			if = {
+				limit = { has_global_flag = lake_cohesion_5 }
+				every_country = {
+					limit = { 
+						has_country_modifier = lake_federation_member
+						ai = no
+					}
+					add_adm_power = 50
+					add_dip_power = 50
+					add_mil_power = 50
+				}
+			}
+			else_if = {
+				limit = { has_global_flag = lake_cohesion_4 }
+				set_global_flag = lake_cohesion_5
+				clr_global_flag = lake_cohesion_4
+				every_country = {
+					limit = { has_country_modifier = lake_federation_member }
+					add_country_modifier = { 
+						name = lake_federation_5_cohesion
+						duration = -1
+						hidden = yes
+					}
+				}
+			}
+			else_if = {
+				limit = { has_global_flag = lake_cohesion_3 }
+				set_global_flag = lake_cohesion_4
+				clr_global_flag = lake_cohesion_3
+			}
+			else_if = {
+				limit = { has_global_flag = lake_cohesion_2 }
+				set_global_flag = lake_cohesion_3
+				clr_global_flag = lake_cohesion_2
+			}
+			else_if = {
+				limit = { has_global_flag = lake_cohesion_1 }
+				set_global_flag = lake_cohesion_2
+				clr_global_flag = lake_cohesion_1
+			}
+		}
+	}
+}
+
+federation_decrease_cohesion = {
+	custom_tooltip = lake_federation_cohesion_down
+	if = {
+		limit = { is_lake_federation_leader = yes }
+		hidden_effect = {
+			if = {
+				limit = { has_global_flag = lake_cohesion_5 }
+				set_global_flag = lake_cohesion_4
+				clr_global_flag = lake_cohesion_5
+				every_country = {
+					limit = { has_country_modifier = lake_federation_5_cohesion }
+					remove_country_modifier = lake_federation_5_cohesion
+				}
+			}
+			else_if = {
+				limit = { has_global_flag = lake_cohesion_4 }
+				set_global_flag = lake_cohesion_3
+				clr_global_flag = lake_cohesion_4
+			}
+			else_if = {
+				limit = { has_global_flag = lake_cohesion_3 }
+				set_global_flag = lake_cohesion_2
+				clr_global_flag = lake_cohesion_3
+			}
+			else_if = {
+				limit = { has_global_flag = lake_cohesion_2 }
+				set_global_flag = lake_cohesion_1
+				clr_global_flag = lake_cohesion_2
+			}
+			else_if = {
+				limit = { has_global_flag = lake_cohesion_1 }
+				clr_global_flag = lake_cohesion_1
+				every_country = {
+					limit = { has_country_modifier = lake_federation_member }
+					country_event = { id = lake.39 }
+					remove_country_modifier = lake_federation_member
+				}
+				set_global_flag = lake_federation_disbanded
+			}
+		}
+	}
+}
+
+federation_decrease_cohesion_all = { #works for not-president
+	custom_tooltip = lake_federation_cohesion_down
+	hidden_effect = {
+		if = {
+			limit = { has_global_flag = lake_cohesion_5 }
+			set_global_flag = lake_cohesion_4
+			clr_global_flag = lake_cohesion_5
+			every_country = {
+				limit = { has_country_modifier = lake_federation_5_cohesion }
+				remove_country_modifier = lake_federation_5_cohesion
+			}
+		}
+		else_if = {
+			limit = { has_global_flag = lake_cohesion_4 }
+			set_global_flag = lake_cohesion_3
+			clr_global_flag = lake_cohesion_4
+		}
+		else_if = {
+			limit = { has_global_flag = lake_cohesion_3 }
+			set_global_flag = lake_cohesion_2
+			clr_global_flag = lake_cohesion_3
+		}
+		else_if = {
+			limit = { has_global_flag = lake_cohesion_2 }
+			set_global_flag = lake_cohesion_1
+			set_global_flag = lake_cohesion_15 #needed to prevent if issue
+			clr_global_flag = lake_cohesion_2
+			#country_event = { id = splintering.1 }
+		}
+		if = { #needed seperate from elseif chain because of event firing
+			limit = {
+				NOT = {
+					has_global_flag = lake_cohesion_5
+					has_global_flag = lake_cohesion_4
+					has_global_flag = lake_cohesion_3
+					has_global_flag = lake_cohesion_2
+					has_global_flag = lake_cohesion_15
+				}
+				has_global_flag = lake_cohesion_1
+			}
+			clr_global_flag = lake_cohesion_1
+			every_country = {
+				limit = { has_country_modifier = lake_federation_member }
+				country_event = { id = lake.39 }
+				#remove_country_modifier = lake_federation_member
+			}
+			set_global_flag = lake_federation_disbanded
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					has_global_flag = lake_cohesion_5
+					has_global_flag = lake_cohesion_4
+					has_global_flag = lake_cohesion_3
+					has_global_flag = lake_cohesion_2
+					has_global_flag = lake_cohesion_15
+					has_global_flag = lake_cohesion_1
+				}
+			}
+			every_country = {
+				limit = { culture_group = triunic }
+				swap_non_generic_missions = yes
+				clear_federation_global_flag = yes
+			}
+			set_global_flag = lake_federation_disbanded
+		}
+		if = {
+			limit = { has_global_flag = lake_dead }
+			every_country = {
+				limit = { has_country_modifier = lake_federation_member }
+				country_event = { id = lake.3900 days = 30 }
+			}
+		}
+		clr_global_flag = lake_cohesion_15 #needed to prevent if issue
+	}
+}
+
+federation_reset_cohesion = {
+	clr_global_flag = lake_cohesion_5
+	clr_global_flag = lake_cohesion_4
+	set_global_flag = lake_cohesion_3
+	clr_global_flag = lake_cohesion_2
+	clr_global_flag = lake_cohesion_1
+}
+
+federation_1_cohesion = {
+	clr_global_flag = lake_cohesion_5
+	clr_global_flag = lake_cohesion_4
+	clr_global_flag = lake_cohesion_3
+	clr_global_flag = lake_cohesion_2
+	set_global_flag = lake_cohesion_1
+}
+
+federation_cohesion_form_formable = {
+	custom_tooltip = federation_cohesion_forming
+	if = {
+		limit = { federation_cohesion_forms_J51 = yes }
+		change_tag = J51
+		hidden_effect = { restore_country_name = yes }
+		set_country_flag = cohesion_J51_former 
+	}
+	else_if = {
+		limit = { federation_cohesion_forms_J52 = yes }
+		change_tag = J52
+		hidden_effect = { restore_country_name = yes }
+		set_country_flag = cohesion_J52_former 
+	}
+	else_if = {
+		limit = { federation_cohesion_forms_J53 = yes }
+		change_tag = J53
+		hidden_effect = { restore_country_name = yes }
+		set_country_flag = cohesion_J53_former 
+	}
+	else_if = {
+		limit = { federation_cohesion_forms_J49 = yes }
+		change_tag = J49
+		hidden_effect = { restore_country_name = yes }
+		set_country_flag = cohesion_J49_former 
+	}
+	else_if = {
+		limit = { federation_cohesion_forms_J50 = yes }
+		change_tag = J50
+		hidden_effect = { restore_country_name = yes }
+		set_country_flag = cohesion_J50_former 
+	}
+	if = {
+		limit = {
+			NOT = { government_rank = 2 }
+		}
+		set_government_rank = 2
+	}
+	country_event = { id = ideagroups.1 } #Swap Ideas
+	set_country_flag = cohesion_rejected_formation
+	add_country_modifier = { 
+		name = lake_federation_splintering
+		duration = 5475
+	}
+	swap_non_generic_missions = yes
+}
+
+federation_cohesion_revert_tag = {
+	release_all_possible_countries = yes
+	trigger_switch = {
+		on_trigger = was_tag
+		J34 = { change_tag = J34 } #First in off chance it's united Qarshtuulu
+		J01 = { change_tag = J01 }
+		J02 = { change_tag = J02 }
+		J03 = { change_tag = J03 }
+		J04 = { change_tag = J04 }
+		J05 = { change_tag = J05 }
+		J06 = { change_tag = J06 }
+		J07 = { change_tag = J07 }
+		J08 = { change_tag = J08 }
+		J09 = { change_tag = J09 }
+		J10 = { change_tag = J10 }
+		J11 = { change_tag = J11 }
+		J12 = { change_tag = J12 }
+		J13 = { change_tag = J13 }
+		J14 = { change_tag = J14 }
+		J15 = { change_tag = J15 }
+		J16 = { change_tag = J16 }
+		J17 = { change_tag = J17 }
+		J18 = { change_tag = J18 }
+		J19 = { change_tag = J19 }
+		J20 = { change_tag = J20 }
+		J21 = { change_tag = J21 }
+		J22 = { change_tag = J22 }
+		J23 = { change_tag = J23 }
+		J24 = { change_tag = J24 }
+		J25 = { change_tag = J25 }
+		J26 = { change_tag = J26 }
+		J27 = { change_tag = J27 }
+		J28 = { change_tag = J28 }
+		J29 = { change_tag = J29 }
+		J30 = { change_tag = J30 }
+		J31 = { change_tag = J31 }
+	}
+	swap_free_idea_group = yes
+	swap_non_generic_missions = yes
+}
+
+federation_magew_setup_normal = {
+	#Normal Mage War Leader
+	random_country = {
+		limit = {
+			has_country_flag = LF_mages_normal
+		}
+		save_global_event_target_as = LFnormalmageWarleader
+	}
+	random_country = {
+		limit = {
+			has_country_flag = LF_mages_normal
+			federation_has_low_standing = yes
+		}
+		save_global_event_target_as = LFnormalmageWarleader
+	}
+	random_country = {
+		limit = {
+			has_country_flag = LF_mages_normal
+			federation_has_normal_standing = yes
+		}
+		save_global_event_target_as = LFnormalmageWarleader
+	}
+	random_country = {
+		limit = {
+			has_country_flag = LF_mages_normal
+			federation_has_high_standing = yes
+		}
+		save_global_event_target_as = LFnormalmageWarleader
+	}
+	random_country = {
+		limit = {
+			has_country_flag = LF_mages_normal
+			federation_has_very_high_standing = yes
+		}
+		save_global_event_target_as = LFnormalmageWarleader
+	}
+	random_country = {
+		limit = {
+			has_country_flag = LF_mages_normal
+			is_lake_federation_leader = yes
+		}
+		save_global_event_target_as = LFnormalmageWarleader
+	}
+	if = {
+		limit = {
+			has_saved_global_event_target = LFnormalmageWarleader
+		}
+		event_target:LFnormalmageWarleader = {
+			set_country_flag = LFnormalmageWarleader
+		}
+	}
+}
+
+federation_magew_setup_onyxguard = {
+	#Onyxguard Mage War Leader
+	random_country = {
+		limit = {
+			has_country_flag = LF_mages_onyxguard
+		}
+		save_global_event_target_as = LFonyxguardmageWarleader
+	}
+	random_country = {
+		limit = {
+			has_country_flag = LF_mages_onyxguard
+			federation_has_low_standing = yes
+		}
+		save_global_event_target_as = LFonyxguardmageWarleader
+	}
+	random_country = {
+		limit = {
+			has_country_flag = LF_mages_onyxguard
+			federation_has_normal_standing = yes
+		}
+		save_global_event_target_as = LFonyxguardmageWarleader
+	}
+	random_country = {
+		limit = {
+			has_country_flag = LF_mages_onyxguard
+			federation_has_high_standing = yes
+		}
+		save_global_event_target_as = LFonyxguardmageWarleader
+	}
+	random_country = {
+		limit = {
+			has_country_flag = LF_mages_onyxguard
+			federation_has_very_high_standing = yes
+		}
+		save_global_event_target_as = LFonyxguardmageWarleader
+	}
+	random_country = {
+		limit = {
+			has_country_flag = LF_mages_onyxguard
+			is_lake_federation_leader = yes
+		}
+		save_global_event_target_as = LFonyxguardmageWarleader
+	}
+	if = {
+		limit = {
+			has_saved_global_event_target = LFonyxguardmageWarleader
+		}
+		event_target:LFonyxguardmageWarleader = {
+			set_country_flag = LFonyxguardmageWarleader
+		}
+	}
+}
+
+federation_magew_setup_banned = {
+	#Banned Mage War Leader
+	random_country = {
+		limit = {
+			has_country_flag = LF_mages_banned
+		}
+		save_global_event_target_as = LFbannedmageWarleader
+	}
+	random_country = {
+		limit = {
+			has_country_flag = LF_mages_banned
+			federation_has_low_standing = yes
+		}
+		save_global_event_target_as = LFbannedmageWarleader
+	}
+	random_country = {
+		limit = {
+			has_country_flag = LF_mages_banned
+			federation_has_normal_standing = yes
+		}
+		save_global_event_target_as = LFbannedmageWarleader
+	}
+	random_country = {
+		limit = {
+			has_country_flag = LF_mages_banned
+			federation_has_high_standing = yes
+		}
+		save_global_event_target_as = LFbannedmageWarleader
+	}
+	random_country = {
+		limit = {
+			has_country_flag = LF_mages_banned
+			federation_has_very_high_standing = yes
+		}
+		save_global_event_target_as = LFbannedmageWarleader
+	}
+	random_country = {
+		limit = {
+			has_country_flag = LF_mages_banned
+			is_lake_federation_leader = yes
+		}
+		save_global_event_target_as = LFbannedmageWarleader
+	}
+	if = {
+		limit = {
+			has_saved_global_event_target = LFbannedmageWarleader
+		}
+		event_target:LFbannedmageWarleader = {
+			set_country_flag = LFbannedmageWarleader
+		}
+	}
+}
+
+federation_magew_none_setup = {
+	if = {
+		limit = {
+			5230 = {
+				NOT = {
+					check_variable = {
+						which = LF_mage_crisis_number_high
+						which = LF_mage_crisis_number_mid
+					}
+					check_variable = {
+						which = LF_mage_crisis_number_high
+						which = LF_mage_crisis_number_low
+					}
+				}
+			}
+		}
+		set_global_flag = LF_mage_crisis_lowest_high
+		every_country = {
+			limit = {
+				has_country_modifier = lake_federation_member
+			}
+			federation_magew_setup_onyxguard = yes
+			federation_magew_setup_banned = yes
+		}
+	}
+	if = {
+		limit = {
+			5230 = {
+				NOT = {
+					check_variable = {
+						which = LF_mage_crisis_number_mid
+						which = LF_mage_crisis_number_high
+					}
+					check_variable = {
+						which = LF_mage_crisis_number_mid
+						which = LF_mage_crisis_number_low
+					}
+				}
+			}
+		}
+		set_global_flag = LF_mage_crisis_lowest_mid
+		every_country = {
+			limit = {
+				has_country_modifier = lake_federation_member
+			}
+			federation_magew_setup_normal = yes
+			federation_magew_setup_banned = yes
+		}
+	}
+	if = {
+		limit = {
+			5230 = {
+				NOT = {
+					check_variable = {
+						which = LF_mage_crisis_number_low
+						which = LF_mage_crisis_number_high
+					}
+					check_variable = {
+						which = LF_mage_crisis_number_low
+						which = LF_mage_crisis_number_mid
+					}
+				}
+			}
+		}
+		set_global_flag = LF_mage_crisis_lowest_low
+		every_country = {
+			limit = {
+				has_country_modifier = lake_federation_member
+			}
+			federation_magew_setup_normal = yes
+			federation_magew_setup_onyxguard = yes
+		}
+	}
+	country_event = {
+		id = fed_magew.10
+		days = 15
+	}
+}
+
+federation_magew_clear_flags = {
+	clr_global_flag = LF_leader_mages_normal
+	clr_global_flag = LF_leader_mages_onyxguard
+	clr_global_flag = LF_leader_mages_banned
+	clr_global_flag = LF_mage_crisis_high
+	clr_global_flag = LF_mage_crisis_mid
+	clr_global_flag = LF_mage_crisis_low
+	clr_global_flag = LF_mage_crisis_none
+	clr_global_flag = LF_mage_crisis_lowest_high
+	clr_global_flag = LF_mage_crisis_lowest_mid
+	clr_global_flag = LF_mage_crisis_lowest_low
+	clr_global_flag = federation_crisis_magew
+	clr_global_flag = federation_magew_setupflag
+	every_country = {
+		limit = {
+			has_country_modifier = lake_federation_member
+		}
+		clr_country_flag = LFnormalmageWarleader
+		clr_country_flag = LFonyxguardmageWarleader
+		clr_country_flag = LFbannedmageWarleader
+	}
+	if = {
+		limit = {
+			has_saved_global_event_target = LFnormalmageWarleader
+		}
+		clear_global_event_target = LFnormalmageWarleader
+	}
+	if = {
+		limit = {
+			has_saved_global_event_target = LFonyxguardmageWarleader
+		}
+		clear_global_event_target = LFonyxguardmageWarleader
+	}
+	if = {
+		limit = {
+			has_saved_global_event_target = LFbannedmageWarleader
+		}
+		clear_global_event_target = LFbannedmageWarleader
+	}
+}

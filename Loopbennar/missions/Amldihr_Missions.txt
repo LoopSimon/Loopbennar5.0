@@ -1,0 +1,1544 @@
+
+amldihr_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = I01
+	}
+	
+	I01_ancestors_dues = {
+		icon = mission_writing_book
+		
+		position = 2
+		required_missions = {
+			I01_amldihr_revival
+		}
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					province_id = 4128
+					NOT = { owned_by = ROOT }
+				}
+				AND = {
+					province_id = 4119
+					OR = {
+						NOT = { owned_by = ROOT }
+						NOT = { religion = ancestor_worship }
+						NOT = { culture_group = dwarven }
+					}
+				}
+				AND = {
+					province_id = 2931
+					OR = {
+						NOT = { owned_by = ROOT }
+						NOT = { religion = ancestor_worship }
+						NOT = { culture_group = dwarven }
+					}
+				}
+				AND = {
+					province_id = 2963
+					OR = {
+						NOT = { owned_by = ROOT }
+						NOT = { religion = ancestor_worship }
+						NOT = { culture_group = dwarven }
+					}
+				}
+			}
+		}
+		trigger = {
+			4128 = {
+				owned_by = ROOT
+			}
+			4119 = {
+				owned_by = ROOT
+				religion = ancestor_worship
+				culture_group = dwarven
+			}
+			2931 = {
+				owned_by = ROOT
+				religion = ancestor_worship
+				culture_group = dwarven
+			}
+			2963 = {
+				owned_by = ROOT
+				religion = ancestor_worship
+				culture_group = dwarven
+			}
+		}
+		effect = {
+			4128 = {
+				add_province_modifier = {
+					name = amldihr_hall_of_the_ancestors
+					duration = -1
+				}
+			}
+		}
+	}
+	
+	I01_vazkron_restoration = {
+		icon = mission_armor_choice
+		
+		position = 3
+		required_missions = {
+			I01_a_kings_rock
+		}
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					province_id = 4122
+					NOT = { owned_by = ROOT }
+				}
+				AND = {
+					area = amldihr_area
+					NOT = { fort_level = 2 }
+				}
+			}
+		}
+		trigger = {
+			4122 = {
+				owned_by = ROOT
+			}
+			amldihr_area = {
+				fort_level = 2
+				type = all
+			}
+			fortification_expert = 2
+		}
+		effect = {
+			amldihr_area = {
+				add_province_modifier = {
+					name = amldihr_vazkron_restoration
+					duration = -1
+				}
+			}
+		}
+	}
+	
+	I01_the_citadel_hold = {
+		icon = mission_armoury
+		
+		position = 4
+		required_missions = {
+			I01_vazkron_restoration
+		}
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					province_id = 4122
+					NOT = { owned_by = ROOT }
+				}
+				AND = {
+					owned_by = ROOT
+					trade_goods = iron
+					NOT = { base_production = 5 }
+					NOT = {
+						ROOT = {
+							num_of_owned_provinces_with = {
+								value = 4
+								trade_goods = iron
+								base_production = 5
+							}
+						}
+					}
+				}
+				AND = {
+					trade_goods = mithril
+					NOT = { base_production = 15 }
+					NOT = {
+						ROOT = {
+							any_owned_province = {
+								trade_goods = mithril
+								base_production = 15
+							}
+						}
+					}
+				}
+			}
+		}
+		trigger = {
+			4122 = {
+				owned_by = ROOT
+			}
+			num_of_owned_provinces_with = {
+				value = 4
+				trade_goods = iron
+				base_production = 5
+			}
+			any_owned_province = {
+				trade_goods = mithril
+				base_production = 15
+			}
+		}
+		effect = {
+			amldihr_area = {
+				remove_province_modifier = amldihr_vazkron_restoration
+				add_province_modifier = {
+					name = amldihr_the_citadel_hold
+					duration = -1
+				}
+			}
+		}
+	}
+	
+	I01_the_amldavhad_guard = {
+		icon = mission_warrior_gold
+		
+		position = 5
+		required_missions = {
+			I01_the_citadel_hold
+		}
+		trigger = {
+			manpower = 50
+			has_reform = dwarovar_assembly_of_holds_reform
+			has_global_modifier_value = {
+				which = discipline
+				value = 0.1
+			}
+		}
+		effect = {
+			unlock_merc_company = {
+				merc_company = merc_amldahvad_guard
+				free_merc = yes
+			}
+		}
+	}
+	
+	I01_gems_of_serpentreach = {
+		icon = mission_heated_battle
+		
+		position = 6
+		required_missions = {
+			I01_the_arg_junction
+		}
+		provinces_to_highlight = {
+			region = serpentreach_region
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				region = serpentreach_region
+				value = 15
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					4093 = {
+						NOT = { owned_by = ROOT }
+						owner = {
+							culture_group = dwarven
+							NOT = { total_development = 100 }
+						}
+					}
+				}
+				4093 = {
+					owner = {
+						reverse_add_casus_belli = {
+							target = ROOT
+							type = cb_vassalize_mission
+							months = 120
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					4093 = {
+						NOT = { owned_by = ROOT }
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+				}
+				4093 = {
+					add_permanent_claim = ROOT
+				}
+			}
+			else = {
+				add_adm_power = 75
+			}
+		}
+	}
+	
+	I01_empire_of_many_capitals = {
+		icon = mission_guarded_market
+		
+		position = 8
+		required_missions = {
+			I01_the_empires_gem
+		}
+		provinces_to_highlight = {
+			continent = serpentspine
+			OR = {
+				has_terrain = dwarven_hold
+				has_terrain = dwarven_hold_surface
+			}
+			NOT = {
+				AND = {
+					owned_by = ROOT
+					development = 50
+				}
+			}
+		}
+		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 20
+				OR = {
+					has_terrain = dwarven_hold
+					has_terrain = dwarven_hold_surface
+				}
+				development = 50
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = amldihr_empire_of_many_capitals
+				duration = 9125
+			}
+		}
+	}
+}
+amldihr_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = I01
+	}
+	
+	I01_amldihr_revival = {
+		icon = mission_early_game_buildings
+		
+		position = 1
+		required_missions = {}
+		provinces_to_highlight = {
+			area = amldihr_area
+			OR = {
+				has_province_modifier = ruined_hold
+				has_province_modifier = infested_hold
+				NOT = { culture_group = dwarven }
+			}
+		}
+		trigger = {
+			amldihr_area = {
+				NOT = { has_province_modifier = ruined_hold }
+				NOT = { has_province_modifier = infested_hold }
+				culture_group = dwarven
+				type = all
+			}
+		}
+		effect = {
+			add_stability_or_adm_power = yes
+			add_prestige = 25
+		}
+	}
+	
+	I01_a_kings_rock = {
+		icon = mission_early_modern_university
+		
+		position = 2
+		required_missions = {
+			I01_amldihr_revival
+		}
+		provinces_to_highlight = {
+			province_id = 4119
+			NOT = { has_dwarven_hold_3 = yes }
+		}
+		trigger = {
+			4119 = {
+				has_dwarven_hold_3 = yes
+			}
+		}
+		effect = {
+			amldihr_area = {
+				add_province_modifier = {
+					name = growth_of_capital
+					duration = 3650
+				}
+			}
+		}
+	}
+	
+	I01_amlharazs_halls = {
+		icon = mission_rb_trinity_college_dublin
+		
+		position = 3
+		required_missions = {
+			I01_a_kings_rock
+		}
+		provinces_to_highlight = {
+			province_id = 4149
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { has_courthouse_building_trigger = yes }
+			}
+		}
+		trigger = {
+			4149 = {
+				owned_by = ROOT
+				has_courthouse_building_trigger = yes
+			}
+			OR = {
+				statesman = 3
+				has_reform = dwarovar_assembly_of_holds_reform
+			}
+		}
+		effect = {
+			4149 = {
+				add_province_modifier = {
+					name = amldihr_amlharaz_halls
+					duration = -1
+				}
+			}
+		}
+	}
+	
+	I01_hold_fit_for_a_high_king = {
+		icon = mission_monarch_diplomacy
+		
+		position = 4
+		required_missions = {
+			I01_amlharazs_halls
+		}
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					province_id = 4119
+					NOT = { has_dwarven_hold_6 = yes }
+				}
+				AND = {
+					area = amldihr_area
+					NOT = { development = 45 }
+				}
+			}
+		}
+		trigger = {
+			4119 = {
+				has_dwarven_hold_6 = yes
+			}
+			amldihr_area = {
+				development = 45
+				type = all
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = amldihr_hold_fit_for_a_high_king
+				duration = 3650
+			}
+		}
+	}
+	
+	I01_the_arg_junction = {
+		icon = mission_rb_rein_in_the_highland_clans
+		
+		position = 5
+		required_missions = {
+			I01_declare_emergency_assembly
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 4103
+				province_id = 2981
+			}
+			NOT = { country_or_subject_holds = ROOT }
+		}
+		trigger = {
+			4103 = {
+				country_or_subject_holds = ROOT
+			}
+			2981 = {
+				country_or_subject_holds = ROOT
+			}
+		}
+		effect = {
+			custom_tooltip = I01_claim_serpentreach_rails_tooltip
+			add_adm_power = 50
+			hidden_effect = {
+				if = {
+					limit = {
+						has_country_flag = I01_emergency_assembly_serpentreach
+					}
+					serpentreach_region = {
+						limit = {
+							NOT = { is_core = ROOT }
+							NOT = { is_permanent_claim = ROOT }
+							has_terrain = dwarven_road
+						}
+						add_permanent_claim = ROOT
+					}
+				}
+				else = {
+					argrod_9_11_area = {
+						limit = {
+							NOT = { is_core = ROOT }
+							NOT = { is_permanent_claim = ROOT }
+						}
+						add_permanent_claim = ROOT
+					}
+					argrod_14_16_area = {
+						limit = {
+							NOT = { is_core = ROOT }
+							NOT = { is_permanent_claim = ROOT }
+						}
+						add_permanent_claim = ROOT
+					}
+					argrod_junction_area = {
+						limit = {
+							NOT = { is_core = ROOT }
+							NOT = { is_permanent_claim = ROOT }
+						}
+						add_permanent_claim = ROOT
+					}
+				}
+			}
+		}
+	}
+	
+	I01_volcanic_hold = {
+		icon = mission_burning_separation
+		
+		position = 6
+		required_missions = {
+			I01_the_arg_junction
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = argrod_junction_area
+				area = argrod_14_16_area
+			}
+			NOT = { country_or_subject_holds = ROOT }
+		}
+		trigger = {
+			argrod_junction_area = {
+				country_or_subject_holds = ROOT
+				type = all
+			}
+			argrod_14_16_area = {
+				country_or_subject_holds = ROOT
+				type = all
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					4039 = {
+						NOT = { owned_by = ROOT }
+						owner = {
+							culture_group = dwarven
+							NOT = { total_development = 100 }
+						}
+					}
+				}
+				4039 = {
+					owner = {
+						reverse_add_casus_belli = {
+							target = ROOT
+							type = cb_vassalize_mission
+							months = 120
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					4039 = {
+						NOT = { owned_by = ROOT }
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+				}
+				4039 = {
+					add_permanent_claim = ROOT
+				}
+			}
+			else = {
+				add_adm_power = 75
+			}
+		}
+	}
+	
+	I01_the_empires_gem = {
+		icon = mission_rb_inland_india
+		
+		position = 7
+		required_missions = {
+			I01_volcanic_hold
+			I01_gems_of_serpentreach
+		}
+		provinces_to_highlight = {
+			region = serpentreach_region
+			OR = {
+				has_terrain = dwarven_hold
+				has_terrain = dwarven_hold_surface
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				region = serpentreach_region
+				OR = {
+					has_terrain = dwarven_hold
+					has_terrain = dwarven_hold_surface
+				}
+				value = 4
+			}
+		}
+		effect = {
+			custom_tooltip = I01_dwarven_vassals_opinion_serpentreach_tooltip
+			add_adm_power = 100
+			hidden_effect = {
+				every_country = {
+					limit = {
+						is_subject_of = ROOT
+						culture_group = dwarven
+						capital_scope = {
+							region = serpentreach_region
+						}
+					}
+					add_opinion = {
+						who = ROOT
+						modifier = amldihr_dwarven_subject
+					}
+				}
+			}
+		}
+	}
+}
+amldihr_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = I01
+	}
+	
+	I01_the_dual_tunnels = {
+		icon = mission_build_up_to_force_limit
+		
+		position = 1
+		required_missions = {}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 4128
+				province_id = 2992
+				province_id = 4122
+				province_id = 2933
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			4128 = {
+				owned_by = ROOT
+			}
+			2992 = {
+				owned_by = ROOT
+			}
+			4122 = {
+				owned_by = ROOT
+			}
+			2933 = {
+				owned_by = ROOT
+			}
+		}
+		effect = {
+			custom_tooltip = I01_claim_west_dwarv_rails_tooltip
+			hidden_effect = {
+				west_dwarovar_region = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+						has_terrain = dwarven_road
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+	}
+	
+	I01_amloz_rails = {
+		icon = mission_assemble_an_army
+		
+		position = 2
+		required_missions = {
+			I01_the_dual_tunnels
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = dagrinrod_4_6_area
+				province_id = 2992
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			dagrinrod_4_6_area = {
+				owned_by = ROOT
+				type = all
+			}
+			2992 = {
+				owned_by = ROOT
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					2931 = {
+						NOT = { owned_by = ROOT }
+						owner = {
+							culture_group = dwarven
+							NOT = { total_development = 100 }
+						}
+					}
+				}
+				2931 = {
+					owner = {
+						reverse_add_casus_belli = {
+							target = ROOT
+							type = cb_vassalize_mission
+							months = 120
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					2931 = {
+						NOT = { owned_by = ROOT }
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+				}
+				2931 = {
+					add_permanent_claim = ROOT
+				}
+			}
+			else = {
+				add_adm_power = 75
+			}
+		}
+	}
+	
+	I01_the_sapphire_hold = {
+		icon = mission_star_comet
+		
+		position = 3
+		required_missions = {
+			I01_amloz_rails
+		}
+		provinces_to_highlight = {
+			province_id = 4020
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			OR = {
+				4020 = {
+					owner = {
+						is_neighbor_of = ROOT
+					}
+				}
+				4020 = {
+					owned_by = ROOT
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = I01_northern_amloz_tooltip
+			if = {
+				limit = {
+					4020 = {
+						owned_by = ROOT
+					}
+				}
+				add_country_modifier = {
+					name = amldihr_sapphire_hold
+					duration = 5475
+				}
+			}
+			else_if = {
+				limit = {
+					4020 = {
+						owner = {
+							is_neighbor_of = ROOT
+						}
+					}
+				}
+				4020 = {
+					owner = {
+						reverse_add_casus_belli = {
+							target = ROOT
+							type = cb_vassalize_mission
+							months = 120
+						}
+					}
+				}
+			}			
+		}
+	}
+	
+	I01_declare_emergency_assembly = {
+		icon = mission_confrontation
+		
+		position = 4
+		required_missions = {
+			I01_western_dwarovar_ascendant
+			I01_amlharazs_halls
+		}
+		provinces_to_highlight = {
+			continent = serpentspine
+			OR = {
+				has_terrain = dwarven_hold
+				has_terrain = dwarven_hold_surface
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			has_reform = dwarovar_assembly_of_holds_reform
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 10
+				OR = {
+					has_terrain = dwarven_hold
+					has_terrain = dwarven_hold_surface
+				}
+			}
+		}
+		effect = {
+			country_event = {
+				id = amldihr.1
+			}
+		}
+	}
+	
+	I01_the_kronium_glove = {
+		icon = mission_discussion_arch
+		
+		position = 6
+		required_missions = {
+			I01_declare_emergency_assembly
+		}
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					region = serpentreach_region
+					OR = {
+						has_terrain = dwarven_hold
+						has_terrain = dwarven_hold_surface
+					}
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					NOT = {
+						ROOT = {
+							num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+								region = serpentreach_region
+								OR = {
+									has_terrain = dwarven_hold
+									has_terrain = dwarven_hold_surface
+								}
+								value = 5
+							}
+						}
+					}
+				}
+				AND = {
+					region = middle_dwarovar_region
+					OR = {
+						has_terrain = dwarven_hold
+						has_terrain = dwarven_hold_surface
+					}
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					NOT = {
+						ROOT = {
+							num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+								region = middle_dwarovar_region
+								OR = {
+									has_terrain = dwarven_hold
+									has_terrain = dwarven_hold_surface
+								}
+								value = 5
+							}
+						}
+					}
+				}
+			}
+		}
+		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				region = serpentreach_region
+				OR = {
+					has_terrain = dwarven_hold
+					has_terrain = dwarven_hold_surface
+				}
+				value = 5
+			}
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				region = middle_dwarovar_region
+				OR = {
+					has_terrain = dwarven_hold
+					has_terrain = dwarven_hold_surface
+				}
+				value = 5
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = amldihr_the_kronium_glove
+				duration = 3650
+			}
+			custom_tooltip = I01_dwarven_vassals_opinion_tooltip
+			hidden_effect = {
+				every_country = {
+					limit = {
+						is_subject_of = ROOT
+						culture_group = dwarven
+					}
+					add_opinion = {
+						who = ROOT
+						modifier = amldihr_dwarven_subject
+					}
+				}
+			}
+		}
+	}
+	
+	I01_a_high_king = {
+		icon = mission_thinking_king
+		
+		position = 8
+		required_missions = {
+			I01_the_empires_gem
+			I01_middle_dwarovar_ascendant
+			I01_the_kronium_glove
+		}
+		provinces_to_highlight = {
+			continent = serpentspine
+			OR = {
+				has_terrain = dwarven_hold
+				has_terrain = dwarven_hold_surface
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 25
+				OR = {
+					has_terrain = dwarven_hold
+					has_terrain = dwarven_hold_surface
+				}
+			}
+		}
+		effect = {
+			country_event = {
+				id = amldihr.2
+			}
+			add_country_modifier = {
+				name = amldihr_a_high_king
+				duration = 18250
+			}
+		}
+	}
+}
+amldihr_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = I01
+	}
+	
+	I01_amlvaz_rails = {
+		icon = mission_landsknecht_soldier
+		
+		position = 2
+		required_missions = {
+			I01_the_dual_tunnels
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = dwarovrod_7_9_area
+				area = dwarovrod_10_12_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			dwarovrod_7_9_area = {
+				owned_by = ROOT
+				type = all
+			}
+			dwarovrod_10_12_area = {
+				owned_by = ROOT
+				type = all
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					2868 = {
+						NOT = { owned_by = ROOT }
+						owner = {
+							culture_group = dwarven
+							NOT = { total_development = 100 }
+						}
+					}
+				}
+				2868 = {
+					owner = {
+						reverse_add_casus_belli = {
+							target = ROOT
+							type = cb_vassalize_mission
+							months = 120
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					2868 = {
+						NOT = { owned_by = ROOT }
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+				}
+				2868 = {
+					add_permanent_claim = ROOT
+				}
+			}
+			else = {
+				add_adm_power = 75
+			}
+		}
+	}
+	
+	I01_western_dwarovar_ascendant = {
+		icon = mission_cannons_firing
+		
+		position = 3
+		required_missions = {
+			I01_amloz_rails
+			I01_amlvaz_rails
+		}
+		provinces_to_highlight = {
+			continent = serpentspine
+			OR = {
+				has_terrain = dwarven_hold
+				has_terrain = dwarven_hold_surface
+			}
+			NOT = { area = amldihr_area }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 3
+				OR = {
+					has_terrain = dwarven_hold
+					has_terrain = dwarven_hold_surface
+				}
+				NOT = {
+					area = amldihr_area
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = I01_claim_west_dwarv_holds_tooltip
+			hidden_effect = {
+				west_dwarovar_region = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+						OR = {
+							has_terrain = dwarven_hold
+							has_terrain = dwarven_hold_surface
+						}
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+			4119 = {
+				add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 1
+			}
+		}
+	}
+	
+	I01_the_industrial_dwarovar = {
+		icon = mission_mechanical_mining
+		
+		position = 4
+		required_missions = {
+			I01_western_dwarovar_ascendant
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 4236
+				province_id = 2931
+			}
+			OR = {
+				NOT = { country_or_subject_holds = ROOT }
+				NOT = { culture_group = dwarven }
+				NOT = { development = 50 }
+			}
+		}
+		trigger = {
+			4236 = {
+				country_or_subject_holds = ROOT
+				culture_group = dwarven
+				development = 50
+			}
+			2931 = {
+				country_or_subject_holds = ROOT
+				culture_group = dwarven
+				development = 50
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = amldihr_the_industrial_dwarovar
+				duration = 9125
+			}
+		}
+	}
+	
+	I01_cross_the_vazok = {
+		icon = mission_conquer_romania
+		
+		position = 5
+		required_missions = {
+			I01_declare_emergency_assembly
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2884
+				province_id = 2885
+			}
+			NOT = { country_or_subject_holds = ROOT }
+		}
+		trigger = {
+			2884 = {
+				country_or_subject_holds = ROOT
+			}
+			2885 = {
+				country_or_subject_holds = ROOT
+			}
+		}
+		effect = {
+			custom_tooltip = I01_claim_middle_dwarovar_rails_tooltip
+			add_adm_power = 50
+			hidden_effect = {
+				if = {
+					limit = {
+						has_country_flag = I01_emergency_assembly_middle_dwarovar
+					}
+					middle_dwarovar_region = {
+						limit = {
+							NOT = { is_core = ROOT }
+							NOT = { is_permanent_claim = ROOT }
+							has_terrain = dwarven_road
+						}
+						add_permanent_claim = ROOT
+					}
+				}
+				else = {
+					dwarovrod_27_29_area = {
+						limit = {
+							NOT = { is_core = ROOT }
+							NOT = { is_permanent_claim = ROOT }
+						}
+						add_permanent_claim = ROOT
+					}
+					dwarovrod_30_32_area = {
+						limit = {
+							NOT = { is_core = ROOT }
+							NOT = { is_permanent_claim = ROOT }
+						}
+						add_permanent_claim = ROOT
+					}
+				}
+			}
+		}
+	}
+	
+	I01_the_middle_push = {
+		icon = mission_recruit_streltsy
+		
+		position = 6
+		required_missions = {
+			I01_cross_the_vazok
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = dwarovrod_27_29_area
+				area = dwarovrod_30_32_area
+			}
+			NOT = { country_or_subject_holds = ROOT }
+		}
+		trigger = {
+			dwarovrod_27_29_area = {
+				country_or_subject_holds = ROOT
+				type = all
+			}
+			dwarovrod_30_32_area = {
+				country_or_subject_holds = ROOT
+				type = all
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					4124 = {
+						NOT = { owned_by = ROOT }
+						owner = {
+							culture_group = dwarven
+							NOT = { total_development = 100 }
+						}
+					}
+				}
+				4124 = {
+					owner = {
+						reverse_add_casus_belli = {
+							target = ROOT
+							type = cb_vassalize_mission
+							months = 120
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					4124 = {
+						NOT = { owned_by = ROOT }
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+				}
+				4124 = {
+					add_permanent_claim = ROOT
+				}
+			}
+			else = {
+				add_adm_power = 75
+			}
+		}
+	}
+	
+	I01_middle_dwarovar_ascendant = {
+		icon = mission_unite_home_region
+		
+		position = 7
+		required_missions = {
+			I01_the_middle_push
+			I01_golden_despot
+		}
+		provinces_to_highlight = {
+			region = middle_dwarovar_region
+			OR = {
+				has_terrain = dwarven_hold
+				has_terrain = dwarven_hold_surface
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				region = middle_dwarovar_region
+				OR = {
+					has_terrain = dwarven_hold
+					has_terrain = dwarven_hold_surface
+				}
+				value = 4
+			}
+		}
+		effect = {
+			custom_tooltip = I01_dwarven_vassals_opinion_middle_dwarv_tooltip
+			add_adm_power = 100
+			hidden_effect = {
+				every_country = {
+					limit = {
+						is_subject_of = ROOT
+						culture_group = dwarven
+						capital_scope = {
+							region = middle_dwarovar_region
+						}
+					}
+					add_opinion = {
+						who = ROOT
+						modifier = amldihr_dwarven_subject
+					}
+				}
+			}
+		}
+	}
+}
+amldihr_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		tag = I01
+	}
+	
+	I01_flooded_vale = {
+		icon = mission_advance_to_the_dnieper
+		
+		position = 1
+		required_missions = {}
+		provinces_to_highlight = {
+			region = serpents_vale_region
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		trigger = {
+			serpents_vale_region = {
+				owned_by = ROOT
+				is_core = ROOT
+				type = all
+			}
+		}
+		effect = {
+			4119 = {
+				add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 1
+			}
+			add_prestige = 10
+		}
+	}
+	
+	I01_vales_bounty = {
+		icon = mission_wine_monopolies
+		
+		position = 2
+		required_missions = {
+			I01_flooded_vale
+		}
+		provinces_to_highlight = {
+			region = serpents_vale_region
+			NOT = { has_terrain = dwarven_road has_manufactory_trigger = yes }
+		}
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = I01_vales_bounty_tooltip
+				serpents_vale_region = {
+					OR = {
+						has_terrain = dwarven_road
+						has_manufactory_trigger = yes
+					}
+					type = all
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = I01_irrigation_repaired_tooltip
+				4119 = {
+					has_province_modifier = dwarovar_granary
+				}
+			}
+		}
+		effect = {
+			amldihr_area = {
+				add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 1
+			}
+			add_prestige = 25
+		}
+	}
+	
+	I01_quartz_anvil = {
+		icon = mission_rb_unite_the_clans
+		
+		position = 3
+		required_missions = {}
+		provinces_to_highlight = {
+			province_id = 4208
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			4208 = {
+				OR = {
+					owned_by = ROOT
+					owner = {
+						is_neighbor_of = ROOT
+					}
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					4208 = {
+						NOT = { owned_by = ROOT }
+						owner = {
+							culture_group = dwarven
+						}
+					}
+				}
+				4208 = {
+					owner = {
+						reverse_add_casus_belli = {
+							target = ROOT
+							type = cb_vassalize_mission
+							months = 120
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					4208 = {
+						NOT = { owned_by = ROOT }
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+				}
+				4208 = {
+					add_permanent_claim = ROOT
+				}
+			}
+			else = {
+				add_adm_power = 75
+			}
+		}
+	}
+	
+	I01_plug_the_pass = {
+		icon = mission_portuguese_oman
+		
+		position = 4
+		required_missions = {
+			I01_quartz_anvil
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 4198
+				province_id = 4201
+			}
+			OR = {
+				NOT = { country_or_subject_holds = ROOT }
+				NOT = { fort_level = 2 }
+			}
+		}
+		trigger = {
+			4198 = {
+				country_or_subject_holds = ROOT
+				fort_level = 2
+			}
+			4201 = {
+				country_or_subject_holds = ROOT
+				fort_level = 2
+			}
+		}
+		effect = {
+			4198 = {
+				add_province_modifier = {
+					name = amldihr_plugged_pass
+					duration = -1
+				}
+			}
+			4201 = {
+				add_province_modifier = {
+					name = amldihr_plugged_pass
+					duration = -1
+				}
+			}
+		}
+	}
+	
+	I01_golden_despot = {
+		icon = mission_african_gold
+		
+		position = 6
+		required_missions = {
+			I01_cross_the_vazok
+		}
+		provinces_to_highlight = {
+			province_id = 2914
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			2914 = {
+				OR = {
+					owned_by = ROOT
+					owner = {
+						is_neighbor_of = ROOT
+					}
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					2914 = {
+						NOT = { owned_by = ROOT }
+						owner = {
+							culture_group = dwarven
+							NOT = { total_development = 100 }
+						}
+					}
+				}
+				2914 = {
+					owner = {
+						reverse_add_casus_belli = {
+							target = ROOT
+							type = cb_vassalize_mission
+							months = 120
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					2914 = {
+						NOT = { owned_by = ROOT }
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+				}
+				2914 = {
+					add_permanent_claim = ROOT
+				}
+			}
+			else = {
+				add_adm_power = 75
+			}
+		}
+	}
+	
+	I01_an_amber_heart = {
+		icon = mission_alone_in_the_wood
+		
+		position = 8
+		required_missions = {
+			I01_middle_dwarovar_ascendant
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 4090
+				province_id = 4242
+			}
+			NOT = { country_or_subject_holds = ROOT }
+		}
+		trigger = {
+			4090 = {
+				country_or_subject_holds = ROOT
+			}
+			4242 = {
+				country_or_subject_holds = ROOT
+			}
+		}
+		effect = {
+			custom_tooltip = I01_claim_tree_of_stone_rails_tooltip
+			hidden_effect = {
+				tree_of_stone_region = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+						OR = {
+							has_terrain = dwarven_road
+							has_terrain = dwarven_hold
+							has_terrain = dwarven_hold_surface
+						}
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+	}
+}

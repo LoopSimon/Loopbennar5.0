@@ -1,0 +1,634 @@
+
+
+namespace = verkalskomdihr
+
+#The Ranger's Captain Logbook
+country_event = {
+	id = verkalskomdihr.1
+	title = verkalskomdihr.1.t
+	desc = verkalskomdihr.1.d
+	picture = BIG_BOOK_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	option = {
+		name = verkalskomdihr.1.a
+		add_prestige = 5
+	}
+}
+
+#Rangers are ready
+country_event = {
+	id = verkalskomdihr.2
+	title = verkalskomdihr.2.t
+	desc = verkalskomdihr.2.d
+	picture = SCOTTISH_MERCENARIES_eventPicture_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	option = {
+		name = verkalskomdihr.2.a
+		define_conquistador = {
+			name = "Frandhi Flintstone"
+			fire = 4
+			shock = 1
+			manuever = 5
+			siege = 1
+			trait = goal_oriented_personality
+		}
+		add_army_tradition = 10
+		remove_country_modifier = verkalskomdihr_ranger_training
+	}
+}
+
+# Build Warding Gate Decision
+country_event = {
+	id = verkalskomdihr.3
+	title = verkalskomdihr.3.t
+	desc = verkalskomdihr.3.d
+	picture = GREAT_BUILDING_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	immediate = {
+		hidden_effect = { verkalskomdihr_define_hold_that_can_build_gate = yes }
+	}
+	
+	option = {
+        name = verkalskomdihr.3.1
+        ai_chance = { factor = 0 }
+		trigger = { any_owned_province = { has_province_flag = vs_option_hold_1_@ROOT } }
+		goto = vs_hold1
+		random_owned_province = {
+			limit = { has_province_flag = vs_option_hold_1_@ROOT }
+			add_province_modifier = {
+				name = verkalskomdihr_the_warding_gate_4
+				duration = -1
+			}
+		}
+		add_treasury = -350
+		hidden_effect = { verkalskomdihr_clr_gate_menu = yes }
+	}
+	option = {
+        name = verkalskomdihr.3.2
+        ai_chance = { factor = 0 }
+		trigger = { any_owned_province = { has_province_flag = vs_option_hold_2_@ROOT } }
+		goto = vs_hold2
+		random_owned_province = {
+			limit = { has_province_flag = vs_option_hold_2_@ROOT }
+			add_province_modifier = {
+				name = verkalskomdihr_the_warding_gate_4
+				duration = -1
+			}
+		}
+		add_treasury = -350
+		hidden_effect = { verkalskomdihr_clr_gate_menu = yes }
+	}
+	option = {
+        name = verkalskomdihr.3.3
+        ai_chance = { factor = 0 }
+		trigger = { any_owned_province = { has_province_flag = vs_option_hold_3_@ROOT } }
+		goto = vs_hold3
+		random_owned_province = {
+			limit = { has_province_flag = vs_option_hold_3_@ROOT }
+			add_province_modifier = {
+				name = verkalskomdihr_the_warding_gate_4
+				duration = -1
+			}
+		}
+		add_treasury = -350
+		hidden_effect = { verkalskomdihr_clr_gate_menu = yes }
+	}
+	option = {
+        name = verkalskomdihr.3.4
+        ai_chance = { factor = 0 }
+		trigger = { any_owned_province = { has_province_flag = vs_option_hold_4_@ROOT } }
+		goto = vs_hold4
+		random_owned_province = {
+			limit = { has_province_flag = vs_option_hold_4_@ROOT }
+			add_province_modifier = {
+				name = verkalskomdihr_the_warding_gate_4
+				duration = -1
+			}
+		}
+		add_treasury = -350
+		hidden_effect = { verkalskomdihr_clr_gate_menu = yes }
+	}
+	option = {
+        name = verkalskomdihr.3.5
+        ai_chance = { factor = 0 }
+		trigger = { any_owned_province = { has_province_flag = vs_option_hold_5_@ROOT } }
+		goto = vs_hold5
+		random_owned_province = {
+			limit = { has_province_flag = vs_option_hold_5_@ROOT }
+			add_province_modifier = {
+				name = verkalskomdihr_the_warding_gate_4
+				duration = -1
+			}
+		}
+		add_treasury = -350
+		hidden_effect = { verkalskomdihr_clr_gate_menu = yes }
+	}
+	option = {
+        name = verkalskomdihr.3.6
+        ai_chance = { factor = 0 }
+		trigger = { any_owned_province = { has_province_flag = vs_option_hold_6_@ROOT } }
+		goto = vs_hold6
+		random_owned_province = {
+			limit = { has_province_flag = vs_option_hold_6_@ROOT }
+			add_province_modifier = {
+				name = verkalskomdihr_the_warding_gate_4
+				duration = -1
+			}
+		}
+		add_treasury = -350
+		hidden_effect = { verkalskomdihr_clr_gate_menu = yes }
+	}
+	option = {
+        name = verkalskomdihr.3.7
+        ai_chance = { factor = 0 }
+		trigger = { any_owned_province = { has_province_flag = vs_option_hold_7_@ROOT } }
+		goto = vs_hold7
+		random_owned_province = {
+			limit = { has_province_flag = vs_option_hold_7_@ROOT }
+			add_province_modifier = {
+				name = verkalskomdihr_the_warding_gate_4
+				duration = -1
+			}
+		}
+		add_treasury = -350
+		hidden_effect = { verkalskomdihr_clr_gate_menu = yes }
+	}
+	option = {
+        name = verkalskomdihr.3.8
+        ai_chance = { factor = 0 }
+		trigger = { any_owned_province = { has_province_flag = vs_option_hold_8_@ROOT } }
+		goto = vs_hold8
+		random_owned_province = {
+			limit = { has_province_flag = vs_option_hold_8_@ROOT }
+			add_province_modifier = {
+				name = verkalskomdihr_the_warding_gate_4
+				duration = -1
+			}
+		}
+		add_treasury = -350
+		hidden_effect = { verkalskomdihr_clr_gate_menu = yes }
+	}
+	option = {
+        name = verkalskomdihr.3.9
+        ai_chance = { factor = 0 }
+		trigger = { any_owned_province = { has_province_flag = vs_option_hold_9_@ROOT } }
+		goto = vs_hold9
+		random_owned_province = {
+			limit = { has_province_flag = vs_option_hold_9_@ROOT }
+			add_province_modifier = {
+				name = verkalskomdihr_the_warding_gate_4
+				duration = -1
+			}
+		}
+		add_treasury = -350
+		hidden_effect = { verkalskomdihr_clr_gate_menu = yes }
+	}
+	option = {
+        name = verkalskomdihr.3.10
+        ai_chance = { factor = 0 }
+		trigger = { any_owned_province = { has_province_flag = vs_option_hold_10_@ROOT } }
+		goto = vs_hold10
+		random_owned_province = {
+			limit = { has_province_flag = vs_option_hold_10_@ROOT }
+			add_province_modifier = {
+				name = verkalskomdihr_the_warding_gate_4
+				duration = -1
+			}
+		}
+		add_treasury = -350
+		hidden_effect = { verkalskomdihr_clr_gate_menu = yes }
+	}
+	option = {
+        name = verkalskomdihr.3.11
+        ai_chance = { factor = 0 }
+		trigger = { any_owned_province = { has_province_flag = vs_option_hold_11_@ROOT } }
+		goto = vs_hold11
+		random_owned_province = {
+			limit = { has_province_flag = vs_option_hold_11_@ROOT }
+			add_province_modifier = {
+				name = verkalskomdihr_the_warding_gate_4
+				duration = -1
+			}
+		}
+		add_treasury = -350
+		hidden_effect = { verkalskomdihr_clr_gate_menu = yes }
+	}
+	option = {
+        name = verkalskomdihr.3.12
+        ai_chance = { factor = 0 }
+		trigger = { any_owned_province = { has_province_flag = vs_option_hold_12_@ROOT } }
+		goto = vs_hold12
+		random_owned_province = {
+			limit = { has_province_flag = vs_option_hold_12_@ROOT }
+			add_province_modifier = {
+				name = verkalskomdihr_the_warding_gate_4
+				duration = -1
+			}
+		}
+		add_treasury = -350
+		hidden_effect = { verkalskomdihr_clr_gate_menu = yes }
+	}
+	option = {
+        name = verkalskomdihr.3.13
+        ai_chance = { factor = 0 }
+		trigger = { any_owned_province = { has_province_flag = vs_option_hold_13_@ROOT } }
+		goto = vs_hold13
+		random_owned_province = {
+			limit = { has_province_flag = vs_option_hold_13_@ROOT }
+			add_province_modifier = {
+				name = verkalskomdihr_the_warding_gate_4
+				duration = -1
+			}
+		}
+		add_treasury = -350
+		hidden_effect = { verkalskomdihr_clr_gate_menu = yes }
+	}
+	option = {
+        name = verkalskomdihr.3.14
+        ai_chance = { factor = 0 }
+		trigger = { any_owned_province = { has_province_flag = vs_option_hold_14_@ROOT } }
+		goto = vs_hold14
+		random_owned_province = {
+			limit = { has_province_flag = vs_option_hold_14_@ROOT }
+			add_province_modifier = {
+				name = verkalskomdihr_the_warding_gate_4
+				duration = -1
+			}
+		}
+		add_treasury = -350
+		hidden_effect = { verkalskomdihr_clr_gate_menu = yes }
+	}
+	option = {
+        name = verkalskomdihr.3.15
+        ai_chance = { factor = 0 }
+		trigger = { any_owned_province = { has_province_flag = vs_option_hold_15_@ROOT } }
+		goto = vs_hold15
+		random_owned_province = {
+			limit = { has_province_flag = vs_option_hold_15_@ROOT }
+			add_province_modifier = {
+				name = verkalskomdihr_the_warding_gate_4
+				duration = -1
+			}
+		}
+		add_treasury = -350
+		hidden_effect = { verkalskomdihr_clr_gate_menu = yes }
+	}
+	option = {
+        name = verkalskomdihr.3.16
+        ai_chance = { factor = 0 }
+		trigger = { any_owned_province = { has_province_flag = vs_option_hold_16_@ROOT } }
+		goto = vs_hold16
+		random_owned_province = {
+			limit = { has_province_flag = vs_option_hold_16_@ROOT }
+			add_province_modifier = {
+				name = verkalskomdihr_the_warding_gate_4
+				duration = -1
+			}
+		}
+		add_treasury = -350
+		hidden_effect = { verkalskomdihr_clr_gate_menu = yes }
+	}
+	option = {
+        name = verkalskomdihr.3.17
+        ai_chance = { factor = 0 }
+		trigger = { any_owned_province = { has_province_flag = vs_option_hold_17_@ROOT } }
+		goto = vs_hold17
+		random_owned_province = {
+			limit = { has_province_flag = vs_option_hold_17_@ROOT }
+			add_province_modifier = {
+				name = verkalskomdihr_the_warding_gate_4
+				duration = -1
+			}
+		}
+		add_treasury = -350
+		hidden_effect = { verkalskomdihr_clr_gate_menu = yes }
+	}
+	option = {
+        name = verkalskomdihr.3.18
+        ai_chance = { factor = 0 }
+		trigger = { any_owned_province = { has_province_flag = vs_option_hold_18_@ROOT } }
+		goto = vs_hold18
+		random_owned_province = {
+			limit = { has_province_flag = vs_option_hold_18_@ROOT }
+			add_province_modifier = {
+				name = verkalskomdihr_the_warding_gate_4
+				duration = -1
+			}
+		}
+		add_treasury = -350
+		hidden_effect = { verkalskomdihr_clr_gate_menu = yes }
+	}
+	option = {
+        name = verkalskomdihr.3.19
+        ai_chance = { factor = 0 }
+		trigger = { any_owned_province = { has_province_flag = vs_option_hold_19_@ROOT } }
+		goto = vs_hold19
+		random_owned_province = {
+			limit = { has_province_flag = vs_option_hold_19_@ROOT }
+			add_province_modifier = {
+				name = verkalskomdihr_the_warding_gate_4
+				duration = -1
+			}
+		}
+		add_treasury = -350
+		hidden_effect = { verkalskomdihr_clr_gate_menu = yes }
+	}
+	option = {
+        name = verkalskomdihr.3.20
+        ai_chance = { factor = 0 }
+		trigger = { any_owned_province = { has_province_flag = vs_option_hold_20_@ROOT } }
+		goto = vs_hold20
+		random_owned_province = {
+			limit = { has_province_flag = vs_option_hold_20_@ROOT }
+			add_province_modifier = {
+				name = verkalskomdihr_the_warding_gate_4
+				duration = -1
+			}
+		}
+		add_treasury = -350
+		hidden_effect = { verkalskomdihr_clr_gate_menu = yes }
+	}
+	option = {
+        name = verkalskomdihr.3.21
+        ai_chance = { factor = 0 }
+		trigger = { any_owned_province = { has_province_flag = vs_option_hold_21_@ROOT } }
+		goto = vs_hold21
+		random_owned_province = {
+			limit = { has_province_flag = vs_option_hold_21_@ROOT }
+			add_province_modifier = {
+				name = verkalskomdihr_the_warding_gate_4
+				duration = -1
+			}
+		}
+		add_treasury = -350
+		hidden_effect = { verkalskomdihr_clr_gate_menu = yes }
+	}
+	option = {
+        name = verkalskomdihr.3.22
+        ai_chance = { factor = 0 }
+		trigger = { any_owned_province = { has_province_flag = vs_option_hold_22_@ROOT } }
+		goto = vs_hold22
+		random_owned_province = {
+			limit = { has_province_flag = vs_option_hold_22_@ROOT }
+			add_province_modifier = {
+				name = verkalskomdihr_the_warding_gate_4
+				duration = -1
+			}
+		}
+		add_treasury = -350
+		hidden_effect = { verkalskomdihr_clr_gate_menu = yes }
+	}
+	option = {
+        name = verkalskomdihr.3.23
+        ai_chance = { factor = 0 }
+		trigger = { any_owned_province = { has_province_flag = vs_option_hold_23_@ROOT } }
+		goto = vs_hold23
+		random_owned_province = {
+			limit = { has_province_flag = vs_option_hold_23_@ROOT }
+			add_province_modifier = {
+				name = verkalskomdihr_the_warding_gate_4
+				duration = -1
+			}
+		}
+		add_treasury = -350
+		hidden_effect = { verkalskomdihr_clr_gate_menu = yes }
+	}
+	option = {
+        name = verkalskomdihr.3.24
+        ai_chance = { factor = 0 }
+		trigger = { any_owned_province = { has_province_flag = vs_option_hold_24_@ROOT } }
+		goto = vs_hold24
+		random_owned_province = {
+			limit = { has_province_flag = vs_option_hold_24_@ROOT }
+			add_province_modifier = {
+				name = verkalskomdihr_the_warding_gate_4
+				duration = -1
+			}
+		}
+		add_treasury = -350
+		hidden_effect = { verkalskomdihr_clr_gate_menu = yes }
+	}
+	option = {
+        name = verkalskomdihr.3.25
+        ai_chance = { factor = 0 }
+		trigger = { any_owned_province = { has_province_flag = vs_option_hold_25_@ROOT } }
+		goto = vs_hold25
+		random_owned_province = {
+			limit = { has_province_flag = vs_option_hold_25_@ROOT }
+			add_province_modifier = {
+				name = verkalskomdihr_the_warding_gate_4
+				duration = -1
+			}
+		}
+		add_treasury = -350
+		hidden_effect = { verkalskomdihr_clr_gate_menu = yes }
+	}
+	option = {
+        name = verkalskomdihr.3.26
+        ai_chance = { factor = 0 }
+		trigger = { any_owned_province = { has_province_flag = vs_option_hold_26_@ROOT } }
+		goto = vs_hold26
+		random_owned_province = {
+			limit = { has_province_flag = vs_option_hold_26_@ROOT }
+			add_province_modifier = {
+				name = verkalskomdihr_the_warding_gate_4
+				duration = -1
+			}
+		}
+		add_treasury = -350
+		hidden_effect = { verkalskomdihr_clr_gate_menu = yes }
+	}
+	option = {
+        name = verkalskomdihr.3.27
+        ai_chance = { factor = 0 }
+		trigger = { any_owned_province = { has_province_flag = vs_option_hold_27_@ROOT } }
+		goto = vs_hold27
+		random_owned_province = {
+			limit = { has_province_flag = vs_option_hold_27_@ROOT }
+			add_province_modifier = {
+				name = verkalskomdihr_the_warding_gate_4
+				duration = -1
+			}
+		}
+		add_treasury = -350
+		hidden_effect = { verkalskomdihr_clr_gate_menu = yes }
+	}
+	option = {
+        name = verkalskomdihr.3.28
+        ai_chance = { factor = 0 }
+		trigger = { any_owned_province = { has_province_flag = vs_option_hold_28_@ROOT } }
+		goto = vs_hold28
+		random_owned_province = {
+			limit = { has_province_flag = vs_option_hold_28_@ROOT }
+			add_province_modifier = {
+				name = verkalskomdihr_the_warding_gate_4
+				duration = -1
+			}
+		}
+		add_treasury = -350
+		hidden_effect = { verkalskomdihr_clr_gate_menu = yes }
+	}
+	option = {
+        name = verkalskomdihr.3.29
+        ai_chance = { factor = 0 }
+		trigger = { any_owned_province = { has_province_flag = vs_option_hold_29_@ROOT } }
+		goto = vs_hold29
+		random_owned_province = {
+			limit = { has_province_flag = vs_option_hold_29_@ROOT }
+			add_province_modifier = {
+				name = verkalskomdihr_the_warding_gate_4
+				duration = -1
+			}
+		}
+		add_treasury = -350
+		hidden_effect = { verkalskomdihr_clr_gate_menu = yes }
+	}
+	option = {
+		name = verkalskomdihr.3.30
+		hidden_effect = { verkalskomdihr_clr_gate_menu = yes }
+	}
+}
+
+# End of the Reforestation Decree
+country_event = {
+	id = verkalskomdihr.4
+	title = verkalskomdihr.4.t
+	desc = verkalskomdihr.4.d
+	picture = WESTERNISATION_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	option = {
+		name = verkalskomdihr.4.a
+		custom_tooltip = verkalskomdihr_anti_deforestation_decree_end_tooltip
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					trade_goods = tropical_wood
+				}
+				remove_province_modifier = verkalskomdihr_reforestation_decree
+				add_province_modifier = {
+					name = verkalskomdihr_reforestation
+					duration = -1
+				}
+			}
+		}
+	}
+}
+
+# Exotic wood monopoly
+country_event = {
+	id = verkalskomdihr.5
+	title = verkalskomdihr.5.t
+	desc = verkalskomdihr.5.d
+	picture = TRADE_GOODS_PLANTATION_GOODS_IN_WAREHOUSE_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	option = {
+		name = verkalskomdihr.5.a
+		custom_tooltip = verkalskomdihr.5.tooltip
+		hidden_effect = {
+			every_owned_province = {
+				limit = { trade_goods = tropical_wood }
+				add_province_modifier = { name = verkalskomdihr_exotic_wood_monopoly duration = -1 }
+			}
+		}
+	}
+}
+
+# The Wooden Halls
+country_event = {
+	id = verkalskomdihr.6
+	title = verkalskomdihr.6.t
+	desc = {
+		trigger = { government = monarchy }
+		desc = verkalskomdihr.6.d1
+	}
+	desc = {
+		trigger = { government = republic }
+		desc = verkalskomdihr.6.d2
+	}
+	desc = {
+		trigger = { government = theocracy }
+		desc = verkalskomdihr.6.d3
+	}
+	
+	picture = UNIVERSITY_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	option = {
+		name = verkalskomdihr.6.a
+		4100 = {
+			remove_province_modifier = verkalskomdihr_halls_construction
+			add_province_modifier = {
+				name = verkalskomdihr_the_wooden_halls
+				duration = -1
+			}
+		}
+	}
+}
+
+#Expedition
+country_event = {
+	id = verkalskomdihr.7
+	title = verkalskomdihr.7.t
+	desc = verkalskomdihr.7.d
+	picture = EXPLORERS_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	option = {
+		name = verkalskomdihr.7.a
+		deepwoods_superregion = { discover_country = ROOT }
+		add_manpower = 5
+		add_army_tradition = 10
+		add_prestige = 10
+		deepwoods_arrow_grove = {
+			limit = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_permanent_claim = ROOT }
+			}
+			add_permanent_claim = ROOT
+		}
+	}
+	
+	after = {
+		set_country_flag = verkalskomdihr_expedition_end
+	}
+}

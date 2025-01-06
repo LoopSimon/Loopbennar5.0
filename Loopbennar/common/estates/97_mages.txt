@@ -1,0 +1,497 @@
+estate_mages = {
+	icon = 11
+
+	# If true, country will get estate
+	trigger = {	
+		NOT = { government = native }
+		NOT = { has_reform = cossacks_reform }
+		NOT = { has_reform = siberian_tribe }
+
+		#you must either be non-nomadic, or be a centaur. not sure if this is_nomad = no was load-bearing for excluding gnolls or something so I made sure the check remained -imacop42
+		OR = {
+			is_nomad = no
+			culture_is_centaur = yes
+		}
+		#Anbennar
+		NOT = { has_reform = hobgoblin_stratocracy_reform }
+		NOT = { has_adventurer_reform = yes }
+		NOT = { has_country_flag = banned_magic }
+		NOT = { has_estate = estate_acolytes }
+		NOT = { AND = { religion = bulwari_sun_cult has_country_flag = nsc_human_country_magic_prohibition } }
+		NOT = { is_subject_of = R62 }
+		NOT = { has_reform = tagharoghi_reform }
+		NOT = { has_reform = demon_empire_reform }
+		NOT = { has_country_flag = LF_mages_banned }
+		NOT = { has_country_flag = magic_artificery_artificery_only }
+	}
+
+	# These scale with loyalty & power
+	country_modifier_happy = {
+		all_power_cost = -0.1
+		imperial_authority = 0.05
+		technology_cost = 0.2
+		monthly_support_heir_gain = 0.13
+	}
+	country_modifier_neutral = {
+		#all_power_cost = 0.05
+	}	
+	country_modifier_angry = {
+		all_power_cost = 0.1
+		technology_cost = 0.2
+		monthly_support_heir_gain = -0.13
+	}
+	land_ownership_modifier = {
+		mages_loyalty_modifier = 0.2
+	}
+	
+	province_independence_weight = {
+		factor = 1
+		modifier = {
+			factor = 0.5
+			NOT = { development = 10 }
+		}
+		modifier = {
+			factor = 1.2
+			development = 10
+		}
+		modifier = {
+			factor = 1.5
+			development = 20
+		}
+		modifier = {
+			factor = 2
+			has_building = university
+		}
+		modifier = {
+			factor = 2
+			OR = {
+				trade_goods = damestear
+				trade_goods = precursor_relics
+			}
+		}
+	}
+
+	custom_name = {
+		desc = estate_myondang
+		trigger = {
+			culture_group = odheongun
+		}
+	}
+	
+	# Influence modifiers
+	base_influence = 0
+	
+	influence_modifier = {
+		desc = EST_VAL_UNIVERSITY
+		trigger = {
+			any_owned_province = {
+				has_building = university
+			}
+		}
+		influence = 5
+	}
+	
+	# #Country size
+	# influence_modifier = {	
+		# desc = EST_VAL_MEDIUM_DEVELOPMENT_PROVINCE
+		# trigger = {
+			# any_owned_province = {
+				# development = 20
+			# }
+		# }
+		# influence = 5
+	# }
+	
+	# influence_modifier = {	
+		# desc = EST_VAL_50_TOTAL_DEVELOPMENT
+		# trigger = {
+			# total_development = 50
+		# }
+		# influence = 5
+	# }
+	
+	influence_modifier = {
+		desc = EST_VAL_MAGE_TOWER
+		trigger = {
+			any_owned_province = {
+				has_building = mage_tower
+			}
+		}
+		influence = 5
+	}
+	
+	influence_modifier = {
+		desc = EST_VAL_MAGE_ADVISOR
+		trigger = {
+			advisor = court_mage
+		}
+		influence = 5
+	}
+	
+	influence_modifier = {
+		desc = EST_VAL_OTHER_ESTATE_IN_POWER
+		trigger = {
+			OR = {
+				has_disaster = estate_nobility_disaster
+				has_disaster = estate_church_disaster
+				has_disaster = estate_burghers_disaster
+				has_disaster = estate_artificers_disaster
+				has_disaster = estate_adventurers_disaster
+				#has_disaster = estate_brahmins_disaster
+				#has_disaster = estate_jains_disaster
+			}
+		}	
+		influence = -40
+	}
+	
+	influence_modifier = {
+		desc = EST_VAMPIRIC_LORD
+		trigger = {
+			has_estate_privilege = estate_vampires_organization_vampires_lord
+		}	
+		influence = -10
+	}
+	
+	#Loyalty
+	
+	loyalty_modifier = {
+		desc = EST_VAL_OTHER_ESTATE_IN_POWER_LOY
+		trigger = {
+			OR = {
+				has_disaster = estate_nobility_disaster
+				has_disaster = estate_church_disaster
+				has_disaster = estate_burghers_disaster
+				has_disaster = estate_artificers_disaster
+				has_disaster = estate_adventurers_disaster
+				#has_disaster = estate_brahmins_disaster
+				#has_disaster = estate_jains_disaster
+			}
+		}
+		loyalty = -20
+	}	
+	
+	# Custom Names
+	custom_name = {
+		desc = estate_magisters
+		trigger = {
+			has_estate_privilege = estate_mages_organization_magisterium
+		}
+	}
+	
+	custom_name = {
+		desc = estate_magi
+		trigger = {
+			or = {
+				culture_group = bulwari
+				culture = sun_elf
+				culture = dawn_elf
+				culture = desert_elf
+				culture = zanlibi
+			}
+		}
+	}
+
+	custom_desc = {
+		desc = estate_magi_desc
+		trigger = {
+			or = {
+				culture_group = bulwari
+				culture = sun_elf
+				culture = dawn_elf
+				culture = desert_elf
+				culture = zanlibi
+			}
+		}
+	}
+
+	custom_name = {
+		desc = estate_vetaunyar 
+		trigger = {
+			or = {
+				culture = firanyan_harpy
+				culture = siadunan_harpy
+			}
+		}
+	}
+
+	custom_name = {
+		desc = estate_bladesingers
+		trigger = {
+			tag = A77
+		}
+	}
+
+	custom_desc = {
+		desc = estate_bladesingers_desc
+		trigger = {
+			tag = A77
+		}
+	}
+
+	custom_desc = {
+		desc = estate_vetaunyar_desc
+		trigger = {
+			or = {
+				culture = firanyan_harpy
+				culture = siadunan_harpy
+			}
+		}
+	}
+
+	custom_name = {
+		desc = estate_sleepers
+		trigger = {
+			has_country_flag = sleeper_mages
+		}
+	}
+
+	custom_name = {
+		desc = estate_icesmiths
+		trigger = {
+			has_estate_privilege = estate_mages_organization_ice_smiths
+		}
+	}
+
+	custom_name = {
+		desc = esthil_estate_necromancers
+		trigger = {
+			has_country_flag = esthil_lodge_of_necromancers
+		}
+	}
+	
+	custom_name = {
+		desc = estate_dradh
+		trigger = {
+			culture_group = eordan_ruinborn_elf
+			NOT = { tag = H16 } 
+		}
+	}
+	
+	custom_name = {
+		desc = estate_reeshi
+		trigger = {
+			culture = ghavaanaj
+		}
+	}
+	
+	custom_name = {
+		desc = estate_sorcerers
+		trigger = {
+			religion = devouring_path
+		}
+	}
+
+	custom_name = {
+		desc = newshire_estate_chloromancers
+		trigger = {
+			has_country_flag = newshire_opened_door
+		}
+	}
+	
+	custom_name = { # Verkal Ozovar
+		desc = estate_runesmiths
+		trigger = {
+			has_estate_privilege = estate_mages_organization_runesmiths
+		}
+	}
+	
+	custom_name = { # Yinquan
+		desc = estate_lihos_maidens
+		trigger = {
+			has_estate_privilege = estate_mages_organization_lihos_maidens
+		}
+	}
+
+	custom_name = {
+		desc = estate_taigan_order
+		trigger = {
+			tag = H16
+		}
+	}
+	custom_name = {
+		desc = baashidi_estate_house_of_exorcism
+		trigger = {
+			culture_group = baashidi
+		}
+	}
+	
+	custom_name = {
+		desc = mihipha
+		trigger = {
+			is_vyzemby_primary_culture = yes
+		}
+	}
+
+	custom_name = { #Mengi free warriors
+		desc = estate_mengi_tanikweya
+		trigger = {
+			culture_group = mengi
+		}
+	}
+
+	custom_name = { # druids (wood elves. add more cultures as appropriate)
+		desc = estate_druids
+		trigger = {
+			primary_culture = wood_elf
+		}
+	}
+
+	custom_name = {
+		desc = estate_warlocks
+		trigger = {
+			OR = {
+				has_country_flag = rakkaz_warlocks_rename
+				religion = pactseeker
+			}	
+		}
+	}
+
+	custom_name = {
+		desc = estate_denunransunin
+		trigger = {
+			tag = V17
+		}
+	}
+
+	custom_name = {
+		desc = lodge_of_the_nameless_name
+		trigger = {
+			has_country_flag = lodge_of_the_nameless
+		}
+	}
+
+	custom_name = {
+		desc = estate_mb_arok_ankash
+		trigger = {
+			has_country_flag = mb_arok_ankash_flg
+		}
+	}
+	
+	custom_desc = {
+		desc = estate_mb_arok_ankash_desc
+		trigger = {
+			has_country_flag = mb_arok_ankash_flg
+		}
+	}
+
+	custom_name = {
+		desc = wyvernheart_floodborn_council_estate
+		trigger = {
+			has_country_flag = floodborn_council_rename
+		}
+	}
+
+	color = { 153 217 234 }
+
+	privileges = {
+		estate_mages_cast_spells
+		estate_mages_patronage_of_the_magical_arts
+		estate_mages_battlemage_academies
+		estate_mages_archaic_traditions
+		estate_mages_reduced_research_regulations
+		estate_mages_monopoly_of_damestear
+		estate_mages_empowered_mages
+		estate_mages_spirit_speakers
+		estate_mages_temple_desecrators
+		estate_mages_monstrous_explorers
+		estate_mages_form_iii
+		estate_mages_form_i
+		
+		estate_mages_organization_magisterium
+		estate_mages_organization_state
+		estate_mages_organization_guilds
+		estate_mages_organization_religious
+		estate_mages_organization_covenant
+		estate_mages_organization_elissa
+		estate_mages_organization_bardic_college
+		estate_mages_organization_ice_smiths
+		estate_mages_organization_science_mages #Orlghelovar MT
+		estate_mages_organization_constabularies #Chaingrasper MT
+		estate_mages_organization_runesmiths # Verkal Ozovar MT
+		estate_mages_organization_lihos_maidens # Yinquan MT
+		estate_mages_organization_jaherian_statute #Bulwar
+		estate_mages_organization_onyxguard #Lake Fed
+		estate_mages_organization_orda_aldresia #Orda MT
+
+		estate_mages_bardic_general
+		estate_mages_peace_songs
+		estate_mages_skaldic_teachings
+		estate_mages_supply_more_iron
+		estate_mages_perform_icecraft
+		estate_mages_ice_sculptures
+		estate_mages_sun_elf_evocation
+		estate_mages_sun_elf_abjuration
+		estate_mages_syncretic_transmutation
+		estate_mages_bulwari_divination
+		estate_mages_bulwari_conjuration
+		estate_mages_necromancer_death_tax
+		estate_mages_reeshi_bonds
+		# estate_mages_necromancer_freedom_of_practice # This doesn't exist atm 
+		estate_mages_flamekeepers
+		estate_mages_experimental_lands
+		estate_mages_vivomantic_mastery
+		estate_mages_vivomantic_mastery_final
+		estate_mages_grand_rune_amekh
+		estate_mages_grand_rune_guntir
+		estate_mages_grand_rune_jolkin
+		estate_mages_grand_rune_krakdhum
+		estate_mages_grand_rune_haln
+		estate_mages_grand_rune_kron
+		estate_mages_grand_rune_dauth
+		estate_mages_grand_rune_kanzad
+		estate_mages_grand_rune_bal
+		estate_mages_vazhatun_study_runes
+		estate_mages_maidens_of_mists # Yinquan MT
+		estate_mages_vacyntassi_order #Eduz-Vacyn MT
+		estate_mages_zamukaras_focus_platforms
+		estate_mages_zamukaras_focus_carpets
+		estate_mages_zamukaras_carpet_siege
+		estate_mages_black_academy # Zansap
+		estate_mages_organization_proffesional_mihipha #Vyzemby
+		estate_mages_mage_fleet # Karshyr
+		estate_mages_young_tower_of_magic # Shangra
+		estate_mages_lawassari_zamukaras #Mount Lazzaward reward
+		estate_mages_archaic_traditions #Orda Aldresia Debuff
+		estate_mages_delta_orbs #duwarkani MT
+		estate_mages_steady_ichorletting #Masked Butcher stuff
+		estate_mages_all_mask
+		estate_mages_great_fey_mask
+		estate_mages_organization_giberd_beacon_of_harmony
+		estate_mages_collaborators #Maghargma
+		#Rakkaz MT
+		estate_mages_organization_rule_of_warlocks
+		estate_mages_warlock_pact_power
+		estate_mages_warlock_pact_exploitation
+		estate_mages_warlock_pact_overcharge
+		estate_mages_warlock_pact_domination
+		estate_mages_warlock_pact_battlefield_domination
+		estate_mages_warlock_pact_unrestricted_savagery
+		estate_mages_warlock_pact_demonic_possession
+		estate_mages_warlock_pact_night_coven
+		estate_wyvernheart_subservient_artificers #Wyvernheart
+		estate_wyvernheart_floodborn_council #Wyvernheart
+	}
+
+	agendas = {
+		estate_mages_fire_advisor
+		estate_mages_relations_with_magisterium
+		estate_mages_relations_with_pro_mage_countries
+		estate_mages_spy_on_rival
+		estate_mages_build_university_in_y
+		estate_mages_conquer_damestear
+		estate_mages_conquer_precursor_relics
+		estate_mages_build_fort_building_on_damestear
+		estate_mages_build_fort_building_on_precursor_relics
+		estate_mages_condottieri_rivals
+		estate_mages_ally_pro_mage_countries
+		estate_mages_develop_damestear_in_y
+		estate_mages_develop_precursor_relics_in_y
+		estate_mages_build_mage_tower_in_y
+		estate_mages_develop_x
+		estate_mages_wyvernheart_spread_vision_of_magic
+		estate_mages_wyvernheart_wave_the_heart
+		estate_mages_wyvernheart_invest_in_critical_materials #Wyvernheart
+		estate_mages_wyvernheart_research_new_spells #Wyvernheart
+	}
+	influence_from_dev_modifier = 0.5
+}

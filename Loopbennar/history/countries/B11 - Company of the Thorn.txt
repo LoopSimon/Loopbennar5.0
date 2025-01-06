@@ -1,0 +1,34 @@
+
+setup_vision = yes
+government = theocracy
+add_government_reform = adventurer_reform
+government_rank = 1
+primary_culture = roilsardi
+religion = regent_court
+technology_group = tech_cannorian
+capital = 257
+
+1000.1.1 = { set_estate_privilege = estate_mages_organization_guilds }
+
+# Date Lucian was turned
+1264.1.1 = { 
+	set_country_flag = vampire_ruler_has_coffin
+}
+
+1443.2.2 = {
+	monarch = {
+		name = "Lucian"
+		dynasty = "síl na Toars"
+		birth_date = 1417.11.4
+		adm = 2
+		dip = 2
+		mil = 6
+	}
+	
+	add_ruler_personality = cruel_personality
+	set_ruler_flag = is_a_vampire
+	set_ruler_flag = no_sire
+	set_country_flag = B34_lucian
+	ruler_become_vampire = yes
+	reset_vampire_age = yes # Nobody knew him before this
+}

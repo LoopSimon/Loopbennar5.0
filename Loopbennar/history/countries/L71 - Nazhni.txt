@@ -1,0 +1,32 @@
+setup_vision = yes
+government = monarchy
+add_government_reform = ikatara_reform
+government_rank = 2
+primary_culture = skarakara_lizardfolk
+religion = anzalkatsa
+religious_school = fate_sculptors_school
+technology_group = tech_lizardfolk
+
+capital = 5941
+
+1000.1.1 = { 
+	set_country_flag = semi_monstrous
+	set_estate_privilege = estate_nobility_nazhyn_princes
+	set_estate_privilege = estate_burghers_nazhyn_wars
+	set_estate_privilege = estate_burghers_tsyhyra_mutation
+	set_estate_privilege = estate_church_naga_mutation
+	set_estate_privilege = estate_mages_organization_religious
+}
+
+1444.1.1 = {
+	monarch = {
+		name = "Itros I"
+		dynasty = "Duskrunner"
+		birth_date = 1426.7.14
+		adm = 4
+		dip = 3
+		mil = 4
+	}
+	set_ruler_flag = heir_ruler_planetouched_personality
+	add_ruler_personality = shadow_planetouched_personality
+}

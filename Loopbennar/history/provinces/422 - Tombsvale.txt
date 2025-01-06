@@ -1,0 +1,30 @@
+
+# No previous file for Imereti
+owner = A77
+controller = A77
+add_core = A77
+culture = aldresian
+religion = regent_court
+
+hre = yes
+
+base_tax = 3
+base_production = 3
+base_manpower = 2
+
+trade_goods = wool
+
+capital = ""
+
+is_city = yes
+
+
+
+
+
+
+
+add_permanent_province_modifier = {
+	name = escanni_refugee_settlement_massive
+	duration = -1
+}

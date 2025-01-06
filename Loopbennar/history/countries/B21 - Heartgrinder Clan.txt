@@ -1,0 +1,27 @@
+
+setup_vision = yes
+government = tribal
+add_government_reform = greentide_horde
+government_rank = 1
+primary_culture = green_orc
+religion = great_dookan
+technology_group = tech_orcish
+capital = 888
+
+#lore: Chief who defied Korgus because he got like a third of his clan killed, nearest to marrhold and count's league, would turn his clan into a center of orcish culture,
+
+1419.2.2 = {
+	monarch = {
+		name = "Ghurâd"
+		dynasty = "Heartgrinder"
+		birth_date = 1402.8.11
+		adm = 3
+		dip = 2
+		mil = 5
+	}
+	
+	add_ruler_personality = kind_hearted_personality
+	add_ruler_personality = naive_personality
+	add_ruler_personality = patron_of_arts_personality
+	
+}

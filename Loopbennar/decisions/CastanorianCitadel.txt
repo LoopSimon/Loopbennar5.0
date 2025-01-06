@@ -1,0 +1,26 @@
+country_decisions = {
+	rebuild_castanorian_citadel = {
+		major = yes
+
+		potential = {
+			OR = {
+				can_repair_castanorian_citadel = { prov = 740 }				#Bal Vroren
+				can_repair_castanorian_citadel = { prov = 510 }				#Bal Ouord
+				can_repair_castanorian_citadel = { prov = 229 }				#Bal Mire
+				can_repair_castanorian_citadel = { prov = 840 }				#North Citadel
+				can_repair_castanorian_citadel = { prov = 441 }				#Arca Corvur
+			}
+		}
+
+		allow = {
+			treasury = 100
+		}
+
+		effect = {
+			add_treasury = -100
+			country_event = {
+				id = castanorian_citadel.11
+			}
+		}
+	}
+}

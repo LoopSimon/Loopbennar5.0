@@ -1,0 +1,23 @@
+owner = L74
+controller = L74
+add_core = L74
+culture = ashhana_lizardfolk
+religion = zaradyrra
+
+hre = no
+
+base_tax = 1
+base_production = 1
+base_manpower = 2
+
+trade_goods = copper
+
+capital = ""
+
+is_city = yes# No previous file for Anbennar5983
+
+
+add_permanent_province_modifier = {
+	name = lizardfolk_mutation_home_province
+	duration = -1
+}

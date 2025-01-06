@@ -1,0 +1,36 @@
+
+setup_vision = yes
+government = republic
+add_government_reform = free_city
+government_rank = 1
+mercantilism = 25
+primary_culture = esmari
+religion = regent_court
+technology_group = tech_cannorian
+
+capital = 266
+fixed_capital = 266
+
+1000.1.1 = { 
+	set_estate_privilege = estate_mages_organization_magisterium 
+	set_country_flag = new_imperial_candidate_gain_magisterium
+}
+
+1422.1.1 = { set_country_flag = lilac_wars_moon_party }
+
+1440.1.1 = {
+	monarch = {
+		name = "Nara"
+		dynasty = "Seinpírártharn"
+		adm = 3
+		dip = 6
+		mil = 0
+		birth_date = 1398.1.30
+		female = yes
+	}
+	add_ruler_personality = intricate_web_weaver_personality
+	add_ruler_personality = drunkard_personality
+}
+
+set_country_flag = owns_cannorian_holy_site
+set_country_flag = can_use_cannorian_holy_site

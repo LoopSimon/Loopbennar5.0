@@ -1,0 +1,766 @@
+
+deepwoods_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		primary_culture = wood_elf
+		NOT = { tag = I45 }
+	}
+	
+	WOOD_reclaim_the_emerald_path = {
+		icon = mission_rb_conquer_wales
+		position = 2
+		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 7025
+				province_id = 3050
+				province_id = 3053
+				province_id = 3059
+				province_id = 3063
+			}
+			NOT = { owner = { has_country_modifier = deepwoods_verdant_pact } }
+		}
+		
+		trigger = {
+			7025 = { owner = { has_country_modifier = deepwoods_verdant_pact } }
+			3050 = { owner = { has_country_modifier = deepwoods_verdant_pact } }
+			3053 = { owner = { has_country_modifier = deepwoods_verdant_pact } }
+			3059 = { owner = { has_country_modifier = deepwoods_verdant_pact } }
+			3063 = { owner = { has_country_modifier = deepwoods_verdant_pact } }
+		}
+		
+		effect = {
+			if = {
+				limit = { NOT = { has_country_flag = permanent_safe_wood } }
+				add_country_modifier = {
+					name = deepwoods_safe_wood
+					duration = 10950
+				}
+			}
+			else = {
+				custom_tooltip = deepwoods_safe_wood_tt
+			}
+		}
+	}
+}
+
+deepwoods_1_b = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		primary_culture = wood_elf
+		has_global_flag = end_verdant_pact
+	}
+	
+	WOOD_own_the_emerald_path = {
+		icon = mission_rb_conquer_wales
+		position = 3
+		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 7025
+				province_id = 3050
+				province_id = 3053
+				province_id = 3059
+				province_id = 3063
+			}
+			NOT = { owned_by = ROOT }
+		}
+		
+		trigger = {
+			owns = 7025
+			owns = 3050
+			owns = 3053
+			owns = 3059
+			owns = 3063
+		}
+		
+		effect = {
+			if = {
+				limit = { NOT = { has_country_flag = permanent_safe_wood } }
+				add_country_modifier = {
+					name = deepwoods_safe_wood
+					duration = 10950
+				}
+			}
+			else = {
+				custom_tooltip = deepwoods_safe_wood_tt
+			}
+		}
+	}
+}
+
+deepwoods_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	
+	potential = {
+		primary_culture = wood_elf
+		NOT = { tag = I45 }
+	}
+	
+	WOOD_the_verdant_pact = {
+		icon = mission_rb_conquer_the_highlands
+		position = 1
+		
+		trigger = {
+			any_ally = {
+				has_opinion = {
+					who = ROOT
+					value = 150
+				}
+			}
+		}
+		
+		effect = {
+			add_splendor = 200
+			add_dip_power = 150
+		}
+	}
+	
+	WOOD_settle_the_refugees = {
+		icon = mission_alliances
+		position = 2
+		required_missions = {
+			WOOD_the_verdant_pact
+		}
+		
+		trigger = {
+			treasury = 150
+			stability = 0
+		}
+		
+		effect = {
+			add_treasury = -150
+			if = {
+				limit = { stability = 3 }
+				capital_scope = {
+					add_base_manpower = 1
+					add_base_tax = 1
+					add_base_production = 1
+				}
+			}
+			else = {
+				add_stability_or_adm_power = yes
+			}
+			capital_scope = {
+				add_province_modifier = {
+					name = deepwoods_settled_refugee
+					duration = 18250
+				}
+			}
+		}
+	}
+	
+	WOOD_invest_in_capital = {
+		icon = mission_early_game_buildings
+		position = 4
+		required_missions = {
+			WOOD_retaking_our_land
+			WOOD_settle_the_refugees
+		}
+		
+		trigger = {
+			stability = 3
+			adm_power = 150
+		}
+		
+		effect = {
+			add_adm_power = -150
+			capital_scope = {
+				add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 1
+			}
+		}
+	}
+	
+	WOOD_prosperous_capital = {
+		icon = mission_early_modern_university
+		position = 5
+		required_missions = {
+			WOOD_invest_in_capital
+		}
+		
+		trigger = {
+			if = {
+				limit = { has_dlc = "Mandate of Heaven" }
+				custom_trigger_tooltip = {
+					tooltip = prosperous_capital_tooltip
+					capital_scope = { is_prosperous = yes }
+				}
+			}
+			else = { capital_scope = { development = 25 } }
+		}
+		
+		effect = {
+			capital_scope = {
+				center_of_trade = 1
+			}
+		}
+	}
+}
+
+deepwoods_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	
+	potential = {
+		primary_culture = wood_elf
+		NOT = { tag = I45 }
+	}
+	
+	WOOD_the_verdant_army = {
+		icon = mission_build_up_to_force_limit
+		position = 1
+		
+		trigger = {
+			if = {
+				limit = { ai = yes }
+				army_size_percentage = 0.5
+			}
+			else = {
+				army_size_percentage = 1
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = deepwoods_verdant_army
+				duration = 18250
+			}
+			hidden_effect = {
+				if = {
+					limit = { ai = yes }
+					add_prestige = 30 # help ai with war council mission
+				}
+			}
+		}
+	}
+	
+	WOOD_war_council = {
+		icon = mission_indian_stateman
+		position = 2
+		required_missions = {
+			WOOD_the_verdant_army
+		}
+		
+		trigger = {
+			prestige = 20
+			stability = 1
+		}
+		
+		effect = {
+			add_army_tradition = 15
+		}
+	}
+	
+	WOOD_retaking_our_land = {
+		icon = mission_crusade_for_varna
+		position = 3
+		required_missions = {
+			WOOD_war_council
+		}
+		
+		provinces_to_highlight = {
+			if = {
+				limit = { ROOT = { tag = I26 } } #Salla Elyn
+				OR = {
+					area = sawelear_area
+					area = sawallar_area
+					area = volnudu_area
+				}
+			}
+			else_if = {
+				limit = { ROOT = { tag = I27 } } #Salla Myna
+				OR = {
+					area = ciranmyna_area
+					area = clirypriah_area
+					area = prehnryn_area
+				}
+			}
+			else_if = {
+				limit = { ROOT = { tag = I28 } } #Salla Drennen
+				OR = {
+					area = drennen_area
+					area = faedayr_area
+					area = dennesayrn_area
+				}
+			}
+			else_if = {
+				limit = { ROOT = { tag = I29 } } #Salla Cenag
+				OR = {
+					area = lebkadu_area
+					area = cenag_area 
+					area = ciranhofonn_area
+				}
+			}
+			else_if = {
+				limit = { ROOT = { tag = I30 } } #Salla Fealgarn
+				OR = {
+					area = coryllann_area
+					area = fealmyraeth_area
+				}
+			}
+			else_if = {
+				limit = { ROOT = { tag = I31 } } #Salla Scotha
+				OR = {
+                    area = scothalar_area
+					area = scothaear_area
+				}
+			}
+			else_if = {
+				limit = { ROOT = { tag = I32 } } #Salla Ahain
+				OR = {
+                    area = krazho_area
+					area = criodharka_area
+					area = yfelorr_area
+				}
+			}
+			else_if = {
+				limit = { ROOT = { tag = I33 } } #Salla Ayeth
+				OR = {
+                    area = gozyest_area
+					area = ayeth_area
+					area = lonfarch_area
+				}
+			}
+			else_if = {
+				limit = { ROOT = { tag = I34 } } #Salla Ghul
+				OR = {
+					area = arsydpydru_area
+					area = dywyael_area
+					area = ghul_area
+				}
+			}
+			has_terrain = ancient_forest
+			#NOT = { is_core = ROOT } If someone files a bug thread because an uncored province is not highlighting, uncomment this line and ping me saying "skill issue" - Meander
+			NOT = { owned_by = ROOT } 
+		}
+		
+		trigger = {
+			all_core_province = {
+				owned_by = ROOT
+			}
+			if = {
+				limit = { tag = I26 } #Salla Elyn
+				sawelear_area = {
+					type = all
+					OR = {
+						is_core = ROOT
+						NOT = { has_terrain = ancient_forest }
+					}
+				}
+				sawallar_area = {
+					type = all
+					OR = {
+						is_core = ROOT
+						NOT = { has_terrain = ancient_forest }
+					}
+				}
+				volnudu_area = {
+					type = all
+					OR = {
+						is_core = ROOT
+						NOT = { has_terrain = ancient_forest }
+					}
+				}
+			}
+			else_if = {
+				limit = { tag = I27 } #Salla Myna
+				ciranmyna_area = {
+					type = all
+					OR = {
+						is_core = ROOT
+						NOT = { has_terrain = ancient_forest }
+					}
+				}
+				clirypriah_area = {
+					type = all
+					OR = {
+						is_core = ROOT
+						NOT = { has_terrain = ancient_forest }
+					}
+				}
+				prehnryn_area = {
+					type = all
+					OR = {
+						is_core = ROOT
+						NOT = { has_terrain = ancient_forest }
+					}
+				}
+			}
+			else_if = {
+				limit = { tag = I28 } #Salla Drennen
+				drennen_area = {
+					type = all
+					OR = {
+						is_core = ROOT
+						NOT = { has_terrain = ancient_forest }
+					}
+				}
+				faedayr_area = {
+					type = all
+					OR = {
+						is_core = ROOT
+						NOT = { has_terrain = ancient_forest }
+					}
+				}
+				dennesayrn_area = {
+					type = all
+					OR = {
+						is_core = ROOT
+						NOT = { has_terrain = ancient_forest }
+					}
+				}
+			}
+			else_if = {
+				limit = { tag = I29 } #Salla Cenag
+				lebkadu_area = {
+					type = all
+					OR = {
+						is_core = ROOT
+						NOT = { has_terrain = ancient_forest }
+					}
+				}
+				cenag_area = {
+					type = all
+					OR = {
+						is_core = ROOT
+						NOT = { has_terrain = ancient_forest }
+					}
+				}
+				ciranhofonn_area = {
+					type = all
+					OR = {
+						is_core = ROOT
+						NOT = { has_terrain = ancient_forest }
+					}
+				}
+			}
+			else_if = {
+				limit = { tag = I30 } #Salla Fealgarn
+				coryllann_area = {
+					type = all
+					OR = {
+						is_core = ROOT
+						NOT = { has_terrain = ancient_forest }
+					}
+				}
+				fealmyraeth_area = {
+					type = all
+					OR = {
+						is_core = ROOT
+						NOT = { has_terrain = ancient_forest }
+					}
+				}
+			}
+			else_if = {
+				limit = { tag = I31 } #Salla Scotha
+				scothalar_area = {
+					type = all
+					OR = {
+						is_core = ROOT
+						NOT = { has_terrain = ancient_forest }
+					}
+				}
+				scothaear_area = {
+					type = all
+					OR = {
+						is_core = ROOT
+						NOT = { has_terrain = ancient_forest }
+					}
+				}
+			}
+			else_if = {
+				limit = { tag = I32 } #Salla Ahain
+				krazho_area = {
+					type = all
+					OR = {
+						is_core = ROOT
+						NOT = { has_terrain = ancient_forest }
+					}
+				}
+				criodharka_area = {
+					type = all
+					OR = {
+						is_core = ROOT
+						NOT = { has_terrain = ancient_forest }
+					}
+				}
+				yfelorr_area = {
+					type = all
+					OR = {
+						is_core = ROOT
+						NOT = { has_terrain = ancient_forest }
+					}
+				}
+			}
+            else_if = {
+				limit = { tag = I33 } #Salla Ayeth
+				gozyest_area = {
+					type = all
+					OR = {
+						is_core = ROOT
+						NOT = { has_terrain = ancient_forest }
+					}
+				}
+				ayeth_area = {
+					type = all
+					OR = {
+						is_core = ROOT
+						NOT = { has_terrain = ancient_forest }
+					}
+				}
+				lonfarch_area = {
+					type = all
+					OR = {
+						is_core = ROOT
+						NOT = { has_terrain = ancient_forest }
+					}
+				}
+			}
+			else_if = {
+				limit = { tag = I34 } #Salla Ghul
+				arsydpydru_area = {
+					type = all
+					OR = {
+						is_core = ROOT
+						NOT = { has_terrain = ancient_forest }
+					}
+				}
+				dywyael_area = {
+					type = all
+					OR = {
+						is_core = ROOT
+						NOT = { has_terrain = ancient_forest }
+					}
+				}
+				ghul_area = {
+					type = all
+					OR = {
+						is_core = ROOT
+						NOT = { has_terrain = ancient_forest }
+					}
+				}
+			}
+		}
+		
+		effect = {
+			add_prestige = 20
+			every_core_province = {
+				limit = { 
+					owned_by = ROOT
+					superregion = deepwoods_superregion
+					NOT = { culture = wood_elf }
+				}
+				change_religion = fey_court
+				change_culture = wood_elf
+				add_devastation = 10
+			}
+		}
+	}
+}
+
+deepwoods_3_b = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		primary_culture = wood_elf
+		has_global_flag = end_verdant_pact
+		NOT = { tag = I45 }
+	}
+	
+	WOOD_end_of_the_green_menace = {
+		icon = mission_steppe_warriors
+		position = 4
+		required_missions = {
+			WOOD_retaking_our_land
+		}
+		
+		trigger = {
+			if = {
+				limit = { ai = no }
+				stability = 3
+				religious_unity = 1
+				prestige = 0
+			}
+			else = {
+				stability = 1
+			}
+		}
+		
+		effect = {
+			add_prestige = 20
+			set_country_flag = permanent_safe_wood
+			add_country_modifier = {
+				name = deepwoods_safe_wood
+				duration = -1
+			}
+		}
+	}
+	
+	WOOD_unite_the_deepwoods = {
+		icon = mission_monarch_in_throne_room
+		position = 5
+		required_missions = {
+			WOOD_end_of_the_green_menace
+		}
+		
+		trigger = {
+			if = {
+				limit = { ai = no }
+				legitimacy = 95
+				stability = 3
+			}
+			else = {
+				stability = 1
+			}
+			is_subject = no
+		}
+		
+		effect = {
+			if = {
+				limit = { ai = yes }
+				add_stability = 2
+			}
+			deepwoods_superregion = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_claim = ROOT }
+					NOT = { owner = { is_subject_of = ROOT } }
+				}
+				add_permanent_claim = ROOT
+			}
+			custom_tooltip = unite_deepwoods_tooltip
+			hidden_effect = {
+				every_country = {
+					limit = { 
+						primary_culture = wood_elf
+						capital_scope = { superregion = deepwoods_superregion }
+						is_subject_of = ROOT
+					}
+					every_owned_province = {
+						cede_province = ROOT
+						add_core = ROOT
+						change_culture = wood_elf
+					}
+				}
+			}
+		}
+	}
+}
+
+deepwoods_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	
+	potential = {
+		primary_culture = wood_elf
+		NOT = { tag = I45 }
+	}
+	
+	WOOD_at_war_with_the_enemy = {
+		icon = mission_crusade_for_varna
+		position = 2
+		required_missions = {
+			WOOD_the_verdant_army
+		}
+		
+		trigger = {
+			at_war_with_religious_enemy = yes
+		}
+		
+		effect = {
+			add_prestige = 10
+			add_country_modifier = {
+				name = deepwoods_fight_for_the_wood
+				duration = 3650
+			}
+		}
+	}
+}
+
+deepwoods_4_b = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		primary_culture = wood_elf
+		has_global_flag = end_verdant_pact
+		NOT = { tag = I45 }
+	}
+	
+	WOOD_uniting_the_deepwood = {
+		icon = mission_junnagadh_fort
+		position = 2
+		required_missions = {
+			WOOD_at_war_with_the_enemy
+		}
+		
+		trigger = {
+			any_neighbor_country = {
+				primary_culture = wood_elf
+				war_with = ROOT
+			}
+		}
+		
+		effect = {
+			add_prestige = 10
+			add_country_modifier = {
+				name = deepwoods_fight_for_the_wood
+				duration = 3650
+			}
+		}
+	}
+}
+	
+	
+deepwoods_4_c = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		primary_culture = wood_elf
+		NOT = { tag = I45 }
+	}
+	
+	WOOD_hegemony = {
+		icon = mission_south_african_bases
+		position = 4
+		required_missions = {
+			WOOD_retaking_our_land
+		}
+		
+		trigger = {
+			any_subject_country = {
+				primary_culture = wood_elf
+			}
+		}
+		
+		effect = {
+			add_prestige = 10
+			add_country_modifier = {
+				name = deepwoods_overlord
+				duration = 18250
+			}
+		}
+	}
+}
+

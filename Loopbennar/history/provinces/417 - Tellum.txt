@@ -1,0 +1,43 @@
+
+#417 - Tellum -3
+
+owner = A86
+controller = A86
+add_core = A86
+culture = arannese
+religion = regent_court
+
+hre = yes
+
+base_tax = 5
+base_production = 4
+base_manpower = 4
+
+trade_goods = glass
+center_of_trade = 1
+
+capital = ""
+
+is_city = yes
+
+
+
+set_province_flag = unsuppressed_infernal_cult
+
+
+
+
+
+add_permanent_province_modifier = {
+	name = halfling_minority_coexisting_large
+	duration = -1
+}
+
+add_permanent_province_modifier = {
+	name = gnomish_minority_coexisting_large
+	duration = -1
+}
+add_permanent_province_modifier = {
+	name = escanni_refugee_settlement_small
+	duration = -1
+}

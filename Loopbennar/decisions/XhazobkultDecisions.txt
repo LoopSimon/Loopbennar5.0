@@ -1,0 +1,66 @@
+country_decisions = {
+	
+	xhazobkult_begin_xhazobine_ritual = {
+		major = yes
+		potential = {
+			religion = xhazobkult
+			is_emperor_of_china = no
+			NOT = { 
+				has_ruler_flag = undergoing_xhazob_ritual 
+				ruler_has_personality = xhazobs_chosen_personality
+				has_country_flag = removing_monstrous
+			}
+			has_dlc = "The Cossacks"
+		}
+		allow = {
+			hidden_trigger = { religion = xhazobkult }
+			is_at_war = no
+			ruler_is_gnollish = yes
+			is_subject = no
+			has_regency = no
+			has_consort_regency = no
+			has_country_modifier = monstrous_nation
+			OR = {
+				has_reform = gnoll_pack
+				has_reform = xhazobkult_sacrifices
+			}
+			NOT = { overextension_percentage = 0.01 }
+			if = {
+				limit = { ai = yes }
+				is_year = 1460
+				OR = {
+					num_of_cities = 30
+					AND = {
+						num_of_cities = 20
+						num_of_subjects = 2
+					}
+				}
+				NOT = { ruler_age = 50 }
+				mil = 4
+			}
+			
+			else = {
+				patriarch_authority = 0.9
+				num_of_cities = 50
+				custom_trigger_tooltip = {
+					tooltip = xhazob_no_ritual_tt
+					NOT = { has_global_flag = xhaz_active }
+				}
+				custom_trigger_tooltip = {
+					tooltip = xhazob_no_immortal_tt
+					NOT = {
+						has_ruler_flag = magic_project_lichdom_started
+						has_country_flag = lich_ruler
+						has_country_flag = vampire_ruler
+						is_long_lived_ruler = yes
+					}
+				}
+			}
+		}
+		effect = {
+			country_event = { id = xhazobkult_events.3000 }
+		}
+
+		ai_will_do = { factor = 100 }
+	}
+}

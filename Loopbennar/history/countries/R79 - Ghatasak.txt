@@ -1,0 +1,29 @@
+
+setup_vision = yes
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = kamtarhid
+religion = devouring_path
+technology_group = tech_raheni
+capital = 4546
+religious_school = orange_sash_school
+
+1000.1.1 = { 
+	set_estate_privilege = estate_mages_organization_state 
+	set_country_flag = has_caste_estates
+	set_estate_privilege = estate_uppercastes_organization_caste
+	set_estate_privilege = estate_middlecastes_organization_caste
+	set_estate_privilege = estate_lowercastes_organization_caste
+	}
+
+
+setup_caste_estates = yes
+
+1444.11.10 = { #Devouring Path setup
+	add_church_power = 200
+	set_country_flag = was_devouring_path
+	set_country_flag = demon_warriors_unlocked
+	set_country_flag = way_of_shadows_unlocked
+	set_country_flag = means_to_an_end_unlocked
+}

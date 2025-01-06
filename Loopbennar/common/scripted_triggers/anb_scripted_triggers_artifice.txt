@@ -1,0 +1,977 @@
+#is_technocracy = { #deprecated. use has_government_attribute = is_technocracy and has_government_attribute = is_magocracy instead
+#	OR = {
+#		has_reform = technocracy_republic_reform
+#		has_country_flag = is_technocratic_gov
+#	}
+#}
+#
+#is_magocracy = {
+#	OR = {
+#		has_reform = magocracy_reform
+#		has_country_flag = is_magocratic_gov
+#	}
+#}
+over_artifice_capacity = {
+	OR = {
+		has_country_modifier = artificers_over_artifice_capacity
+		NOT = {
+			check_variable = {
+				which = RemainingArtificePoints
+				value = 0
+			}
+		}
+	}
+}
+
+artifice_has_points_10 = {
+	custom_trigger_tooltip = {
+		tooltip = cost_10_artifice_capacity_to_maintain_tt
+		check_variable = {
+			which = RemainingArtificePoints
+			value = 10
+		}
+	}
+}
+
+artifice_has_points_20 = {
+	custom_trigger_tooltip = {
+		tooltip = cost_20_artifice_capacity_to_maintain_tt
+		check_variable = {
+			which = RemainingArtificePoints
+			value = 20
+		}
+	}
+}
+
+artifice_has_points_30 = {
+	custom_trigger_tooltip = {
+		tooltip = cost_30_artifice_capacity_to_maintain_tt
+		check_variable = {
+			which = RemainingArtificePoints
+			value = 30
+		}
+	}
+}
+
+artifice_has_points_40 = {
+	custom_trigger_tooltip = {
+		tooltip = cost_40_artifice_capacity_to_maintain_tt
+		check_variable = {
+			which = RemainingArtificePoints
+			value = 40
+		}
+	}
+}
+
+has_active_all_economic_tier_1_inventions = {
+	has_estate_privilege = artifice_invention_artificer_exo_arms
+	has_estate_privilege = artifice_invention_spell_in_a_box
+	has_estate_privilege = artifice_invention_fine_print_obfuscator
+	has_estate_privilege = artifice_invention_automated_translator
+	has_estate_privilege = artifice_invention_wine_ageifier
+	has_estate_privilege = artifice_invention_pearl_cultivators
+	has_estate_privilege = artifice_invention_arcane_battery_capital_complex
+	has_estate_privilege = artifice_invention_market_mender
+	has_estate_privilege = artifice_invention_plane_of_water_teleporter
+	has_estate_privilege = artifice_invention_self_cleaning_parchment
+}
+
+has_active_all_military_tier_1_inventions = {
+	has_estate_privilege = artifice_invention_portable_turrets
+	has_estate_privilege = artifice_invention_sparkdrive_rifles
+	has_estate_privilege = artifice_invention_vorpal_bullets
+	has_estate_privilege = artifice_invention_magic_missile_deployer
+	has_estate_privilege = artifice_invention_box_of_holding
+	has_estate_privilege = artifice_invention_ancestral_golems
+	has_estate_privilege = artifice_invention_antimagic_field_generator
+	has_estate_privilege = artifice_invention_believable_ruin_bomb
+	has_estate_privilege = artifice_invention_vernman_hero_tonic
+	has_estate_privilege = artifice_invention_dragonscale_plating
+	has_estate_privilege = artifice_invention_predator_exoskeleton
+	has_estate_privilege = artifice_invention_scrap_mechs
+	has_estate_privilege = artifice_invention_sunbeam_armaments
+	has_estate_privilege = artifice_invention_power_fists
+	has_estate_privilege = artifice_invention_commercial_sky_galleons
+}
+
+has_active_all_society_tier_1_inventions = {
+	has_estate_privilege = artifice_invention_viewcatcher
+	has_estate_privilege = artifice_invention_sending_stones
+	has_estate_privilege = artifice_invention_centipedal_chests
+	has_estate_privilege = artifice_invention_living_mirrors
+	has_estate_privilege = artifice_invention_apparitional_communicator
+	has_estate_privilege = artifice_invention_mystic_ciphers
+	has_estate_privilege = artifice_invention_fey_spray
+	has_estate_privilege = artifice_invention_scrapperclaws
+	has_estate_privilege = artifice_invention_great_processor
+	has_estate_privilege = artifice_invention_conversation_calibrator
+}
+
+has_active_all_economic_tier_2_inventions = {
+	has_estate_privilege = artifice_invention_growth_beans
+	has_estate_privilege = artifice_invention_vendorless_stall
+	has_estate_privilege = artifice_invention_brass_prosthesis
+	has_estate_privilege = artifice_invention_gene_food_cultivation
+	has_estate_privilege = artifice_invention_prehensile_tail_attachments
+	has_estate_privilege = artifice_invention_chi_cultivation
+	has_estate_privilege = artifice_invention_city_maintenance_bots
+	has_estate_privilege = artifice_invention_artificial_egg_surrogates
+	has_estate_privilege = artifice_invention_subterrenes
+}
+
+has_active_all_military_tier_2_inventions = {
+	has_estate_privilege = artifice_invention_wandlocks
+	has_estate_privilege = artifice_invention_balloonboost_packs
+	has_estate_privilege = artifice_invention_prototype_tanks
+	has_estate_privilege = artifice_invention_war_golems
+	has_estate_privilege = artifice_invention_arcane_blaster
+	has_estate_privilege = artifice_invention_wind_invokers
+	has_estate_privilege = artifice_invention_avatar_supersoldier_serum
+	has_estate_privilege = artifice_invention_lullaby_cannon
+	has_estate_privilege = artifice_invention_giantshape_warframe
+	has_estate_privilege = artifice_invention_controlled_rage_serum
+	has_estate_privilege = artifice_invention_codorran_powered_exosuit
+	has_estate_privilege = artifice_invention_eplusplus_compound
+	has_estate_privilege = artifice_invention_elemental_gunpowder
+	has_estate_privilege = artifice_invention_gyrocopters
+	has_estate_privilege = artifice_invention_kaydhano_powered_vessels
+	has_estate_privilege = artifice_invention_warfare_simulator
+	has_estate_privilege = artifice_invention_gu_boats
+}
+
+has_active_all_society_tier_2_inventions = {
+	has_estate_privilege = artifice_invention_remedial_tinctures
+	has_estate_privilege = artifice_invention_arithmatons
+	has_estate_privilege = artifice_invention_burrower_arms
+	has_estate_privilege = artifice_invention_god_fragment_decoder
+	has_estate_privilege = artifice_invention_talking_god_temples
+	has_estate_privilege = artifice_invention_empire_engine
+	has_estate_privilege = artifice_invention_mirage_detector_3000
+	has_estate_privilege = artifice_invention_think_thought_transmitters
+	has_estate_privilege = artifice_invention_game_of_khet
+}
+
+has_active_all_society_tier_3_inventions = {
+	has_estate_privilege = artifice_invention_crierless_crier_device
+	has_estate_privilege = artifice_invention_divendancer_speedboat
+	has_estate_privilege = artifice_invention_bureaucratizer
+	has_estate_privilege = artifice_invention_runethought_network
+	has_estate_privilege = artifice_invention_negotiation_nexus
+}
+
+has_active_all_economic_tier_3_inventions = {
+	has_estate_privilege = artifice_invention_pathway_transmutation
+	has_estate_privilege = artifice_invention_elemental_locomotives
+	has_estate_privilege = artifice_invention_high_velocity_irrigation
+	has_estate_privilege = artifice_invention_weather_predicticator
+	has_estate_privilege = artifice_invention_artifice_powered_magnate_factories
+	has_estate_privilege = artifice_invention_prefabricated_city_constructors
+	has_estate_privilege = artifice_invention_t_wave_transceivers
+}
+
+has_active_all_military_tier_3_inventions = {
+	has_estate_privilege = artifice_invention_black_damestear_bullets
+	has_estate_privilege = artifice_invention_artillery_autoloader
+	has_estate_privilege = artifice_invention_bioartificed_ascension
+	has_estate_privilege = artifice_invention_personal_mageshields
+	has_estate_privilege = artifice_invention_military_sky_galleons
+	has_estate_privilege = artifice_invention_naval_mageshields
+	has_estate_privilege = artifice_invention_demonflame_flamethrowers
+	has_estate_privilege = artifice_invention_chase_em_rockets
+	has_estate_privilege = artifice_invention_dragonblood_gene_warriors
+	has_estate_privilege = artifice_invention_damestear_reactor_megacannon
+}
+
+has_active_all_tier_1_inventions = {
+	has_active_all_economic_tier_1_inventions = yes
+	has_active_all_military_tier_1_inventions = yes
+	has_active_all_society_tier_1_inventions = yes
+}
+
+has_active_all_tier_2_inventions = {
+	has_active_all_economic_tier_2_inventions = yes
+	has_active_all_military_tier_2_inventions = yes
+	has_active_all_society_tier_2_inventions = yes
+}
+
+has_active_all_tier_3_inventions = {
+	has_active_all_economic_tier_3_inventions = yes
+	has_active_all_military_tier_3_inventions = yes
+	has_active_all_society_tier_3_inventions = yes
+}
+
+num_society_artifice_inventions_active = {
+	calc_true_if = {
+		amount = $VAL$
+		desc = num_society_artifice_inventions_active_tooltip
+		has_active_all_society_tier_1_inventions = yes
+		has_active_all_society_tier_2_inventions = yes
+		has_active_all_society_tier_3_inventions = yes
+	}
+}
+
+num_society_artifice_inventions_active_tier_1 = {
+	calc_true_if = {
+		amount = $VAL$
+		desc = num_society_artifice_inventions_active_tooltip_tier_1
+		has_active_all_society_tier_1_inventions = yes
+	}
+}
+
+num_society_artifice_inventions_active_tier_2 = {
+	calc_true_if = {
+		amount = $VAL$
+		desc = num_society_artifice_inventions_active_tooltip_tier_2
+		has_active_all_society_tier_2_inventions = yes
+	}
+}
+
+num_society_artifice_inventions_active_tier_3 = {
+	calc_true_if = {
+		amount = $VAL$
+		desc = num_society_artifice_inventions_active_tooltip_tier_3
+		has_active_all_society_tier_3_inventions = yes
+	}
+}
+
+num_economic_artifice_inventions_active = {
+	calc_true_if = {
+		amount = $VAL$
+		desc = num_economic_artifice_inventions_active_tooltip
+		has_active_all_economic_tier_1_inventions = yes
+		has_active_all_economic_tier_2_inventions = yes
+		has_active_all_economic_tier_3_inventions = yes
+	}
+}
+
+num_economic_artifice_inventions_active_tier_1 = {
+	calc_true_if = {
+		amount = $VAL$
+		desc = num_economic_artifice_inventions_active_tooltip_tier_1
+		has_active_all_economic_tier_1_inventions = yes
+	}
+}
+
+num_economic_artifice_inventions_active_tier_2 = {
+	calc_true_if = {
+		amount = $VAL$
+		desc = num_economic_artifice_inventions_active_tooltip_tier_2
+		has_active_all_economic_tier_2_inventions = yes
+	}
+}
+
+num_economic_artifice_inventions_active_tier_3 = {
+	calc_true_if = {
+		amount = $VAL$
+		desc = num_economic_artifice_inventions_active_tooltip_tier_3
+		has_active_all_economic_tier_3_inventions = yes
+	}
+}
+
+num_military_artifice_inventions_active = {
+	calc_true_if = {
+		amount = $VAL$
+		desc = num_military_artifice_inventions_active_tooltip
+		has_active_all_military_tier_1_inventions = yes
+		has_active_all_military_tier_2_inventions = yes
+		has_active_all_military_tier_3_inventions = yes
+	}
+}
+
+num_military_artifice_inventions_active_tier_1 = {
+	calc_true_if = {
+		amount = $VAL$
+		desc = num_military_artifice_inventions_active_tooltip_tier_1
+		has_active_all_military_tier_1_inventions = yes
+	}
+}
+
+num_military_artifice_inventions_active_tier_2 = {
+	calc_true_if = {
+		amount = $VAL$
+		desc = num_military_artifice_inventions_active_tooltip_tier_2
+		has_active_all_military_tier_2_inventions = yes
+	}
+}
+
+num_military_artifice_inventions_active_tier_3 = {
+	calc_true_if = {
+		amount = $VAL$
+		desc = num_military_artifice_inventions_active_tooltip_tier_3
+		has_active_all_military_tier_3_inventions = yes
+	}
+}
+
+num_artifice_inventions_active = {
+	calc_true_if = {
+		amount = $VAL$
+		desc = num_artifice_inventions_active_tooltip
+		has_active_all_tier_1_inventions = yes
+		has_active_all_tier_2_inventions = yes
+		has_active_all_tier_3_inventions = yes
+	}
+}
+
+num_artifice_inventions_active_tier_1 = {
+	calc_true_if = {
+		amount = $VAL$
+		desc = num_artifice_inventions_active_tooltip_tier_1
+		has_active_all_tier_1_inventions = yes
+	}
+}
+
+num_artifice_inventions_active_tier_2 = {
+	calc_true_if = {
+		amount = $VAL$
+		desc = num_artifice_inventions_active_tooltip_tier_2
+		has_active_all_tier_2_inventions = yes
+	}
+}
+
+num_artifice_inventions_active_tier_3 = {
+	calc_true_if = {
+		amount = $VAL$
+		desc = num_artifice_inventions_active_tooltip_tier_3
+		has_active_all_tier_3_inventions = yes
+	}
+}
+
+num_society_artifice_inventions_discovered = {
+	calc_true_if = {
+		amount = $VAL$
+		desc = num_society_artifice_inventions_discovered_tooltip
+		has_discovered_all_society_tier_1_inventions = yes
+		has_discovered_all_society_tier_2_inventions = yes
+		has_discovered_all_society_tier_3_inventions = yes
+	}
+}
+
+num_military_artifice_inventions_discovered = {
+	calc_true_if = {
+		amount = $VAL$
+		desc = num_military_artifice_inventions_discovered_tooltip
+		has_discovered_all_military_tier_1_inventions = yes
+		has_discovered_all_military_tier_2_inventions = yes
+		has_discovered_all_military_tier_3_inventions = yes
+	}
+}
+
+num_economic_artifice_inventions_discovered_tier_2 = {
+	calc_true_if = {
+		amount = $VAL$
+		desc = num_economic_artifice_inventions_discovered_tier_2_tooltip
+		has_discovered_all_economic_tier_2_inventions = yes
+	}
+}
+
+num_economic_artifice_inventions_discovered = {
+	calc_true_if = {
+		amount = $VAL$
+		desc = num_economic_artifice_inventions_discovered_tooltip
+		has_discovered_all_economic_tier_1_inventions = yes
+		has_discovered_all_economic_tier_2_inventions = yes
+		has_discovered_all_economic_tier_3_inventions = yes
+	}
+}
+
+num_artifice_inventions_discovered_tier_1 = {
+	calc_true_if = {
+		amount = $VAL$
+		desc = num_artifice_inventions_discovered_tooltip_tier_1
+		has_discovered_all_tier_1_inventions = yes
+	}
+}
+
+num_artifice_inventions_discovered_tier_2 = {
+	calc_true_if = {
+		amount = $VAL$
+		desc = num_artifice_inventions_discovered_tooltip_tier_2
+		has_discovered_all_tier_2_inventions = yes
+	}
+}
+
+num_artifice_inventions_discovered_tier_3 = {
+	calc_true_if = {
+		amount = $VAL$
+		desc = num_artifice_inventions_discovered_tooltip_tier_3
+		has_discovered_all_tier_3_inventions = yes
+	}
+}
+
+num_artifice_inventions_discovered = {
+	calc_true_if = {
+		amount = $VAL$
+		desc = num_artifice_inventions_discovered_tooltip
+		has_discovered_all_tier_1_inventions = yes
+		has_discovered_all_tier_2_inventions = yes
+		has_discovered_all_tier_3_inventions = yes
+		#tag/MT specific
+		has_country_flag = vg_invention_1
+		has_country_flag = vg_invention_3
+		has_country_flag = vg_invention_2
+		has_country_flag = unlocked_artifice_invention_spirit_proof_exoskeleton
+		has_country_flag = asra_model_golem_unlocked
+		has_country_flag = unlocked_artifice_invention_honsai_reinforced_cannons
+		has_country_flag = unlocked_artifice_invention_honsai_instant_messages
+		has_country_flag = unlocked_artifice_invention_feiten_nitroglycerin_rockets
+		has_country_flag = unlocked_artifice_invention_feiten_nitroglycerin_tnt
+		has_country_flag = unlocked_artifice_invention_feiten_farsight_telescopes
+		has_country_flag = unlocked_artifice_invention_feiten_porcelain_caged_firebirds
+		has_country_flag = unlocked_artifice_invention_feiten_specialized_construction_arms
+		has_country_flag = unlocked_artifice_invention_feiten_expanding_storage_holds
+		has_country_flag = unlocked_artifice_invention_feiten_skywriting
+		has_country_flag = unlocked_artifice_invention_feiten_electroplated_armor
+		has_country_flag = unlocked_artificery_invention_feiten_ivory_conduits
+		has_country_flag = unlocked_artifice_invention_feiten_silken_cladding
+		has_country_flag = unlocked_artifice_intention_feiten_damestear_ribbing
+		has_country_flag = unlocked_artifice_intention_feiten_long_rockets
+		has_country_flag = unlocked_artifice_intention_feiten_lightning_amplifier
+		has_country_flag = unlocked_artifice_intention_feiten_steel_rudders
+		has_country_flag = unlocked_artifice_invention_orlghelovar_shatterproof_armor
+		has_country_flag = unlocked_artifice_invention_fertility_potion
+		has_country_flag = unlocked_artifice_invention_medicinal_potion
+		has_country_flag = unlocked_artifice_invention_mana_potion
+		has_country_flag = unlocked_artifice_invention_trollskin_potion
+		has_country_flag = unlocked_artifice_invention_flight_potion
+		has_country_flag = unlocked_artifice_invention_strength_potion
+		has_country_flag = unlocked_artifice_invention_water_potion
+		has_country_flag = unlocked_artifice_invention_fire_potion
+		has_country_flag = unlocked_artifice_invention_normalizer
+		has_country_flag = unlocked_artifice_invention_bond_breaker
+		has_country_flag = unlocked_artifice_invention_stimulant
+		has_country_flag = unlocked_artifice_invention_hallucinogen
+		has_country_flag = unlocked_artifice_invention_drakodil
+		has_country_flag = unlocked_artifice_invention_calmant
+		has_country_flag = unlocked_artifice_invention_synthetic
+		has_country_flag = unlocked_artifice_invention_the_carousel
+		has_country_flag = unlocked_artifice_invention_endura_reigns
+		has_country_flag = unlocked_artifice_invention_everlasting_fertilizer
+		has_country_flag = unlocked_artifice_invention_catastrophizer
+		has_country_flag = unlocked_artifice_invention_rocket_rails
+		has_country_flag = unlocked_artifice_invention_noodle_noggin
+		has_country_flag = unlocked_artifice_invention_freezeflame
+		has_country_flag = unlocked_artifice_invention_actual_ruin_bomb
+		has_country_flag = unlocked_artifice_invention_BOMBNAR
+		has_country_flag = unlocked_artifice_invention_stealth_gob
+		has_country_flag = unlocked_artifice_invention_rainblow
+		has_country_flag = unlocked_artifice_invention_high_heat_smelters
+		has_country_flag = unlocked_artifice_invention_holy_gunblade
+		has_country_flag = unlocked_artifice_invention_demon_powered_flame_rigs
+		has_country_flag = unlocked_artifice_invention_prism_cored_war_machines
+		has_country_flag = unlocked_artifice_invention_effelai_growth_stimulants
+		has_country_flag = unlocked_artifice_invention_imitation_seedthralls
+		has_country_flag = unlocked_artifice_invention_artifice_augmented_kotakompu
+		has_country_flag = unlocked_artifice_invention_relic_lord_prototype_power_armour
+		has_country_flag = unlocked_artifice_invention_kobildzan_draconic_ascension
+	}
+}
+
+has_discovered_all_economic_tier_1_inventions = {
+	has_country_flag = unlocked_artifice_invention_artificer_exo_arms
+	has_country_flag = unlocked_artifice_invention_spell_in_a_box
+	has_country_flag = unlocked_artifice_invention_fine_print_obfuscator
+	has_country_flag = unlocked_artifice_invention_automated_translator
+	has_country_flag = unlocked_artifice_invention_wine_ageifier
+	has_country_flag = unlocked_artifice_invention_pearl_cultivators
+	has_country_flag = unlocked_artifice_invention_arcane_battery_capital_complex
+	has_country_flag = unlocked_artifice_invention_market_mender
+	has_country_flag = unlocked_artifice_invention_plane_of_water_teleporter
+}
+
+has_discovered_all_military_tier_1_inventions = {
+	has_country_flag = unlocked_artifice_invention_portable_turrets
+	has_country_flag = unlocked_artifice_invention_sparkdrive_rifles
+	has_country_flag = unlocked_artifice_invention_vorpal_bullets
+	has_country_flag = unlocked_artifice_invention_magic_missile_deployer
+	has_country_flag = unlocked_artifice_invention_box_of_holding
+	has_country_flag = unlocked_artifice_invention_ancestral_guardian_golems
+	has_country_flag = unlocked_artifice_invention_antimagic_field_generator
+	has_country_flag = unlocked_artifice_invention_believable_ruin_2_bomb
+	has_country_flag = unlocked_artifice_invention_vernman_hero_tonic
+	has_country_flag = unlocked_artifice_invention_dragonscale_plating
+	has_country_flag = unlocked_artifice_invention_predator_exoskeleton
+	has_country_flag = unlocked_artifice_invention_scrap_mechs
+	has_country_flag = unlocked_artifice_invention_sunbeam_armaments
+	has_country_flag = unlocked_artifice_invention_power_fists
+	has_country_flag = unlocked_artifice_invention_commercial_sky_galleons
+}
+
+has_discovered_all_society_tier_1_inventions = {
+	has_country_flag = unlocked_artifice_invention_viewcatcher
+	has_country_flag = unlocked_artifice_invention_sending_stones
+	has_country_flag = unlocked_artifice_invention_centipedal_chests
+	has_country_flag = unlocked_artifice_invention_living_mirrors
+	has_country_flag = unlocked_artifice_invention_apparitional_communicator
+	has_country_flag = unlocked_artifice_invention_mystic_ciphers
+	has_country_flag = unlocked_artifice_invention_fey_spray
+	has_country_flag = unlocked_artifice_invention_scrapperclaws
+	has_country_flag = unlocked_artifice_invention_great_processor
+	has_country_flag = unlocked_artifice_invention_conversation_calibrator
+}
+
+has_discovered_all_tier_1_inventions = {
+	has_discovered_all_economic_tier_1_inventions = yes
+	has_discovered_all_military_tier_1_inventions = yes
+	has_discovered_all_society_tier_1_inventions = yes
+}
+
+has_discovered_all_economic_tier_2_inventions = {
+	has_country_flag = unlocked_artifice_invention_growth_beans
+	has_country_flag = unlocked_artifice_invention_vendorless_stall
+	has_country_flag = unlocked_artifice_invention_brass_prosthesis
+	has_country_flag = unlocked_artifice_invention_gene_food_cultivation
+	has_country_flag = unlocked_artifice_invention_self_cleaning_parchment
+	has_country_flag = unlocked_artifice_invention_prehensile_tail_attachments
+	has_country_flag = unlocked_artifice_invention_chi_cultivation_charm
+	has_country_flag = unlocked_artifice_invention_city_maintenance_bots
+	has_country_flag = unlocked_artifice_invention_artificial_egg_surrogates
+	has_country_flag = unlocked_artifice_invention_subterrenes
+}
+
+has_discovered_all_military_tier_2_inventions = {
+	has_country_flag = unlocked_artifice_invention_wandlocks
+	has_country_flag = unlocked_artifice_invention_balloonboost_packs
+	has_country_flag = unlocked_artifice_invention_prototype_tanks
+	has_country_flag = unlocked_artifice_invention_war_golems
+	has_country_flag = unlocked_artifice_invention_arcane_blaster
+	has_country_flag = unlocked_artifice_invention_wind_invokers
+	has_country_flag = unlocked_artifice_invention_avatar_supersoldier_serum
+	has_country_flag = unlocked_artifice_invention_lullaby_cannon
+	has_country_flag = unlocked_artifice_invention_giantshape_warframe
+	has_country_flag = unlocked_artifice_invention_controlled_rage_serum
+	has_country_flag = unlocked_artifice_invention_codorran_powered_exosuit
+	has_country_flag = unlocked_artifice_invention_eplusplus_compound
+	has_country_flag = unlocked_artifice_invention_elemental_gunpowder
+	has_country_flag = unlocked_artifice_invention_gyrocopters
+	has_country_flag = unlocked_artifice_invention_kaydhano_powered_vessels
+	has_country_flag = unlocked_artifice_invention_warfare_simulator
+	has_country_flag = unlocked_artifice_invention_gu_boats
+}
+
+has_discovered_all_society_tier_2_inventions = {
+	has_country_flag = unlocked_artifice_invention_remedial_tinctures
+	has_country_flag = unlocked_artifice_invention_arithmatons
+	has_country_flag = unlocked_artifice_invention_burrower_arms
+	has_country_flag = unlocked_artifice_invention_god_fragment_decoder
+	has_country_flag = unlocked_artifice_invention_talking_god_temples
+	has_country_flag = unlocked_artifice_invention_empire_engine
+	has_country_flag = unlocked_artifice_invention_mirage_detector_3000
+	has_country_flag = unlocked_artifice_invention_think_thought_transmitters
+	has_country_flag = unlocked_artifice_invention_game_of_khet
+}
+
+has_discovered_all_tier_2_inventions = {
+	has_discovered_all_economic_tier_2_inventions = yes
+	has_discovered_all_military_tier_2_inventions = yes
+	has_discovered_all_society_tier_2_inventions = yes
+}
+
+has_discovered_all_economic_tier_3_inventions = {
+	has_country_flag = unlocked_artifice_invention_pathway_transmutation
+	has_country_flag = unlocked_artifice_invention_elemental_locomotives
+	has_country_flag = unlocked_artifice_invention_high_velocity_irrigation
+	has_country_flag = unlocked_artifice_invention_weather_predicticator
+	has_country_flag = unlocked_artifice_invention_artifice_powered_magnate_factories
+	has_country_flag = unlocked_artifice_invention_prefabricated_city_constructors
+	has_country_flag = unlocked_artifice_invention_t_wave_transceivers
+}
+
+has_discovered_all_military_tier_3_inventions = {
+	has_country_flag = unlocked_artifice_invention_black_damestear_bullets
+	has_country_flag = unlocked_artifice_invention_artillery_autoloader
+	has_country_flag = unlocked_artifice_invention_bioartificed_ascension
+	has_country_flag = unlocked_artifice_invention_personal_mageshields
+	has_country_flag = unlocked_artifice_invention_military_sky_galleons
+	has_country_flag = unlocked_artifice_invention_naval_mageshields
+	has_country_flag = unlocked_artifice_invention_demonflame_flamethrowers
+	has_country_flag = unlocked_artifice_invention_chase_em_rockets
+	has_country_flag = unlocked_artifice_invention_dragonblood_gene_warriors
+	has_country_flag = unlocked_artifice_invention_damestear_reactor_megacannon
+}
+
+has_discovered_all_society_tier_3_inventions = {
+	has_country_flag = unlocked_artifice_invention_crierless_crier_device
+	has_country_flag = unlocked_artifice_invention_divendancer_speedboat
+	has_country_flag = unlocked_artifice_invention_bureaucratizer
+	has_country_flag = unlocked_artifice_invention_runethought_network
+	has_country_flag = unlocked_artifice_invention_negotiation_nexus
+}
+
+has_discovered_all_tier_3_inventions = {
+	has_discovered_all_economic_tier_3_inventions = yes
+	has_discovered_all_military_tier_3_inventions = yes
+	has_discovered_all_society_tier_3_inventions = yes
+}
+
+artifice_has_invention_slot = {
+	custom_trigger_tooltip = {
+		tooltip = artifice_has_invention_slot_tt
+		NOT = {
+			check_variable = {
+				which = artifice_inventions_currently_used
+				which = ArtificeMaxInventions
+			}
+		}
+	}
+}
+
+artifice_has_num_inventions_active = {
+	custom_trigger_tooltip = {
+		tooltip = artifice_is_using_$amount$_artificer_invention
+		check_variable = {
+			which = artifice_inventions_currently_used
+			value = $amount$
+		}
+	}
+}
+
+artifice_not_using_any_inventions = {
+	custom_trigger_tooltip = {
+		tooltip = is_not_using_any_inventions_tt
+		NOT = {
+			check_variable = {
+				which = artifice_inventions_currently_used
+				value = 1
+			}
+		}
+	}
+}
+
+artifice_can_select_invention_10 = {
+	artifice_has_invention_slot = yes
+	artifice_has_points_10 = yes
+}
+
+artifice_can_select_invention_20 = {
+	artifice_has_invention_slot = yes
+	artifice_has_points_20 = yes
+}
+
+artifice_can_select_invention_30 = {
+	artifice_has_invention_slot = yes
+	artifice_has_points_30 = yes
+}
+
+artifice_can_select_invention_40 = {
+	artifice_has_invention_slot = yes
+	artifice_has_points_40 = yes
+}
+
+artifice_invention_has_any_menu_open = {
+	OR = {
+		artifice_invention_has_generic_menu_open = yes
+		has_country_flag = artifice_invention_menu_open_cultural
+		has_country_flag = artifice_invention_menu_open_unique_large
+		has_country_flag = artifice_invention_menu_open_unique_small
+	}
+}
+
+artifice_invention_has_generic_menu_open = {
+	OR = {
+		has_country_flag = artificery_tab_generic_tier_1_open
+		has_country_flag = artificery_tab_generic_tier_2_open
+		has_country_flag = artificery_tab_generic_tier_3_open
+	}
+}
+
+artifice_invention_is_unique_tab_large_qualifier = {
+	OR = {
+		#Feiten
+		tag = Y20
+		was_tag = Y20
+		#Varaine
+		tag = A99
+		was_tag = A99
+		#Snotfinger
+		tag = H89
+		was_tag = H89
+		#Allclan
+		tag = I98
+		was_tag = I98
+		#Taychendi Empire
+		tag = J84
+		was_tag = J84
+	}
+}
+
+artifice_has_cultural_invention = {
+	OR = {
+		culture_group = alenic
+		culture_group = bulwari
+		culture_group = businori
+		culture = crownsman
+		culture = ionnic
+		culture_group = dwarven
+		culture_group = eordan_ruinborn_elf
+		culture_group = gnollish
+		culture_group = gnomish
+		culture_group = goblin
+		culture_is_halfling = yes
+		culture_group = harpy
+		culture_group = kheionai_ruinborn_elf
+		culture_group = kobold
+		culture_group = lencori
+		culture = pearlsedger
+		culture_group = taychendi_ruinborn_elf
+		culture_group = triunic
+		culture = vernman
+		culture = heartman
+		culture = west_damerian
+		culture = east_damerian
+		culture = rogieran
+		culture = nurcestiran
+		culture = ancardian
+		culture = anbenncoster
+		culture = anbenlander
+		culture_group = ynnic_ruinborn_elf
+		culture_group = hobgoblin
+	}
+}
+
+artifice_has_racial_military_invention = {
+	OR = {
+		has_country_modifier = dwarven_military
+		has_country_modifier = gnomish_military
+		has_country_modifier = goblin_military
+		has_country_modifier = harimari_military
+		has_country_modifier = kobold_military
+		has_country_modifier = orcish_military
+		has_country_modifier = troll_military
+		has_country_modifier = ogre_military
+		has_global_flag = korashi_drill_invented_flag
+	}
+}
+
+artifice_has_religious_invention = {
+	OR = {
+		religion = ancestor_worship
+		religion_group = bulwari
+		religion_group = cannorian
+		religion = feast_of_the_gods
+		religion = reformed_feast_of_the_gods
+		religion_group = fey_religion
+		religion = irdaeos_worship
+		religion = gods_of_the_taychend
+		religion = gods_of_the_taychend_reformed
+		religion = kalun_masks
+		religion_group = khetist
+		religion = devouring_path
+		religion = accretive_path
+		religion = transmutative_path
+		religion = skaldhyrric_faith
+		religion = the_thought
+		religion = xhazobkult
+	}
+}
+
+artifice_has_special_invention = {
+	has_global_flag = korashi_drill_invented_flag
+}
+
+artifice_has_unique_invention = {
+	OR = {
+		#Feiten
+		tag = Y20
+		was_tag = Y20
+		#Varaine
+		tag = A99
+		was_tag = A99
+		#Snotfinger
+		tag = H89
+		was_tag = H89
+		#Allclan
+		tag = I98
+		was_tag = I98
+		#Vanbury Guild
+		tag = G97
+		was_tag = G97
+		#Yingzhen
+		tag = Y10
+		was_tag = Y10
+		#Khugdihr
+		tag = I07
+		was_tag = I07
+		#Hon Sai
+		tag = Y66
+		was_tag = Y66
+		#Ameion
+		tag = G52
+		was_tag = G52
+		#Orlghelovar
+		tag = I12
+		was_tag = I12
+		#Cestirmark
+		tag = H33
+		was_tag = H33
+		#Freemarches
+		tag = H51
+		was_tag = H51
+		#Plumstead
+		tag = H61
+		was_tag = H61
+		#Snotfinger
+		tag = H89
+		was_tag = H89
+		#Karakhanbar
+		tag = Z54
+		was_tag = Z54
+		#Orda Aldresia
+		tag = A77
+		was_tag = A77
+		#The Command
+		tag = R62
+		was_tag = R62
+		#Maghargma
+		tag = I90
+		was_tag = I90
+		#Brambleskinner
+		tag = I35
+		was_tag = I35
+		#Taychendi Empire
+		tag = J84
+		was_tag = J84
+		#Kobildzan
+		tag = Z38
+	}
+}
+
+unable_to_disable_society_inventions = {
+	# OR = {
+	has_country_modifier = giberd_gds_loopeng_gedsandde_research
+	# }
+}
+
+unable_to_disable_economic_inventions = {
+	# OR = {
+	has_country_modifier = giberd_curtain_call_inventions
+	# }
+}
+
+is_not_researching_invention = {
+	custom_trigger_tooltip = {
+		tooltip = is_not_researching_invention_tt
+		NOT = {
+			has_country_flag = artifice_research_in_progress
+			has_country_flag = artifice_research_menu_open
+		}
+	}
+	if = {
+		limit = {
+			has_country_modifier = artifice_research_temporarily_disabled
+		}
+		custom_trigger_tooltip = {
+			tooltip = researching_invention_not_disabled_tt
+			NOT = {
+				has_country_modifier = artifice_research_temporarily_disabled
+			}
+		}
+	}
+}
+
+artificery_locked_mage_mode = {
+	custom_trigger_tooltip = {
+		tooltip = artifice_locked_mage_mode_tt
+		OR = {
+			is_or_was_tag = { tag = I46 } #Emerald Orc
+			AND = {
+				has_government_attribute = is_magocracy #magocracies are locked to mage only
+				NOT = { culture_group = eordan_ruinborn_elf } #eordan elves are mixed
+			}
+			has_ruler_flag = is_a_lich #everyone, including eordan elves, becomes mage only if a lich
+		}
+	}
+}
+
+artificery_locked_mixed_mode = {
+	custom_trigger_tooltip = {
+		tooltip = artifice_locked_mixed_mode_tt
+		OR = {
+			is_or_was_tag = { tag = I02 } #Krakdhumvror goes mixed
+			is_or_was_tag = { tag = I20 } #Hul az krakazol goes mixed
+			is_or_was_tag = { tag = I12 } #Orlghelovar goes mixed
+			is_or_was_tag = { tag = J84 } #Taychend Empire goes mixed
+			AND = {
+				culture_group = eordan_ruinborn_elf #Eordan Elves are mixed
+				NOT = { has_ruler_flag = is_a_lich }
+			}
+		}
+	}
+}
+
+artificery_locked_artificery_mode = {
+	custom_trigger_tooltip = {
+		tooltip = artifice_locked_artificery_mode_tt
+		OR = {
+			is_or_was_tag = { tag = I98 } #Allclan
+			is_or_was_tag = { tag = Y20 } #Feiten
+			is_or_was_tag = { tag = R62 } #The Command
+			is_or_was_tag = { tag = Z54 } #Karakhanbar
+			is_or_was_tag = { tag = A06 } #Nimscodd
+			is_or_was_tag = { tag = A19 } #Portnamm
+			is_or_was_tag = { tag = A26 } #Redscale
+			is_or_was_tag = { tag = A27 } #Bluescale
+			is_or_was_tag = { tag = A28 } #Greenscale
+			is_or_was_tag = { tag = Z38 } #Kobildzan
+			AND = {
+				has_government_attribute = is_technocracy #technocracies are locked to artificery_only
+				NOT = { is_or_was_tag = { tag = I12 } } #orlghelovar is mixed
+			}
+		}
+	}
+}
+
+#Tags that can choose artificery via MT
+artificery_mt_locked_mode = {
+	custom_trigger_tooltip = {
+		tooltip = artifice_mt_locked_mode_tt
+		OR = {
+			is_or_was_tag = { tag = A81 } #Giberd
+			is_or_was_tag = { tag = H16 } #Gemradcurt
+			is_or_was_tag = { tag = H74 } #Chaingrasper
+			is_or_was_tag = { tag = B39 } #Wyvernheart
+			is_subject_of = Z38
+		}
+	}
+}
+
+artificery_tag_needs_mages = {
+	custom_trigger_tooltip = {
+		tooltip = artifice_tag_needs_mages_tt
+		OR = {
+			is_or_was_tag = { tag = F69 } #Irkorzik
+			is_or_was_tag = { tag = I22 } #Gronstunad
+			is_or_was_tag = { tag = H81 } #Masked Butcher
+			is_or_was_tag = { tag = F71 } #Rakkaz
+			OR = {
+				has_ruler_modifier = witch_king_modifier
+				has_country_flag = witch_king_flag
+			}
+			has_country_flag = nsc_sun_elf_artificery 
+		}
+	}
+}
+
+artificery_tag_needs_artificers = {
+	custom_trigger_tooltip = {
+		tooltip = artifice_tag_needs_artificers_tt
+		OR = {
+			is_or_was_tag = { tag = A99 } #Varaine
+			is_or_was_tag = { tag = G27 } #Brelar
+			is_or_was_tag = { tag = A05 } #Reveria
+		}
+	}
+}
+
+tier_2_artificer_estate = {
+	custom_trigger_tooltip = {
+		tooltip = artifice_unlocked_advanced_tt 
+		has_country_flag = artifice_unlocked_advanced
+	}
+}
+
+tier_3_artificer_estate = {
+	custom_trigger_tooltip = {
+		tooltip = artifice_unlocked_expert_tt 
+		has_country_flag = artifice_unlocked_expert
+	}
+}

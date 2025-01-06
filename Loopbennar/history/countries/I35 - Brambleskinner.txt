@@ -1,0 +1,26 @@
+
+setup_vision = yes
+government = tribal
+add_government_reform = deepwoods_horde
+government_rank = 1
+primary_culture = forest_goblin
+religion = goblinic_shamanism
+technology_group = tech_forest_goblin
+capital = 3008
+
+1000.1.1 = { set_estate_privilege = estate_mages_organization_guilds }
+
+1442.5.15 = {
+monarch = {
+		name = "Ghuk"
+		dynasty = "Brambleskinner"
+		adm = 2
+		dip = 4
+		mil = 5
+		birth_date = 1421.4.16
+	}
+	add_ruler_personality = strict_personality
+	add_ruler_personality = zealot_personality	
+}
+
+add_historical_rival = U12

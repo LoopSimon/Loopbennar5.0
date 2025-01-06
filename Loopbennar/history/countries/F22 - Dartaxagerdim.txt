@@ -1,0 +1,42 @@
+
+setup_vision = yes
+government = monarchy
+add_government_reform = autocracy_reform
+government_rank = 2
+primary_culture = bahari
+add_accepted_culture = kuzarami
+religion = old_bulwari_sun_cult
+technology_group = tech_bulwari
+capital = 550
+historical_rival = F21 #Birsartanses
+historical_friend = U18 #Reuyel
+
+1000.1.1 = { set_estate_privilege = estate_mages_organization_jaherian_statute }
+
+1444.1.1 = {
+	monarch = {
+		name = "Dartaxes"
+		dynasty = "szel-Farramaz"
+		birth_date = 1401.7.3
+		adm = 3
+		dip = 6
+		mil = 5
+	}
+	add_ruler_personality = silver_tongue_personality
+	add_ruler_personality = inspiring_leader_personality
+	heir = { 
+		name = "Tailmaz"
+		monarch_name = "Tailmaz"
+		dynasty = "szel-Farramaz"
+		birth_date = 1425.12.12
+		death_date = 1525.1.1
+		claim = 80
+		adm = 3
+		dip = 2
+		mil = 4
+	}
+	add_country_modifier = {
+		name = "conversion_zeal"
+		duration = 3650
+	}
+}

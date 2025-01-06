@@ -1,0 +1,17 @@
+owner = S34 #Cunning River Eel
+controller = S34 #Cunning River Eel
+add_core = S34 #Cunning River Eel
+culture = tanizu
+religion = beast_memory
+
+hre = no
+
+base_tax = 2
+base_production = 2
+base_manpower = 3
+
+trade_goods = dyes
+
+capital = ""
+
+is_city = yes

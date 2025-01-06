@@ -1,0 +1,1063 @@
+
+country_decisions = {
+
+	form_harimraj = { #Harimari Empire of Rahen
+		major = yes
+		potential = {
+			NOT = { tag = R61 }
+			OR = {
+				primary_culture = royal_harimari
+				primary_culture = primal_harimari
+			}
+			NOT = { exists = R70 }
+			normal_or_historical_nations = yes
+			was_never_end_game_tag_trigger = yes
+			hidden_trigger = {
+				NOT = { has_country_flag = L62_no_harimraj }
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 4409
+				province_id = 4411
+				province_id = 4412
+				province_id = 4435
+				province_id = 4493
+				province_id = 4510
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			owns_core_province = 4409
+			owns_core_province = 4411
+			owns_core_province = 4412
+			owns_core_province = 4435
+			owns_core_province = 4493
+			owns_core_province = 4510
+			OR = {
+				primary_culture = royal_harimari
+				primary_culture = primal_harimari
+			}
+			is_at_war = no
+			is_free_or_tributary_trigger = yes
+			num_of_owned_provinces_with = {
+				value = 100
+				superregion = rahen_superregion
+			}
+			if = {
+				limit = { tag = R51 }
+				mission_completed = R51_second_final_harimraj
+			}
+			hidden_trigger = {
+				NOT = { has_country_flag = L62_no_harimraj }
+			}
+		}
+		effect = {
+			change_tag = R70
+			hidden_effect = { restore_country_name = yes }
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						is_part_of_hre = yes
+					}
+					set_in_empire = no
+				}
+			}
+			if = {
+				limit = { has_government_attribute = is_raja }
+				add_government_reform = feudalism_reform
+				remove_country_modifier = raj_opened_senapti_ranks
+				remove_country_modifier = raj_closed_senapti_ranks
+			}
+			set_government_rank = 3
+			add_prestige = 50
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			set_country_flag = formed_harimraj_flag
+			rahen_superregion = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			lock_racial_admin = yes
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	form_rahenraj = { #Human Empire of Rahen
+		major = yes
+		potential = {
+			OR = { 
+				culture_group = south_raheni 
+				culture_group = middle_raheni 
+				culture_group = upper_raheni
+			}
+			NOT = { exists = R71 }
+			NOT = { tag = R38 }
+			normal_or_historical_nations = yes
+			was_never_end_game_tag_trigger = yes
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 4397
+				province_id = 4409
+				province_id = 4411
+				province_id = 4460
+				province_id = 4510
+				province_id = 4630
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			owns_core_province = 4397
+			owns_core_province = 4409
+			owns_core_province = 4411
+			owns_core_province = 4460
+			owns_core_province = 4510
+			owns_core_province = 4630
+			OR = { 
+				culture_group = south_raheni 
+				culture_group = middle_raheni 
+				culture_group = upper_raheni
+			}
+			is_at_war = no
+			is_free_or_tributary_trigger = yes
+			num_of_owned_provinces_with = {
+				value = 100
+				superregion = rahen_superregion
+			}
+			if = {
+				limit = { tag = R51 }
+				mission_completed = R51_second_final_harimraj
+			}
+		}
+		effect = {
+			change_tag = R71
+			hidden_effect = { restore_country_name = yes }
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						is_part_of_hre = yes
+					}
+					set_in_empire = no
+				}
+			}
+			if = {
+				limit = { has_government_attribute = is_raja }
+				add_government_reform = feudalism_reform
+				remove_country_modifier = raj_opened_senapti_ranks
+				remove_country_modifier = raj_closed_senapti_ranks
+			}
+			set_government_rank = 3
+			add_prestige = 50
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			set_country_flag = formed_rahenraj_flag
+			rahen_superregion = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			
+			lock_racial_admin = yes
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	form_dhugajir = { #Unification of the Ghavaanaj tribes. The elephant lords
+		major = yes
+		potential = {
+			primary_culture = ghavaanaj
+			NOT = { exists = R72 }
+			normal_or_historical_nations = yes
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_dhugajir_flag }
+		}
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					province_id = 4485
+					OR = {
+						NOT = { owned_by = ROOT }
+						NOT = { is_core = ROOT }
+					}
+				}
+				AND = {
+					OR = {
+						province_id = 4477
+						province_id = 4469
+						province_id = 4483
+						province_id = 4479
+						province_id = 4508
+						province_id = 4486
+					}
+					NOT = { owned_by = ROOT }
+					NOT = { 
+						ROOT = { 
+							num_of_owned_provinces_with = {
+								value = 4
+								OR = {
+									province_id = 4477
+									province_id = 4469
+									province_id = 4483
+									province_id = 4479
+									province_id = 4508
+									province_id = 4486
+								}
+							}
+						}
+					}
+				}
+				AND = {
+					culture = ghavaanaj
+					NOT = { owned_by = ROOT }
+					NOT = {
+						ROOT = {
+							num_of_owned_provinces_with = {
+								value = 10
+								culture = ghavaanaj
+							}
+						}
+					}
+				}
+			}
+		}
+		allow = {
+			owns_core_province = 4485
+			num_of_owned_provinces_with = {
+				value = 4
+				OR = {
+					province_id = 4477
+					province_id = 4469
+					province_id = 4483
+					province_id = 4479
+					province_id = 4508
+					province_id = 4486
+				}
+			}
+			num_of_owned_provinces_with = {
+				value = 10
+				culture = ghavaanaj
+			}
+			is_at_war = no
+		}
+		effect = {
+			change_tag = R72
+			hidden_effect = { restore_country_name = yes }
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						is_part_of_hre = yes
+					}
+					set_in_empire = no
+				}
+			}
+			change_government_to_monarchy = yes
+			set_government_rank = 2
+			add_prestige = 50
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			swap_non_generic_missions = yes
+			set_country_flag = formed_dhugajir_flag
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		
+	}
+	
+	form_nadimraj = { #Restoration of the great kingdom of the River, the cradle of Raheni civilisation
+		major = yes
+		potential = {
+			culture_group = upper_raheni
+			NOT = { tag = R08 } #Tiltaghar
+			NOT = { tag = R97 }
+			NOT = { exists = R73 }
+			normal_or_historical_nations = yes
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_nadimraj_flag }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 4397
+				province_id = 4451
+				province_id = 4460
+				province_id = 4465
+				province_id = 4466
+				province_id = 4467
+				province_id = 4474
+				province_id = 4509
+				province_id = 4510
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			owns_core_province = 4397
+			owns_core_province = 4451
+			owns_core_province = 4460
+			owns_core_province = 4465
+			owns_core_province = 4466
+			owns_core_province = 4467
+			owns_core_province = 4474
+			owns_core_province = 4509
+			owns_core_province = 4510
+			is_at_war = no
+			is_free_or_tributary_trigger = yes
+		}
+		effect = {
+			change_tag = R73
+			hidden_effect = { restore_country_name = yes }
+			4460 = { move_capital_effect = yes }
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						is_part_of_hre = yes
+					}
+					set_in_empire = no
+				}
+			}
+			set_government_rank = 2
+			add_prestige = 50
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			set_country_flag = formed_nadimraj_flag
+			west_rajnadhaga_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			khadirnadi_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			east_rajnadhaga_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			tiltaghar_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			middle_nadimraj_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			bidhilar_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			khadisrapur_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			munlanan_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			raghajandi_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			hidden_effect = {
+				if = {
+					limit = { 
+						ai = yes
+						exists = I20
+					}
+					add_historical_friend = I20
+					I20 = { add_historical_friend = ROOT }
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	form_ghankedhen = { #Unification of the Ghankedhen tribes
+		major = yes
+		potential = {
+			primary_culture = ghankedhen
+			NOT = { exists = R74 }
+			normal_or_historical_nations = yes
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_ghankedhen_flag }
+		}
+		provinces_to_highlight = {
+			culture = ghankedhen
+			NOT = { owned_by = ROOT }
+			NOT = {
+				ROOT = { 
+					num_of_owned_provinces_with = {
+						value = 8
+						culture = ghankedhen
+					}
+				}
+			}
+			NOT = { owned_by = ROOT }
+		}
+		allow = {
+			hidden_trigger = {
+				primary_culture = ghankedhen
+			}
+			adm_tech = 8
+			is_at_war = no			
+			num_of_owned_provinces_with = {
+				value = 8
+				culture = ghankedhen
+			}
+		}
+		effect = {
+			change_tag = R74
+			hidden_effect = { restore_country_name = yes }
+			swap_non_generic_missions = yes
+			capital_scope = { add_base_tax = 1 add_base_production = 1 add_base_manpower = 1 }
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						is_part_of_hre = yes
+					}
+					set_in_empire = no
+				}
+			}
+			set_government_rank = 2
+			add_prestige = 50
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			set_country_flag = formed_ghankedhen_flag
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	form_dhujat = { #Kingdom of the Kharuyana river
+		major = yes
+		potential = {
+			OR = {
+				primary_culture = muthadhaya
+				primary_culture = rasarhid
+				AND = {
+					primary_culture = royal_harimari
+					capital_scope = {
+						region = dhujat_region
+					}
+				}
+			}
+			NOT = { exists = R75 }
+			normal_or_historical_nations = yes
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_dhujat_flag }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 4409
+				province_id = 4492
+				province_id = 4493
+				province_id = 4497
+				province_id = 4499
+				province_id = 4501
+				province_id = 4504
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			owns_core_province = 4409
+			owns_core_province = 4492
+			owns_core_province = 4493
+			owns_core_province = 4497
+			owns_core_province = 4499
+			owns_core_province = 4501
+			owns_core_province = 4504
+			adm_tech = 10
+			is_at_war = no
+		}
+		effect = {
+			change_tag = R75
+			hidden_effect = { restore_country_name = yes }
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						is_part_of_hre = yes
+					}
+					set_in_empire = no
+				}
+			}
+			set_government_rank = 2
+			add_prestige = 50
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			set_country_flag = formed_dhujat_flag
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	form_sardhasi = { #Union of the cities of Southern Rahen
+		major = yes
+		potential = {
+			OR = {
+				culture_group = south_raheni
+				AND = {
+					OR = {
+						primary_culture = royal_harimari
+						primary_culture = primal_harimari
+					}
+					capital_scope = {
+						OR = {
+							region = rahen_coast_region
+							area = setabura_area
+							area = upper_dhenbasana_area
+							area = pasiragha_area
+							area = south_marutha_area
+							area = south_ghankedhen_area
+							area = middle_ghankedhen_area
+							area = north_ghankedhen_area
+							area = kramitra_area
+							area = maharaaja_area
+						}
+					}
+				}
+			}
+			NOT = { tag = R51 tag = R77 tag = R38 tag = F99 tag = R61 }
+			NOT = { exists = R76 }
+			normal_or_historical_nations = yes
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_sardhasi_flag }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 4435
+				province_id = 4427
+				province_id = 4426
+				province_id = 4412
+				province_id = 4411
+				province_id = 4410
+				province_id = 4391
+				province_id = 4392
+				province_id = 4418
+				province_id = 4419
+				province_id = 4417
+				province_id = 4423
+				province_id = 4405
+				province_id = 4368
+			}
+			NOT = { owned_by = ROOT }
+			NOT = {
+				ROOT = {
+					num_of_owned_provinces_with = {
+						value = 9
+						OR = {
+							province_id = 4435
+							province_id = 4427
+							province_id = 4426
+							province_id = 4412
+							province_id = 4411
+							province_id = 4410
+							province_id = 4391
+							province_id = 4392
+							province_id = 4418
+							province_id = 4419
+							province_id = 4417
+							province_id = 4423
+							province_id = 4405
+							province_id = 4368
+						}
+					}
+				}
+			}
+		}
+		allow = {
+			hidden_trigger = {
+				capital_scope = { superregion = rahen_superregion }
+			}
+			adm_tech = 10
+			is_at_war = no			
+			num_of_owned_provinces_with = {
+				value = 9
+				OR = {
+					province_id = 4435
+					province_id = 4427
+					province_id = 4426
+					province_id = 4412
+					province_id = 4411
+					province_id = 4410
+					province_id = 4391
+					province_id = 4392
+					province_id = 4418
+					province_id = 4419
+					province_id = 4417
+					province_id = 4423
+					province_id = 4405
+					province_id = 4368
+				}
+			}
+		}
+		effect = {
+			change_tag = R76
+			hidden_effect = { restore_country_name = yes }
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						is_part_of_hre = yes
+					}
+					set_in_empire = no
+				}
+			}
+			if = {
+				limit = { NOT = { government_rank = 2 } }
+				set_government_rank = 2
+			}
+			add_prestige = 50
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			set_country_flag = formed_sardhasi_flag
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	form_vanrahar = { #Harimari Homeland
+		major = yes
+		potential = {
+			primary_culture = primal_harimari
+			NOT = { tag = R51 tag = R76 }
+			NOT = { exists = R77 }
+			normal_or_historical_nations = yes
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_vanrahar_flag }
+		}
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					OR = {
+						province_id = 4378
+						province_id = 4394
+						province_id = 4390
+						province_id = 4387
+					}
+					OR = {
+						NOT = { owned_by = ROOT }
+						NOT = { is_core = ROOT }
+					}
+				}
+				AND = {
+					OR = {
+						area = harimars_cradle_area
+						area = bharagha_area
+					}
+					NOT = { owned_by = ROOT }
+				}
+			}
+		}
+		allow = {
+			is_at_war = no
+			army_tradition = 40
+			owns_core_province = 4378
+			owns_core_province = 4394
+			owns_core_province = 4390
+			owns_core_province = 4387
+			harimars_cradle_area = {
+				owned_by = ROOT
+			}
+			bharagha_area = {
+				owned_by = ROOT
+			}
+		}
+		effect = {
+			change_tag = R77
+			hidden_effect = { restore_country_name = yes }
+			swap_non_generic_missions = yes
+			capital_scope = { add_base_manpower = 3 }
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						is_part_of_hre = yes
+					}
+					set_in_empire = no
+				}
+			}
+			set_government_rank = 2
+			add_prestige = 50
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			set_country_flag = formed_vanrahar_flag
+			lock_racial_admin = yes
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	form_raghajandi = {
+		major = yes
+		potential = {
+			OR = {
+				num_of_owned_provinces_with = {
+					value = 8
+					region = shamakhad_region
+				}
+				ai = no
+			}
+			OR = {
+				culture_group = upper_raheni
+				AND = {
+					OR = {
+						primary_culture = serene_harimari
+						primary_culture = royal_harimari
+					}
+					capital_scope = {
+						region = shamakhad_region
+					}
+				}
+			}
+			normal_or_historical_nations = yes
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_raghajandi_flag }
+			NOT = { exists = R97 }
+			NOT = { tag = R09 }
+			NOT = { tag = R73 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					OR = {
+						province_id = 4460
+						province_id = 4465
+						province_id = 4633
+						province_id = 4630
+						province_id = 4509
+					}
+					OR = {
+						NOT = { owned_by = ROOT }
+						NOT = { is_core = ROOT }
+					}
+				}
+				AND = {
+					region = shamakhad_region
+					OR = {
+						NOT = { owned_by = ROOT }
+						NOT = { is_core = ROOT }
+					}
+				}
+			}
+		}
+		allow = {
+			is_at_war = no
+			owns_core_province = 4460
+			owns_core_province = 4465
+			owns_core_province = 4633
+			owns_core_province = 4630
+			owns_core_province = 4509
+			num_of_owned_provinces_with = {
+				value = 30
+				region = shamakhad_region
+			}
+			has_reform = heroic_realm_reform
+			has_estate_privilege = estate_adventurers_heroes_in_the_army
+			OR = {
+				caste_fluidity_is_fluid = yes
+				caste_fluidity_is_neutral = yes
+			}
+		}
+		effect = {
+			change_tag = R97
+			hidden_effect = { restore_country_name = yes }
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						is_part_of_hre = yes
+					}
+					set_in_empire = no
+				}
+			}
+			set_government_rank = 2
+			add_prestige = 50
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			shamakhad_region = {
+				add_permanent_claim = root
+			}
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			set_country_flag = formed_raghajandi_flag
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	form_suryavar = { #spread the word of surael as the realm of sun beyond the mountains
+		major = yes
+		potential = {
+			OR = {
+				primary_culture = royal_harimari
+				primary_culture = ghankedhen
+				primary_culture = raghamidesh
+				primary_culture = rabhidarubsad
+				primary_culture = pasindesh
+				AND = {
+					religion = the_jadd
+					OR = {
+						culture_group = middle_raheni
+						culture_group = upper_raheni
+						culture_group = south_raheni
+						primary_culture = primal_harimari
+					}
+					capital_scope = {
+						region = rahen_coast_region
+					}
+				}
+			}
+			normal_or_historical_nations = yes
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_suryavar_flag }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 4412
+				province_id = 4367
+				province_id = 4435
+				province_id = 2913
+				province_id = 2909
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			owns_core_province = 4412
+			owns_core_province = 4367
+			owns_core_province = 4435
+			OR = {
+				owns_core_province = 4440
+				owns_core_province = 4361
+			}
+			2913 = {
+				owner = {
+					religion = the_jadd
+				}
+				religion = the_jadd
+			}
+			2909 = {
+				owner = {
+					religion = the_jadd
+				}
+				religion = the_jadd
+			}
+			total_development = 200
+			dominant_religion = the_jadd
+			religion = the_jadd
+			is_at_war = no
+			is_free_or_tributary_trigger = yes
+		}
+		effect = {
+			change_tag = R99
+			hidden_effect = { restore_country_name = yes }
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						is_part_of_hre = yes
+					}
+					set_in_empire = no
+				}
+			}
+			set_government_rank = 2
+			add_prestige = 50
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			inner_rahen_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			middle_dhenbasana_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			rhamirta_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			south_ghankedhen_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			middle_ghankedhen_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			south_marutha_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			pasiragha_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			upper_dhenbasana_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			setabura_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			change_government = theocracy
+			add_government_reform = raheni_divine_monarchy_reform
+			set_country_flag = formed_suryavar_flag
+			hidden_effect = {
+				if = {
+					limit = {
+						AND = {
+							exists = F46
+							F46 = {
+								has_opinion = {
+									who = ROOT
+									value = 0
+								}
+							}
+						}
+					}
+					add_historical_friend = F46
+					F46 = { add_historical_friend = ROOT }
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

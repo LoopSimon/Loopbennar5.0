@@ -1,0 +1,601 @@
+
+
+country_decisions = {
+	rebuild_golden_highway_bulwar_proper = {
+		major = yes
+	
+		potential = {
+			if = {
+				limit = { ai = yes }
+				owns = 565
+			}
+			else = {
+				golden_highway_bulwar_proper = {
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+			}
+			NOT = { has_global_flag = golden_highway_bulwar_proper_started }
+			is_subject = no
+			NOT = { capital_scope = { has_province_modifier = rahen_corrupt_ministery_of_agriculture } }
+		}
+		
+		provinces_to_highlight = {
+			province_group = golden_highway_bulwar_proper
+		}
+		
+		allow = {
+			if = {
+				limit = { ai = yes }
+				owns = 565
+			}
+			golden_highway_bulwar_proper = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			if = {
+				limit = {
+					4871 = {
+						owned_by = ROOT
+						has_great_project = {
+							type = palace_of_divine_call
+							tier = 3
+						}
+					}
+				}
+				treasury = 975
+				adm_power = 100
+			}
+			else = {
+				treasury = 1950
+				adm_power = 200
+			}
+		}
+	
+		effect = {
+			golden_highway_start_construction = { bulwar_proper = yes }
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	rebuild_golden_highway_far_bulwar = {
+		major = yes
+	
+		potential = {
+			if = {
+				limit = { ai = yes }
+				owns = 625
+			}
+			else = {
+				golden_highway_far_bulwar = {
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+			}
+			NOT = { has_global_flag = golden_highway_far_bulwar_started }
+			is_subject = no
+			NOT = { capital_scope = { has_province_modifier = rahen_corrupt_ministery_of_agriculture } }
+		}
+		
+		provinces_to_highlight = {
+			province_group = golden_highway_far_bulwar
+		}
+		
+		allow = {
+			if = {
+				limit = { ai = yes }
+				owns = 625
+			}
+			golden_highway_far_bulwar = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			if = {
+				limit = {
+					4871 = {
+						owned_by = ROOT
+						has_great_project = {
+							type = palace_of_divine_call
+							tier = 3
+						}
+					}
+				}
+				treasury = 975
+				adm_power = 100
+			}
+			else = {
+				treasury = 1950
+				adm_power = 200
+			}
+		}
+	
+		effect = {
+			golden_highway_start_construction = { far_bulwar = yes }
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	rebuild_golden_highway_far_salahad = {
+		major = yes
+	
+		potential = {
+			if = {
+				limit = { ai = yes }
+				owns = 2900
+			}
+			else = {
+				golden_highway_far_salahad = {
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+			}
+			NOT = { has_global_flag = golden_highway_far_salahad_started }
+			is_subject = no
+			NOT = { capital_scope = { has_province_modifier = rahen_corrupt_ministery_of_agriculture } }
+		}
+		
+		provinces_to_highlight = {
+			province_group = golden_highway_far_salahad
+		}
+		
+		allow = {
+			if = {
+				limit = { ai = yes }
+				owns = 2900
+			}
+			golden_highway_far_salahad = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			if = {
+				limit = {
+					4871 = {
+						owned_by = ROOT
+						has_great_project = {
+							type = palace_of_divine_call
+							tier = 3
+						}
+					}
+				}
+				treasury = 525
+				adm_power = 100
+			}
+			else = {
+				treasury = 1050
+				adm_power = 200
+			}
+		}
+	
+		effect = {
+			golden_highway_start_construction = { far_salahad = yes }
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	rebuild_golden_highway_rahen_coast = {
+		major = yes
+	
+		potential = {
+			if = {
+				limit = { ai = yes }
+				owns = 4361
+			}
+			else_if = {
+				limit = {
+					AND = {
+						tag = R61
+						has_country_flag = pasiragha_sramaya_treaty_success
+					}
+				}
+				golden_highway_rahen_coast = {
+					type = all
+					OR = {
+						country_or_non_sovereign_subject_holds = ROOT 
+						country_or_non_sovereign_subject_holds = R38
+					}
+				}
+			}
+			else = {
+				golden_highway_rahen_coast = {
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+			}
+			NOT = { has_global_flag = golden_highway_rahen_coast_started }
+			is_subject = no
+			NOT = { capital_scope = { has_province_modifier = rahen_corrupt_ministery_of_agriculture } }
+		}
+		
+		provinces_to_highlight = {
+			province_group = golden_highway_rahen_coast
+		}
+		
+		allow = {
+			if = {
+				limit = { ai = yes }
+				owns = 4361
+			}
+			else_if = {
+				limit = {
+					AND = {
+						tag = R61
+						has_country_flag = pasiragha_sramaya_treaty_success	
+					}
+				}
+				golden_highway_rahen_coast = {
+					type = all
+					OR = {
+						country_or_non_sovereign_subject_holds = ROOT 
+						country_or_non_sovereign_subject_holds = R38
+					}
+				}
+			}
+			else = {
+				golden_highway_rahen_coast = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}	
+			}
+			if = {
+				limit = {
+					4871 = {
+						owned_by = ROOT
+						has_great_project = {
+							type = palace_of_divine_call
+							tier = 3
+						}
+					}
+				}
+				treasury = 1125
+				adm_power = 100
+			}
+			else = {
+				treasury = 2250
+				adm_power = 200
+			}
+		}
+	
+		effect = {
+			golden_highway_start_construction = { rahen_coast = yes }
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	rebuild_golden_highway_dhujat = {
+		major = yes
+	
+		potential = {
+			if = {
+				limit = { ai = yes }
+				owns = 4408
+			}
+			else = {
+				golden_highway_dhujat = {
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+			}
+			NOT = { has_global_flag = golden_highway_dhujat_started }
+			is_subject = no
+			NOT = { capital_scope = { has_province_modifier = rahen_corrupt_ministery_of_agriculture } }
+		}
+		
+		provinces_to_highlight = {
+			province_group = golden_highway_dhujat
+		}
+		
+		allow = {
+			if = {
+				limit = { ai = yes }
+				owns = 4408
+			}
+			golden_highway_dhujat = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			if = {
+				limit = {
+					4871 = {
+						owned_by = ROOT
+						has_great_project = {
+							type = palace_of_divine_call
+							tier = 3
+						}
+					}
+				}
+				treasury = 525
+				adm_power = 100
+			}
+			else = {
+				treasury = 1050
+				adm_power = 200
+			}
+		}
+	
+		effect = {
+			golden_highway_start_construction = { dhujat = yes }
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	rebuild_golden_highway_xianjie = {
+		major = yes
+	
+		potential = {
+			if = {
+				limit = { ai = yes }
+				owns = 4470
+			}
+			else_if = { #tried to make as performant as possible
+				limit = { has_country_flag = Y26_xianjie_highway_repair } 
+			}
+			else = {
+				golden_highway_xianjie = {
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+			}
+			NOT = { has_global_flag = golden_highway_xianjie_started }
+			is_subject = no
+			NOT = { capital_scope = { has_province_modifier = rahen_corrupt_ministery_of_agriculture } }
+		}
+		
+		provinces_to_highlight = {
+			province_group = golden_highway_xianjie
+		}
+		
+		allow = {
+			if = {
+				limit = { ai = yes }
+				owns = 4470
+			}
+			if = {
+				limit = { has_country_flag = Y26_xianjie_highway_repair }
+				golden_highway_xianjie = {
+					type = all
+					OR = {
+						country_or_non_sovereign_subject_holds = ROOT
+						owner = {
+							OR = {
+								alliance_with = Y26
+								overlord = {
+									alliance_with = Y26
+								}
+							}
+						}
+					}
+				}
+			}
+			else = {
+				golden_highway_xianjie = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+			}
+
+			if = {
+				limit = {
+					4871 = {
+						owned_by = ROOT
+						has_great_project = {
+							type = palace_of_divine_call
+							tier = 3
+						}
+					}
+				}
+				treasury = 1050
+				adm_power = 100
+			}
+			else = {
+				treasury = 2100
+				adm_power = 200
+			}
+		}
+	
+		effect = {
+			golden_highway_start_construction = { xianjie = yes }
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	rebuild_golden_highway_upper_yanshen = {
+		major = yes
+	
+		potential = {
+			if = {
+				limit = { ai = yes }
+				owns = 4826
+			}
+			else = {
+				golden_highway_upper_yanshen = {
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+			}
+			NOT = { has_global_flag = golden_highway_upper_yanshen_started }
+			is_subject = no
+			NOT = { capital_scope = { has_province_modifier = rahen_corrupt_ministery_of_agriculture } }
+		}
+		
+		provinces_to_highlight = {
+			province_group = golden_highway_upper_yanshen
+		}
+		
+		allow = {
+			if = {
+				limit = { ai = yes }
+				owns = 4826
+			}
+			golden_highway_upper_yanshen = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			if = {
+				limit = {
+					4871 = {
+						owned_by = ROOT
+						has_great_project = {
+							type = palace_of_divine_call
+							tier = 3
+						}
+					}
+				}
+				treasury = 725
+				adm_power = 100
+			}
+			else = {
+				treasury = 1500
+				adm_power = 200
+			}
+		}
+	
+		effect = {
+			golden_highway_start_construction = { upper_yanshen = yes }
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	rebuild_golden_highway_yanshen_coast = {
+		major = yes
+	
+		potential = {
+			if = {
+				limit = { ai = yes }
+				owns = 4873
+			}
+			else = {
+				golden_highway_yanshen_coast = {
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+			}
+			NOT = { has_global_flag = golden_highway_yanshen_coast_started }
+			is_subject = no
+			NOT = { capital_scope = { has_province_modifier = rahen_corrupt_ministery_of_agriculture } }
+		}
+		
+		provinces_to_highlight = {
+			province_group = golden_highway_yanshen_coast
+		}
+		
+		allow = {
+			if = {
+				limit = { ai = yes }
+				owns = 4873
+			}
+			golden_highway_yanshen_coast = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			if = {
+				limit = {
+					4871 = {
+						owned_by = ROOT
+						has_great_project = {
+							type = palace_of_divine_call
+							tier = 3
+						}
+					}
+				}
+				treasury = 450
+				adm_power = 100
+			}
+			else = {
+				treasury = 900
+				adm_power = 200
+			}
+		}
+	
+		effect = {
+			golden_highway_start_construction = { yanshen_coast = yes }
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	build_golden_highway_south_haless = { #Sunrise Empire exclusive
+		major = yes
+	
+		potential = {
+			tag = Y00 #Sunrise Empire
+			has_country_flag = azkare_south_haless_highway_flag
+			NOT = { has_global_flag = golden_highway_south_haless_started }
+			golden_highway_south_haless = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			is_subject = no
+		}
+		
+		provinces_to_highlight = {
+			province_group = golden_highway_south_haless
+		}	
+		
+		allow = {
+			golden_highway_south_haless = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			treasury = 3500
+			adm_power = 300
+		}
+	
+		effect = {
+			golden_highway_start_construction = { south_haless = yes }
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	build_golden_highway_shamakhad = { #Sunrise Empire exclusive
+		major = yes
+	
+		potential = {
+			tag = Y00 #Sunrise Empire
+			has_country_flag = azkare_shamakhad_highway_flag
+			NOT = { has_global_flag = golden_highway_shamakhad_started }
+			golden_highway_shamakhad = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			is_subject = no
+		}
+		
+		provinces_to_highlight = {
+			province_group = golden_highway_shamakhad
+		}	
+		
+		allow = {
+			golden_highway_shamakhad = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			treasury = 3500
+			adm_power = 300
+		}
+	
+		effect = {
+			golden_highway_start_construction = { shamakhad = yes }
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+}

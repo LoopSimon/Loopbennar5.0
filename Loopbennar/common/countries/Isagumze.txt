@@ -1,0 +1,146 @@
+#Country Name: Please see filename.
+
+graphical_culture = muslimgfx
+
+color = { 102  153  0 }
+
+
+
+historical_idea_groups = {
+	economic_ideas
+	offensive_ideas
+	exploration_ideas
+	defensive_ideas	
+	administrative_ideas	
+	maritime_ideas
+	quality_ideas
+	innovativeness_ideas
+}
+
+historical_units = {
+	west_sarhaly_1_massed_bowmen
+	west_sarhaly_1_mounted_slingers
+	west_sarhaly_5_horasheshi_hunters
+	west_sarhaly_6_donkey_chargers
+	west_sarhaly_9_isagumze_expeditionaries
+	west_sarhaly_10_cannorian_horse_riders
+	west_sarhaly_12_zuvavim_musketeers
+	west_sarhaly_14_skirmish_cavalry
+	west_sarhaly_15_vurebindu_volley
+	west_sarhaly_18_gun_riders
+	west_sarhaly_19_iqhekabi_gunners
+	west_sarhaly_23_kudemtu_grenadiers
+	west_sarhaly_23_wind_raiders
+	west_sarhaly_26_asigareg_regiments
+	west_sarhaly_28_fangaulan_dragoons
+	west_sarhaly_30_zuvunwa_professionals
+}
+
+monarch_names = {
+
+
+	#Generic Irsukuba Name List
+	"Andil #0" = 10
+	"Asanya #0" = 10
+	"Dubunya #0" = 10
+	"Fezile #0" = 10
+	"Fumanekilnya #0" = 10
+	"Jonginyanasi #0" = 10
+	"Lelethu #0" = 10
+	"Lindisizye #0" = 10
+	"Lizo #0" = 10
+	"Lyanyando #0" = 10
+	"Masibulele #0" = 10
+	"Mkumo #0" = 10
+	"Mpenyadulo #0" = 10
+	"Mxolisi #0" = 10
+	"Mzikisa #0" = 10
+	"Nyadumo #0" = 10
+	"Nyadwa #0" = 10
+	"Nyanaokeli #0" = 10
+	"Nyando #0" = 10
+	"Nyasidima #0" = 10
+	"Qaqanyana #0" = 10
+	"Sicelo #0" = 10
+	"Sidanyana #0" = 10
+	"Swazinya #0" = 10
+	"Tembinyakosi #0" = 10
+	"Vunyani #0" = 10
+	"Xolanya #0" = 10
+	"Zamilye #0" = 10
+	"Zilinde #0" = 10
+	"Zukidani #0" = 10
+	
+	
+	"Ananto #0" = -1
+	"Antodiswa #0" = -1
+	"Aviye #0" = -1
+	"Bukelwa #0" = -1
+	"Busye #0" = -1
+	"Faniswa #0" = -1
+	"Khuntohala #0" = -1
+	"Luntoka #0" = -1
+	"Masibulele #0" = -1
+	"Mazimasinto #0" = -1
+	"Nesiye #0" = -1
+	"Ntoba #0" = -1
+	"Ntobakuqala #0" = -1
+	"Ntobanba #0" = -1
+	"Ntohulisa #0" = -1
+	"Ntomsa #0" = -1
+	"Ntonda #0" = -1
+	"Ntonkonsa #0" = -1
+	"Ntonsikelelo #0" = -1
+	"Ntoxolo #0" = -1
+	"Onele #0" = -1
+	"Phantoka #0" = -1
+	"Phelisa #0" = -1
+	"Phumelele #0" = -1
+	"Sesethu #0" = -1
+	"Siphosentoba #0" = -1
+	"Wazini #0" = -1
+	"Xolisanto #0" = -1
+	"Zintole #0" = -1
+	"Ziyanto #0" = -1
+	
+}
+
+leader_names = {
+	
+	#Province Neighbours
+	"!Xe Nyokyora" "!Xe Ikilshe Umda" "!Xe Drak" "!Xe Golonela" "!Xe Atambe" "!Xe Bomabi"
+	"!Xe Shen Yunas" "!Xe Japerasi" "!Xe Sosikil" "!Xe Axat" "!Xe Kaa Hava"
+	
+	#Country Neighbours
+	"!Xe Saqraxat" "!Xe Kulugiash" "!Xe Iqhekabi" "!Xe Imbushid" "!Xe Isagumze"
+	
+	#Geographic Neighbours
+	"!Xe Imivana" "!Xe Tabbanor" "!Xe Lubinga" "!Xe Ahw Ssap" "!Xe Samspar" "!Xe Lath Kungaff"
+	
+	#Noble Families
+	"!Xe Fauye" "!Xe Gonye" "!Xe Ikilshemtu" "!Xe Ililawuli" "!Xe Intef"
+	"!Xe Iqhusye" "!Xe Jongye" "!Xe Kulugiash" "!Xe Kwamtu" "!Xe Mabohab"
+	"!Xe Malawu" "!Xe Moxilisi" "!Xe Nagika" "!Xe Rabarye" "!Xe Sandil"
+	"!Xe Vamadumo" "!Xe Velal" "!Xe Ahlangenye" "!Xe Bira" "!Xe Galeka" "!Xe Genkumbiye"
+	"!Xe Goxilizye" "!Xe Hinsat" "!Xe Kawuta" "!Xe Mendulo"
+	"!Xe Nangombala" "!Xe Ndarumo" "!Xe Sarhila" "!Xe Sigimtu" "!Xe Vulikye"
+	"!Xe Zelonkye" "!Xe Zwelidumtu" "!Xe Alangba" "!Xe Condye" "!Xe Katashye"
+	"!Xe Malangana" "!Xe Meguni" "!Xe Nawangu" "!Xe Nosiyamtu"
+	"!Xe Nosiyane" "!Xe Tishwo" "!Xe Togu" "!Xe Wangunagye"
+}
+
+ship_names = {
+	#Generic Irsukuba
+	Abi Bebedu Bivu Bom Gumze Gush Hikuba
+	Iash Ifu Iindumo Ikilshe Ili Imisak Irhis
+	Kudatam Kungaff Kyoraze Lawuli Luba
+	Mdal Nyoka Nyulu Porho Tonga Ulwankom Umtsha
+}
+
+army_names = {
+	"Umkhosi Imikhonto" "Umkhosi Amakrele" "Umkhosi Amakhaka" "Umkhosi !Xe $PROVINCE$"
+}
+
+fleet_names = {
+	"Izithuthi Itye" "Izithuthi Isibhakabhaka" "Izithuthi Ulwandle"
+}

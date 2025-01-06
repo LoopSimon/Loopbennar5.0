@@ -1,0 +1,18 @@
+
+# No previous file for Colltinn
+owner = H06
+controller = H06
+add_core = H06
+add_core = U40
+culture = peitar
+religion = eordellon
+capital = "Colltinn"
+
+hre = no
+
+base_tax = 1
+base_production = 1
+base_manpower = 1
+
+trade_goods = naval_supplies
+

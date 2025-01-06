@@ -1,0 +1,44 @@
+
+setup_vision = yes
+government = tribal
+add_government_reform = graytide_horde
+government_rank = 1
+primary_culture = gray_orc
+religion = old_dookan
+technology_group = tech_orcish
+national_focus = MIL
+historical_friend = Z47
+historical_rival = Z18
+capital = 989
+
+1000.1.1 = { set_estate_privilege = estate_mages_organization_guilds }
+
+1437.1.7 = {
+	monarch = {
+		name = "Jayuk"
+		dynasty = "Broken Jaw"
+		birth_date = 1427.2.19
+		adm = 5
+		dip = 2
+		mil = 1
+	}
+	add_ruler_personality = righteous_personality
+	set_ruler_flag = jayuk_is_alive
+}
+
+1444.1.1 = {
+	add_favors = {
+		who = Z47
+		amount = 10
+	}
+}
+
+1444.10.1 = {
+	define_general = {
+		name = "Orak Snowrunner"
+		fire = 1
+		shock = 2
+		manuever = 5
+		siege = 1
+	}
+}

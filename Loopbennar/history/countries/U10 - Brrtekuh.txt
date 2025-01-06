@@ -1,0 +1,28 @@
+# 
+setup_vision = yes
+government = tribal
+add_government_reform = gnoll_pack
+government_rank = 1
+primary_culture = windhowler_gnoll
+religion = kvangahga
+religious_school = way_of_bones_tradition
+technology_group = tech_gnollish
+
+capital = 459
+
+historical_rival = F69 #Irkorzik
+historical_friend = U07 #Viakkoc
+1000.1.1 = { set_estate_privilege = estate_mages_organization_guilds }
+
+1439.2.1 = {
+	monarch = {
+		name = "Brrtekuh"
+		dynasty = "Splitter-of-Sands"
+		birth_date = 1412.9.7
+		adm = 0
+		dip = 0
+		mil = 0
+		female = yes
+	}
+	set_country_flag  = in_khet_civil_war
+}

@@ -1,0 +1,295 @@
+
+namespace = escann_intro
+
+#Sword Covenant intro
+country_event = {
+	id = escann_intro.1
+	title = escann_intro.1.t
+	desc = escann_intro.1.d
+	picture = LIBERUM_VETO_eventPicture
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = {
+			is_year = 1445
+		}
+		tag = B19
+	}
+	
+	option = {
+		name = escann_intro.1.a
+		ai_chance = { factor = 1 }
+		add_historical_rival = A77
+	}
+}
+
+#House of Riches intro
+country_event = {
+	id = escann_intro.2
+	title = escann_intro.2.t
+	desc = escann_intro.2.d
+	picture = LIBERUM_VETO_eventPicture
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = {
+			is_year = 1445
+		}
+		tag = B09
+	}
+	
+	option = {
+		name = escann_intro.2.a
+		ai_chance = { factor = 1 }
+		remove_ruler_personality = embezzler_personality
+		add_ruler_personality = zealot_personality
+	}
+}
+
+#Anbenncost Expedition intro
+country_event = {
+	id = escann_intro.3
+	title = escann_intro.3.t
+	desc = escann_intro.3.d
+	picture = LAND_MILITARY_eventPicture
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = {
+			is_year = 1445
+		}
+		tag = B16
+	}
+
+	option = {
+		name = escann_intro.3.a
+		ai_chance = { factor = 1 }
+		custom_tooltip = escann_intro_3_tt
+	}
+}
+
+#Order of the Iron Scepter Intro
+country_event = {
+	id = escann_intro.4
+	title = escann_intro.4.t
+	desc = escann_intro.4.d
+	picture = COMET_SIGHTED_eventPicture
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = {
+			is_year = 1445
+		}
+		tag = B20
+	}
+
+	option = {
+		name = escann_intro.4.a
+		ai_chance = { 
+			factor = 1 
+		}
+		add_historical_rival = A85
+		create_war_wizard_effect = yes
+	}
+}
+
+#Raven Banner Intro
+country_event = {
+	id = escann_intro.5
+	title = escann_intro.5.t
+	desc = escann_intro.5.d
+	picture = {
+		trigger = {
+			NOT = { has_dlc = "Rights of Man" }
+		}
+		picture = HORDE_ON_HORSEBACK_eventPicture
+	}
+	picture = {
+		trigger = {
+			has_dlc = "Purple Phoenix"
+		}
+		picture = BYZ_REVOLUTION_eventPicture
+	}
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = {
+			is_year = 1445
+		}
+		tag = B14
+	}
+
+	option = {		
+		name = "escann_intro.5.a"
+		ai_chance = {
+			factor = 1
+		}
+		define_advisor = {
+			type = commandant 
+			name = "Ollore Dreadmire"
+			skill = 1
+			cost_multiplier = 0.25
+			culture = corvurian
+			religion = regent_court 
+			age = 36
+		}
+	}	
+}
+
+#Brave Brothers intro
+country_event = {
+	id = escann_intro.6
+	title = escann_intro.6.t
+	desc = escann_intro.6.d
+	picture = LIBERUM_VETO_eventPicture
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = {
+			is_year = 1445
+		}
+		tag = B12
+	}
+	
+	option = {
+		name = escann_intro.6.a
+		ai_chance = { factor = 1 }
+		add_opinion = {
+			who = A33
+			modifier = siadan_mortal_enemy
+		}
+		reverse_add_opinion = {
+			who = A33
+			modifier = siadan_mortal_enemy
+		}
+		add_opinion = {
+			who = A29
+			modifier = siadan_mortal_enemy
+		}
+		reverse_add_opinion = {
+			who = A29
+			modifier = siadan_mortal_enemy
+		}
+		add_government_power = {
+			mechanic_type = anb_adventurer_unity
+			power_type = adventurer_unity
+			value = 5
+		}
+		define_ruler_to_general = {
+			fire = 2
+			shock = 4
+			manuever = 3
+			siege = 0
+		}
+		define_heir_to_general = {
+			fire = 2
+			shock = 3
+			manuever = 2
+			siege = 2
+		}
+	}
+}
+
+#New Wanderers intro
+country_event = {
+	id = escann_intro.7
+	title = escann_intro.7.t
+	desc = escann_intro.7.d
+	picture = DEBATE_REPUBLICAN_eventPicture
+	
+	fire_only_once = yes	
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = {
+			is_year = 1445
+		}
+		tag = B15
+	}
+	
+	option = {
+		name = escann_intro.7.a
+		ai_chance = { factor = 0.5 }
+		add_government_power = {
+			mechanic_type = anb_adventurer_unity
+			power_type = adventurer_unity
+			value = 10
+		}
+	}
+	option = {
+		name = escann_intro.7.b
+		ai_chance = { factor = 0.5 }
+		add_government_power = {
+			mechanic_type = anb_adventurer_unity
+			power_type = adventurer_unity
+			value = 20
+			}
+			add_dip_power = -50
+	} 
+}
+
+#Ashen Rose Intro
+country_event = {
+	id = escann_intro.8
+	title = escann_intro.8.t
+	desc = escann_intro.8.d
+	picture = {
+		trigger = {
+			NOT = { has_dlc = "Lions of the North" }
+		}
+		picture = LAND_MILITARY_eventPicture
+	}
+	picture = {
+		trigger = {
+			has_dlc = "Lions of the North"
+		}
+		picture = KNIGHTS_eventPicture
+	}
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { is_year = 1445 }
+		tag = B04
+	}
+
+	option = {
+		name = escann_intro.8.a
+	
+		reverse_add_opinion = {
+			who = A15
+			modifier = siadan_mortal_enemy
+		}
+		add_opinion = {
+			who = A15
+			modifier = siadan_mortal_enemy
+		}
+		add_government_power = {
+			mechanic_type = anb_adventurer_unity
+			power_type = adventurer_unity
+			value = 10
+		}
+		capital_scope = {
+			add_unit_construction = {
+				type = cavalry
+				amount = 2
+				speed = 0 
+				cost = 0
+			}
+		}
+		custom_tooltip = escann_intro.8.tt
+	}
+}

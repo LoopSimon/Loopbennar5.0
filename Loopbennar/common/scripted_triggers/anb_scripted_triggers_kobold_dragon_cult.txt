@@ -1,0 +1,89 @@
+has_unlocked_kobold_cult_for_color_slot_upgrade = {
+	has_country_flag = unlocked_$COLOUR$_dragon_$SLOT$_$UPGRADE$
+}
+
+can_unlock_kobold_cult_for_color_slot_upgrade = {
+	OR = {
+		has_church_aspect = $COLOUR$_dragon_1_base
+		has_church_aspect = $COLOUR$_dragon_1_upgraded
+	}
+	NOT = {
+		has_unlocked_kobold_cult_for_color_slot_upgrade = {
+			COLOUR = $COLOUR$
+			SLOT = $SLOT$
+			UPGRADE = $UPGRADE$
+		}
+	}
+	[[requirebasic]
+	has_unlocked_kobold_cult_for_color_slot_upgrade = {
+		COLOUR = $COLOUR$
+		SLOT = 2
+		UPGRADE = base
+	}
+	has_unlocked_kobold_cult_for_color_slot_upgrade = {
+		COLOUR = $COLOUR$
+		SLOT = 3
+		UPGRADE = base
+	}
+	]
+}
+
+silver_dragon_upgrade_trigger = {
+	calc_true_if = {
+		amount = $AMOUNT$
+		[[castonathspecial]
+			OR = {
+				owns_or_subject_of = 833
+				any_ally = { owns = 833 }
+			}
+		]
+		OR = {
+			owns_or_subject_of = 4
+			any_ally = { owns = 4 }
+		}					
+		OR = {
+			owns_or_subject_of = 82
+			any_ally = { owns = 82 }
+		}
+		OR = {
+			owns_or_subject_of = 249
+			any_ally = { owns = 249 }
+		}
+		OR = {
+			owns_or_subject_of = 151
+			any_ally = { owns = 151 }
+		}
+		OR = {
+			owns_or_subject_of = 97
+			any_ally = { owns = 97 }
+		}
+		OR = {
+			owns_or_subject_of = 227
+			any_ally = { owns = 227 }
+		}
+		OR = {
+			owns_or_subject_of = 266
+			any_ally = { owns = 266 }
+		}
+		OR = {
+			owns_or_subject_of = 265
+			any_ally = { owns = 265 }
+		}
+		OR = {
+			owns_or_subject_of = 332
+			any_ally = { owns = 332 }
+		}
+		OR = {
+			owns_or_subject_of = 52
+			any_ally = { owns = 52 }
+		}
+		OR = {
+			owns_or_subject_of = 451
+			any_ally = { owns = 451 }
+		}
+		OR = {
+			owns_or_subject_of = 308
+			any_ally = { owns = 308 }
+		}
+	}
+}

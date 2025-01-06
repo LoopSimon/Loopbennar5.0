@@ -1,0 +1,3718 @@
+
+namespace = aelantirspawnables
+
+#Gommoport - Haraf
+province_event = {
+	id = aelantirspawnables.1
+	title = aelantirspawnables.1.t
+	desc = aelantirspawnables.1.d
+	picture = CARIBBEAN_PIRATE_FORT_eventPicture
+	goto = spawn_province
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		has_global_flag = new_world_discovered
+		#is_year = 1520
+		NOT = { has_global_flag = delete_north_aelantir_region }
+		OR = {
+			gommiochand_area = {
+				is_empty = yes
+				
+				#has_discovered = ROOT
+				
+				has_empty_adjacent_province = yes
+			}
+			drabs_cambann_area = {
+				is_empty = yes
+				
+				#has_discovered = ROOT
+				
+				has_empty_adjacent_province = yes
+			}
+		}
+	}
+	
+	immediate = {
+		
+		hidden_effect = {
+			
+			random_province = {
+				limit = {
+					area = drabs_cambann_area
+					is_empty = yes
+					
+					has_empty_adjacent_province = yes
+					
+				}
+				
+				save_event_target_as = spawn_province
+			}
+			
+			random_province = {
+				limit = {
+					area = gommiochand_area
+					is_empty = yes
+					
+					has_empty_adjacent_province = yes
+					
+				}
+				
+				save_event_target_as = spawn_province
+			}
+			
+			random_province = {
+				limit = {
+					area = drabs_cambann_area
+					is_empty = yes
+					
+					has_empty_adjacent_province = yes
+					
+					has_port = yes
+				}
+				
+				save_event_target_as = spawn_province
+			}		
+			
+			random_province = {
+				limit = {
+					area = gommiochand_area
+					is_empty = yes
+					
+					has_empty_adjacent_province = yes
+					
+					has_port = yes
+				}
+				
+				save_event_target_as = spawn_province
+			}		
+
+			random_province = {
+				limit = {
+					province_id = 2088 #Tolalkal
+					is_empty = yes
+					
+					has_empty_adjacent_province = yes
+				}
+				
+				save_event_target_as = spawn_province
+			}
+			
+		}
+	}
+	
+	option = {
+		name = aelantirspawnables.1.a
+		
+		H30 = {
+			event_target:spawn_province = {
+				create_colony = 1000
+				add_core = H30
+			}
+		}
+		
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = { event_target:spawn_province = { province_id = 2088 } }
+					2088 = { owner = { culture_is_ruinborn = yes } }
+				}
+				2088 = { save_event_target_as = nativebuy_prov }
+				H30 = {
+					country_event = { 
+						id = nativebuyout.1
+						days = 10
+					}
+				}
+			}
+			H30 = {
+				country_event = {
+					id = anb_miscevents.7
+					days = 7
+				}
+				define_ruler = {#Tayekan in disguise
+					name = "Fizwick Coddorran"
+					adm = 4
+					dip = 5
+					mil = 4
+					age = 131
+					claim = 95
+					culture = cliff_gnome
+				}
+				set_ruler_flag = long_lived_ruler
+				add_ruler_personality = obsessive_perfectionist_personality
+				add_ruler_personality = well_connected_personality
+				add_harmonized_religion = regent_court
+
+				country_event = { id = anb_miscevents.22 } # new country setup
+			}
+		}
+		
+		owner = {
+			adventurer_spawnable_starting_bonus = { tag = H30 }
+		}
+	}
+	
+	option = { # play as the settlers
+		name = aelantirspawnables.1.b
+		H30 = {
+			event_target:spawn_province = {
+				create_colony = 1000
+				add_core = H30
+			}
+		}
+		
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = { event_target:spawn_province = { province_id = 2088 } }
+					2088 = { owner = { culture_is_ruinborn = yes } }
+				}
+				2088 = { save_event_target_as = nativebuy_prov }
+				H30 = {
+					country_event = { 
+						id = nativebuyout.1
+						days = 10
+					}
+				}
+			}
+			H30 = {
+				country_event = { 
+					id = anb_miscevents.7
+					days = 7
+				}
+				define_ruler = { #Tayekan in disguise
+					name = "Fizwick Coddorran"
+					adm = 4
+					dip = 5
+					mil = 4
+					age = 131
+					claim = 95
+					culture = cliff_gnome
+				}
+				set_ruler_flag = long_lived_ruler
+				add_ruler_personality = obsessive_perfectionist_personality
+				add_ruler_personality = well_connected_personality
+				add_harmonized_religion = regent_court
+
+				country_event = { id = anb_miscevents.22 } # new country setup
+			}
+		}
+		
+		owner = { 
+			adventurer_spawnable_starting_bonus = { tag = H30 }
+			switch_tag = H30
+		}
+	}
+	
+	after = { 
+		hidden_effect = { owner = { country_event = { id = anb_price.53 days = 105 } } }
+	}
+
+
+}
+
+#Zurzumexia - Haraf
+province_event = {
+	id = aelantirspawnables.2
+	title = aelantirspawnables.2.t
+	desc = aelantirspawnables.2.d
+	picture = CARIBBEAN_PIRATE_FORT_eventPicture
+	goto = spawn_province
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		has_global_flag = new_world_discovered
+		#is_year = 1520
+		NOT = { has_global_flag = delete_north_aelantir_region }
+		OR = {
+			zurzumexia_area = {
+				is_empty = yes
+				
+				#has_discovered = ROOT
+				
+				has_empty_adjacent_province = yes
+			}
+			pontuzex_area = {
+				is_empty = yes
+				
+				#has_discovered = ROOT
+				
+				has_empty_adjacent_province = yes
+			}
+		}
+	}
+	
+	immediate = {
+	
+		hidden_effect = {
+		
+			random_province = {
+				limit = {
+					area = pontuzex_area
+					is_empty = yes
+					
+					has_empty_adjacent_province = yes
+					
+				}
+				
+				save_event_target_as = spawn_province
+			}
+		
+			random_province = {
+				limit = {
+					area = zurzumexia_area
+					is_empty = yes
+					
+					has_empty_adjacent_province = yes
+					
+				}
+				
+				save_event_target_as = spawn_province
+			}
+			
+			random_province = {
+				limit = {
+					area = pontuzex_area
+					is_empty = yes
+					
+					has_empty_adjacent_province = yes
+					
+					has_port = yes
+				}
+				
+				save_event_target_as = spawn_province
+			}	
+			
+			random_province = {
+				limit = {
+					area = zurzumexia_area
+					is_empty = yes
+					
+					has_empty_adjacent_province = yes
+					
+					has_port = yes
+				}
+				
+				save_event_target_as = spawn_province
+			}		
+
+			random_province = {
+				limit = {
+					province_id = 2078 #L?embalkal
+					is_empty = yes
+					
+					has_empty_adjacent_province = yes
+				}
+				
+				save_event_target_as = spawn_province
+			}
+			
+		}
+	}
+	
+	option = {
+		name = aelantirspawnables.1.a
+		
+		H31 = {
+			event_target:spawn_province = {
+				create_colony = 1000
+				add_core = H31
+			}
+		}
+	
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = { event_target:spawn_province = { province_id = 2078 } }
+					2078 = { owner = { culture_is_ruinborn = yes } }
+				}
+				2078 = { save_event_target_as = nativebuy_prov }
+				H31 = {
+					country_event = { 
+						id = nativebuyout.1
+						days = 10
+					}				
+				}
+			}
+			H31 = {
+				country_event = {
+					id = anb_miscevents.7
+					days = 7
+				}
+				define_ruler = {
+					name = "Zurzumex Wentwest"
+					adm = 2
+					dip = 4
+					mil = 3
+					age = 35
+					claim = 95
+					culture = bluescale_kobold
+				}
+				add_ruler_personality = scholar_personality
+				add_ruler_personality = naive_personality
+				set_country_flag = semi_monstrous
+				add_harmonized_religion = kobold_dragon_cult
+
+				country_event = { id = anb_miscevents.22 } # new country setup
+			}
+		}
+		
+		owner = {
+			adventurer_spawnable_starting_bonus = { tag = H31 }
+		}
+	}
+	
+	option = { # play as the settlers
+		name = aelantirspawnables.1.b
+		H31 = {
+			event_target:spawn_province = {
+				create_colony = 1000
+				add_core = H31
+			}
+		}
+		
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = { event_target:spawn_province = { province_id = 2078 } }
+					2078 = { owner = { culture_is_ruinborn = yes } }
+				}
+				2078 = { save_event_target_as = nativebuy_prov }
+				H31 = {
+					country_event = { 
+						id = nativebuyout.1
+						days = 10
+					}
+				}
+			}
+			H31 = {
+				country_event = { 
+					id = anb_miscevents.7
+					days = 7
+				}
+				define_ruler = {
+					name = "Zurzumex Wentwest"
+					adm = 2
+					dip = 4
+					mil = 3
+					age = 35
+					claim = 95
+					culture = bluescale_kobold
+				}
+				add_ruler_personality = scholar_personality
+				add_ruler_personality = naive_personality
+				set_country_flag = semi_monstrous
+				add_harmonized_religion = kobold_dragon_cult
+
+				country_event = { id = anb_miscevents.22 } # new country setup
+			}
+		}
+		
+		owner = { 
+			adventurer_spawnable_starting_bonus = { tag = H31 }
+			switch_tag = H31
+		}
+	}
+	
+	after = { 
+		hidden_effect = { owner = { country_event = { id = anb_price.53 days = 105 } } }
+	}
+
+}
+
+
+#Mestikardu - Haraf
+province_event = {
+	id = aelantirspawnables.3
+	title = aelantirspawnables.3.t
+	desc = aelantirspawnables.3.d
+	picture = CARIBBEAN_PIRATE_FORT_eventPicture
+	goto = spawn_province
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		has_global_flag = new_world_discovered
+		#is_year = 1520
+		NOT = { has_global_flag = delete_north_aelantir_region }
+		OR = {
+			mestikardu_area = {
+				is_empty = yes
+				
+				#has_discovered = ROOT
+				
+				has_empty_adjacent_province = yes
+			}
+			taldoud_kaysa_area = {
+				is_empty = yes
+				
+				#has_discovered = ROOT
+				
+				has_empty_adjacent_province = yes
+			}
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_province = {
+				limit = {
+					area = taldoud_kaysa_area
+					is_empty = yes
+					
+					has_empty_adjacent_province = yes
+					
+				}
+				
+				save_event_target_as = spawn_province
+			}
+			
+			random_province = {
+				limit = {
+					area = mestikardu_area
+					is_empty = yes
+					
+					has_empty_adjacent_province = yes
+					
+				}
+				
+				save_event_target_as = spawn_province
+			}
+			
+			random_province = {
+				limit = {
+					area = taldoud_kaysa_area
+					is_empty = yes
+					
+					has_empty_adjacent_province = yes
+					
+					has_port = yes
+				}
+				
+				save_event_target_as = spawn_province
+			}	
+			
+			random_province = {
+				limit = {
+					area = mestikardu_area
+					is_empty = yes
+					
+					has_empty_adjacent_province = yes
+					
+					has_port = yes
+				}
+				
+				save_event_target_as = spawn_province
+			}		
+
+			random_province = {
+				limit = {
+					province_id = 2083 #K'il'uiolob
+					is_empty = yes
+					
+					has_empty_adjacent_province = yes
+				}
+				
+				save_event_target_as = spawn_province
+			}
+		}
+	}
+	
+	option = {
+		name = aelantirspawnables.1.a 
+		
+		H32 = {
+			event_target:spawn_province = {
+				create_colony = 1000
+				add_core = H32
+			}
+		}
+		
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = { event_target:spawn_province = { province_id = 2083 } }
+					2083 = { owner = { culture_is_ruinborn = yes } }
+				}
+				2083 = { save_event_target_as = nativebuy_prov }
+				H32 = {
+					country_event = { 
+						id = nativebuyout.1
+						days = 10
+					}
+				}
+			}
+			H32 = {
+				country_event = { 
+					id = anb_miscevents.7
+					days = 7
+				}
+				define_ruler = {
+					name = "Minxi 'Big M' Gearbrain"
+					adm = 5
+					dip = 3
+					mil = 4
+					age = 39
+					claim = 95
+					culture = city_goblin
+					female = yes
+				}
+				add_ruler_personality = industrious_personality
+				add_ruler_personality = embezzler_personality
+				set_country_flag = semi_monstrous
+				add_harmonized_religion = goblinic_shamanism
+
+				country_event = { id = anb_miscevents.22 } # new country setup
+			}
+		}
+		
+		owner = {
+			adventurer_spawnable_starting_bonus = { tag = H32 }
+		}
+	}
+	
+	option = { # play as the settlers
+		name = aelantirspawnables.1.b
+		H32 = {
+			event_target:spawn_province = {
+				create_colony = 1000
+				add_core = H32
+			}
+		}
+		
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = { event_target:spawn_province = { province_id = 2083 } }
+					2083 = { owner = { culture_is_ruinborn = yes } }
+				}
+				2083 = { save_event_target_as = nativebuy_prov }
+				H32 = {
+					country_event = { 
+						id = nativebuyout.1
+						days = 10
+					}
+				}
+			}
+			H32 = {
+				country_event = { 
+					id = anb_miscevents.7
+					days = 7
+				}
+				define_ruler = {
+					name = "Minxi 'Big M' Gearbrain"
+					adm = 5
+					dip = 3
+					mil = 4
+					age = 39
+					claim = 95
+					culture = city_goblin
+					female = yes
+				}
+				add_ruler_personality = industrious_personality
+				add_ruler_personality = embezzler_personality
+				set_country_flag = semi_monstrous
+				add_harmonized_religion = goblinic_shamanism
+
+				country_event = { id = anb_miscevents.22 } # new country setup
+			}
+		}
+		
+		owner = { 
+			adventurer_spawnable_starting_bonus = { tag = H32 }
+			switch_tag = H32
+		}
+	}
+	
+	after = { 
+		hidden_effect = { owner = { country_event = { id = anb_price.53 days = 105 } } }
+	}
+
+}
+
+
+
+#Cestirmark - Trollsbay
+province_event = {
+	id = aelantirspawnables.4
+	title = aelantirspawnables.4.t
+	desc = aelantirspawnables.4.d
+	picture = CARIBBEAN_PIRATE_FORT_eventPicture
+	goto = spawn_province
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_global_flag = new_world_discovered
+		#is_year = 1500
+		NOT = { has_global_flag = delete_north_aelantir_region }
+		OR = {
+			cestirmark_area = {
+				is_empty = yes
+				
+				#has_discovered = ROOT
+				
+				has_empty_adjacent_province = yes
+			}
+			vincenton_area = {
+				is_empty = yes
+				
+				#has_discovered = ROOT
+				
+				has_empty_adjacent_province = yes
+			}
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_province = {
+				limit = {
+					area = vincenton_area
+					is_empty = yes
+					
+					has_empty_adjacent_province = yes
+					
+				}
+				
+				save_event_target_as = spawn_province
+			}
+			
+			random_province = {
+				limit = {
+					area = cestirmark_area
+					is_empty = yes
+					
+					has_empty_adjacent_province = yes
+					
+				}
+				
+				save_event_target_as = spawn_province
+			}
+			
+			random_province = {
+				limit = {
+					area = vincenton_area
+					is_empty = yes
+					
+					has_empty_adjacent_province = yes
+					
+					has_port = yes
+				}
+				
+				save_event_target_as = spawn_province
+			}
+			
+			random_province = {
+				limit = {
+					area = cestirmark_area
+					is_empty = yes
+					
+					has_empty_adjacent_province = yes
+					
+					has_port = yes
+				}
+				
+				save_event_target_as = spawn_province
+			}		
+
+			random_province = {
+				limit = {
+					province_id = 1871 #Arwuntira
+					is_empty = yes
+					
+					has_empty_adjacent_province = yes
+				}
+				
+				save_event_target_as = spawn_province
+			}
+		}
+	}
+	
+	option = {
+		name = aelantirspawnables.1.a 
+		
+		H33 = {
+			event_target:spawn_province = {
+				create_colony = 1000
+				add_core = H33
+			}
+		}
+		
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = { event_target:spawn_province = { province_id = 1871 } }
+					1871 = { owner = { culture_is_ruinborn = yes } }
+				}
+				1871 = { save_event_target_as = nativebuy_prov }
+				H33 = {
+					country_event = { 
+						id = nativebuyout.1
+						days = 10
+					}
+				}
+			}
+			H33 = {
+				country_event = { 
+					id = anb_miscevents.7
+					days = 7
+				}
+				define_ruler = {
+					name = "Varil sína Cymainé"
+					adm = 6
+					dip = 3
+					mil = 0
+					age = 34
+					claim = 95
+					culture = east_damerian
+				}
+				add_ruler_personality = free_thinker_personality
+
+				if = {
+					limit = { 327 = { culture = pashainey } }
+					change_primary_culture = pashainey
+					capital_scope = { change_culture = pashainey }
+					set_ruler_culture = pashainey
+				}
+
+				country_event = { id = anb_miscevents.22 } # new country setup
+			}
+		}
+		
+		owner = {
+			adventurer_spawnable_starting_bonus = { tag = H33 }
+		}
+	}
+	
+	option = { # play as the settlers
+		name = aelantirspawnables.1.b
+		H33 = {
+			event_target:spawn_province = {
+				create_colony = 1000
+				add_core = H33
+			}
+		}
+		
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = { event_target:spawn_province = { province_id = 1871 } }
+					1871 = { owner = { culture_is_ruinborn = yes } }
+				}
+				1871 = { save_event_target_as = nativebuy_prov }
+				H33 = {
+					country_event = { 
+						id = nativebuyout.1
+						days = 10
+					}
+				}
+			}
+			H33 = {
+				country_event = { 
+					id = anb_miscevents.7
+					days = 7
+				}
+				define_ruler = {
+					name = "Varil sína Cymainé"
+					adm = 6
+					dip = 3
+					mil = 0
+					age = 34
+					claim = 95
+					culture = east_damerian
+				}
+				add_ruler_personality = free_thinker_personality
+
+				if = {
+					limit = { 327 = { culture = pashainey } }
+					change_primary_culture = pashainey
+					capital_scope = { change_culture = pashainey }
+					set_ruler_culture = pashainey
+				}
+
+				country_event = { id = anb_miscevents.22 } # new country setup
+			}
+		}
+		
+		owner = { 
+			adventurer_spawnable_starting_bonus = { tag = H33 }
+			switch_tag = H33
+		}
+	}
+	
+	after = { 
+		hidden_effect = { owner = { country_event = { id = anb_price.53 days = 105 } } }
+	}
+}
+
+#Ebenmas - Ynn West
+province_event = {
+	id = aelantirspawnables.5
+	title = aelantirspawnables.5.t
+	desc = aelantirspawnables.5.d
+	picture = CARIBBEAN_PIRATE_FORT_eventPicture
+	goto = spawn_province
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		has_global_flag = new_world_discovered
+		current_age = age_of_reformation
+		NOT = { has_global_flag = delete_north_aelantir_region }
+		ebenmas_area = {
+			is_empty = yes
+			
+			#has_discovered = ROOT
+			
+			has_empty_adjacent_province = yes
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_province = {
+				limit = {
+					region = epednan_expanse_region
+					is_empty = yes
+					
+					has_empty_adjacent_province = yes
+
+				}
+
+				save_event_target_as = spawn_province
+			}
+			random_province = {
+				limit = {
+					OR = { 
+						area = ebenmas_area
+						area = tukhpud_area
+						area = kehtauk_area
+						area = uruksokh_area
+						area = pomvasonn_area
+					}
+					NOT = { has_terrain = desert }
+					is_empty = yes
+					
+					has_empty_adjacent_province = yes
+					
+				}
+				
+				save_event_target_as = spawn_province
+			}	
+
+			random_province = {
+				limit = {
+					province_id = 1823 #Wunasdahna
+					is_empty = yes
+					
+					has_empty_adjacent_province = yes
+				}
+				
+				save_event_target_as = spawn_province
+			}
+		}
+	}
+	
+	option = {
+		name = aelantirspawnables.1.a 
+		
+		H34 = {
+			event_target:spawn_province = {
+				create_colony = 1000
+				add_core = H34
+			}
+		}
+		
+		hidden_effect = {
+			H34 = {
+				country_event = { 
+					id = anb_miscevents.7
+					days = 7
+				}
+				define_ruler = {
+					name = "Alain of the Ord"
+					adm = 2
+					dip = 3
+					mil = 5
+					age = 58
+					claim = 95
+					culture = low_lorentish
+				}
+				add_ruler_personality = righteous_personality
+				add_ruler_personality = expansionist_personality
+				add_ruler_personality = babbling_buffoon_personality
+
+				country_event = { id = anb_miscevents.22 } # new country setup
+			}
+
+			1133 = { owner = { country_event = { id = ynn_events.22 } } } #Cannorian traders in Adbrabohvi
+		}
+		
+		owner = {
+			adventurer_spawnable_starting_bonus = { tag = H34 }
+		}
+	}
+	
+	option = { # play as the settlers
+		name = aelantirspawnables.1.b
+		H34 = {
+			event_target:spawn_province = {
+				create_colony = 1000
+				add_core = H34
+			}
+		}
+		
+		hidden_effect = {
+			H34 = {
+				country_event = { 
+					id = anb_miscevents.7
+					days = 7
+				}
+				define_ruler = {
+					name = "Alain of the Ord"
+					adm = 2
+					dip = 3
+					mil = 5
+					age = 58
+					claim = 95
+					culture = low_lorentish
+				}
+				add_ruler_personality = righteous_personality
+				add_ruler_personality = expansionist_personality
+				add_ruler_personality = babbling_buffoon_personality
+
+				country_event = { id = anb_miscevents.22 } # new country setup
+			}
+
+			1133 = { owner = { country_event = { id = ynn_events.22 } } } #Cannorian traders in Adbrabohvi
+		}
+		
+		owner = { 
+			adventurer_spawnable_starting_bonus = { tag = H34 }
+			switch_tag = H34
+		}
+	}
+	
+	after = { 
+		hidden_effect = { owner = { country_event = { id = anb_price.53 days = 105 } } }
+	}
+}
+
+
+#Corinsfield - Ynn East
+province_event = {
+	id = aelantirspawnables.6
+	title = aelantirspawnables.6.t
+	desc = aelantirspawnables.6.d
+	picture = CARIBBEAN_PIRATE_FORT_eventPicture
+	goto = spawn_province
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		has_global_flag = new_world_discovered
+		current_age = age_of_reformation
+		is_religion_enabled = corinite
+		NOT = { has_global_flag = delete_north_aelantir_region }
+		corinsfield_area = {
+			is_empty = yes
+			
+			#has_discovered = ROOT
+			
+			has_empty_adjacent_province = yes
+		}
+	}
+
+	
+	immediate = {
+		hidden_effect = {
+			random_province = {
+				limit = {
+					OR = {
+						region = veykoda_region
+						province_group = sarda_eastern_lands
+					}
+					is_empty = yes
+					
+					has_empty_adjacent_province = yes
+					
+				}
+				
+				save_event_target_as = spawn_province
+			}
+			random_province = {
+				limit = {
+					OR = { 
+						area = corinsfield_area
+						area = aryamer_area
+						area = atarylnn_area
+						area = arverynn_area
+					}
+					NOT = { has_terrain = woods } #it's CorinsFIELD
+					is_empty = yes
+					
+					has_empty_adjacent_province = yes
+					
+				}
+				
+				save_event_target_as = spawn_province
+			}
+
+			random_province = {
+				limit = {
+					province_id = 2807 #Tuznviar
+					is_empty = yes
+					
+					has_empty_adjacent_province = yes
+				}
+				
+				save_event_target_as = spawn_province
+			}
+		}
+	}
+	
+	option = {
+		name = aelantirspawnables.1.a 
+		
+		H35 = {
+			event_target:spawn_province = {
+				create_colony = 1000
+				add_core = H35
+			}
+		}
+		
+		hidden_effect = {
+			H35 = {
+				country_event = { 
+					id = anb_miscevents.7
+					days = 7
+				}
+				define_ruler = {
+					name = "Godwin"
+					dynasty = "of Escerton"
+					adm = 4
+					dip = 5
+					mil = 2
+					age = 47
+					claim = 95
+					female = no
+				}
+
+				country_event = { id = anb_miscevents.22 } # new country setup
+			}
+
+			1133 = { owner = { country_event = { id = ynn_events.22 } } } #Cannorian traders in Adbrabohvi
+		}
+		
+		owner = {
+			adventurer_spawnable_starting_bonus = { tag = H35 }
+		}
+	}
+	
+	option = { # play as the settlers
+		name = aelantirspawnables.1.b
+		H35 = {
+			event_target:spawn_province = {
+				create_colony = 1000
+				add_core = H35
+			}
+		}
+		
+		hidden_effect = {
+			H35 = {
+				country_event = { 
+					id = anb_miscevents.7
+					days = 7
+				}
+				define_ruler = {
+					name = "Godwin"
+					dynasty = "of Escerton"
+					adm = 4
+					dip = 5
+					mil = 2
+					age = 47
+					claim = 95
+					female = no
+				}
+
+				country_event = { id = anb_miscevents.22 } # new country setup
+			}
+
+			1133 = { owner = { country_event = { id = ynn_events.22 } } } #Cannorian traders in Adbrabohvi
+		}
+		
+		owner = { 
+			adventurer_spawnable_starting_bonus = { tag = H35 }
+			switch_tag = H35
+		}
+	}
+	
+	after = { 
+		hidden_effect = { owner = { country_event = { id = anb_price.53 days = 105 } } }
+	}
+}
+
+
+#Valorpoint - Trollsbay
+province_event = {
+	id = aelantirspawnables.7
+	title = aelantirspawnables.7.t
+	desc = {
+		trigger = {
+			is_religion_enabled = corinite
+		}
+		desc = aelantirspawnables.7.d1
+	}
+	desc = {
+		trigger = {
+			NOT = { is_religion_enabled = corinite }
+		}
+		desc = aelantirspawnables.7.d2
+	}
+	picture = CARIBBEAN_PIRATE_FORT_eventPicture
+	goto = spawn_province
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		has_global_flag = new_world_discovered
+		#is_year = 1500
+		NOT = { has_global_flag = delete_north_aelantir_region }
+		OR = {
+			valorpoint_area = {
+				is_empty = yes
+				
+				#has_discovered = ROOT
+				
+				has_empty_adjacent_province = yes
+			}
+			greywood_area = {
+				is_empty = yes
+				
+				#has_discovered = ROOT
+				
+				has_empty_adjacent_province = yes
+			}
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = { is_religion_enabled = corinite }
+				H36 = { change_religion = corinite }
+			}
+			random_province = {
+				limit = {
+					area = greywood_area
+					is_empty = yes
+					
+					has_empty_adjacent_province = yes
+					
+				}
+				
+				save_event_target_as = spawn_province
+			}
+			
+			random_province = {
+				limit = {
+					area = valorpoint_area
+					is_empty = yes
+					
+					has_empty_adjacent_province = yes
+					
+				}
+				
+				save_event_target_as = spawn_province
+			}
+			
+			random_province = {
+				limit = {
+					area = greywood_area
+					is_empty = yes
+					
+					has_empty_adjacent_province = yes
+					
+					has_port = yes
+				}
+				
+				save_event_target_as = spawn_province
+			}
+			
+			random_province = {
+				limit = {
+					area = valorpoint_area
+					is_empty = yes
+					
+					has_empty_adjacent_province = yes
+					
+					has_port = yes
+				}
+				
+				save_event_target_as = spawn_province
+			}		
+
+			random_province = {
+				limit = {
+					province_id = 1047 #Ekshungashuk
+					is_empty = yes
+					
+					has_empty_adjacent_province = yes
+				}
+				
+				save_event_target_as = spawn_province
+			}
+		}
+	}
+	
+	option = {
+		name = aelantirspawnables.1.a 
+		
+		H36 = {
+			event_target:spawn_province = {
+				create_colony = 1000
+				add_core = H36
+			}
+		}
+		
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = { event_target:spawn_province = { province_id = 1047 } }
+					1047 = { owner = { culture_is_ruinborn = yes } }
+				}
+				1047 = { save_event_target_as = nativebuy_prov }
+				H36 = {
+					country_event = { 
+						id = nativebuyout.1
+						days = 10
+					}
+				}
+			}
+			H36 = {
+				country_event = { 
+					id = anb_miscevents.7
+					days = 7
+				}
+				define_ruler = {
+					name = "Alfons Bron"
+					adm = 2
+					dip = 5
+					mil = 4
+					age = 41
+					claim = 95
+					culture = vernman
+				}
+				add_ruler_personality = sinner_personality
+				add_ruler_personality = charismatic_negotiator_personality
+
+				country_event = { id = anb_miscevents.22 } # new country setup
+			}
+		}
+		
+		owner = {
+			adventurer_spawnable_starting_bonus = { tag = H36 }
+		}
+	}
+	
+	option = { # play as the settlers
+		name = aelantirspawnables.1.b
+		H36 = {
+			event_target:spawn_province = {
+				create_colony = 1000
+				add_core = H36
+			}
+		}
+		
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = { event_target:spawn_province = { province_id = 1047 } }
+					1047 = { owner = { culture_is_ruinborn = yes } }
+				}
+				1047 = { save_event_target_as = nativebuy_prov }
+				H36 = {
+					country_event = { 
+						id = nativebuyout.1
+						days = 10
+					}
+				}
+			}
+			H36 = {
+				country_event = { 
+					id = anb_miscevents.7
+					days = 7
+				}
+				define_ruler = {
+					name = "Alfons Bron"
+					adm = 2
+					dip = 5
+					mil = 4
+					age = 41
+					claim = 95
+					culture = vernman
+				}
+				add_ruler_personality = sinner_personality
+				add_ruler_personality = charismatic_negotiator_personality
+
+				country_event = { id = anb_miscevents.22 } # new country setup
+			}
+		}
+		
+		owner = {
+			adventurer_spawnable_starting_bonus = { tag = H36 }
+			switch_tag = H36
+		}
+	}
+	
+	after = { 
+		hidden_effect = { owner = { country_event = { id = anb_price.53 days = 105 } } }
+	}
+}
+
+#Themaria - Broken Isles
+province_event = {
+	id = aelantirspawnables.8
+	title = aelantirspawnables.8.t
+	desc = aelantirspawnables.8.d
+	picture = CARIBBEAN_PIRATE_FORT_eventPicture
+	goto = spawn_province
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		has_global_flag = new_world_discovered
+		current_age = age_of_reformation
+		NOT = { has_global_flag = delete_north_aelantir_region }
+		themaria_area = {
+			is_empty = yes
+			
+			#has_discovered = ROOT
+			
+			has_empty_adjacent_province = yes
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_province = {
+				limit = {
+					area = themaria_area
+					is_empty = yes
+					
+					has_empty_adjacent_province = yes
+					
+				}
+				
+				save_event_target_as = spawn_province
+			}
+			
+			random_province = {
+				limit = {
+					area = themaria_area
+					is_empty = yes
+					
+					has_empty_adjacent_province = yes
+					
+					has_port = yes
+				}
+				
+				save_event_target_as = spawn_province
+			}		
+
+			random_province = {
+				limit = {
+					province_id = 1273 #Trithemar
+					is_empty = yes
+					
+					has_empty_adjacent_province = yes
+				}
+				
+				save_event_target_as = spawn_province
+			}
+		}
+	}
+	
+	option = {
+		name = aelantirspawnables.1.a 
+		
+		H37 = {
+			event_target:spawn_province = {
+				create_colony = 1000
+				add_core = H37
+			}
+		}
+		if = {
+			limit = { 
+				575 = { 
+					owner = {
+						OR = {
+							tag = A95
+							was_tag = A95
+						}
+					}
+					has_province_flag = themaria_sweetcastle_friendship
+				}
+			}
+			H37 = {
+				add_historical_friend = A95
+			}
+			A95 = {
+				add_historical_friend = H37
+			}
+		}
+		if = {
+			limit = { 
+				575 = { 
+					owner = {
+						OR = {
+							tag = A95
+							was_tag = A95
+						}
+					}
+					has_province_flag = themaria_marines_buff_a95
+				}
+			}
+			H37 = { add_country_modifier = { name = themaria_river_reavers duration = -1 } }
+			H37 = { add_country_modifier = { name = themaria_river_reavers2 duration = -1 } }
+			clr_province_flag = themaria_sweetcastle_friendship
+		}
+		
+		hidden_effect = {
+			H37 = {
+				country_event = { 
+					id = anb_miscevents.7
+					days = 7
+				}
+				define_ruler = {
+					name = "Aucana of Sweetcastle"
+					adm = 3
+					dip = 5
+					mil = 3
+					age = 45
+					female = yes
+					claim = 95
+					culture = esmari
+				}
+				add_ruler_personality = navigator_personality
+				add_ruler_personality = well_advised_personality
+
+				country_event = { id = anb_miscevents.22 } # new country setup
+			}
+		}
+		
+		owner = {
+			adventurer_spawnable_starting_bonus = { tag = H37 }
+		}
+	}
+	
+	option = { # play as the settlers
+		name = aelantirspawnables.1.b
+		H37 = {
+			event_target:spawn_province = {
+				create_colony = 1000
+				add_core = H37
+			}
+		}
+		if = {
+			limit = { 
+				575 = { 
+					owner = {
+						OR = {
+							tag = A95
+							was_tag = A95
+						}
+					}
+					has_province_flag = themaria_sweetcastle_friendship
+				}
+			}
+			H37 = {
+				add_historical_friend = A95
+			}
+			A95 = {
+				add_historical_friend = H37
+			}
+		}
+		if = {
+			limit = { 
+				575 = { 
+					owner = {
+						OR = {
+							tag = A95
+							was_tag = A95
+						}
+					}
+					has_province_flag = themaria_marines_buff_a95
+				}
+			}
+			H37 = { add_country_modifier = { name = themaria_river_reavers duration = -1 } }
+			H37 = { add_country_modifier = { name = themaria_river_reavers2 duration = -1 } }
+			clr_province_flag = themaria_marines_buff_a95
+		}
+		
+		hidden_effect = {
+			H37 = {
+				country_event = { 
+					id = anb_miscevents.7
+					days = 7
+				}
+				define_ruler = {
+					name = "Aucana of Sweetcastle"
+					adm = 3
+					dip = 5
+					mil = 3
+					age = 45
+					female = yes
+					claim = 95
+					culture = esmari
+				}
+				add_ruler_personality = navigator_personality
+				add_ruler_personality = well_advised_personality
+
+				country_event = { id = anb_miscevents.22 } # new country setup
+			}
+		}
+		
+		owner = { 
+			adventurer_spawnable_starting_bonus = { tag = H37 }
+			switch_tag = H37
+		}
+	}
+	
+	after = { 
+		hidden_effect = { owner = { country_event = { id = anb_price.53 days = 105 } } }
+	}
+}
+
+
+#Zanlib - Trollsbay
+province_event = {
+	id = aelantirspawnables.9
+	title = aelantirspawnables.9.t
+	desc = aelantirspawnables.9.d
+	picture = CARIBBEAN_PIRATE_FORT_eventPicture
+	goto = spawn_province
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		has_global_flag = new_world_discovered
+		#is_year = 1500
+		NOT = { has_global_flag = delete_north_aelantir_region }
+		OR = {
+			zanlib_area = {
+				is_empty = yes
+				
+				#has_discovered = ROOT
+				
+				has_empty_adjacent_province = yes
+			}
+			umuhit_area = {
+				is_empty = yes
+				
+				#has_discovered = ROOT
+				
+				has_empty_adjacent_province = yes
+			}
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_province = {
+				limit = {
+					area = umuhit_area
+					is_empty = yes
+					
+					has_empty_adjacent_province = yes
+					
+				}
+				
+				save_event_target_as = spawn_province
+			}
+			
+			random_province = {
+				limit = {
+					area = zanlib_area
+					is_empty = yes
+					
+					has_empty_adjacent_province = yes
+					
+				}
+				
+				save_event_target_as = spawn_province
+			}
+			
+			random_province = {
+				limit = {
+					area = umuhit_area
+					is_empty = yes
+					
+					has_empty_adjacent_province = yes
+					
+					has_port = yes
+				}
+				
+				save_event_target_as = spawn_province
+			}	
+			
+			random_province = {
+				limit = {
+					area = zanlib_area
+					is_empty = yes
+					
+					has_empty_adjacent_province = yes
+					
+					has_port = yes
+				}
+				
+				save_event_target_as = spawn_province
+			}		
+
+			random_province = {
+				limit = {
+					province_id = 1030 #Yaknimaittug
+					is_empty = yes
+					
+					has_empty_adjacent_province = yes
+				}
+				
+				save_event_target_as = spawn_province
+			}
+		}
+	}
+	
+	option = {
+		name = aelantirspawnables.1.a 
+		
+		H38 = {
+			event_target:spawn_province = {
+				create_colony = 1000
+				add_core = H38
+			}
+		}
+		
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = { event_target:spawn_province = { province_id = 1030 } }
+					1030 = { owner = { culture_is_ruinborn = yes } }
+				}
+				1030 = { save_event_target_as = nativebuy_prov }
+				H38 = {
+					country_event = { 
+						id = nativebuyout.1
+						days = 10
+					}
+				}
+			}
+			H38 = {
+				country_event = { 
+					id = anb_miscevents.7
+					days = 7
+				}
+				define_ruler = {
+					name = "Ageela szel-Akal-Uak"
+					adm = 3
+					dip = 2
+					mil = 2
+					age = 28
+					claim = 95
+					culture = kuzarami
+				}
+				add_ruler_personality = kind_hearted_personality
+				add_ruler_personality = scholar_personality		#she's a mage, but not a powerful one
+
+				country_event = { id = anb_miscevents.22 } # new country setup
+			}
+		}
+		
+		owner = {
+			adventurer_spawnable_starting_bonus = { tag = H38 }
+		}
+	}
+	
+	option = { # play as the settlers
+		name = aelantirspawnables.1.b
+		H38 = {
+			event_target:spawn_province = {
+				create_colony = 1000
+				add_core = H38
+			}
+		}
+		
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = { event_target:spawn_province = { province_id = 1030 } }
+					1030 = { owner = { culture_is_ruinborn = yes } }
+				}
+				1030 = { save_event_target_as = nativebuy_prov }
+				H38 = {
+					country_event = { 
+						id = nativebuyout.1
+						days = 10
+					}
+				}
+			}
+			H38 = {
+				country_event = { 
+					id = anb_miscevents.7
+					days = 7
+				}
+				define_ruler = {
+					name = "Ageela szel-Akal-Uak"
+					adm = 3
+					dip = 2
+					mil = 2
+					age = 28
+					claim = 95
+					culture = kuzarami
+				}
+				add_ruler_personality = kind_hearted_personality
+				add_ruler_personality = scholar_personality		#she's a mage, but not a powerful one
+
+				country_event = { id = anb_miscevents.22 } # new country setup
+			}
+		}
+		
+		owner = { 
+			adventurer_spawnable_starting_bonus = { tag = H38 }
+			switch_tag = H38
+		}
+	}
+	
+	after = { 
+		hidden_effect = { owner = { country_event = { id = anb_price.53 days = 105 } } }
+	}
+}
+
+
+#Ozgarom - Soruin
+country_event = {
+	id = aelantirspawnables.10
+	title = aelantirspawnables.10.t
+	desc = aelantirspawnables.10.d
+	picture = CARIBBEAN_PIRATE_FORT_eventPicture
+	goto = spawn_province
+	
+	fire_only_once = yes
+	
+	trigger = {
+		num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+			value = 3
+			has_orcish_minority_trigger = yes
+			OR = { 
+				continent = north_america
+				continent = south_america
+			}
+		}
+		is_subject = no
+		has_global_flag = new_world_discovered
+		NOT = { has_global_flag = delete_south_aelantir_region }
+		greenfort_area = {
+			is_empty = yes
+			
+			#has_discovered = ROOT
+			
+			has_empty_adjacent_province = yes
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 360
+		
+		modifier = {
+			factor = 0.05
+			soruin_region = {
+				is_colony = yes
+			}
+		}
+		
+		modifier = {
+			factor = 0.5
+			ai = no
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+		random_province = {
+			limit = {
+				area = greenfort_area
+				is_empty = yes
+				
+				has_empty_adjacent_province = yes
+				
+			}
+			
+			save_event_target_as = spawn_province
+		}
+		
+		random_province = {
+			limit = {
+				area = greenfort_area
+				is_empty = yes
+				
+				has_empty_adjacent_province = yes
+				
+				has_port = yes
+			}
+			
+			save_event_target_as = spawn_province
+		}		
+
+		random_province = {
+			limit = {
+				province_id = 2197 #Ca'nlas
+				is_empty = yes
+				
+				has_empty_adjacent_province = yes
+			}
+			
+			save_event_target_as = spawn_province
+		}
+		}
+	}
+	
+	option = {
+		name = aelantirspawnables.1.a 
+		
+		H39 = {
+			event_target:spawn_province = {
+				create_colony = 1000
+				add_core = H39
+			}
+		}
+		
+		hidden_effect = {
+			H39 = {
+				country_event = { 
+					id = anb_miscevents.7
+					days = 7
+				}
+				define_ruler = {
+					name = "Bramash Clouded Eye"
+					adm = 3
+					dip = 5
+					mil = 5
+					age = 20
+					claim = 95
+					culture = green_orc
+				}
+				add_ruler_personality = inspiring_leader_personality
+				add_ruler_personality = mage_personality
+				set_ruler_flag = transmutation_1
+				set_ruler_flag = abjuration_1
+				set_ruler_flag = abjuration_2
+                set_ruler_flag = abjuration_3
+				set_ruler_flag = divination_1
+                set_ruler_flag = conjuration_1
+                set_ruler_flag = initialized_magic_flags
+
+				country_event = { id = anb_miscevents.22 } # new country setup
+			}
+		}
+		
+		adventurer_spawnable_starting_bonus = { tag = H39 }
+	}
+	
+	option = { # play as the settlers
+		name = aelantirspawnables.1.b
+		trigger = {
+			ai = no
+		}
+		H39 = {
+			event_target:spawn_province = {
+				create_colony = 1000
+				add_core = H39
+			}
+		}
+		
+		hidden_effect = {
+			H39 = {
+				country_event = { 
+					id = anb_miscevents.7
+					days = 7
+				}
+				define_ruler = {
+					name = "Bramash Clouded Eye"
+					adm = 3
+					dip = 5
+					mil = 5
+					age = 20
+					claim = 95
+					culture = green_orc
+				}
+				add_ruler_personality = inspiring_leader_personality
+				add_ruler_personality = mage_personality
+				set_ruler_flag = transmutation_1
+				set_ruler_flag = abjuration_1
+				set_ruler_flag = abjuration_2
+                set_ruler_flag = abjuration_3
+				set_ruler_flag = divination_1
+                set_ruler_flag = conjuration_1
+                set_ruler_flag = initialized_magic_flags
+
+				country_event = { id = anb_miscevents.22 } # new country setup
+			}
+		}
+		
+		adventurer_spawnable_starting_bonus = { tag = H39 }
+		switch_tag = H39
+	}
+}
+
+#Asraport - Ruined Isles
+province_event = {
+	id = aelantirspawnables.11
+	title = aelantirspawnables.11.t
+	desc = aelantirspawnables.11.d
+	picture = CARIBBEAN_PIRATE_FORT_eventPicture
+	goto = spawn_province
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		has_global_flag = new_world_discovered
+		#is_year = 1500
+		NOT = { has_global_flag = delete_south_aelantir_region }
+		wanderers_gate_area = {
+			is_empty = yes
+			
+			#has_discovered = ROOT
+			
+			has_empty_adjacent_province = yes
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_province = {
+				limit = {
+					area = wanderers_gate_area
+					is_empty = yes
+					
+					has_empty_adjacent_province = yes
+					
+				}
+				
+				save_event_target_as = spawn_province
+			}
+			
+			random_province = {
+				limit = {
+					area = wanderers_gate_area
+					is_empty = yes
+					
+					has_empty_adjacent_province = yes
+					
+					has_port = yes
+				}
+				
+				save_event_target_as = spawn_province
+			}		
+
+			random_province = {
+				limit = {
+					province_id = 1058 #Gate islands
+					is_empty = yes
+					
+					has_empty_adjacent_province = yes
+				}
+				
+				save_event_target_as = spawn_province
+			}
+		}
+	}
+	
+	option = {
+		name = aelantirspawnables.1.a 
+		
+		G90 = {
+			event_target:spawn_province = {
+				create_colony = 1000
+				add_core = G90
+			}
+		}
+		
+		hidden_effect = {
+			G90 = {
+				country_event = { 
+					id = anb_miscevents.7
+					days = 7
+				}
+				define_ruler = {
+					name = "Runmar Goldstone"
+					adm = 4
+					dip = 5
+					mil = 3
+					age = 98
+					claim = 95
+					culture = silver_dwarf
+				}
+				set_ruler_flag = long_lived_ruler
+				add_ruler_personality = midas_touched_personality
+
+				country_event = { id = anb_miscevents.22 } # new country setup
+			}
+		}
+		
+		owner = {
+			adventurer_spawnable_starting_bonus = { tag = G90 }
+		}
+	}
+	
+	option = { # play as the settlers
+		name = aelantirspawnables.1.b
+		G90 = {
+			event_target:spawn_province = {
+				create_colony = 1000
+				add_core = G90
+			}
+		}
+		
+		hidden_effect = {
+			G90 = {
+				country_event = { 
+					id = anb_miscevents.7
+					days = 7
+				}
+				define_ruler = {
+					name = "Runmar Goldstone"
+					adm = 4
+					dip = 5
+					mil = 3
+					age = 98
+					claim = 95
+					culture = silver_dwarf
+				}
+				set_ruler_flag = long_lived_ruler
+				add_ruler_personality = midas_touched_personality
+
+				country_event = { id = anb_miscevents.22 } # new country setup
+			}
+		}
+		
+		owner = { 
+			adventurer_spawnable_starting_bonus = { tag = G90 }
+			switch_tag = G90
+		}
+	}
+	
+	after = { 
+		hidden_effect = { owner = { country_event = { id = anb_price.53 days = 105 } } }
+	}
+}
+
+#Isobelin - Trollsbay
+province_event = {
+	id = aelantirspawnables.12
+	title = aelantirspawnables.12.t
+	desc = aelantirspawnables.12.d
+	picture = CARIBBEAN_PIRATE_FORT_eventPicture
+	goto = spawn_province
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		has_global_flag = new_world_discovered
+		#is_year = 1500
+		NOT = { has_global_flag = delete_north_aelantir_region }
+		OR = {
+			coast_of_isobel_area = {
+				is_empty = yes
+				
+				#has_discovered = ROOT
+				
+				has_empty_adjacent_province = yes
+			}
+			trollsmaw_swamp_area = {
+				is_empty = yes
+				
+				#has_discovered = ROOT
+				
+				has_empty_adjacent_province = yes
+			}
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_province = {
+				limit = {
+					area = trollsmaw_swamp_area
+					is_empty = yes
+					
+					has_empty_adjacent_province = yes
+					
+				}
+				
+				save_event_target_as = spawn_province
+			}
+			
+			random_province = {
+				limit = {
+					area = coast_of_isobel_area
+					is_empty = yes
+					
+					has_empty_adjacent_province = yes
+					
+				}
+				
+				save_event_target_as = spawn_province
+			}
+			
+			random_province = {
+				limit = {
+					area = coast_of_isobel_area
+					is_empty = yes
+					
+					has_empty_adjacent_province = yes
+					
+					has_port = yes
+				}
+				
+				save_event_target_as = spawn_province
+			}		
+
+			random_province = {
+				limit = {
+					province_id = 1036 #Isobel Island
+					is_empty = yes
+					
+					#has_empty_adjacent_province = yes
+				}
+				
+				save_event_target_as = spawn_province
+			}
+			# if = {
+			# 	limit = { has_dlc = "Leviathan" }
+			# 	1036 = {
+			# 		set_province_flag = sleepless_in_isobelin
+			# 		add_great_project = {
+			# 			type = city_that_never_sleeps
+			# 			instant = yes
+			# 		}
+			# 	}
+			# } 
+		}
+	}
+	
+	option = {
+		name = aelantirspawnables.1.a 
+		
+		G91 = {
+			event_target:spawn_province = {
+				create_colony = 1000
+				add_core = G91
+			}
+		}
+		
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = { event_target:spawn_province = { province_id = 1036 } }
+					1036 = { owner = { culture_is_ruinborn = yes } }
+				}
+				1036 = { save_event_target_as = nativebuy_prov }
+				G91 = {
+					country_event = { 
+						id = nativebuyout.1
+						days = 10
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					event_target:spawn_province = { province_id = 1036 }
+					1035 = { owner = { culture_is_ruinborn = yes } }
+				}
+				1035 = { save_event_target_as = nativebuy_prov }
+				G91 = {
+					country_event = { 
+						id = nativebuyout.1
+						days = 10
+					}
+				}
+			}
+			G91 = {
+				country_event = { 
+					id = anb_miscevents.7
+					days = 7
+				}
+				define_ruler = {
+					name = "Isobel síl Isobelin"
+					adm = 5
+					dip = 6
+					mil = 2
+					age = 48
+					claim = 95
+					female = yes
+					culture = roilsardi
+				}
+				add_government_reform = isobelin_government_reform_city_of_the_esteemed_widow
+
+				country_event = { id = anb_miscevents.22 } # new country setup
+			}
+		}
+		
+		owner = {
+			adventurer_spawnable_starting_bonus = { tag = G91 }
+		}
+	}
+	
+	option = { # play as the settlers
+		name = aelantirspawnables.1.b
+		G91 = {
+			event_target:spawn_province = {
+				create_colony = 1000
+				add_core = G91
+			}
+		}
+		
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = { event_target:spawn_province = { province_id = 1036 } }
+					1036 = { owner = { culture_is_ruinborn = yes } }
+				}
+				1036 = { save_event_target_as = nativebuy_prov }
+				G91 = {
+					country_event = { 
+						id = nativebuyout.1
+						days = 10
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					event_target:spawn_province = { province_id = 1036 }
+					1035 = { owner = { culture_is_ruinborn = yes } }
+				}
+				1035 = { save_event_target_as = nativebuy_prov }
+				G91 = {
+					country_event = { 
+						id = nativebuyout.1
+						days = 10
+					}
+				}
+			}
+			G91 = {
+				country_event = { 
+					id = anb_miscevents.7
+					days = 7
+				}
+				define_ruler = {
+					name = "Isobel síl Isobelin"
+					adm = 5
+					dip = 6
+					mil = 2
+					age = 48
+					claim = 95
+					female = yes
+					culture = roilsardi
+				}
+				add_government_reform = isobelin_government_reform_city_of_the_esteemed_widow
+
+				country_event = { id = anb_miscevents.22 } # new country setup
+			}
+		}
+		
+		owner = {
+			adventurer_spawnable_starting_bonus = { tag = G91 }
+			switch_tag = G91
+		}
+		#custom_tooltip = isobelin_tooltip_spawn_event
+
+	}
+	
+	after = { 
+		hidden_effect = { owner = { country_event = { id = anb_price.53 days = 105 } } }
+	}
+}
+
+#Saamirses - Ruined Isles
+province_event = {
+	id = aelantirspawnables.13
+	title = aelantirspawnables.13.t
+	desc = aelantirspawnables.13.d
+	picture = CARIBBEAN_PIRATE_FORT_eventPicture
+	goto = spawn_province
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		#NOT = { has_country_modifier = monstrous_nation }
+		has_global_flag = new_world_discovered
+		#is_year = 1500
+		NOT = { has_global_flag = delete_south_aelantir_region }
+		saamirses_area = {
+			is_empty = yes
+			
+			#has_discovered = ROOT
+			
+			has_empty_adjacent_province = yes
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+		random_province = {
+			limit = {
+				area = saamirses_area
+				is_empty = yes
+				
+				has_empty_adjacent_province = yes
+				
+			}
+			
+			save_event_target_as = spawn_province
+		}
+		
+		random_province = {
+			limit = {
+				area = saamirses_area
+				is_empty = yes
+				
+				has_empty_adjacent_province = yes
+				
+				has_port = yes
+			}
+			
+			save_event_target_as = spawn_province
+		}		
+
+		random_province = {
+			limit = {
+				province_id = 1052 #Saamiribar
+				is_empty = yes
+				
+				has_empty_adjacent_province = yes
+			}
+			
+			save_event_target_as = spawn_province
+		}
+		}
+	}
+	
+	option = {
+		name = aelantirspawnables.1.a 
+		
+		G92 = {
+			event_target:spawn_province = {
+				create_colony = 1000
+				add_core = G92
+			}
+		}
+		
+		hidden_effect = {
+			G92 = {
+				country_event = { 
+					id = anb_miscevents.7
+					days = 7
+				}
+				define_ruler = {
+					name = "Saamir Ruqašah"
+					adm = 3
+					dip = 6
+					mil = 4
+					age = 32
+					claim = 95
+					culture = zanite
+				}
+				add_ruler_personality = navigator_personality
+				add_ruler_personality = entrepreneur_personality
+
+				country_event = { id = anb_miscevents.22 } # new country setup
+			}
+		}
+		
+		owner = {
+			adventurer_spawnable_starting_bonus = { tag = G92 }
+		}
+	}
+	
+	option = { # play as the settlers
+		name = aelantirspawnables.1.b
+		G92 = {
+			event_target:spawn_province = {
+				create_colony = 1000
+				add_core = G92
+			}
+		}
+		
+		hidden_effect = {
+			G92 = {
+				country_event = { 
+					id = anb_miscevents.7
+					days = 7
+				}
+				define_ruler = {
+					name = "Saamir Ruqašah"
+					adm = 3
+					dip = 6
+					mil = 4
+					age = 32
+					claim = 95
+					culture = zanite
+				}
+				add_ruler_personality = navigator_personality
+				add_ruler_personality = entrepreneur_personality
+
+				country_event = { id = anb_miscevents.22 } # new country setup
+
+				hidden_effect = {
+					decrease_nsc_isolation_level = yes
+					decrease_nsc_isolation_level = yes
+				}
+			}
+		}
+		
+		owner = { 
+			adventurer_spawnable_starting_bonus = { tag = G92 }
+			switch_tag = G92
+		}
+	}
+	
+	after = { 
+		hidden_effect = { owner = { country_event = { id = anb_price.53 days = 105 } } }
+	}
+}
+
+#Mykx - Ruined Isles
+province_event = {
+	id = aelantirspawnables.14
+	title = aelantirspawnables.14.t
+	desc = aelantirspawnables.14.d
+	picture = CARIBBEAN_PIRATE_FORT_eventPicture
+	goto = spawn_province
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		has_global_flag = new_world_discovered
+		#is_year = 1500
+		NOT = { has_global_flag = delete_south_aelantir_region }
+		mykx_isles_area = {
+			is_empty = yes
+			
+			#has_discovered = ROOT
+			
+			#has_empty_adjacent_province = yes
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_province = {
+				limit = {
+					area = mykx_isles_area
+					is_empty = yes
+					
+				}
+				
+				save_event_target_as = spawn_province
+			}
+			
+			random_province = {
+				limit = {
+					area = mykx_isles_area
+					is_empty = yes
+					
+					has_port = yes
+				}
+				
+				save_event_target_as = spawn_province
+			}		
+
+			random_province = {
+				limit = {
+					province_id = 1077 #Madarr
+					is_empty = yes
+				}
+				
+				save_event_target_as = spawn_province
+			}
+		}
+	}
+	
+	option = {
+		name = aelantirspawnables.1.a 
+		
+		G93 = {
+			event_target:spawn_province = {
+				create_colony = 1000
+				add_core = G93
+			}
+		}
+		
+		event_target:spawn_province = {
+			change_province_name = "Ilzin Mykx"
+			change_trade_goods = slaves
+		}
+		
+		hidden_effect = {
+			G93 = {
+				country_event = { 
+					id = anb_miscevents.7
+					days = 7
+				}
+				define_ruler = {
+					name = "Mykx"
+					adm = 4
+					dip = 1
+					mil = 5
+					age = 37
+					claim = 95
+					female = yes
+				}
+				set_ruler_flag = historical_pirate
+				add_ruler_personality = legendary_pirate_personality
+
+				country_event = { id = anb_miscevents.22 } # new country setup
+			}
+		}
+		
+		owner = {
+			adventurer_spawnable_starting_bonus = { tag = G93 }
+		}
+	}
+	
+	option = { # play as the settlers
+		name = aelantirspawnables.1.b
+		G93 = {
+			event_target:spawn_province = {
+				create_colony = 1000
+				add_core = G93
+			}
+		}
+		
+		event_target:spawn_province = {
+			change_province_name = "Ilzin Mykx"
+			change_trade_goods = slaves
+		}
+		
+		hidden_effect = {
+			G93 = {
+				country_event = { 
+					id = anb_miscevents.7
+					days = 7
+				}
+				define_ruler = {
+					name = "Mykx"
+					adm = 4
+					dip = 1
+					mil = 5
+					age = 37
+					claim = 95
+					female = yes
+				}
+				set_ruler_flag = historical_pirate
+				add_ruler_personality = legendary_pirate_personality
+
+				country_event = { id = anb_miscevents.22 } # new country setup
+			}
+		}
+		
+		owner = { 
+			adventurer_spawnable_starting_bonus = { tag = G93 }
+			switch_tag = G93
+		}
+	}
+}
+
+#Argezvale - Ynn East
+province_event = {
+	id = aelantirspawnables.15
+	title = aelantirspawnables.15.t
+	desc = aelantirspawnables.15.d
+	picture = CARIBBEAN_PIRATE_FORT_eventPicture
+	goto = spawn_province
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		has_global_flag = new_world_discovered
+		current_age = age_of_reformation
+		NOT = { has_global_flag = delete_north_aelantir_region }
+		argezvale_area = {
+			is_empty = yes
+			
+			#has_discovered = ROOT
+			
+			has_empty_adjacent_province = yes
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_province = {
+				limit = {
+					region = veykoda_region
+					is_empty = yes
+					
+					has_empty_adjacent_province = yes
+					
+				}
+				
+				save_event_target_as = spawn_province
+			}
+			random_province = {
+				limit = {
+					OR= {
+						area = argezvale_area
+						province_id = 1159 #near the mountains
+						province_id = 2844
+						province_id = 1154
+						province_id = 1153
+					}
+					is_empty = yes
+					
+					has_empty_adjacent_province = yes
+					
+				}
+				
+				save_event_target_as = spawn_province
+			}
+			
+
+			random_province = {
+				limit = {
+					province_id = 1159 #Neyholar
+					is_empty = yes
+					
+					has_empty_adjacent_province = yes
+				}
+				
+				save_event_target_as = spawn_province
+			}
+		}
+	}
+	
+	option = {
+		name = aelantirspawnables.1.a 
+		
+		G94 = {
+			event_target:spawn_province = {
+				create_colony = 1000
+				add_core = G94
+			}
+		}
+		
+		hidden_effect = {
+			G94 = {
+				country_event = { 
+					id = anb_miscevents.7
+					days = 7
+				}
+				set_ruler = thinbur
+
+				country_event = { id = anb_miscevents.22 } # new country setup
+			}
+
+			1133 = { owner = { country_event = { id = ynn_events.22 } } } #Cannorian traders in Adbrabohvi
+		}
+		
+		owner = {
+			adventurer_spawnable_starting_bonus = { tag = G94 }
+		}
+	}
+	
+	option = { # play as the settlers
+		name = aelantirspawnables.1.b
+		G94 = {
+			event_target:spawn_province = {
+				create_colony = 1000
+				add_core = G94
+			}
+		}
+		
+		hidden_effect = {
+			G94 = {
+				country_event = { 
+					id = anb_miscevents.7
+					days = 7
+				}
+				set_ruler = thinbur
+
+				country_event = { id = anb_miscevents.22 } # new country setup
+			}
+
+			1133 = { owner = { country_event = { id = ynn_events.22 } } } #Cannorian traders in Adbrabohvi
+		}
+		
+		owner = { 
+			adventurer_spawnable_starting_bonus = { tag = G94 }
+			switch_tag = G94
+		}
+	}
+	
+	after = { 
+		hidden_effect = { owner = { country_event = { id = anb_price.53 days = 105 } } }
+	}
+}
+
+#Marlliande - Trollsbay
+province_event = {
+	id = aelantirspawnables.16
+	title = aelantirspawnables.16.t
+	desc = aelantirspawnables.16.d
+	picture = CARIBBEAN_PIRATE_FORT_eventPicture
+	goto = spawn_province
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		has_global_flag = new_world_discovered
+		#is_year = 1500
+		NOT = { has_global_flag = delete_north_aelantir_region }
+		OR = {
+			marlliande_area = {
+				is_empty = yes
+				
+				#has_discovered = ROOT
+				
+				has_empty_adjacent_province = yes
+			}
+			new_varlosen_area = {
+				is_empty = yes
+				
+				#has_discovered = ROOT
+				
+				has_empty_adjacent_province = yes
+			}
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_province = {
+				limit = {
+					area = new_varlosen_area
+					is_empty = yes
+					
+					has_empty_adjacent_province = yes
+					
+				}
+				
+				save_event_target_as = spawn_province
+			}
+			
+			random_province = {
+				limit = {
+					area = marlliande_area
+					is_empty = yes
+					
+					has_empty_adjacent_province = yes
+					
+				}
+				
+				save_event_target_as = spawn_province
+			}
+			
+			random_province = {
+				limit = {
+					area = new_varlosen_area
+					is_empty = yes
+					
+					has_empty_adjacent_province = yes
+					
+					has_port = yes
+				}
+				
+				save_event_target_as = spawn_province
+			}
+			
+			random_province = {
+				limit = {
+					province_id = 1956 #Natwoek, closest to Marlliande prov
+					is_empty = yes
+					
+					has_empty_adjacent_province = yes
+				}
+				
+				save_event_target_as = spawn_province
+			}
+
+			random_province = {
+				limit = {
+					province_id = 1024 #Abolikhni
+					is_empty = yes
+					
+					has_empty_adjacent_province = yes
+				}
+				
+				save_event_target_as = spawn_province
+			}
+		}
+	}
+	
+	option = {
+		name = aelantirspawnables.1.a 
+		
+		G95 = {
+			event_target:spawn_province = {
+				create_colony = 1000
+				add_core = G95
+			}
+		}
+		
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = { event_target:spawn_province = { province_id = 1024 } }
+					1024 = { owner = { culture_is_ruinborn = yes } }
+				}
+				1024 = { save_event_target_as = nativebuy_prov }
+				G95 = {
+					country_event = { 
+						id = nativebuyout.1
+						days = 10
+					}
+				}
+			}
+			G95 = {
+				country_event = { 
+					id = anb_miscevents.7
+					days = 7
+				}
+				country_event = {
+					id = marlliande.3
+					days = 10
+				}
+				define_ruler = {
+					name = "Adeline síl Marllin"
+					adm = 6
+					dip = 5
+					mil = 3
+					age = 96
+					claim = 95
+					female = yes
+					culture = arannese
+				}
+
+				clear_ruler_vampire_flags = yes
+				set_country_flag = new_vampire
+				ruler_become_vampire = yes
+				add_ruler_personality = silver_tongue_personality
+				set_country_flag = vilaechi_lord
+
+				country_event = { id = anb_miscevents.22 } # new country setup
+			}
+		}
+		
+		owner = {
+			adventurer_spawnable_starting_bonus = { tag = G95 }
+		}
+	}
+	
+	option = { # play as the settlers
+		name = aelantirspawnables.1.b
+		G95 = {
+			event_target:spawn_province = {
+				create_colony = 1000
+				add_core = G95
+			}
+		}
+		
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = { event_target:spawn_province = { province_id = 1024 } }
+					1024 = { owner = { culture_is_ruinborn = yes } }
+				}
+				1024 = { save_event_target_as = nativebuy_prov }
+				G95 = {
+					country_event = { 
+						id = nativebuyout.1
+						days = 10
+					}
+				}
+			}
+			G95 = {
+				country_event = { 
+					id = anb_miscevents.7
+					days = 7
+				}
+				country_event = {
+					id = marlliande.3
+					days = 10
+				}
+				define_ruler = {
+					name = "Adeline síl Marllin"
+					adm = 6
+					dip = 5
+					mil = 3
+					age = 96
+					claim = 95
+					female = yes
+					culture = arannese
+				}
+				set_ruler_flag = long_lived_ruler
+				add_ruler_personality = silver_tongue_personality
+				set_ruler_flag = is_a_vampire
+				set_country_flag = vilaechi_lord
+
+				country_event = { id = anb_miscevents.22 } # new country setup
+			}
+		}
+		
+		owner = { 
+			adventurer_spawnable_starting_bonus = { tag = G95 }
+			switch_tag = G95
+		}
+	}
+	
+	after = { 
+		hidden_effect = { 
+			owner = { 
+				country_event = { id = anb_price.53 days = 105 }
+				country_event = { id = flavor_luciande.36 days = 30 }
+			}
+		}
+	}
+}
+
+#Thilvis - Trollsbay
+province_event = {
+	id = aelantirspawnables.17
+	title = aelantirspawnables.17.t
+	desc = aelantirspawnables.17.d
+	picture = CARIBBEAN_PIRATE_FORT_eventPicture
+	goto = spawn_province
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		has_global_flag = new_world_discovered
+		#is_year = 1500
+		NOT = { has_global_flag = delete_north_aelantir_region }
+		OR = {
+			thilvis_area = {
+				is_empty = yes
+				
+				#has_discovered = ROOT
+				
+				has_empty_adjacent_province = yes
+			}
+			laneksfield_area = {
+				is_empty = yes
+				
+				#has_discovered = ROOT
+				
+				has_empty_adjacent_province = yes
+			}
+			
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {			
+			
+			random_province = {
+				limit = {
+					area = laneksfield_area
+					is_empty = yes
+					
+					has_empty_adjacent_province = yes
+					
+				}
+				
+				save_event_target_as = spawn_province
+			}
+			
+			random_province = {
+				limit = {
+					area =  thilvis_area
+					is_empty = yes
+					
+					has_empty_adjacent_province = yes
+					
+				}
+				
+				save_event_target_as = spawn_province
+			}
+			
+			random_province = {
+				limit = {
+					province_id = 2614 #Dotimok, closest to Thilvis prov
+					is_empty = yes
+					
+					has_empty_adjacent_province = yes
+				}
+				
+				save_event_target_as = spawn_province
+			}
+			
+			random_province = {
+				limit = {
+					area =  thilvis_area
+					is_empty = yes
+					
+					has_empty_adjacent_province = yes
+					
+					has_port = yes
+				}
+				
+				save_event_target_as = spawn_province
+			}		
+
+			random_province = {
+				limit = {
+					province_id = 1037 #Iklaek
+					is_empty = yes
+					
+					has_empty_adjacent_province = yes
+				}
+				
+				save_event_target_as = spawn_province
+			}
+		}
+	}
+	
+	option = {
+		name = aelantirspawnables.1.a 
+		
+		G96 = {
+			event_target:spawn_province = {
+				create_colony = 1000
+				add_core = G96
+			}
+		}
+		
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = { event_target:spawn_province = { province_id = 1037 } }
+					1037 = { owner = { culture_is_ruinborn = yes } }
+				}
+				1037 = { save_event_target_as = nativebuy_prov }
+				G96 = {
+					country_event = { 
+						id = nativebuyout.1
+						days = 10
+					}
+				}
+			}
+			G96 = {
+				country_event = { 
+					id = anb_miscevents.7
+					days = 7
+				}
+				define_ruler = {
+					name = "Hershel síl Vis"
+					adm = 3
+					dip = 0
+					mil = 3
+					age = 49
+					claim = 95
+					culture = visfoot_halfling
+				}
+				add_ruler_personality = loose_lips_personality
+				add_ruler_personality = architectural_visionary_personality
+
+				country_event = { id = anb_miscevents.22 } # new country setup
+			}
+		}
+		
+		owner = {
+			adventurer_spawnable_starting_bonus = { tag = G96 }
+		}
+	}
+	
+	option = { # play as the settlers
+		name = aelantirspawnables.1.b
+
+		G96 = {
+			event_target:spawn_province = {
+				create_colony = 1000
+				add_core = G96
+			}
+		}
+		
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = { event_target:spawn_province = { province_id = 1037 } }
+					1037 = { owner = { culture_is_ruinborn = yes } }
+				}
+				1037 = { save_event_target_as = nativebuy_prov }
+				G96 = {
+					country_event = { 
+						id = nativebuyout.1
+						days = 10
+					}
+				}
+			}
+			G96 = {
+				country_event = { 
+					id = anb_miscevents.7
+					days = 7
+				}
+				define_ruler = {
+					name = "Hershel síl Vis"
+					adm = 3
+					dip = 0
+					mil = 3
+					age = 49
+					claim = 95
+					culture = visfoot_halfling
+				}
+				add_ruler_personality = loose_lips_personality
+				add_ruler_personality = architectural_visionary_personality
+
+				country_event = { id = anb_miscevents.22 } # new country setup
+			}
+		}
+		
+		owner = { 
+			adventurer_spawnable_starting_bonus = { tag = G96 }
+			switch_tag = G96
+		}
+	}
+	
+	after = { 
+		hidden_effect = { owner = { country_event = { id = anb_price.53 days = 105 } } }
+	}
+}
+
+#Vanbury Guild - Haraf
+province_event = {
+	id = aelantirspawnables.18
+	title = aelantirspawnables.18.t
+	desc = aelantirspawnables.18.d
+	picture = CARIBBEAN_PIRATE_FORT_eventPicture
+	goto = spawn_province
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		has_global_flag = new_world_discovered
+		#is_year = 1500
+		NOT = { has_global_flag = delete_north_aelantir_region }
+		north_vanburia_area = {
+			is_empty = yes
+			
+			#has_discovered = ROOT
+			
+			has_empty_adjacent_province = yes
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_province = {
+				limit = {
+					area = north_vanburia_area
+					is_empty = yes
+					
+					has_empty_adjacent_province = yes
+					
+				}
+				
+				save_event_target_as = spawn_province
+			}
+			
+			random_province = {
+				limit = {
+					area = north_vanburia_area
+					is_empty = yes
+					
+					has_empty_adjacent_province = yes
+					
+					has_port = yes
+				}
+				
+				save_event_target_as = spawn_province
+			}		
+
+			random_province = {
+				limit = {
+					province_id = 2164 #Ricardsport
+					is_empty = yes
+					
+					has_empty_adjacent_province = yes
+				}
+				
+				save_event_target_as = spawn_province
+			}
+			
+			if = {
+				limit = {
+					OR = {
+						AND = {
+							owner = { tag = A62 } # Telgeir
+							religion = corinite
+						}
+						AND = {
+							NOT = { owner = { tag = A62 } }
+							911 = { religion = corinite }
+						}
+					}
+				}
+				G97 = { change_religion = corinite }
+			}
+		}
+	}
+	
+	option = {
+		name = aelantirspawnables.1.a 
+		
+		G97 = {
+			event_target:spawn_province = {
+				create_colony = 1000
+				add_core = G97
+			}
+		}
+		
+		hidden_effect = {
+			G97 = {
+				country_event = { 
+					id = anb_miscevents.7
+					days = 7
+				}
+				define_ruler = {
+					name = "Vincen of Vanbury"
+					adm = 2
+					dip = 2
+					mil = 6
+					age = 39
+					claim = 95
+					culture = esmari
+				}
+				add_ruler_personality = scholar_personality
+				add_ruler_personality = malevolent_personality
+
+				country_event = { id = anb_miscevents.22 } # new country setup
+			}
+		}
+		
+		owner = {
+			adventurer_spawnable_starting_bonus = { tag = G97 }
+		}
+	}
+	
+	option = { # play as the settlers
+		name = aelantirspawnables.1.b
+		G97 = {
+			event_target:spawn_province = {
+				create_colony = 1000
+				add_core = G97
+			}
+		}
+		
+		hidden_effect = {
+			G97 = {
+				country_event = { 
+					id = anb_miscevents.7
+					days = 7
+				}
+				define_ruler = {
+					name = "Vincen of Vanbury"
+					adm = 2
+					dip = 2
+					mil = 6
+					age = 39
+					claim = 95
+					culture = esmari
+				}
+				add_ruler_personality = scholar_personality
+				add_ruler_personality = malevolent_personality
+
+				country_event = { id = anb_miscevents.22 } # new country setup
+			}
+		}
+		
+		owner = { 
+			adventurer_spawnable_starting_bonus = { tag = G97 }
+			switch_tag = G97
+		}
+	}
+	
+	after = { 
+		hidden_effect = { owner = { country_event = { id = anb_price.53 days = 105 } } }
+	}
+}
+
+#Calasanni Trading Company - Ruined Isles
+province_event = {
+	id = aelantirspawnables.19
+	title = aelantirspawnables.19.t
+	desc = aelantirspawnables.19.d
+	picture = CARIBBEAN_PIRATE_FORT_eventPicture
+	goto = spawn_province
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		has_global_flag = new_world_discovered
+		#is_year = 1500
+		NOT = { has_global_flag = delete_south_aelantir_region }
+		the_bend_area = {
+			is_empty = yes
+			
+			#has_discovered = ROOT
+			
+			has_empty_adjacent_province = yes
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_province = {
+				limit = {
+					area = the_bend_area
+					is_empty = yes
+					
+					has_empty_adjacent_province = yes
+					
+				}
+				
+				save_event_target_as = spawn_province
+			}
+			
+			random_province = {
+				limit = {
+					area = the_bend_area
+					is_empty = yes
+					
+					has_empty_adjacent_province = yes
+					
+					has_port = yes
+				}
+				
+				save_event_target_as = spawn_province
+			}		
+
+			random_province = {
+				limit = {
+					province_id = 1086 #New Calas
+					is_empty = yes
+					
+					has_empty_adjacent_province = yes
+				}
+				
+				save_event_target_as = spawn_province
+			}
+		}
+	}
+	
+	option = {
+		name = aelantirspawnables.1.a 
+		
+		G98 = {
+			event_target:spawn_province = {
+				create_colony = 1000
+				add_core = G98
+			}
+		}
+		
+		hidden_effect = {
+			G98 = {
+				country_event = { 
+					id = anb_miscevents.7
+					days = 7
+				}
+				define_ruler = {
+					name = "Calas Silcalas"
+					adm = 4
+					dip = 5
+					mil = 3
+					age = 37
+					claim = 95
+					culture = arbarani
+				}
+				set_country_flag = no_formable_culture_shift
+
+				country_event = { id = anb_miscevents.22 } # new country setup
+			}
+		}
+		234 = { #Damescrown
+			owner = {
+				create_subject = {
+					subject_type = commercial_enterprise
+					subject = G98
+				}
+			}
+			add_permanent_province_modifier = {
+				name = clstc_colonial_port
+				duration = -1
+			}
+		}
+		G98 = {
+			add_tariff_value = -0.1
+		}
+		owner = {
+			adventurer_spawnable_starting_bonus = { tag = G98 }
+		}
+	}
+	
+	option = { # play as the settlers
+		name = aelantirspawnables.1.b
+		G98 = {
+			event_target:spawn_province = {
+				create_colony = 1000
+				add_core = G98
+			}
+		}
+		
+		hidden_effect = {
+			G98 = {
+				country_event = { 
+					id = anb_miscevents.7
+					days = 7
+				}
+				define_ruler = {
+					name = "Calas Silcalas"
+					adm = 4
+					dip = 5
+					mil = 3
+					age = 37
+					claim = 95
+					culture = arbarani
+				}
+				set_country_flag = no_formable_culture_shift
+
+				country_event = { id = anb_miscevents.22 } # new country setup
+			}
+		}
+		234 = { #Damescrown
+			owner = {
+				create_subject = {
+					subject_type = commercial_enterprise
+					subject = G98
+				}
+			}
+			add_permanent_province_modifier = {
+				name = clstc_colonial_port
+				duration = -1
+			}
+		}
+		G98 = {
+			add_tariff_value = -0.1
+		}
+		owner = { 
+			adventurer_spawnable_starting_bonus = { tag = G98 }
+			switch_tag = G98
+		}
+	}
+	
+	after = { 
+		hidden_effect = { owner = { country_event = { id = anb_price.53 days = 105 } } }
+	}
+}
+
+#Deranne Trade Company - Ruined Isles
+country_event = {
+	id = aelantirspawnables.20
+	title = aelantirspawnables.20.t
+	desc = aelantirspawnables.20.d
+	picture = CARIBBEAN_PIRATE_FORT_eventPicture
+	goto = spawn_province
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { # play as the settlers
+		name = aelantirspawnables.1.b
+		
+		hidden_effect = {
+			G99 = {
+				country_event = { 
+					id = anb_miscevents.7
+					days = 7
+				}
+				define_ruler = {
+					name = "Maurise of the Seaflower"
+					adm = 3
+					dip = 6
+					mil = 1
+					age = 67
+					claim = 95
+					culture = lencori_half_elf
+				}
+				set_ruler_flag = long_lived_ruler
+				add_ruler_personality = incorruptible_personality
+				add_ruler_personality = navigator_personality
+				set_country_flag = no_formable_culture_shift
+				if = {
+					limit = {
+						owns = 927
+					}
+					set_capital = 927
+				}
+				capital_scope = {
+					save_event_target_as = spawn_province
+				}
+
+				country_event = { id = anb_miscevents.22 } # new country setup
+			}
+		}
+	}
+	
+	# after = { 
+	# 	hidden_effect = { country_event = { id = anb_price.53 days = 105 } }
+	# }
+}
+
+#Nortiochand - Broken Sea 
+province_event = {
+	id = aelantirspawnables.21
+	title = aelantirspawnables.21.t
+	desc = aelantirspawnables.21.d
+	picture = CARIBBEAN_PIRATE_FORT_eventPicture
+	goto = spawn_province
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		has_global_flag = new_world_discovered
+		current_age = age_of_reformation
+		#is_year = 1500
+		NOT = { has_global_flag = delete_north_aelantir_region }
+		cymailean_area = {
+			is_empty = yes
+			
+			#has_discovered = ROOT
+			
+			has_empty_adjacent_province = yes
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_province = {
+				limit = {
+					area = morail_area
+					is_empty = yes
+				}
+				
+				save_event_target_as = spawn_province
+			}
+			
+			random_province = {
+				limit = {
+					area = cymailean_area
+					is_empty = yes
+				}
+				
+				save_event_target_as = spawn_province
+			}		
+
+			random_province = {
+				limit = {
+					province_id = 2802 #Middanweg
+					is_empty = yes
+				}
+				
+				save_event_target_as = spawn_province
+			}
+		}
+	}
+	
+	option = {
+		name = aelantirspawnables.1.a
+		U66 = {
+			event_target:spawn_province = {
+				create_colony = 1000
+				add_core = U66
+			}
+		}
+		
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = { event_target:spawn_province = { province_id = 2802 } }
+					2802 = { owner = { culture_is_ruinborn = yes } }
+				}
+				2802 = { save_event_target_as = nativebuy_prov }
+				U66 = {
+					country_event = { 
+						id = nativebuyout.1
+						days = 10
+					}
+				}
+			}
+			U66 = {
+				country_event = {
+					id = anb_miscevents.7
+					days = 7
+				}
+				set_ruler = chomsky
+				add_harmonized_religion = regent_court
+				country_event = { id = anb_miscevents.22 } # new country setup
+			}
+		}
+		
+		owner = { adventurer_spawnable_starting_bonus = { tag = U66 } }
+	}
+	
+	option = { # play as the pirates
+		name = aelantirspawnables.1.b
+		U66 = {
+			event_target:spawn_province = {
+				create_colony = 1000
+				add_core = U66
+			}
+		}
+		
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = { event_target:spawn_province = { province_id = 2802 } }
+					2802 = { owner = { culture_is_ruinborn = yes } }
+				}
+				2802 = { save_event_target_as = nativebuy_prov }
+				U66 = {
+					country_event = { 
+						id = nativebuyout.1
+						days = 10
+					}
+				}
+			}
+			U66 = {
+				country_event = {
+					id = anb_miscevents.7
+					days = 7
+				}
+				set_ruler = chomsky
+				add_harmonized_religion = regent_court
+				country_event = { id = anb_miscevents.22 } # new country setup
+			}
+		}
+		
+		owner = { 
+			adventurer_spawnable_starting_bonus = { tag = U66 }
+			switch_tag = U66
+		}
+	}
+	
+	after = { 
+		hidden_effect = { owner = { country_event = { id = anb_price.53 days = 105 } } }
+	}
+
+
+}

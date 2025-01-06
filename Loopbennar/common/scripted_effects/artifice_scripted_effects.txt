@@ -1,0 +1,5285 @@
+
+#_______________________________________________________________#
+#		:Files to edit when adding inventions Checklist:		#
+#			1. estate_privleges/estate_artifice_privileges.txt	#
+#			2. estates/99_artificers.txt						#
+#			3. scripted_effects/artifice_scripted_effects.txt	#
+#			4. events/ArtificeResearch.txt						#
+#			5. common/custom_gui/countrydecisionsview.txt		#
+#			6. Don't forget to localize your work				#
+#---------------------------------------------------------------#
+#			:OPTIONAL: GFX/GUI editers only:					#
+#			7. interface/countrydecisionsview.gui				#
+#			8. interface/countrydecisionsview.gfx				#
+#																#
+#			:GFX Assets Folder: 								#
+#			9. gfx/interface/custom_gui/artificery				#
+#																#
+#			Written By: Tators/River Doge						#
+#_______________________________________________________________#
+
+update_artifice_points = {
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = magic_artificery_mixed
+				has_country_flag = magic_artificery_artificery_only
+			}
+		}
+		hidden_effect = {
+			set_variable = {
+				which = MaxArtificePoints
+				value = 0
+			}
+			set_variable = {
+				which = ArtificePointsRelics
+				value = 0
+			}
+
+			set_variable = {
+				which = ArtificePointsDamestear
+				value = 0
+			}
+
+
+			6168 = {
+				PREV = {
+					set_variable = {
+						which = GlobalArtificeLimit
+						which = PREV
+					}
+				}
+			}
+
+			change_variable = {
+				which = MaxArtificePoints
+				which = GlobalArtificeLimit
+			}
+
+			change_variable = {
+				which = MaxArtificePoints
+				which = ResearchArtificePoints
+			}
+
+			# If you're adding a modifier here make sure to also add it to the artifice localization (in artifice_l_english and anb_custom_artifice_localization) otherwise it will not show up in game
+
+			#unique hold wonder
+			if = {
+				limit = {
+					any_owned_province = {
+						has_province_modifier = artificier_hall
+					}
+				}
+				change_variable = {
+					which = MaxArtificePoints
+					value = 5
+				}
+			}
+
+			if = {
+				limit = {
+					trading_part = {
+						trade_goods = precursor_relics
+						value = 0.2
+					}
+				}
+				change_variable = {
+					which = ArtificePointsRelics
+					value = 25
+				}
+			}
+			else_if = {
+				limit = {
+					trading_part = {
+						trade_goods = precursor_relics
+						value = 0.15
+					}
+				}
+				change_variable = {
+					which = ArtificePointsRelics
+					value = 20
+				}
+			}
+			else_if = {
+				limit = {
+					trading_part = {
+						trade_goods = precursor_relics
+						value = 0.10
+					}
+				}
+				change_variable = {
+					which = ArtificePointsRelics
+					value = 15
+				}
+			}
+			else_if = {
+				limit = {
+					trading_part = {
+						trade_goods = precursor_relics
+						value = 0.05
+					}
+				}
+				change_variable = {
+					which = ArtificePointsRelics
+					value = 10
+				}
+			}
+			else_if = {
+				limit = {
+					trading_part = {
+						trade_goods = precursor_relics
+						value = 0.01
+					}
+				}
+				change_variable = {
+					which = ArtificePointsRelics
+					value = 5
+				}
+			}
+
+			if = {
+				limit = {
+					has_age_ability = ab_aelantir_relics
+				}
+				multiply_variable = {
+					which = ArtificePointsRelics
+					value = 2
+				}
+			}
+
+			change_variable = {
+				which = MaxArtificePoints
+				which = ArtificePointsRelics
+			}
+
+			if = {
+				limit = {
+					trading_part = {
+						trade_goods = damestear
+						value = 0.1
+					}
+				}
+				change_variable = {
+					which = ArtificePointsDamestear
+					value = 10
+				}
+			}
+			else_if = {
+				limit = {
+					trading_part = {
+						trade_goods = damestear
+						value = 0.075
+					}
+				}
+				change_variable = {
+					which = ArtificePointsDamestear
+					value = 7
+				}
+			}
+			else_if = {
+				limit = {
+					trading_part = {
+						trade_goods = damestear
+						value = 0.05
+					}
+				}
+				change_variable = {
+					which = ArtificePointsDamestear
+					value = 5
+				}
+			}
+			else_if = {
+				limit = {
+					trading_part = {
+						trade_goods = damestear
+						value = 0.025
+					}
+				}
+				change_variable = {
+					which = ArtificePointsDamestear
+					value = 2
+				}
+			}
+			else_if = {
+				limit = {
+					trading_part = {
+						trade_goods = damestear
+						value = 0.01
+					}
+				}
+				change_variable = {
+					which = ArtificePointsDamestear
+					value = 1
+				}
+			}
+
+			change_variable = {
+				which = MaxArtificePoints
+				which = ArtificePointsDamestear
+			}
+
+			#dwarovar artifice dungeon
+			if = {
+				limit = {
+					has_dlc = "Leviathan"
+					any_owned_province = {
+						has_great_project = { type = dd_leforn tier = 3 }
+						owner = {
+							OR = {
+								culture_group = dwarven
+								culture_group = goblin
+								culture_group = kobold
+								dwarovar_orc_culture_primary = yes
+								culture = mossmouth_ogre
+							}
+						}
+					}
+				}
+				change_variable = {
+					which = MaxArtificePoints
+					value = 5
+				}
+			}
+
+
+			#static sources from things like missions and upkeep
+			change_variable = {
+				which = MaxArtificePoints
+				which = StaticArtificePoints
+			}
+			#"temporary" sources from event modifiers
+			export_to_variable = {
+				which = ModifierArtificePoints
+				value = modifier:artificers_capacity
+			}
+			change_variable = {
+				which = MaxArtificePoints
+				which = ModifierArtificePoints
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ModifierArtificePoints
+						value = 0
+					}
+				}
+				set_country_flag = artificers_capacity_modifier_positive
+				clr_country_flag = artificers_capacity_modifier_negative
+			}
+			if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = ModifierArtificePoints
+							value = 0
+						}
+					}
+				}
+				set_country_flag = artificers_capacity_modifier_negative
+				clr_country_flag = artificers_capacity_modifier_positive
+			}
+			# Feiten's mercs cost artificer cap
+			if = {
+				limit = { any_hired_mercenary_company = { template = merc_feiten_lightning_jellyfish } }
+				change_variable = {
+					which = MaxArtificePoints
+					value = -5
+				}
+			}
+			if = {
+				limit = { any_hired_mercenary_company = { template = merc_feiten_stasis } }
+				change_variable = {
+					which = MaxArtificePoints
+					value = -5
+				}
+			}
+			if = {
+				limit = { any_hired_mercenary_company = { template = merc_feiten_firestorm } }
+				change_variable = {
+					which = MaxArtificePoints
+					value = -5
+				}
+			}
+			if = {
+				limit = { any_hired_mercenary_company = { template = merc_feiten_sky_factory } }
+				change_variable = {
+					which = MaxArtificePoints
+					value = -5
+				}
+			}
+			if = {
+				limit = { has_country_flag = feiten_firestorm_active }
+				change_variable = {
+					which = MaxArtificePoints
+					value = -25
+				}
+			}
+			if = {
+				limit = { has_country_flag = feiten_stasis_field_active }
+				change_variable = {
+					which = MaxArtificePoints
+					value = -50
+				}
+			}
+			if = {
+				limit = { has_country_flag = feiten_skyfactory_active }
+				change_variable = {
+					which = MaxArtificePoints
+					value = -10
+				}
+			}
+			# Investments done as Feiten
+			if = {
+				limit = { OR = { tag = Y20 was_tag = Y20 } }
+				change_variable = {
+					which = MaxArtificePoints
+					which = feiten_number_of_shuimu_engineering_cadre_facilities_investments
+				}
+			}
+
+			#Varainé artificer cap from allies/subjects
+			if = {
+				limit = {
+					has_government_attribute = is_varaine_alchemical_corps
+				}
+
+				set_variable = {
+					which = VaraineAlliesArtificePoints
+					value = 0
+				}
+				set_variable = {
+					which = VaraineForeignAlliesArtificePoints
+					value = 0
+				}
+				if = {
+					limit = {
+						OR = {
+							num_of_allies = 1
+							num_of_subjects = 1
+						}
+					}
+					every_ally = {
+						limit = {
+							capital_scope = {continent = ROOT}
+						}
+						ROOT = {
+							change_variable = {
+								which = MaxArtificePoints
+								value = 2
+							}
+							change_variable = {
+								which = VaraineAlliesArtificePoints
+								value = 2
+							}
+						}
+					}
+					every_subject_country = {
+						limit = {
+							capital_scope = {continent = ROOT}
+						}
+						ROOT = {
+							change_variable = {
+								which = MaxArtificePoints
+								value = 2
+							}
+							change_variable = {
+								which = VaraineAlliesArtificePoints
+								value = 2
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						OR = {
+							num_of_allies = 1
+							num_of_subjects = 1
+						}
+					}
+					every_ally = {
+						limit = {
+							NOT = {capital_scope = {continent = ROOT}}
+						}
+						ROOT = {
+							change_variable = {
+								which = MaxArtificePoints
+								value = 4
+							}
+							change_variable = {
+								which = VaraineForeignAlliesArtificePoints
+								value = 4
+							}
+						}
+					}
+					every_subject_country = {
+						limit = {
+							NOT = {capital_scope = {continent = ROOT}}
+						}
+						ROOT = {
+							change_variable = {
+								which = MaxArtificePoints
+								value = 4
+							}
+							change_variable = {
+								which = VaraineForeignAlliesArtificePoints
+								value = 4
+							}
+						}
+					}
+				}
+			}
+
+			#Brelari Clockwork Watermills
+			if = {
+				limit = {
+					tag = G27
+				}
+				set_variable = {
+					which = BrelarWatermillPoints
+					value = 0
+				}
+				if = {
+					limit = {
+						any_owned_province = {
+							has_province_modifier = g27_clockwork_watermill
+						}
+					}
+					every_owned_province = {
+						limit = {
+							has_province_modifier = g27_clockwork_watermill
+						}
+						ROOT = {
+							change_variable = {
+								which = MaxArtificePoints
+								value = 3
+							}
+							change_variable = {
+								which = BrelarWatermillPoints
+								value = 3
+							}
+						}
+					}
+				}
+			}
+
+			# Points Multiplier
+			set_variable = {
+				which = ArtificePointsMultiplier
+				value = 1
+			}
+
+			
+
+			#IF YOU WANT TO ADD MORE MULTIPLIERS MAKE SURE TO add to getArtificeHasMultipliers in anb_custom_artifice_localization or the multipliers may not show up correctly
+
+			#liches and witch kings have no need for artifice and are distrustful of the threat it represents to them
+			if = {
+				limit = {
+					has_country_flag = orlghelovar_science_mages_privilege
+				}
+				change_variable = {
+					which = ArtificePointsMultiplier
+					value = 0.5
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = magic_artificery_mixed
+				}
+				subtract_variable = {
+					which = ArtificePointsMultiplier
+					value = 0.5
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = magic_artificery_artificery_only
+					ruler_has_personality = mage_personality
+					NOT = { has_ruler_flag = pursuing_artificery }
+				}
+				subtract_variable = {
+					which = ArtificePointsMultiplier
+					value = 0.5
+				}
+			}
+			if = {
+				limit = { 
+					tag = J84 #Taychendi Empire
+					has_country_flag = J84_increased_percent_artifice_capacity_flag
+				}
+				change_variable = {
+					which = ArtificePointsMultiplier
+					value = 0.25
+				}
+			}
+			
+			# Floor at 0
+			if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = ArtificePointsMultiplier
+							value = 0
+						}
+					}
+				}
+				set_variable = {
+					which = ArtificePointsMultiplier
+					value = 0
+				}
+				multiply_variable = {
+					which = MaxArtificePoints
+					which = ArtificePointsMultiplier
+				}
+			}
+			else = {
+				multiply_variable = {
+					which = MaxArtificePoints
+					which = ArtificePointsMultiplier
+				}
+			}
+
+			# Floor at 0
+			if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = MaxArtificePoints
+							value = 0
+						}
+					}
+				}
+				set_variable = {
+					which = MaxArtificePoints
+					value = 0
+				}
+			}
+
+			set_variable = {
+				which = RemainingArtificePoints
+				value = 0
+			}
+
+			change_variable = {
+				which = RemainingArtificePoints
+				which = MaxArtificePoints
+			}
+
+			subtract_variable = {
+				which = RemainingArtificePoints
+				which = ArtificeUpkeep
+			}
+
+			# If over capacity
+			if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = RemainingArtificePoints
+							value = 0
+						}
+					}
+				}
+				add_country_modifier = { name =  artificers_over_artifice_capacity duration = -1 }
+			}
+			else = {
+				remove_country_modifier = artificers_over_artifice_capacity
+			}
+
+			# also update max inventions
+			export_to_variable = {
+				variable_name = ArtificeMaxInventions
+				value = modifier:artificers_invention_slots
+			}
+			change_variable = {
+				which = ArtificeMaxInventions
+				which = artificers_invention_slots_base
+			}
+		}
+	}
+}
+
+research_speed = {
+	hidden_effect = {
+		if = {
+			limit = {
+				ai = yes
+			}
+			set_variable = {
+				which = ResearchSpeed
+				value = 10
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag =  artifice_research_random
+			}
+			set_variable = {
+				which = ResearchSpeed
+				value = 5
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = artifice_research_slow
+			}
+			set_variable = {
+				which = ResearchSpeed
+				value = 15
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = artifice_research_fast
+			}
+			set_variable = {
+				which = ResearchSpeed
+				value = 5
+			}
+		}
+		else = {
+			set_variable = {
+				which = ResearchSpeed
+				value = 10
+			}
+		}
+
+		# new_years = base_years * (1-x)
+		# example: -20% research time -> 10 years * (1-0.20) = 8 years
+		export_to_variable = {
+			which = ResearchSpeedMultiplier
+			value = modifier:artificers_research_time
+		}
+		change_variable = {
+			which = ResearchSpeedMultiplier
+			value = 1
+		}
+		if = { # clamp to 0.20 to avoid negative research time
+			limit = {
+				NOT = {
+					check_variable = {
+						which = ResearchSpeedMultiplier
+						value = 0.20
+					}
+				}
+			}
+			set_variable = {
+				which = ResearchSpeedMultiplier
+				value = 0.20
+			}
+		}
+		multiply_variable = {
+			which = ResearchSpeed
+			which = ResearchSpeedMultiplier
+		}
+	}
+}
+
+set_up_artifice_system = {
+	if = {
+		limit = {
+			NOT = {
+				has_country_flag = artifice_set_up
+			}
+		}
+		set_variable = {
+			which = StaticArtificePoints
+			value = 0
+		}
+		set_variable = {
+			which = ArtificeUpkeep
+			value = 0
+		}
+		#sets initial tier
+		set_country_flag = artifice_unlocked_basic
+
+		#tracks when you unlock a new tier
+		set_variable = {
+			which = artifice_level_progress
+			value = 0
+		}
+
+		#tracks researches done before 1650
+		set_variable = {
+			which = ResearchArtificePoints
+			value = 0
+		}
+
+		#sets up the maximum allowed simultainious active inventions
+		set_variable = {
+			which = artificers_invention_slots_base
+			value = 7
+		}
+		set_country_flag = artifice_set_up
+	}
+	if = {
+		limit = {
+			NOT = { has_country_flag = artificery_unlocked }
+			NOT = { has_country_flag = artificery_choice }
+			NOT = { tag = H74 } #dak special
+			OR = {
+				AND = {
+					is_tribal = no
+					OR = {
+						culture_group = kobold
+						culture_group = goblin
+						culture_group = gnomish
+					}
+					NOT = { primary_culture = goldscale_kobold }
+				}
+				AND = {
+					has_institution = manufactories
+					OR = {
+						NOT = { religion = bulwari_sun_cult }
+						is_chosen_country = no
+					}
+				}
+			}
+		}
+		country_event = {
+			id = magic_artificery_setup.1
+		}	
+		set_country_flag = artificery_choice
+	}
+	update_artifice_points = yes
+}
+
+artifice_granted_10 = {
+	custom_tooltip = increases_our_artifice_upkeep_by_10
+	custom_tooltip = artificer_points_upkeep_tt
+	hidden_effect = {
+		change_variable = {
+			which = ArtificeUpkeep
+			value = 10
+		}
+	}
+	if = {
+		limit = {
+			ai = no
+		}
+		add_treasury = -50
+		add_adm_power = -5
+		add_dip_power = -5
+		add_mil_power = -5
+	}
+	update_artifice_points = yes
+}
+
+artifice_remove_10 = {
+	custom_tooltip = decreases_our_artifice_upkeep_by_10
+	custom_tooltip = artificer_points_upkeep_tt
+	hidden_effect = {
+		subtract_variable = {
+			which = ArtificeUpkeep
+			value = 10
+		}
+	}
+	update_artifice_points = yes
+}
+
+artifice_granted_20 = {
+	custom_tooltip = increases_our_artifice_upkeep_by_20
+	custom_tooltip = artificer_points_upkeep_tt
+	hidden_effect = {
+		change_variable = {
+			which = ArtificeUpkeep
+			value = 20
+		}
+	}
+	if = {
+		limit = {
+			ai = no
+		}
+		add_treasury = -100
+		add_adm_power = -10
+		add_dip_power = -10
+		add_mil_power = -10
+	}
+	update_artifice_points = yes
+}
+
+artifice_remove_20 = {
+	custom_tooltip = decreases_our_artifice_upkeep_by_20
+	custom_tooltip = artificer_points_upkeep_tt
+	hidden_effect = {
+		subtract_variable = {
+			which = ArtificeUpkeep
+			value = 20
+		}
+	}
+	update_artifice_points = yes
+}
+
+artifice_granted_30 = {
+	custom_tooltip = increases_our_artifice_upkeep_by_30
+	custom_tooltip = artificer_points_upkeep_tt
+	hidden_effect = {
+		change_variable = {
+			which = ArtificeUpkeep
+			value = 30
+		}
+	}
+	if = {
+		limit = {
+			ai = no
+		}
+		add_treasury = -200
+		add_adm_power = -20
+		add_dip_power = -20
+		add_mil_power = -20
+	}
+	update_artifice_points = yes
+}
+
+artifice_remove_30 = {
+	custom_tooltip = decreases_our_artifice_upkeep_by_30
+	custom_tooltip = artificer_points_upkeep_tt
+	hidden_effect = {
+		subtract_variable = {
+			which = ArtificeUpkeep
+			value = 30
+		}
+	}
+	update_artifice_points = yes
+}
+
+
+artifice_granted_40 = {
+	custom_tooltip = increases_our_artifice_upkeep_by_40
+	custom_tooltip = artificer_points_upkeep_tt
+	hidden_effect = {
+		change_variable = {
+			which = ArtificeUpkeep
+			value = 40
+		}
+	}
+	if = {
+		limit = {
+			ai = no
+		}
+		add_treasury = -400
+		add_adm_power = -40
+		add_dip_power = -40
+		add_mil_power = -40
+	}
+	update_artifice_points = yes
+}
+
+artifice_remove_40 = {
+	custom_tooltip = decreases_our_artifice_upkeep_by_40
+	custom_tooltip = artificer_points_upkeep_tt
+	hidden_effect = {
+		subtract_variable = {
+			which = ArtificeUpkeep
+			value = 40
+		}
+	}
+	update_artifice_points = yes
+}
+
+artifice_remove_dynamic = { #Purpose: Removing / tracking capacity for inventions with costs that vary (e.g. Kobildzan's Draconic Ascension)
+	custom_tooltip = decreases_our_artifice_upkeep_dynamic
+	custom_tooltip = artificer_points_upkeep_tt
+	hidden_effect = {
+		subtract_variable = {
+			which = ArtificeUpkeep
+			which = ArtificeDynamicInventionCost
+		}
+	}
+}
+
+mission_reward_artifice_points_1 = {
+	custom_tooltip = permanently_increases_our_artifice_points_by_1_tt
+	hidden_effect = {
+		change_variable = {
+			which = StaticArtificePoints
+			value = 1
+		}
+	}
+	update_artifice_points = yes
+}
+
+mission_reward_artifice_points_2 = {
+	custom_tooltip = permanently_increases_our_artifice_points_by_2_tt
+	hidden_effect = {
+		change_variable = {
+			which = StaticArtificePoints
+			value = 2
+		}
+	}
+	update_artifice_points = yes
+}
+
+mission_reward_artifice_points_3 = {
+	custom_tooltip = permanently_increases_our_artifice_points_by_3_tt
+	hidden_effect = {
+		change_variable = {
+			which = StaticArtificePoints
+			value = 3
+		}
+	}
+	update_artifice_points = yes
+}
+
+mission_reward_artifice_points_4 = {
+	custom_tooltip = permanently_increases_our_artifice_points_by_4_tt
+	hidden_effect = {
+		change_variable = {
+			which = StaticArtificePoints
+			value = 4
+		}
+	}
+	update_artifice_points = yes
+}
+
+mission_reward_artifice_points_5 = {
+	custom_tooltip = permanently_increases_our_artifice_points_by_5_tt
+	hidden_effect = {
+		change_variable = {
+			which = StaticArtificePoints
+			value = 5
+		}
+	}
+	update_artifice_points = yes
+}
+
+mission_reward_artifice_points_10 = {
+	custom_tooltip = permanently_increases_our_artifice_points_by_10_tt
+	hidden_effect = {
+		change_variable = {
+			which = StaticArtificePoints
+			value = 10
+		}
+	}
+	update_artifice_points = yes
+}
+
+mission_reward_artifice_points_20 = {
+	custom_tooltip = permanently_increases_our_artifice_points_by_20_tt
+	hidden_effect = {
+		change_variable = {
+			which = StaticArtificePoints
+			value = 20
+		}
+	}
+	update_artifice_points = yes
+}
+
+mission_reward_artifice_points_25 = {
+	custom_tooltip = permanently_increases_our_artifice_points_by_25_tt
+	hidden_effect = {
+		change_variable = {
+			which = StaticArtificePoints
+			value = 25
+		}
+	}
+	update_artifice_points = yes
+}
+
+mission_reward_artifice_points_40 = {
+	custom_tooltip = permanently_increases_our_artifice_points_by_40_tt
+	hidden_effect = {
+		change_variable = {
+			which = StaticArtificePoints
+			value = 40
+		}
+	}
+	update_artifice_points = yes
+}
+
+mission_reward_artifice_points_50 = {
+	custom_tooltip = permanently_increases_our_artifice_points_by_50_tt
+	hidden_effect = {
+		change_variable = {
+			which = StaticArtificePoints
+			value = 50
+		}
+	}
+	update_artifice_points = yes
+}
+
+debuff_artifice_points_2 = {
+	custom_tooltip = permanently_decreases_our_artifice_points_by_2_tt
+	hidden_effect = {
+		change_variable = {
+			which = StaticArtificePoints
+			value = -2
+		}
+	}
+	update_artifice_points = yes
+}
+
+debuff_artifice_points_5 = {
+	custom_tooltip = permanently_decreases_our_artifice_points_by_5_tt
+	hidden_effect = {
+		change_variable = {
+			which = StaticArtificePoints
+			value = -5
+		}
+	}
+	update_artifice_points = yes
+}
+
+debuff_artifice_points_20 = {
+	custom_tooltip = permanently_decreases_our_artifice_points_by_20_tt
+	hidden_effect = {
+		change_variable = {
+			which = StaticArtificePoints
+			value = -20
+		}
+	}
+	update_artifice_points = yes
+}
+
+debuff_artifice_points_40 = {
+	custom_tooltip = permanently_decreases_our_artifice_points_by_40_tt
+	hidden_effect = {
+		change_variable = {
+			which = StaticArtificePoints
+			value = -40
+		}
+	}
+	update_artifice_points = yes
+}
+
+debuff_artifice_points_50 = {
+	custom_tooltip = permanently_decreases_our_artifice_points_by_50_tt
+	hidden_effect = {
+		change_variable = {
+			which = StaticArtificePoints
+			value = -50
+		}
+	}
+	update_artifice_points = yes
+}
+
+# 		#Breluslad Stuff
+# 		50 = {
+# 			trigger = { tag = G27 has_country_flag = g27_breluslad_flag }
+# 			modifier = {
+# 				factor = 0
+# 				has_country_flag = g27_unlocked_watermills
+# 			}
+# 			modifier = {
+# 				factor = 0.5
+# 				has_country_flag = artifice_researching_military
+# 			}
+# 			modifier = {
+# 				factor = 2
+# 				has_country_flag = artifice_research_machinery
+# 			}
+# 			modifier = {
+# 				factor = 2
+# 				has_country_flag = artifice_research_industry
+# 			}
+# 			modifier = {
+# 				factor = 2
+# 				has_country_flag = artifice_research_brilliance
+# 			}
+# 			modifier = {
+# 				factor = 1000
+# 				has_estate_influence_modifier = {
+# 					estate = estate_burghers
+# 					modifier = G27_requested_architect_desc
+# 				}
+# 			}
+# 			set_country_flag = g27_unlocked_watermills
+# 			ROOT = { country_event = { id = flavour_brelar.100 } }
+# 		}
+# 		50 = {
+# 			trigger = { tag = G27 has_country_flag = g27_breluslad_flag has_country_flag = g27_unlocked_watermills }
+# 			modifier = {
+# 				factor = 0
+# 				has_country_flag = g27_unlocked_riverways
+# 			}
+# 			modifier = {
+# 				factor = 0.5
+# 				has_country_flag = artifice_researching_military
+# 			}
+# 			modifier = {
+# 				factor = 2
+# 				has_country_flag = artifice_research_machinery
+# 			}
+# 			modifier = {
+# 				factor = 2
+# 				has_country_flag = artifice_research_industry
+# 			}
+# 			modifier = {
+# 				factor = 2
+# 				has_country_flag = artifice_research_brilliance
+# 			}
+# 			modifier = {
+# 				factor = 100
+# 				has_estate_influence_modifier = {
+# 					estate = estate_burghers
+# 					modifier = G27_requested_architect_desc
+# 				}
+# 			}
+# 			modifier = {
+# 				factor = 1000
+# 				has_estate_privilege = estate_artificers_clockwork_architects
+# 			}
+# 			set_country_flag = g27_unlocked_riverways
+# 			ROOT = { country_event = { id = flavour_brelar.101 } }
+# 		}
+
+
+# 		#bonuses as fallback
+# 		1 = {
+# 			ROOT = { country_event = { id = artifice_inventions.1000 } }
+# 			modifier = {
+# 				factor = 2
+# 				has_country_flag = artifice_research_machinery
+# 			}
+# 			modifier = {
+# 				factor = 0
+# 				NOT = { has_country_flag = artifice_researching_military }
+# 			}
+# 			modifier = {
+# 				factor = 0
+# 				has_country_modifier = artificer_research_bonus_machinery_mil
+# 			}
+# 		}
+# 		1 = {
+# 			ROOT = { country_event = { id = artifice_inventions.1001 } }
+# 			modifier = {
+# 				factor = 2
+# 				has_country_flag = artifice_research_machinery
+# 			}
+# 			modifier = {
+# 				factor = 0
+# 				NOT = { has_country_flag = artifice_research_industry }
+# 			}
+# 			modifier = {
+# 				factor = 0
+# 				has_country_modifier = artificer_research_bonus_machinery_ind
+# 			}
+# 		}
+# 		1 = {
+# 			ROOT = { country_event = { id = artifice_inventions.1002 } }
+# 			modifier = {
+# 				factor = 2
+# 				has_country_flag = artifice_research_machinery
+# 			}
+# 			modifier = {
+# 				factor = 0
+# 				NOT = { has_country_flag = artifice_researching_society }
+# 			}
+# 			modifier = {
+# 				factor = 0
+# 				has_country_modifier = artificer_research_bonus_machinery_society
+# 			}
+# 		}
+
+# 		1 = {
+# 			ROOT = { country_event = { id = artifice_inventions.1003 } }
+# 			modifier = {
+# 				factor = 2
+# 				has_country_flag = artifice_research_technomancy
+# 			}
+# 			modifier = {
+# 				factor = 0
+# 				NOT = { has_country_flag = artifice_researching_military }
+# 			}
+# 			modifier = {
+# 				factor = 0
+# 				has_country_modifier = artificer_research_bonus_technomancy_mil
+# 			}
+# 		}
+# 		1 = {
+# 			ROOT = { country_event = { id = artifice_inventions.1004 } }
+# 			modifier = {
+# 				factor = 2
+# 				has_country_flag = artifice_research_technomancy
+# 			}
+# 			modifier = {
+# 				factor = 0
+# 				NOT = { has_country_flag = artifice_research_industry }
+# 			}
+# 			modifier = {
+# 				factor = 0
+# 				has_country_modifier = artificer_research_bonus_technomancy_ind
+# 			}
+# 		}
+# 		1 = {
+# 			ROOT = { country_event = { id = artifice_inventions.1005 } }
+# 			modifier = {
+# 				factor = 2
+# 				has_country_flag = artifice_research_technomancy
+# 			}
+# 			modifier = {
+# 				factor = 0
+# 				NOT = { has_country_flag = artifice_researching_society }
+# 			}
+# 			modifier = {
+# 				factor = 0
+# 				has_country_modifier = artificer_research_bonus_technomancy_society
+# 			}
+# 		}
+
+# 		1 = {
+# 			ROOT = { country_event = { id = artifice_inventions.1006 } }
+# 			modifier = {
+# 				factor = 2
+# 				has_country_flag = artifice_research_brilliance
+# 			}
+# 			modifier = {
+# 				factor = 0
+# 				NOT = { has_country_flag = artifice_researching_military }
+# 			}
+# 			modifier = {
+# 				factor = 0
+# 				has_country_modifier = artificer_research_bonus_brilliance_mil
+# 			}
+# 		}
+# 		1 = {
+# 			ROOT = { country_event = { id = artifice_inventions.1007 } }
+# 			modifier = {
+# 				factor = 2
+# 				has_country_flag = artifice_research_brilliance
+# 			}
+# 			modifier = {
+# 				factor = 0
+# 				NOT = { has_country_flag = artifice_research_industry }
+# 			}
+# 			modifier = {
+# 				factor = 0
+# 				has_country_modifier = artificer_research_bonus_brilliance_ind
+# 			}
+# 		}
+# 		1 = {
+# 			ROOT = { country_event = { id = artifice_inventions.1008 } }
+# 			add_country_modifier = {
+# 				name = artificer_research_bonus_brilliance_society
+# 				duration = 3650
+# 			}
+# 			modifier = {
+# 				factor = 2
+# 				has_country_flag = artifice_research_brilliance
+# 			}
+# 			modifier = {
+# 				factor = 0
+# 				NOT = { has_country_flag = artifice_researching_society }
+# 			}
+# 			modifier = {
+# 				factor = 0
+# 				has_country_modifier = artificer_research_bonus_brilliance_society
+# 			}
+# 		}
+# 	}
+
+
+# airfleet_research_rewards = {
+# 	random_list = {
+# 		# Feiten stuff
+# 		50 = {
+# 			trigger = { OR = { tag = Y20 was_tag = Y20 } }
+# 			modifier = {
+# 				factor = 0
+# 				has_country_flag = unlocked_artifice_invention_feiten_farsight_telescopes
+# 			}
+# 			set_country_flag = unlocked_artifice_invention_feiten_farsight_telescopes
+# 			ROOT = { country_event = { id = flavor_feiten.250 } }
+# 		}
+# 		50 = {
+# 			trigger = { OR = { tag = Y20 was_tag = Y20 } }
+# 			modifier = {
+# 				factor = 0
+# 				has_country_flag = unlocked_artifice_invention_feiten_porcelain_caged_firebirds
+# 			}
+# 			set_country_flag = unlocked_artifice_invention_feiten_porcelain_caged_firebirds
+# 			ROOT = { country_event = { id = flavor_feiten.251 } }
+# 		}
+# 		50 = {
+# 			trigger = { OR = { tag = Y20 was_tag = Y20 } }
+# 			modifier = {
+# 				factor = 0
+# 				has_country_flag = unlocked_artifice_invention_feiten_specialized_construction_arms
+# 			}
+# 			set_country_flag = unlocked_artifice_invention_feiten_specialized_construction_arms
+# 			ROOT = { country_event = { id = flavor_feiten.252 } }
+# 		}
+# 		50 = {
+# 			trigger = { OR = { tag = Y20 was_tag = Y20 } }
+# 			modifier = {
+# 				factor = 0
+# 				has_country_flag = unlocked_artifice_invention_feiten_expanding_storage_holds
+# 			}
+# 			set_country_flag = unlocked_artifice_invention_feiten_expanding_storage_holds
+# 			ROOT = { country_event = { id = flavor_feiten.253 } }
+# 		}
+# 		50 = {
+# 			trigger = { OR = { tag = Y20 was_tag = Y20 } }
+# 			modifier = {
+# 				factor = 0
+# 				has_country_flag = unlocked_artifice_invention_feiten_skywriting
+# 			}
+# 			set_country_flag = unlocked_artifice_invention_feiten_skywriting
+# 			ROOT = { country_event = { id = flavor_feiten.254 } }
+# 		}
+# 		50 = {
+# 			trigger = { OR = { tag = Y20 was_tag = Y20 } }
+# 			modifier = {
+# 				factor = 0
+# 				has_country_flag = unlocked_artifice_invention_feiten_electroplated_armor
+# 			}
+# 			set_country_flag = unlocked_artifice_invention_feiten_electroplated_armor
+# 			ROOT = { country_event = { id = flavor_feiten.255 } }
+# 		}
+# 		50 = {
+# 			trigger = { OR = { tag = Y20 was_tag = Y20 } }
+# 			modifier = {
+# 				factor = 0
+# 				has_country_flag = unlocked_artificery_invention_feiten_ivory_conduits
+# 			}
+# 			set_country_flag = unlocked_artificery_invention_feiten_ivory_conduits
+# 			ROOT = { country_event = { id = flavor_feiten.256 } }
+# 		}
+# 		50 = {
+# 			trigger = { OR = { tag = Y20 was_tag = Y20 } }
+# 			modifier = {
+# 				factor = 0
+# 				has_country_flag = unlocked_artifice_invention_feiten_silken_cladding
+# 			}
+# 			set_country_flag = unlocked_artifice_invention_feiten_silken_cladding
+# 			ROOT = { country_event = { id = flavor_feiten.257 } }
+# 		}
+# 		50 = {
+# 			trigger = { OR = { tag = Y20 was_tag = Y20 } }
+# 			modifier = {
+# 				factor = 0
+# 				has_country_flag = unlocked_artifice_intention_feiten_damestear_ribbing
+# 			}
+# 			set_country_flag = unlocked_artifice_intention_feiten_damestear_ribbing
+# 			ROOT = { country_event = { id = flavor_feiten.258 } }
+# 		}
+# 		50 = {
+# 			trigger = { OR = { tag = Y20 was_tag = Y20 } }
+# 			modifier = {
+# 				factor = 0
+# 				has_country_flag = unlocked_artifice_intention_feiten_long_rockets
+# 			}
+# 			set_country_flag = unlocked_artifice_intention_feiten_long_rockets
+# 			ROOT = { country_event = { id = flavor_feiten.259 } }
+# 		}
+# 		50 = {
+# 			trigger = { OR = { tag = Y20 was_tag = Y20 } }
+# 			modifier = {
+# 				factor = 0
+# 				has_country_flag = unlocked_artifice_intention_feiten_lightning_amplifier
+# 			}
+# 			set_country_flag = unlocked_artifice_intention_feiten_lightning_amplifier
+# 			ROOT = { country_event = { id = flavor_feiten.260 } }
+# 		}
+# 		50 = {
+# 			trigger = { OR = { tag = Y20 was_tag = Y20 } }
+# 			modifier = {
+# 				factor = 0
+# 				has_country_flag = unlocked_artifice_intention_feiten_steel_rudders
+# 			}
+# 			set_country_flag = unlocked_artifice_intention_feiten_steel_rudders
+# 			ROOT = { country_event = { id = flavor_feiten.261 } }
+# 		}
+# 	}
+
+
+#New Stuff - River
+create_leader_scaling_with_tradition_artifice = {
+	if = {
+		limit = {
+			$type$_tradition = 80
+		}
+		create_$leader$ = {
+			tradition = 100
+			add_fire = 3
+			add_siege = 1
+		}
+	}
+	else_if = {
+		limit = {
+			$type$_tradition = 70
+		}
+		create_$leader$ = {
+			tradition = 90
+			add_fire = 3
+			add_siege = 1
+		}
+	}
+	else_if = {
+		limit = {
+			$type$_tradition = 60
+		}
+		create_$leader$ = {
+			tradition = 80
+			add_fire = 3
+			add_siege = 1
+		}
+	}
+	else_if = {
+		limit = {
+			$type$_tradition = 50
+		}
+		create_$leader$ = {
+			tradition = 70
+			add_fire = 2
+			add_siege = 1
+		}
+	}
+	else_if = {
+		limit = {
+			$type$_tradition = 40
+		}
+		create_$leader$ = {
+			tradition = 60
+			add_fire = 2
+			add_siege = 1
+		}
+	}
+	else_if = {
+		limit = {
+			$type$_tradition = 30
+		}
+		create_$leader$ = {
+			tradition = 50
+			add_fire = 2
+		}
+	}
+	else = {
+		create_$leader$ = {
+			tradition = 40
+			add_fire = 2
+		}
+	}
+	custom_tooltip = create_leader_scaling_with_tradition_tt
+}
+estate_action_GRANT_GENERALSHIP_ARTIFICE = {
+	create_leader_scaling_with_tradition_artifice = {
+		leader = general
+		type = army
+	}
+	add_estate_loyalty = {
+		estate = estate_artificers
+		loyalty = -10
+	}
+}
+
+estate_action_GRANT_DRAFT_ARTIFICERS_ARTIFICE = {
+	if = {
+		limit = { NOT = { land_forcelimit = 10} }
+		capital_scope = {
+			rajput_infantry = ROOT
+			rajput_infantry = ROOT
+			rajput_infantry = ROOT
+		}
+	}
+	else_if = {
+		limit = { 
+			NOT = { land_forcelimit = 20 }
+			land_forcelimit = 10
+		}
+		capital_scope = {
+			rajput_infantry = ROOT
+			rajput_infantry = ROOT
+			rajput_infantry = ROOT
+			rajput_infantry = ROOT
+		}
+	}
+	else = {
+		capital_scope = {
+			rajput_infantry = ROOT
+			rajput_infantry = ROOT
+			rajput_infantry = ROOT
+			rajput_infantry = ROOT
+			rajput_infantry = ROOT
+		}
+	}
+}
+
+#Research Scripted Effect - Randomization Of Inventions
+artifice_research_select_innovation_options_effect = {
+
+	#Normal Research Options - Iterated until variable hits 0 - Tier 1
+	if = {
+		limit = {
+			check_variable = {
+				which = artificeResearchOptionsTier1
+				value = 1
+			}
+		}
+
+		set_variable = {
+			which = currentIterationsLeftTier1
+			which = artificeResearchOptionsTier1
+		}
+
+		random_list = {
+			#Economic Inventions - Tier 1
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_spell_in_a_box
+							has_country_flag = unlocked_artifice_invention_spell_in_a_box
+							has_country_flag = artifice_researching_military
+							has_country_flag = artifice_researching_society
+						}
+					}
+				}
+				set_country_flag = research_artifice_invention_spell_in_a_box
+				subtract_variable = {
+					which = artificeResearchOptionsTier1
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_self_cleaning_parchment
+							has_country_flag = unlocked_artifice_invention_self_cleaning_parchment
+							has_country_flag = artifice_researching_military
+							has_country_flag = artifice_researching_society
+						}
+					}
+				}
+				set_country_flag = research_artifice_invention_self_cleaning_parchment
+				subtract_variable = {
+					which = artificeResearchOptionsTier1
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_box_of_holding
+							has_country_flag = unlocked_artifice_invention_box_of_holding
+							has_country_flag = artifice_researching_military
+							has_country_flag = artifice_researching_society
+						}
+					}
+				}
+				set_country_flag = research_artifice_invention_box_of_holding
+				subtract_variable = {
+					which = artificeResearchOptionsTier1
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_market_mender
+							has_country_flag = unlocked_artifice_invention_market_mender
+							has_country_flag = artifice_researching_military
+							has_country_flag = artifice_researching_society
+						}
+					}
+				}
+				set_country_flag = research_artifice_invention_market_mender
+				subtract_variable = {
+					which = artificeResearchOptionsTier1
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_arcane_battery_capital_complex
+							has_country_flag = unlocked_artifice_invention_arcane_battery_capital_complex
+							has_country_flag = artifice_researching_military
+							has_country_flag = artifice_researching_society
+						}
+					}
+				}
+				set_country_flag = research_artifice_invention_arcane_battery_capital_complex
+				subtract_variable = {
+					which = artificeResearchOptionsTier1
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_plane_of_water_teleporter
+							has_country_flag = unlocked_artifice_invention_plane_of_water_teleporter
+							has_country_flag = artifice_researching_military
+							has_country_flag = artifice_researching_society
+						}
+					}
+				}
+				set_country_flag = research_artifice_invention_plane_of_water_teleporter
+				subtract_variable = {
+					which = artificeResearchOptionsTier1
+					value = 1
+				}
+			}
+			#Military Inventions - Tier 1
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_portable_turrets
+							has_country_flag = unlocked_artifice_invention_portable_turrets
+							has_country_flag = artifice_researching_economic
+							has_country_flag = artifice_researching_society
+						}
+					}
+				}
+				set_country_flag = research_artifice_invention_portable_turrets
+				subtract_variable = {
+					which = artificeResearchOptionsTier1
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_commercial_sky_galleons
+							has_country_flag = unlocked_artifice_invention_commercial_sky_galleons
+							has_country_flag = artifice_researching_economic
+							has_country_flag = artifice_researching_society
+						}
+					}
+				}
+				set_country_flag = research_artifice_invention_commercial_sky_galleons
+				subtract_variable = {
+					which = artificeResearchOptionsTier1
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_sparkdrive_rifles
+							has_country_flag = unlocked_artifice_invention_sparkdrive_rifles
+							has_country_flag = artifice_researching_economic
+							has_country_flag = artifice_researching_society
+						}
+					}
+				}
+				set_country_flag = research_artifice_invention_sparkdrive_rifles
+				subtract_variable = {
+					which = artificeResearchOptionsTier1
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_vorpal_bullets
+							has_country_flag = unlocked_artifice_invention_vorpal_bullets
+							has_country_flag = artifice_researching_economic
+							has_country_flag = artifice_researching_society
+						}
+					}
+				}
+				set_country_flag = research_artifice_invention_vorpal_bullets
+				subtract_variable = {
+					which = artificeResearchOptionsTier1
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_magic_missile_deployer
+							has_country_flag = unlocked_artifice_invention_magic_missile_deployer
+							has_country_flag = artifice_researching_economic
+							has_country_flag = artifice_researching_society
+						}
+					}
+				}
+				set_country_flag = research_artifice_invention_magic_missile_deployer
+				subtract_variable = {
+					which = artificeResearchOptionsTier1
+					value = 1
+				}
+			}
+			#Society Inventions  - Tier 1
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_viewcatcher
+							has_country_flag = unlocked_artifice_invention_viewcatcher
+							has_country_flag = artifice_researching_economic
+							has_country_flag = artifice_researching_military
+						}
+					}
+				}
+				set_country_flag = research_artifice_invention_viewcatcher
+				subtract_variable = {
+					which = artificeResearchOptionsTier1
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_sending_stones
+							has_country_flag = unlocked_artifice_invention_sending_stones
+							has_country_flag = artifice_researching_economic
+							has_country_flag = artifice_researching_military
+						}
+					}
+				}
+				set_country_flag = research_artifice_invention_sending_stones
+				subtract_variable = {
+					which = artificeResearchOptionsTier1
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_centipedal_chests
+							has_country_flag = unlocked_artifice_invention_centipedal_chests
+							has_country_flag = artifice_researching_economic
+							has_country_flag = artifice_researching_military
+						}
+					}
+				}
+				set_country_flag = research_artifice_invention_centipedal_chests
+				subtract_variable = {
+					which = artificeResearchOptionsTier1
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_living_mirrors
+							has_country_flag = unlocked_artifice_invention_living_mirrors
+							has_country_flag = artifice_researching_economic
+							has_country_flag = artifice_researching_military
+						}
+					}
+				}
+				set_country_flag = research_artifice_invention_living_mirrors
+				subtract_variable = {
+					which = artificeResearchOptionsTier1
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_apparitional_communicator
+							has_country_flag = unlocked_artifice_invention_apparitional_communicator
+							has_country_flag = artifice_researching_economic
+							has_country_flag = artifice_researching_military
+						}
+					}
+				}
+				set_country_flag = research_artifice_invention_apparitional_communicator
+				subtract_variable = {
+					which = artificeResearchOptionsTier1
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_mystic_ciphers
+							has_country_flag = unlocked_artifice_invention_mystic_ciphers
+							has_country_flag = artifice_researching_economic
+							has_country_flag = artifice_researching_military
+						}
+					}
+				}
+				set_country_flag = research_artifice_invention_mystic_ciphers
+				subtract_variable = {
+					which = artificeResearchOptionsTier1
+					value = 1
+				}
+			}
+			#Special Inventions  - Tier 1
+			#Economic
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_fine_print_obfuscator
+							has_country_flag = unlocked_artifice_invention_fine_print_obfuscator
+							has_country_flag = artifice_researching_military
+							has_country_flag = artifice_researching_society
+						}
+					}
+					OR = {
+						primary_culture = crownsman
+						primary_culture = ionnic
+					}
+				}
+				set_country_flag = research_artifice_invention_fine_print_obfuscator
+				subtract_variable = {
+					which = artificeResearchOptionsTier1
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_automated_translator
+							has_country_flag = unlocked_artifice_invention_automated_translator
+							has_country_flag = artifice_researching_military
+							has_country_flag = artifice_researching_society
+						}
+					}
+					OR = {
+						primary_culture = west_damerian
+						primary_culture = east_damerian
+						primary_culture = rogieran
+						primary_culture = nurcestiran
+						primary_culture = ancardian
+						primary_culture = anbenncoster
+						primary_culture = anbenlander
+					}
+				}
+				set_country_flag = research_artifice_invention_automated_translator
+				subtract_variable = {
+					which = artificeResearchOptionsTier1
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_wine_ageifier
+							has_country_flag = unlocked_artifice_invention_wine_ageifier
+							has_country_flag = artifice_researching_military
+							has_country_flag = artifice_researching_society
+						}
+					}
+					OR = {
+						culture_group = lencori
+						primary_culture = rosanda
+					}
+				}
+				set_country_flag = research_artifice_invention_wine_ageifier
+				subtract_variable = {
+					which = artificeResearchOptionsTier1
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_pearl_cultivators
+							has_country_flag = unlocked_artifice_invention_pearl_cultivators
+							has_country_flag = artifice_researching_military
+							has_country_flag = artifice_researching_society
+						}
+					}
+					primary_culture = pearlsedger
+
+				}
+				set_country_flag = research_artifice_invention_pearl_cultivators
+				subtract_variable = {
+					which = artificeResearchOptionsTier1
+					value = 1
+				}
+			}
+			#Military
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_ancestral_guardian_golems
+							has_country_flag = unlocked_artifice_invention_ancestral_guardian_golems
+							has_country_flag = artifice_researching_economic
+							has_country_flag = artifice_researching_society
+						}
+					}
+					OR = {
+						
+					}
+				}
+				set_country_flag = research_artifice_invention_ancestral_guardian_golems
+				subtract_variable = {
+					which = artificeResearchOptionsTier1
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_antimagic_field_generator
+							has_country_flag = unlocked_artifice_invention_antimagic_field_generator
+							has_country_flag = artifice_researching_economic
+							has_country_flag = artifice_researching_society
+						}
+					}
+					religion = ravelian
+				}
+				set_country_flag = research_artifice_invention_antimagic_field_generator
+				subtract_variable = {
+					which = artificeResearchOptionsTier1
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_believable_ruin_2_bomb
+							has_country_flag = unlocked_artifice_invention_believable_ruin_2_bomb
+							has_country_flag = artifice_researching_economic
+							has_country_flag = artifice_researching_society
+						}
+					}
+					culture_group = goblin
+				}
+				set_country_flag = research_artifice_invention_believable_ruin_2_bomb
+				subtract_variable = {
+					which = artificeResearchOptionsTier1
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_vernman_hero_tonic
+							has_country_flag = unlocked_artifice_invention_vernman_hero_tonic
+							has_country_flag = artifice_researching_economic
+							has_country_flag = artifice_researching_society
+						}
+					}
+					OR = {
+						primary_culture = vernman
+						primary_culture = valorman
+						primary_culture = heartman
+					}
+				}
+				set_country_flag = research_artifice_invention_vernman_hero_tonic
+				subtract_variable = {
+					which = artificeResearchOptionsTier1
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_dragonscale_plating
+							has_country_flag = unlocked_artifice_invention_dragonscale_plating
+							has_country_flag = artifice_researching_economic
+							has_country_flag = artifice_researching_society
+						}
+					}
+					has_country_modifier = kobold_military
+				}
+				modifier = {
+					factor = 3
+					tag = Z38
+				}
+				set_country_flag = research_artifice_invention_dragonscale_plating
+				subtract_variable = {
+					which = artificeResearchOptionsTier1
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_predator_exoskeleton
+							has_country_flag = unlocked_artifice_invention_predator_exoskeleton
+							has_country_flag = artifice_researching_economic
+							has_country_flag = artifice_researching_society
+						}
+					}
+					has_country_modifier = harimari_military
+				}
+				set_country_flag = research_artifice_invention_predator_exoskeleton
+				subtract_variable = {
+					which = artificeResearchOptionsTier1
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_scrap_mechs
+							has_country_flag = unlocked_artifice_invention_scrap_mechs
+							has_country_flag = artifice_researching_economic
+							has_country_flag = artifice_researching_society
+						}
+					}
+					has_country_modifier = goblin_military
+				}
+				set_country_flag = research_artifice_invention_scrap_mechs
+				subtract_variable = {
+					which = artificeResearchOptionsTier1
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_war_rigs
+							has_country_flag = unlocked_artifice_invention_war_rigs
+							has_country_flag = artifice_researching_economic
+							has_country_flag = artifice_researching_society
+						}
+					}
+					culture_group = taychendi_ruinborn_elf
+				}
+				set_country_flag = research_artifice_invention_war_rigs
+				subtract_variable = {
+					which = artificeResearchOptionsTier1
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_sunbeam_armaments
+							has_country_flag = unlocked_artifice_invention_sunbeam_armaments
+							has_country_flag = artifice_researching_economic
+							has_country_flag = artifice_researching_society
+						}
+					}
+					religion_group = bulwari
+				}
+				set_country_flag = research_artifice_invention_sunbeam_armaments
+				subtract_variable = {
+					which = artificeResearchOptionsTier1
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_power_fists
+							has_country_flag = unlocked_artifice_invention_power_fists
+							has_country_flag = artifice_researching_economic
+							has_country_flag = artifice_researching_society
+						}
+					}
+					OR = {
+						religion = accretive_path
+						religion = transmutative_path
+					}
+				}
+				set_country_flag = research_artifice_invention_power_fists
+				subtract_variable = {
+					which = artificeResearchOptionsTier1
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_artificer_exo_arms
+							has_country_flag = unlocked_artifice_invention_artificer_exo_arms
+							has_country_flag = artifice_researching_economic
+							has_country_flag = artifice_researching_society
+						}
+					}
+				}
+				set_country_flag = research_artifice_invention_artificer_exo_arms
+				subtract_variable = {
+					which = artificeResearchOptionsTier1
+					value = 1
+				}
+			}
+			#Society
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_fey_spray
+							has_country_flag = unlocked_artifice_invention_fey_spray
+							has_country_flag = artifice_researching_economic
+							has_country_flag = artifice_researching_military
+						}
+					}
+					religion_group = fey_religion
+				}
+				set_country_flag = research_artifice_invention_fey_spray
+				subtract_variable = {
+					which = artificeResearchOptionsTier1
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_scrapperclaws
+							has_country_flag = unlocked_artifice_invention_scrapperclaws
+							has_country_flag = artifice_researching_economic
+							has_country_flag = artifice_researching_military
+						}
+					}
+					culture_group = gnollish
+				}
+				set_country_flag = research_artifice_invention_scrapperclaws
+				subtract_variable = {
+					which = artificeResearchOptionsTier1
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_great_processor
+							has_country_flag = unlocked_artifice_invention_great_processor
+							has_country_flag = artifice_researching_economic
+							has_country_flag = artifice_researching_military
+						}
+					}
+					OR = {
+						religion = feast_of_the_gods
+						religion = reformed_feast_of_the_gods
+					}
+				}
+				set_country_flag = research_artifice_invention_great_processor
+				subtract_variable = {
+					which = artificeResearchOptionsTier1
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_conversation_calibrator
+							has_country_flag = unlocked_artifice_invention_conversation_calibrator
+							has_country_flag = artifice_researching_economic
+							has_country_flag = artifice_researching_military
+						}
+					}
+					culture_group = gnomish
+				}
+				set_country_flag = research_artifice_invention_conversation_calibrator
+				subtract_variable = {
+					which = artificeResearchOptionsTier1
+					value = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				is_variable_equal = {
+					which = currentIterationsLeftTier1
+					which = artificeResearchOptionsTier1
+				}
+			}
+			if = {
+				limit = {
+					is_variable_equal = {
+						which = originalIterationsLeftTier1
+						which = currentIterationsLeftTier1
+					}
+				}
+				set_country_flag = artifice_no_tier_1_inventions
+				subtract_variable = {
+					which = originalIterationsLeftTier1
+					which = currentIterationsLeftTier1
+				}
+			}
+			subtract_variable = {
+				which = artificeResearchOptionsTier1
+				which = currentIterationsLeftTier1
+			}
+		}
+	}
+
+	#Advanced Research Options - Iterated until variable hits 0 - Tier 2
+	if = {
+		limit = {
+			check_variable = {
+				which = artificeResearchOptionsTier2
+				value = 1
+			}
+		}
+
+		set_variable = {
+			which = currentIterationsLeftTier2
+			which = artificeResearchOptionsTier2
+		}
+
+		random_list = {
+			#Economic Inventions - Tier 2
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_growth_beans
+							has_country_flag = unlocked_artifice_invention_growth_beans
+							has_country_flag = artifice_researching_military
+							has_country_flag = artifice_researching_society
+						}
+					}
+				}
+				set_country_flag = research_artifice_invention_growth_beans
+				subtract_variable = {
+					which = artificeResearchOptionsTier2
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_vendorless_stall
+							has_country_flag = unlocked_artifice_invention_vendorless_stall
+							has_country_flag = artifice_researching_military
+							has_country_flag = artifice_researching_society
+						}
+					}
+				}
+				set_country_flag = research_artifice_invention_vendorless_stall
+				subtract_variable = {
+					which = artificeResearchOptionsTier2
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_brass_prosthesis
+							has_country_flag = unlocked_artifice_invention_brass_prosthesis
+							has_country_flag = artifice_researching_military
+							has_country_flag = artifice_researching_society
+						}
+					}
+				}
+				set_country_flag = research_artifice_invention_brass_prosthesis
+				subtract_variable = {
+					which = artificeResearchOptionsTier2
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_gene_food_cultivation
+							has_country_flag = unlocked_artifice_invention_gene_food_cultivation
+							has_country_flag = artifice_researching_military
+							has_country_flag = artifice_researching_society
+						}
+					}
+				}
+				set_country_flag = research_artifice_invention_gene_food_cultivation
+				subtract_variable = {
+					which = artificeResearchOptionsTier2
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_subterrenes
+							has_country_flag = unlocked_artifice_invention_subterrenes
+							has_country_flag = artifice_researching_military
+							has_country_flag = artifice_researching_society
+						}
+					}
+				}
+				set_country_flag = research_artifice_invention_subterrenes
+				subtract_variable = {
+					which = artificeResearchOptionsTier2
+					value = 1
+				}
+			}
+			#Military Inventions - Tier 2
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_wandlocks
+							has_country_flag = unlocked_artifice_invention_wandlocks
+							has_country_flag = artifice_researching_economic
+							has_country_flag = artifice_researching_society
+						}
+					}
+				}
+				set_country_flag = research_artifice_invention_wandlocks
+				subtract_variable = {
+					which = artificeResearchOptionsTier2
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_balloonboost_packs
+							has_country_flag = unlocked_artifice_invention_balloonboost_packs
+							has_country_flag = artifice_researching_economic
+							has_country_flag = artifice_researching_society
+						}
+					}
+				}
+				set_country_flag = research_artifice_invention_balloonboost_packs
+				subtract_variable = {
+					which = artificeResearchOptionsTier2
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_prototype_tanks
+							has_country_flag = unlocked_artifice_invention_prototype_tanks
+							has_country_flag = artifice_researching_economic
+							has_country_flag = artifice_researching_society
+						}
+					}
+				}
+				set_country_flag = research_artifice_invention_prototype_tanks
+				subtract_variable = {
+					which = artificeResearchOptionsTier2
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_war_golems
+							has_country_flag = unlocked_artifice_invention_war_golems
+							has_country_flag = artifice_researching_economic
+							has_country_flag = artifice_researching_society
+						}
+					}
+				}
+				set_country_flag = research_artifice_invention_war_golems
+				subtract_variable = {
+					which = artificeResearchOptionsTier2
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_arcane_blaster
+							has_country_flag = unlocked_artifice_invention_arcane_blaster
+							has_country_flag = artifice_researching_economic
+							has_country_flag = artifice_researching_society
+						}
+					}
+				}
+				set_country_flag = research_artifice_invention_arcane_blaster
+				subtract_variable = {
+					which = artificeResearchOptionsTier2
+					value = 1
+				}
+			}
+			#Society Inventions  - Tier 2
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_remedial_tinctures
+							has_country_flag = unlocked_artifice_invention_remedial_tinctures
+							has_country_flag = artifice_researching_economic
+							has_country_flag = artifice_researching_military
+						}
+					}
+				}
+				set_country_flag = research_artifice_invention_remedial_tinctures
+				subtract_variable = {
+					which = artificeResearchOptionsTier2
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_arithmatons
+							has_country_flag = unlocked_artifice_invention_arithmatons
+							has_country_flag = artifice_researching_economic
+							has_country_flag = artifice_researching_military
+						}
+					}
+				}
+				set_country_flag = research_artifice_invention_arithmatons
+				subtract_variable = {
+					which = artificeResearchOptionsTier2
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_think_thought_transmitters
+							has_country_flag = unlocked_artifice_invention_think_thought_transmitters
+							has_country_flag = artifice_researching_economic
+							has_country_flag = artifice_researching_military
+						}
+					}
+				}
+				set_country_flag = research_artifice_invention_think_thought_transmitters
+				subtract_variable = {
+					which = artificeResearchOptionsTier2
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_mirage_detector_3000
+							has_country_flag = unlocked_artifice_invention_mirage_detector_3000
+							has_country_flag = artifice_researching_economic
+							has_country_flag = artifice_researching_military
+						}
+					}
+				}
+				set_country_flag = research_artifice_invention_mirage_detector_3000
+				subtract_variable = {
+					which = artificeResearchOptionsTier2
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_empire_engine
+							has_country_flag = unlocked_artifice_invention_empire_engine
+							has_country_flag = artifice_researching_economic
+							has_country_flag = artifice_researching_military
+						}
+					}
+				}
+				set_country_flag = research_artifice_invention_empire_engine
+				subtract_variable = {
+					which = artificeResearchOptionsTier2
+					value = 1
+				}
+			}
+			#Special Inventions  - Tier 2
+			#Economic
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_prehensile_tail_attachments
+							has_country_flag = unlocked_artifice_invention_prehensile_tail_attachments
+							has_country_flag = artifice_researching_military
+							has_country_flag = artifice_researching_society
+						}
+					}
+					culture_group = kobold
+				}
+				modifier = {
+					factor = 3
+					tag = Z38
+				}
+				set_country_flag = research_artifice_invention_prehensile_tail_attachments
+				subtract_variable = {
+					which = artificeResearchOptionsTier2
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_chi_cultivation_charm
+							has_country_flag = unlocked_artifice_invention_chi_cultivation_charm
+							has_country_flag = artifice_researching_military
+							has_country_flag = artifice_researching_society
+						}
+					}
+					religion = devouring_path
+				}
+				set_country_flag = research_artifice_invention_chi_cultivation_charm
+				subtract_variable = {
+					which = artificeResearchOptionsTier2
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_city_maintenance_bots
+							has_country_flag = unlocked_artifice_invention_city_maintenance_bots
+							has_country_flag = artifice_researching_military
+							has_country_flag = artifice_researching_society
+						}
+					}
+					culture_group = triunic
+				}
+				set_country_flag = research_artifice_invention_city_maintenance_bots
+				subtract_variable = {
+					which = artificeResearchOptionsTier2
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_artificial_egg_surrogates
+							has_country_flag = unlocked_artifice_invention_artificial_egg_surrogates
+							has_country_flag = artifice_researching_military
+							has_country_flag = artifice_researching_society
+						}
+					}
+					culture_group = harpy
+				}
+				set_country_flag = research_artifice_invention_artificial_egg_surrogates
+				subtract_variable = {
+					which = artificeResearchOptionsTier2
+					value = 1
+				}
+			}
+			#Military
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_wind_invokers
+							has_country_flag = unlocked_artifice_invention_wind_invokers
+							has_country_flag = artifice_researching_economic
+							has_country_flag = artifice_researching_society
+						}
+					}
+					religion = irdaeos_worship
+				}
+				set_country_flag = research_artifice_invention_wind_invokers
+				subtract_variable = {
+					which = artificeResearchOptionsTier2
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_avatar_supersoldier_serum
+							has_country_flag = unlocked_artifice_invention_avatar_supersoldier_serum
+							has_country_flag = artifice_researching_economic
+							has_country_flag = artifice_researching_society
+						}
+					}
+					religion_group = cannorian
+				}
+				set_country_flag = research_artifice_invention_avatar_supersoldier_serum
+				subtract_variable = {
+					which = artificeResearchOptionsTier2
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_lullaby_cannon
+							has_country_flag = unlocked_artifice_invention_lullaby_cannon
+							has_country_flag = artifice_researching_economic
+							has_country_flag = artifice_researching_society
+						}
+					}
+					religion = skaldhyrric_faith
+				}
+				set_country_flag = research_artifice_invention_lullaby_cannon
+				subtract_variable = {
+					which = artificeResearchOptionsTier2
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_giantshape_warframe
+							has_country_flag = unlocked_artifice_invention_giantshape_warframe
+							has_country_flag = artifice_researching_economic
+							has_country_flag = artifice_researching_society
+						}
+					}
+					OR = {
+						has_country_modifier = troll_military
+						has_country_modifier = ogre_military
+					}
+				}
+				set_country_flag = research_artifice_invention_giantshape_warframe
+				subtract_variable = {
+					which = artificeResearchOptionsTier2
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_controlled_rage_serum
+							has_country_flag = unlocked_artifice_invention_controlled_rage_serum
+							has_country_flag = artifice_researching_economic
+							has_country_flag = artifice_researching_society
+						}
+					}
+					has_country_modifier = orcish_military
+				}
+				set_country_flag = research_artifice_invention_controlled_rage_serum
+				subtract_variable = {
+					which = artificeResearchOptionsTier2
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_codorran_powered_exosuit
+							has_country_flag = unlocked_artifice_invention_codorran_powered_exosuit
+							has_country_flag = artifice_researching_economic
+							has_country_flag = artifice_researching_society
+						}
+					}
+					has_country_modifier = gnomish_military
+				}
+				set_country_flag = research_artifice_invention_codorran_powered_exosuit
+				subtract_variable = {
+					which = artificeResearchOptionsTier2
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_eplusplus_compound
+							has_country_flag = unlocked_artifice_invention_eplusplus_compound
+							has_country_flag = artifice_researching_economic
+							has_country_flag = artifice_researching_society
+						}
+					}
+					has_country_modifier = goblin_military
+				}
+				set_country_flag = research_artifice_invention_eplusplus_compound
+				subtract_variable = {
+					which = artificeResearchOptionsTier2
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_elemental_gunpowder
+							has_country_flag = unlocked_artifice_invention_elemental_gunpowder
+							has_country_flag = artifice_researching_economic
+							has_country_flag = artifice_researching_society
+						}
+					}
+					has_country_modifier = goblin_military
+				}
+				set_country_flag = research_artifice_invention_elemental_gunpowder
+				subtract_variable = {
+					which = artificeResearchOptionsTier2
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_gyrocopters
+							has_country_flag = unlocked_artifice_invention_gyrocopters
+							has_country_flag = artifice_researching_economic
+							has_country_flag = artifice_researching_society
+						}
+					}
+					has_country_modifier = dwarven_military
+				}
+				set_country_flag = research_artifice_invention_gyrocopters
+				subtract_variable = {
+					which = artificeResearchOptionsTier2
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_kaydhano_powered_vessels
+							has_country_flag = unlocked_artifice_invention_kaydhano_powered_vessels
+							has_country_flag = artifice_researching_economic
+							has_country_flag = artifice_researching_society
+						}
+					}
+					culture_group = kheionai_ruinborn_elf
+				}
+				set_country_flag = research_artifice_invention_kaydhano_powered_vessels
+				subtract_variable = {
+					which = artificeResearchOptionsTier2
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_warfare_simulator
+							has_country_flag = unlocked_artifice_invention_warfare_simulator
+							has_country_flag = artifice_researching_economic
+							has_country_flag = artifice_researching_society
+						}
+					}
+					culture_group = hobgoblin
+				}
+				set_country_flag = research_artifice_invention_warfare_simulator
+				subtract_variable = {
+					which = artificeResearchOptionsTier2
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_gu_boats
+							has_country_flag = unlocked_artifice_invention_gu_boats
+							has_country_flag = artifice_researching_economic
+							has_country_flag = artifice_researching_society
+						}
+					}
+					culture_group = gnomish
+				}
+				set_country_flag = research_artifice_invention_gu_boats
+				subtract_variable = {
+					which = artificeResearchOptionsTier2
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_veykoda_rune_protections
+							has_country_flag = unlocked_artifice_invention_veykoda_rune_protections
+							has_country_flag = artifice_researching_economic
+							has_country_flag = artifice_researching_society
+						}
+					}
+					culture_group = eordan_ruinborn_elf
+				}
+				set_country_flag = research_artifice_invention_veykoda_rune_protections
+				subtract_variable = {
+					which = artificeResearchOptionsTier2
+					value = 1
+				}
+			}
+			#Society
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_game_of_khet
+							has_country_flag = unlocked_artifice_invention_game_of_khet
+							has_country_flag = artifice_researching_economic
+							has_country_flag = artifice_researching_military
+						}
+					}
+					religion_group = khetist
+				}
+				set_country_flag = research_artifice_invention_game_of_khet
+				subtract_variable = {
+					which = artificeResearchOptionsTier2
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_burrower_arms
+							has_country_flag = unlocked_artifice_invention_burrower_arms
+							has_country_flag = artifice_researching_economic
+							has_country_flag = artifice_researching_military
+						}
+					}
+					culture_group = kobold
+				}
+				modifier = {
+					factor = 3
+					tag = Z38
+				}
+				set_country_flag = research_artifice_invention_burrower_arms
+				subtract_variable = {
+					which = artificeResearchOptionsTier2
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_soarwing_grafts
+							has_country_flag = unlocked_artifice_invention_soarwing_grafts
+							has_country_flag = artifice_researching_economic
+							has_country_flag = artifice_researching_military
+						}
+					}
+					culture_group = kobold
+				}
+				modifier = {
+					factor = 3
+					tag = Z38
+				}
+				set_country_flag = research_artifice_invention_soarwing_grafts
+				subtract_variable = {
+					which = artificeResearchOptionsTier2
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_god_fragment_decoder
+							has_country_flag = unlocked_artifice_invention_god_fragment_decoder
+							has_country_flag = artifice_researching_economic
+							has_country_flag = artifice_researching_military
+						}
+					}
+					religion = ravelian
+				}
+				set_country_flag = research_artifice_invention_god_fragment_decoder
+				subtract_variable = {
+					which = artificeResearchOptionsTier2
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_talking_god_temples
+							has_country_flag = unlocked_artifice_invention_talking_god_temples
+							has_country_flag = artifice_researching_economic
+							has_country_flag = artifice_researching_military
+						}
+					}
+					OR = {
+						religion = gods_of_the_taychend
+						religion = gods_of_the_taychend_reformed
+					}
+				}
+				set_country_flag = research_artifice_invention_talking_god_temples
+				subtract_variable = {
+					which = artificeResearchOptionsTier2
+					value = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				is_variable_equal = {
+					which = currentIterationsLeftTier2
+					which = artificeResearchOptionsTier2
+				}
+			}
+			if = {
+				limit = {
+					is_variable_equal = {
+						which = originalIterationsLeftTier2
+						which = currentIterationsLeftTier2
+					}
+				}
+				set_country_flag = artifice_no_tier_2_inventions
+				subtract_variable = {
+					which = originalIterationsLeftTier2
+					which = currentIterationsLeftTier2
+				}
+			}
+			subtract_variable = {
+				which = artificeResearchOptionsTier2
+				which = currentIterationsLeftTier2
+			}
+		}
+	}
+
+	#Expert Research Options - Iterated until variable hits 0 - Tier 3
+	if = {
+		limit = {
+			check_variable = {
+				which = artificeResearchOptionsTier3
+				value = 1
+			}
+		}
+
+		set_variable = {
+			which = currentIterationsLeftTier3
+			which = artificeResearchOptionsTier3		}
+
+		random_list = {
+			#Economic Inventions - Tier 3
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_pathway_transmutation
+							has_country_flag = unlocked_artifice_invention_pathway_transmutation
+							has_country_flag = artifice_researching_military
+							has_country_flag = artifice_researching_society
+						}
+					}
+				}
+				set_country_flag = research_artifice_invention_pathway_transmutation
+				subtract_variable = {
+					which = artificeResearchOptionsTier3
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_elemental_locomotives
+							has_country_flag = unlocked_artifice_invention_elemental_locomotives
+							has_country_flag = artifice_researching_military
+							has_country_flag = artifice_researching_society
+						}
+					}
+				}
+				set_country_flag = research_artifice_invention_elemental_locomotives
+				subtract_variable = {
+					which = artificeResearchOptionsTier3
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_t_wave_transceivers
+							has_country_flag = unlocked_artifice_invention_t_wave_transceivers
+							has_country_flag = artifice_researching_military
+							has_country_flag = artifice_researching_society
+						}
+					}
+				}
+				set_country_flag = research_artifice_invention_t_wave_transceivers
+				subtract_variable = {
+					which = artificeResearchOptionsTier3
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_naval_mageshields
+							has_country_flag = unlocked_artifice_invention_naval_mageshields
+							has_country_flag = artifice_researching_military
+							has_country_flag = artifice_researching_society
+						}
+					}
+				}
+				set_country_flag = research_artifice_invention_naval_mageshields
+				subtract_variable = {
+					which = artificeResearchOptionsTier3
+					value = 1
+				}
+			}
+
+			#Military Inventions - Tier 3
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_black_damestear_bullets
+							has_country_flag = unlocked_artifice_invention_black_damestear_bullets
+							has_country_flag = artifice_researching_economic
+							has_country_flag = artifice_researching_society
+						}
+					}
+				}
+				set_country_flag = research_artifice_invention_black_damestear_bullets
+				subtract_variable = {
+					which = artificeResearchOptionsTier3
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_artillery_autoloader
+							has_country_flag = unlocked_artifice_invention_artillery_autoloader
+							has_country_flag = artifice_researching_economic
+							has_country_flag = artifice_researching_society
+						}
+					}
+				}
+				set_country_flag = research_artifice_invention_artillery_autoloader
+				subtract_variable = {
+					which = artificeResearchOptionsTier3
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_bioartificed_ascension
+							has_country_flag = unlocked_artifice_invention_bioartificed_ascension
+							has_country_flag = artifice_researching_economic
+							has_country_flag = artifice_researching_society
+						}
+					}
+				}
+				set_country_flag = research_artifice_invention_bioartificed_ascension
+				subtract_variable = {
+					which = artificeResearchOptionsTier3
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_military_sky_galleons
+							has_country_flag = unlocked_artifice_invention_military_sky_galleons
+							has_country_flag = artifice_researching_economic
+							has_country_flag = artifice_researching_society
+						}
+					}
+				}
+				set_country_flag = research_artifice_invention_military_sky_galleons
+				subtract_variable = {
+					which = artificeResearchOptionsTier3
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_personal_mageshields
+							has_country_flag = unlocked_artifice_invention_personal_mageshields
+							has_country_flag = artifice_researching_economic
+							has_country_flag = artifice_researching_society
+						}
+					}
+				}
+				set_country_flag = research_artifice_invention_personal_mageshields
+				subtract_variable = {
+					which = artificeResearchOptionsTier3
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_damestear_reactor_megacannon
+							has_country_flag = unlocked_artifice_invention_damestear_reactor_megacannon
+							has_country_flag = artifice_researching_economic
+							has_country_flag = artifice_researching_society
+						}
+					}
+				}
+				set_country_flag = research_artifice_invention_damestear_reactor_megacannon
+				subtract_variable = {
+					which = artificeResearchOptionsTier3
+					value = 1
+				}
+			}
+			#Society Inventions  - Tier 3
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_crierless_crier_device
+							has_country_flag = unlocked_artifice_invention_crierless_crier_device
+							has_country_flag = artifice_researching_economic
+							has_country_flag = artifice_researching_military
+						}
+					}
+				}
+				set_country_flag = research_artifice_invention_crierless_crier_device
+				subtract_variable = {
+					which = artificeResearchOptionsTier3
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_bureaucratizer
+							has_country_flag = unlocked_artifice_invention_bureaucratizer
+							has_country_flag = artifice_researching_economic
+							has_country_flag = artifice_researching_military
+						}
+					}
+				}
+				set_country_flag = research_artifice_invention_bureaucratizer
+				subtract_variable = {
+					which = artificeResearchOptionsTier3
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_runethought_network
+							has_country_flag = unlocked_artifice_invention_runethought_network
+							has_country_flag = artifice_researching_economic
+							has_country_flag = artifice_researching_military
+						}
+					}
+				}
+				set_country_flag = research_artifice_invention_runethought_network
+				subtract_variable = {
+					which = artificeResearchOptionsTier3
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_negotiation_nexus
+							has_country_flag = unlocked_artifice_invention_negotiation_nexus
+							has_country_flag = artifice_researching_economic
+							has_country_flag = artifice_researching_military
+						}
+					}
+				}
+				set_country_flag = research_artifice_invention_negotiation_nexus
+				subtract_variable = {
+					which = artificeResearchOptionsTier3
+					value = 1
+				}
+			}
+			#Special Inventions  - Tier 3
+			#Economic
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_high_velocity_irrigation
+							has_country_flag = unlocked_artifice_invention_high_velocity_irrigation
+							has_country_flag = artifice_researching_military
+							has_country_flag = artifice_researching_society
+						}
+					}
+					culture_group = bulwari
+				}
+				set_country_flag = research_artifice_invention_high_velocity_irrigation
+				subtract_variable = {
+					which = artificeResearchOptionsTier3
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_weather_predicticator
+							has_country_flag = unlocked_artifice_invention_weather_predicticator
+							has_country_flag = artifice_researching_military
+							has_country_flag = artifice_researching_society
+						}
+					}
+					culture_group = eordan_ruinborn_elf
+				}
+				set_country_flag = research_artifice_invention_weather_predicticator
+				subtract_variable = {
+					which = artificeResearchOptionsTier3
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_artifice_powered_magnate_factories
+							has_country_flag = unlocked_artifice_invention_artifice_powered_magnate_factories
+							has_country_flag = artifice_researching_military
+							has_country_flag = artifice_researching_society
+						}
+					}
+					culture_group = alenic
+				}
+				set_country_flag = research_artifice_invention_artifice_powered_magnate_factories
+				subtract_variable = {
+					which = artificeResearchOptionsTier3
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_prefabricated_city_constructors
+							has_country_flag = unlocked_artifice_invention_prefabricated_city_constructors
+							has_country_flag = artifice_researching_military
+							has_country_flag = artifice_researching_society
+						}
+					}
+					culture_group = gnomish
+				}
+				set_country_flag = research_artifice_invention_prefabricated_city_constructors
+				subtract_variable = {
+					which = artificeResearchOptionsTier3
+					value = 1
+				}
+			}
+			#Military
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_demonflame_flamethrowers
+							has_country_flag = unlocked_artifice_invention_demonflame_flamethrowers
+							has_country_flag = artifice_researching_economic
+							has_country_flag = artifice_researching_society
+						}
+					}
+					religion = xhazobkult
+				}
+				set_country_flag = research_artifice_invention_demonflame_flamethrowers
+				subtract_variable = {
+					which = artificeResearchOptionsTier3
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_chase_em_rockets
+							has_country_flag = unlocked_artifice_invention_chase_em_rockets
+							has_country_flag = artifice_researching_economic
+							has_country_flag = artifice_researching_society
+						}
+					}
+					has_country_modifier = goblin_military
+				}
+				set_country_flag = research_artifice_invention_chase_em_rockets
+				subtract_variable = {
+					which = artificeResearchOptionsTier3
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_dragonblood_gene_warriors
+							has_country_flag = unlocked_artifice_invention_dragonblood_gene_warriors
+							has_country_flag = artifice_researching_economic
+							has_country_flag = artifice_researching_society
+						}
+					}
+					has_country_modifier = kobold_military
+				}
+				modifier = {
+					factor = 3
+					tag = Z38
+				}
+				set_country_flag = research_artifice_invention_dragonblood_gene_warriors
+				subtract_variable = {
+					which = artificeResearchOptionsTier3
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_unlocked_artifice_invention_drill_shells
+							has_country_flag = unlocked_artifice_invention_drill_shells
+							has_country_flag = artifice_researching_economic
+							has_country_flag = artifice_researching_society
+						}
+					}
+					has_estate_privilege = estate_artificers_organization_discombobulatorium
+				}
+				set_country_flag = research_unlocked_artifice_invention_drill_shells
+				subtract_variable = {
+					which = artificeResearchOptionsTier3
+					value = 1
+				}
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_unlocked_artifice_invention_super_boots
+							has_country_flag = unlocked_artifice_invention_super_boots
+							has_country_flag = artifice_researching_economic
+							has_country_flag = artifice_researching_society
+						}
+					}
+					has_estate_privilege = estate_artificers_organization_discombobulatorium
+				}
+				set_country_flag = research_unlocked_artifice_invention_super_boots
+				subtract_variable = {
+					which = artificeResearchOptionsTier3
+					value = 1
+				}
+			}
+			#Society
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_artifice_invention_divendancer_speedboat
+							has_country_flag = unlocked_artifice_invention_divendancer_speedboat
+							has_country_flag = artifice_researching_economic
+							has_country_flag = artifice_researching_military
+						}
+					}
+					has_estate_privilege = estate_artificers_organization_discombobulatorium
+				}
+				set_country_flag = research_artifice_invention_divendancer_speedboat
+				subtract_variable = {
+					which = artificeResearchOptionsTier3
+					value = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				is_variable_equal = {
+					which = currentIterationsLeftTier3
+					which = artificeResearchOptionsTier3
+				}
+			}
+			if = {
+				limit = {
+					is_variable_equal = {
+						which = originalIterationsLeftTier3
+						which = currentIterationsLeftTier3
+					}
+				}
+				set_country_flag = artifice_no_tier_3_inventions
+				subtract_variable = {
+					which = originalIterationsLeftTier3
+					which = currentIterationsLeftTier3
+				}
+			}
+			subtract_variable = {
+				which = artificeResearchOptionsTier3
+				which = currentIterationsLeftTier3
+			}
+		}
+	}
+	#Feiten is so cool....
+	if = {
+		limit = {
+			check_variable = {
+				which = artificeResearchOptionsFeiten
+				value = 1
+			}
+		}
+		random_list = {
+			#Farsight Telescope
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_feiten_invention_farsight_telescopes
+							has_country_flag = unlocked_artifice_invention_feiten_farsight_telescopes
+						}
+					}
+				}
+				set_country_flag = research_feiten_invention_farsight_telescopes
+			}
+			#Porcelain Caged Firebirds
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_feiten_invention_porcelain_caged_firebirds
+							has_country_flag = unlocked_artifice_invention_feiten_porcelain_caged_firebirds
+						}
+					}
+				}
+				set_country_flag = research_feiten_invention_porcelain_caged_firebirds
+			}
+			#Specialized Construction Arms
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_feiten_invention_specialized_construction_arms
+							has_country_flag = unlocked_artifice_invention_feiten_specialized_construction_arms
+						}
+					}
+				}
+				set_country_flag = research_feiten_invention_specialized_construction_arms
+			}
+			#Expanding Storage Holds
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_feiten_invention_expanding_storage_holds
+							has_country_flag = unlocked_artifice_invention_feiten_expanding_storage_holds
+						}
+					}
+				}
+				set_country_flag = research_feiten_invention_expanding_storage_holds
+			}
+			#Electroplated Armor
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_feiten_invention_electroplated_armor
+							has_country_flag = unlocked_artifice_invention_feiten_electroplated_armor
+						}
+					}
+				}
+				set_country_flag = research_feiten_invention_electroplated_armor
+			}
+			#Ivory Conduits
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_feiten_invention_ivory_conduits
+							has_country_flag = unlocked_artificery_invention_feiten_ivory_conduits
+						}
+					}
+				}
+				set_country_flag = research_feiten_invention_ivory_conduits
+			}
+			#Silken Cladding
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_feiten_invention_silken_cladding
+							has_country_flag = unlocked_artifice_invention_feiten_silken_cladding
+						}
+					}
+				}
+				set_country_flag = research_feiten_invention_silken_cladding
+			}
+			#Damestear Ribbing
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_feiten_invention_damestear_ribbing
+							has_country_flag = unlocked_artifice_intention_feiten_damestear_ribbing
+						}
+					}
+				}
+				set_country_flag = research_feiten_invention_damestear_ribbing
+			}
+			#Long Rockets
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_feiten_invention_long_rockets
+							has_country_flag = unlocked_artifice_intention_feiten_long_rockets
+						}
+					}
+				}
+				set_country_flag = research_feiten_invention_long_rockets
+			}
+			#Lightning Amplifier
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_feiten_invention_lightning_amplifier
+							has_country_flag = unlocked_artifice_intention_feiten_lightning_amplifier
+						}
+					}
+				}
+				set_country_flag = research_feiten_invention_lightning_amplifier
+			}
+			#Steel Rudders
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_feiten_invention_steel_rudders
+							has_country_flag = unlocked_artifice_intention_feiten_steel_rudders
+						}
+					}
+				}
+				set_country_flag = research_feiten_invention_steel_rudders
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						OR = {
+							has_country_flag = research_feiten_invention_skywriting
+							has_country_flag = unlocked_artifice_invention_feiten_skywriting
+						}
+					}
+				}
+				set_country_flag = research_feiten_invention_skywriting
+			}
+
+		}
+		subtract_variable = {
+			which = artificeResearchOptionsFeiten
+			value = 1
+		}
+	}
+}
+
+artifice_tiering_progress = {
+	change_variable = {
+		which = artifice_level_progress
+		value = 1
+	}
+}
+
+artifice_tiering_update = {
+	if = {
+		limit = {
+			has_country_flag = artifice_research_slow
+		}
+		if = {
+			limit = {
+				is_year = 1500
+				has_country_flag = artifice_unlocked_basic
+				NOT = { has_country_flag = artifice_limited_to_tier_1 }
+				check_variable = {
+					which = artifice_level_progress
+					value = 2
+				}
+			}
+			set_country_flag = artifice_unlocked_advanced
+			clr_country_flag = artifice_unlocked_basic
+			set_variable = {
+				which = artifice_level_progress
+				value = 0
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = { is_year = 1500 }
+				has_country_flag = artifice_unlocked_basic
+				NOT = { has_country_flag = artifice_limited_to_tier_1 }
+				check_variable = {
+					which = artifice_level_progress
+					value = 4
+				}
+			}
+			set_country_flag = artifice_unlocked_advanced
+			clr_country_flag = artifice_unlocked_basic
+			set_variable = {
+				which = artifice_level_progress
+				value = 0
+			}
+		}
+		else_if = {			
+			limit = { 
+				is_year = 1550
+				has_country_flag = artifice_unlocked_advanced
+				NOT = { has_country_flag = artifice_limited_to_tier_2 }
+				check_variable = {
+					which = artifice_level_progress
+					value = 2
+				}
+			}
+			set_country_flag = artifice_unlocked_expert
+			clr_country_flag = artifice_unlocked_advanced
+			set_variable = {
+				which = artifice_level_progress
+				value = 0
+			}
+		}
+		else_if = {
+			limit = { 
+				NOT = { is_year = 1550 }
+				has_country_flag = artifice_unlocked_advanced
+				NOT = { has_country_flag = artifice_limited_to_tier_2 }
+				check_variable = {
+					which = artifice_level_progress
+					value = 4
+				}
+			}
+			set_country_flag = artifice_unlocked_expert
+			clr_country_flag = artifice_unlocked_advanced
+			set_variable = {
+				which = artifice_level_progress
+				value = 0
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			OR = {
+				has_country_flag = artifice_research_normal
+				ai = yes
+			}
+		}
+		if = {
+			limit = {
+				is_year = 1500
+				has_country_flag = artifice_unlocked_basic
+				NOT = { has_country_flag = artifice_limited_to_tier_1 }
+				check_variable = {
+					which = artifice_level_progress
+					value = 3
+				}
+			}
+			set_country_flag = artifice_unlocked_advanced
+			clr_country_flag = artifice_unlocked_basic
+			set_variable = {
+				which = artifice_level_progress
+				value = 0
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = { is_year = 1500 }
+				has_country_flag = artifice_unlocked_basic
+				NOT = { has_country_flag = artifice_limited_to_tier_1 }
+				check_variable = {
+					which = artifice_level_progress
+					value = 6
+				}
+			}
+			set_country_flag = artifice_unlocked_advanced
+			clr_country_flag = artifice_unlocked_basic
+			set_variable = {
+				which = artifice_level_progress
+				value = 0
+			}
+		}
+		else_if = {			
+			limit = { 
+				is_year = 1550
+				has_country_flag = artifice_unlocked_advanced
+				NOT = { has_country_flag = artifice_limited_to_tier_2 }
+				check_variable = {
+					which = artifice_level_progress
+					value = 3
+				}
+			}
+			set_country_flag = artifice_unlocked_expert
+			clr_country_flag = artifice_unlocked_advanced
+			set_variable = {
+				which = artifice_level_progress
+				value = 0
+			}
+		}
+		else_if = {
+			limit = { 
+				NOT = { is_year = 1550 }
+				has_country_flag = artifice_unlocked_advanced
+				NOT = { has_country_flag = artifice_limited_to_tier_2 }
+				check_variable = {
+					which = artifice_level_progress
+					value = 6
+				}
+			}
+			set_country_flag = artifice_unlocked_expert
+			clr_country_flag = artifice_unlocked_advanced
+			set_variable = {
+				which = artifice_level_progress
+				value = 0
+			}
+		}	
+	}
+	else_if = {
+		limit = {
+			OR = {
+				has_country_flag = artifice_research_fast
+				has_country_flag = artifice_research_random
+			}
+		}
+		if = {
+			limit = {
+				is_year = 1500
+				has_country_flag = artifice_unlocked_basic
+				NOT = { has_country_flag = artifice_limited_to_tier_1 }
+				check_variable = {
+					which = artifice_level_progress
+					value = 6
+				}
+			}
+			set_country_flag = artifice_unlocked_advanced
+			clr_country_flag = artifice_unlocked_basic
+			set_variable = {
+				which = artifice_level_progress
+				value = 0
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = { is_year = 1500 }
+				has_country_flag = artifice_unlocked_basic
+				NOT = { has_country_flag = artifice_limited_to_tier_1 }
+				check_variable = {
+					which = artifice_level_progress
+					value = 12
+				}
+			}
+			set_country_flag = artifice_unlocked_advanced
+			clr_country_flag = artifice_unlocked_basic
+			set_variable = {
+				which = artifice_level_progress
+				value = 0
+			}
+		}
+		else_if = {			
+			limit = { 
+				is_year = 1550
+				has_country_flag = artifice_unlocked_advanced
+				NOT = { has_country_flag = artifice_limited_to_tier_2 }
+				check_variable = {
+					which = artifice_level_progress
+					value = 6
+				}
+			}
+			set_country_flag = artifice_unlocked_expert
+			clr_country_flag = artifice_unlocked_advanced
+			set_variable = {
+				which = artifice_level_progress
+				value = 0
+			}
+		}
+		else_if = {
+			limit = { 
+				NOT = { is_year = 1550 }
+				has_country_flag = artifice_unlocked_advanced
+				NOT = { has_country_flag = artifice_limited_to_tier_2 }
+				check_variable = {
+					which = artifice_level_progress
+					value = 12
+				}
+			}
+			set_country_flag = artifice_unlocked_expert
+			clr_country_flag = artifice_unlocked_advanced
+			set_variable = {
+				which = artifice_level_progress
+				value = 0
+			}
+		}		
+	}
+}
+
+artifice_gui_tab_flag_clearing = {
+	clr_country_flag = artificery_tab_generic_tier_1_open
+	clr_country_flag = artificery_tab_generic_tier_2_open
+	clr_country_flag = artificery_tab_generic_tier_3_open
+	clr_country_flag = artifice_invention_menu_open_cultural
+	clr_country_flag = artifice_invention_menu_open_unique_large
+	clr_country_flag = artifice_invention_menu_open_unique_small
+}
+
+artifice_inventions_currently_used_increase = {
+	change_variable = {
+		which = artifice_inventions_currently_used
+		value = 1
+	}
+}
+
+artifice_inventions_currently_used_decrease = {
+	subtract_variable = {
+		which = artifice_inventions_currently_used
+		value = 1
+	}
+}
+
+#Add baskets by most restrictive first. These Inventions will get unlocked upon enabling artificery
+artifice_inventions_give_basket = {
+	if = {
+		limit = { NOT = { has_country_flag = artifice_inventions_basket_received } }
+		if = { #example
+			limit = { tag = A01 } #Lorent
+			set_country_flag = unlocked_artifice_invention_wine_ageifier
+			set_country_flag = unlocked_artifice_invention_self_cleaning_parchment
+			set_country_flag = unlocked_artifice_invention_box_of_holding
+		}
+		else_if = {
+			limit = { tag = A06 } #Nimmscodd
+			set_country_flag = unlocked_artifice_invention_sparkdrive_rifles
+		}
+		else_if = {
+			limit = { 
+				NOT = { is_year = 1500 }
+			}
+			set_country_flag = unlocked_artifice_invention_spell_in_a_box
+			set_country_flag = unlocked_artifice_invention_vorpal_bullets
+		}
+		else_if = {
+			limit = { 
+				is_year = 1501
+				NOT = { is_year = 1650 }
+			}
+			set_country_flag = unlocked_artifice_invention_spell_in_a_box
+		}
+		else = {
+			set_country_flag = unlocked_artifice_invention_spell_in_a_box
+			set_country_flag = unlocked_artifice_invention_vorpal_bullets
+			set_country_flag = unlocked_artifice_invention_apparitional_communicator
+		}
+	}
+	set_country_flag = artifice_inventions_basket_received
+}
+
+artifice_magic_switch_to_artificery_only_mode = {
+	custom_tooltip = force_artificery_only_tt
+	if = {
+		limit = { 
+			NOT = { 
+				has_country_flag = magic_artificery_artificery_only 
+			}
+		}
+		hidden_effect = {
+			clr_country_flag = magic_artificery_mage_only
+			set_country_flag = magic_artificery_artificery_only
+			clr_country_flag = magic_artificery_mixed
+		
+			#bans the mages
+			country_event = { 
+				id = magic_artificery_setup.3
+			}
+			#unlocks artificery if you havent by now
+			if = {
+				limit = { 
+					NOT = { has_country_flag = artificery_unlocked }
+				}
+				set_country_flag = artificery_unlocked
+				country_event = {
+					id = magic_artificery_setup.2
+					days = 1
+				}
+			}
+		}
+	}
+}
+
+artifice_magic_switch_to_magic_only_mode = {
+	custom_tooltip = force_magic_only_tt
+	if = {
+		limit = { 
+			NOT = { 
+				has_country_flag = magic_artificery_mage_only 
+			}
+		}
+		hidden_effect = {
+			set_country_flag = magic_artificery_mage_only
+			clr_country_flag = magic_artificery_artificery_only
+			clr_country_flag = magic_artificery_mixed
+	
+			#reinviting the mages into the governement if they are gone
+			if = {
+				limit = {
+					has_country_flag = banned_magic
+				}
+				country_event = { 
+					id = magic_artificery_setup.4
+				}
+			}
+		}
+	}
+}
+
+
+artifice_magic_switch_to_mixed_mode = {
+	custom_tooltip = force_mixed_tt
+	if = {
+		limit = { 
+			NOT = { 
+				has_country_flag = magic_artificery_mixed 
+			}
+		}
+		hidden_effect = {
+			clr_country_flag = magic_artificery_mage_only
+			clr_country_flag = magic_artificery_artificery_only
+			set_country_flag = magic_artificery_mixed
+
+			#reinviting the mages into the governement if they are gone
+			if = {
+				limit = {
+					has_country_flag = banned_magic
+				}
+				country_event = { 
+					id = magic_artificery_setup.4
+				}
+			}
+			#unlocking artificery if it hasnt been unlocked
+			if = {
+				limit = { 
+					NOT = { has_country_flag = artificery_unlocked }
+				}
+				set_country_flag = artificery_unlocked
+				country_event = {
+					id = magic_artificery_setup.2
+					days = 1
+				}
+			}
+		}
+	}
+}
+
+artifice_unlock_random_invention_effect = {
+	custom_tooltip = unlock_random_invention_tt
+	hidden_effect = {
+		if = {
+			limit = {
+				NOT = { has_discovered_all_tier_1_inventions = yes }
+			}
+	
+			random_list = {
+				#Economic Inventions - Tier 1
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_spell_in_a_box
+								has_country_flag = unlocked_artifice_invention_spell_in_a_box
+							}
+						}
+					}
+					set_country_flag = unlocked_artifice_invention_spell_in_a_box
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_self_cleaning_parchment
+								has_country_flag = unlocked_artifice_invention_self_cleaning_parchment
+							}
+						}
+					}
+					set_country_flag = unlocked_artifice_invention_self_cleaning_parchment
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_box_of_holding
+								has_country_flag = unlocked_artifice_invention_box_of_holding
+							}
+						}
+					}
+					set_country_flag = unlocked_artifice_invention_box_of_holding
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_market_mender
+								has_country_flag = unlocked_artifice_invention_market_mender
+							}
+						}
+					}
+					set_country_flag = unlocked_artifice_invention_market_mender
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_arcane_battery_capital_complex
+								has_country_flag = unlocked_artifice_invention_arcane_battery_capital_complex
+							}
+						}
+					}
+					set_country_flag = unlocked_artifice_invention_arcane_battery_capital_complex
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_plane_of_water_teleporter
+								has_country_flag = unlocked_artifice_invention_plane_of_water_teleporter
+							}
+						}
+					}
+					set_country_flag = unlocked_artifice_invention_plane_of_water_teleporter
+				}
+				#Military Inventions - Tier 1
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_portable_turrets
+								has_country_flag = unlocked_artifice_invention_portable_turrets
+							}
+						}
+					}
+					set_country_flag = unlocked_artifice_invention_portable_turrets
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_commercial_sky_galleons
+								has_country_flag = unlocked_artifice_invention_commercial_sky_galleons
+							}
+						}
+					}
+					set_country_flag = unlocked_artifice_invention_commercial_sky_galleons
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_sparkdrive_rifles
+								has_country_flag = unlocked_artifice_invention_sparkdrive_rifles
+							}
+						}
+					}
+					set_country_flag = unlocked_artifice_invention_sparkdrive_rifles
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_vorpal_bullets
+								has_country_flag = unlocked_artifice_invention_vorpal_bullets
+							}
+						}
+					}
+					set_country_flag = unlocked_artifice_invention_vorpal_bullets
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_magic_missile_deployer
+								has_country_flag = unlocked_artifice_invention_magic_missile_deployer
+							}
+						}
+					}
+					set_country_flag = unlocked_artifice_invention_magic_missile_deployer
+				}
+				#Society Inventions  - Tier 1
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_viewcatcher
+								has_country_flag = unlocked_artifice_invention_viewcatcher
+							}
+						}
+					}
+					set_country_flag = unlocked_artifice_invention_viewcatcher
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_sending_stones
+								has_country_flag = unlocked_artifice_invention_sending_stones
+							}
+						}
+					}
+					set_country_flag = unlocked_artifice_invention_sending_stones
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_centipedal_chests
+								has_country_flag = unlocked_artifice_invention_centipedal_chests
+							}
+						}
+					}
+					set_country_flag = unlocked_artifice_invention_centipedal_chests
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_living_mirrors
+								has_country_flag = unlocked_artifice_invention_living_mirrors
+							}
+						}
+					}
+					set_country_flag = unlocked_artifice_invention_living_mirrors
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_apparitional_communicator
+								has_country_flag = unlocked_artifice_invention_apparitional_communicator
+							}
+						}
+					}
+					set_country_flag = unlocked_artifice_invention_apparitional_communicator
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_mystic_ciphers
+								has_country_flag = unlocked_artifice_invention_mystic_ciphers
+							}
+						}
+					}
+					set_country_flag = unlocked_artifice_invention_mystic_ciphers
+				}
+				#Special Inventions  - Tier 1
+				#Economic
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_fine_print_obfuscator
+								has_country_flag = unlocked_artifice_invention_fine_print_obfuscator
+							}
+						}
+						OR = {
+							primary_culture = crownsman
+							primary_culture = ionnic
+						}
+					}
+					set_country_flag = unlocked_artifice_invention_fine_print_obfuscator
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_automated_translator
+								has_country_flag = unlocked_artifice_invention_automated_translator
+							}
+						}
+						OR = {
+							primary_culture = west_damerian
+							primary_culture = east_damerian
+							primary_culture = rogieran
+							primary_culture = nurcestiran
+							primary_culture = ancardian
+							primary_culture = anbenncoster
+							primary_culture = anbenlander
+						}
+					}
+					set_country_flag = unlocked_artifice_invention_automated_translator
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_wine_ageifier
+								has_country_flag = unlocked_artifice_invention_wine_ageifier
+							}
+						}
+						OR = {
+							culture_group = lencori
+							primary_culture = rosanda
+						}
+					}
+					set_country_flag = unlocked_artifice_invention_wine_ageifier
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_pearl_cultivators
+								has_country_flag = unlocked_artifice_invention_pearl_cultivators
+							}
+						}
+						primary_culture = pearlsedger
+	
+					}
+					set_country_flag = unlocked_artifice_invention_pearl_cultivators
+				}
+				#Military
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_ancestral_guardian_golems
+								has_country_flag = unlocked_artifice_invention_ancestral_guardian_golems
+							}
+						}
+						OR = {
+							
+						}
+					}
+					set_country_flag = unlocked_artifice_invention_ancestral_guardian_golems
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_antimagic_field_generator
+								has_country_flag = unlocked_artifice_invention_antimagic_field_generator
+							}
+						}
+						religion = ravelian
+					}
+					set_country_flag = unlocked_artifice_invention_antimagic_field_generator
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_believable_ruin_2_bomb
+								has_country_flag = unlocked_artifice_invention_believable_ruin_2_bomb
+							}
+						}
+						culture_group = goblin
+					}
+					set_country_flag = unlocked_artifice_invention_believable_ruin_2_bomb
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_vernman_hero_tonic
+								has_country_flag = unlocked_artifice_invention_vernman_hero_tonic
+							}
+						}
+						OR = {
+							primary_culture = vernman
+							primary_culture = valorman
+							primary_culture = heartman
+						}
+					}
+					set_country_flag = unlocked_artifice_invention_vernman_hero_tonic
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_dragonscale_plating
+								has_country_flag = unlocked_artifice_invention_dragonscale_plating
+							}
+						}
+						has_country_modifier = kobold_military
+					}
+					modifier = {
+						factor = 3
+						tag = Z38
+					}
+					set_country_flag = unlocked_artifice_invention_dragonscale_plating
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_predator_exoskeleton
+								has_country_flag = unlocked_artifice_invention_predator_exoskeleton
+							}
+						}
+						has_country_modifier = harimari_military
+					}
+					set_country_flag = unlocked_artifice_invention_predator_exoskeleton
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_scrap_mechs
+								has_country_flag = unlocked_artifice_invention_scrap_mechs
+							}
+						}
+						has_country_modifier = goblin_military
+					}
+					set_country_flag = unlocked_artifice_invention_scrap_mechs
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_war_rigs
+								has_country_flag = unlocked_artifice_invention_war_rigs
+							}
+						}
+						culture_group = taychendi_ruinborn_elf
+					}
+					set_country_flag = unlocked_artifice_invention_war_rigs
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_sunbeam_armaments
+								has_country_flag = unlocked_artifice_invention_sunbeam_armaments
+							}
+						}
+						culture_group = bulwari
+					}
+					set_country_flag = unlocked_artifice_invention_sunbeam_armaments
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_power_fists
+								has_country_flag = unlocked_artifice_invention_power_fists
+							}
+						}
+						OR = {
+							religion = accretive_path
+							religion = transmutative_path
+						}
+					}
+					set_country_flag = unlocked_artifice_invention_power_fists
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_artificer_exo_arms
+								has_country_flag = unlocked_artifice_invention_artificer_exo_arms
+							}
+						}
+					}
+					set_country_flag = unlocked_artifice_invention_artificer_exo_arms
+				}
+				#Society
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_fey_spray
+								has_country_flag = unlocked_artifice_invention_fey_spray
+							}
+						}
+						religion_group = fey_religion
+					}
+					set_country_flag = unlocked_artifice_invention_fey_spray
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_scrapperclaws
+								has_country_flag = unlocked_artifice_invention_scrapperclaws
+							}
+						}
+						culture_group = gnollish
+					}
+					set_country_flag = unlocked_artifice_invention_scrapperclaws
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_great_processor
+								has_country_flag = unlocked_artifice_invention_great_processor
+							}
+						}
+						OR = {
+							religion = feast_of_the_gods
+							religion = reformed_feast_of_the_gods
+						}
+					}
+					set_country_flag = unlocked_artifice_invention_great_processor
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_conversation_calibrator
+								has_country_flag = unlocked_artifice_invention_conversation_calibrator
+							}
+						}
+						culture_group = gnomish
+					}
+					set_country_flag = unlocked_artifice_invention_conversation_calibrator
+				}
+			}
+		}
+	
+		#Advanced Research Options
+		else_if = {
+			limit = {
+				NOT = { has_discovered_all_tier_2_inventions = yes }
+			}
+			random_list = {
+				#Economic Inventions - Tier 2
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_growth_beans
+								has_country_flag = unlocked_artifice_invention_growth_beans
+							}
+						}
+					}
+					set_country_flag = unlocked_artifice_invention_growth_beans
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_vendorless_stall
+								has_country_flag = unlocked_artifice_invention_vendorless_stall
+							}
+						}
+					}
+					set_country_flag = unlocked_artifice_invention_vendorless_stall
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_brass_prosthesis
+								has_country_flag = unlocked_artifice_invention_brass_prosthesis
+							}
+						}
+					}
+					set_country_flag = unlocked_artifice_invention_brass_prosthesis
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_gene_food_cultivation
+								has_country_flag = unlocked_artifice_invention_gene_food_cultivation
+							}
+						}
+					}
+					set_country_flag = unlocked_artifice_invention_gene_food_cultivation
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_subterrenes
+								has_country_flag = unlocked_artifice_invention_subterrenes
+							}
+						}
+					}
+					set_country_flag = unlocked_artifice_invention_subterrenes
+				}
+				#Military Inventions - Tier 2
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_wandlocks
+								has_country_flag = unlocked_artifice_invention_wandlocks
+							}
+						}
+					}
+					set_country_flag = unlocked_artifice_invention_wandlocks
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_balloonboost_packs
+								has_country_flag = unlocked_artifice_invention_balloonboost_packs
+							}
+						}
+					}
+					set_country_flag = unlocked_artifice_invention_balloonboost_packs
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_prototype_tanks
+								has_country_flag = unlocked_artifice_invention_prototype_tanks
+							}
+						}
+					}
+					set_country_flag = unlocked_artifice_invention_prototype_tanks
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_war_golems
+								has_country_flag = unlocked_artifice_invention_war_golems
+							}
+						}
+					}
+					set_country_flag = unlocked_artifice_invention_war_golems
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_arcane_blaster
+								has_country_flag = unlocked_artifice_invention_arcane_blaster
+							}
+						}
+					}
+					set_country_flag = unlocked_artifice_invention_arcane_blaster
+				}
+				#Society Inventions  - Tier 2
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_remedial_tinctures
+								has_country_flag = unlocked_artifice_invention_remedial_tinctures
+							}
+						}
+					}
+					set_country_flag = unlocked_artifice_invention_remedial_tinctures
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_arithmatons
+								has_country_flag = unlocked_artifice_invention_arithmatons
+							}
+						}
+					}
+					set_country_flag = unlocked_artifice_invention_arithmatons
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_think_thought_transmitters
+								has_country_flag = unlocked_artifice_invention_think_thought_transmitters
+							}
+						}
+					}
+					set_country_flag = unlocked_artifice_invention_think_thought_transmitters
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_mirage_detector_3000
+								has_country_flag = unlocked_artifice_invention_mirage_detector_3000
+							}
+						}
+					}
+					set_country_flag = unlocked_artifice_invention_mirage_detector_3000
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_empire_engine
+								has_country_flag = unlocked_artifice_invention_empire_engine
+							}
+						}
+					}
+					set_country_flag = unlocked_artifice_invention_empire_engine
+				}
+				#Special Inventions  - Tier 2
+				#Economic
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_prehensile_tail_attachments
+								has_country_flag = unlocked_artifice_invention_prehensile_tail_attachments
+							}
+						}
+						culture_group = kobold
+					}
+					modifier = {
+						factor = 3
+						tag = Z38
+					}
+					set_country_flag = unlocked_artifice_invention_prehensile_tail_attachments
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_chi_cultivation_charm
+								has_country_flag = unlocked_artifice_invention_chi_cultivation_charm
+							}
+						}
+						religion = devouring_path
+					}
+					set_country_flag = unlocked_artifice_invention_chi_cultivation_charm
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_city_maintenance_bots
+								has_country_flag = unlocked_artifice_invention_city_maintenance_bots
+							}
+						}
+						culture_group = triunic
+					}
+					set_country_flag = unlocked_artifice_invention_city_maintenance_bots
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_artificial_egg_surrogates
+								has_country_flag = unlocked_artifice_invention_artificial_egg_surrogates
+							}
+						}
+						culture_group = harpy
+					}
+					set_country_flag = unlocked_artifice_invention_artificial_egg_surrogates
+				}
+				#Military
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_wind_invokers
+								has_country_flag = unlocked_artifice_invention_wind_invokers
+							}
+						}
+						religion = irdaeos_worship
+					}
+					set_country_flag = unlocked_artifice_invention_wind_invokers
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_avatar_supersoldier_serum
+								has_country_flag = unlocked_artifice_invention_avatar_supersoldier_serum
+							}
+						}
+						religion_group = cannorian
+					}
+					set_country_flag = unlocked_artifice_invention_avatar_supersoldier_serum
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_lullaby_cannon
+								has_country_flag = unlocked_artifice_invention_lullaby_cannon
+							}
+						}
+						religion = skaldhyrric_faith
+					}
+					set_country_flag = unlocked_artifice_invention_lullaby_cannon
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_giantshape_warframe
+								has_country_flag = unlocked_artifice_invention_giantshape_warframe
+							}
+						}
+						OR = {
+							has_country_modifier = troll_military
+							has_country_modifier = ogre_military
+						}
+					}
+					set_country_flag = unlocked_artifice_invention_giantshape_warframe
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_controlled_rage_serum
+								has_country_flag = unlocked_artifice_invention_controlled_rage_serum
+							}
+						}
+						has_country_modifier = orcish_military
+					}
+					set_country_flag = unlocked_artifice_invention_controlled_rage_serum
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_codorran_powered_exosuit
+								has_country_flag = unlocked_artifice_invention_codorran_powered_exosuit
+							}
+						}
+						has_country_modifier = gnomish_military
+					}
+					set_country_flag = unlocked_artifice_invention_codorran_powered_exosuit
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_eplusplus_compound
+								has_country_flag = unlocked_artifice_invention_eplusplus_compound
+							}
+						}
+						has_country_modifier = goblin_military
+					}
+					set_country_flag = unlocked_artifice_invention_eplusplus_compound
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_elemental_gunpowder
+								has_country_flag = unlocked_artifice_invention_elemental_gunpowder
+							}
+						}
+						has_country_modifier = goblin_military
+					}
+					set_country_flag = unlocked_artifice_invention_elemental_gunpowder
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_gyrocopters
+								has_country_flag = unlocked_artifice_invention_gyrocopters
+							}
+						}
+						has_country_modifier = dwarven_military
+					}
+					set_country_flag = unlocked_artifice_invention_gyrocopters
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_kaydhano_powered_vessels
+								has_country_flag = unlocked_artifice_invention_kaydhano_powered_vessels
+							}
+						}
+						culture_group = kheionai_ruinborn_elf
+					}
+					set_country_flag = unlocked_artifice_invention_kaydhano_powered_vessels
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_warfare_simulator
+								has_country_flag = unlocked_artifice_invention_warfare_simulator
+							}
+						}
+						culture_group = hobgoblin
+					}
+					set_country_flag = unlocked_artifice_invention_warfare_simulator
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_gu_boats
+								has_country_flag = unlocked_artifice_invention_gu_boats
+							}
+						}
+						culture_group = gnomish
+					}
+					set_country_flag = unlocked_artifice_invention_gu_boats
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_veykoda_rune_protections
+								has_country_flag = unlocked_artifice_invention_veykoda_rune_protections
+							}
+						}
+						culture_group = eordan_ruinborn_elf
+					}
+					set_country_flag = unlocked_artifice_invention_veykoda_rune_protections
+				}
+				#Society
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_game_of_khet
+								has_country_flag = unlocked_artifice_invention_game_of_khet
+							}
+						}
+						religion_group = khetist
+					}
+					set_country_flag = unlocked_artifice_invention_game_of_khet
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_burrower_arms
+								has_country_flag = unlocked_artifice_invention_burrower_arms
+							}
+						}
+						culture_group = kobold
+					}
+					modifier = {
+						factor = 3
+						tag = Z38
+					}
+					set_country_flag = unlocked_artifice_invention_burrower_arms
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_god_fragment_decoder
+								has_country_flag = unlocked_artifice_invention_god_fragment_decoder
+							}
+						}
+						religion = ravelian
+					}
+					set_country_flag = unlocked_artifice_invention_god_fragment_decoder
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_talking_god_temples
+								has_country_flag = unlocked_artifice_invention_talking_god_temples
+							}
+						}
+						OR = {
+							religion = gods_of_the_taychend
+							religion = gods_of_the_taychend_reformed
+						}
+					}
+					set_country_flag = unlocked_artifice_invention_talking_god_temples
+				}
+			}
+		}
+	
+		#Expert Research Options
+		else = {
+			random_list = {
+				#Economic Inventions - Tier 3
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_pathway_transmutation
+								has_country_flag = unlocked_artifice_invention_pathway_transmutation
+							}
+						}
+					}
+					set_country_flag = unlocked_artifice_invention_pathway_transmutation
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_elemental_locomotives
+								has_country_flag = unlocked_artifice_invention_elemental_locomotives
+							}
+						}
+					}
+					set_country_flag = unlocked_artifice_invention_elemental_locomotives
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_t_wave_transceivers
+								has_country_flag = unlocked_artifice_invention_t_wave_transceivers
+							}
+						}
+					}
+					set_country_flag = unlocked_artifice_invention_t_wave_transceivers
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_naval_mageshields
+								has_country_flag = unlocked_artifice_invention_naval_mageshields
+							}
+						}
+					}
+					set_country_flag = unlocked_artifice_invention_naval_mageshields
+				}
+	
+				#Military Inventions - Tier 3
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_black_damestear_bullets
+								has_country_flag = unlocked_artifice_invention_black_damestear_bullets
+							}
+						}
+					}
+					set_country_flag = unlocked_artifice_invention_black_damestear_bullets
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_artillery_autoloader
+								has_country_flag = unlocked_artifice_invention_artillery_autoloader
+							}
+						}
+					}
+					set_country_flag = unlocked_artifice_invention_artillery_autoloader
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_bioartificed_ascension
+								has_country_flag = unlocked_artifice_invention_bioartificed_ascension
+							}
+						}
+					}
+					set_country_flag = unlocked_artifice_invention_bioartificed_ascension
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_military_sky_galleons
+								has_country_flag = unlocked_artifice_invention_military_sky_galleons
+							}
+						}
+					}
+					set_country_flag = unlocked_artifice_invention_military_sky_galleons
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_personal_mageshields
+								has_country_flag = unlocked_artifice_invention_personal_mageshields
+							}
+						}
+					}
+					set_country_flag = unlocked_artifice_invention_personal_mageshields
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_damestear_reactor_megacannon
+								has_country_flag = unlocked_artifice_invention_damestear_reactor_megacannon
+							}
+						}
+					}
+					set_country_flag = unlocked_artifice_invention_damestear_reactor_megacannon
+				}
+				#Society Inventions  - Tier 3
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_crierless_crier_device
+								has_country_flag = unlocked_artifice_invention_crierless_crier_device
+							}
+						}
+					}
+					set_country_flag = unlocked_artifice_invention_crierless_crier_device
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_bureaucratizer
+								has_country_flag = unlocked_artifice_invention_bureaucratizer
+							}
+						}
+					}
+					set_country_flag = unlocked_artifice_invention_bureaucratizer
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_runethought_network
+								has_country_flag = unlocked_artifice_invention_runethought_network
+							}
+						}
+					}
+					set_country_flag = unlocked_artifice_invention_runethought_network
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_negotiation_nexus
+								has_country_flag = unlocked_artifice_invention_negotiation_nexus
+							}
+						}
+					}
+					set_country_flag = unlocked_artifice_invention_negotiation_nexus
+				}
+				#Special Inventions  - Tier 3
+				#Economic
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_high_velocity_irrigation
+								has_country_flag = unlocked_artifice_invention_high_velocity_irrigation
+							}
+						}
+						culture_group = bulwari
+					}
+					set_country_flag = unlocked_artifice_invention_high_velocity_irrigation
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_weather_predicticator
+								has_country_flag = unlocked_artifice_invention_weather_predicticator
+							}
+						}
+						culture_group = eordan_ruinborn_elf
+					}
+					set_country_flag = unlocked_artifice_invention_weather_predicticator
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_artifice_powered_magnate_factories
+								has_country_flag = unlocked_artifice_invention_artifice_powered_magnate_factories
+							}
+						}
+						culture_group = alenic
+					}
+					set_country_flag = unlocked_artifice_invention_artifice_powered_magnate_factories
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_prefabricated_city_constructors
+								has_country_flag = unlocked_artifice_invention_prefabricated_city_constructors
+							}
+						}
+						culture_group = gnomish
+					}
+					set_country_flag = unlocked_artifice_invention_prefabricated_city_constructors
+				}
+				#Military
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_demonflame_flamethrowers
+								has_country_flag = unlocked_artifice_invention_demonflame_flamethrowers
+							}
+						}
+						religion = xhazobkult
+					}
+					set_country_flag = unlocked_artifice_invention_demonflame_flamethrowers
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_chase_em_rockets
+								has_country_flag = unlocked_artifice_invention_chase_em_rockets
+							}
+						}
+						has_country_modifier = goblin_military
+					}
+					set_country_flag = unlocked_artifice_invention_chase_em_rockets
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_dragonblood_gene_warriors
+								has_country_flag = unlocked_artifice_invention_dragonblood_gene_warriors
+							}
+						}
+						has_country_modifier = kobold_military
+					}
+					set_country_flag = unlocked_artifice_invention_dragonblood_gene_warriors
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_unlocked_artifice_invention_drill_shells
+								has_country_flag = unlocked_artifice_invention_drill_shells
+							}
+						}
+						has_estate_privilege = estate_artificers_organization_discombobulatorium
+					}
+					set_country_flag = unlocked_unlocked_artifice_invention_drill_shells
+				}
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_unlocked_artifice_invention_super_boots
+								has_country_flag = unlocked_artifice_invention_super_boots
+							}
+						}
+						has_estate_privilege = estate_artificers_organization_discombobulatorium
+					}
+					set_country_flag = unlocked_unlocked_artifice_invention_super_boots
+				}
+				#Society
+				1 = {
+					trigger = {
+						NOT = {
+							OR = {
+								has_country_flag = research_artifice_invention_divendancer_speedboat
+								has_country_flag = unlocked_artifice_invention_divendancer_speedboat
+							}
+						}
+						has_estate_privilege = estate_artificers_organization_discombobulatorium
+					}
+					set_country_flag = unlocked_artifice_invention_divendancer_speedboat
+				}
+			}
+		}
+	}
+}
+
+
+display_research_limit_tt = {
+	if = {
+		limit = { has_country_flag = artifice_limited_to_tier_1 }
+		custom_tooltip = artifice_limited_to_tier_1_tt
+	}
+	else_if = {
+		limit = { has_country_flag = artifice_limited_to_tier_2 }
+		custom_tooltip = artifice_limited_to_tier_2_tt
+	}
+	else = {
+		custom_tooltip = artifice_limited_to_tier_3_tt
+	}
+}
+
+disable_all_artifice_inventions = {
+	custom_tooltip = disable_all_artifice_inventions_tt
+	hidden_effect = {
+		# tier 1 economic
+		remove_estate_privilege = artifice_invention_artificer_exo_arms
+		remove_estate_privilege = artifice_invention_spell_in_a_box
+		remove_estate_privilege = artifice_invention_commercial_sky_galleons
+		remove_estate_privilege = artifice_invention_fine_print_obfuscator
+		remove_estate_privilege = artifice_invention_automated_translator
+		remove_estate_privilege = artifice_invention_wine_ageifier
+		remove_estate_privilege = artifice_invention_pearl_cultivators
+		remove_estate_privilege = artifice_invention_arcane_battery_capital_complex
+		remove_estate_privilege = artifice_invention_market_mender
+		remove_estate_privilege = artifice_invention_plane_of_water_teleporter
+		remove_estate_privilege = artifice_invention_self_cleaning_parchment
+		# tier 1 society
+		remove_estate_privilege = artifice_invention_viewcatcher
+		remove_estate_privilege = artifice_invention_sending_stones
+		remove_estate_privilege = artifice_invention_centipedal_chests
+		remove_estate_privilege = artifice_invention_living_mirrors
+		remove_estate_privilege = artifice_invention_apparitional_communicator
+		remove_estate_privilege = artifice_invention_mystic_ciphers
+		remove_estate_privilege = artifice_invention_fey_spray
+		remove_estate_privilege = artifice_invention_scrapperclaws
+		remove_estate_privilege = artifice_invention_great_processor
+		remove_estate_privilege = artifice_invention_conversation_calibrator
+		# tier 1 military
+		remove_estate_privilege = artifice_invention_portable_turrets
+		remove_estate_privilege = artifice_invention_sparkdrive_rifles
+		remove_estate_privilege = artifice_invention_vorpal_bullets
+		remove_estate_privilege = artifice_invention_magic_missile_deployer
+		remove_estate_privilege = artifice_invention_box_of_holding
+		remove_estate_privilege = artifice_invention_ancestral_golems
+		remove_estate_privilege = artifice_invention_antimagic_field_generator
+		remove_estate_privilege = artifice_invention_believable_ruin_bomb
+		remove_estate_privilege = artifice_invention_vernman_hero_tonic
+		remove_estate_privilege = artifice_invention_dragonscale_plating
+		remove_estate_privilege = artifice_invention_predator_exoskeleton
+		remove_estate_privilege = artifice_invention_scrap_mechs
+		remove_estate_privilege = artifice_invention_sunbeam_armaments
+		remove_estate_privilege = artifice_invention_power_fists
+		# tier 2 economic
+		remove_estate_privilege = artifice_invention_growth_beans
+		remove_estate_privilege = artifice_invention_vendorless_stall
+		remove_estate_privilege = artifice_invention_brass_prosthesis
+		remove_estate_privilege = artifice_invention_gene_food_cultivation
+		remove_estate_privilege = artifice_invention_prehensile_tail_attachments
+		remove_estate_privilege = artifice_invention_chi_cultivation
+		remove_estate_privilege = artifice_invention_city_maintenance_bots
+		remove_estate_privilege = artifice_invention_artificial_egg_surrogates
+		remove_estate_privilege = artifice_invention_subterrenes
+		# tier 2 society
+		remove_estate_privilege = artifice_invention_remedial_tinctures
+		remove_estate_privilege = artifice_invention_arithmatons
+		remove_estate_privilege = artifice_invention_burrower_arms
+		remove_estate_privilege = artifice_invention_god_fragment_decoder
+		remove_estate_privilege = artifice_invention_talking_god_temples
+		remove_estate_privilege = artifice_invention_empire_engine
+		remove_estate_privilege = artifice_invention_mirage_detector_3000
+		remove_estate_privilege = artifice_invention_think_thought_transmitters
+		remove_estate_privilege = artifice_invention_game_of_khet
+		# tier 2 military
+		remove_estate_privilege = artifice_invention_wandlocks
+		remove_estate_privilege = artifice_invention_balloonboost_packs
+		remove_estate_privilege = artifice_invention_prototype_tanks
+		remove_estate_privilege = artifice_invention_war_golems
+		remove_estate_privilege = artifice_invention_arcane_blaster
+		remove_estate_privilege = artifice_invention_wind_invokers
+		remove_estate_privilege = artifice_invention_avatar_supersoldier_serum
+		remove_estate_privilege = artifice_invention_lullaby_cannon
+		remove_estate_privilege = artifice_invention_giantshape_warframe
+		remove_estate_privilege = artifice_invention_controlled_rage_serum
+		remove_estate_privilege = artifice_invention_codorran_powered_exosuit
+		remove_estate_privilege = artifice_invention_eplusplus_compound
+		remove_estate_privilege = artifice_invention_elemental_gunpowder
+		remove_estate_privilege = artifice_invention_gyrocopters
+		remove_estate_privilege = artifice_invention_kaydhano_powered_vessels
+		remove_estate_privilege = artifice_invention_warfare_simulator
+		remove_estate_privilege = artifice_invention_gu_boats
+		# tier 3 society
+		remove_estate_privilege = artifice_invention_crierless_crier_device
+		remove_estate_privilege = artifice_invention_divendancer_speedboat
+		remove_estate_privilege = artifice_invention_bureaucratizer
+		remove_estate_privilege = artifice_invention_runethought_network
+		remove_estate_privilege = artifice_invention_negotiation_nexus
+		# tier 3 economic
+		remove_estate_privilege = artifice_invention_pathway_transmutation
+		remove_estate_privilege = artifice_invention_elemental_locomotives
+		remove_estate_privilege = artifice_invention_high_velocity_irrigation
+		remove_estate_privilege = artifice_invention_weather_predicticator
+		remove_estate_privilege = artifice_invention_artifice_powered_magnate_factories
+		remove_estate_privilege = artifice_invention_prefabricated_city_constructors
+		remove_estate_privilege = artifice_invention_t_wave_transceivers
+		# tier 3 military
+		remove_estate_privilege = artifice_invention_black_damestear_bullets
+		remove_estate_privilege = artifice_invention_artillery_autoloader
+		remove_estate_privilege = artifice_invention_bioartificed_ascension
+		remove_estate_privilege = artifice_invention_personal_mageshields
+		remove_estate_privilege = artifice_invention_military_sky_galleons
+		remove_estate_privilege = artifice_invention_naval_mageshields
+		remove_estate_privilege = artifice_invention_demonflame_flamethrowers
+		remove_estate_privilege = artifice_invention_chase_em_rockets
+		remove_estate_privilege = artifice_invention_dragonblood_gene_warriors
+		remove_estate_privilege = artifice_invention_damestear_reactor_megacannon
+	}
+}
+
+# The modifier should always be added with the PTM, because the delay between placement and activation of the PTM allows for the activation effect to fire for the wrong country.
+add_artifice_research_ptm_effect = {
+	add_province_modifier = {
+		name = artifice_block_research_event_transferring_between_countries
+		duration = -1
+		hidden = yes
+	}
+	add_province_triggered_modifier = artifice_research_ptm
+}

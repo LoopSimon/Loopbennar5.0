@@ -1,0 +1,582 @@
+#-------------Castes Fluidity-------------#
+caste_fluidity_is_fluid = {
+	custom_trigger_tooltip = {
+		tooltip = caste_fluidity_is_fluid_tt
+		check_variable = { which = casteFluidityVar value = 66 }
+	}
+}
+caste_fluidity_is_neutral = {
+	custom_trigger_tooltip = {
+		tooltip = caste_fluidity_is_neutral_tt
+		NOT = { check_variable = { which = casteFluidityVar value = 66 } }
+		check_variable = { which = casteFluidityVar value = 33 }
+	}
+}
+caste_fluidity_is_rigid = {
+	custom_trigger_tooltip = {
+		tooltip = caste_fluidity_is_rigid_tt
+		NOT = { check_variable = { which = casteFluidityVar value = 33 } }
+	}
+}
+
+#-------------Castes Province-------------#
+province_with_uppercastes_goods = {
+	OR = {
+		trade_goods = chinaware
+		trade_goods = glass
+		trade_goods = paper
+		trade_goods = coal # added for gameplay purpose. High value trade good and most likely high dev, so upper castes stuff.
+		trade_goods = mithril # added for gameplay purpose. High value trade good and most likely high dev, so upper castes stuff.
+		trade_goods = silk
+		trade_goods = precursor_relics
+		trade_goods = damestear
+	}
+}
+province_with_middlecastes_goods = {
+	OR = {
+		trade_goods = cloth
+		trade_goods = naval_supplies
+		trade_goods = copper
+		trade_goods = gold
+		trade_goods = iron
+		trade_goods = slaves
+		trade_goods = ivory
+		trade_goods = dyes
+		trade_goods = incense
+		trade_goods = gems
+	}
+}
+province_with_lowercastes_goods = {
+	OR = {
+		trade_goods = grain
+		trade_goods = wine
+		trade_goods = wool
+		trade_goods = fish
+		trade_goods = fur
+		trade_goods = salt
+		trade_goods = tea
+		trade_goods = spices
+		trade_goods = coffee
+		trade_goods = cotton
+		trade_goods = sugar
+		trade_goods = cocoa
+		trade_goods = tobacco
+		trade_goods = tropical_wood
+		trade_goods = livestock
+		trade_goods = cloves
+		trade_goods = fungi
+		trade_goods = serpentbloom
+	}
+}
+
+#------# Blood Lotus #------#
+
+blood_lotus_hardline_stance_human = {
+	check_variable = { which = blHardlineVar value = 66 } 
+}
+blood_lotus_hardline_stance_neutral = {
+	NOT = { check_variable = { which = blHardlineVar value = 66 } }
+	check_variable = { which = blHardlineVar value = 33 }
+}
+blood_lotus_hardline_stance_harimari = {
+	NOT = { check_variable = { which = blHardlineVar value = 33 } }
+}
+
+
+#------# Raj #------#
+
+has_raj_mandate = {
+	custom_trigger_tooltip = {
+		tooltip = has_raj_mandate_trigger_tt
+		OR = {
+			has_country_modifier = raj_mandate_raja_protection
+			has_country_modifier = raj_mandate_right_to_expansion
+			has_country_modifier = raj_mandate_guaranteed_autonomy
+			has_country_modifier = raj_mandate_mercantile_preference
+			has_country_modifier = raj_mandate_sanctioned_armoury
+			has_country_modifier = raj_mandate_ministry_lectures
+			has_country_modifier = raj_mandate_senapti_primacy
+			has_country_modifier = raj_mandate_extended_prabhi_privileges
+			has_country_modifier = raj_mandate_territorial_limits
+		}
+	}
+}
+
+raj_above_allowed_senaptia = {
+	custom_trigger_tooltip = {
+		tooltip = raj_above_allowed_senaptia_tt
+		
+		4411 = {
+			NOT = {
+				is_variable_equal = {
+					which = rajNbSenapti
+					which = raj_max_allowed_senaptia
+				}
+			}
+			check_variable = {
+				which = rajNbSenapti
+				which = raj_max_allowed_senaptia
+			}
+		}
+	}
+}
+
+raj_below_allowed_senaptia = {
+	custom_trigger_tooltip = {
+		tooltip = raj_below_allowed_senaptia_tt
+		
+		4411 = {
+			NOT = {
+				check_variable = {
+					which = rajNbSenapti
+					which = raj_max_allowed_senaptia
+				}
+			}
+		}
+	}
+}
+
+#------# The Command #------#
+
+command_completed_all_campaigns = {
+	has_country_flag = command_shamakhad_campaign_completed_flag
+	has_country_flag = command_dhujat_campaign_completed_flag
+	has_country_flag = command_ghavaanaj_campaign_completed_flag
+	has_country_flag = command_bhuvauri_campaign_completed_flag
+	has_country_flag = command_dhenbasana_campaign_completed_flag
+	has_country_flag = command_rakhadesh_campaign_completed_flag
+	has_country_flag = command_rahen_coast_campaign_completed_flag
+	
+	has_country_flag = command_xiadao_campaign_completed_flag
+	has_country_flag = command_xianjie_campaign_completed_flag
+	
+	has_country_flag = command_telebei_campaign_completed_flag
+	has_country_flag = command_hukai_campaign_completed_flag
+	has_country_flag = command_sikai_campaign_completed_flag
+	has_country_flag = command_baihon_xinh_campaign_completed_flag
+	has_country_flag = command_thidinkai_campaign_completed_flag
+	has_country_flag = command_lupulan_campaign_completed_flag
+	has_country_flag = command_arawkelin_campaign_completed_flag
+	
+	has_country_flag = command_bianfang_campaign_completed_flag
+	has_country_flag = command_yanszin_campaign_completed_flag
+	has_country_flag = command_zyujyut_campaign_completed_flag
+	has_country_flag = command_tianlou_campaign_completed_flag
+	has_country_flag = command_jiantsiang_campaign_completed_flag
+	
+	OR = {
+		NOT = { has_country_flag = command_azjakuma_campaign_unlocked_flag }
+		has_country_flag = command_azjakuma_campaign_completed_flag
+	}
+	OR = {
+		NOT = { has_country_flag = command_tree_of_stone_campaign_unlocked_flag }
+		has_country_flag = command_tree_of_stone_campaign_completed_flag
+	}
+}
+
+#Command has potential campaign
+command_has_potential_campaign = {
+	command_completed_all_campaigns = no
+	OR = {
+		NOT = { has_country_flag = command_has_active_campaign_flag }
+		has_country_flag = command_current_campaign_completed_flag
+	}
+}
+
+command_has_available_wolf_campaign = {
+	OR = {
+		NOT = { has_country_flag = command_shamakhad_campaign_completed_flag }
+		AND = {
+			has_country_flag = command_shamakhad_campaign_completed_flag
+			NOT = { has_country_flag = command_dhujat_campaign_completed_flag }
+		}
+		AND = {
+			has_country_flag = command_dhujat_campaign_completed_flag
+			NOT = { has_country_flag = command_bhuvauri_campaign_completed_flag }
+		}
+		AND = {
+			OR = { has_country_flag = command_bhuvauri_campaign_completed_flag has_country_flag = command_dhenbasana_campaign_completed_flag }
+			NOT = { has_country_flag = command_rahen_coast_campaign_completed_flag }
+		}
+		AND = {
+			has_country_flag = command_xianjie_campaign_completed_flag
+			NOT = { has_country_flag = command_sikai_campaign_completed_flag }
+		}
+		AND = {
+			has_country_flag = command_sikai_campaign_completed_flag
+			NOT = { has_country_flag = command_thidinkai_campaign_completed_flag }
+		}
+		AND = {
+			OR = { has_country_flag = command_thidinkai_campaign_completed_flag has_country_flag = command_baihon_xinh_campaign_completed_flag }
+			NOT = { has_country_flag = command_lupulan_campaign_completed_flag }
+		}
+		AND = {
+			has_country_flag = command_azjakuma_campaign_unlocked_flag
+			NOT = { has_country_flag = command_azjakuma_campaign_completed_flag }
+		}
+	}
+}
+command_has_available_boar_campaign = {
+	OR = {
+		NOT = { has_country_flag = command_xiadao_campaign_completed_flag }
+		AND = {
+			has_country_flag = command_xiadao_campaign_completed_flag
+			NOT = { has_country_flag = command_xianjie_campaign_completed_flag }
+		}
+		AND = {
+			OR = { has_country_flag = command_dhujat_campaign_completed_flag has_country_flag = command_xianjie_campaign_completed_flag }
+			NOT = { has_country_flag = command_telebei_campaign_completed_flag }
+		}
+		AND = {
+			has_country_flag = command_telebei_campaign_completed_flag
+			NOT = { has_country_flag = command_hukai_campaign_completed_flag }
+		}
+		AND = {
+			has_country_flag = command_bianfang_campaign_completed_flag
+			NOT = { has_country_flag = command_zyujyut_campaign_completed_flag }
+		}
+		AND = {
+			has_country_flag = command_lupulan_campaign_completed_flag
+			NOT = { has_country_flag = command_arawkelin_campaign_completed_flag }
+		}
+		AND = {
+			has_country_flag = command_shamakhad_campaign_completed_flag
+			NOT = { has_country_flag = command_rakhadesh_campaign_completed_flag }
+		}
+	}
+}
+command_has_available_lion_campaign = {
+	OR = {
+		AND = {
+			has_country_flag = command_xiadao_campaign_completed_flag
+			NOT = { has_country_flag = command_bianfang_campaign_completed_flag }
+		}
+		AND = {
+			has_country_flag = command_bianfang_campaign_completed_flag
+			NOT = { has_country_flag = command_yanszin_campaign_completed_flag }
+		}
+		AND = {
+			has_country_flag = command_yanszin_campaign_completed_flag
+			NOT = { has_country_flag = command_tianlou_campaign_completed_flag }
+		}
+		AND = {
+			has_country_flag = command_tianlou_campaign_completed_flag
+			NOT = { has_country_flag = command_jiantsiang_campaign_completed_flag }
+		}
+		AND = {
+			has_country_flag = command_hukai_campaign_completed_flag
+			NOT = { has_country_flag = command_baihon_xinh_campaign_completed_flag }
+		}
+		AND = {
+			has_country_flag = command_shamakhad_campaign_completed_flag
+			NOT = { has_country_flag = command_ghavaanaj_campaign_completed_flag }
+		}
+		AND = {
+			OR = { has_country_flag = command_ghavaanaj_campaign_completed_flag has_country_flag = command_dhujat_campaign_completed_flag has_country_flag = command_rakhadesh_campaign_completed_flag }
+			NOT = { has_country_flag = command_dhenbasana_campaign_completed_flag }
+		}
+		AND = {
+			has_country_flag = command_tree_of_stone_campaign_unlocked_flag
+			NOT = { has_country_flag = command_tree_of_stone_campaign_completed_flag }
+		}
+	}
+}
+command_has_available_dragon_campaign = {
+	# always = no
+	OR = {
+		AND = {
+			has_country_flag = command_xiadao_campaign_completed_flag
+			NOT = { has_country_flag = command_bianfang_campaign_completed_flag }
+		}
+		AND = {
+			has_country_flag = command_bianfang_campaign_completed_flag
+			NOT = { has_country_flag = command_yanszin_campaign_completed_flag }
+		}
+		AND = {
+			has_country_flag = command_yanszin_campaign_completed_flag
+			NOT = { has_country_flag = command_tianlou_campaign_completed_flag }
+		}
+		AND = {
+			has_country_flag = command_tianlou_campaign_completed_flag
+			NOT = { has_country_flag = command_jiantsiang_campaign_completed_flag }
+		}
+		AND = {
+			has_country_flag = command_bianfang_campaign_completed_flag
+			NOT = { has_country_flag = command_zyujyut_campaign_completed_flag }
+		}
+	}
+}
+command_has_available_elephant_campaign = {
+	# always = no
+	OR = {
+		NOT = { has_country_flag = command_xiadao_campaign_completed_flag }
+		AND = {
+			has_country_flag = command_xiadao_campaign_completed_flag
+			NOT = { has_country_flag = command_xianjie_campaign_completed_flag }
+		}
+		AND = {
+			OR = { has_country_flag = command_dhujat_campaign_completed_flag has_country_flag = command_xianjie_campaign_completed_flag }
+			NOT = { has_country_flag = command_telebei_campaign_completed_flag }
+		}
+		AND = {
+			has_country_flag = command_telebei_campaign_completed_flag
+			NOT = { has_country_flag = command_hukai_campaign_completed_flag }
+		}
+		AND = {
+			has_country_flag = command_lupulan_campaign_completed_flag
+			NOT = { has_country_flag = command_arawkelin_campaign_completed_flag }
+		}
+		AND = {
+			has_country_flag = command_xianjie_campaign_completed_flag
+			NOT = { has_country_flag = command_sikai_campaign_completed_flag }
+		}
+		AND = {
+			has_country_flag = command_sikai_campaign_completed_flag
+			NOT = { has_country_flag = command_thidinkai_campaign_completed_flag }
+		}
+		AND = {
+			OR = { has_country_flag = command_thidinkai_campaign_completed_flag has_country_flag = command_baihon_xinh_campaign_completed_flag }
+			NOT = { has_country_flag = command_lupulan_campaign_completed_flag }
+		}
+		AND = {
+			has_country_flag = command_hukai_campaign_completed_flag
+			NOT = { has_country_flag = command_baihon_xinh_campaign_completed_flag }
+		}
+	}
+}
+command_has_available_tiger_campaign = {
+	# always = no
+	OR = {
+		NOT = { has_country_flag = command_shamakhad_campaign_completed_flag }
+		AND = {
+			has_country_flag = command_shamakhad_campaign_completed_flag
+			NOT = { has_country_flag = command_dhujat_campaign_completed_flag }
+		}
+		AND = {
+			has_country_flag = command_dhujat_campaign_completed_flag
+			NOT = { has_country_flag = command_bhuvauri_campaign_completed_flag }
+		}
+		AND = {
+			OR = { has_country_flag = command_bhuvauri_campaign_completed_flag has_country_flag = command_dhenbasana_campaign_completed_flag }
+			NOT = { has_country_flag = command_rahen_coast_campaign_completed_flag }
+		}
+		AND = {
+			has_country_flag = command_shamakhad_campaign_completed_flag
+			NOT = { has_country_flag = command_rakhadesh_campaign_completed_flag }
+		}
+		AND = {
+			has_country_flag = command_shamakhad_campaign_completed_flag
+			NOT = { has_country_flag = command_ghavaanaj_campaign_completed_flag }
+		}
+		AND = {
+			OR = { has_country_flag = command_ghavaanaj_campaign_completed_flag has_country_flag = command_dhujat_campaign_completed_flag has_country_flag = command_rakhadesh_campaign_completed_flag }
+			NOT = { has_country_flag = command_dhenbasana_campaign_completed_flag }
+		}
+	}
+}
+
+#Command Trade Goods
+has_wolf_command_trade_good_trigger = {
+	OR = {
+		trade_goods = salt
+		trade_goods = slaves
+		trade_goods = fungi
+		trade_goods = serpentbloom
+		trade_goods = grain
+		trade_goods = livestock
+	}
+}
+
+has_boar_command_trade_good_trigger = {
+	OR = {
+		trade_goods = iron
+		trade_goods = dyes
+		trade_goods = mithril
+		trade_goods = cloth
+		trade_goods = fur
+		trade_goods = wool
+	}
+}
+
+has_lion_command_trade_good_trigger = {
+	OR = {
+		trade_goods = ivory
+		trade_goods = spices
+		trade_goods = gems
+		trade_goods = cloves
+		trade_goods = silk
+	}
+}
+
+has_dragon_command_trade_good_trigger = {
+	OR = {
+		trade_goods = precursor_relics
+		trade_goods = damestear
+		trade_goods = fish
+		trade_goods = naval_supplies
+		trade_goods = copper
+		trade_goods = coal
+		trade_goods = glass
+	}
+}
+
+has_elephant_command_trade_good_trigger = {
+	OR = {
+		trade_goods = tropical_wood
+		trade_goods = cotton
+		trade_goods = cocoa
+		trade_goods = tea
+		trade_goods = sugar
+	}
+}
+
+has_tiger_command_trade_good_trigger = {
+	OR = {
+		trade_goods = wine
+		trade_goods = chinaware
+		trade_goods = paper
+		trade_goods = incense
+		trade_goods = coffee
+		trade_goods = tobacco
+	}
+}
+
+#Laws of Ninun
+culture_is_wuhyun = {
+	custom_trigger_tooltip = {
+		tooltip = culture_is_wuhyun_tt
+		OR = {
+			culture_group = wuhyun
+			culture = worthy_harimari
+			culture = reishao_harpy
+			culture = dragonfire_kobold
+			culture = march_goblin
+			culture = sunset_elf
+		}
+	}
+}
+culture_group_is_wuhyunizable = {
+	custom_trigger_tooltip = {
+		tooltip = culture_group_is_wuhyunizable_tt
+		OR = {
+			culture_is_human = yes
+			culture_is_half_orcish = yes
+			culture_is_orcish = yes
+			culture_is_harimari = yes
+			culture_is_kobold = yes
+			culture_is_harpy = yes
+			AND = {
+				culture_is_goblin = yes
+				NOT = { continent = serpentspine }
+			}
+			culture_is_elven = yes
+		}
+		OR = {
+			AND = {
+				culture_is_half_orcish = no
+				culture_is_orcish = no
+			}
+			has_global_flag = R62_honourable_half_orcs_flag
+		}
+	}
+}
+command_not_yet_wuhyunized = {
+	culture_group_is_wuhyunizable = yes
+	OR = {
+		culture_is_wuhyun = no
+		NOT = { religion = godlost }
+	}
+}
+
+is_a_command = {
+	custom_trigger_tooltip = {
+		tooltip = is_command_tt
+		OR = {
+			tag = R62 #The Command
+			tag = R67 #Tiger Command
+			tag = R68 #Elephant Command
+			tag = R69 #Dragon Command
+			tag = R94 #Boar Command
+			tag = R95 #Lion Command
+			tag = R96 #Wolf Command
+		}
+	}
+}
+
+#Insubordination
+command_encircle_capital_trigger = {
+	custom_trigger_tooltip = {
+		tooltip = command_encirclement_trigger_tt
+		OR = {
+			AND = {
+				event_target:tiger_command_capital = {
+					all_neighbor_province = {
+						OR = {
+							controlled_by = R62
+							NOT = {
+								owned_by = R62
+								owned_by = R67
+								owned_by = R68
+								owned_by = R69
+							}
+						}
+					}
+					NOT = { has_province_flag = command_encircled_flag }
+				}
+				NOT = { has_country_flag = R62_tiger_subdued }
+			}
+			AND = {
+				event_target:elephant_command_capital = {
+					all_neighbor_province = {
+						OR = {
+							controlled_by = R62
+							NOT = {
+								owned_by = R62
+								owned_by = R67
+								owned_by = R68
+								owned_by = R69
+							}
+						}
+					}
+					NOT = { has_province_flag = command_encircled_flag }
+				}
+				NOT = { has_country_flag = R62_elephant_subdued }
+			}
+			AND = {
+				event_target:dragon_command_capital = {
+					all_neighbor_province = {
+						OR = {
+							controlled_by = R62
+							NOT = {
+								owned_by = R62
+								owned_by = R67
+								owned_by = R68
+								owned_by = R69
+							}
+						}
+					}
+					NOT = { has_province_flag = command_encircled_flag }
+				}
+				NOT = { has_country_flag = R62_dragon_subdued }
+			}
+		}
+	}
+}
+
+is_valid_for_suhan_reformation = {
+	religion = high_philosophy
+	is_reformation_center = no
+	is_island = no
+	development = 10
+	NOT = {
+		any_neighbor_province = {
+			is_reformation_center = yes
+		}
+	}
+	NOT = {
+		any_province_in_state = {
+			is_reformation_center = yes
+			religion = suhans_praxis
+		}
+	}
+}

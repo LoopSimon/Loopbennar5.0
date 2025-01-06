@@ -1,0 +1,32 @@
+
+setup_vision = yes
+government = theocracy
+add_government_reform = leading_clergy_reform
+government_rank = 1
+primary_culture = crownsman
+religion = regent_court
+technology_group = tech_cannorian
+capital = 249
+
+1000.1.1 = { 
+	set_estate_privilege = estate_mages_organization_magisterium 
+	set_country_flag = new_imperial_candidate_gain_magisterium
+}
+
+1437.3.1 = {
+	monarch = {
+		name = "Marion the Transmuter"
+		birth_date = 1376.9.3
+		adm = 6
+		dip = 0
+		mil = 0
+	}
+	add_ruler_personality = mage_personality
+	set_ruler_flag = transmutation_1
+	set_ruler_flag = transmutation_2
+	set_ruler_flag = transmutation_3
+	set_ruler_flag = initialized_magic_flags
+}
+
+set_country_flag = owns_cannorian_holy_site
+set_country_flag = can_use_cannorian_holy_site

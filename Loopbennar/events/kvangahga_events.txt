@@ -1,0 +1,1468 @@
+
+namespace = kvangahga_events
+
+#Ancestral Armaments
+country_event = {
+	id = kvangahga_events.1
+	title = kvangahga_events.1.t
+	desc = kvangahga_events.1.d
+	picture = BATTLE_eventPicture
+	
+	is_triggered_only = yes
+	major = no
+	
+	option = {
+		name = kvangahga_events.1.a
+		
+		add_army_tradition = 5
+		add_country_modifier = {
+				name = ancestral_armaments
+				duration = 3650
+		}
+	}
+}
+
+#Repurposed Relics
+country_event = {
+	id = kvangahga_events.2
+	title = kvangahga_events.2.t
+	desc = kvangahga_events.2.d
+	picture = ST_PETERS_CHURCH_eventPicture
+	
+	is_triggered_only = yes
+	major = no
+	
+	option = {
+		name = kvangahga_events.2.a
+		
+		random_owned_province = {
+			limit = { has_tax_building_trigger = no }
+			add_building_construction = {
+				building = temple
+				speed = 0.5
+				cost = 0
+			}
+		}
+		add_country_modifier = {
+			name = repurposed_relics
+			duration = 1825
+		}
+	}
+}
+
+#Reconditioned Tools
+country_event = {
+	id = kvangahga_events.3
+	title = kvangahga_events.3.t
+	desc = kvangahga_events.3.d
+	picture = CITY_DEVELOPMENT_eventPicture
+	
+	is_triggered_only = yes
+	major = no
+	
+	option = {
+		name = kvangahga_events.3.a
+		
+		random_owned_province = {
+			limit = {
+				religion = ROOT
+				culture = ROOT
+				controlled_by = ROOT
+			}
+			add_base_production = 1
+			add_base_tax = 1
+			add_base_manpower = 1
+		}
+		add_country_modifier = {
+			name = reconditioned_tools
+			duration = 3650
+		}
+	}
+}
+
+#Salvage Shipwrecks
+country_event = {
+	id = kvangahga_events.4
+	title = kvangahga_events.4.t
+	desc = kvangahga_events.4.d
+	picture = NAVAL_MILITARY_eventPicture
+	
+	is_triggered_only = yes
+	major = no
+	
+	option = {
+		name = kvangahga_events.4.a
+		
+		random_owned_province = {
+			limit = { 
+				has_port = yes
+				controlled_by = ROOT				
+			}
+			add_unit_construction = {
+				type = heavy_ship
+				amount = 2
+				speed = 0.5
+				cost = 0
+			}
+		}
+		add_country_modifier = {
+			name = salvage_shipwrecks
+			duration = 1825
+		}
+	}
+}
+
+#Recycled Jewellery
+country_event = {
+	id = kvangahga_events.5
+	title = kvangahga_events.5.t
+	desc = kvangahga_events.5.d
+	picture = IMPORTANT_STATUE_eventPicture
+	
+	is_triggered_only = yes
+	major = no
+	
+	option = {
+		name = kvangahga_events.5.a
+		
+		if = {
+			limit = { total_development = 400 }
+			add_treasury = 500
+		}
+		else_if = {
+			limit = { total_development = 300 }
+			add_treasury = 400
+		}
+		else_if = {
+			limit = { total_development = 200 }
+			add_treasury = 300
+		}
+		else_if = {
+			limit = { total_development = 100 }
+			add_treasury = 200
+		}
+		else = {
+			add_treasury = 100
+		}
+		add_country_modifier = {
+			name = recycled_jewellery
+			duration = 1825
+		}
+	}
+}
+
+#Trial of the Reforged Chain
+country_event = {
+	id = kvangahga_events.6
+	title = kvangahga_events.6.t
+	desc = kvangahga_events.6.dd
+	picture = REFORM_eventPicture
+	
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					has_owner_accepted_culture = yes
+					NOT = { culture_group = gnollish }							
+				}
+				save_event_target_as = kvang_reforged_chain_prov
+			}
+		}
+	}
+	
+	#Scavengers Trial
+	option = {
+		name = kvangahga_events.6.a
+		custom_tooltip = kvangahga_events.6.a.tt	
+        random_list = {
+			1 = {
+                define_advisor = {
+					type = theologian
+					skill = 1
+					culture = event_target:kvang_reforged_chain_prov
+					religion = kvangahga
+					discount = yes
+				}
+			}
+			1 = {
+                define_advisor = {
+					type = inquisitor
+					skill = 1
+					culture = event_target:kvang_reforged_chain_prov
+					religion = kvangahga
+					discount = yes
+				}
+			}
+			1 = {
+                define_advisor = {
+					type = quartermaster
+					skill = 1
+					culture = event_target:kvang_reforged_chain_prov
+					religion = kvangahga
+					discount = yes
+				}
+			}
+		}
+		add_estate_loyalty = {
+			estate = estate_church
+			loyalty = 10
+		}
+	}
+	#Beastmasters Trial
+	option = {
+		trigger = {
+			ivory = 1
+		}
+		name = kvangahga_events.6.b
+		custom_tooltip = kvangahga_events.6.b.tt		
+        random_list = {
+			1 = {
+                define_advisor = {
+				    type = commandant
+					skill = 1
+				    culture = event_target:kvang_reforged_chain_prov
+					religion = kvangahga
+				    discount = yes
+				}
+			}
+			1 = {
+				define_advisor = {
+					type = spymaster
+					skill = 1
+					culture = event_target:kvang_reforged_chain_prov
+					religion = kvangahga
+				    discount = yes
+			    }
+			}
+			1 = {
+                define_advisor = {
+				    type = diplomat
+					skill = 1
+				    culture = event_target:kvang_reforged_chain_prov
+					religion = kvangahga
+				    discount = yes
+				}
+			}
+		}
+		random_owned_province = {
+			limit = {
+				trade_goods = ivory
+			}
+			add_base_production = 2
+		}			
+	}
+	#Corsairs Trial
+	option = {
+		trigger = {
+			num_of_heavy_ship = 5
+		}
+		name = kvangahga_events.6.c
+		custom_tooltip = kvangahga_events.6.c.tt		
+		random_list = {
+			1 = {
+				define_advisor = {
+					type = naval_reformer
+					skill = 1
+					culture = event_target:kvang_reforged_chain_prov
+					religion = kvangahga
+					discount = yes
+				}
+			}
+			1 = {
+				define_advisor = {
+					type = navigator
+					skill = 1
+					culture = event_target:kvang_reforged_chain_prov
+					religion = kvangahga
+					discount = yes
+				}
+			}
+			1 = {
+				define_advisor = {
+					type = colonial_governor
+					skill = 1
+					culture = event_target:kvang_reforged_chain_prov
+					religion = kvangahga
+					discount = yes
+				}
+			}
+		}
+		random_owned_province = {
+			limit = { 
+				has_port = yes
+				controlled_by = ROOT				
+			}
+			add_unit_construction = {
+				type = light_ship
+				amount = 3
+				speed = 0.5
+				cost = 0
+			}
+		}					
+	}
+	#Monsterhunters Trial
+		option = {
+		trigger = {
+            has_estate = estate_adventurers
+		}	
+		name = kvangahga_events.6.d
+		custom_tooltip = kvangahga_events.6.d.tt		
+        random_list = {
+			1 = {
+                define_advisor = {
+				    type = statesman
+					skill = 1
+				    culture = event_target:kvang_reforged_chain_prov
+					religion = kvangahga
+				    discount = yes
+			    }
+			}
+			1 = {
+                define_advisor = {
+				    type = recruitmaster
+					skill = 1
+				    culture = event_target:kvang_reforged_chain_prov
+					religion = kvangahga
+				    discount = yes
+			    }
+			}
+			1 = {
+                define_advisor = {
+				    type = army_organiser
+					skill = 1
+				    culture = event_target:kvang_reforged_chain_prov
+					religion = kvangahga
+				    discount = yes
+			    }
+			}
+		}
+		add_army_tradition = 5					
+	}
+	#Goldsmiths Trial
+	option = {
+		trigger = {
+			gold = 1
+		}
+		name = kvangahga_events.6.e
+		custom_tooltip = kvangahga_events.6.e.tt   
+		random_list = {
+			1 = {
+				define_advisor = {
+				    type = trader
+					skill = 1
+				    culture = event_target:kvang_reforged_chain_prov
+					religion = kvangahga
+				    discount = yes
+				}
+			}
+			1 = {
+                define_advisor = {
+				    type = artist
+					skill = 1
+				    culture = event_target:kvang_reforged_chain_prov
+					religion = kvangahga
+				    discount = yes
+			    }
+			}
+			1 = {
+                define_advisor = {
+				    type = treasurer
+					skill = 1
+				    culture = event_target:kvang_reforged_chain_prov
+					religion = kvangahga
+				    discount = yes
+			    }
+			}
+		}
+		add_prestige = 10					
+	}
+	#Artillerists Trial
+		option = {
+		trigger = {
+			copper = 1
+			mil_tech = 12
+		}
+		name = kvangahga_events.6.f
+		custom_tooltip = kvangahga_events.6.f.tt
+        random_list = {
+			1 = {
+                define_advisor = {
+				    type = fortification_expert
+					skill = 1
+				    culture = event_target:kvang_reforged_chain_prov
+					religion = kvangahga
+				    discount = yes
+				}
+			}
+			1 = {
+                define_advisor = {
+				    type = grand_captain
+					skill = 1
+				    culture = event_target:kvang_reforged_chain_prov
+					religion = kvangahga
+				    discount = yes
+			    }
+			}
+			1 = {
+                define_advisor = {
+				    type = army_reformer
+					skill = 1
+				    culture = event_target:kvang_reforged_chain_prov
+					religion = kvangahga
+				    discount = yes
+			    }
+			}
+		}
+		random_owned_province = {
+			limit = { 
+				controlled_by = ROOT				
+			}
+			add_unit_construction = {
+				type = artillery
+				amount = 2
+				speed = 0.5
+				cost = 0
+			}
+		}				
+	}
+	#Alchemists Trial
+	option = {
+		trigger = {
+			glass = 1
+		}
+		name = kvangahga_events.6.g
+		custom_tooltip = kvangahga_events.6.g.tt		
+        random_list = {
+			1 = {
+                define_advisor = {
+				    type = natural_scientist
+					skill = 1
+				    culture = event_target:kvang_reforged_chain_prov
+					religion = kvangahga
+				    discount = yes
+			    }
+			}
+			1 = {
+                define_advisor = {
+				    type = philosopher
+					skill = 1
+				    culture = event_target:kvang_reforged_chain_prov
+					religion = kvangahga
+				    discount = yes
+			    }
+			}
+			1 = {
+                define_advisor = {
+				    type = master_of_mint
+					skill = 1
+				    culture = event_target:kvang_reforged_chain_prov
+					religion = kvangahga
+				    discount = yes
+			    }
+			}			
+		}
+        change_innovativeness = 5					
+	}
+	#Artificers Trial
+	option = {
+		trigger = {
+			damestear = 1
+			has_estate = estate_artificers
+		}
+		name = kvangahga_events.6.h
+		custom_tooltip = kvangahga_events.6.h.tt
+        define_advisor = {
+			type = court_mage
+			skill = 1
+			culture = event_target:kvang_reforged_chain_prov
+			religion = kvangahga
+			discount = yes
+		}
+		add_estate_loyalty = {
+			estate = estate_artificers
+			loyalty = 10
+		}
+	}	
+}
+
+#Corpses as Ammunition?
+country_event = {
+	id = kvangahga_events.7
+	title = kvangahga_events.7.t
+	desc = kvangahga_events.7.d
+	picture = BATTLE_eventPicture
+	
+	is_triggered_only = yes
+	trigger = {
+		mil_tech = 7
+		NOT = { technology_group = tech_undead }
+		religion = kvangahga
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	major = no
+	
+	option = {
+		name = kvangahga_events.7.a
+		if = {
+			limit = { has_estate = estate_church }
+			add_estate_loyalty = {
+				estate = estate_church
+				loyalty = 10
+			}
+		}
+		if = {
+			limit = { has_country_flag = removing_monstrous }
+			increase_monstrous_2 = yes
+		}
+		add_mil_power = -50
+		add_church_power = 30
+		add_country_modifier = {
+				name = kvangahga_corpse_ammunition
+				duration = 3650
+		}
+	}
+	option = {
+		name = kvangahga_events.7.b
+		if = {
+			limit = { has_estate = estate_church }
+			add_estate_loyalty = {
+				estate = estate_church
+				loyalty = -10
+			}
+		}
+		if = {
+			limit = { has_country_flag = removing_monstrous }
+			decrease_monstrous_2 = yes
+		}
+		add_church_power = -30
+		
+	}
+	
+	option = {
+		name = kvangahga_events.7.c
+		trigger = { has_estate = estate_artificer }
+		if = {
+			limit = { has_country_flag = removing_monstrous }
+			increase_monstrous_2 = yes
+		}
+		add_estate_loyalty = {
+				estate = estate_artificer
+				loyalty = 10
+		}
+		add_mil_power = -50
+		add_church_power = 30
+		add_country_modifier = {
+				name = kvangahga_exotic_alchemical_weapon
+				duration = 3650
+		}
+	}
+}
+
+#Corpses as a fortress
+country_event = {
+	id = kvangahga_events.8
+	title = kvangahga_events.8.t
+	desc = kvangahga_events.8.d
+	picture = FORT_eventPicture
+	
+	trigger = {
+		religion = kvangahga
+		mil = 1
+		adm = 1
+		dip = 1
+		any_owned_province = {
+			fort_level = 2
+			NOT = { has_province_modifier = kvangahga_corpse_fort }
+		}
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					fort_level = 2
+					NOT = { has_province_modifier = kvangahga_corpse_fort }
+				}
+				save_event_target_as = corpse_fort_province
+			}
+		}
+	}
+	after = {
+		clear_saved_name = local_corpse_fortification_expert
+	}
+	
+	is_triggered_only = yes
+	major = no
+	
+	option = {
+		name = kvangahga_events.8.a
+		if = {
+			limit = { has_estate = estate_church }
+			add_estate_loyalty = {
+				estate = estate_church
+				loyalty = 10
+			}
+		}
+		add_church_power = 30
+		event_target:corpse_fort_province = {
+			add_province_modifier = {
+				name = kvangahga_corpse_fort
+				duration = -1
+			}
+		}
+	}
+	option = {
+		name = kvangahga_events.8.b
+		if = {
+			limit = { has_estate = estate_church }
+			add_estate_loyalty = {
+				estate = estate_church
+				loyalty = -10
+			}
+		}
+		add_church_power = -30
+		define_advisor = {
+			type = fortification_expert
+			skill = 2
+			culture = event_target:local_fortification_expert_province
+			religion = kvangahga
+			discount = yes
+		}
+	}
+}
+
+#One man’s trash…
+country_event = {
+	id = kvangahga_events.9
+	title = kvangahga_events.9.t
+	desc = kvangahga_events.9.d
+	picture = TRADE_GOODS_METALS_AND_MINING_EQUIPENT_eventPicture
+	
+	is_triggered_only = yes
+	major = no
+	
+	trigger = {
+		religion = kvangahga
+		any_neighbor_country  = {
+			NOT = { religion = kvangahga }
+		}
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = kvangahga_events.9.a
+		add_years_of_income = 0.2
+	}
+	option = {
+		name = kvangahga_events.9.b
+		add_prestige = -10
+		add_country_modifier = {
+				name = kvangahga_recycled_weapon
+				duration = 3650
+		}
+	}
+}
+
+#A grand weapon for $RULER
+country_event = {
+	id = kvangahga_events.10
+	title = kvangahga_events.10.t
+	desc = kvangahga_events.10.d
+	picture = TRADE_GOODS_METALS_AND_MINING_EQUIPENT_eventPicture
+	
+	is_triggered_only = yes
+	major = no
+	trigger = {
+		religion = kvangahga
+		NOT = { tag = F72 }
+		NOT = { has_country_flag = had_kvangahga_grand_weapon }
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	
+	option = {
+		name = kvangahga_events.10.a
+		add_years_of_income = -1
+		add_mil_power = 100
+		add_prestige = 15
+		add_ruler_modifier = {
+			name = kvangahga_blessed_sword
+			duration = -1
+		}
+		set_country_flag = had_kvangahga_grand_weapon
+	}
+	option = {
+		name = kvangahga_events.10.b
+		add_years_of_income = -1
+		add_mil_power = 100
+		add_prestige = 15
+		add_ruler_modifier = {
+			name = kvangahga_blessed_hammer
+			duration = -1
+		}
+		set_country_flag = had_kvangahga_grand_weapon
+	}
+	option = {
+		name = kvangahga_events.10.c
+		add_prestige = -20
+	}
+}
+
+#Bones as Instruments
+country_event = {
+	id = kvangahga_events.11
+	title = kvangahga_events.11.t
+	desc = kvangahga_events.11.d
+	picture = TRADEGOODS_eventPicture
+	
+	is_triggered_only = yes
+	major = no
+	
+	trigger = {
+		religion = kvangahga
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = kvangahga_events.11.a
+		add_years_of_income = 0.2
+		add_church_power = 15
+		random_owned_area = { 
+			add_province_modifier = {
+				name = kvangahga_disrespected_locals
+				duration = 1825
+			}
+		}
+	}
+	
+	option = {
+		name = kvangahga_events.11.b
+		add_church_power = -15
+		if = {
+			limit = { has_estate = estate_church }
+			add_estate_loyalty = {
+				estate = estate_church
+				loyalty = -10
+			}
+		}
+		random_owned_province = { 
+			add_province_modifier = {
+				name = kvangahga_respected_locals_wishes
+				duration = 1825
+			}
+		}
+	}
+}
+
+#Powerful Artefacts Appear from the Shore
+country_event = {
+	id = kvangahga_events.12
+	title = kvangahga_events.12.t
+	desc = kvangahga_events.12.d
+	picture = IMPORTANT_STATUE_eventPicture
+	
+	is_triggered_only = yes
+	major = no
+	
+	trigger = {
+		religion = kvangahga
+		num_of_ports = 1
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = kvangahga_events.12.a
+		add_prestige = 20
+	}
+	option = {
+		name = kvangahga_events.12.b
+		change_innovativeness = 4
+	}
+	option = {
+		name = kvangahga_events.12.c
+		add_years_of_income = 0.2
+		add_prestige = -15
+	}
+}
+
+#Chaotic Goods Disrupt $COUNTRY
+country_event = {
+	id = kvangahga_events.13
+	title = kvangahga_events.13.t
+	desc = kvangahga_events.13.d
+	picture = IMPORTANT_STATUE_eventPicture
+	
+	is_triggered_only = yes
+	major = no
+	trigger = {
+		religion = kvangahga
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				save_event_target_as = chaos_good_province
+			}
+			random_rival_country = { 
+					save_event_target_as = chaos_good_rival
+			}
+		}
+	}
+	
+	option = {
+		name = kvangahga_events.13.a
+		add_prestige = -15
+		event_target:chaos_good_province = {
+			add_devastation = 5
+		}
+	}
+	option = {
+		name = kvangahga_events.13.b
+		trigger = { has_saved_event_target = chaos_good_rival }
+		add_prestige = 5
+		event_target:chaos_good_province = {
+			add_devastation = 10
+		}
+		event_target:chaos_good_rival = { 
+			reverse_add_casus_belli = {	
+				target = ROOT
+				type = cb_insult
+				months = 12
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = opinion_insulted 
+				multiplier = 5
+			}
+		}
+	}
+	option = {
+		name = kvangahga_events.13.c
+		trigger = {
+			has_idea_group = innovativeness_ideas
+		}
+		event_target:chaos_good_province = {
+			add_devastation = 10
+		}
+		add_country_modifier = {
+			name = kvangahga_learned_chaos_artefact
+			duration = 1825
+		}
+	}
+}
+
+#Center of Recycling
+country_event = {
+	id = kvangahga_events.14
+	title = kvangahga_events.14.t
+	desc = kvangahga_events.14.d
+	picture = TRADE_GOODS_METALS_AND_MINING_EQUIPENT_eventPicture
+	
+	is_triggered_only = yes
+	major = no
+	trigger = {
+		religion = kvangahga
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				save_event_target_as = recycling_province
+			}
+		}
+	}
+	after = {
+		clear_saved_name = local_recycling_expert
+	}
+	
+	option = {
+		name = kvangahga_events.14.a
+		event_target:recycling_province = {
+			add_base_production = 1
+		}
+	}
+	
+	option = {
+		name = kvangahga_events.14.b
+		add_years_of_income = -0.4
+		event_target:recycling_province = {
+			add_base_production = 2
+		}
+	}
+	
+	option = {
+		name = kvangahga_events.14.c
+		define_advisor = {
+			type = artist
+			skill = 1
+			culture = event_target:recycling_province
+			religion = kvangahga
+			discount = yes
+		}
+	}
+}
+
+#The Smith Priests Need Support
+country_event = {
+	id = kvangahga_events.15
+	title = kvangahga_events.15.t
+	desc = kvangahga_events.15.d
+	picture = COURT_eventPicture
+	
+	is_triggered_only = yes
+	major = no
+	trigger = {
+		religion = kvangahga
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = {
+		name = kvangahga_events.15.a
+		add_years_of_income = -1
+		add_country_modifier = {
+			name = kvangahga_reforge_neighbors_metal
+			duration = 3650
+		}
+	}
+	option = {
+		name = kvangahga_events.15.b
+		add_years_of_income = -1
+		add_country_modifier = {
+			name = kvangahga_reforge_neighbors_trinket
+			duration = 3650
+		}
+	}
+	option = {
+		name = kvangahga_events.15.c
+		add_country_modifier = {
+			name = kvangahga_reforge_refuse
+			duration = 1825
+		}
+		if = {
+			limit = { has_estate = estate_church }
+			add_estate_loyalty = {
+				estate = estate_church
+				loyalty = -10
+			}
+		}
+	}
+}
+
+#Gnoll Cannibalism Scares Locals
+country_event = {
+	id = kvangahga_events.16
+	title = kvangahga_events.16.t
+	desc = kvangahga_events.16.d
+	picture = ACCUSATION_eventPicture
+	
+	is_triggered_only = yes
+	major = no
+	trigger = {
+		religion = kvangahga
+		any_owned_province = {
+			religion = kvangahga
+			has_minority_trigger = yes
+		}
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = {
+		name = kvangahga_events.16.a
+		add_years_of_income = 0.2
+		add_church_power = 10
+		add_country_modifier = {
+			name = kvangahga_ignore_other_religion
+			duration = 1825
+		}
+	}
+	option = {
+		name = kvangahga_events.16.b
+		add_church_power = -30
+		add_country_modifier = {
+			name = kvangahga_tolerate_other_religion
+			duration = 1825
+		}
+	}
+	option = {
+		name = kvangahga_events.16.c
+		trigger = {
+			OR = {
+				has_idea_group = humanist_ideas
+				ruler_has_personality = tolerant_personality
+			}
+		}
+		add_church_power = -15
+		add_country_modifier = {
+			name = kvangahga_respect_other_religion
+			duration = 3650
+		}
+	}
+}
+
+#Gnoll Cannibalism Scares Allies
+country_event = {
+	id = kvangahga_events.17
+	title = kvangahga_events.17.t
+	desc = kvangahga_events.17.d
+	picture = ACCUSATION_eventPicture
+	
+	is_triggered_only = yes
+	major = no
+	trigger = {
+		religion = kvangahga
+		any_ally = {
+			NOT = { religion_group = gnollish }
+		}
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	immediate = {
+		random_ally = {
+			limit = { NOT = { religion_group = gnollish } }
+			save_event_target_as = tasty_ally
+		}
+	}
+	
+	option = {
+		name = kvangahga_events.17.a
+		add_church_power = -30
+		event_target:tasty_ally = {
+			add_opinion = {
+				who = ROOT
+				modifier = no_eating_ally
+			}
+		}
+		add_country_modifier = {
+			name = kvangahga_ignore_own_tradition
+			duration = 3650
+		}
+	}
+	option = {
+		name = kvangahga_events.17.b
+		add_church_power = 30
+		event_target:tasty_ally = {
+			add_opinion = {
+				who = ROOT
+				modifier = yes_eating_ally
+			}
+		}
+		add_country_modifier = {
+			name = kvangahga_ignore_ally_wish
+			duration = 3650
+		}
+	}
+	option = {
+		name = kvangahga_events.17.c
+		trigger = {
+			OR = {
+				has_idea_group = influence_ideas
+				has_idea_group = diplomatic_ideas
+				ruler_has_personality = silver_tongue_personality
+			}
+		}
+		add_church_power = 30
+		event_target:tasty_ally = {
+			add_opinion = {
+				who = ROOT
+				modifier = smooth_eating_ally
+			}
+		}
+	}
+	option = {
+		name = kvangahga_events.17.e
+		trigger = {
+			OR = {
+				ruler_has_personality = cruel_personality
+				ruler_has_personality = malevolent_personality
+			}
+		}
+		add_church_power = 75
+		event_target:tasty_ally = {
+			add_opinion = {
+				who = ROOT
+				modifier = eating_ambassador
+			}
+		}
+		add_country_modifier = {
+			name = kvangahga_eat_ambassador
+			duration = 3650
+		}
+	}
+}
+
+#This Gnoll Tastes Bad
+country_event = {
+	id = kvangahga_events.18
+	title = kvangahga_events.18.t
+	desc = kvangahga_events.18.d
+	picture = FEAST_eventPicture
+	
+	is_triggered_only = yes
+	major = no
+	trigger = {
+		religion = kvangahga
+		culture_group = gnollish
+		num_of_centers_of_trade = 1
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	immediate = {
+		random_owned_area = {
+			limit = { province_has_center_of_trade_of_level = 1 }
+			save_event_target_as = spoiled_merchant_area
+		}
+	}
+	
+	option = {
+		name = kvangahga_events.18.a
+		add_country_modifier = {
+			name = kvangahga_army_eat_merchant
+			duration = 3650
+		}
+	}
+	option = {
+		name = kvangahga_events.18.b
+		add_prestige = -10
+		event_target:spoiled_merchant_area = {
+			add_province_modifier = {
+				name = kvangahga_local_family_angry
+				duration = 3650
+			}
+		}
+	}
+	option = {
+		name = kvangahga_events.18.c
+		random_list = {
+			80 = {
+				add_adm_power = 10
+				add_dip_power = 10
+				add_mil_power = 10
+			}
+			20 = {
+				add_ruler_modifier = {
+					name = kvangahga_ruler_ill
+					duration = 1825
+				}
+			}
+		}
+	}
+}
+
+#This Gnoll Tastes Boozy
+country_event = {
+	id = kvangahga_events.19
+	title = kvangahga_events.19.t
+	desc = kvangahga_events.19.d
+	picture = FEAST_eventPicture
+	
+	is_triggered_only = yes
+	major = no
+	trigger = {
+		religion = kvangahga
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = {
+		name = kvangahga_events.19.a
+		random_owned_province = {
+			add_province_modifier = {
+				name = kvangahga_drunk_celebration
+				duration = 1825
+			}
+		}
+	}
+	option = {
+		name = kvangahga_events.19.b
+		trigger = {
+			OR = {
+				any_ally = {
+					religion = kvangahga
+				}
+				any_subject_country = {
+					religion = kvangahga
+				}
+			}
+		}
+		every_ally = {
+			limit = { religion = kvangahga }
+			add_opinion = {
+				who = ROOT
+				modifier = shared_drunk_feast
+			}
+		}
+		every_subject_country = {
+			limit = { religion = kvangahga }
+			add_opinion = {
+				who = ROOT
+				modifier = shared_drunk_feast
+			}
+		}
+	}
+	option = {
+		name = kvangahga_events.19.c
+		add_prestige = 30
+		random = {
+			chance = 10
+			add_ruler_personality = drunkard_personality
+		}
+	}
+}
+
+#A Pact with Demons?
+country_event = {
+	id = kvangahga_events.20
+	title = kvangahga_events.20.t
+	desc = kvangahga_events.20.d
+	picture = CORRUPTION_eventPicture
+	
+	is_triggered_only = yes
+	major = no
+	trigger = {
+		religion = kvangahga
+		any_owned_province = {
+			OR = {
+				has_gnollish_majority_trigger = yes
+				has_large_gnollish_minority_trigger = yes
+			}
+			NOT = { religion = xhazobkult }
+		}
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					OR = {
+						has_gnollish_majority_trigger = yes
+						has_large_gnollish_minority_trigger = yes
+					}
+					NOT = { religion = xhazobkult }
+				}
+				save_event_target_as = demon_pact_province
+			}
+		}
+	}
+	
+	option = {
+		name = kvangahga_events.20.a
+		event_target:demon_pact_province = {
+			change_religion = xhazobkult
+			add_province_modifier = {
+				name = kvangahga_reforge_unbeliver
+				duration = 3650
+			}
+		}
+	}
+	option = {
+		name = kvangahga_events.20.b
+		event_target:demon_pact_province = {
+			change_religion = xhazobkult
+			add_province_modifier = {
+				name = kvangahga_tolerate_unbeliver
+				duration = 3650
+			}
+		}
+	}
+	option = {
+		name = kvangahga_events.20.c
+		trigger = {
+			OR = {
+				has_idea_group = humanist_ideas
+				ruler_has_personality = tolerant_personality
+			}
+		}
+		event_target:demon_pact_province = {
+			change_religion = xhazobkult
+		}
+		add_country_modifier = {
+			name = kvangahga_accept_unbeliver
+			duration = 3650
+		}
+	}
+	option = {
+		name = kvangahga_events.20.e
+		trigger = {
+			OR = {
+				has_idea_group = religious_ideas
+				ruler_has_personality = zealot_personality
+				ruler_has_personality = pious_personality
+			}
+		}
+		event_target:demon_pact_province = {
+			change_religion = xhazobkult
+		}
+		add_country_modifier = {
+			name = kvangahga_convert_unbeliver
+			duration = 3650
+		}
+	}
+}
+
+#A Demon Pact Goes Wrong
+country_event = {
+	id = kvangahga_events.21
+	title = kvangahga_events.21.t
+	desc = kvangahga_events.21.d
+	picture = CORRUPTION_eventPicture
+	
+	is_triggered_only = yes
+	major = no
+	trigger = {
+		religion = kvangahga
+		any_owned_province = {
+			religion = xhazobkult
+		}
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					religion = xhazobkult
+				}
+				save_event_target_as = demon_pact_province
+			}
+		}
+	}
+	
+	option = {
+		name = kvangahga_events.21.a
+		event_target:demon_pact_province = {
+			add_devastation = 25
+			random = {
+				chance = 33
+				add_base_tax = -1
+			}
+			random = {
+				chance = 33
+				add_base_production = -1
+			}
+			random = {
+				chance = 33
+				add_base_manpower = -1
+			}
+		}
+	}
+	option = {
+		name = kvangahga_events.21.b
+		trigger = {
+			OR = {
+				has_idea_group = religious_ideas
+				advisor = theologian
+				advisor = inquisitor
+			}
+		}
+		event_target:demon_pact_province = {
+			add_devastation = 25
+			random = {
+				chance = 33
+				add_base_tax = -1
+			}
+			random = {
+				chance = 33
+				add_base_production = -1
+			}
+			random = {
+				chance = 33
+				add_base_manpower = -1
+			}
+			change_religion = kvangahga
+		}
+	}
+}
+
+#A Demon Pact Goes… Right?
+country_event = {
+	id = kvangahga_events.22
+	title = kvangahga_events.22.t
+	desc = kvangahga_events.22.d
+	picture = CORRUPTION_eventPicture
+	
+	is_triggered_only = yes
+	major = no
+	trigger = {
+		religion = kvangahga
+		any_owned_province = {
+			religion = xhazobkult
+		}
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					religion = xhazobkult
+				}
+				save_event_target_as = demon_pact_province
+			}
+		}
+	}
+	
+	option = {
+		name = kvangahga_events.22.a
+		event_target:demon_pact_province = {
+			add_random_development = -1
+			add_province_modifier = {
+				name = kvangahga_demon_undealt
+				duration = 3650
+			}
+		}
+		capital_scope = { 
+			add_random_development = 1
+		}
+	}
+	option = {
+		name = kvangahga_events.22.b
+		event_target:demon_pact_province = {
+			add_random_development = -1
+			add_province_modifier = {
+				name = kvangahga_demon_dealt
+				duration = 3650
+			}
+		}
+		capital_scope = { 
+			add_random_development = 1
+		}
+	}
+	option = {
+		name = kvangahga_events.22.c
+		trigger = {
+			ruler_has_personality = cruel_personality
+		}
+		event_target:demon_pact_province = {
+			add_random_development = -1
+		}
+		capital_scope = { 
+			add_random_development = 1
+		}
+		set_ruler_religion = xhazobkult
+	}
+}

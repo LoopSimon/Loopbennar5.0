@@ -1,0 +1,49 @@
+setup_vision = yes
+government = republic
+add_government_reform = free_city
+government_rank = 1
+mercantilism = 25
+primary_culture = imperial_gnome
+religion = regent_court
+technology_group = tech_gnomish
+capital = 271 #Giberd
+
+historical_friend = A73 #Silverforge
+
+1000.1.1 = {
+	set_estate_privilege = estate_mages_organization_magisterium
+	set_country_flag = new_imperial_candidate_gain_magisterium
+}
+
+1399.1.1 = {
+	monarch = {
+		name = "Delda"
+		dynasty = "Glibgear"
+		adm = 5
+		dip = 5
+		mil = 3
+		birth_date = 1353.9.21
+		female = yes
+	}
+	add_ruler_personality = scholar_personality
+	add_ruler_personality = industrious_personality
+	add_ruler_personality = naive_personality
+	set_ruler_flag = long_lived_ruler
+	set_variable = {
+		which = giberd_bennonhill_exploited
+		value = 0
+	}
+	set_variable = {
+		which = giberd_factions_technomancers_influence
+		value = 0
+	}
+	set_variable = {
+		which = giberd_factions_brillites_influence
+		value = 0
+	}
+	set_variable = {
+		which = giberd_factions_mechanists_influence
+		value = 0
+	}
+	set_country_flag = artificers_regular_organization_locked
+}

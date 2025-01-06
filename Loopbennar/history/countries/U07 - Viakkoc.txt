@@ -1,0 +1,27 @@
+# 
+setup_vision = yes
+government = tribal
+add_government_reform = gnoll_pack
+government_rank = 2
+primary_culture = seascourge_gnoll
+religion = xhazobkult
+religious_school = demonic_shamans_tradition
+technology_group = tech_gnollish
+
+capital = 393
+
+historical_rival = U09 #Gnollakaz
+historical_rival = F65 #Tzilekal
+historical_friend = U10 #Brrtekuh
+1000.1.1 = { set_estate_privilege = estate_mages_organization_guilds }
+
+1437.2.9 = {
+	monarch = {
+		name = "Viakkoc XI"
+		dynasty = "Scourge-of-All-Seas"
+		birth_date = 1424.9.7
+		adm = 2
+		dip = 1
+		mil = 6
+	}
+}

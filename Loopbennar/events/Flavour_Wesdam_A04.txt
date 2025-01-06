@@ -1,0 +1,775 @@
+
+
+namespace = flavor_wesdam
+
+#Laurens choosing between High Lorentish and West Damerian culture
+country_event = {
+	id = flavor_wesdam.1
+	title = flavor_wesdam.1.t
+	desc = flavor_wesdam.1.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = A04
+		
+		has_ruler = "Laurens"
+		dynasty = "Silmuna"
+		
+		NOT = { is_year = 1500 }
+	}
+	
+	mean_time_to_happen = {
+		months = 2
+	}
+	
+	#High Lorentish culture is the future
+	option = {
+	    custom_tooltip = laurens_carneter_tooltip
+		name = flavor_wesdam.1.a
+		
+		set_ruler_culture = high_lorentish
+		set_heir_culture = high_lorentish
+		
+		add_prestige = 20
+		custom_tooltip = laurens_lorentish_tooltip
+		
+		every_known_country = {
+			limit = {
+				capital_scope = { region = west_dameshead_region }
+				primary_culture = west_damerian
+			}
+			add_opinion = { who = PREV modifier = A04_laurens_rejected_west_damerian }
+		}
+		hidden_effect = { 
+			set_country_flag = wesdam_lorent_path
+			swap_non_generic_missions = yes
+		}
+		
+		ai_chance = {
+			factor = 1
+			#Don't pick if you lost your foothold in Lencenor
+			modifier = {
+				factor = 0
+				NOT = { A14 = { is_subject_of = ROOT } }
+				NOT = {
+					any_owned_province = {
+						OR = {
+							culture = high_lorentish
+							culture = low_lorentish
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	#Embrace the culture of my ancestors
+	option = {
+		name = flavor_wesdam.1.b
+		
+		custom_tooltip = laurens_damerian_tooltip
+		set_ruler_culture = west_damerian
+		set_heir_culture = west_damerian
+		
+		add_stability_or_adm_power = yes
+		
+		every_country = {
+			limit = {
+				capital_scope = { region = lencenor_region }
+				primary_culture = high_lorentish
+			}
+			add_opinion = { who = ROOT modifier = A04_laurens_rejected_high_lorentish }
+		}
+		hidden_effect = { 
+			set_country_flag = wesdam_dameria_path
+			swap_non_generic_missions = yes
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+
+}
+#Silmuna Education
+country_event = {
+	id = flavor_wesdam.2
+	title = flavor_wesdam.2.t
+	desc = flavor_wesdam.2.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	option = {
+		name = flavor_wesdam.2.a
+		ai_chance = { factor = 50 }
+		increase_ruler_adm_effect = yes
+		add_ruler_personality = industrious_personality
+	}
+	
+	option = {
+		name = flavor_wesdam.2.b
+		ai_chance = { factor = 50 }
+		increase_ruler_mil_effect = yes
+		add_ruler_personality = careful_personality
+	}
+}
+
+#Silmuna Expertise
+country_event = {
+	id = flavor_wesdam.3
+	title = flavor_wesdam.3.t
+	desc = flavor_wesdam.3.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	option = {
+		name = flavor_wesdam.3.a
+		ai_chance = { factor = 50 }
+		increase_ruler_adm_effect = yes
+		add_ruler_personality = scholar_personality
+	}
+	
+	option = {
+		name = flavor_wesdam.3.b
+		ai_chance = { factor = 50 }
+		increase_ruler_mil_effect = yes
+		add_ruler_personality = inspiring_leader_personality
+	}
+}
+
+#Gabelaire declaration
+country_event = {
+	id = flavor_wesdam.4
+	title = flavor_wesdam.4.t
+	desc = flavor_wesdam.4.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	option = {
+		name = flavor_wesdam.4.a
+		ai_chance = { factor = 100 }
+		random_country = {
+			limit = { has_country_flag = wesdam_partner }
+			country_event = { id = flavor_wesdam.5 days = 60 random = 30 }
+		}
+	}
+}
+
+#Event they receive
+country_event = {
+	id = flavor_wesdam.5
+	title = flavor_wesdam.5.t
+	desc = flavor_wesdam.5.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	# Accept PU
+	option = {
+		name = flavor_wesdam.5.a
+		ai_chance = {
+			factor = 100
+			modifier = {
+				factor = 0
+				
+				OR = {
+					ROOT = { is_elector = yes }
+					ROOT = { is_emperor = yes }
+				}
+			}
+			
+			modifier = {
+				factor = 1.5
+				
+				FROM = { is_great_power = yes }
+			}
+			
+			modifier = {
+				factor = 5
+				
+				dynasty = FROM
+			}
+			
+			modifier = {
+				factor = 3
+				
+				has_regency = yes
+			}
+			
+			modifier = {
+				factor = 3
+				
+				FROM = { luck = yes }
+			}
+			
+			modifier = {
+				factor = 1.2
+				
+				trust = {
+					who = FROM
+					value = 60
+				}
+			}
+			
+			modifier = {
+				factor = 1.2
+				
+				trust = {
+					who = FROM
+					value = 70
+				}
+			}
+			
+			modifier = {
+				factor = 1.2
+				
+				trust = {
+					who = FROM
+					value = 85
+				}
+			}
+		}
+		hidden_effect = { FROM = { set_country_flag = accepted_pu } }
+		FROM = { country_event = { id = flavor_wesdam.6 days = 30 } }
+	}
+	
+	# Refuse PU
+	option = {
+		name = flavor_wesdam.5.b
+		ai_chance = { 
+			factor = 100
+			
+			modifier = {
+				factor = 0.5
+				
+				army_strength = {
+					who = FROM
+					value = 0.5
+				}
+			}
+			
+			modifier = {
+				factor = 1.5
+				
+				is_great_power = yes
+			}
+			
+			modifier = {
+				factor = 8
+				
+				total_development = FROM	
+			}
+			
+			modifier = {
+				factor = 1.2
+				
+				NOT = {
+					trust = {
+					who = FROM
+					value = 20
+					}
+				}
+			}
+			
+			modifier = {
+				factor = 1.2
+				
+				NOT = {
+					trust = {
+					who = FROM
+					value = 40
+					}
+				}
+			}
+		}
+		hidden_effect = { FROM = { set_country_flag = refused_pu } }
+		FROM = { country_event = { id = flavor_wesdam.6 days = 30 } }
+	}
+}
+
+#Last event
+country_event = {
+	id = flavor_wesdam.6
+	title = flavor_wesdam.6.t
+	desc = flavor_wesdam.6.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	option = {
+		name = flavor_wesdam.6.a
+		ai_chance = { factor = 100 }
+		trigger = { has_country_flag = accepted_pu }
+		add_prestige = 15
+		add_trust = {
+			who = FROM
+			value = 25
+			mutual = yes
+		}
+		create_union = FROM
+		hidden_effect = { clr_country_flag = accepted_pu }
+	}
+	
+	option = {
+		name = flavor_wesdam.6.b
+		ai_chance = { factor = 100 }
+		trigger = { has_country_flag = refused_pu }
+		
+		add_prestige = -15
+		add_opinion = {
+			modifier = opinion_spurned_pu
+			who = FROM
+		}
+		add_trust = {
+			who = FROM
+			value = -20
+			mutual = yes
+		}
+		add_casus_belli = {
+			target = FROM
+			type = cb_restore_personal_union
+			months = 120
+		}
+		hidden_effect = { clr_country_flag = refused_pu }
+	}
+}
+# Millenium Offer
+country_event = {
+	id = flavor_wesdam.7
+	title = flavor_wesdam.7.t
+	desc = flavor_wesdam.7.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	option = {
+		name = flavor_wesdam.7.a
+		ai_chance = { factor = 100 }
+		random_country = {
+			limit = { has_country_flag = wesdam_partner }
+			country_event = { id = flavor_wesdam.5 days = 60 random = 30 }
+		}
+	}
+}
+
+#Ask anbenncost annexation
+country_event = {
+	id = flavor_wesdam.8
+	title = flavor_wesdam.8.t
+	desc = flavor_wesdam.8.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	option = {
+		name = flavor_wesdam.8.a
+		ai_chance = { factor = 100 }
+		A38 = { country_event = { id = flavor_wesdam.9 days = 60 random = 30 } }
+	}
+}
+# They accept or refuse
+country_event = {
+	id = flavor_wesdam.9
+	title = flavor_wesdam.9.t
+	desc = flavor_wesdam.9.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	# Accept
+	option = {
+		name = flavor_wesdam.9.a
+		ai_chance = { factor = 80 }
+		FROM = {
+			set_country_flag = accept_vas
+			country_event = { id = flavor_wesdam.10 days = 10 }
+		}
+	}
+	
+	# Refuse
+	option = {
+		name = flavor_wesdam.9.b
+		ai_chance = { 
+			factor = 20 
+			
+			modifier = {
+				factor = 4
+				
+				emperor = {
+					alliance_with = ROOT
+					NOT = { tag = FROM }
+				}
+			}
+			
+			modifier = {
+				factor = 20
+				
+				num_of_owned_provinces_with = {
+					value = 2
+					
+					is_core = ROOT
+				}
+			}
+			
+			modifier = {
+				factor = 2
+				
+				any_ally = {
+					is_elector = yes
+					NOT = { tag = FROM }
+				}
+			}
+		}
+		FROM = {
+			set_country_flag = refuse_vas
+			country_event = { id = flavor_wesdam.10 days = 10 }
+		}
+	}
+}
+#Their response
+country_event = {
+	id = flavor_wesdam.10
+	title = flavor_wesdam.10.t
+	desc = flavor_wesdam.10.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	option = {
+		name = flavor_wesdam.10.a
+		ai_chance = { factor = 100 }
+		trigger = { has_country_flag = accept_vas }
+		
+		add_prestige = 15
+		add_stability_or_adm_power = yes
+		vassalize = A38
+		hidden_effect = { clr_country_flag = accept_vas }
+	}
+	option = {
+		name = flavor_wesdam.10.b
+		ai_chance = { factor = 100 }
+		trigger = { has_country_flag = refuse_vas }
+		
+		add_prestige = -20
+		if = {
+			limit = {
+				8 = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+			}
+			8 = {
+				add_permanent_claim = ROOT
+			}
+		}
+		hidden_effect = { clr_country_flag = refuse_vas }
+	}
+}
+
+#The sucession of Wesdam
+country_event = {
+	id = flavor_wesdam.11
+	title = flavor_wesdam.11.t
+	desc = flavor_wesdam.11.d
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		A14 = { # Madelaire
+			is_subject_of = A04
+			is_subject_of_type = personal_union
+			is_part_of_hre = no
+		}
+		is_part_of_hre = yes
+		government = monarchy
+		exists = A01
+	}
+	
+	#Honour the will
+	option = {
+		name = flavor_wesdam.11.a
+		A14 = {
+			grant_independence = yes
+			every_core_province = {
+				limit = { owned_by = A04 }
+				cede_province = A14
+			}
+		}
+		add_prestige = 5
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 2
+				A14 = {
+					liberty_desire = 50
+				}
+			}
+		}
+	}
+	#Petition the emperor for a correction
+	option = {
+		name = flavor_wesdam.11.b
+		add_legitimacy = -10
+		if = {
+			limit = {
+				has_dlc = "Emperor"
+			}
+			set_imperial_incident = incident_sucession_of_wesdam_madelaire
+		}
+		else = {
+			emperor = {
+				country_event = {
+					id = flavor_wesdam.12
+				}
+			}
+		}
+		A14 = {
+			add_liberty_desire = 10
+		}
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 10
+				has_country_flag = wesdam_lorent_path
+			}
+		}
+	}
+}
+
+#The sucession of Wesdam - Emperor
+country_event = {
+	id = flavor_wesdam.12
+	title = flavor_wesdam.12.t
+	desc = flavor_wesdam.12.d
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	#The will stands
+	option = {
+		name = flavor_wesdam.12.a
+		A14 = {
+			grant_independence = yes
+			every_core_province = {
+				limit = { owned_by = A04 }
+				cede_province = A14
+			}
+		}
+		A01 = {
+			create_subject = {
+				subject = A14
+				subject_type = vassal
+			}
+		}
+		A04 = {
+			add_casus_belli = {
+				type = cb_restore_personal_union
+				months = 120
+				target = A14
+			}
+		}
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 2
+				A14 = {
+					liberty_desire = 50
+				}
+			}
+		}
+	}
+	
+	#Wesdam and Madelaire are insperable
+	option = {
+		name = flavor_wesdam.12.b
+		
+		custom_tooltip = wesdam_madelaire_union_remains_tt
+		custom_tooltip = lorent_may_enforce_split_tt
+		
+		A04 = {
+			add_legitimacy = 5
+		}
+		hidden_effect = {
+			A01 = {
+				country_event = {
+					id = flavor_wesdam.13
+					days = 7
+				}
+			}
+		}
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 10
+				has_country_flag = wesdam_lorent_path
+			}
+		}
+	}
+}
+
+#Lorent can DoW Madelaire
+country_event = {
+	id = flavor_wesdam.13
+	title = flavor_wesdam.13.t
+	desc = flavor_wesdam.13.d
+	picture = DEATH_OF_HEIR_eventPicture
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		A14 = { # Madelaire
+			is_subject_of = A04
+			is_subject_of_type = personal_union
+			is_part_of_hre = no
+			exists = yes
+		}
+	}
+	
+	#We must right this wrong!
+	option = {
+		name = flavor_wesdam.13.a
+		ai_chance = {
+			factor = 90
+			modifier = {
+				factor = 0.01
+				OR = {
+					emperor = {
+						OR = {
+							army_size = ROOT
+							total_own_and_non_tributary_subject_development = ROOT
+							num_of_allies = 5
+						}
+					}
+					A04 = {
+						OR = {
+							army_size = ROOT
+							total_own_and_non_tributary_subject_development = ROOT
+							num_of_allies = 5
+						}
+					}
+				}
+			}
+			modifier = { #Is already at war with the overlord of Madelaire
+				factor = 0
+				A14 = {
+					is_subject = yes
+					overlord = {
+						war_with = ROOT
+					}
+				}
+			}
+		}
+		#Makes the emperor join the war
+		hidden_effect = {
+			A14 = {
+				every_owned_province = {
+					set_in_empire = yes
+				}
+			}
+		}
+		declare_war_with_cb = {
+			who = A14
+			casus_belli = cb_vassalize_mission
+		}
+		lower_bloodwine_area = {
+			limit = {
+				owned_by = A14
+			}
+			change_controller = A01
+		}
+		darom_area = {
+			limit = {
+				owned_by = A14
+			}
+			change_controller = A01
+		}
+		#Makes the emperor join the war
+		hidden_effect = {
+			A14 = {
+				every_owned_province = {
+					set_in_empire = no
+				}
+			}
+		}
+	}
+	
+	#Imperial politics are of no concern to [Root.GetName].
+	option = {
+		name = flavor_wesdam.13.b
+		ai_chance = {
+			factor = 10
+		}
+		add_legitimacy = -20
+		add_prestige = -5
+		A14 = {
+			capital_scope = {
+				spawn_rebels = {
+					type = pretender_rebels
+					size = 1
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,39 @@
+
+setup_vision = yes
+government = republic
+government_rank = 1
+primary_culture = khamgunai
+add_government_reform = lake_republic
+religion = enuuk_followers
+technology_group = tech_triunic
+capital = 5231
+fixed_capital = 5231
+
+historical_friend = J02 #Zurkanrek
+
+1430.1.1 = {
+	add_country_modifier = {
+		name = lake_federation_member
+		duration = -1
+	}
+	set_variable = {
+		which = FederationPoints
+		value = 3
+	}
+	set_country_flag = LF_mages_banned
+}
+
+1442.9.5 = {
+	monarch = {
+		name = "Bayar"
+		dynasty = "Yamgiin"	
+		birth_date = 1406.4.10
+		adm = 4
+		dip = 4
+		mil = 1
+	}
+	add_ruler_personality = incorruptible_personality
+
+}
+
+#Administrator during the invasion, they heavily support integration with the Lake federation, after his term he helped drafting Preservation Act together with the president of Yarumudh at the time

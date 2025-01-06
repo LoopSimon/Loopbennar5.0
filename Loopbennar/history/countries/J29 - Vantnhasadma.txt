@@ -1,0 +1,36 @@
+
+setup_vision = yes
+government = republic
+government_rank = 1
+primary_culture = metsamic
+add_government_reform = lake_republic
+religion = kodave_followers
+technology_group = tech_triunic
+capital = 5296
+fixed_capital = 5296
+1430.1.1 = {
+	add_country_modifier = {
+		name = lake_federation_member
+		duration = -1
+	}
+	set_variable = {
+		which = FederationPoints
+		value = 0
+	}
+	set_country_flag = LF_mages_banned
+}
+
+1442.6.21 = {
+	monarch = {
+		name = "Uruvyeri"
+		dynasty = "Vuurnst"
+		birth_date = 1389.10.8
+		adm = 3
+		dip = 2
+		mil = 1
+	}
+	add_ruler_personality = embezzler_personality
+
+}
+
+#The corruption networks inside the country planted by his family made the defense of the Kukatordi fort impossible.

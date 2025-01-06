@@ -1,0 +1,47 @@
+
+country_decisions = {
+	dredge_the_canals = {
+		major = yes
+		ai_will_do = { 
+			factor = 1
+			modifier = { factor = 0 NOT = { treasury = 500} }
+		}
+	
+		potential = {
+			owns_core_province = 601
+			601 = {
+				NOT = { has_province_modifier = great_bulwari_watercourse }
+			}
+			NOT = { has_country_flag = digging_canals_menu }
+		}
+		
+		provinces_to_highlight = {
+		    province_id = 601
+		}	
+		
+		allow = {
+			hidden_trigger = { owns_core_province = 601 }
+			601 = { 	#Stops a bug with Armies finishing the Watercourse
+				NOT = { has_construction = any }
+				NOT = { has_construction = army }
+			}
+			if = {
+				limit = { 601 = { has_province_modifier = old_bulwari_canals } }
+				treasury = 500
+			}
+			else_if = {
+				limit = { 601 = { has_province_modifier = bulwari_canals } }
+				treasury = 1000
+			}
+			else_if = {
+				limit = { 601 = { has_province_modifier = bulwari_locks_and_lifts } }
+				treasury = 1500
+			}
+			is_at_war = no
+		}
+	
+		effect = {
+			country_event = { id = bulwar_flavour.24 }
+		}
+	}
+}

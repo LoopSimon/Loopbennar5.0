@@ -1,0 +1,551 @@
+
+country_decisions = {
+	
+	universal_escann_nation = {
+		major = yes
+		potential = {
+			has_reform = adventurer_reform
+			NOT = { tag = B02 }
+			is_playing_custom_nation = no
+		}
+		allow = {
+			has_reform = found_our_nation
+			is_at_war = no
+			adm_tech = 7
+			if = { #Luciande
+				limit = { tag = B11 ai = no }
+				any_owned_province = {
+					OR = {
+						area = cursewood_area
+						area = whistlevale_area
+						area = rohibon_area
+					}
+				}
+			}
+			if = { #Rogieria
+				limit = { tag = B07 ai = no }
+				any_owned_province = {
+					region =  west_castanor_region
+				}
+			}
+			if = { #Elikhand
+				limit = { tag = B15 ai = no }
+				any_owned_province = {
+					OR = {
+						area = taran_plains_area
+						area = rohibon_area
+						area = adenica_area
+					}
+				}
+			}
+			if = { #Ravenmarch
+				limit = { tag = B14 ai = no }
+				any_owned_province = {
+					OR = {
+						area = dostans_way_area
+						area = vernham_area
+						area = clovenwood_area
+					}
+				}
+			}
+			if = { #Newshire
+				limit = { tag = B10 ai = no }
+				any_owned_province = {
+					OR = {
+						area = adenica_area
+						area = upcreek_area
+						area = silvervord_area
+					}
+				}
+			}
+			if = { #Esthil
+				limit = { tag = B20 ai = no }
+				any_owned_province = {
+					OR = {
+						area = castonath_area
+						area = southgate_area
+						area = burnoll_area
+					}
+				}
+			}
+			if = { #Hammerhome
+				limit = { tag = B18 ai = no }
+				any_owned_province = {
+					OR = {
+						area = castonath_area
+						area = upper_nath_area
+						area = trialmount_area
+					}
+				}
+			}
+			if = { #Wyvernheart
+				limit = { tag = B12 ai = no }
+				any_owned_province = {
+					OR = {
+						area = ebonmarck_area
+						area = athfork_area
+						area = westwall_approach_area
+					}
+				}
+			}
+			if = { #Covenblad
+				limit = { tag = B19 ai = no }
+				any_owned_province = {
+					OR = {
+						area = castonath_area
+						area = upper_nath_area
+						area = trialmount_area
+					}
+				}
+			}
+			if = { #Rosande
+				limit = { tag = B04 ai = no}
+				any_owned_province = {
+					OR = {
+						area = blademarch_area
+						area = humacvord_area
+						area = themin_area
+					}
+				}
+			}
+
+		}
+		effect = {
+			if = { #Luciande
+				limit = { tag = B11 }
+				change_tag = B34
+				hidden_effect = {
+					set_country_flag = has_vampires_estate
+					set_country_flag = recent_masquerade_disaster
+					country_event = { id = vampires_estate_events.1000 days = 30 }
+				}
+				swap_non_generic_missions = yes
+			}
+			else_if = { #Ancardia
+				limit = { tag = B06 }
+				change_tag = B35
+			}
+			else_if = { #Rogieria
+				limit = { tag = B07 }
+				change_tag = B37
+				custom_tooltip = tag_must_win_conso_wars_tt
+				swap_non_generic_missions = yes
+			}
+			else_if = { #Elikhand
+				limit = { tag = B15 }
+				change_tag = B38
+				swap_non_generic_missions = yes
+			}
+			else_if = { #Wyvernheart
+				limit = { tag = B12 }
+				change_tag = B39
+				swap_non_generic_missions = yes
+			}
+			else_if = { #Alenor
+				limit = { tag = B03 }
+				change_tag = B40
+			}
+			else_if = { #Stalbor
+				limit = { tag = B13 }
+				change_tag = B47
+				country_event = { id = flavor_stalbor.3 days = 1 }
+				swap_non_generic_missions = yes
+			}
+			else_if = { #Ravenmarch
+				limit = { tag = B14 }
+				change_tag = B48
+				swap_non_generic_missions = yes
+			}
+			else_if = { #Araionn
+				limit = { tag = B09 }
+				change_tag = B49
+			}
+			else_if = { #Newshire
+				limit = { tag = B10 }
+				change_tag = B50
+				custom_tooltip = tag_must_win_conso_wars_tt
+				swap_non_generic_missions = yes
+			}
+			else_if = { #Estaire
+				limit = { tag = B08 }
+				change_tag = B51
+			}
+			else_if = { #Anbenland
+				limit = { tag = B16 }
+				change_tag = B52
+				capital_scope = { 
+					add_elven_minority_size_effect = yes 
+					add_half_elven_minority_size_effect = yes
+					add_halfling_minority_size_effect = yes
+					add_dwarven_minority_size_effect = yes
+				}
+			}
+			else_if = { #Nurcestir
+				limit = { tag = B05 }
+				change_tag = B53
+			}
+			else_if = { #Esthil
+				limit = { tag = B20 }
+				change_tag = B54
+				swap_non_generic_missions = yes
+			}
+			else_if = { #Rosande
+				limit = { tag = B04 }
+				change_tag = Z35
+				swap_non_generic_missions = yes
+			}
+			else_if = { #Hammerhome
+				limit = { tag = B18 }
+				change_tag = Z36
+				custom_tooltip = tag_must_win_conso_wars_tt
+				swap_non_generic_missions = yes
+			}
+			else_if = { #Covenblad
+				limit = { tag = B19 }
+				change_tag = Z37
+				swap_non_generic_missions = yes
+			}
+			hidden_effect = { restore_country_name = yes }
+			remove_non_electors_emperors_from_empire_effect = yes
+			add_prestige = 25
+			adventurer_legacy_effect = yes
+			set_country_flag = adventurer_derived_government
+			clr_country_flag = knightly_order_adventurer
+			if = {
+				limit = { has_country_flag = B34_lucian }
+				change_government = monarchy
+				hidden_effect = {
+					change_government_reform_progress = -1000
+					lose_reforms = 10
+					add_government_reform = autocracy_reform
+				}
+				country_event = { id = flavor_luciande.37 days = 1 }
+			}
+			else_if = {
+				limit = { tag = B54 } #esthil
+				country_event = { id = flavor_esthil.7 }
+			}
+			else = { country_event = { id = marcher.1 days = 1 } }
+#			country_event = { id = adventurer.2 days = 10 }
+			hidden_effect = {
+				country_event = { #new culture event, 10 years after their debuff runs out
+					id = marcher.2
+					days = 18250
+				}
+			}
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						NOT = { has_global_flag = new_escanni_adventurer_kingdoms }
+					}
+					escanni_refugee_centers = {
+						owner = {
+							country_event = {
+								id = escanni_refugees_settlement.101 #Escann Stands
+								days = 30
+							}
+						}
+					}
+					set_global_flag = new_escanni_adventurer_kingdoms
+				}
+			}
+			hidden_effect = {
+				set_country_flag = reformed_escanni_adventurer
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 300
+	}
+
+#	silvermere_nation = {
+#		major = yes
+#		potential = {
+#			owns_core_province = 756
+#			NOT = { has_country_flag = formed_silvermere_flag }
+#			NOT = { exists = B56 }
+#			has_reform = adventurer_reform
+#			always = no
+#		}
+#		allow = {
+#			has_reform = found_our_nation
+#			is_free_or_tributary_trigger = yes
+#			is_at_war = no
+#			owns_core_province = 756
+#			num_of_owned_provinces_with = {
+#				value = 9
+#				OR = {
+#					area = silvervord_area
+#					area = nortmerewood_area
+#					area = oudmerewood_area
+#					area = oudeben_area
+#					area = themin_area
+#					area = burnoll_area
+#					area = southgate_area
+#					area = nortmere_area
+#				}
+#			}
+#		}
+#		effect = {
+#			change_tag = B56
+#			hidden_effect = { restore_country_name = yes }
+#			remove_non_electors_emperors_from_empire_effect = yes
+#
+#			add_prestige = 25
+#			adventurer_legacy_effect = yes
+#			set_country_flag = adventurer_derived_government
+#			set_country_flag = formed_silvermere_flag
+#			clr_country_flag = knightly_order_adventurer
+#			country_event = { id = marcher.1 days = 1 }
+#			country_event = { id = adventurer.2 days = 10 }
+#			hidden_effect = {
+#				country_event = { #new culture event, 10 years after their debuff runs out
+#					id = marcher.2
+#					days = 18250
+#				}
+#			}
+#			if = {
+#				limit = { has_custom_ideas = no }
+#				country_event = { id = ideagroups.1 } #Swap Ideas
+#			}
+#		}
+#		ai_will_do = {
+#			factor = 1
+#		}
+#		ai_importance = 300
+#	}
+	
+	
+	
+	# Aelantir
+	
+	universal_aelantir_nation = {
+		major = yes
+		potential = {
+			has_reform = aelantir_adventurer_reform
+			is_playing_custom_nation = no
+			OR = {
+				NOT = {
+					tag = H44
+				}
+				ai = yes
+				has_country_flag = beggaston_not_freodaire
+			}
+		}
+		allow = {
+			hidden_trigger = {
+				has_reform = aelantir_adventurer_reform
+			}	
+			OR = { 
+				is_free_or_tributary_trigger = yes
+				is_subject_of_type = ynnic_iosahar
+			}
+			is_at_war = no
+			num_of_cities = 3
+			if = {
+				limit = {
+					tag = H66
+				}
+				total_development = 100
+			}
+		}
+		effect = {
+			hidden_effect = { restore_country_name = yes }
+			if = { #Sornicande
+				limit  = {
+					tag = H40
+				}
+				change_tag = H41
+				hidden_effect = {
+					change_variable = { #Sornicande eventually integrates Kwineh
+						which = ruinborn_race_tolerance_ai
+						value = 100
+					}
+				}
+			}
+			if = { #Neratica
+				limit  = {
+					tag = H42
+				}
+				change_tag = H43
+				hidden_effect = {
+					change_variable = { #Cheshoshi purging eventually ends
+						which = ruinborn_race_tolerance_ai
+						value = 150
+					}
+				}			
+			}
+			if = { #Beggaston
+				limit  = {
+					tag = H44
+				}
+				change_tag = H45	
+				swap_non_generic_missions = yes
+				custom_tooltip = beggaston_peasants_republic_tt
+				if = {
+					limit = {
+						has_country_flag = beggaston_half_orc_sellsword_before_form
+					}
+					country_event = {
+						id = flavour_beggaston.3
+						days = 730
+					}
+				}
+			}
+			if = { #Istranar
+				limit  = {
+					tag = H46
+				}
+				change_tag = H47			
+			}
+			if = { #Tiru Moine
+				limit  = {
+					tag = H48
+				}
+				change_tag = H49			
+			}
+			if = { #Freemarches
+				limit  = {
+					tag = H50
+				}
+				change_tag = H51
+				swap_non_generic_missions = yes
+				set_country_flag = no_formable_culture_shift
+			}
+			if = { #Elathael
+				limit  = {
+					tag = H52
+				}
+				change_tag = H53			
+			}
+			if = { #West Tipney
+				limit  = {
+					tag = H54
+				}
+				change_tag = H55			
+			}
+			if = { #New Havoral
+				limit  = {
+					tag = H56
+				}
+				change_tag = H57
+			}
+			if = { #Chippengard
+				limit  = {
+					tag = H58
+				}
+				change_tag = H59
+			}
+			if = { #Plumstead
+				limit  = {
+					tag = H60
+				}
+				change_tag = H61
+				country_event = { id = flavour_plumstead.1}
+				swap_non_generic_missions = yes
+			}
+			if = { #Nur Dhanaenn
+				limit  = {
+					tag = H62
+				}
+				change_tag = H63
+			}
+			if = { #Tellumtir
+				limit  = {
+					tag = H64
+				}
+				change_tag = H65
+			}
+			if = { #Rezankand
+				limit  = {
+					tag = H66
+				}
+				change_tag = H67
+				swap_non_generic_missions = yes
+			}
+			if = { #Kiohalen
+				limit  = {
+					tag = U67
+				}
+				change_tag = U68
+			}
+			add_prestige = 25
+			adventurer_legacy_effect = yes
+			set_country_flag = adventurer_derived_government
+			clr_country_flag = knightly_order_adventurer
+			if = { 
+				limit = { tag = H45 } #Beggaston
+				hidden_effect = {
+					lose_reforms = 10 # Reset reform progress
+					if = {
+						limit = {
+							has_ruler_modifier = heir_mage_personality_mod
+						}
+						remove_country_modifier = heir_mage_personality_mod
+						clr_heir_flag = heir_consort_mage_personality
+					}
+					change_government = republic
+					add_republican_tradition = 50
+				}
+				add_government_reform = peasants_republic
+			}
+			else_if = {
+				limit = { 
+					OR = {
+						tag = H49 #Tiru Moine
+						tag = H53 #Elathael
+						tag = H59 #Chippengard
+						tag = H61 #Plumstead
+						tag = H65 #Tellumtir
+					}
+				}
+				hidden_effect = {
+					lose_reforms = 10 # Reset reform progress
+					if = {
+						limit = {
+							has_ruler_modifier = heir_mage_personality_mod
+						}
+						remove_country_modifier = heir_mage_personality_mod
+						clr_heir_flag = heir_consort_mage_personality
+					}
+					change_government = republic
+					add_republican_tradition = 50
+				}
+				add_government_reform = frontier_republic_reform
+			}
+			else_if = {
+				limit = { tag = H57 } #New Havoral
+				country_event = { id = flavor_newhavoral.1 days = 1 }
+				swap_non_generic_missions = yes
+			}
+			else = {
+				country_event = { id = marcher.1 days = 1 }
+			}
+#			country_event = { id = adventurer.2 days = 10 }
+			hidden_effect = {
+				country_event = { #new culture event, 10 years after their debuff runs out
+					id = marcher.2
+					days = 18250
+				}
+			}
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			
+			hidden_effect = {
+				cannorian_in_ynn_rename = yes
+				if = { limit = { is_subject_of_type = ynnic_iosahar } change_country_color = { country = overlord } }
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 300
+	}
+}

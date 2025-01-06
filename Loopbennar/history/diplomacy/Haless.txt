@@ -1,0 +1,161 @@
+
+dependency = {	#Oni and small tributary town
+	subject_type = tributary_state_anb	
+	first = Y01
+	second = Y89
+	start_date = 1444.1.1
+	end_date = 1644.4.22
+}
+
+vassal = {	#Mountain King and Friends
+	first = Y63
+	second = Y88
+	start_date = 1444.1.1
+	end_date = 1644.4.22
+}
+
+vassal = {	#Mountain King and Friends
+	first = Y63
+	second = Y87
+	start_date = 1444.1.1
+	end_date = 1644.4.22
+}
+
+vassal = {	#Mountain King and Friends
+	first = Y63
+	second = Y56
+	start_date = 1444.1.1
+	end_date = 1644.4.22
+}
+
+alliance = {
+	first = Y09
+	second = Y21
+	start_date = 1430.1.1
+	end_date = 1581.1.1
+}
+
+alliance = {
+	first = Y20
+	second = Y24
+	start_date = 1430.1.1
+	end_date = 1581.1.1
+}
+
+alliance = {
+	first = Y26
+	second = Y27
+	start_date = 1430.1.1
+	end_date = 1581.1.1
+}
+
+alliance = { #Balrijin-Lanjinhui alliance
+	first = Y85
+	second = Y05
+	start_date = 1440.1.1
+	end_date = 1600.1.1
+}
+
+### the Yanszin League ###
+alliance = {
+	first = Y08
+	second = Y06
+	start_date = 276.1.1
+	end_date = 1520.1.1
+}
+alliance = {
+	first = Y08
+	second = Y07
+	start_date = 276.1.1
+	end_date = 1520.1.1
+}
+alliance = {
+	first = Y08
+	second = Y04
+	start_date = 276.1.1
+	end_date = 1520.1.1
+}
+alliance = {
+	first = Y08
+	second = Y10
+	start_date = 276.1.1
+	end_date = 1520.1.1
+}
+alliance = {
+	first = Y06
+	second = Y07
+	start_date = 276.1.1
+	end_date = 1520.1.1
+}
+alliance = {
+	first = Y06
+	second = Y04
+	start_date = 276.1.1
+	end_date = 1520.1.1
+}
+alliance = {
+	first = Y06
+	second = Y10
+	start_date = 276.1.1
+	end_date = 1520.1.1
+}
+alliance = {
+	first = Y07
+	second = Y04
+	start_date = 276.1.1
+	end_date = 1520.1.1
+}
+alliance = {
+	first = Y07
+	second = Y10
+	start_date = 276.1.1
+	end_date = 1520.1.1
+}
+alliance = {
+	first = Y04
+	second = Y10
+	start_date = 276.1.1
+	end_date = 1520.1.1
+}
+
+#Sikai relations
+alliance = {
+	first = Y62
+	second = Y60
+	start_date = 1441.1.1
+	end_date = 1478.1.1
+}
+
+#war allies
+
+vassal = {	#Jinqiu and Beikling Warlord
+	first = Y02
+	second = Z60
+	start_date = 1444.1.1
+	end_date = 1644.4.22
+}
+
+#Zyujyut - Kudet Kai Royal Marraige
+royal_marriage = {
+    first = Y23
+    second = Y71
+    start_date = 1440.11.10
+    end_date = 1480.1.10 # Pulatan of the Great Fang passes away
+}
+
+#Bianfang - Pu Wichan subjugation
+vassal = {
+	first = Y09
+	second = R83
+	start_date = 1433.12.12
+	end_date = 1821.1.1
+}
+
+#Hobgoblin-Harpy vassal
+dependency = {
+	subject_type = vassal
+	first = V12
+	second = V20
+	start_date = 1430.1.1
+	end_date = 1909.1.1
+}

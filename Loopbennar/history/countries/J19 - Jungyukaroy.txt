@@ -1,0 +1,39 @@
+
+setup_vision = yes
+government = republic
+government_rank = 1
+primary_culture = zabatlari
+add_government_reform = lake_republic
+religion = yukel_followers
+technology_group = tech_triunic
+capital = 5271
+fixed_capital = 5271
+
+historical_friend = J18 #Narkel
+historical_rival = J20 #Bozkuqayla
+
+1430.1.1 = {
+	add_country_modifier = {
+		name = lake_federation_member
+		duration = -1
+	}
+	set_variable = {
+		which = FederationPoints
+		value = 1
+	}
+	set_country_flag = LF_mages_banned
+}
+
+1442.4.14 = {
+	monarch = {
+		name = "Otgayar"
+		dynasty = "Movarq"
+		birth_date = 1401.9.12
+		adm = 6
+		dip = 4
+		mil = 3
+	}
+	add_ruler_personality = reformist_personality
+}
+
+#Past leader of the Charcoal District located in Jungyukaroy

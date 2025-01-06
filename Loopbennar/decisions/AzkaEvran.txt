@@ -1,0 +1,62 @@
+# í <-- This is here to make sure that the encoding stays ANSI, do not remove it
+country_decisions = {
+	azka_evran_gather_an_army = {
+		potential = {
+			tag = F34
+			has_country_flag = nsc_pledge
+			NOT = { has_country_flag = azka_evran_gathering_army }
+		}
+		
+		allow = {
+			crown_land_share = 10
+		}
+	
+		effect = {
+			set_country_flag = azka_evran_gathering_army
+			country_event = { id = azka_evran.2 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	azka_evran_library_decision = {
+		potential = {
+			owns = 536
+			has_country_flag = azka_evran_library_decision_unlocked
+		}
+
+		provinces_to_highlight = {
+			has_discovered = ROOT
+			OR = {
+				province_id = 275
+				province_id = 8
+				province_id = 976
+				province_id = 2745
+				province_id = 4630
+				province_id = 4460
+			}
+		}
+
+		allow = {
+			hidden_trigger = {
+				has_country_flag = azka_evran_library_decision_unlocked
+				NOT = { has_country_flag = azka_evran_library_menu_open }
+			}
+			treasury = 200
+			custom_trigger_tooltip = {
+				tooltip = azka_evran_books_cooldown_tt
+				NOT = { has_country_modifier = azka_evran_books_cooldown }
+			}
+		}
+
+		effect = {
+			add_treasury = -200
+			country_event = { id = azka_evran.12 }
+			hidden_effect = { set_country_flag = azka_evran_library_menu_open }
+		}
+		
+		ai_will_do = { factor = 1 }
+	}
+}

@@ -1,0 +1,44 @@
+
+setup_vision = yes
+government = tribal
+add_government_reform = kobold_viraxia
+government_rank = 1
+primary_culture = redscale_kobold
+religion = kobold_dragon_cult
+technology_group = tech_kobold
+
+capital = 177
+
+1000.1.1 = { 
+	set_estate_privilege = estate_mages_organization_guilds 
+	set_variable = {
+		which = trap_mastery_counter
+		value = 1
+	}
+}
+
+1394.11.27 = {
+	define_admiral = {
+		name = "Uho the Raftmaker"
+		fire = 0
+		shock = 2
+		manuever = 4   
+		siege = 0	 
+		trait = level_headed_personality
+	}
+}
+
+1433.2.3 = {
+	monarch = {
+		name = "Levaz"
+		dynasty = "Sozax"
+		birth_date = 1420.4.3
+		adm = 5
+		dip = 5
+		mil = 5
+	}
+	add_ruler_personality = strict_personality
+	add_ruler_personality = cruel_personality
+	
+	add_church_aspect = red_dragon_1_base
+}

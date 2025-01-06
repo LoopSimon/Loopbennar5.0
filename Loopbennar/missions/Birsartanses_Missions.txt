@@ -1,0 +1,1372 @@
+birsartanses_first_slot = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = F21
+			AND = {
+				tag = F38
+				was_tag = F21
+			}
+			AND = {
+				tag = F97
+				was_tag = F21
+			}
+		}
+	}
+	has_country_shield = yes
+	
+	F21_reclaim_the_north = {
+		icon = mission_rb_take_north_india
+		required_missions = { }
+		position = 1
+		provinces_to_highlight = {
+			OR = {
+				area = aqatbahar_area
+				province_id = 541
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			aqatbahar_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			541 = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		
+		effect = {
+			zagnabad_area = {
+				limit = { 
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			azka_evran_area = {
+				add_permanent_claim = ROOT
+			}
+			fajabahar_area = {
+				add_permanent_claim = ROOT
+			}
+			536 = {
+				add_center_of_trade_level = 1
+			}
+			country_event = { id = flavour_birsartanses.1 }
+		}
+	}
+	
+	F21_end_the_rivalry = {
+		icon = mission_captured
+		required_missions = { F21_reclaim_the_north }
+		position = 2
+		provinces_to_highlight = {
+			area = azka_evran_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			azka_evran_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		
+		effect = {
+			medbahar_area = {
+				limit = { 
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			tungr_mountains_area = {
+				limit = { 
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			country_event = { id = flavour_birsartanses.2 }
+		}
+	}
+	
+	F21_dinatoldir_scepter = {
+		icon = mission_smith
+		required_missions = { F21_end_the_rivalry }
+		position = 3
+		
+		provinces_to_highlight = {
+			trade_goods = damestear
+			has_discovered = ROOT
+		}
+		
+		trigger = {
+			has_country_modifier = shaft_of_dinatoldir
+			has_country_modifier = spearhead_of_dinatoldir
+			OR = {
+				damestear = 1
+				any_subject_country = { damestear = 1 }
+				trading_bonus = {
+					trade_goods = damestear
+					value = yes
+				}
+			}
+			any_owned_province = {
+				culture_group = dwarven
+			}
+		}
+		
+		effect = {
+			country_event = { id = flavour_birsartanses.3 }
+		}
+	}
+	
+	F21_modern_artillery = {
+		icon = mission_cannons_firing
+		required_missions = { F21_ordalanner }
+		position = 4
+		
+		trigger = {
+			num_of_artillery = 30
+			has_global_modifier_value = {
+				which = artillery_power
+				value = 0.25
+			}
+			university = 1
+			num_of_generals = 3
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = F21_modern_artillery_mod
+				duration = 18250
+			}
+		}
+	}
+	
+	F21_western_ports = {
+		icon = mission_rb_control_the_hansa
+		required_missions = { F21_integrate_dwarves }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				province_id = 536
+				province_id = 521
+				province_id = 543
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { has_trade_building_trigger = yes }
+				NOT = { has_shipyard_building_trigger = yes }
+				NOT = { is_prosperous = yes }
+				NOT = {
+					OR = {
+						has_owner_accepted_culture = yes
+						has_owner_culture = yes
+					}
+				}
+			}
+		}
+		
+		trigger = {
+			owns = 536
+			owns = 521
+			owns = 543
+			536 = {
+				has_trade_building_trigger = yes
+				has_shipyard_building_trigger = yes
+				if = {
+					limit = {
+						has_dlc = "Mandate of Heaven"
+					}
+					is_prosperous = yes
+				}
+				OR = {
+					has_owner_accepted_culture = yes
+					has_owner_culture = yes
+				}
+			}
+			521 = {
+				has_trade_building_trigger = yes
+				has_shipyard_building_trigger = yes
+				if = {
+					limit = {
+						has_dlc = "Mandate of Heaven"
+					}
+					is_prosperous = yes
+				}
+				OR = {
+					has_owner_accepted_culture = yes
+					has_owner_culture = yes
+				}
+			}
+			543 = {
+				has_trade_building_trigger = yes
+				has_shipyard_building_trigger = yes
+				if = {
+					limit = {
+						has_dlc = "Mandate of Heaven"
+					}
+					is_prosperous = yes
+				}
+				OR = {
+					has_owner_accepted_culture = yes
+					has_owner_culture = yes
+				}
+			}
+		}
+		
+		effect = {
+			536 = {
+				add_province_modifier = {
+					name = F21_state_harbour
+					duration = -1
+				}
+			}
+			521 = {
+				add_province_modifier = {
+					name = F21_state_harbour
+					duration = -1
+				}
+			}
+			543 = {
+				center_of_trade = 1
+			}
+		}
+	}
+}
+
+birsartanses_second_slot = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = F21
+			AND = {
+				tag = F38
+				was_tag = F21
+			}
+			AND = {
+				tag = F97
+				was_tag = F21
+			}
+		}
+	}
+	has_country_shield = yes
+	
+	F21_end_the_rebellion = {
+		icon = mission_control_unrest
+		required_missions = { }
+		position = 1
+		provinces_to_highlight = {
+			area = bahar_szel_uak_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			bahar_szel_uak_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			NOT = {
+				exists = F22
+			}
+
+			if = {
+				limit = {
+					has_dlc = "Mandate of Heaven"
+				}
+				custom_trigger_tooltip = {
+					tooltip = birsartanses_first_incident_over_tt
+					is_incident_happened = incident_bulwar_under_threat
+				}
+			}
+			else = {
+				stability = 2
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = F21_osc_crushed
+				duration = 18250
+			}
+			kuzak_area = {
+				limit = { 
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			elusadul_area = {
+				limit = { 
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			country_event = { id = flavour_birsartanses.4 }
+			
+			siffiraeri_area = {
+				limit = { 
+					NOT = { is_core = F26 }
+					NOT = { owned_by = F26 }
+				}
+				add_permanent_claim = F26
+			}
+			kharfiraeri_area = {
+				limit = { 
+					NOT = { is_core = F26 }
+					NOT = { owned_by = F26 }
+				}
+				add_permanent_claim = F26
+			}
+			nansalen_area = {
+				limit = { 
+					NOT = { is_core = F26 }
+					NOT = { owned_by = F26 }
+				}
+				add_permanent_claim = F26
+			}
+		}
+	}
+	
+	F21_calm_the_waves = {
+		icon = mission_hands_praying
+		required_missions = { F21_end_the_rebellion }
+		position = 2
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					OR = {
+						region = bahar_region
+						region = harpy_hills_region
+					}
+					religion = old_bulwari_sun_cult
+				}
+				AND = {
+					owned_by = ROOT
+					NOT = { has_tax_building_trigger = yes }
+					NOT = {
+						ROOT = {
+							num_of_owned_provinces_with = {
+								value = 5
+								has_tax_building_trigger = yes
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = birsartanses_osc_crushed_tt
+				NOT = {
+					bahar_region = { religion = old_bulwari_sun_cult }
+					harpy_hills_region = { religion = old_bulwari_sun_cult }
+				}
+			}
+			num_of_owned_provinces_with = {
+				value = 5
+				has_tax_building_trigger = yes
+			}
+			custom_trigger_tooltip = {
+				tooltip = nsc_isolationism_level_is_2_tt
+				isolationism = 2
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = F21_nsc_victory
+				duration = 9125
+			}
+		}
+	}
+	
+	F21_ordalanner = {
+		icon = mission_mithril_cannons
+		required_missions = { F21_end_the_rivalry }
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					OR = {
+						area = tungr_mountains_area
+						area = medbahar_area
+						province_id = 530
+					}
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+				AND = {
+					area = zagnabad_area
+					OR = {
+						NOT = { owned_by = ROOT }
+						NOT = { has_fort_building_trigger = yes }
+					}
+					NOT = {
+						ROOT = {
+							num_of_owned_provinces_with = {
+								value = 1
+								area = zagnabad_area
+								has_fort_building_trigger = yes
+							}
+						}
+					}
+				}
+				AND = {
+					province_id = 526
+					NOT  = {
+						AND = {
+							has_production_building_trigger = yes
+							has_manufactory_trigger = yes
+						}
+					}
+				}
+				AND = {
+					owned_by = ROOT
+					trade_goods = iron
+					NOT = { has_production_building_trigger = yes }
+					NOT = {
+						ROOT = {
+							num_of_owned_provinces_with = {
+								value = 3
+								has_production_building_trigger = yes
+								trade_goods = iron
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		trigger = {
+			medbahar_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			tungr_mountains_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			zagnabad_area = {
+				has_fort_building_trigger = yes
+			}
+			526 = {
+				has_production_building_trigger = yes
+				has_manufactory_trigger = yes
+			}
+			num_of_owned_provinces_with = {
+				value = 3
+				has_production_building_trigger = yes
+				trade_goods = iron
+			}
+		}
+		
+		effect = {
+			reuyel_area = {
+				limit = { 
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			crathanor_area = {
+				limit = { 
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			add_country_modifier = {
+				name = F21_the_ordalanner
+				duration = -1
+			}
+		}
+	}
+	
+	F21_integrate_dwarves = {
+		icon = mission_mnd_siam_subjugate_vietnam
+		required_missions = { F21_ordalanner F21_sun_elven_state }
+		position = 4
+		
+		trigger = {
+			any_owned_province = {
+				culture_group = dwarven
+				has_owner_accepted_culture = yes
+			}
+			employed_advisor = {
+				culture = copper_dwarf
+			}
+			high_tolerance_dwarven_race_trigger = yes
+		}
+		
+		effect = {
+			custom_tooltip = birsartanses_upgrade_cultural_efficiency_tt
+			#hidden_effect = {
+				if = {
+					limit = {
+						has_country_modifier = F21_cultural_efficiency_3
+					}
+					remove_country_modifier = F21_cultural_efficiency_3
+					add_country_modifier = {
+						name = F21_cultural_efficiency_4
+						duration = -1
+					}
+				}
+				else_if = {
+					limit = {
+						has_country_modifier = F21_cultural_efficiency_2
+					}
+					remove_country_modifier = F21_cultural_efficiency_2
+					add_country_modifier = {
+						name = F21_cultural_efficiency_3
+						duration = -1
+					}
+				}
+				else_if = {
+					limit = {
+						has_country_modifier = F21_cultural_efficiency_1
+					}
+					remove_country_modifier = F21_cultural_efficiency_1
+					add_country_modifier = {
+						name = F21_cultural_efficiency_2
+						duration = -1
+					}
+				}
+				else_if = {
+					limit = {
+						NOT = {
+							has_country_modifier = F21_cultural_efficiency_1
+							has_country_modifier = F21_cultural_efficiency_2
+							has_country_modifier = F21_cultural_efficiency_3
+							has_country_modifier = F21_cultural_efficiency_4
+						}
+					}
+					add_country_modifier = {
+						name = F21_cultural_efficiency_1
+						duration = -1
+					}
+				}
+			#}
+		}
+	}
+	
+	F21_integrate_harpies = {
+		icon = mission_harpy_diplomats
+		required_missions = { F21_integrate_dwarves F21_examination_system }
+		position = 5
+		
+		trigger = {
+			any_owned_province = {
+				culture_group = harpy
+				has_owner_accepted_culture = yes
+			}
+			employed_advisor = {
+				culture = firanyan_harpy
+			}
+			high_tolerance_harpy_race_trigger = yes
+		}
+		
+		effect = {
+			custom_tooltip = birsartanses_upgrade_cultural_efficiency_tt
+			if = {
+				limit = {
+					has_country_modifier = F21_cultural_efficiency_3
+				}
+				remove_country_modifier = F21_cultural_efficiency_3
+				add_country_modifier = {
+					name = F21_cultural_efficiency_4
+					duration = -1
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_modifier = F21_cultural_efficiency_2
+				}
+				remove_country_modifier = F21_cultural_efficiency_2
+				add_country_modifier = {
+					name = F21_cultural_efficiency_3
+					duration = -1
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_modifier = F21_cultural_efficiency_1
+				}
+				remove_country_modifier = F21_cultural_efficiency_1
+				add_country_modifier = {
+					name = F21_cultural_efficiency_2
+					duration = -1
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						has_country_modifier = F21_cultural_efficiency_1
+						has_country_modifier = F21_cultural_efficiency_2
+						has_country_modifier = F21_cultural_efficiency_3
+						has_country_modifier = F21_cultural_efficiency_4
+					}
+				}
+				add_country_modifier = {
+					name = F21_cultural_efficiency_1
+					duration = -1
+				}
+			}
+		}
+	}
+}
+
+birsartanses_third_slot = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = F21
+			AND = {
+				tag = F38
+				was_tag = F21
+			}
+			AND = {
+				tag = F97
+				was_tag = F21
+			}
+		}
+	}
+	has_country_shield = yes
+	
+	F21_true_capital = {
+		icon = mission_early_modern_university
+		required_missions = { }
+		position = 1
+		provinces_to_highlight = {
+			province_id = 549
+		}
+		
+		trigger = {
+			owns_core_province = 549
+			549 = {
+				development = 25
+				has_tax_building_trigger = yes
+			}
+		}
+		
+		effect = {
+			549 = {
+				change_trade_goods = paper
+				change_culture = sun_elf
+				add_permanent_province_modifier = {
+					name = F21_central_administration
+					duration = -1
+				}
+			}
+		}
+	}
+	
+	F21_educate_officials = {
+		icon = mission_scholar_officials
+		required_missions = { F21_true_capital }
+		position = 2
+		
+		trigger = {
+			treasury = 300
+			employed_advisor = {
+				category = ADM
+			}
+			employed_advisor = {
+				category = DIP
+			}
+			employed_advisor = {
+				category = MIL
+			}
+			if = { limit = { has_dlc = "Rule Britannia" }
+				innovativeness = 15
+			}
+			else = {
+				num_of_owned_provinces_with = {
+					value = 2
+					has_courthouse_building_trigger = yes
+				}
+			}
+		}
+		
+		effect = {
+			add_estate_loyalty = {
+				estate = estate_nobles
+				loyalty = -20
+			}
+			add_country_modifier = {
+				name = F21_education_program
+				duration = 9125
+			}
+			add_treasury = -300
+			549 = {
+				add_building_construction = {
+					building = university
+					speed = 1
+					cost = 0
+				}
+			}
+		}
+	}
+	
+	F21_sun_elven_state = {
+		icon = mission_rb_the_education_acts
+		required_missions = { F21_calm_the_waves F21_educate_officials }
+		position = 3
+		
+		trigger = {
+			if = {
+				limit = {
+					has_dlc = "Mandate of Heaven"
+				}
+				num_of_owned_provinces_with = {
+					value = 15
+					custom_trigger_tooltip = {
+						tooltip = is_prosperous_tt
+						is_prosperous = yes
+					}
+				}
+			}
+			else = {
+				stability = 2
+			}
+			total_development = 300
+			has_adm_advisor_2 = yes
+			has_dip_advisor_2 = yes
+			has_mil_advisor_2 = yes
+		}
+		
+		effect = {
+			if = {
+				limit = { government = monarchy }
+				add_government_reform = birsartanses_central_administration_1
+			}
+			country_event = { id = flavour_birsartanses.5 }
+		}
+	}
+	
+	F21_examination_system = {
+		icon = mission_rb_college_of_justice
+		required_missions = { F21_sun_elven_state }
+		position = 4
+		
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 15
+				has_courthouse_building_trigger = yes
+			}
+			has_adm_advisor_3 = yes
+			has_dip_advisor_3 = yes
+			has_mil_advisor_3 = yes
+			monthly_adm = 12
+		}
+		
+		effect = {
+			custom_tooltip = birsartanses_upgrade_government_tt
+				if = {
+					limit = { government = monarchy }
+					add_government_reform = birsartanses_central_administration_2
+				}
+		}
+	}
+	
+	F21_enact_plans = {
+		icon = mission_rb_the_bank_of_scotland
+		required_missions = { F21_examination_system }
+		position = 5
+		
+		provinces_to_highlight = {
+			province_id = 549
+		}
+		trigger = {
+			ADM = 5
+			549 = {
+				development = 40
+			}
+			has_reform = birsartanses_central_administration_2
+			has_adm_advisor_3 = yes
+			has_dip_advisor_3 = yes
+			has_mil_advisor_3 = yes
+		}
+		
+		effect = {
+			custom_tooltip = birsartanses_enact_plans_tt
+			hidden_effect = {
+				set_country_flag = birsartanses_plans_enacted
+			}
+		}
+	}
+}
+
+birsartanses_fourth_slot = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = F21
+			AND = {
+				tag = F38
+				was_tag = F21
+			}
+			AND = {
+				tag = F97
+				was_tag = F21
+			}
+		}
+	}
+	has_country_shield = yes
+	
+	F21_northern_march = {
+		icon = mission_rb_colonise_canada
+		required_missions = { }
+		position = 1
+		provinces_to_highlight = {
+			OR = {
+				area = siffiraeri_area
+				area = nansalen_area
+				area = kharfiraeri_area
+				area = gelkalis_area
+				area = lawassar_area
+			}
+			NOT = { owned_by = F26 }
+		}
+		
+		trigger = {
+			siffiraeri_area = {
+				type = all
+				owned_by = F26
+			}
+			nansalen_area = {
+				type = all
+				owned_by = F26
+			}
+			kharfiraeri_area = {
+				type = all
+				owned_by = F26
+			}
+			gelkalis_area = {
+				type = all
+				owned_by = F26
+			}
+			lawassar_area = {
+				type = all
+				owned_by = F26
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = F21_harpy_march
+				duration = -1
+			}
+			north_naza_area = {
+				limit = { 
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			kumarkand_area = {
+				limit = { 
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	F21_heartland = {
+		icon = mission_raid_on_genoa
+		required_missions = { }
+		position = 2
+		provinces_to_highlight = {
+			OR = {
+				area = birsartenslib_area
+				area = imuluses_area
+				area = bahar_szel_uak_area
+			}
+			NOT = {
+				AND = {
+					has_tax_building_trigger = yes
+					has_production_building_trigger = yes
+				}
+			}
+		}
+		
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 5
+				has_tax_building_trigger = yes
+				has_production_building_trigger = yes
+				OR = {
+					area = birsartenslib_area
+					area = imuluses_area
+					area = bahar_szel_uak_area
+				}
+			}
+		}
+		
+		effect = {
+			birsartenslib_area = {
+                add_base_tax = 1
+                add_base_production = 1
+                add_base_manpower = 1
+                add_province_modifier = {
+                    name = F21_heartland_dev
+                    duration = 18250
+                }
+            }
+            imuluses_area = {
+                add_base_tax = 1
+                add_base_production = 1
+                add_base_manpower = 1
+                add_province_modifier = {
+                    name = F21_heartland_dev
+                    duration = 18250
+                }
+            }
+            bahar_szel_uak_area = {
+                add_base_tax = 1
+                add_base_production = 1
+                add_base_manpower = 1
+                add_province_modifier = {
+                    name = F21_heartland_dev
+                    duration = 18250
+                }
+            }
+		}
+	}
+	
+	F21_prime_harbour = {
+		icon = mission_rb_grow_the_channel
+		required_missions = { F21_heartland }
+		position = 3
+		provinces_to_highlight = {
+			province_id = 543
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { has_dock_building_trigger = yes }
+				NOT = { has_shipyard_building_trigger = yes }
+				NOT = { development = 25 }
+			}
+		}
+		
+		trigger = {
+			543 = {
+				owned_by = ROOT
+				has_dock_building_trigger = yes
+				has_shipyard_building_trigger = yes
+				development = 25
+			}
+		}
+		
+		effect = {
+			543 = {
+				change_culture = sun_elf
+				add_permanent_province_modifier = {
+					name = F21_state_harbour
+					duration = -1
+				}
+			}
+		}
+	}
+	
+	F21_bay_of_mirrors = {
+		icon = mission_rb_scottish_the_darien_scheme
+		required_missions = { F21_prime_harbour F21_strengthen_hold }
+		position = 4
+		
+		provinces_to_highlight = {
+			OR = {
+				area = inner_drolas_area
+				area = outer_drolas_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+
+		trigger = {
+			inner_drolas_area = {
+				type = all
+				owned_by = ROOT
+			}
+			outer_drolas_area = {
+				type = all
+				owned_by = ROOT
+			}
+			num_of_owned_provinces_with = {
+				value = 15
+				has_trade_building_trigger = yes
+			}
+			num_of_owned_provinces_with = {
+				value = 3
+				province_has_center_of_trade_of_level = 2
+			}
+			1312 = { #Bahar Trade Node
+				trade_share = {
+					country = ROOT
+					share = 50
+				}
+			}
+			1309 = { #Brasan trade node
+				trade_share = {
+					country = ROOT
+					share = 50
+				}
+			}
+		}
+		
+		effect = {
+			custom_tooltip = birsartanses_bay_of_mirrors_tt
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						OR = {
+							region = bahar_region
+							region = harpy_hills_region
+							region = bulwar_proper_region
+						}
+						has_port = yes
+					}
+					add_base_tax = 1
+					add_base_production = 1
+					add_base_manpower = 1
+				}
+			}
+		}
+	}
+	
+	F21_birsartans_legacy = {
+		icon = mission_rb_trinity_college_dublin
+		required_missions = { F21_examination_system }
+		position = 5
+		
+		trigger = {
+			ADM = 6
+			government_rank = 3
+			num_of_owned_provinces_with = {
+				value = 25
+				has_courthouse_building_trigger = yes
+			}
+			custom_trigger_tooltip = {
+				tooltip = birsartanses_has_plan_tt
+				OR = {
+					has_country_modifier = F21_admin_plan
+					has_country_modifier = F21_diplo_plan
+					has_country_modifier = F21_milit_plan
+				}
+			}
+			adm_power = 100
+			dip_power = 100
+			mil_power = 100
+			has_adm_advisor_3 = yes
+			has_dip_advisor_3 = yes
+			has_mil_advisor_3 = yes
+			monthly_adm = 14
+		}
+		
+		effect = {
+			add_adm_power = -100
+			add_dip_power = -100
+			add_mil_power = -100
+			custom_tooltip = birsartanses_upgrade_plans_tt
+			hidden_effect = {
+				set_country_flag = birsartanses_plans_improved
+			}
+		}
+	}
+}
+
+birsartanses_fifth_slot = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = F21
+			AND = {
+				tag = F38
+				was_tag = F21
+			}
+			AND = {
+				tag = F97
+				was_tag = F21
+			}
+		}
+	}
+	has_country_shield = yes
+	
+	F21_prepare_southern_strike = {
+		icon = mission_rb_monopolize_the_channel
+		required_missions = { }
+		position = 1
+		
+		trigger = {
+			stability = 2
+			num_of_allies = 2
+			calc_true_if = {
+				all_ally = {
+					has_opinion = {
+						who = ROOT
+						value = 150
+					}
+				}
+				amount = 2
+			}
+		}
+		
+		effect = {
+			anzabad_area = {
+				limit = { 
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			anzarzax_area = {
+				limit = { 
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	F21_new_era = {
+		icon = mission_levantine_restoration
+		required_missions = { F21_prepare_southern_strike }
+		position = 2
+		provinces_to_highlight = {
+			area = anzabad_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			anzabad_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		
+		effect = {
+			irrliam_area = {
+				limit = { 
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			lower_brasan_area = {
+				limit = { 
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			upper_brasan_area = {
+				limit = { 
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	F21_strengthen_hold = {
+		icon = mission_occupy_alexandria 
+		required_missions = { F21_new_era }
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				area = irrliam_area
+				area = lower_brasan_area
+				area = upper_brasan_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			irrliam_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			lower_brasan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			upper_brasan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		
+		effect = {
+			inner_drolas_area = {
+				limit = { 
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			outer_drolas_area = {
+				limit = { 
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			medurubar_area = {
+				limit = { 
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			zansap_area = {
+				limit = { 
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			sur_mountains_area = {
+				limit = { 
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			grixekyr_area = {
+				limit = { 
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	F21_southern_push = {
+		icon = mission_conquer_air
+		required_missions = { F21_strengthen_hold }
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				area = medurubar_area
+				area = zansap_area
+				area = sur_mountains_area
+				area = grixekyr_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			medurubar_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			zansap_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			sur_mountains_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			grixekyr_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		
+		effect = {
+			bulwar_area = {
+				limit = { 
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			jixobix_area = {
+				limit = { 
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			harklum_area = {
+				limit = { 
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	F21_protect_bulwar = {
+		icon = mission_into_persia_2
+		required_missions = { F21_southern_push }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				area = bulwar_area
+				area = jixobix_area
+				area = harklum_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			bulwar_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			jixobix_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			harklum_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		
+		effect = {
+			traz_buranun_area = {
+				limit = { 
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			south_naza_area = {
+				limit = { 
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			sareyand_area = {
+				limit = { 
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+}

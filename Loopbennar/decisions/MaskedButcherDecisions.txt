@@ -1,0 +1,195 @@
+
+country_decisions = {
+
+	mb_reserve_menu = {
+		potential = {
+			OR = {
+				tag = H81
+				was_tag = H81
+			}
+			has_country_flag = mb_reserve_menu_flg
+		}
+		provinces_to_highlight = {
+			AND = {
+				OR = {
+					region = ogre_valley_region
+					region = serpents_vale_region
+					region = northern_pass_region
+					area = seghdihr_area
+					area = azka_sur_area
+					area = hehos_legacy_area
+					area = diggers_road_area
+					area = inner_drolas_area
+					area = outer_drolas_area
+					area = arrtukerr_area
+					area = dasmatus_area
+				}
+				NOT = { owned_by = ROOT }
+				NOT = { has_province_flag = mb_do_not_highlight_flg }
+			}
+		}
+		allow = {
+			hidden_trigger = { has_country_flag = mb_reserve_menu_flg }
+			OR = {
+				custom_trigger_tooltip = {
+					tooltip = mb_hill_ogre_tt
+					has_country_flag = hill_ogre_de_flg
+					ogre_valley_region = {
+						type = all
+						owned_by = ROOT
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = mb_swamp_ogre_tt
+					has_country_flag = swamp_ogre_de_flg
+					serpents_vale_region = {
+						type = all
+						owned_by = ROOT
+					}
+					num_of_owned_provinces_with = {
+						value = 10
+						region = northern_pass_region
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = mb_cave_troll_tt
+					has_country_flag = cave_troll_de_flg
+					greatcavern_area = {
+						type = all
+						owned_by = ROOT
+					}
+				}
+				AND = {
+					custom_trigger_tooltip = {
+						tooltip = mb_new_reserves_tt
+						has_country_flag = mb_new_reserves_flg
+					}
+					OR = {
+						AND = {
+							custom_trigger_tooltip = {
+								tooltip = mb_no_hobgoblin_reserve_tt
+								NOT = { has_country_flag = hobgoblin_reserve_done_flg }
+								seghdihr_area = {
+									type = all
+									owned_by = ROOT
+								}
+								azka_sur_area = {
+									type = all
+									owned_by = ROOT
+								}
+							}
+							custom_trigger_tooltip = {
+								tooltip = mb_owns_race_or_network_tt
+								OR = {
+									fast_owns_num_pops_of_race = { race = hobgoblin amount = 1 }
+									any_known_country = {
+										fast_owns_num_pops_of_race = { race = hobgoblin amount = 1 }
+										has_spy_network_from = {
+											who = ROOT
+											value = 50
+										}
+									}
+								}
+							}
+							adm_power = 150
+						}
+						AND = {
+							custom_trigger_tooltip = {
+								tooltip = mb_no_harimari_reserve_tt
+								NOT = { has_country_flag = harimari_reserve_done_flg }
+								hehos_legacy_area = {
+									type = all
+									owned_by = ROOT
+								}
+								diggers_road_area = {
+									type = all
+									owned_by = ROOT
+								}
+							}
+							custom_trigger_tooltip = {
+								tooltip = mb_owns_race_or_network_tt
+								OR = {
+									fast_owns_num_pops_of_race = { race = harimari amount = 1 }
+									any_known_country = {
+										fast_owns_num_pops_of_race = { race = harimari amount = 1 }
+										has_spy_network_from = {
+											who = ROOT
+											value = 50
+										}
+									}
+								}
+							}
+							adm_power = 150
+						}
+						AND = {
+							custom_trigger_tooltip = {
+								tooltip = mb_no_ruinborn_reserve_tt
+								NOT = { has_country_flag = ruinborn_reserve_done_flg }
+								inner_drolas_area = {
+									type = all
+									owned_by = ROOT
+								}
+								outer_drolas_area = {
+									type = all
+									owned_by = ROOT
+								}
+							}
+							custom_trigger_tooltip = {
+								tooltip = mb_owns_race_or_network_tt
+								OR = {
+									fast_owns_num_pops_of_race = { race = ruinborn amount = 1 }
+									any_subject_country = { fast_owns_num_pops_of_race = { race = ruinborn amount = 1 } }
+									any_known_country = {
+										OR = {
+											fast_owns_num_pops_of_race = { race = ruinborn amount = 1 }
+											any_subject_country = { fast_owns_num_pops_of_race = { race = ruinborn amount = 1 } }
+										}
+										has_spy_network_from = {
+											who = ROOT
+											value = 50
+										}
+									}
+								}
+							}
+							adm_power = 150
+							dip_power = 100
+						}
+						AND = {
+							custom_trigger_tooltip = {
+								tooltip = mb_no_lizardfolk_reserve_tt
+								NOT = { has_country_flag = lizardfolk_reserve_done_flg }
+								arrtukerr_area = {
+									type = all
+									owned_by = ROOT
+								}
+								dasmatus_area = {
+									type = all
+									owned_by = ROOT
+								}
+							}
+							custom_trigger_tooltip = {
+								tooltip = mb_owns_race_or_network_tt
+								OR = {
+									fast_owns_num_pops_of_race = { race = lizardfolk amount = 1 }
+									any_known_country = {
+										fast_owns_num_pops_of_race = { race = lizardfolk amount = 1 }
+										has_spy_network_from = {
+											who = ROOT
+											value = 50
+										}
+									}
+								}
+							}
+							adm_power = 150
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			country_event = {
+				id = flavour_maskedbutcher.115
+			}
+		}
+	}
+}

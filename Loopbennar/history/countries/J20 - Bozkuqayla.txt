@@ -1,0 +1,38 @@
+
+setup_vision = yes
+government = republic
+government_rank = 1
+primary_culture = zabatlari
+add_government_reform = lake_republic
+religion = yukel_followers
+technology_group = tech_triunic
+capital = 5273
+fixed_capital = 5273
+
+historical_rival = J19 #Jungyukaroy
+
+1430.1.1 = {
+	add_country_modifier = {
+		name = lake_federation_member
+		duration = -1
+	}
+	set_variable = {
+		which = FederationPoints
+		value = 1
+	}
+	set_country_flag = LF_mages_banned
+}
+
+1442.9.28 = {
+	monarch = {
+		name = "Aipar"
+		dynasty = "Kilpi"
+		birth_date = 1390.6.3
+		adm = 2
+		dip = 4
+		mil = 3
+	}
+	add_ruler_personality = industrious_personality
+}
+
+#Lost his family during the war, works every day so that no one suffers the same, big supporter of the Federation, thanks to his efforts the republic eventually proposed the Caravan Act

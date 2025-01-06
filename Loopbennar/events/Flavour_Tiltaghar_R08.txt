@@ -1,0 +1,555 @@
+namespace = flavor_tiltaghar
+
+#An Offer from the Raj
+country_event = {
+	id = flavor_tiltaghar.1
+	title = flavor_tiltaghar.1.t
+	desc = flavor_tiltaghar.1.d
+	picture = DIPLOMACY_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		OR = {
+			tag = R34 #Kamapar
+			tag = R12 #Tilathi
+		}
+	}
+	
+	#Accept
+	option = {
+		name = flavor_tiltaghar.1.a
+		ai_chance = {
+			factor = 40
+			modifier = {
+				factor = 1.2
+				has_opinion = {
+					who = R08 #Tiltaghar
+					value = 200
+				}
+			}
+			modifier = {
+				factor = 1.2
+				R08 = {
+					army_size = R10 #Sarnavan
+				}
+			}
+		}
+		R08 = { country_event = { id = flavor_tiltaghar.2 days = 30 } } # They Accept Vassalization offer
+	}
+	
+	#Decline
+	option = {
+		name = flavor_tiltaghar.1.b
+		ai_chance = {
+			factor = 60
+			modifier = {
+				factor = 1.2
+				R08 = {
+					NOT = { army_size = R10 } #Sarnavan
+				}
+			}
+			modifier = {
+				factor = 1.2
+				has_opinion = {
+					who = R10 #Sarnavan
+					value = 150
+				}
+			}
+			modifier = {
+				factor = 1.2
+				has_opinion = {
+					who = R10 #Sarnavan
+					value = 200
+				}
+			}
+		}
+		R08 = { country_event = { id = flavor_tiltaghar.3 days = 30 } } # They Declined Vassalization offer
+	}	
+}
+
+#They Accept Vassalization offer
+country_event = {
+	id = flavor_tiltaghar.2
+	title = flavor_tiltaghar.2.t
+	desc = flavor_tiltaghar.2.d
+	picture = DIPLOMACY_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = R08 #Tiltaghar
+	}
+	
+	#They Accepted
+	option = {
+		name = flavor_tiltaghar.2.a
+		ai_chance = { factor = 100 }
+		create_subject = {
+			subject_type = vassal
+			subject = FROM
+		}
+	}
+}
+
+#They Declined Vassalization offer
+country_event = {
+	id = flavor_tiltaghar.3
+	title = flavor_tiltaghar.3.t
+	desc = flavor_tiltaghar.3.d
+	picture = DIPLOMACY_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = R08 #Tiltaghar
+	}
+	
+	#They Declined
+	option = {
+		name = flavor_tiltaghar.2.a
+		ai_chance = { factor = 100 }
+		FROM = {
+			every_owned_province = {
+				add_permanent_claim = R08
+			}
+		}
+	}
+}
+
+#Fall of Sarnavan
+country_event = {
+	id = flavor_tiltaghar.4
+	title = flavor_tiltaghar.4.t
+	desc = flavor_tiltaghar.4.d
+	picture = SIEGE_eventPicture
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	#Move the riches to Tiltaghar
+	option = {
+		name = flavor_tiltaghar.4.a
+		ai_chance = { factor = 100 }
+		4510 = {
+			add_base_production = -3
+			add_base_manpower = -3
+			add_base_tax = -3	
+		}
+		4466 = {
+			add_base_production = 3
+			add_base_manpower = 3
+			add_base_tax = 3
+		}
+		R51 = {
+			add_opinion = {
+				who = PREV
+				modifier = tiltaghar_fall_sarnavan_opinion_modifier
+			}
+		}
+	}
+}
+
+#Tiltaghar and the Raj
+country_event = {
+	id = flavor_tiltaghar.5
+	title = flavor_tiltaghar.5.t
+	desc = flavor_tiltaghar.5.d
+	picture = TIGER_THRONE_eventPicture
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	
+	#We Accept the Mission!
+	option = {
+		name = flavor_tiltaghar.5.a
+		ai_chance = { factor = 100 }
+		
+		add_prestige = 25
+		add_country_modifier = {
+			name = R51_ruin_warriors
+			duration = 9125
+		}
+		4460 = { add_harimari_minority_size_effect = yes }
+		custom_tooltip = tiltaghar_tiltaghar_raj_tooltip
+	}
+}
+
+#Aftermath of the War
+country_event = {
+	id = flavor_tiltaghar.6
+	title = flavor_tiltaghar.6.t
+	desc = flavor_tiltaghar.6.d
+	picture = REFUGEES_ESCAPING_eventPicture
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = flavor_tiltaghar.6.a
+		ai_chance = { factor = 100 }
+		add_country_modifier = {
+			name = tiltaghar_aftermath_war
+			duration = -1
+		}
+		custom_tooltip = tiltaghar_aftermath_war_event_tooltip
+		remove_country_modifier = tiltaghar_northern_war 
+		remove_country_modifier = tiltaghar_war_dwarven_help 
+		remove_country_modifier = tiltaghar_war_ministries_help 
+		remove_country_modifier = tiltaghar_war_elephants_help 
+		remove_country_modifier = tiltaghar_war_shepherds_help 
+	}
+}
+
+#The fate of Sir
+country_event = {
+	id = flavor_tiltaghar.7
+	title = flavor_tiltaghar.7.t
+	desc = flavor_tiltaghar.7.d
+	picture = KINGS_CHOICE_eventPicture
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+
+	#Vassal
+	option = {
+		name = flavor_tiltaghar.7.b
+		ai_chance = { factor = 100 }
+		
+	
+		create_vassal_with_religion_and_culture = { tag = R78 religion = high_philosophy culture = shamadhan } #Sir
+		add_historical_friend = R78 #Sir
+	}
+
+	#Rebels
+	option = {
+		name = flavor_tiltaghar.7.c
+		ai_chance = { factor = 100 }
+		4633 = { #Sir
+			spawn_rebels = {
+				type = nationalist_rebels
+				size = 2
+			}
+		}
+		4636 = { #Kamapura
+			spawn_rebels = {
+				type = nationalist_rebels
+				size = 2
+			}
+		}
+		4637 = { #Lakrazbul
+			spawn_rebels = {
+				type = nationalist_rebels
+				size = 2
+			}
+		}
+	}
+}
+
+#Calm in the North
+country_event = {
+	id = flavor_tiltaghar.8
+	title = flavor_tiltaghar.8.t
+	desc = flavor_tiltaghar.8.d
+	picture = TIGER_THRONE_eventPicture
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	#Elden Ring reference (Kinda)
+	#Hollow Knight is better 
+	option = {
+		name = flavor_tiltaghar.8.a
+		ai_chance = { factor = 50 }
+
+		add_stability = 1
+		add_prestige = 10
+		define_ruler = {
+			name = "Rani"
+			dynasty = "of the Falling Claw"
+			culture = royal_harimari
+			female = yes
+			adm = 5
+			dip = 5
+			mil = 4
+			age = 25
+			claim = 100
+		}
+		add_ruler_personality = well_connected_personality
+		remove_country_modifier = tiltaghar_aftermath_war
+		remove_country_modifier = tiltaghar_restore_the_ranks
+		remove_country_modifier = tiltaghar_pay_off_debt
+		remove_country_modifier = tiltaghar_pacify_the_provinces
+		remove_country_modifier = tiltaghar_avoid_the_famine
+	}
+	
+	#Reject Ruler
+	option = {
+		name = flavor_tiltaghar.8.b
+		ai_chance = { factor = 50 }
+		
+		add_stability = 1
+		add_prestige = 20
+		add_legitimacy = 30
+		remove_country_modifier = tiltaghar_aftermath_war
+		remove_country_modifier = tiltaghar_restore_the_ranks
+		remove_country_modifier = tiltaghar_pay_off_debt	
+		remove_country_modifier = tiltaghar_pacify_the_provinces
+		remove_country_modifier = tiltaghar_avoid_the_famine
+	}
+}
+
+#The End of the Command
+country_event = {
+	id = flavor_tiltaghar.9
+	title = flavor_tiltaghar.9.t
+	desc = flavor_tiltaghar.9.d
+	picture = BATTLE_eventPicture
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	#Vassalization of the dwarfs
+	option = {
+		name = flavor_tiltaghar.9.a
+		ai_chance = { factor = 100 }
+		jade_mines_region = {
+			limit = { owned_by = ROOT }
+			remove_core = ROOT
+			add_core = I22
+			cede_province = I22
+		}
+		4311 = {
+			change_culture = jade_dwarf
+			change_religion = ancestor_worship
+		}
+		add_historical_friend = I22 #Gronstunad
+		I22 = {
+			add_historical_friend = R08 #Tiltaghar
+		}
+		create_subject = {
+			subject_type = march
+			subject = I22
+		}
+		if = {
+			limit = {
+				R65 = { is_subject_of = root } #Blackstep
+			}
+				I22 = { inherit = R65 } #Blackstep
+		}
+		if = {
+			limit = {
+				R66 = { is_subject_of = root } #Stolen Gem
+				}
+				I22 = { inherit = R66 } #Stolen Gem
+		}
+	}
+
+	#Keep the Province
+	option = {
+		name = flavor_tiltaghar.9.b
+		ai_chance = { factor = 100 }
+		
+		add_prestige = 20
+		add_adm_power = 150
+	}
+}
+
+#The Long March
+country_event = {
+	id = flavor_tiltaghar.10
+	title = flavor_tiltaghar.10.t
+	desc = flavor_tiltaghar.10.d
+	picture = REFUGEES_ESCAPING_eventPicture
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = flavor_tiltaghar.10.a
+		ai_chance = { factor = 100 }
+
+		tamvihar_area = {
+			limit = { culture_group = hobgoblin }
+			change_culture = kamtarhid
+			change_religion = high_philosophy
+			add_base_tax = -2
+			add_base_production = -2
+			add_base_manpower = -2
+			add_devastation = 20
+		}
+
+		kradhungur_area = {
+			limit = { culture_group = hobgoblin }
+			change_culture = khedarid
+			change_religion = high_philosophy
+			add_base_tax = -2
+			add_base_production = -2
+			add_base_manpower = -2
+			add_devastation = 20
+		}
+		
+		4630 = {
+			if = {
+				limit = { culture_group = hobgoblin }
+				change_culture = khedarid
+				change_religion = high_philosophy
+				add_base_tax = -2
+				add_base_production = -2
+				add_base_manpower = -2
+				add_devastation = 20
+			}
+		}
+
+		jade_mines_region = {
+			limit = { culture_group = hobgoblin }
+			change_culture = jade_dwarf
+			add_base_tax = -2
+			add_base_production = -2
+			add_base_manpower = -2
+			add_devastation = 20
+		}
+	}
+
+	option = {
+		name = flavor_tiltaghar.10.b
+		ai_chance = { factor = 100 }
+
+		add_prestige = -20
+		add_dip_power = 150
+		add_army_tradition = 20
+		jade_mines_region = {
+			limit = { culture_group = hobgoblin }
+			change_culture = jade_dwarf
+			change_religion = ancestor_worship
+			add_base_tax = -2
+			add_base_production = -2
+			add_base_manpower = -2
+			add_devastation = 20
+		}
+		medium_increase_of_hobgoblin_tolerance_effect = yes
+		shamakhad_region = {
+			limit = { culture_group = hobgoblin }
+			add_base_tax = 1
+			add_base_production = 1
+			add_base_manpower = 1
+		}
+	}
+}
+
+#Fealty of Sarnihanpur
+country_event = {
+	id = flavor_tiltaghar.21
+	title = flavor_tiltaghar.21.t
+	desc = flavor_tiltaghar.21.d
+	picture = TIGER_THRONE_eventPicture
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = R51 #Dhenijanraj
+	}
+
+	#Accept
+	option = {
+		name = flavor_tiltaghar.21.a
+		ai_chance = { factor = 100 }
+		trigger = {
+			R08 = {
+				is_subject_of = R51
+			}
+		}
+		R08 = { country_event = { id = flavor_tiltaghar.5 } }
+		set_country_flag = tiltaghar_fealty_sarnihapur
+	}
+
+	#Decline
+	option = {
+		name = flavor_tiltaghar.21.b
+		ai_chance = { factor = 100 }
+		R51 = { #Dhenijanraj
+			add_country_modifier = {
+				name = R51_ruin_warriors
+				duration = 9125
+			}
+			4460 = { add_harimari_minority_size_effect = yes }
+			sarisung_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			sir_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			nakara_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_core = ROOT }
+				}
+			add_permanent_claim = ROOT
+			}
+			khasardul_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			pharata_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			nadida_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			yodhilakra_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+}
+
+#The Northern Raj
+country_event = {
+	id = flavor_tiltaghar.23 
+	title = flavor_tiltaghar.23.t
+	desc = flavor_tiltaghar.23.d
+	picture = TIGER_THRONE_eventPicture
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	#End the MT
+	option = {
+		name = flavor_tiltaghar.23.a 
+		
+		add_country_modifier = {
+			name = tiltaghar_northern_raj_nadimraj_modifier
+			duration = -1
+		}
+		custom_tooltip = flavor_tiltaghar.23.a.goodbye 
+	}
+}

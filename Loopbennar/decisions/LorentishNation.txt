@@ -1,0 +1,97 @@
+
+country_decisions = {
+
+	lorentish_nation = {
+		major = yes
+		potential = {
+			OR = {
+				ai = no
+				NOT = { exists = A01 }
+			}
+			culture_group = lencori
+			NOT = { has_country_flag = formed_lorent_flag }
+			OR = {
+				ai = no
+				is_playing_custom_nation = no
+			}
+			NOT = { tag = Z01 }	#Anbennar
+			NOT = { tag = A01 }	#Lorent
+			NOT = { primary_culture = iochander } #Not Iochand or Iochander Southroy
+			NOT = { primary_culture = carnetori } #Not Carneter
+			is_colonial_nation = no
+			OR = {
+				is_former_colonial_nation = no
+				AND = {
+					is_former_colonial_nation = yes
+					ai = no
+				}
+			}
+			normal_or_historical_nations = yes
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_enteben }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 67	# Lorentaine
+				province_id = 74	# Kyliande
+				province_id = 69	# Rewanfork
+				province_id = 61	# Lorenith
+				province_id = 68	# Redfort
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			owns_core_province = 67	# Lorentaine
+			owns_core_province = 74	# Kyliande
+			owns_core_province = 69	# Rewanfork
+			owns_core_province = 61	# Lorenith
+			owns_core_province = 68	# Redfort
+			is_at_war = no
+			is_free_or_tributary_trigger = yes
+			NOT = { exists = A01 }			
+		}
+		effect = {
+			67 = { #Lorentaine
+				move_capital_effect = yes
+			}
+			change_tag = A01
+			hidden_effect = { restore_country_name = yes }
+			swap_non_generic_missions = yes
+			remove_non_electors_emperors_from_empire_effect = yes
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+			lencenor_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = A01
+			}
+			country_event = {
+				id = anb_half_elves.1
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			if = {
+				limit = {
+					has_custom_ideas = no
+				}
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			set_country_flag = formed_lorent_flag
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+}

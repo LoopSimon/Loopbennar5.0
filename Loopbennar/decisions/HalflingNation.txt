@@ -1,0 +1,116 @@
+
+country_decisions = {
+
+	halfling_nation = {
+		major = yes
+		potential = {
+			is_cannorian_halfling_primary_culture = yes
+			normal_or_historical_nations = yes
+			was_never_end_game_tag_trigger = yes
+			NOT = { exists = A97 } #Small Country doesn't exist
+			capital_scope = { continent = europe }
+		}
+		provinces_to_highlight = {
+			AND = {
+				OR = {
+					region = small_country_region
+					region = dragon_coast_region
+					region = damescrown_region
+				}
+				OR = {
+					culture = redfoot_halfling
+					culture = bluefoot_halfling
+					culture = visfoot_halfling
+				}
+			}
+   			NOT = { owned_by = ROOT }
+   	 	}
+		allow = {
+			hidden_trigger = {
+				culture_group = halfling # cannorian halflings are a subset of this, eliminates most nations immediately with 1 check
+				capital_scope = { continent = europe }
+				is_cannorian_halfling_primary_culture = yes
+			}
+			is_free_or_tributary_trigger = yes
+			is_at_war = no
+			OR = {
+				AND = {
+					num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+						value = 12
+						OR = {
+							region = small_country_region
+							region = dragon_coast_region
+							region = damescrown_region
+						}
+						OR = {
+							culture = redfoot_halfling
+							culture = bluefoot_halfling
+						}
+					}
+					viswall_area = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				AND = {
+					num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+						value = 5
+						OR = {
+							region = small_country_region
+							region = dragon_coast_region
+							region = damescrown_region
+						}
+						culture = redfoot_halfling
+					}
+					num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+						value = 5
+						OR = {
+							region = small_country_region
+							region = dragon_coast_region
+							region = damescrown_region
+						}
+						culture = bluefoot_halfling
+					}
+					viswall_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+			}
+		}
+		effect = {
+			change_tag = A97
+			hidden_effect = { restore_country_name = yes }
+			remove_non_electors_emperors_from_empire_effect = yes
+			swap_non_generic_missions = yes
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+			small_country_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = A97
+				
+			}
+			if = {
+				limit = {
+					has_custom_ideas = no
+				}
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_prestige = 25
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			set_country_flag = formed_small_country_flag
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+}

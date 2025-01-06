@@ -1,0 +1,69 @@
+
+setup_vision = yes
+government = monarchy
+add_government_reform = dwarovar_dwarven_clan_reform
+government_rank = 1
+primary_culture = amber_dwarf
+religion = ancestor_worship
+technology_group = tech_east_dwarven
+capital = 4247
+fixed_capital = 4247
+
+1000.1.1 = { 
+	set_estate_privilege = estate_mages_organization_state
+	set_country_flag = dwarovar_remnant
+	add_country_modifier = {
+		name = dwarven_administration
+		duration = -1
+	}
+	set_country_flag = ancestor_worship_knows_krummul
+}
+
+1000.2.2 = {
+	add_disaster_progress = {
+		disaster = remnant_stagnation_disaster
+		value = 10
+	}
+}
+
+1371.8.27 = {
+	monarch = {
+		name = "Kragarun LXIII"
+		dynasty = "Powderkeg"
+		birth_date = 1262.2.7
+		adm = 5
+		dip = 3
+		mil = 5
+	}
+	add_ruler_personality = drunkard_personality
+	add_ruler_personality = bold_fighter_personality
+	set_ruler_flag = long_lived_ruler
+	queen = {
+		country_of_origin = H79
+		name = "Sivondi"
+		dynasty = "Skullaxe"
+		birth_date = 1293.3.27
+		death_date = 1472.2.01
+		female = yes
+		adm = 3
+		dip = 4
+		mil = 2
+	}
+	add_queen_personality = industrious_personality
+	set_consort_flag = long_lived_ruler
+}
+
+1385.2.19 = {
+	heir = {
+		name = "Hardûn"
+		dynasty = "Powderkeg"
+		birth_date = 1385.2.19
+		death_date = 1557.6.14
+		claim = 95
+		adm = 5
+		dip = 2
+		mil = 3
+	}
+	add_heir_personality = architectural_visionary_personality
+	set_heir_flag = long_lived_ruler
+}

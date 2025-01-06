@@ -1,0 +1,32 @@
+
+setup_vision = yes
+government = republic
+add_government_reform = oligarchy_reform
+government_rank = 1
+primary_culture = lokebhen
+religion = kheionism
+technology_group = tech_kheionai
+capital = 2745
+fixed_capital = 2745
+
+1000.1.1 = { set_estate_privilege = estate_mages_organization_guilds }
+
+1444.1.1 = {
+	set_country_flag = has_archatiradist_doctrine_kheionist_deity
+	set_country_flag = has_dip_kheionist_deity
+	change_personal_deity = archatiradist_doctrine_deity_level_1
+}
+
+1443.12.1 = {
+	monarch = {
+		name = "Urionis"
+		dynasty = "Argyros"
+		birth_date = 1402.2.13
+		adm = 5
+		dip = 2
+		mil = 4
+	}
+	add_ruler_personality = scholar_personality
+	add_ruler_personality = tactical_genius_personality
+	add_ruler_personality = drunkard_personality
+}

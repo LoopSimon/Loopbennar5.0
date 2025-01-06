@@ -1,0 +1,21 @@
+bookmark =
+{
+	name = "EAST_SARHAL"
+	desc = "EAST_SARHAL_DESC"
+	date = 1444.11.11
+	
+	center = 6644
+	
+	country = L95 #Rayaz
+	country = L70 #Khugra
+	country = S70 #Yezel Mora
+	country = F72 #Haraagtseda
+	country = L55 #Naleni
+	country = S28 #Ishibonde
+	country = S53 #Averilibet
+	country = L62 #Vandipha
+	
+	easy_country = L95
+	easy_country = S70
+
+}

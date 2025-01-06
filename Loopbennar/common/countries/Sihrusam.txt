@@ -1,0 +1,149 @@
+
+#Country Name: Please see filename.
+
+graphical_culture = muslimgfx
+
+color = { 194 182 105 }
+
+
+
+historical_idea_groups = {
+	economic_ideas
+	offensive_ideas
+	influence_ideas
+	defensive_ideas	
+	administrative_ideas	
+	trade_ideas
+	quality_ideas
+	innovativeness_ideas
+}
+
+historical_units = {
+	bulwari_1_phoenix_auxiliars
+	bulwari_1_zanite_anahallapti
+	bulwari_5_gizian_hallapkanu
+	bulwari_6_akalsesi_esraka
+	bulwari_9_jadd_seskullu
+	bulwari_10_masnsih_horse_archers
+	bulwari_12_jaddari_sunforged
+	bulwari_14_jaddari_esraka
+	bulwari_15_jaddari_agskastu
+	bulwari_18_gelkar_lancers
+	bulwari_19_imperial_agskastu
+	bulwari_23_jaddanzari_line_infantry
+	bulwari_23_jaddanzari_sukallu
+	bulwari_26_kuzaki_sharpshooters
+	bulwari_26_surakesi_sukallu
+	bulwari_28_surakesi_cuirassier
+	bulwari_30_surakesi_guardsman
+}
+
+monarch_names = {
+
+	"Gilberid #0" = 10
+	"Tekhirn #0" = 10
+	"Dariaš #0" = 10
+	"Šemgair #0" = 10
+	"Balraniš #0" = 10
+	"Nadir #0" = 10
+	"Merzallu #0" = 10
+	"Šemuram #0" = 10
+	"Zabril #0" = 10
+	"Ilekar #0" = 10
+	"Gelkhan #0" = 10
+	"Nerriš #0" = 10
+	"Dariuš #0" = 10
+	"Xirek #0" = 10
+	"Ardin #0" = 10
+	"Kespir #0" = 10
+	"Azeriel #0" = 10
+	"Perandiš #0" = 10
+	"Niraš #0" = 10
+	"Šerfaz #0" = 10
+	"Zulhin #0" = 10
+	"Faridin #0" = 10
+	"Rešin #0" = 10
+	"Tefrin #0" = 10
+	"Ašerik #0" = 10
+	"Ašurrim #0" = 10
+	"Nebukar #0" = 10
+	"Semaši #0" = 10
+	"Urratim #0" = 10
+	"Merdukar #0" = 10
+	"Ešurdin #0" = 10
+	"Ešterai #0" = 10
+	"Enleliš #0" = 10
+	"Eštarik #0" = 10
+	"Edadu #0" = 10
+	"Neburim #0" = 10
+	"Nebukil #0" = 10
+	"Darian #0" = 10
+	"Tekhmasp #0" = 10
+	"Zarhrin #0" = 10
+	"Semšid #0" = 10
+	"Gerdir #0" = 10
+	"Erdalin #0" = 10
+	"Faridin #0" = 10
+	"Tarin #0" = 10
+	"Feštispa #0" = 10
+	"Yezdin #0" = 10
+	"Ander #0" = 10
+	"Hašeng #0" = 10
+	
+	"Belšira #0" = -1
+	"Zeriš #0" = -1
+	"Derina #0" = -1
+	"Iširna #0" = -1
+	"Tehina #0" = -1
+	"Aškira #0" = -1
+	"Nelira #0" = -1
+	"Tehina #0" = -1
+	"Šelinda #0" = -1
+	"Khelia #0" = -1
+	"Khedira #0" = -1
+	"Derkina #0" = -1
+	"Ardina #0" = -1
+	"Yerenis #0" = -1
+	"Tefira #0" = -1
+	"Ferniš #0" = -1
+	"Semara #0" = -1
+	"Periša #0" = -1
+	"Rašana #0" = -1
+	"Ailara #0" = -1
+	"Lalih #0" = -1
+	"Tela #0" = -1
+	"Ferišt #0" = -1
+	"Zerin #0" = -1
+	
+}
+
+leader_names = {
+	     
+    #Masnsih Geographic Places
+	szel-Simlardu szel-Saranza szel-Edesukeru
+
+    #Noble Families
+	szal-Ašerik szal-Ašurrim szal-Nebukar szal-Semaši szal-Urratim szal-Merdukar szal-Ešurdin szal-Ešterai szal-Enleliš szal-Eštarik szal-Edadu szal-Neburim szal-Nebukil szal-Darian szal-Tekhmasp szal-Zarhrin szal-Semšid szal-Gerdir szal-Erdalin szal-Faridin szal-Tarin szal-Feštispa szal-Yezdin szal-Ander szal-Hašeng
+	
+}
+
+ship_names = {
+
+	#Generic Bulwari
+	Akal-Wana Arfaya Arsaayaru Arsaginu Arsaruq Ayaru Ayaruella Betaayaru Bet-Ginu Betrruq Daq-Mašni Dasma Eluq-szel-Sahnu Ebur Ebur-Sur Ginu Ginupašilu Ginuzan Galm Galm-szel-Wana Ginu-szel-Sahnu Ginu-szufal Surgumar Iwanayar Iwaginu Iwanruq Kalla Kasiya-Išiak Kuz Lib-Wana Lamas Lamas-Wana Nagiru Nagiru-szel-Szafal Nagiru-szel-Uma Našru-rakad Nebu-ayar Nebu-Sur Panu-Arfaya Pettu Qašrih Qašrih-Wana Petszafal Šahkasiya Šebs-Ayaru Šebs-ginu Šebiruq Šelu Sipar-hitu Siparakad Sipar-szufal Sur-Dasma Sureri Sur-gayal Sur-gaylia Sur-pašilu Sursur Sur-yim Tanuzi-pettu Uma Uturginu Utur-Iwanszufal Uma-Sur Udam-našru Wana-bittu Wanabar Wanuartu Wana-šin Yesduma Yim Zama Zamakasya Ardin Azeriel Balraniš Dariaš Dariuš Gelkhan Gilberid Ilekar Kespir Merzallu Niraš Nerriš Nadir Perandiš Šemgair Šemuram Šerfaz Tekhirn Xirek Zabril Anaisa Araxia Arusen Aškura Astaghik Ardana Ardana Durkana Enšat Farana Farana Gilhana Hasmika Hripset Karzana Khadira Khallia Maršan Nalara Nirissa Rexan Rišat Siranik Sumeri Šalanda Šerfaz Šušanik Tamaris Tuhina Urrat Yaranis Zabelis Akalu Anaisana Ardanisa Aškurana Baltura Durkanara Enšata Farnuša Ferešta Gilhanara Hasmikar Kaldanara Khadirana Khalliani Nalarina Nirissa Nylarana Parissia Parez Perizara Rexani Rušana Rušana Samira Samiria Sirani Suriyana Tamarisi Tafara Šahana Širina Tuhinara Urrata Yaranisa Zabelisa Zuhriya
+	#Cultural Provinces
+	Gemisle Katrano Sirafan Arekis Hopespeak Re-Uyel Azka-szel-Azka Zorntanas Yametšes Medbahar Akrad-til Kaproya-Telen "Azka Barzil" Vernat Gordihr Gulangor Zagnabad Eduz-Wez Bazibar Agšelum Baharzil Pašah Aqatbar Nisabat Arzdilsu Yesdbar Eduz-szel-Ninezim Fajabahar Pir-Ail Azka-Evran Qasnabor Našru-ean Bahar-szel-Uak Akal-Uak Farramaz Tremo-Enkost Deškumar Habqez Birsartansbar Birsartenslib Imuluses Eonkavan Tunkalem Kaboustraz Ur-Monkande Daqelum Azkašad Akurmbag Elusadul Tuklum "Elum Kuztanuz" "Šad Kuz" Barzilšad Kuzak Magair-ten-mar Garlas-kel Kihayanbar Lawaššar Peruškam Aš-mis Gelkalis Drolas Beteliš Drolaklum Kurmod Dromaz Annailsub Djinnkalis Brasan "Brasan Tanuz" Rakkubtu Urašum Aqatabtu Kadumar Medurubar "Suran Narit" Anzabad Ginerdu Zanakes Irrliam Idanaš "Ašr Limeš" Rakutmu "Salahad Gate" "Šad Sur" Kesudagka Ardubar Mibunašru Anzakalis Harranbar Zanšap Surib Aklum Zagnuhar Betlibar "Šad Uraš" Elišumu Grixekyr Arfajazan Elum-szel-Bazi Ulumu Ekluzagnu "Duklum Tanuz" Linkum Anzarzax Kumarkand "Šap Idiqlat" Xharraranaz Kalib Azanerdu Bulwar Eduz-Buranun Zanbar Grumar Harklum "Traz Suran" Ardu Xhurgrum Irkorzo Sareyand Dahain Duklum Azkabar Kuokrumar Markumar "Traz Buranun" "Ulmiš Idiqlat" Varamhar "Današ Naza" Arašbar Uqlum Kališad Setadazar "Današ Aban" Mitiq Orean "Traz Avamezan" Kutiriq Erubas "Anzarim Avamezan" "Eduz-Vacyn" Kufu Durklum Utlazna Panubar "Panu Zankumar" Ašranaz Hašr "Anzarim Suran" Sardazar Azka-Sur Saranaz Saršad Ardumu Deohiq Trasenarbu Shibahurran Ebbušubtu Tarnúthen Kotidúrnor Mermigán Çhórfo "Hero's Vale" Harnio Ianviréri Zornkost Lankost Davharral Edešukeru Subkaliss Piruharran Šimlardu Saranza Ardulib Edenlil Larfíra Nurdazin Siphefiréri Istartóvo Ergulagnu Kesud Daqalm
+	#CK3 Baronies
+	Dasmašap Nithuelum Rešilan Eduz-Suraqqu Bittuathan Akurmilu Azkapaš Azkeru Eduz-Azka Azkalis Arzdisit Eduz-Arzdibaga Eduz-Ituq Kallabar Tilabar Baharthal Barzišim Ereškand Arzdiqqu Kerušamsi Eduz-Surellu Pašah Arsabittu Karhagš Bašilan
+	
+}
+
+army_names = {
+
+	"Sihrušami Karaš" "Karaš of $PROVINCE$"
+}
+
+fleet_names = {
+
+	"Sihrušami Makarašam" "Sun Makarašam" "Flame Makarašam" "Diven Makarašam" "Glass Makarašam" "Mirrors Makarašam" "Echoes Makarašam"
+}

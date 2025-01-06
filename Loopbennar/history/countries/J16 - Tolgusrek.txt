@@ -1,0 +1,35 @@
+
+setup_vision = yes
+government = republic
+government_rank = 1
+primary_culture = khamgunai
+add_government_reform = lake_republic
+religion = yukel_followers
+technology_group = tech_triunic
+capital = 5267
+fixed_capital = 5267
+1430.1.1 = {
+	add_country_modifier = {
+		name = lake_federation_member
+		duration = -1
+	}
+	set_variable = {
+		which = FederationPoints
+		value = 1
+	}
+	set_country_flag = LF_mages_banned
+}
+
+1444.9.6 = {
+	monarch = {
+		name = "Jugh"
+		dynasty = "Oqaryezin"
+		birth_date = 1420.2.4
+		adm = 3
+		dip = 0
+		mil = 4
+	}
+	add_ruler_personality = righteous_personality
+}
+
+#A good archer with a deadly precision, proposed the formation of the Purse and Sword Factions after he sucedded in being re-elected many years after his first term

@@ -1,0 +1,20 @@
+# No previous file for Anbennar4961 #100
+owner = Y64
+controller = Y64
+add_core = Y64
+add_core = Y97
+culture = khom
+religion = transmutative_path
+
+hre = no
+
+base_tax = 3
+base_production = 3
+base_manpower = 3
+
+trade_goods = cloth
+
+capital = ""
+
+is_city = yes
+

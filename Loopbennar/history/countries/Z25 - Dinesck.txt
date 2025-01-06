@@ -1,0 +1,30 @@
+
+setup_vision = yes
+government = republic
+add_government_reform = merchants_reform
+government_rank = 1
+mercantilism = 25
+primary_culture = blue_reachman
+religion = regent_court
+technology_group = tech_gerudian
+capital = 752
+
+fixed_capital = 752
+
+1000.1.1 = { set_estate_privilege = estate_mages_organization_guilds }
+
+1441.2.3 = {
+	monarch = {
+		name = "Anna"
+		dynasty = "Oakmonger"
+		birth_date = 1396.8.9
+		adm = 4
+		dip = 3
+		mil = 3
+		female = yes
+	}
+	add_ruler_personality = well_connected_personality
+	add_ruler_personality = zealot_personality
+}
+
+#Anna Oakmonger: Part of a big wood trading family in Dinesck, she worships Falah with big enthusiasm, her family helps her stay in power and she helps her family with preference over other families.

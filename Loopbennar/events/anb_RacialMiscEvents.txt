@@ -1,0 +1,344 @@
+
+namespace = racial_misc
+
+# Half-orc heir
+country_event = {
+	id = racial_misc.1
+	title = racial_misc.1.t
+	desc = racial_misc.1.d
+	picture = NEW_HEIR_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		OR = {
+			AND = {
+				ruler_is_human = yes
+				consort_is_orcish = yes
+			}
+			AND = {
+				ruler_is_orcish = yes
+				consort_is_human = yes
+			}
+			AND = {
+				ruler_is_human = yes
+				consort_is_half_orcish = yes
+			}
+			AND = {
+				ruler_is_half_orcish = yes
+				consort_is_human = yes
+			}
+			AND = {
+				ruler_is_orcish = yes
+				consort_is_half_orcish = yes
+			}
+			AND = {
+				ruler_is_half_orcish = yes
+				consort_is_orcish = yes
+			}
+			AND = {
+				ruler_is_half_orcish = yes
+				consort_is_half_orcish = yes
+			}
+			AND = {
+				ruler_is_elven = yes
+				consort_is_orcish = yes
+			}
+			AND = {
+				ruler_is_orcish = yes
+				consort_is_elven = yes
+			}
+			AND = {
+				ruler_is_half_elven = yes
+				consort_is_orcish = yes
+			}
+			AND = {
+				ruler_is_orcish = yes
+				consort_is_half_elven = yes
+			}
+			AND = {
+				ruler_is_half_elven = yes
+				consort_is_half_orcish = yes
+			}
+			AND = {
+				ruler_is_half_orcish = yes
+				consort_is_half_elven = yes
+			}
+		}
+		has_heir = yes
+		NOT = { heir_is_half_orcish = yes }
+		NOT = { has_heir_flag = set_heir_race }
+		NOT = { heir_age = 16 }
+		NOT = { tag = Z57 } # Karashar
+	}
+	
+	option = {		# Good
+		name = racial_misc.1.a
+		if = {
+			limit = {
+				primary_culture = grombar_half_orc
+			}
+			set_heir_culture = grombar_half_orc
+		}
+		else = {
+			set_heir_culture = half_orc
+		}
+		hidden_effect = {
+			clear_fast_heir_flags = yes
+			set_heir_flag = half_orcish_heir
+		}
+	}
+}
+
+# Half-elf heir
+country_event = {
+	id = racial_misc.2
+	title = racial_misc.2.t
+	desc = racial_misc.2.d
+	picture = NEW_HEIR_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		OR = {
+			AND = {
+				ruler_is_human = yes
+				consort_is_elven = yes
+			}
+			AND = {
+				ruler_is_elven = yes
+				consort_is_human = yes
+			}
+			AND = {
+				ruler_is_half_elven = yes
+				consort_is_elven = yes
+			}
+			AND = {
+				ruler_is_elven = yes
+				consort_is_half_elven = yes
+			}
+			AND = {
+				ruler_is_half_elven = yes
+				consort_is_half_elven = yes
+			}
+			AND = {
+				ruler_is_elven = yes
+				consort_is_half_orcish = yes
+			}
+			AND = {
+				ruler_is_half_orcish = yes
+				consort_is_elven = yes
+			}
+		}
+		has_heir = yes
+		NOT = { heir_is_half_elven = yes }
+		NOT = { has_heir_flag = set_heir_race }
+		NOT = { heir_age = 16 }
+	}
+	
+	option = {		# Good
+		name = racial_misc.2.a
+		if = {
+			limit = { 
+				or = {
+					ruler_is_bulwari = yes
+					ruler_culture = sun_elf
+					ruler_culture = desert_elf
+				}
+			}
+			set_heir_culture = bulwari_half_elf
+		}
+		else_if = {
+			limit = { 
+				or = {
+					ruler_is_lencori_human = yes
+					consort_is_lencori_human = yes
+				}
+			}
+			set_heir_culture = lencori_half_elf
+		}
+		else_if = {
+			limit = { 
+				or = {
+					ruler_is_businori_human = yes
+					consort_is_businori_human = yes
+				}
+			}
+			set_heir_culture = businori_half_elf
+		}
+		else_if = {
+			limit = { 
+				or = {
+					ruler_is_dostanorian_human = yes
+					consort_is_dostanorian_human = yes
+				}
+			}
+			set_heir_culture = dostanorian_half_elf
+		}
+		else_if = {
+			limit = { 
+				or = {
+					ruler_is_alenic_human = yes
+					consort_is_alenic_human = yes
+				}
+			}
+			set_heir_culture = alenic_half_elf
+		}
+		else_if = {
+			limit = { 
+				or = {
+					ruler_is_escanni_human = yes
+					consort_is_escanni_human = yes
+				}
+			}
+			set_heir_culture = farrani_half_elf
+		}
+		else_if = {
+			limit = { 
+				or = {
+					ruler_is_bom_human = yes
+					consort_is_bom_human = yes
+				}
+			}
+			set_heir_culture = bom_half_elf
+		}
+		else_if = {
+			limit = { 
+				or = {
+					ruler_is_kai_human = yes
+					consort_is_kai_human = yes
+				}
+			}
+			set_heir_culture = kai_half_elf
+		}
+		else_if = {
+			limit = { 
+				or = {
+					ruler_is_kelino_human = yes
+					consort_is_kelino_human = yes
+				}
+			}
+			set_heir_culture = kelino_half_elf
+		}
+		else = {
+			set_heir_culture = half_elf
+		}
+		hidden_effect = {
+			clear_fast_heir_flags = yes
+			set_heir_flag = half_elven_heir
+		}
+	}
+}
+
+# Half-elf to human
+country_event = {
+	id = racial_misc.3
+	title = racial_misc.3.t
+	desc = racial_misc.3.d
+	picture = NEW_HEIR_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		OR = {
+			AND = {
+				ruler_is_human = yes
+				consort_is_half_elven = yes
+			}
+			AND = {
+				ruler_is_half_elven = yes
+				consort_is_human = yes
+			}
+		}
+		has_heir = yes
+		NOT = { heir_is_human = yes }
+		NOT = { has_heir_flag = set_heir_race }
+	}
+	
+	option = {		# Good
+		name = racial_misc.3.a
+		remove_heir_personality = immortal_personality
+		clr_heir_flag = long_lived_ruler
+		if = {
+			limit = {
+				ruler_is_human = yes
+			}
+			set_heir_culture = new_variable:ruler_culture
+		}
+		else_if = {
+			limit = {
+				culture_is_human = yes
+			}
+			set_heir_culture = ROOT
+		}
+		else = {
+			set_heir_culture = new_variable:consort_culture
+		}
+		hidden_effect = {
+			clear_fast_heir_flags = yes
+			set_heir_flag = human_heir
+		}
+	}
+}
+
+country_event = { #Harpy Heir
+	id = racial_misc.4
+	title = racial_misc.4.t
+	desc = racial_misc.4.d
+	picture = NEW_HEIR_eventPicture
+
+	is_triggered_only = yes
+
+
+	trigger = {
+		consort_is_harpy = yes
+		heir_is_harpy = no
+		OR = {
+			ruler_is_human = yes
+			ruler_is_elven = yes
+			ruler_is_half_elven = yes
+			ruler_is_half_orcish = yes
+			ruler_is_orcish = yes
+			ruler_is_goblin = yes
+			ruler_is_hobgoblin = yes
+            ruler_is_ruinborn = yes
+		}
+	}
+
+	option = {	#Good 
+		name = racial_misc.4.a
+		hidden_effect = {
+			kill_heir = { allow_new_heir = no }
+			define_heir = {
+				female = yes
+			}
+			set_heir_culture = new_variable:consort_culture
+			clear_fast_heir_flags = yes
+			set_heir_flag = harpy_heir
+			set_heir_flag = set_heir_race #this has to be here because we make a new heir—it'll trigger racial_misc.10 otherwise
+		}
+	}
+}
+
+# Correct heir race due to event heirs being primary culture
+country_event = {
+	id = racial_misc.10
+	title = racial_misc.10.t
+	desc = racial_misc.10.d
+	picture = NEW_HEIR_eventPicture
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		government = monarchy
+		NOT = { has_matching_race_ruler_to_heir = yes }
+		NOT = { has_heir_flag = set_heir_race }
+	}
+	
+	option = {
+		set_heir_culture = new_variable:ruler_culture
+		clear_fast_heir_flags = yes
+		update_heir_racial_flag = yes
+	}
+}

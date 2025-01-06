@@ -1,0 +1,1011 @@
+#Designed and Coded by Mike@butek69
+#Written by Queensabre, Raist, and Faeelin
+#Reviewed by Takasaki, Ditto, Auirus, and Civi
+#Original MT by Runehawk
+G48_slot_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = G48
+			AND = {
+				tag = H22
+				was_tag = G48
+			}
+		}
+	}
+
+	G48_learning_from_the_best = {
+		icon = ven_navy_mission_2
+		position = 1
+		provinces_to_highlight = { } 
+
+		trigger = {  
+			G59 = { 
+				has_50_opinion_improved_relation = { target = ROOT } 
+			}
+			OR = {
+				advisor = naval_reformer
+				AND = {
+					dip_power = 50
+					has_dip_advisor = yes
+				}
+			}
+		} 
+
+		effect = {  
+			add_country_modifier = {
+				name = G48_regular_navy_drills
+				duration = 10950 #30 Years
+			}
+			create_admiral = { tradition = 50 }
+			G59 = {
+				add_country_modifier = {
+					name = G48_regular_navy_drills
+					duration = 10950 #30 Years
+				}
+				create_admiral = { tradition = 50 }
+			}
+			custom_tooltip = G48_learning_from_the_best_tt
+			if = {
+				limit = {
+					NOT = { 
+						advisor = naval_reformer 
+						has_country_flag = colonists_in_power 
+					}
+				}
+				custom_tooltip = BONUS_REWARD_YES
+			}
+			else = { custom_tooltip = BONUS_REWARD_NO }
+			tooltip = {
+				add_dip_power = -50
+			}
+		} 
+	}
+
+	G48_the_pearl_boom = {
+		icon = mission_riches_of_golconda
+		position = 2
+		required_missions = { G48_learning_from_the_best } 
+		provinces_to_highlight = {  
+			owner = { tag = G59 }
+			is_capital = yes
+			NOT = { has_trade_building_trigger = yes }
+		} 
+
+		trigger = {  
+			G59 = {
+				capital_scope = {
+					has_trade_building_trigger = yes
+				}
+			}
+			has_estate_privilege = estate_burghers_private_trade_fleets
+		} 
+
+		effect = {  
+			custom_tooltip = G48_colonists_in_power_tt
+			if = {
+				limit = {
+					has_country_flag = colonists_in_power
+				}
+				custom_tooltip = BONUS_REWARD_YES
+				hidden_effect = {
+					define_advisor = { 
+						type = trader
+						skill = 1
+						cost_multiplier = 0.25
+					}
+				}
+			}
+			else = {custom_tooltip = BONUS_REWARD_NO }
+			tooltip = {
+				define_advisor = { 
+					type = trader
+					skill = 1
+					cost_multiplier = 0.25
+				}
+			}
+			custom_tooltip = G48_colonists_not_in_power_tt
+			if = {
+				limit = {
+					NOT = { has_country_flag = colonists_in_power }
+				}
+				custom_tooltip = BONUS_REWARD_YES
+				hidden_effect = {
+					define_advisor = { 
+						type = trader
+						skill = 1
+						cost_multiplier = 0.50
+					}
+				}
+			}
+			else = { custom_tooltip = BONUS_REWARD_NO }
+			tooltip = {
+				define_advisor = { 
+					type = trader
+					skill = 1
+					cost_multiplier = 0.50
+				}
+			}
+			G59 = {
+				add_years_of_owned_provinces_production_income = {
+					years = 5
+					trigger = {
+						trade_goods = gems
+					}
+				}
+			}
+		} 
+	}
+
+	G48_cleaved_dominance = {
+		icon = dominant_economy
+		position = 3
+		required_missions = {
+			G48_the_pearl_boom
+			G48_breaking_the_merchants
+		}
+		provinces_to_highlight = {  
+			OR = {
+				province_id = 2773
+				province_id = 2738
+			}
+			NOT = {
+				AND = {
+					province_has_center_of_trade_of_level = 2
+					has_state_edict = edict_protect_trade
+				}
+			}
+		} 
+
+		trigger = {  
+			2773 = {
+				province_has_center_of_trade_of_level = 2
+				has_state_edict = edict_protect_trade
+			}
+			2738 = {
+				province_has_center_of_trade_of_level = 2
+				has_state_edict = edict_protect_trade
+			}
+			all_rival_country = {
+				OR = {
+					trade_embargo_by = ROOT
+					truce_with = ROOT
+				}
+			}
+			1741 = { 
+				trade_share = {
+					country = ROOT
+					share = 50
+				}
+			}
+		} 
+
+		effect = {  
+			custom_tooltip = G48_colonists_or_schemers_in_power_tt
+			if = {
+				limit = {
+					OR = { 
+						has_country_flag = colonists_in_power
+						has_country_flag = schemers_in_power
+					}
+				}
+				custom_tooltip = BONUS_REWARD_YES
+				hidden_effect =  {
+					add_mercantilism = 6
+					add_years_of_trade_income = { 
+						years = 4
+						custom_tooltip = gainFourYearsTradeIncome
+					}
+				}
+			}
+			else = { custom_tooltip = BONUS_REWARD_NO }
+			tooltip = {
+				add_mercantilism = 6
+				add_years_of_trade_income = { 
+					years = 4
+					custom_tooltip = gainFourYearsTradeIncome
+				}
+			}
+			custom_tooltip = G48_colonists_or_schemers_not_in_power_tt
+			if = {
+				limit = {
+					NOT = { 
+						has_country_flag = colonists_in_power
+						has_country_flag = schemers_in_power
+					}
+				}
+				custom_tooltip = BONUS_REWARD_YES
+				hidden_effect = {
+					add_mercantilism = 3
+					add_years_of_trade_income = { 
+						years = 2
+						custom_tooltip = gainTwoYearsTradeIncome
+					}
+				}
+			}
+			else = { custom_tooltip = BONUS_REWARD_NO }
+			tooltip = {
+				add_mercantilism = 3
+				add_years_of_trade_income = { 
+					years = 2
+					custom_tooltip = gainTwoYearsTradeIncome
+				}
+			}
+		} 
+	}
+}
+G48_slot_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = G48
+			AND = {
+				tag = H22
+				was_tag = G48
+			}
+		}
+	}
+
+	G48_breaking_the_merchants = {
+		icon = mission_destroyed_city
+		position = 2
+		provinces_to_highlight = {  
+			OR = {
+				AND = {
+					area = ormam_area
+					NOT = { owned_by = ROOT }
+				}
+				AND = {
+					OR = {
+						province_id = 2773
+						province_id = 2738
+					}
+					has_trade_building_trigger = no
+				}
+			}
+		} 
+
+		trigger = {  
+			ormam_area = {
+				type = all
+				owned_by = ROOT
+			}
+			2738 = { has_trade_building_trigger = yes }
+			2773 = { has_trade_building_trigger = yes }
+		} 
+
+		effect = {
+			if = {
+				limit = { 
+					has_country_flag = schemers_in_power
+				}
+				custom_tooltip = G48_schemers_bonus_yes_tt
+			}
+			else = {
+				custom_tooltip = G48_schemers_bonus_no_tt
+			}  
+			country_event = { id = flavour_kherka.2 }
+		} 
+	}
+
+	G48_contenders_no_more = {
+		icon = mission_burning_man
+		position = 3
+		required_missions = { G48_breaking_the_merchants } 
+		provinces_to_highlight = {  
+			OR = {
+				AND = {
+					area = degakheion_area
+					NOT = { owned_by = ROOT }
+				}
+				AND = {
+					province_id = 2736
+					has_manpower_building_trigger = no
+				}
+			}
+		} 
+
+		trigger = {  
+			degakheion_area = {
+				type = all
+				owned_by = ROOT
+			}
+			2736 = { has_manpower_building_trigger = yes }
+			all_known_country = {
+				OR = {
+					is_a_kheion = yes
+					NOT = { army_size = ROOT }
+				}
+			}
+		} 
+
+		effect = {  
+			2736 = { 
+				add_building_construction = {
+					building = regimental_camp
+					speed = 1
+					cost = 0
+				} 
+			}
+			custom_tooltip = G48_militants_in_power_tt
+			if = {
+				limit = { has_country_flag = militants_in_power}
+				custom_tooltip = BONUS_REWARD_YES
+				hidden_effect = {
+					2736 = { 
+						add_building_construction = {
+							building = regimental_camp
+							speed = 1
+							cost = 0
+						} 
+					}
+				}
+			}
+			else = { custom_tooltip = BONUS_REWARD_NO }
+			tooltip = { 
+				2773 = {
+					add_building_construction = {
+						building = regimental_camp
+						speed = 1
+						cost = 0
+					}
+				}
+			}
+			custom_tooltip = G48_contenders_no_more_tt
+			hidden_effect = {
+				G47 = {
+					every_owned_province = {
+						add_permanent_claim = ROOT
+					}
+				}
+				G51 = {
+					every_owned_province = {
+						add_permanent_claim = ROOT
+					}
+				}
+			}
+		} 
+	}
+
+	G48_shift_the_tide = {
+		icon = mission_establish_high_seas_navy
+		position = 4
+		required_missions = {
+			G48_contenders_no_more
+			G48_cleaved_dominance
+		}
+		provinces_to_highlight = {  
+			OR = {
+				AND = {
+					area = oktikheion_area
+					NOT = { owned_by = ROOT }
+				}
+				AND = {
+					OR = {
+						province_id = 2731
+						province_id = 2731
+					}
+					has_shipyard_building_trigger = no
+				}
+			}
+		} 
+
+		trigger = { 
+			oktikheion_area = {
+				type = all
+				owned_by = ROOT
+			}
+			2731 = { has_shipyard_building_trigger = yes }
+			2717 = { has_shipyard_building_trigger = yes }
+			G59 = { 
+				NOT = { liberty_desire = 50 }
+			}
+			OR = {
+				has_discovered_degarikes = yes
+				G59 = { has_discovered_degarikes = yes }
+				num_of_owned_provinces_with = {
+					has_shipyard_building_trigger = yes
+					value = 5
+				}
+			}
+		} 
+
+		effect = { 
+			if = {
+				limit = { 
+					has_country_flag = colonists_in_power
+				}
+				custom_tooltip = G48_colonists_bonus_yes_tt
+			}
+			else = {
+				custom_tooltip = G48_colonists_bonus_no_tt
+			} 
+			country_event = { id = flavour_kherka.3 }
+		} 
+	}
+}
+G48_slot_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = G48
+			AND = {
+				tag = H22
+				was_tag = G48
+			}
+		}
+	}
+
+	G48_gaining_an_edge = {
+		icon = mission_vedic_education
+		position = 2
+		provinces_to_highlight = {  
+			area = lokemeion_area
+			NOT = { owned_by = ROOT }
+		} 
+
+		trigger = {  
+			lokemeion_area = {
+				type = all
+				owned_by = ROOT
+			}
+			any_known_country = {
+				is_a_kheion = yes
+				NOT = { tech_difference = 1 }
+				has_been_insulted_by_root = yes
+			}
+			dip_power = 50
+		} 
+
+		effect = {
+			if = {
+				limit = { 
+					has_country_flag = militants_in_power
+				}
+				custom_tooltip = G48_militants_bonus_yes_tt
+			}
+			else = {
+				custom_tooltip = G48_militants_bonus_no_tt
+			}  
+			country_event = { id = flavour_kherka.4 }
+		} 
+	}
+
+	G48_better_bronze = {
+		icon = mission_iron_and_copper
+		position = 3
+		required_missions = {
+			G48_gaining_an_edge
+			G48_beginning_of_new_heights
+		}
+		provinces_to_highlight = {  
+			OR = {
+				AND = {
+					area = eltikan_area 
+					OR = {
+						NOT = { owned_by = ROOT }
+						has_owner_religion = no
+						OR = {
+							has_tax_building_trigger = no
+							has_owner_accepted_culture = no
+						}
+					}
+				}
+				AND = {
+					province_id = 2773
+					OR = {
+						has_production_building_trigger = no
+						NOT = { base_production = 15 }
+					}
+				}
+			}
+		} 
+
+		trigger = {  
+			eltikan_area = {
+				type = all
+				owned_by = ROOT
+				has_owner_religion = yes
+				OR = {
+					has_tax_building_trigger = yes
+					has_owner_accepted_culture = yes
+				}
+			}
+			2773 = {
+				has_production_building_trigger = yes
+				base_production = 15
+			}
+		} 
+
+		effect = {  
+			country_event = { id = flavour_kherka.5 }
+		} 
+	}
+
+	G48_divining_ores = {
+		icon = mission_empowerment
+		position = 4
+		required_missions = { 
+			G48_better_bronze 
+			G48_contenders_no_more
+		} 
+		provinces_to_highlight = {  
+			OR = {
+				AND = {
+					area = arpedifer_area 
+					NOT = { owned_by = ROOT }
+				}
+				AND = {
+					OR = {
+						province_id = 2773
+						province_id = 2728
+					}
+					NOT = { has_building = mage_tower }
+				}
+			}
+		} 
+
+		trigger = {  
+			arpedifer_area = {
+				owned_by = ROOT
+				type = all
+			}
+			2728 = { has_building = mage_tower }
+			2773 = { has_building = mage_tower }
+			is_scrying = yes #MAGICREWORK
+		} 
+
+		effect = { country_event = { id = flavour_kherka.6 } }
+	}
+
+	G48_looking_beyond = {
+		icon = mission_look_west
+		position = 5
+		required_missions = {
+			G48_shift_the_tide
+			G48_divining_ores
+		}
+		provinces_to_highlight = {  } 
+
+		trigger = {  
+			if = {
+				limit = {
+					2666 = {
+						owner = { culture_group = devandi_ruinborn_elf }
+					}
+				}
+				OR = {
+					G63 = { has_100_opinion_improved_relation = { target = ROOT } }
+					2666 = {
+						owner = { has_100_opinion_improved_relation = { target = ROOT } }
+					}
+				}
+			}
+			manpower = 10
+			treasury = 200
+		} 
+
+		effect = {  
+			if = {
+				limit = {
+					2666 = {
+						owner = { culture_group = devandi_ruinborn_elf }
+					}
+				}
+				country_event = { id = flavour_kherka.7 }
+			}
+			else = {
+				custom_tooltip = G48_hfaesban_conquer_tt
+				tooltip = {
+					add_country_modifier = {
+						name = G48_magic_and_steel
+						duration = -1
+					}
+				}
+				set_country_flag = G48_hfaesban_conquer
+				mteibas_valley_region = {
+					limit = {
+						NOT = { owned_by = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+		} 
+	}
+}
+G48_slot_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = G48
+			AND = {
+				tag = H22
+				was_tag = G48
+			}
+		}
+	}
+
+	G48_our_lifeblood = {
+		icon = mission_african_gold
+		position = 1
+		provinces_to_highlight = {  } 
+
+		trigger = {  
+			OR = {
+				estate_loyalty = {
+					estate = estate_burghers
+					loyalty = 60
+				}
+				num_of_estate_agendas_completed = {
+					estate = estate_burghers
+					value = 1
+				}
+			}
+			if = {
+				limit = { has_dlc = "Domination" }
+				has_estate_privilege = estate_burghers_development_of_cities
+			}
+			else = {
+				has_estate_privilege = estate_burghers_commercial_board_of_advice
+			}
+			treasury = 100
+		} 
+
+		effect = {  
+			add_treasury = -100
+			kherka_area = {
+				add_province_modifier = {
+					name = G48_influx_of_capital
+					duration = -1
+				}
+			}
+		} 
+	}
+
+	G48_beginning_of_new_heights = {
+		icon = mission_city_prosperity
+		position = 2
+		required_missions = { G48_our_lifeblood } 
+		provinces_to_highlight = {  
+			area = kherka_area 
+			NOT = { num_of_times_improved = 2 }
+		} 
+
+		trigger = {  
+			kherka_area = {
+				type = all 
+				num_of_times_improved = 2
+			}
+			stability = 1
+		} 
+
+		effect = {  
+			kherka_area = {
+				add_prosperity = 12.5
+				add_devastation = -100
+				remove_province_modifier = G48_influx_of_capital
+				add_province_modifier = {
+					name = G48_influx_of_capital_2
+					duration = -1
+				}
+			}
+			custom_tooltip = G48_stalwarts_in_power_tt
+			if = {
+				limit = {
+					has_country_flag = stalwarts_in_power
+				}
+				custom_tooltip = BONUS_REWARD_YES
+				hidden_effect = {
+					kherka_area = { add_prosperity = 50 }
+				}
+			}
+			else = { custom_tooltip = BONUS_REWARD_NO }
+			tooltip = {
+				kherka_area = { add_prosperity = 12.5 }
+			}
+		} 
+	}
+
+	G48_an_Iron_tide = {
+		icon = mission_industrial_forging
+		position = 3
+		required_missions = { G48_beginning_of_new_heights } 
+		provinces_to_highlight = {  
+			OR = {
+				province_id = 2777
+				province_id = 2772
+			}
+			OR = {
+				NOT = { base_manpower = 10 }
+				has_manpower_building_trigger = no
+				has_production_building_trigger = no
+			}
+		} 
+
+		trigger = {  
+			2777 = {
+				base_manpower = 10
+				has_manpower_building_trigger = yes
+				has_production_building_trigger = yes
+			}
+			2772 = {
+				base_manpower = 10
+				has_manpower_building_trigger = yes
+				has_production_building_trigger = yes
+			}
+		} 
+
+		effect = {  
+			custom_tooltip = G48_an_Iron_tide_tt
+			set_country_flag = G48_odegaster_cogemos_enabled
+			tooltip = {
+				add_country_modifier = {
+					name = G48_odegaster_cogemos
+					duration = 1825 #Days
+				}
+			}
+			2777 = {
+				add_province_modifier = {
+					name = G48_kheintro_sidara
+					duration = -1
+				}
+			}
+			2772 = {
+				add_province_modifier = {
+					name = G48_kheintro_sidara
+					duration = -1
+				}
+			}
+			custom_tooltip = G48_militants_in_power_tt
+			if = {
+				limit = {
+					has_country_flag = militants_in_power
+				}
+				custom_tooltip = BONUS_REWARD_YES
+				hidden_effect = {
+					define_advisor = {
+						type = quartermaster
+						skill = 3
+						cost_multiplier = 0.5
+					}
+				}
+			}
+			else = { custom_tooltip = BONUS_REWARD_NO }
+			tooltip = {
+				define_advisor = {
+					type = quartermaster
+					skill = 3
+					cost_multiplier = 0.5
+				}
+			}
+		} 
+	}
+
+	G48_center_of_industry = {
+		icon = industrialized_rhineland
+		position = 4
+		required_missions = {
+			G48_an_Iron_tide
+			G48_better_bronze
+			G48_shimmer_from_the_top
+		}
+		provinces_to_highlight = {  
+		} 
+
+		trigger = {  
+			treasury = 1000
+			OR = {
+				num_of_estate_agendas_completed = {
+					estate = estate_burghers
+					value = 3
+				}
+				AND = {
+					has_estate_loan = no
+					master_of_mint = 3
+				}
+			}
+		} 
+
+		effect = {  
+			add_treasury = -1000
+			kherka_area = {
+				remove_province_modifier = G48_influx_of_capital_2
+				upgrade_building = { production = yes }
+				build_production_manufactory = {
+					SPEED = 1
+					COST = 0
+				}
+			}
+			custom_tooltip = G48_stalwarts_in_power_tt
+			if = {
+				limit = {
+					has_country_flag = stalwarts_in_power
+				}
+				custom_tooltip = BONUS_REWARD_YES
+				hidden_effect = {
+					add_treasury = 500
+				}
+			}
+			else = { custom_tooltip = BONUS_REWARD_NO }
+			tooltip = {
+				add_treasury = 500
+			}
+		} 
+	}
+
+	G48_metal_in_our_blood = {
+		icon = mission_forge
+		position = 5
+		required_missions = {
+			G48_divining_ores
+			G48_center_of_industry
+		}
+		provinces_to_highlight = {  
+			region = alecand_region
+			owned_by = ROOT
+			OR = {
+				trade_goods = copper
+            	trade_goods = iron
+            	trade_goods = gems
+            	trade_goods = gold
+			}
+			OR = {
+				NOT = { num_of_times_improved = 5 }
+				NOT = { has_production_or_gold_building_trigger = yes }
+			}
+		} 
+
+		trigger = {  
+			NOT = {
+				alecand_region	= {
+					OR = {
+						trade_goods = copper
+                    	trade_goods = iron
+                    	trade_goods = gems
+                    	trade_goods = gold
+					}
+					OR = {
+						NOT = { owned_by = ROOT }
+						NOT = { num_of_times_improved = 5 }
+						NOT = { #This is so the tooltip renders properly with the NOT
+							has_building = workshop
+							has_building = counting_house
+							trade_goods = gold 
+						}
+					}
+				}
+			}
+		} 
+
+		effect = {  
+			custom_tooltip = G48_metal_in_our_blood_tt
+			set_country_flag = G48_master_of_metal
+			alecand_region = {
+				limit = {
+					owned_by = ROOT
+					OR = {
+						trade_goods = copper
+                    	trade_goods = iron
+                    	trade_goods = gems
+                    	trade_goods = gold
+					}
+				}
+				add_province_modifier = {
+					name = G48_master_of_metallu
+					duration = -1
+				}
+			}
+		} 
+	}
+}
+G48_slot_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = G48
+			AND = {
+				tag = H22
+				was_tag = G48
+			}
+		}
+	}
+
+	G48_the_mountain_that_gives = {
+		icon = prosper_in_piedmont
+		position = 2
+		required_missions = { G48_our_lifeblood } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  
+			2776 = {
+				num_of_units_in_province = {
+					who = ROOT
+					type = infantry
+					amount = 5
+				}
+			}
+			adm_power = 50
+			dip_power = 50
+			mil_power = 50
+		} 
+
+		effect = {  
+			2776 = {
+				kill_units = {
+					who = ROOT
+					type = infantry
+					amount = 5
+				}
+			}
+			add_adm_power = -50
+			add_dip_power = -50
+			add_mil_power = -50
+			country_event = { id = flavour_kherka.12 days = 3650 }
+		} 
+	}
+
+	G48_shimmer_from_the_top = {
+		icon = mission_frozen_star
+		position = 3
+		required_missions = {
+			G48_the_mountain_that_gives
+			G48_beginning_of_new_heights
+		}
+		provinces_to_highlight = {  
+			province_id = 2776
+			NOT = {
+				AND = {
+					base_production = 10
+					has_production_building_trigger = yes
+				}
+			}
+		} 
+
+		trigger = {  
+			custom_trigger_tooltip = {
+				tooltip = G48_shimmer_from_the_top_tt
+				has_country_flag = G48_riches_fire
+			}
+			if = {
+				limit = { has_dlc = "Leviathan"}
+				2776 = {
+					num_of_times_expanded_infrastructure = 1
+					base_production = 10
+					has_production_building_trigger = yes
+				}
+			}
+			else = {
+				2776 = {
+					base_production = 10
+					has_production_building_trigger = yes
+				}
+			}
+			
+		} 
+
+		effect = {  
+			2776 = {
+				add_province_modifier = {
+					name = G48_kheintro_kosphin
+					duration = -1
+				}
+			}
+		} 
+	}
+}

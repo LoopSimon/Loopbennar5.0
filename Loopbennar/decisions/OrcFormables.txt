@@ -1,0 +1,514 @@
+
+country_decisions = {
+
+	grombar_nation = { #Z50
+		major = yes
+		potential = {
+			OR = {
+				primary_culture = gray_orc
+				primary_culture = half_orc
+			}
+			NOT = { exists = Z50 }
+			normal_or_historical_nations = yes
+			is_free_or_tributary_trigger = yes
+			NOT = { has_country_flag = orc_nation_formed }
+			capital_scope = { continent = europe }
+			was_never_end_game_tag_trigger = yes
+		}
+		provinces_to_highlight = {
+			superregion = gerudia_superregion
+			NOT = { owned_by = ROOT }
+			NOT = {
+				ROOT = {
+					num_of_owned_provinces_with = {
+						value = 10
+						superregion = gerudia_superregion
+					}
+				}
+			}
+		}
+		allow = {
+			hidden_trigger = {
+				OR = {
+					primary_culture = green_orc
+					primary_culture = gray_orc
+				}
+			}
+			has_institution = feudalism
+			is_at_war = no
+			adm_tech = 7 #1492
+			num_of_owned_provinces_with = {
+				value = 10
+				superregion = gerudia_superregion
+			}
+		}
+		effect = {
+			change_tag = Z50
+			hidden_effect = { restore_country_name = yes }
+			if = {
+				limit = { culture_group = orcish }
+				change_primary_culture = gray_orc
+			}
+			if = {
+				limit = { has_country_modifier = gray_orc_leader_of_the_gray_orcs}
+				remove_country_modifier = gray_orc_leader_of_the_gray_orcs
+			}
+			if = {
+				limit = { has_country_modifier = brokenjaw_eastward_expansion }
+				remove_country_modifier = brokenjaw_eastward_expansion
+			}
+			if = {
+				limit = { has_country_modifier = brokenjaw_inhospitable_lands_autonomy }
+				remove_country_modifier = brokenjaw_inhospitable_lands_autonomy
+			}
+			if = {
+				limit = { has_country_modifier = brokenjaw_inhospitable_lands_autonomy_halved }
+				remove_country_modifier = brokenjaw_inhospitable_lands_autonomy_halved
+			}
+			if = {
+				limit = { has_country_modifier = brokenjaw_inhospitable_lands_tax }
+				remove_country_modifier = brokenjaw_inhospitable_lands_tax
+			}
+			if = {
+				limit = { has_country_modifier = brokenjaw_inhospitable_lands_production }
+				remove_country_modifier = brokenjaw_inhospitable_lands_production
+			}
+			hidden_effect = {
+				if = {
+					limit = { has_country_flag = brokenjaw_frozen_union }
+					add_historical_friend = Z89
+					Z89 = { add_historical_friend = Z19 }
+				}
+			}
+			remove_non_electors_emperors_from_empire_effect = yes
+			swap_non_generic_missions = yes
+			add_prestige = 25
+			orc_legacy_effect = yes
+			set_country_flag = orc_nation_formed
+			clr_country_flag = knightly_order_adventurer
+			country_event = { id = orcform.1 days = 1 }
+			hidden_effect = {
+				country_event = { #new culture event, 10 years after their debuff runs out
+					id = orcform.2
+					days = 18250 
+				}
+			}
+			if = {
+				limit = { 
+					has_custom_ideas = no
+				}
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			set_country_flag = formed_grombar_nation
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	
+	khozrugan_nation = { #Z51
+		major = yes
+		potential = {
+			OR = {
+				primary_culture = green_orc
+				primary_culture = gray_orc
+			}
+			NOT = { exists = Z51 }
+			NOT = { tag = Z18 }
+			NOT = { has_country_flag = orc_nation_formed }
+			any_owned_province = { region = west_castanor_region }
+			normal_or_historical_nations = yes
+			is_free_or_tributary_trigger = yes
+			capital_scope = { continent = europe }
+			was_never_end_game_tag_trigger = yes
+		}
+		provinces_to_highlight = {
+			region = west_castanor_region
+			NOT = { owned_by = ROOT }
+			NOT = {
+				ROOT = {
+					num_of_owned_provinces_with = {
+						value = 10
+						region = west_castanor_region
+					}
+				}
+			}
+		}
+		allow = {
+			hidden_trigger = {
+				OR = {
+					primary_culture = green_orc
+					primary_culture = gray_orc
+				}
+			}
+			has_institution = feudalism
+			OR = { 
+				adm_tech = 8	#1505
+				NOT = { religion = great_dookan }
+			}
+			is_at_war = no
+			NOT = { government = native }
+			num_of_owned_provinces_with = {
+				value = 10
+				region = west_castanor_region
+			}
+		}
+		effect = {
+			change_tag = Z51
+			hidden_effect = { restore_country_name = yes }
+			change_primary_culture = green_orc
+			remove_non_electors_emperors_from_empire_effect = yes
+			swap_non_generic_missions = yes
+			add_prestige = 25
+			orc_legacy_effect = yes
+			set_country_flag = orc_nation_formed
+			clr_country_flag = knightly_order_adventurer
+			country_event = { id = orcform.1 days = 1 }
+			hidden_effect = {
+				country_event = { #new culture event, 10 years after their debuff runs out
+					id = orcform.2
+					days = 18250
+				}
+			}
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			set_country_flag = formed_khozrugan_nation
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	unguldavor_nation = { #Z52
+		major = yes
+		potential = {
+			OR = {
+				primary_culture = green_orc
+				primary_culture = gray_orc
+			}
+			NOT = { exists = Z52 }
+			NOT = { has_country_flag = orc_nation_formed }
+			any_owned_province = { region = inner_castanor_region }
+			normal_or_historical_nations = yes
+			is_free_or_tributary_trigger = yes
+			capital_scope = { continent = europe }
+			was_never_end_game_tag_trigger = yes
+		}
+		provinces_to_highlight = {
+			region = inner_castanor_region
+			NOT = { owned_by = ROOT }
+			NOT = {
+				ROOT = {
+					num_of_owned_provinces_with = {
+						value = 10
+						region = inner_castanor_region
+					}
+				}
+			}
+		}
+		allow = {
+			hidden_trigger = { OR = { primary_culture = green_orc primary_culture = gray_orc } }
+			has_institution = feudalism
+			OR = { 
+				adm_tech = 8	#1505
+				NOT = { religion = great_dookan }
+			}
+			is_at_war = no
+			NOT = { government = native }
+			num_of_owned_provinces_with = {
+				value = 10
+				region = inner_castanor_region
+			}
+		}
+		effect = {
+			change_tag = Z52
+			hidden_effect = { restore_country_name = yes }
+			change_primary_culture = green_orc
+			remove_non_electors_emperors_from_empire_effect = yes
+			swap_non_generic_missions = yes
+			add_prestige = 25
+			orc_legacy_effect = yes
+			set_country_flag = orc_nation_formed
+			clr_country_flag = knightly_order_adventurer
+			country_event = { id = orcform.1 days = 1 }
+			hidden_effect = {
+				country_event = { #new culture event, 10 years after their debuff runs out
+					id = orcform.2
+					days = 18250
+				}
+			}
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			set_country_flag = formed_unguldavor_nation
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+
+	barumand_nation = { #Z53
+		major = yes
+		potential = {
+			OR = {
+				primary_culture = green_orc
+				primary_culture = gray_orc
+			}
+			NOT = { has_country_flag = orc_nation_formed }
+			NOT = { exists = Z53 }
+			any_owned_province = { region = south_castanor_region }
+			normal_or_historical_nations = yes
+			is_free_or_tributary_trigger = yes
+			capital_scope = { continent = europe }
+			was_never_end_game_tag_trigger = yes
+		}
+		provinces_to_highlight = {
+			region = south_castanor_region
+			NOT = { owned_by = ROOT }
+			NOT = {
+				ROOT = {
+					num_of_owned_provinces_with = {
+						value = 10
+						region = south_castanor_region
+					}
+				}
+			}
+		}
+		allow = {
+			hidden_trigger = {
+				culture_group = orcish
+			}
+			has_institution = feudalism
+			OR = { 
+				adm_tech = 8	#1505
+				NOT = { religion = great_dookan }
+			}
+			is_at_war = no
+			NOT = { government = native }
+			num_of_owned_provinces_with = {
+				value = 10
+				region = south_castanor_region
+			}
+		}
+		effect = {
+			change_tag = Z53
+			hidden_effect = { restore_country_name = yes }
+			change_primary_culture = green_orc
+			remove_non_electors_emperors_from_empire_effect = yes
+			swap_non_generic_missions = yes
+
+			add_prestige = 25
+			orc_legacy_effect = yes
+			set_country_flag = orc_nation_formed
+			clr_country_flag = knightly_order_adventurer
+			country_event = { id = orcform.1 days = 1 }
+			hidden_effect = {
+				country_event = { #new culture event, 10 years after their debuff runs out
+					id = orcform.2
+					days = 18250
+				}
+			}
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			set_country_flag = formed_barumand_nation
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+
+	found_karashar = { #Z57
+		major = yes
+		potential = {
+			dwarovar_orc_culture_primary = yes
+			NOT = { exists = Z57 }
+			normal_or_historical_nations = yes
+			is_free_or_tributary_trigger = yes
+			NOT = { has_country_flag = blorc_plunder_capital_set }
+			NOT = { has_country_flag = orc_nation_formed }
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_reform = roadwarrior_great_convoy }
+		}
+		provinces_to_highlight = {
+			superregion = bulwar_superregion
+			NOT = { owned_by = ROOT }
+			NOT = {
+				ROOT = {
+					num_of_owned_provinces_with = {
+						value = 3
+						superregion = bulwar_superregion
+					}
+				}
+			}
+		}
+		allow = {
+			hidden_trigger = {
+				dwarovar_orc_culture_primary = yes
+			}
+			has_institution = feudalism
+			OR = {
+				AND = { 
+					adm_tech = 7 
+					stability = 2
+				}
+				religion = old_bulwari_sun_cult
+			}
+			is_at_war = no
+			total_own_and_non_tributary_subject_development = 100
+			num_of_owned_provinces_with = {
+				value = 3
+				superregion = bulwar_superregion
+			}
+			capital_scope = { superregion = bulwar_superregion }
+		}
+		effect = {
+			if = {
+				limit = { NOT = { religion = old_bulwari_sun_cult } }
+				add_stability = -5
+			}
+			change_tag = Z57
+			hidden_effect = { restore_country_name = yes }
+			change_primary_culture = karashari_orc
+			change_religion = old_bulwari_sun_cult
+			hidden_effect = {
+				every_owned_province = {
+					limit = { dwarovar_orc_culture = yes }
+					change_culture = karashari_orc
+					change_religion = old_bulwari_sun_cult
+				}
+			}
+			remove_non_electors_emperors_from_empire_effect = yes
+			swap_non_generic_missions = yes
+			add_prestige = 25
+			set_country_flag = orc_nation_formed
+			clr_country_flag = knightly_order_adventurer
+			country_event = { id = orcform.3 days = 1 }
+			hidden_effect = {
+				country_event = { #new culture event, 10 years after their debuff runs out
+					id = orcform.2
+					days = 18250 
+				}
+			}
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			set_country_flag = founded_karashar
+			capital_scope = {
+				change_province_name = "Karashar"
+				rename_capital = "Karashar"
+				change_culture = karashari_orc
+				change_religion = old_bulwari_sun_cult
+				set_province_flag = karashar_city
+			}
+			hidden_effect = {
+				country_event = {
+					id = orcform.4
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	
+	found_tarakar = { #M04
+		major = yes
+		potential = {
+			dwarovar_orc_culture_primary = yes
+			NOT = { exists = M04 }
+			normal_or_historical_nations = yes
+			is_free_or_tributary_trigger = yes
+			NOT = { has_country_flag = orc_nation_formed }
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_reform = roadwarrior_great_convoy }
+		}
+		provinces_to_highlight = {
+
+		}
+		allow = {
+			hidden_trigger = {
+				dwarovar_orc_culture_primary = yes
+			}
+			is_at_war = no
+			is_free_or_tributary_trigger = yes
+			is_tribal = no
+			NOT = { exists = M04 }
+			capital_scope = { has_blorc_trophy_pile_5 = yes }
+			num_of_cities = 50
+			dwarovar_special_formation_trigger = yes
+		}
+		effect = {
+			hidden_effect = { capital_scope = { clr_province_flag = blorc_plunder_capital_@ROOT } }
+			change_tag = M04
+			hidden_effect = {
+				capital_scope = { set_province_flag = blorc_plunder_capital_@ROOT }
+				restore_country_name = yes
+			}
+			#swap_non_generic_missions = yes
+			country_event = { id = ideagroups.1 } #Swap Ideas
+			add_country_modifier = { name = centralization_modifier duration = 7300 }
+			add_prestige = 10
+			set_country_flag = orc_nation_formed
+			if = { limit = { tag = H73 }
+				custom_tooltip = found_tarakar_mt_warning
+			}
+		}
+		ai_will_do = { factor = 1 }
+		ai_importance = 400
+	}
+	
+	orc_change_religion_corinite = {
+		major = yes
+		potential = {
+			culture_group = orcish
+			religion = great_dookan
+			is_religion_enabled = corinite
+			is_free_or_tributary_trigger = yes
+			is_force_converted = no
+			capital_scope = { continent = europe }
+		}
+		allow = {
+			stability = 2
+		}
+		effect = {
+			add_stability = -3
+			change_religion = corinite
+			add_country_modifier = {
+				name = "orc_conversion_zeal"
+				duration = 9125
+			}
+			capital_scope = {
+				change_religion = corinite
+			}
+			if = {
+				limit = {
+					has_country_flag = removing_monstrous
+				}
+				decrease_monstrous_10 = yes
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				capital_scope = {
+					region = west_castanor_region
+				}
+				factor = 0.1
+			}
+			modifier = {
+				tag = Z51
+				factor = 0
+			}
+		}
+	}
+}

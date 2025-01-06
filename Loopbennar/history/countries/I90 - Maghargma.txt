@@ -1,0 +1,47 @@
+
+setup_vision = yes
+government = monarchy
+primary_culture = fathide_ogre
+government_rank = 2
+add_government_reform = ogre_kingdom
+religion = feast_of_the_gods
+technology_group = tech_ogre
+capital = 5037
+
+1000.1.1 = { set_estate_privilege = estate_mages_organization_guilds }
+
+1438.1.1 = {
+	monarch = {
+		name = "Ziltagh"
+		dynasty = "Gravelhide"
+		birth_date = 1410.9.17
+		adm = 5
+		dip = 3
+		mil = 6
+		
+		leader = {
+			name = "Ziltagh Gravelhide"	 # Name of the leader
+			type = general	   # Type of leader: general, admiral, explorer, conquistidor
+			fire = 2
+			shock = 5
+			manuever = 6
+			siege = 5
+		}
+	}
+	add_ruler_personality = strict_personality
+	add_ruler_personality = inspiring_leader_personality
+	add_ruler_personality = fertile_personality
+	set_ruler_flag = ruler_is_ziltagh
+	heir = {
+		name = "Chike"
+		dynasty = "Gravelhide"
+		birth_date = 1433.12.19
+        death_date = 1480.1.1
+		claim = 95
+		adm = 0
+		dip = 1
+		mil = 0
+	}
+	add_heir_personality = drunkard_personality
+	set_heir_flag = ruler_is_chike
+}

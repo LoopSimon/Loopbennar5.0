@@ -1,0 +1,213 @@
+#Country Name: Please see filename.
+
+graphical_culture = muslimgfx
+
+color = { 255  255  153 }
+
+
+
+historical_idea_groups = {
+	economic_ideas
+	offensive_ideas
+	exploration_ideas
+	defensive_ideas	
+	administrative_ideas	
+	maritime_ideas
+	quality_ideas
+	innovativeness_ideas
+}
+
+historical_units = {
+	west_sarhaly_1_savannah_spears
+	west_sarhaly_1_mounted_slingers
+	west_sarhaly_5_the_diakarida_formation
+	west_sarhaly_6_donkey_chargers
+	west_sarhaly_9_tamajoba_swordsmen
+	west_sarhaly_10_cannorian_horse_riders
+	west_sarhaly_12_binwarji_shieldwall
+	west_sarhaly_14_skirmish_cavalry
+	west_sarhaly_15_ashen_irregulars
+	west_sarhaly_18_gun_riders
+	west_sarhaly_19_dendugma_rifles
+	west_sarhaly_23_zanga_line
+	west_sarhaly_23_wind_raiders
+	west_sarhaly_26_ndurubu_vanguard
+	west_sarhaly_28_fangaulan_dragoons
+	west_sarhaly_30_negefaama_legionaries
+}
+
+monarch_names = {
+
+
+	#Taafisi Name List
+	"Aro #0" = 10
+	"Anesu #0" = 10
+	"Banga #0" = 10
+	"Chamakomo #0" = 10
+	"Chenzira #0" = 10
+	"Chinouyazue #0" = 10
+	"Chionesu #0" = 10
+	"Coom #0" = 10
+	"Chuma #0" = 10
+	"Dakarai #0" = 10
+	"Dumisai #0" = 10
+	"Duniisai #0" = 10
+	"Gamba #0" = 10
+	"Garai #0" = 10
+	"Jabulani #0" = 10
+	"Kokayi #0" = 10
+	"Lizwelicha #0" = 10
+	"Mashama #0" = 10
+	"Moyo #0" = 10
+	"Mudada #0" = 10
+	"Mwanyisa #0" = 10
+	"Paradzanai #0" = 10
+	"Rudo #0" = 10
+	"Runako #0" = 10
+	"Sekayi #0" = 10
+	"Sifiye #0" = 10
+	"Siyazini #0" = 10
+	"Tengella #0" = 10
+	"Koli #0" = 10
+	"Laba #0" = 10
+	"Jam #0" = 10
+	"Gelaajo #0" = 10
+	"Yero #0" = 10
+	"Njal #0" = 10
+	"Jaje #0" = 10
+	"Gata #0" = 10
+	"Samba #0" = 10
+	"Bokar #0" = 10
+	"Sire #0" = 10
+	"Bubu #0" = 10
+	"Konko #0" = 10
+	"Sule #0" = 10
+	"Makhan #0" = 10
+	"Moktar #0" = 10
+	"Mamadu #0" = 10
+	"Biran #0" = 10
+	"Ardo #0" = 10
+	"Gaabdo #0" = 10
+	"Bello #0" = 10
+	"Ori #0" = 10
+	"Bammi #0" = 10
+	"Ndourori #0" = 10
+	"Boddo #0" = 10
+	"Sobadjo #0" = 10
+	"Yuguda #0" = 10
+	"Jangudo #0" = 10
+	"Maccido #0" = 10
+	"Geede #0" = 10
+	"Jalo #0" = 10
+	"Jagordo #0" = 10
+	"Lamido #0" = 10
+	
+	"Chemwapuwa #0" = -1
+	"Chipiwa #0" = -1
+	"Chipo #0" = -1
+	"Daya #0" = -1
+	"Gamuchirai #0" = -1
+	"Japera #0" = -1
+	"Jendaya #0" = -1
+	"Jendayi #0" = -1
+	"Kamali #0" = -1
+	"Kambo #0" = -1
+	"Maiba #0" = -1
+	"Mudiwa #0" = -1
+	"Muzwudzani #0" = -1
+	"Mwaurayeni #0" = -1
+	"Mwazwenyi #0" = -1
+	"Nehanda #0" = -1
+	"Nyasha #0" = -1
+	"Nyeredzi #0" = -1
+	"Rufaro #0" = -1
+	"Sangeya #0" = -1
+	"Sarudzai #0" = -1
+	"Shoorai #0" = -1
+	"Sibongile #0" = -1
+	"Sitembile #0" = -1
+	"Sukutai #0" = -1
+	"Tabara #0" = -1
+	"Gaisiri #0" = -1
+	"Bello #0" = -1
+	"Diallo #0" = -1
+	"Nyako #0" = -1
+	"Endana #0" = -1
+	"Gethera #0" = -1
+	"Hinya #0" = -1
+	"Ikeno #0" = -1
+	"Inira #0" = -1
+	"Inithia #0" = -1
+	"Itanya #0" = -1
+	"Jamba #0" = -1
+	"Kakena #0" = -1
+	"Kenja #0" = -1
+	"Kenithia #0" = -1
+	"Kenura #0" = -1
+	"Kiama #0" = -1
+	"Kiania #0" = -1
+	"Kianira #0" = -1
+	"Kiira #0" = -1
+	"Kirima #0" = -1
+	"Muney #0" = -1
+	"Muraty #0" = -1
+	"Oyana #0" = -1
+	"Therania #0" = -1
+	"Tia #0" = -1
+	"Kaabo #0" = -1
+	"Altine #0" = -1
+	"Sappa #0" = -1
+	"Shatu #0" = -1
+	"Dada #0" = -1
+	"Kwairanga #0" = -1
+}
+
+leader_names = {
+	Diabate
+	Djeliw
+	Konare
+	Kouyate
+	Samiya
+	Sesay
+	Aigamuxade
+	Iruside
+	Wolosode
+	Adzebintude
+	Zittaghde
+	Jerrarafde
+	Bubukarrde
+	Zitarrde
+}
+
+ship_names = {
+	Odogala Kushigbàgbe Sinwinomi Gbogboulé Mugede Kúnoshupa Monamona Adumaadan Aganjusola Agbonrin 
+	Ajalòrun Aladejána Ariyanjiyàn Aromodomo Ashanwéwe Atamatàse Arooròda Edaatijo Ayeòrukan 
+	Baorijeru Yammaneman Iskaruhu Ganiimabiyi Igbinedion Babajide Òjòmóoru Titunòdzò 
+	Ibinuólu Oloshumarè Ulésinwin Igànnagbe Túnsheejò Yárapá "Mòé-nyàn" 
+	Kùrukùrukpú Sojiwedò Sùnooru Kpaikpaòru Madaarikàn Ogìnniòrò Ikoroba Eshubièyi 
+	Legbelègbe Lékeléke Olùranshé Awosanmà Tenbèlekun Yòokùnaa Ujaamèse 
+	Wuràolá Aóolayè Òsuntókun Sunkànmi Ngombi Tiyamiyu Másojo 
+	Komuhingo Ouyarandu Kukaomutike Kwaondendu Yambekawa Onyohasi Onjamba Tangalala Tandela 
+	Yawulala Wendambdy Maiiayala Eyovomwe Ocitovongo Senguluka Ndunduminya Ociviovio 
+	Tululuka Lisokela Ekungukungu Ondindimo Olundindi Yombolola Yuasipata 
+	Onjelia Liolola Ewuvina Handekasi Ocisetahai Okapamba Okaminyu Setahanu Setukula 
+	Marolel Tvarandy Vylalyna Nyzadai Tsenamafy Mpiozona Nympiambina Takalonny Sahyafa Eomponina 
+	
+	#Cultural Places
+	#Jiromji
+	Zokek Durpupa Banji Gbujeru "Wiw-Reku" Khawit Didesira Torapelú Tukaógba Koókoepa Saiwagbára 
+	Rorunilè Ninakaire Raddack Nínkuàro Yànerun Tigeninu Gwereninu Dògoninu Gádaninu Eyintiafó 
+	#Broader Fangaula
+	Nkolonnin Kogingab 
+	Sanjibaso Kununamyà Yammagàru Zowòrgaba Sajodánga Burangun Ndiyamen Gawatsayi Ngonoodo 
+	"Zitan Tomon" Turro "Pipi Abada" Sinadaba Sigilan "Saya Bugu" 
+}
+
+
+army_names = {
+	"Army of $PROVINCE$"
+}
+
+fleet_names = {
+	"Taafisi Fleet"
+}

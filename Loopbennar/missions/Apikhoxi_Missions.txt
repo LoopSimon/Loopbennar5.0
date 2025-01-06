@@ -1,0 +1,1216 @@
+apikhoxi_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		tag = G57
+	}
+
+	apikhoxi_show_of_force = {
+		icon = mission_build_up_to_force_limit
+		position = 1
+		trigger = {
+			mil_power = 50
+			has_mil_advisor = yes
+			army_size_percentage = 0.8
+		}
+		effect = {
+		   add_liberty_desire = 50
+			2680 = {
+				add_base_manpower = 1
+			}
+			add_country_modifier = {
+				name = G57_recruiting_growth
+				duration = 3650
+			}
+		}
+	}
+
+	apikhoxi_better_a_warrior = {
+		icon = mission_armoury
+		position = 2
+		required_missions = {
+			apikhoxi_show_of_force
+		}
+		provinces_to_highlight = {
+			province_id = 2680
+			NOT = {
+				AND = {
+					num_free_building_slots = 1
+					NOT = { has_construction = building }
+				}
+			}
+		}
+		trigger = {
+			OR = {
+				army_professionalism = 0.10
+				army_tradition = 25
+			}
+			manpower_percentage = 0.5
+			2680 = {
+				num_free_building_slots = 1
+				NOT = { has_construction = building }
+			}
+			has_estate_privilege = estate_nobles_levies
+		}
+		effect = {
+			country_event = { id = flavor_apikhoxi.1 }
+		}
+	}
+
+	apikhoxi_the_anger_of_a_calm_people = {
+		icon = mission_confrontation
+		position = 4
+		required_missions = { apikhoxi_time_to_harvest }
+		trigger = {
+			AND = {
+				G62 = {
+					NOT = {
+						OR = {
+							has_opinion_modifier = {
+								who = ROOT
+								modifier = scornfully_insulted
+							}
+							AND = {
+								has_opinion_modifier = {
+									who = ROOT
+									modifier = insulted
+								}
+								has_opinion_modifier = {
+									who = ROOT
+									modifier = warned
+								}
+							}
+						}
+					}
+				}
+				OR = {
+					num_of_galley = 25
+					naval_strength = {
+						who = G62
+						value = 1
+					}
+				}
+				military_strength = {
+					who = G62
+					value = 1
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					exists = G62
+				}
+				add_casus_belli = {
+					target = G62
+					type = cb_vassalize_mission
+					months = 300
+				}
+			}
+			else = {
+				devand_region = {
+					limit = {
+						is_core = G62
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+	}
+
+	apikhoxi_brothers_in_exile = {
+		icon = mission_diplomatic_relation
+		position = 5
+		required_missions = { apikhoxi_share_the_bounty_of_freedom }
+		trigger = {
+		   	OR = {
+				and = {
+					government_reform_progress = 100
+		   			G54 = {
+						trust = { who = ROOT value = 80 }
+		   			}
+		   			estate_loyalty = { estate = estate_mages loyalty = 60 }
+		   			has_estate_privilege = estate_mages_patronage_of_the_magical_arts
+				}
+				G54 = { is_subject_of = ROOT }
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					G54 = { is_subject_of = ROOT }
+				}
+				inherit = G54
+			}
+			else = {
+				G54 = {
+					country_event = { id = flavor_apikhoxi.2 }
+				}
+			}
+		}
+	}
+}
+
+apikhoxi_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		tag = G57
+	}
+
+	apikhoxi_calm_and_reasonable_discussion = {
+		icon = personal_diplomacy
+		position = 2
+		required_missions = {
+			apikhoxi_show_of_force
+			apikhoxi_chains_for_grains
+		}
+		provinces_to_highlight = {
+			owned_by = ROOT
+			OR = {
+				trade_goods = livestock
+				trade_goods = grain
+			}
+			NOT = {
+				base_production = 5
+			}
+		}
+		trigger = {
+			OR = {
+				OR = {
+					advisor = statesman
+					advisor = diplomat
+				}
+				monthly_dip = 5
+			}
+			any_owned_province = {
+				trade_goods = grain
+				base_production = 5
+			}
+			any_owned_province = {
+				trade_goods = livestock
+				base_production = 5
+			}
+			2680 = {
+				num_of_units_in_province = {
+					who = ROOT
+					amount = 15
+					type = infantry
+				}
+			}
+		}
+		effect = {
+            if = {
+                limit = {
+                    is_subject = no
+                }
+                add_prestige = 10
+                add_power_projection = {
+                    type = mission_rewards_power_projection
+                    amount = 10
+                }
+            }
+            else = {
+                country_event = { id = flavor_apikhoxi.3 }
+            }
+        }
+	}
+
+	apikhoxi_time_to_harvest = {
+		icon = develop_the_south
+		position = 3
+		required_missions = {
+			apikhoxi_better_a_warrior
+			apikhoxi_calm_and_reasonable_discussion
+		}
+		provinces_to_highlight = {
+			is_capital_of = G50
+		}
+		trigger = {
+			NOT = {
+				has_country_modifier = G57_preparing_the_way
+			}
+			OR = {
+				G50 = {
+					OR = {
+						has_opinion_modifier = {
+							who = ROOT
+							modifier = insulted
+						}
+						has_opinion_modifier = {
+							who = ROOT
+							modifier = scornfully_insulted
+						}
+					}
+				}
+			   AND = {
+					war_with = G50
+					is_subject = no
+				}
+			   NOT = { exists = G50 }
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					exists = G50
+				}
+				country_event = { id = flavor_apikhoxi.4 }
+			}
+			else = {
+				devand_region = {
+					limit = { is_core = G50 }
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+	}
+
+	apikhoxi_share_the_bounty_of_freedom = {
+		icon = mission_feast
+		position = 4
+		required_missions = {
+			apikhoxi_time_to_harvest
+		}
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					province_id = 2680
+					NOT = {
+						has_building = coastal_defence
+					}
+				}
+				AND = {
+					region = alecand_region
+					is_capital = yes
+					owner = {
+						NOT = {
+							OR = {
+								has_opinion_modifier = {
+									who = ROOT
+									modifier = scornfully_insulted
+								}
+								AND = {
+									has_opinion_modifier = {
+										who = ROOT
+										modifier = insulted
+									}
+									has_opinion_modifier = {
+										who = ROOT
+										modifier = warned
+									}
+								}
+							}
+						}
+					}
+				}
+				is_capital_of = G54
+				is_capital_of = G55
+				is_capital_of = G58
+				is_capital_of = G53
+				AND = {
+					NOT = {
+						AND = {
+							has_building = barracks
+							has_building = regimental_camp
+						}
+					}
+					owned_by = ROOT
+				}
+			}
+		}
+		trigger = {
+			2680 = {
+			   has_building = coastal_defence
+			}
+			num_of_owned_provinces_with = {
+				value = 3
+				AND = {
+					has_building = barracks
+					has_building = regimental_camp
+				}
+			}
+			calc_true_if = {
+				all_known_country = {
+					OR = {
+						has_opinion_modifier = {
+							who = ROOT
+							modifier = scornfully_insulted
+						}
+						AND = {
+							has_opinion_modifier = {
+								who = ROOT
+								modifier = insulted
+							}
+							has_opinion_modifier = {
+								who = ROOT
+								modifier = warned
+							}
+						}
+					}
+					capital_scope = {
+						region = alecand_region
+					}
+				}
+				amount = 3
+			}
+			calc_true_if = {
+				amount = 3
+				OR = {
+					G54 = {
+						has_25_opinion_improved_relation = { target = ROOT }
+					}
+					is_supporting_independence_of = G54
+				}
+				OR = {
+					G55 = {
+						has_25_opinion_improved_relation = { target = ROOT }
+					}
+					is_supporting_independence_of = G55
+				}
+				OR = {
+					G58 = {
+						has_25_opinion_improved_relation = { target = ROOT }
+					}
+					is_supporting_independence_of = G58
+				}
+				OR = {
+					G53 = {
+						has_25_opinion_improved_relation = { target = ROOT }
+					}
+					is_supporting_independence_of = G53
+				}
+			}
+		}
+		effect = {
+			country_event = { id = flavor_apikhoxi.5 }
+		}
+	}
+
+	apikhoxi_little_league = {
+		icon = unite_the_league
+		position = 5
+		required_missions = {
+			apikhoxi_share_the_bounty_of_freedom
+		}
+		provinces_to_highlight = {
+			OR = {
+				is_capital_of = G55
+				is_capital_of = G46
+				is_capital_of = G47
+			}
+		}
+		trigger = {
+			OR = {
+				has_estate_privilege = estate_nobles_strong_duchies
+				estate_loyalty = {
+					estate = estate_nobles
+					loyalty = 50
+				}
+			}
+			prestige = 50
+			receives_military_access_from = G55
+
+			estate_loyalty = {
+				estate = estate_burghers
+				loyalty = 50
+			}
+			army_size = G46
+			navy_size = G46
+		}
+		effect = {
+			G55 = { country_event = { id = flavor_apikhoxi.6 } }
+		}
+	}
+}
+
+apikhoxi_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		tag = G57
+	}
+
+	apikhoxi_chains_for_grains = {
+		icon = chater_the_voc
+		position = 1
+		provinces_to_highlight = {
+			is_capital_of = G50
+		}
+		trigger = {
+			treasury = 125
+			stability = 2
+			has_opinion = {
+				who = G50
+				value = 100
+			}
+		}
+		effect = {
+			country_event = { id = flavor_apikhoxi.7 }
+		}
+	}
+
+	apikhoxi_mind_our_own_gardens = {
+		icon = prosperity_for_all
+		position = 2
+		required_missions = { apikhoxi_chains_for_grains }
+		trigger = {
+			any_neighbor_country = {
+				primary_culture = mteibhar
+				has_opinion = {
+					who = ROOT
+					value = 50
+				}
+				NOT = { war_with = ROOT }
+			}
+		}
+		effect = {
+			define_advisor = {
+				type = diplomat
+				skill = 2
+				discount = yes
+				culture = mteibhar
+				religion = ROOT
+			}
+			add_country_modifier = { name = apikhoxi_good_enighbor duration = -1 }
+			custom_tooltip = mind_our_gardens_tt
+		}
+	}
+
+	apikhoxi_ride_the_river_road = {
+		icon = mission_se_along_the_river
+		position = 3
+		required_missions = { apikhoxi_down_by_the_river }
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					province_id = 2681
+					NOT = {
+						trade_share = {
+							country = ROOT
+							share = 20
+						}
+					}
+				}
+				AND = {
+					OR = {
+						province_id = 2680
+						province_id = 2695
+						province_id = 2696
+						province_id = 2699
+						province_id = 2702
+						province_id = 2703
+					}
+					NOT = { has_production_building_trigger = yes }
+				}
+			}
+		}
+		trigger = {
+			2681 = { #Kheionai
+				trade_share = {
+					country = ROOT
+					share = 20
+				}
+			}
+			monthly_income = 10
+			num_of_owned_provinces_with = {
+				value = 3
+				has_production_building_trigger = yes
+				OR = {
+					province_id = 2680
+					province_id = 2695
+					province_id = 2696
+					province_id = 2699
+					province_id = 2702
+					province_id = 2703
+				}
+			}
+		}
+		effect = {
+			2680 = {
+				add_province_modifier = {
+					name = G57_amdrivos
+					duration = -1
+				}
+				add_prosperity = 20
+			}
+			2695 = {
+				add_province_modifier = {
+					name = G57_amdrivos
+					duration = -1
+				}
+				add_prosperity = 20
+			}
+			2696 = {
+				add_province_modifier = {
+					name = G57_amdrivos
+					duration = -1
+				}
+				add_prosperity = 20
+			}
+			2699 = {
+				add_province_modifier = {
+					name = G57_amdrivos
+					duration = -1
+				}
+				add_prosperity = 20
+			}
+			2702 = {
+				add_province_modifier = {
+					name = G57_amdrivos
+					duration = -1
+				}
+				add_prosperity = 20
+			}
+			2707 = {
+				add_province_modifier = {
+					name = G57_amdrivos
+					duration = -1
+				}
+				add_prosperity = 20
+			}
+		}
+	}
+
+	apikhoxi_sweet_deal = {
+		icon = mission_wine_monopolies
+		position = 5
+		required_missions = { apikhoxi_share_the_bounty_of_freedom }
+		provinces_to_highlight = {
+			trade_goods = sugar
+			NOT = {
+				AND = {
+					has_manufactory_trigger = yes
+					has_trade_building_trigger = yes
+					base_production = 10
+				}
+			 }
+			owned_by = ROOT
+		}
+		trigger = {
+			any_owned_province = {
+				trade_goods = sugar
+				has_manufactory_trigger = yes
+				has_trade_building_trigger = yes
+				base_production = 10
+			}
+			if = {
+				limit = {
+					exists = G58
+				}
+				G58 = {
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = sent_gift
+					}
+				}
+			}
+			trading_policy_in_node = {
+				node = 2681 #Kheeion
+				policy = improve_inland_routes
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					exists = G58
+				}
+				G58 = { country_event = { id = flavor_apikhoxi.9  } }
+			}
+			else = {
+				devand_region = {
+					limit = {
+						is_core = G58
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+	}
+
+	apikhoxi_field_of_the_free = {
+		icon = mission_che_botanical_exports
+		position = 6
+		required_missions = {
+			apikhoxi_brothers_in_exile
+			apikhoxi_little_league
+			apikhoxi_sweet_deal
+			apikhoxi_no_slaves_among_us
+			apikhoxi_spring_of_a_new_people
+		}
+		trigger = {
+		   is_great_power = yes
+			OR = {
+				in_golden_age = yes
+				all_subject_country = {
+					NOT = { liberty_desire = 1 }
+				}
+			}
+			NOT = { num_of_rebel_armies = 1 }
+			num_of_provinces_owned_or_owned_by_subjects_with = {
+				value = 8
+				has_building = farm_estate
+			}
+			all_owned_province = {
+				NOT = { nationalism = 1 }
+				NOT = { unrest = 1 }
+			}
+		}
+		effect = {
+		   country_event = { id = flavor_apikhoxi.10  }
+		}
+	}
+}
+
+apikhoxi_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		tag = G57
+	}
+
+	apikhoxi_widen_the_door = {
+		icon = mission_whisper
+		position = 1
+		provinces_to_highlight = {
+			is_capital_of = G50
+		}
+		trigger = {
+			OR = {
+				has_spy_network_in = {
+					who = G50
+					value = 50
+				}
+				AND = {
+					calc_true_if = {
+						all_known_country = {
+							has_opinion = {
+								who = ROOT
+								value = 50
+							}
+							capital_scope = {
+								region = alecand_region
+							}
+						}
+						amount = 3
+					}
+					has_spy_network_in = {
+						who = G50
+						value = 25
+					}
+				}
+			}
+		}
+		effect = {
+			country_event = { id = flavor_apikhoxi.11 }
+		}
+	}
+
+	apikhoxi_down_by_the_river = {
+		icon = mission_pow_just_around_the_riverbend
+		position = 2
+		required_missions = {
+			apikhoxi_chains_for_grains
+			apikhoxi_widen_the_door
+			apikhoxi_fertile_earth
+		}
+		trigger = {
+		   has_estate_privilege = estate_burghers_new_world_charter
+			2680 = {
+				transports_in_province = 5
+		   }
+		   estate_loyalty = { estate = estate_burghers loyalty = 60 }
+		}
+		effect = {
+			2695 = {
+			  	add_permanent_claim = ROOT
+			}
+			2696 = {
+				add_permanent_claim = ROOT
+			}
+			2699 = {
+				add_permanent_claim = ROOT
+			}
+			2702 = {
+				add_permanent_claim = ROOT
+			}
+			2707 = {
+				add_permanent_claim = ROOT
+			}
+			add_country_modifier = {
+				name = G57_upriver_ferries
+				duration = 3650
+			}
+		}
+	}
+
+	apikhoxi_livestock_of_the_sea = {
+		icon = mission_tree_fishing
+		position = 3
+		required_missions = {
+			apikhoxi_down_by_the_river
+			apikhoxi_fertile_minds
+		}
+		provinces_to_highlight = {
+			area = apikhoxi_area
+			NOT = {
+				AND = {
+					is_prosperous = yes
+					development = 12
+				}
+			}
+		}
+		trigger = {
+			num_of_provinces_owned_or_owned_by_subjects_with = {
+				value = 5
+				has_dock_building_trigger = yes
+				has_trade_building_trigger = yes
+			}
+			apikhoxi_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+				is_prosperous = yes
+				development = 12
+			}
+		}
+		effect = {
+			country_event = { id = flavor_apikhoxi.12  }
+		}
+	}
+
+	apikhoxi_specialty_farms = {
+		icon = mississippi_company
+		position = 4
+		required_missions = {
+			apikhoxi_ride_the_river_road
+			apikhoxi_livestock_of_the_sea
+		}
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					owned_by = ROOT
+					province_has_center_of_trade_of_level = 1
+					NOT = { province_has_center_of_trade_of_level = 2 }
+				}
+				AND = {
+					OR = {
+						province_id = 2680
+						province_id = 2695
+						province_id = 2696
+						province_id = 2699
+						province_id = 2702
+					}
+					NOT = {
+						is_prosperous = yes
+					}
+					unrest = 1
+				}
+				AND = {
+					owned_by = ROOT
+					OR = {
+						trade_goods = grain
+						trade_goods = livestock
+						trade_goods = sugar
+						trade_goods = tobacco
+						trade_goods = cotton
+					}
+					NOT = { has_building = farm_estate }
+					NOT = { has_building = plantations }
+					NOT = { has_building = tradecompany }
+				}
+			}
+		}
+		trigger = {
+			OR = {
+				any_owned_province = {
+					province_has_center_of_trade_of_level = 2
+				}
+				treasury = 200
+			}
+			num_of_owned_provinces_with = {
+				value = 5
+				OR = {
+					has_building = plantations
+					has_building = farm_estate
+					has_building = tradecompany
+				}
+			}
+			2680 = {
+				is_prosperous = yes
+				NOT = { unrest = 1 }
+			}
+			2695 = {
+				is_prosperous = yes
+				NOT = { unrest = 1 }
+			}
+			2696 = {
+				is_prosperous = yes
+				NOT = { unrest = 1 }
+			}
+			2699 = {
+				is_prosperous = yes
+				NOT = { unrest = 1 }
+			}
+			2702 = {
+				is_prosperous = yes
+				NOT = { unrest = 1 }
+			}
+		}
+		effect = {
+			country_event = { id = flavor_apikhoxi.8 }
+		}
+	}
+
+	apikhoxi_no_slaves_among_us = {
+		icon = mission_invade_island
+		position = 5
+		required_missions = { apikhoxi_share_the_bounty_of_freedom }
+		trigger = {
+			if = {
+				limit = {
+					exists = G53
+				}
+				G53 = {
+					OR = {
+						has_opinion_modifier = {
+							who = ROOT
+							modifier = scornfully_insulted
+						}
+						AND = {
+							has_opinion_modifier = {
+								who = ROOT
+								modifier = insulted
+							}
+							has_opinion_modifier = {
+								who = ROOT
+								modifier = warned
+							}
+						}
+					}
+				}
+				trade_embargoing = G53
+				army_size = G53
+				navy_size = G53
+				1712 = {
+					galleys_in_province = 30
+				}
+			}
+
+
+		}
+		effect = {
+			if = {
+				limit = {
+					exists = G53
+				}
+				G53 = { country_event = { id = flavor_apikhoxi.13  } }
+			}
+			else = {
+				devand_region = {
+					limit = {
+						is_core = G53
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+	}
+}
+
+apikhoxi_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		tag = G57
+	}
+	apikhoxi_fertile_earth = {
+		icon = mission_green_village
+		position = 1
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					province_id = 2695
+					NOT = { num_of_times_improved = 1 }
+				}
+				AND = {
+					province_id = 2698
+					NOT = { num_of_times_improved = 1 }
+				}
+				AND = {
+					province_id = 2680
+					NOT = { num_of_times_improved = 2 }
+				}
+			}
+		}
+		trigger = {
+			2695 = {
+				num_of_times_improved = 1
+			}
+			2698 = {
+				num_of_times_improved = 1
+			}
+			2680 = {
+				num_of_times_improved = 2
+			}
+			estate_loyalty = { estate = estate_nobles loyalty = 50 }
+			any_owned_province = {
+				OR = {
+					has_province_modifier = magic_realm_transmutation_plant_growth_1
+					has_province_modifier = magic_realm_transmutation_plant_growth_2
+					has_province_modifier = magic_realm_transmutation_plant_growth_3
+					has_province_modifier = magic_realm_transmutation_plant_growth_4
+				}
+			}
+		}
+		effect = {
+			add_estate_influence_modifier = {
+				estate = estate_nobles
+				influence = 10
+				duration = 7300
+			}
+			add_loan = {
+				fixed_interest = 1
+				duration = 60
+			}
+			add_loan = {
+				fixed_interest = 1
+				duration = 60
+			}
+			add_loan = {
+				fixed_interest = 1
+				duration = 60
+			}
+			add_loan = {
+				fixed_interest = 1
+				duration = 60
+			}
+			add_loan = {
+				fixed_interest = 1
+				duration = 60
+			}
+		}
+	}
+
+	apikhoxi_fertile_minds = {
+		icon = mission_rice_farming
+		position = 2
+		required_missions = {
+			apikhoxi_fertile_earth
+		}
+		provinces_to_highlight= {
+			OR = {
+				AND = {
+					province_id = 2680
+					NOT = { has_production_building_trigger = yes }
+				}
+				AND = {
+					OR = {
+						trade_goods = grain
+						trade_goods = livestock
+					}
+					NOT = {
+						development = 6
+					}
+		 		}
+			}
+		}
+		trigger = {
+			2680 = {
+				has_tax_building_trigger = yes
+				has_courthouse_building_trigger = yes
+			}
+			estate_loyalty = { estate = estate_church loyalty = 50 }
+			num_of_owned_provinces_with = {
+				OR = {
+					trade_goods = grain
+					trade_goods = livestock
+				}
+				value = 3
+				has_production_building_trigger = yes
+				development = 6
+			}
+		}
+		effect = {
+			2680 = { #capital Apikho
+				add_province_modifier = {
+					name = G57_school_agriculture
+					duration = -1
+				}
+			}
+			2695 = {
+				add_province_modifier = {
+					name = G57_school_immigration
+					duration = 9125
+				}
+			}
+		}
+	}
+
+	apikhoxi_fertile_fields = {
+		icon = mission_big_house
+		position = 3
+		required_missions = {
+			apikhoxi_fertile_minds
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2695
+				province_id = 2696
+				province_id = 2699
+				province_id = 2702
+				province_id = 2680
+			}
+			NOT = {
+				AND = {
+					num_of_times_improved = 3
+					has_trade_building_trigger = yes
+					has_tax_building_trigger = yes
+				}
+			}
+		}
+		trigger = {
+			2695 = {
+				num_of_times_improved = 3
+				has_trade_building_trigger = yes
+				has_tax_building_trigger = yes
+			}
+			2696 = {
+				num_of_times_improved = 3
+				has_trade_building_trigger = yes
+				has_tax_building_trigger = yes
+			}
+			2699 = {
+				num_of_times_improved = 3
+				has_trade_building_trigger = yes
+				has_tax_building_trigger = yes
+			}
+			2702 = {
+				num_of_times_improved = 3
+				has_trade_building_trigger = yes
+				has_tax_building_trigger = yes
+			}
+			2680 = {
+				num_of_times_improved = 3
+				has_trade_building_trigger = yes
+				has_tax_building_trigger = yes
+			}
+			adm_power = 100
+		}
+		effect = {
+			unlock_estate_privilege = {
+				estate_privilege = estate_nobles_G57_land_golden_ears
+			}
+		}
+	}
+
+	apikhoxi_fertile_waters = {
+		icon = mission_arabian_sea_trade
+		position = 4
+		required_missions = {
+			apikhoxi_fertile_fields
+			apikhoxi_livestock_of_the_sea
+		}
+		provinces_to_highlight = {
+			province_id = 2703
+			NOT = {
+				AND = {
+					is_core = ROOT
+					num_of_times_improved = 5
+					has_production_building_trigger = yes
+					has_courthouse_building_trigger = yes
+				}
+			}
+		}
+		trigger = {
+			2703 = {
+				is_core = ROOT
+				num_of_times_improved = 5
+				has_production_building_trigger = yes
+				has_courthouse_building_trigger = yes
+			}
+			government_reform_progress = 100
+		}
+		effect = {
+			country_event = { id = flavor_apikhoxi.14  }
+		}
+	}
+
+	apikhoxi_spring_of_a_new_people = {
+		icon = prosper_in_piedmont
+		position = 5
+		required_missions = {
+			apikhoxi_fertile_waters
+			apikhoxi_specialty_farms
+		}
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 5
+				NOT = { culture = ROOT }
+				NOT = { unrest = 0.01 }
+				NOT = { nationalism = 1 }
+			}
+			2703 = {
+				has_courthouse_building_trigger = yes
+			}
+			2680 = {
+				has_courthouse_building_trigger = yes
+			}
+		}
+		effect = {
+			country_event = { id = flavor_apikhoxi.17  }
+		}
+	}
+
+	apikhoxi_feast_of_the_devand = {
+		icon = feast_of_pheasants
+		position = 6
+		required_missions = { apikhoxi_spring_of_a_new_people }
+		trigger = {
+			OR = {
+				in_golden_age = yes
+				AND = {
+					stability = 3
+				   	2681 = {  is_strongest_trade_power = root }
+				}
+			}
+			is_great_power = yes
+			OR = {
+				production_leader = {
+					trade_goods = grain
+				}
+				production_leader = {
+					trade_goods = livestock
+				}
+				num_of_owned_provinces_with = {
+					value = 20
+					OR = {
+						has_building = plantations
+						has_building = farm_estate
+						has_building = tradecompany
+					}
+				}
+			}
+			OR = {
+				has_country_modifier = magic_realm_conjuration_magnificent_feast_1
+				has_country_modifier = magic_realm_conjuration_magnificent_feast_2
+				has_country_modifier = magic_realm_conjuration_magnificent_feast_3
+				has_country_modifier = magic_estate_magnificent_feast_1
+				has_country_modifier = magic_estate_magnificent_feast_2
+				has_country_modifier = magic_estate_magnificent_feast_3
+			}
+		}
+		effect = {
+			country_event = { id = flavor_apikhoxi.19 }
+		}
+	}
+}

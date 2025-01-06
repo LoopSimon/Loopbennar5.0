@@ -1,0 +1,89 @@
+
+country_decisions = {
+	command_cities = {
+		major = yes
+		potential = {
+			OR = {
+				tag = Y13
+				was_tag = Y13
+			}
+			has_country_flag = jiangdu_success_decisions
+			OR = {
+				4868 = { #Jiangdu
+					has_province_modifier = jiangdu_command_city
+					NOT = { has_province_modifier = jiangdu_command_city_1 }
+				}
+				4871 = { #Tianlou
+					has_province_modifier = jiangdu_command_city
+					NOT = { has_province_modifier = jiangdu_command_city_2 }
+				}
+				4826 = { #Bianfang
+					has_province_modifier = jiangdu_command_city
+					NOT = { has_province_modifier = jiangdu_command_city_3 }
+				}
+				4859 = { #Yanchung
+					has_province_modifier = jiangdu_command_city
+					NOT = { has_province_modifier = jiangdu_command_city_4 }
+				}
+			}
+		}
+		provinces_to_highlight = {
+			AND = {
+				OR = {
+					province_id = 4868
+					province_id = 4871
+					province_id = 4826
+					province_id = 4859
+				}
+				OR = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+					NOT = { controlled_by = ROOT }
+				}
+				NOT = { has_province_modifier = jiangdu_command_city_1 }
+				NOT = { has_province_modifier = jiangdu_command_city_2 }
+				NOT = { has_province_modifier = jiangdu_command_city_3 }
+				NOT = { has_province_modifier = jiangdu_command_city_4 }
+			}
+		}
+		allow = {
+			is_at_war = no
+			OR = {
+				4868 = {
+					owned_by = ROOT
+					is_core = ROOT
+					controlled_by = ROOT
+					NOT = { has_province_modifier = jiangdu_command_city_1 }
+				}
+				4871 = {
+					owned_by = ROOT
+					is_core = ROOT
+					controlled_by = ROOT
+					NOT = { has_province_modifier = jiangdu_command_city_2 }
+				}
+				4826 = {
+					owned_by = ROOT
+					is_core = ROOT
+					controlled_by = ROOT
+					NOT = { has_province_modifier = jiangdu_command_city_3 }
+				}
+				4859 = {
+					owned_by = ROOT
+					is_core = ROOT
+					controlled_by = ROOT
+					NOT = { has_province_modifier = jiangdu_command_city_4 }
+				}
+			}
+			adm_power = 200
+			treasury = 350
+		}
+		effect = {
+			add_adm_power = -200
+			add_treasury = -350
+			country_event = { id = jiangdu.12 }
+		}
+		ai_will_do = {
+			factor = 100
+		}
+	}
+}

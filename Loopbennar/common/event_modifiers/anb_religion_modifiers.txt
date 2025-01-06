@@ -1,0 +1,2703 @@
+
+# Corinite
+corinite_independent_preachers = {
+	missionaries = 1
+	global_missionary_strength = -0.02
+}
+
+corinite_cult_of_personality = {
+	yearly_karma_decay = 0.1
+}
+
+corinite_defensive_war_dogma = {
+	fire_damage = -0.05
+	shock_damage = -0.05
+	shock_damage_received = -0.05
+	fire_damage_received = -0.05
+}
+
+corinite_offensive_war_dogma = {
+	fire_damage = 0.05
+	shock_damage = 0.05
+	shock_damage_received = 0.05
+	fire_damage_received = 0.05
+}
+
+corinite_divine_inspiration = {
+	infantry_power = 0.10
+}
+
+corinite_order_event_block = {
+}
+
+crimson_deluge_country_modifier = {
+	stability_cost_modifier = 0.5
+	war_exhaustion = -0.05
+}
+
+hre_dominant_corinite = {
+	legitimacy = 0.25
+	tolerance_own = 1
+	global_missionary_strength = 0.01
+	imperial_authority = 0.25
+	picture = "corinite_dominant"
+}
+
+corinite_during_active_league_war = {
+	land_morale = 0.1
+	manpower_recovery_speed = 0.25
+	war_exhaustion = -0.2
+	land_maintenance_modifier = -0.25
+}
+
+corinite_balgar_upgraded = {
+	local_manpower_modifier = 0.05
+	local_defensiveness = 0.05
+	local_fort_maintenance_modifier = -0.05
+}
+
+corinite_corin_upgraded = {
+	local_manpower_modifier = 0.05
+	local_missionary_strength = 0.025
+}
+
+corinite_falah_upgraded = {
+	local_manpower_modifier = 0.05
+	local_friendly_movement_speed = 0.05
+}
+
+corinite_munas_upgraded = {
+	local_tax_modifier = 0.1
+	local_sailors_modifier = 0.1
+	naval_forcelimit = 0.25
+}
+
+corinite_ryala_upgraded = {
+	local_tax_modifier = 0.1
+	province_trade_power_modifier = 0.125
+}
+
+# Regent Court
+
+mourning_castellos = {
+	stability_cost_to_declare_war = 1
+	tolerance_own = 3
+}
+onwards_from_castellos = {
+	tolerance_own = -2
+	idea_cost = -0.1
+}
+infernal_inspiration = {
+	land_morale = 0.05
+}
+
+hre_dominant_regent_court = {
+	legitimacy = 0.25
+	tolerance_own = 1
+	global_missionary_strength = 0.01
+	imperial_authority = 0.25
+	picture = "regent_court_dominant"
+}
+
+#Ravelian
+
+hre_dominant_ravelian = {
+	legitimacy = 0.25
+	tolerance_own = 1
+	global_missionary_strength = 0.01
+	imperial_authority = 0.25
+	picture = "ravelian_dominant"
+}
+
+ravelian_society = {
+	local_institution_spread = 0.25
+	local_unrest = 1
+	local_missionary_strength = -0.01
+
+	picture = "ravelian_society"
+}
+
+ravelian_lodge = {
+	local_institution_spread = 0.5
+	local_unrest = 2
+	local_missionary_strength = -0.02
+
+	picture = "ravelian_lodge"
+}
+
+ravelian_institution_insight = {
+	global_institution_spread = 0.1
+}
+
+ravelian_removed_ravelians = {
+	global_religious_conversion_resistance = -0.75 
+	#this number might need to be flipped if Paradox ever fixes it. Negative global decreases it, but positive local is what decreases it. So, they might fix that, and this would need to be flipped.
+}
+
+ravelian_commoners_in_the_society = {
+	local_institution_spread = 0.5
+	local_unrest = 2
+	local_autonomy = 0.05
+}
+
+ravelian_literacy_classes = {
+	local_production_efficiency = -0.5
+	local_institution_spread = 0.25
+	local_development_cost = -0.25
+}
+
+ravelian_absent_rectors = {
+	tolerance_own = -1
+}
+
+ravelian_focused_rectors = {
+	tolerance_own = 1
+}
+
+ravelian_researched_goods = {
+	trade_goods_size_modifier = -0.5
+}
+
+ravelian_rival_buff = {
+	technology_cost = -0.1
+}
+
+ravelian_resistance = {
+	global_religious_conversion_resistance = 0.33
+	global_heretic_missionary_strength = 0.02
+}
+
+decline_of_cannor_centric_scripture = {
+	global_heretic_missionary_strength = 0.03
+	missionary_maintenance_cost = -0.33
+}
+
+insultingly_devout_diplomats = {
+	improve_relation_modifier = -0.33
+	global_missionary_strength = 0.02
+}
+
+ravelian_mage_heretical_cult_leader = {
+	local_missionary_strength = -1
+	min_local_autonomy = 50
+	local_autonomy = 0.05
+}
+
+warrior_automata = {
+	infantry_power = 0.1
+}
+
+sanction_for_artificer_tax = {
+	production_efficiency = 0.15
+}
+
+holy_research = {
+	embracement_cost = -0.1
+}
+
+anb_excommunicated = {
+	prestige = -2
+	tolerance_own = -3
+	devotion = -5
+	papal_influence = -10
+}
+
+crusader = {
+	global_manpower_modifier = 0.3
+	global_tax_modifier = 0.1
+	land_morale = 0.10
+	prestige = 1
+	papal_influence = 1
+	devotion = 0.25
+}
+
+#ravelian council modifiers for if you have no DLC
+
+first_council_harsh = {
+	relation_with_heretics = 20
+	manpower_recovery_speed = 0.2
+	curia_treasury_contribution = 0.1
+}
+
+first_council_conciliatory = {
+	relation_with_heretics = -10
+	papal_influence = 1
+	prestige_decay = -0.01
+}
+
+second_council_harsh = {
+	relation_with_heretics = -20
+	global_missionary_strength = 0.02
+	unrest_catholic_provinces = -2
+}
+
+second_council_conciliatory = {
+	relation_with_heretics = 10
+	tolerance_heretic = 1
+	tolerance_heathen = 1
+	prestige_per_development_from_conversion = 0.5
+}
+
+third_council_harsh = {
+	relation_with_heretics = 20
+	religious_unity = 0.25
+	improve_relation_modifier = 0.2
+}
+
+third_council_conciliatory = {
+	relation_with_heretics = -20
+	yearly_absolutism = 1
+	missionary_maintenance_cost = -0.2
+}
+
+fourth_council_harsh = {
+	artificers_loyalty_modifier = 0.1
+	production_efficiency = 0.05
+}
+
+fourth_council_conciliatory = {
+	church_loyalty_modifier = 0.1
+	yearly_corruption = -0.1
+}
+
+removed_corinite_centers = {
+	tolerance_heretic = -2
+}
+
+# Great Dookan Abilities
+dookan_reconnected_with_past_lives = {
+	land_morale = 0.2
+	shock_damage = 0.4
+	shock_damage_received = 0.1
+    movement_speed = 0.2
+}
+dookan_gather_great_host = {
+	reinforce_speed = 0.33
+	global_regiment_recruit_speed = -0.33
+	manpower_recovery_speed = -0.5
+}
+dookan_anointed_slave_herd = {
+	local_development_cost = -0.1
+	local_production_efficiency = 0.1
+}
+
+dookan_shake_the_earth = {
+	siege_ability =  0.5
+}
+
+# Old Dookan Abilities
+dookan_omen_of_strength = {
+	shock_damage = 0.2
+	development_cost = 0.1
+	production_efficiency = -0.1
+}
+dookan_omen_of_peace = {
+	global_tax_modifier = 0.2
+	global_manpower_modifier = -0.2
+	stability_cost_modifier = -0.2
+	prestige = -1
+	church_power_modifier = -0.5
+}
+dookan_omen_of_wisdom_adm = {
+	country_admin_power = 1
+	church_power_modifier = -0.9
+}
+dookan_omen_of_wisdom_dip = {
+	country_diplomatic_power = 1
+	church_power_modifier = -0.9
+}
+dookan_omen_of_wisdom_mil = {
+	country_military_power = 1
+	church_power_modifier = -0.9
+}
+dookan_omen_of_destiny = {
+	land_morale = 0.2
+	yearly_army_professionalism = -0.01
+	church_power_modifier = -0.25
+}
+dookan_omen_of_calamity = {
+	global_unrest = 16
+	discipline = -0.1
+	manpower_recovery_speed = -0.1
+	church_power_modifier = -0.25
+	global_tax_modifier = -0.1
+}
+dookan_no_omen = {
+	prestige = -1
+	church_power_modifier = -0.9
+}
+dookans_guidance_war = {
+	land_morale = 0.15
+	army_tradition_from_battle = 1
+	shock_damage = 0.1
+	shock_damage_received = -0.1 
+	development_cost = 0.2
+}
+dookans_guidance_peace = {
+	stability_cost_to_declare_war = 2
+	development_cost = -0.2
+	global_tax_modifier = 0.15
+	global_trade_goods_size_modifier = 0.1
+}
+dookans_mercy = {
+	global_tax_modifier = 1
+	manpower_recovery_speed = 1
+	all_power_cost = -0.025
+}
+
+# The Hunt Abilities
+the_hunt_fair_winds = {
+	movement_speed = 0.3
+	shock_damage_received = -0.2
+}
+
+harpy_egg_merchant = {
+	merchants = 1
+}
+
+harpy_egg_diplomat = {
+	diplomats = 1
+}
+
+harpy_egg_missionary = {
+	missionaries = 1
+}
+
+harpy_the_odd_hunt = {
+	global_institution_spread = 0.20
+	idea_cost = -0.10
+	spy_offence = 0.3
+}
+
+
+# Kvangahga
+ancestral_armaments = {
+	shock_damage = 0.1
+	shock_damage_received = -0.05
+	fire_damage_received = -0.05
+}
+repurposed_relics = {
+	global_heretic_missionary_strength = 0.04
+}
+reconditioned_tools = {
+	build_cost = -0.1
+}
+salvage_shipwrecks = {
+	ship_durability  = 0.05
+}
+recycled_jewellery = {
+	prestige = 1
+	diplomatic_reputation = 1
+}
+trial_of_the_reforged_chain = {
+	global_unrest = -2
+	stability_cost_modifier = -0.2
+}
+
+
+# Harmonizing religions
+harmonized_cannorian = {
+	tolerance_own = 1
+	religion = yes
+}
+
+harmonized_bulwari = {
+	yearly_harmony = 0.5
+	religion = yes
+}
+
+harmonized_goblin = {
+	global_institution_spread = 0.2
+	religion = yes
+}
+
+harmonized_khetist = {
+	defensiveness = 0.1
+	religion = yes
+}
+
+harmonized_raheni = {
+	idea_cost = -0.07
+	religion = yes
+}
+
+harmonized_gnollish = {
+	harsh_treatment_cost = -0.1
+	religion = yes
+}
+
+harmonized_dwarven = {
+	production_efficiency = 0.05
+	religion = yes
+}
+
+harmonized_elven = {
+	prestige_decay = -0.01
+	religion = yes
+}
+
+harmonized_gerudian = {
+	prestige = 0.5
+	religion = yes
+}
+
+harmonized_orcish = {
+	infantry_power = 0.05
+	religion = yes
+}
+
+harmonized_dragon_cult = {
+	movement_speed = 0.1
+	religion = yes
+}
+
+harmonized_aelantiri = {
+	stability_cost_modifier = -0.05
+	religion = yes
+}
+
+harmonized_harpy_cults = {
+	leader_land_shock = 1
+	religion = yes
+}
+
+harmonized_cheshoshi_religion = {
+	land_morale = 0.05
+	religion = yes
+}
+
+harmonized_harafic = {
+	infantry_cost = -0.1
+	religion = yes
+}
+
+harmonized_effelai = {
+	land_attrition = -0.1
+	religion = yes
+}
+
+harmonized_kheionism = {
+	trade_efficiency = 0.1
+	religion = yes
+}
+
+harmonized_taychendi = {
+	advisor_pool = 1
+	religion = yes
+}
+
+harmonized_ynnic = {
+	reinforce_speed = 0.1
+	religion = yes
+}
+
+harmonized_devandi = {
+	war_exhaustion = -0.01
+	religion = yes
+}
+
+harmonized_fey_religion = {
+	hostile_attrition = 0.5
+	religion = yes
+}
+
+harmonized_centaur_religion = {
+	movement_speed = 0.1
+	religion = yes
+}
+
+harmonized_godlost = {
+	discipline = 0.025
+	religion = yes
+}
+
+harmonized_triunic = {
+	global_trade_goods_size_modifier = 0.05
+	religion = yes
+}
+
+harmonized_giantkin = {
+	global_supply_limit_modifier = 0.1
+	religion = yes
+}
+
+harmonized_black_doctrine = {
+	max_absolutism = 10
+	religion = yes
+}
+
+harmonized_halessi = {
+	army_tradition = 0.25
+	religion = yes
+}
+
+harmonized_supreme_spirit = {
+	stability_cost_modifier = -0.1
+	religion = yes
+}
+
+harmonized_tanibic_religion = {
+	global_unrest = -1
+	religion = yes
+}
+
+harmonized_hag_religion = {
+	spy_offence = 0.2
+	religion = yes
+}
+
+harmonized_lizardfolk_religion = {
+	core_creation = -0.05
+	religion = yes
+}
+
+harmonized_east_sarhal_religion = {
+	shock_damage = 0.05
+	religion = yes
+}
+
+harmonized_eltibhen = {
+	movement_speed = 0.1
+	religion = yes
+}
+
+harmonized_amadian = {
+	shock_damage_received = -0.05
+	religion = yes
+}
+
+harmonized_kodave = {
+	manpower_recovery_speed = 0.05
+	religion = yes
+}
+
+harmonized_yukel = {
+	trade_efficiency = 0.05
+	religion = yes
+}
+
+harmonized_enuuk = {
+	production_efficiency = 0.05
+	religion = yes
+}
+
+harmonized_kukatodic_religion = {
+	reinforce_cost_modifier = -0.10
+	religion = yes
+}
+
+harmonized_yudunyovi = {
+	min_autonomy_in_territories = -0.1
+	religion = yes
+}
+
+harmonized_faithless = {
+	adm_tech_cost_modifier = -0.05
+	religion = yes
+}
+
+##################################################
+# Regent Court Favored by the Gods Event Modifiers
+##################################################
+RC_emulant_castellos_1 = {
+	stability_cost_modifier = -0.25
+	religion = yes
+}
+RC_emulant_castellos_2 = {
+	advisor_pool = 2
+	religion = yes
+}
+RC_emulant_dame_1 = {
+	technology_cost = -0.05
+	religion = yes
+}
+RC_emulant_dame_2 = {
+	promote_culture_cost = -0.50
+	religion = yes
+}
+RC_emulant_corin_1 = {
+	country_military_power = 1
+	religion = yes
+}
+RC_emulant_corin_2 = {
+	infantry_power = 0.1
+	religion = yes
+}
+RC_emulant_adean_1 = {
+	army_tradition = 1
+	religion = yes
+}
+RC_emulant_adean_2 = {
+	liberty_desire_from_subject_development = -0.1
+	religion = yes
+}
+RC_emulant_munas_1 = {
+	navy_tradition = 1
+	religion = yes
+}
+RC_emulant_munas_2 = {
+	manpower_in_accepted_culture_provinces = 0.1
+	manpower_in_own_culture_provinces = 0.1
+	religion = yes
+}
+RC_emulant_ara_1 = {
+	global_attacker_dice_roll_bonus = 1
+	religion = yes
+}
+RC_emulant_ara_2 = {
+	trade_steering = 0.25
+	religion = yes
+}
+RC_emulant_balgar_1 = {
+	morale_damage_received = -0.075
+	religion = yes
+}
+RC_emulant_balgar_2 = {
+	build_cost = -0.10
+	religion = yes
+}
+RC_emulant_esmaryal_1 = {
+	country_diplomatic_power = 1
+	religion = yes
+}
+RC_emulant_esmaryal_2 = {
+	defensiveness = 0.20
+	religion = yes
+}
+RC_emulant_ryala_1 = {
+	improve_relation_modifier = 0.1
+	religion = yes
+}
+RC_emulant_ryala_2 = {
+	free_policy = 1
+	religion = yes
+}
+RC_emulant_minara_1 = {
+	global_unrest = -2
+	religion = yes
+}
+RC_emulant_minara_2 = {
+	province_warscore_cost = -0.1
+	religion = yes
+}
+RC_emulant_falah_1 = {
+	land_morale = 0.10
+	religion = yes
+}
+RC_emulant_falah_2 = {
+	development_cost = -0.1
+	religion = yes
+}
+RC_emulant_nerat_1 = {
+	yearly_corruption = -0.1
+	religion = yes
+}
+RC_emulant_nerat_2 = {
+	land_attrition = -0.1
+	religion = yes
+}
+RC_emulant_nathalyne_1 = {
+	artillery_levels_available_vs_fort = 1
+	religion = yes
+}
+RC_emulant_nathalyne_2 = {
+	ae_impact = -0.1
+	religion = yes
+}
+RC_emulant_begga_1 = {
+	development_cost = -0.1
+	religion = yes
+}
+RC_emulant_begga_2 = {
+	war_exhaustion = -0.03
+	religion = yes
+}
+
+RC_withdrawn_meditation = {
+	heir_chance = -0.5
+	diplomatic_upkeep = -1
+	legitimacy = -1
+	religion = yes
+}
+
+##########################################################
+# Infernal Court Favored by the Archdevils Event Modifiers
+##########################################################
+IC_emulant_kazraiel_1 = {
+	country_military_power = 2
+	religion = yes
+}
+IC_emulant_kazraiel_2 = {
+	global_manpower_modifier = 0.15
+	religion = yes
+}
+IC_emulant_hedine_1 = {
+	accept_vassalization_reasons = 20
+	religion = yes
+}
+IC_emulant_hedine_2 = {
+	country_diplomatic_power = 2
+	religion = yes
+}
+IC_emulant_forsara_1 = {
+	merchants = 2
+	religion = yes
+}
+IC_emulant_forsara_2 = {
+	global_prov_trade_power_modifier = 0.15
+	religion = yes
+}
+IC_emulant_ildran_1 = {
+	build_cost = -0.25
+	religion = yes
+}
+IC_emulant_ildran_1_alt = {
+	build_cost = -0.15
+	religion = yes
+}
+IC_emulant_ildran_2 = {
+	expand_administration_cost = -0.15
+	religion = yes
+}
+IC_emulant_ibberal_1 = {
+	manpower_recovery_speed = 0.15
+	religion = yes
+}
+IC_emulant_ibberal_2 = {
+	global_monthly_devastation = -0.03
+	religion = yes
+}
+IC_emulant_canturian_1 = {
+	monarch_lifespan = 0.25
+	religion = yes
+}
+IC_emulant_canturian_2 = {
+	envoy_travel_time = -0.5
+	religion = yes
+}
+IC_emulant_mesner_1 = {
+	ae_impact = -0.15
+	religion = yes
+}
+IC_emulant_mesner_2 = {
+	global_spy_defence = 0.33
+	religion = yes
+}
+IC_devilish_indulgence = {
+	heir_chance = -0.5
+	diplomatic_upkeep = -1
+	legitimacy = -1
+	religion = yes
+}
+infernal_cult_hub = {
+	yearly_corruption = 0.1
+	local_autonomy = 0.1
+	local_unrest = 2
+}
+
+# Hidden modifiers for choices
+favored_RC_castellos_t_a = {
+	religion = yes
+}
+favored_RC_castellos_t_b = {
+	religion = yes
+}
+favored_RC_dame_t_a = {
+	religion = yes
+}
+favored_RC_dame_t_b = {
+	religion = yes
+}
+favored_RC_corin_t_a = {
+	religion = yes
+}
+favored_RC_corin_t_b = {
+	religion = yes
+}
+favored_RC_adean_t_a = {
+	religion = yes
+}
+favored_RC_adean_t_b = {
+	religion = yes
+}
+favored_RC_munas_t_a = {
+	religion = yes
+}
+favored_RC_munas_t_b = {
+	religion = yes
+}
+favored_RC_ara_t_a = {
+	religion = yes
+}
+favored_RC_ara_t_b = {
+	religion = yes
+}
+favored_RC_balgar_t_a = {
+	religion = yes
+}
+favored_RC_balgar_t_b = {
+	religion = yes
+}
+favored_RC_esmaryal_t_a = {
+	religion = yes
+}
+favored_RC_esmaryal_t_b = {
+	religion = yes
+}
+favored_RC_ryala_t_a = {
+	religion = yes
+}
+favored_RC_ryala_t_b = {
+	religion = yes
+}
+favored_RC_minara_t_a = {
+	religion = yes
+}
+favored_RC_minara_t_b = {
+	religion = yes
+}
+favored_RC_falah_t_a = {
+	religion = yes
+}
+favored_RC_falah_t_b = {
+	religion = yes
+}
+favored_RC_nerat_t_a = {
+	religion = yes
+}
+favored_RC_nerat_t_b = {
+	religion = yes
+}
+favored_RC_nathalyne_t_a = {
+	religion = yes
+}
+favored_RC_nathalyne_t_b = {
+	religion = yes
+}
+favored_RC_begga_t_a = {
+	religion = yes
+}
+favored_RC_begga_t_b = {
+	religion = yes
+}
+RC_emulant__catellos_2 = {
+}
+
+favoured_IC_kazraiel_t_a = {
+	religion = yes
+}
+favoured_IC_kazraiel_t_b = {
+	religion = yes
+}
+favoured_IC_hedine_t_a = {
+	religion = yes
+}
+favoured_IC_hedine_t_b = {
+	religion = yes
+}
+favoured_IC_forsara_t_a = {
+	religion = yes
+}
+favoured_IC_forsara_t_b = {
+	religion = yes
+}
+favoured_IC_ildran_t_a = {
+	religion = yes
+}
+favoured_IC_ildran_t_b = {
+	religion = yes
+}
+favoured_IC_ibberal_t_a = {
+	religion = yes
+}
+favoured_IC_ibberal_t_b = {
+	religion = yes
+}
+favoured_IC_canturian_t_a = {
+	religion = yes
+}
+favoured_IC_canturian_t_b = {
+	religion = yes
+}
+favoured_IC_mesner_t_a = {
+	religion = yes
+}
+favoured_IC_mesner_t_b = {
+	religion = yes
+}
+
+#New Sun Cult
+NSC_level_4 = {
+	liberty_desire = -50
+}
+NSC_level_3 = {
+	liberty_desire = -25
+}
+NSC_level_0 = {
+	liberty_desire = 25
+}
+
+nsc_admin_on_strike = {
+	advisor_pool = -10
+}
+
+nsc_rebellious_administration = {
+	advisor_pool = -1
+}
+
+nsc_advisor_more_paid = {
+	advisor_cost = 0.25
+}
+
+nsc_army_more_paid = {
+	land_maintenance_modifier = 0.20
+}
+
+nsc_clergy_support = {
+	missionaries = 1
+	global_heretic_missionary_strength = 0.03
+}
+
+nsc_burgher_deal_modifier = {
+	trade_efficiency = -0.1
+}
+
+nsc_bulwar_under_threat = {
+	global_unrest = 5
+	stability_cost_modifier = 0.5
+	land_morale = -0.10
+	reduced_liberty_desire = -50
+	advisor_pool = -1
+	advisor_cost = 2.5
+}
+
+nsc_bulwar_under_threat_ai = {
+	global_unrest = 3
+	stability_cost_modifier = 0.3
+	land_morale = -0.10
+	advisor_pool = -1
+	advisor_cost = 2.5
+}
+
+nsc_admin_reformed = {
+	advisor_pool = 1
+	advisor_cost = -2.5
+}
+
+nsc_admin_kinda_reformed = {
+	advisor_cost = -1.5
+}
+
+nsc_less_tolls = {
+	trade_efficiency = -0.1
+}
+
+nsc_high_tolls = {
+	trade_efficiency = 0.1
+}
+
+nsc_flustered_populace = {
+	global_unrest = -1
+	stability_cost_modifier = -0.25
+}
+
+nsc_appeased_populace = {
+	global_unrest = -3
+	stability_cost_modifier = -0.5
+}
+
+nsc_lowered_vassal_levies = {
+	vassal_income = -0.25
+	reduced_liberty_desire = 15
+}
+
+nsc_lowered_vassal_levies_vassal = {
+	global_tax_modifier = 0.25
+}
+
+nsc_lowered_vassal_troops = {
+	vassal_forcelimit_bonus = -0.25
+	reduced_liberty_desire = 15
+}
+
+nsc_lowered_vassal_troops_vassal = {
+	land_forcelimit_modifier = 0.25
+}
+
+nsc_influencing_vassal_1 = {
+	missionaries = -1
+	global_tax_modifier = -0.10
+}
+
+nsc_influencing_vassal_2 = {
+	missionaries = -1
+	global_tax_modifier = -0.10
+}
+
+nsc_influencing_vassal_3 = {
+	missionaries = -1
+	global_tax_modifier = -0.10
+}
+
+nsc_influencing_vassal_4 = {
+	missionaries = -1
+	global_tax_modifier = -0.10
+}
+
+nsc_influencing_vassal_5 = {
+	missionaries = -1
+	global_tax_modifier = -0.10
+}
+
+nsc_influencing_vassal_6 = {
+	missionaries = -1
+	global_tax_modifier = -0.10
+}
+
+nsc_influenced_vassal = {
+	liberty_desire = -25
+}
+
+nsc_fast_reforms = {
+	country_military_power = -2
+}
+
+nsc_defensive_tactics = {
+	defensiveness = 0.10
+	siege_ability = -0.05
+}
+
+nsc_mobility_tactics = {
+	movement_speed = 0.10
+}
+
+nsc_assault_tactics = {
+	siege_ability = 0.10
+	defensiveness = -0.05
+}
+
+nsc_cavalry_focus = {
+	cavalry_power = 0.15
+	infantry_power = -0.10
+}
+
+nsc_specialised_focus = {
+	infantry_power = 0.10
+	land_forcelimit_modifier = -0.15
+}
+
+nsc_mass_focus = {
+	land_forcelimit_modifier = 0.15
+	cavalry_power = -0.15
+}
+
+nsc_leader_training = {
+	leader_land_shock = 1
+	discipline = -0.025
+}
+
+nsc_rigorous_training = {
+	discipline = 0.025
+	global_regiment_cost = 0.10
+	leader_land_shock = 1
+}
+
+nsc_fast_training = {
+	discipline = -0.025
+	global_regiment_cost = -0.05
+}
+
+nsc_army_reformed = {
+	land_morale = 0.10
+}
+
+nsc_ai_took_vassal_decision = { }
+
+nsc_pledge_great_success = {
+	stability_cost_modifier = -0.05
+	trade_efficiency = 0.10
+	development_cost = -0.10
+	warscore_cost_vs_other_religion = -0.10
+}
+
+nsc_pledge_successful = {
+	stability_cost_modifier = -0.05
+	trade_efficiency = 0.10
+}
+
+nsc_semi_successful = {
+	global_unrest = 2
+	stability_cost_modifier = 0.15
+	land_morale = -0.05
+	reduced_liberty_desire = -25
+	advisor_pool = -1
+	advisor_cost = 1
+}
+
+nsc_divided_cult = {
+	global_unrest = -1
+	religious_unity = -0.25
+	stability_cost_modifier = 0.25
+}
+
+nsc_big_differing_opinion = {
+	tolerance_own = -2
+}
+
+nsc_differing_opinion = {
+	tolerance_own = -1
+}
+
+nsc_congruent_opinion = {
+	tolerance_own = 1
+}
+
+nsc_big_council = {
+	religious_unity = 0.15
+}
+
+nsc_medium_council = {
+	religious_unity = 0.10
+}
+
+nsc_small_council = {
+	religious_unity = 0.05
+}
+
+nsc_elven_clergy_support = {
+	church_influence_modifier = 0.1
+}
+
+nsc_human_clergy_support = {
+	church_loyalty_modifier = 0.1
+}
+
+nsc_executing_heretics = {
+	tolerance_own = 1
+	tolerance_heretic = -2
+}
+
+nsc_converting_heretics = {
+	global_missionary_strength = 0.02
+	tolerance_heretic = -1
+}
+
+nsc_ignoring_heretics = {
+	global_heretic_missionary_strength = -0.02
+	tolerance_heretic = 1
+}
+
+nsc_equipped_festivals = {
+	tolerance_own = 1
+}
+
+nsc_unified_cult = {
+	prestige = 1
+	stability_cost_modifier = -0.10
+}
+
+nsc_restructuring_cult = {
+	church_influence_modifier = 0.05
+	church_loyalty_modifier = 0.05
+	religious_unity = -0.10
+	stability_cost_modifier = 0.10
+}
+
+nsc_autonomous_clergy = {
+	church_influence_modifier = 0.10
+}
+
+nsc_zealous_stance = {
+	warscore_cost_vs_other_religion = -0.10
+}
+
+nsc_moderate_stance = {
+	global_missionary_strength = 0.01
+}
+
+nsc_tolerant_stance = {
+	tolerance_heathen = 1
+	tolerance_heretic = 1
+}
+
+nsc_criticised_exemplars = {
+	diplomatic_reputation = -1
+	tolerance_own = 1
+}
+
+nsc_aelantir_enthusiast = {
+	global_unrest = 2
+}
+
+nsc_aelantir_neutral = {
+	global_unrest = 1
+}
+
+nsc_officers_left = {
+	global_unrest = -1
+}
+
+nsc_disgruntled_officers = {
+	global_unrest = 1
+	land_morale = -0.05
+}
+
+nsc_bullshited_officers = {
+	land_morale = 0.05
+}
+
+nsc_new_opportunities = {
+	advisor_cost = -0.15
+}
+
+nsc_elves_leaving = {
+	global_unrest = 2
+}
+
+nsc_aelantir_investments = {
+	trade_value_modifier = 0.5
+}
+
+nsc_high_aelantir_enthusiasm = {
+	range = 0.5
+	colonists = 1
+	manpower_recovery_speed = -0.20
+	global_unrest = 1
+}
+
+nsc_moderate_aelantir_enthusiasm = {
+	trade_efficiency = 0.1
+	global_ship_cost = -0.05
+	manpower_recovery_speed = -0.10
+}
+
+nsc_low_aelantir_enthusiasm = {
+	global_unrest = -1
+	stability_cost_modifier = -0.15
+	adventurers_loyalty_modifier = -0.1
+}
+
+nsc_wounded_ruler = {
+	heir_chance = -0.5
+}
+
+nsc_burned_warehouse = {
+	local_production_efficiency = -0.25
+}
+
+nsc_raided_merchants = {
+	caravan_power = -0.1
+}
+
+nsc_investigation_ongoing_1 = {
+	diplomats = -1
+}
+
+nsc_investigation_ongoing_2 = {
+	diplomats = -1
+}
+
+nsc_investigation_ongoing_3 = {
+	diplomats = -1
+}
+
+nsc_investigation_ongoing_4 = {
+	diplomats = -1
+}
+
+nsc_investigation_ongoing_5 = {
+	diplomats = -1
+}
+
+nsc_asshole_investigators_1 = {
+	diplomatic_reputation = -1
+	ae_impact = 0.05
+}
+
+nsc_asshole_investigators_2 = {
+	diplomatic_reputation = -1
+	ae_impact = 0.05
+}
+
+nsc_asshole_investigators_3 = {
+	diplomatic_reputation = -1
+	ae_impact = 0.05
+}
+
+nsc_asshole_investigators_4 = {
+	diplomatic_reputation = -1
+	ae_impact = 0.05
+}
+
+nsc_asshole_investigators_5 = {
+	diplomatic_reputation = -1
+	ae_impact = 0.05
+}
+
+nsc_intrusive_investigators = {
+	global_spy_defence = -0.33
+}
+
+nsc_disrespected_by_investigators = {
+	diplomatic_reputation = -1
+	prestige = -0.5
+	defensiveness = -0.10
+}
+
+nsc_ban_on_artificery = {
+	global_unrest = 1
+	trade_efficiency = -0.05
+	mages_loyalty_modifier = 0.1
+	nobles_loyalty_modifier = 0.1
+}
+
+nsc_hard_ban_on_artificery = {
+	global_unrest = 2
+	trade_efficiency = -0.10
+	mages_loyalty_modifier = 0.2
+	nobles_loyalty_modifier = 0.2
+}
+
+nsc_light_ban_on_artificery = {
+	trade_efficiency = -0.05
+}
+
+nsc_no_ban_on_artificery = {
+	global_unrest = -1
+	mages_loyalty_modifier = -0.1
+	nobles_loyalty_modifier = -0.1
+}
+
+nsc_excavation_underway = {
+	global_tax_modifier = -0.10
+}
+
+nsc_great_excavation_underway = {
+	global_tax_modifier = -0.20
+}
+
+nsc_ruler_pro_ban = {
+	global_unrest = 1
+	all_power_cost = -0.025
+}
+
+nsc_ruler_elitist = {
+	global_unrest = 1
+	land_maintenance_modifier = -0.10
+}
+
+nsc_import_restrictions = {
+	yearly_corruption = -0.25
+	trade_efficiency = -0.10
+}
+
+nsc_ignored_artificery_dangers = {
+	global_unrest = 2
+}
+
+nsc_new_military_doctrine = {
+	army_tradition = 1
+	mil_tech_cost_modifier = -0.05
+}
+
+nsc_mage_relics = {
+	shock_damage = 0.15
+}
+
+nsc_artificer_relics = {
+	fire_damage = 0.10
+}
+
+nsc_both_relics = {
+	shock_damage = 0.10
+	fire_damage = 0.05
+}
+
+nsc_state_relics = {
+	local_development_cost = -0.10
+}
+
+nsc_conceded_artificery = {
+	max_absolutism = -10
+}
+
+nsc_restricted_artificery = {
+	global_unrest = 1
+	nobles_loyalty_modifier = 0.1
+}
+
+nsc_teaching_the_one_god = {
+	local_institution_spread = 1
+	local_development_cost = -0.10
+}
+
+nsc_drolas_missionaries_expelled = {
+	local_missionary_strength = 0.02
+	local_unrest = 5
+}
+
+nsc_ravelian_at_court = {
+	tolerance_own = -1
+	tolerance_heathen = 1
+}
+
+nsc_ravelian_influence = {
+	tolerance_own = -2
+	technology_cost = -0.10
+}
+
+nsc_expelled_ravelian_missionaries = {
+	tolerance_own = 1
+}
+
+nsc_glassmakers_strike = {
+	local_production_efficiency = -0.25
+	local_unrest = 5
+}
+
+nsc_glassmaking_secrets_leaked = {
+	trade_value_modifier = -0.1
+}
+
+nsc_kept_control_of_trade = {
+	trade_efficiency = 0.10
+}
+
+nsc_ravelian_society = {
+	local_institution_spread = 0.15
+	local_unrest = 3
+	local_missionary_strength = -0.01
+	local_development_cost = -0.10
+	picture = "ravelian_society"
+}
+
+nsc_ravelianism_defeated = {
+	tolerance_own = 2
+	global_heretic_missionary_strength = 0.02
+}
+
+nsc_significant_ravelian_presence = {
+	advisor_cost = -0.10
+	religious_unity = 0.15
+}
+
+nsc_bulwari_hogwarts = {
+	local_institution_spread = 0.10
+	advisor_cost = -0.05
+	advisor_pool = 1
+}
+
+nsc_studyng_abjuration = {
+	shock_damage = 0.025
+	defensiveness = 0.05
+}
+
+nsc_studyng_evocation = {
+	shock_damage = 0.05
+	defensiveness = 0.025
+}
+
+nsc_studyng_transmutation = {
+	production_efficiency = 0.05
+}
+
+nsc_studyng_divination = {
+	idea_cost = -0.025
+	improve_relation_modifier = 0.05
+}
+
+nsc_studyng_conjuration = {
+	idea_cost = -0.015
+	improve_relation_modifier = 0.1
+}
+
+nsc_magi_supported_burghers = {
+	build_cost = -0.1
+	adm_advisor_cost = -0.05
+}
+
+nsc_magi_supported_nobles = {
+	manpower_recovery_speed = 0.1
+	dip_advisor_cost = -0.05
+}
+
+nsc_magi_supported_magi = {
+	development_cost = 0.1
+	mil_advisor_cost = -0.05
+}
+
+nsc_magi_supported_both = {
+	dip_advisor_cost = -0.05
+	adm_advisor_cost = -0.05
+}
+
+nsc_amussu_province = {
+	local_monthly_devastation = 3
+	picture = "god_king_amussu"
+}
+
+nsc_bloody_suran = {
+	attrition = 2
+	regiment_recruit_speed = 1
+	local_unrest = 5
+	trade_value_modifier = -0.75
+	local_production_efficiency = -0.75
+}
+
+nsc_first_calamity_modifier = {
+	stability_cost_modifier = 0.5
+}
+
+nsc_third_calamity_modifier = {
+	stability_cost_modifier = 0.5
+	global_trade_goods_size_modifier = -0.15
+	global_unrest = 5
+}
+
+nsc_fifth_calamity_modifier = {
+	stability_cost_modifier = 0.5
+	global_unrest = 5
+}
+
+nsc_small_damestear_deposit = {
+	trade_value = 3
+	picture = "damestear_deposit"
+}
+
+nsc_god_king_wish = {
+	max_absolutism = 5
+}
+
+nsc_prosperity_wish = {
+	global_trade_goods_size_modifier = 0.05
+}
+
+nsc_subjects_wish = {
+	global_unrest = -1
+}
+
+nsc_incense_itar_hasis = { }
+nsc_unused_arzdigil_armor = { }
+nsc_knucklebones_kananu = { }
+nsc_drops_dariah = { }
+nsc_sitandu_arrows = { }
+nsc_asra_enu_leaves = { }
+nsc_tittubaltu_tablets = { }
+nsc_dagger_derumasil = { }
+nsc_kazam_keys = { }
+nsc_medinavan_harp = { }
+
+nsc_arzdigil_armor = {
+	shock_damage_received = -0.05
+	monarch_lifespan = 0.15
+}
+
+nsc_sitandu_activated = {
+	infantry_power = 1
+	cavalry_power = 1
+	land_morale = 0.25
+}
+
+nsc_asra_enu_activated = {
+	all_power_cost = -0.10
+}
+
+nsc_medinavan_effect = {
+	local_build_time = -0.75
+	local_friendly_movement_speed = 1
+	local_hostile_movement_speed = 1
+	regiment_recruit_speed = -0.9
+	ship_recruit_speed = -0.9
+}
+
+#Infernal Court
+IC_hedine_favor = {
+	manpower_recovery_speed = 0.10
+}
+
+IC_succubi_diplomats = {
+	improve_relation_modifier = 0.2
+}
+
+IC_canturian_offense = {
+	spy_offence = 0.1
+}
+
+IC_canturian_defense = {
+	global_spy_defence = 0.1
+}
+
+IC_forsara_gift = {
+	global_tax_modifier = 0.05
+}
+
+IC_mesner_bene = {
+	technology_cost = -0.1
+}
+
+IC_mesner_chosen = {
+	all_power_cost = -0.1
+}
+
+IC_hedine_chosen = {
+	country_diplomatic_power = 1
+}
+
+IC_ildran_chosen = {
+	country_admin_power = 1
+}
+
+IC_canturian_chosen = {
+	spy_offence = 0.1
+	global_spy_defence = 0.1
+}
+
+IC_forsara_chosen_1 = {
+	yearly_corruption = -0.2
+}
+
+IC_forsara_chosen_2 = {
+	inflation_reduction = 0.25
+}
+
+IC_forsara_chosen_3 = {
+	interest = -2
+}
+
+IC_kazraiel_chosen = {
+	country_military_power = 1
+}
+
+IC_ibberal_chosen = {
+	global_unrest = -2
+	improve_relation_modifier = 0.2
+}
+
+IC_excellent_looting = {
+	loot_amount = 0.20
+}
+
+IC_berserker_corps = {
+	shock_damage = 0.10
+}
+
+IC_devil_architects = {
+	development_cost = -0.1
+}
+
+#Goblinic Shamanism Primary Cults
+
+primary_kroozmuta_zemna_cult = {
+	land_maintenance_modifier = -0.1
+	land_attrition = -0.075
+	religion = yes
+}
+
+primary_kroozbuto_nubo_cult = {
+	trade_steering = 0.2
+	movement_speed = 0.075
+	religion = yes
+}
+
+primary_tewaka_sunka_cult = {
+	spy_offence = 0.2
+	global_institution_spread = 0.2
+	religion = yes
+}
+
+primary_muta_mestika_cult = {
+	stability_cost_modifier = -0.15
+	legitimacy = 0.5
+	devotion = 0.5
+	republican_tradition = 0.15
+	horde_unity = 0.5
+	religion = yes
+}
+
+primary_apzarko_hrom_cult = {
+	discipline = 0.025
+	leader_land_shock = 1
+	religion = yes
+}
+
+primary_vortza_lesa_cult = {
+	hostile_attrition = 1.0
+	build_cost = -0.05
+	religion = yes
+}
+
+primary_vortzo_laukuno_cult = {
+	global_manpower_modifier = 0.15
+	global_tax_modifier = 0.05
+	religion = yes
+}
+
+primary_vortza_krpa_cult = {
+	trade_efficiency = 0.1
+	development_cost = -0.05
+	religion = yes
+}
+
+primary_zvaiko_udenzo_cult = {
+	navy_tradition = 1
+	privateer_efficiency = 0.15
+	religion = yes
+}
+
+primary_zvaika_kirba_cult = {
+	global_unrest = -2
+	religious_unity = 0.125
+	religion = yes
+}
+
+primary_vortzo_liezmo_cult = {
+	production_efficiency = 0.15
+	religion = yes
+}
+
+primary_muta_kroozpauz_cult = {
+	cavalry_power = 0.15
+	shock_damage = 0.05
+	religion = yes
+}
+
+primary_cannorian_cult = {
+	prestige = 1
+	tolerance_heathen = 1
+	religion = yes
+}
+
+primary_cube_cult = {
+	build_cost = -0.1
+	prestige = 0.5
+	religion = yes
+}
+
+primary_ancestor_worship_cult = {
+	tolerance_own = 2
+	legitimacy = 0.5
+	devotion = 0.5
+	horde_unity = 0.5
+	republican_tradition = 0.15
+	religion = yes
+}
+
+primary_grobilazk_cult = {
+	spy_action_cost_modifier = -0.25
+	artificers_loyalty_modifier = 0.1
+	religion = yes
+}
+
+primary_scribble_cult = {
+	discipline = 0.05
+	religion = yes
+}
+
+primary_gnomish_cult = {
+	technology_cost = -0.05
+	religion = yes
+}
+
+primary_godlost_cult = {
+	drill_decay_modifier = -0.15
+	global_manpower_modifier = 0.10
+	religion = yes
+}
+
+primary_khetist_cult = {
+	great_project_upgrade_cost = -0.25
+	global_unrest = -2
+	religion = yes
+}
+
+primary_gnollish_cult = {
+	land_morale = 0.05
+	reduced_liberty_desire = 10
+	religion = yes
+}
+
+primary_elven_cult = {
+	prestige = 1
+	diplomatic_reputation = 1
+	religion = yes
+}
+
+primary_bulwari_cult = {
+	promote_culture_cost = -0.50
+	advisor_cost = -0.15
+	religion = yes
+}
+
+primary_gerudian_cult = {
+	stability_cost_modifier = -0.075
+	ship_durability = 0.05
+	religion = yes
+}
+
+primary_orcish_cult = {
+	army_tradition = 0.50
+	prestige_from_land  = 0.50
+	religion = yes
+}
+
+primary_bulgu_cult = {
+	prestige_decay = -0.01
+	recover_army_morale_speed = 0.1
+	religion = yes
+}
+
+primary_harpy_cult = {
+	movement_speed = 0.10
+	global_tax_modifier = 0.10
+	religion = yes
+}
+
+primary_fey_cult = {
+	global_trade_goods_size_modifier = 0.05
+	spy_offence = 0.15
+	religion = yes
+}
+
+primary_raheni_cult = {
+	reform_progress_growth = 0.075
+	governing_capacity_modifier = 0.10
+	religion = yes
+}
+
+primary_giantkin_cult = {
+	fort_maintenance_modifier = -0.15
+	land_attrition = -0.10
+	religion = yes
+}
+
+primary_centaur_cult = {
+	cavalry_power = 0.15
+	global_prov_trade_power_modifier = 0.1
+	religion = yes
+}
+
+primary_kobold_cult = {
+	inflation_reduction = 0.1
+	hostile_attrition = 1
+	religion = yes
+}
+
+
+
+# Junior
+
+junior_kroozmuta_zemna_cult = {
+	religion = yes
+}
+
+junior_kroozbuto_nubo_cult = {
+	religion = yes
+}
+
+junior_tewaka_sunka_cult = {
+	religion = yes
+}
+
+junior_muta_mestika_cult = {
+	religion = yes
+}
+
+junior_apzarko_hrom_cult = {
+	religion = yes
+}
+
+junior_vortza_lesa_cult = {
+	religion = yes
+}
+
+junior_vortzo_laukuno_cult = {
+	religion = yes
+}
+
+junior_vortza_krpa_cult = {
+	religion = yes
+}
+
+junior_zvaiko_udenzo_cult = {
+	religion = yes
+}
+
+junior_zvaika_kirba_cult = {
+	religion = yes
+}
+
+junior_vortzo_liezmo_cult = {
+	religion = yes
+}
+
+junior_muta_kroozpauz_cult = {
+	religion = yes
+}
+
+junior_cannorian_cult = {
+	religion = yes
+}
+
+junior_ancestor_worship_cult = {
+	religion = yes
+}
+
+junior_gnomish_cult = {
+	religion = yes
+}
+
+junior_godlost_cult = {
+	religion = yes
+}
+
+junior_khetist_cult = {
+	religion = yes
+}
+
+junior_gnollish_cult = {
+	religion = yes
+}
+
+junior_elven_cult = {
+	religion = yes
+}
+
+junior_bulwari_cult = {
+	religion = yes
+}
+
+junior_gerudian_cult = {
+	religion = yes
+}
+
+junior_orcish_cult = {
+	religion = yes
+}
+
+junior_harpy_cult = {
+	religion = yes
+}
+
+junior_fey_cult = {
+	religion = yes
+}
+
+junior_raheni_cult = {
+	religion = yes
+}
+
+junior_giantkin_cult = {
+	religion = yes
+}
+
+junior_centaur_cult = {
+	religion = yes
+}
+
+junior_kobold_cult = {
+	religion = yes
+}
+
+junior_cube_cult = {
+	religion = yes
+}
+
+junior_bulgu_cult = {
+	religion = yes
+}
+
+junior_grobilazk_cult = {
+	religion = yes
+}
+
+junior_scribble_cult = {
+	religion = yes
+}
+
+
+
+#Dai'nadeilhil
+deliver_from_dark_native_aspect = {
+	settle_cost = -0.1
+}
+
+deliver_from_dark_nativeno_aspect = {
+	reform_progress_growth = 0.1
+}
+
+bounty_native_aspect = {
+	global_unrest = 2
+}
+
+bounty_noprosperous_aspect = {
+	global_monthly_devastation = -0.15
+}
+
+mountains_peace_aspect = {
+	core_creation = -0.1
+}
+
+honor_ekelas_aspect = {
+	fire_damage_received = -0.1
+	shock_damage_received = -0.1
+}
+
+ekelas_fort_aspect = {
+	fort_maintenance_modifier = -0.1
+	defensiveness = 0.2
+}
+
+rebirthed_through_flame = {
+	trade_goods_size = 2
+}
+
+#fey court
+fey_court_seelie_offering_cooldown = {}
+
+fey_court_unseelie_offering_cooldown = {}
+
+fey_court_unaligned_fey_offering_cooldown = {}
+
+fey_court_seelie_modifier_1 = {
+	global_unrest = -2
+	stability_cost_modifier = -0.2
+}
+
+fey_court_seelie_modifier_2 = {
+	improve_relation_modifier = 0.15
+	power_projection_from_insults = 1
+}
+
+fey_court_seelie_modifier_3 = {
+	diplomatic_reputation = 1
+	advisor_pool = 1
+	advisor_cost = -0.1
+}
+
+fey_court_seelie_boon = {
+	global_unrest = -1
+	advisor_cost = -0.05
+}
+
+fey_court_seelie_bane = {
+	global_unrest = 2
+	advisor_cost = 0.1
+	diplomatic_reputation = -1
+}
+
+fey_court_unseelie_modifier_1_early_game = {
+	reinforce_speed = 0.15
+	shock_damage_received = -0.1
+}
+
+fey_court_unseelie_modifier_1_late_game = {
+	reinforce_speed = 0.15
+	fire_damage_received = -0.1
+}
+
+fey_court_unseelie_modifier_2 = {
+	vassal_income = 0.15
+	reduced_liberty_desire = 5
+}
+
+fey_court_unseelie_modifier_3 = {
+	legitimacy = 1
+	discipline = 0.05
+	all_estate_loyalty_equilibrium = 0.05
+}
+
+fey_court_unseelie_boon = {
+	discipline = 0.025
+	all_estate_loyalty_equilibrium = 0.05
+}
+
+fey_court_unseelie_bane = {
+	discipline = -0.05
+	all_estate_loyalty_equilibrium = -0.10
+}
+
+fey_court_unaligned_modifier_1 = {
+	defensiveness = 0.15
+	hostile_attrition = 1
+}
+
+fey_court_unaligned_modifier_2 = {
+	production_efficiency = 0.1
+	trade_efficiency = 0.1
+}
+
+fey_court_unaligned_modifier_3 = {
+	monthly_church_power = 0.02
+	church_power_modifier = 0.5
+}
+
+fey_court_unaligned_fey_boon = {
+	development_cost = -0.05
+	production_efficiency = 0.05
+}
+
+fey_court_unaligned_fey_bane = {
+	development_cost = 0.1
+	production_efficiency = -0.1
+	state_governing_cost = 0.25
+}
+
+fey_court_rampant_seelie_pranks = {
+	local_unrest = 2
+}
+
+fey_court_peace_and_quiet = {
+	local_unrest = -2
+}
+
+fey_court_raging_satyr_parties = {
+	prestige = 1
+	global_unrest = 1
+}
+
+fey_court_protected_pixies = {
+	local_development_cost= -0.10
+}
+
+fey_court_trying_treant = {
+	local_build_cost = 0.15
+}
+
+fey_court_boggle_burrows = {
+	local_production_efficiency = -0.15
+}
+
+fey_court_boggle_negotations = {
+	local_state_maintenance_modifier = 0.15
+}
+
+fey_court_unseelie_higher_standards = {
+	infantry_power = 0.05
+	land_maintenance_modifier = 0.10
+}
+
+fey_court_unseelie_iron_will = {
+	discipline = 0.05
+	land_maintenance_modifier = 0.15
+}
+
+fey_court_seelie_levity_in_war = {
+	war_exhaustion = -0.1
+	land_maintenance_modifier = 0.10
+}
+
+fey_court_seelie_anger_1 = {
+	diplomatic_reputation = -1
+}
+
+fey_court_seelie_anger_2 = {
+	stability_cost_modifier = 0.25
+}
+
+fey_court_unseelie_anger_1 = {
+	all_estate_loyalty_equilibrium = -0.05
+}
+
+#High Philosophy
+golden_palace_scholar_meeting = {
+	reform_progress_growth = 0.15
+}
+
+orange_sash_scholar_meeting = {
+	global_unrest = -2
+	defensiveness = 0.15
+}
+
+silk_turban_scholar_meeting = {
+	production_efficiency = 0.1
+	prestige = 0.5
+}
+
+radiant_sun_scholar_meeting = {
+	tolerance_own = 2
+	land_morale = 0.10
+}
+
+starry_eye_scholar_meeting = {
+	technology_cost = -0.1
+}
+
+unbroken_claw_scholar_meeting = {
+	discipline = 0.05
+}
+
+subsidized_high_temple_artists = {
+	production_efficiency = 0.1
+}
+
+slow_spread_of_rahen_printing_press = {
+	institution_growth = 1.20
+	tolerance_own = 1
+}
+
+quick_spread_of_rahen_printing_press = {
+	global_unrest = 1
+	uppercastes_loyalty_modifier = -0.10
+}
+
+silk_turban_no_more_poor = {
+	inflation_reduction = 0.1
+	interest = -0.5
+}
+
+dipar_jaghut_tricked = {
+	global_spy_defence = 0.25
+}
+
+dipar_metaphorical_darkness = {
+	global_missionary_strength = 0.01
+}
+
+dipar_corruption_warning = {
+	yearly_corruption = -0.10
+}
+
+dipar_maintain_order = {
+	global_tax_modifier = 0.10
+	global_unrest = 1
+}
+
+prathim_mighty_structures = {
+	build_cost = -0.15
+}
+
+jaghut_stand_against_injustice = {
+	global_unrest = -1
+	lowercastes_loyalty_modifier = 0.10
+}
+
+jaghut_suffering = {
+	tolerance_own = 1
+	global_monthly_devastation = -0.10
+}
+
+jaghut_chad_dipar = {
+	harsh_treatment_cost = -0.25
+	global_autonomy = -0.10 
+}
+
+gunjit_empower_others = {
+	local_development_cost = -0.15
+	lowercastes_loyalty_modifier = 0.10
+}
+
+simral_protec_knowledge = {
+	local_defensiveness = 0.15
+	local_institution_spread = 0.15 
+}
+
+simral_look_up = {
+	global_institution_spread = 0.25
+	adm_advisor_cost = -0.10
+}
+
+vadham_flow_w_nature = {
+	state_maintenance_modifier = -0.25
+	lowercastes_loyalty_modifier = 0.10
+	middlecastes_loyalty_modifier = -0.05
+}
+
+vadham_give_to_ppl ={
+	legitimacy = 1
+	global_monthly_devastation = -0.10
+}
+
+vadham_familial_order = {
+	global_unrest = -1
+	reduced_liberty_desire = 10
+	uppercastes_influence_modifier = 0.10
+}
+
+anjita_charge = {
+	shock_damage = 0.10
+}
+
+anjita_body_and_will = {
+	land_morale = 0.05
+	shock_damage_received = -0.05
+}
+
+anjita_strike_fast = {
+	discipline = 0.025
+	movement_speed = 0.10
+}
+
+digatha_move_change = {
+	navy_tradition_decay = -0.01
+	improve_relation_modifier = 0.10
+}
+
+digatha_dont_fight_nature = {
+	naval_attrition = -0.10
+	disengagement_chance = 0.10
+}
+
+digatha_uncertainty = {
+	range = 0.25
+	trade_range_modifier = 0.25
+}
+
+nermali_wise_treatments = {
+	global_prosperity_growth = 0.1
+	development_cost = -0.05
+}
+
+nermali_ease_death = {
+	global_prosperity_growth = 0.2
+	development_cost = -0.1
+}
+
+nermali_nier = {
+	local_defensiveness = 0.50
+	trade_goods_size_modifier = -0.25
+}
+
+vachava_know_value = {
+	global_trade_power = 0.15
+}
+
+vachava_give_lavishly = {
+	diplomatic_reputation = 1
+	global_tax_modifier = -0.05
+}
+
+vachava_patron = {
+	build_cost = -0.10
+	middlecastes_influence_modifier = 0.10
+}
+
+vachava_thrifter = {
+	land_maintenance_modifier = -0.10
+}
+
+#Suhan's Praxis
+
+sexes_liberated = {
+	female_advisor_chance = 0.33
+	may_recruit_female_generals = yes
+	same_religion_advisor_cost = -0.15
+	leader_cost = -0.10
+}
+
+guru_diplomatic_effort = {
+	diplomatic_reputation = 1
+	improve_relation_modifier = 0.2
+}
+
+expanded_horizons_of_mind = {
+	innovativeness_gain = 0.25
+	technology_cost = -0.05
+}
+
+paradigmatic_zealousness = {
+	land_morale = 0.10
+	naval_morale = 0.1
+}
+
+debated_nature = {
+	global_missionary_strength = 0.015
+}
+debated_nature2 = {
+	global_missionary_strength = 0.02
+}
+debated_nature3 = {
+	global_missionary_strength = 0.025
+}
+debated_nature4 = {
+	global_missionary_strength = 0.03
+}
+debated_nature5 = {
+	global_missionary_strength = 0.035
+}
+debated_nature6 = {
+	global_missionary_strength = 0.04
+}
+debated_nature7 = {
+	global_missionary_strength = 0.045
+}
+
+#Taychend
+taychend_helpless_subject = {
+	land_forcelimit_modifier = -0.75
+	liberty_desire = -25
+}
+taychend_urvand_mine = {
+	local_gold_depletion_chance_modifier = -0.25
+	trade_goods_size_modifier = 1
+}
+taychend_hired_ships = {
+	burghers_influence_modifier = 0.05
+	sailors_recovery_speed = 0.25
+}
+taychendi_glorious = {
+	monthly_splendor = 0.5
+}
+
+#Oren Nayiru
+on_persecuting_the_oren_nayiru = {
+	missionaries = 1
+	global_heretic_missionary_strength = 0.02
+	tolerance_heretic = -3
+}
+
+on_kamrayakvals_war_1 = {
+	land_forcelimit = 25
+	global_manpower = 15
+	land_maintenance_modifier = -0.99
+	land_morale = 0.1
+	defensiveness = 0.15
+}
+
+on_kamrayakvals_war_2 = {
+	land_forcelimit = 50
+	global_manpower = 30
+	land_maintenance_modifier = -0.99
+	land_morale = 0.1
+	defensiveness = 0.15
+}
+
+on_kamrayakvals_war_3 = {
+	land_forcelimit = 75
+	global_manpower = 45
+	land_maintenance_modifier = -0.99
+	land_morale = 0.1
+	defensiveness = 0.15
+}
+
+on_kamrayakvals_war_4 = {
+	land_forcelimit = 100
+	global_manpower = 60
+	land_maintenance_modifier = -0.99
+	land_morale = 0.1
+	defensiveness = 0.15
+}
+
+on_kamrayakvals_citadel = {
+	local_garrison_size = 0.25
+	local_defensiveness = 0.15
+}
+
+on_fotistrepei_fight_to_the_end = {
+	reinforce_speed = 0.25
+	reinforce_cost_modifier = -0.15
+}
+
+on_local_famine = {
+	local_unrest = 5
+	trade_goods_size_modifier = -0.5
+	local_monthly_devastation = 0.3
+}
+
+on_kamrayakvals_victorious = {
+	core_creation = -0.1
+	global_missionary_strength = 0.02
+	missionaries = 1
+	manpower_recovery_speed = 0.15
+}
+
+on_kamrayakvals_defeated = {
+	global_monthly_devastation = -0.2
+	global_missionary_strength = 0.02
+	missionaries = 1
+	manpower_recovery_speed = 0.25
+}
+
+shadow_pact_wraith_mod = {
+	shock_damage = 0.15
+}
+
+shadow_pact_three_urns_mod = {
+	development_cost = 0.05
+}
+
+shadow_pact_silat_mod = {
+	advisor_cost = 0.1
+}
+
+shadow_pact_tree_mod = {
+	land_attrition = 0.2
+}
+
+shadow_pact_flayed_man_mod = {
+	tolerance_heathen = -2
+	tolerance_heretic = -2
+	global_missionary_strength = 0.02
+	missionaries = 1
+}
+
+shadow_pact_tyrant_mod = {
+	global_unrest = 3
+	yearly_absolutism = 1
+	global_autonomy = -0.1
+}
+
+shadow_pact_burden_mod = {
+	global_tax_modifier = -0.1
+}
+
+shadow_pact_defiant_mod = {
+	global_regiment_cost = 0.15
+	discipline = 0.05
+}
+
+shadow_pact_madness_mod = {
+	ae_impact = 0.1
+	land_morale = 0.1
+}
+
+shadow_pact_golem_mod = {
+	technology_cost = 0.05
+	production_efficiency = 0.1
+}
+
+shadow_pact_vulture_mod = {
+	movement_speed = 0.1
+	loot_amount = 0.5
+}
+
+#Feast of the Gods
+feast_gods_resisting_the_hunger = {
+	yearly_doom_reduction = 1
+}
+
+feast_gods_voracious_ruler = {
+	yearly_doom_reduction = -1
+}
+
+feast_gods_ravenous_soldiers = {
+	global_unrest = 3
+}
+
+feast_gods_sponsored_ogre_terrorizers = {
+	global_unrest = -2
+	yearly_doom_reduction = 1
+}
+
+feast_gods_hungry_populace = {
+	local_unrest = 2
+	local_production_efficiency = -0.25
+}
+
+feast_gods_hopeful_populace = {
+	yearly_doom_reduction = 1
+}
+
+###Devouring Path
+dvp_devoured_mod = {
+	church_power_modifier = -2
+}
+
+expand_the_dark_world_mod = {
+	missionaries = 1
+	global_missionary_strength = 0.03
+}
+
+chroniclers_of_secret_histories_mod = {
+	all_power_cost = -0.025
+}
+
+gunpowder_meditation_mod = {
+	fire_damage = 0.2
+}
+
+demon_warriors_mod = {
+	infantry_shock = 0.2
+}
+
+oni_demon_warriors_mod = {
+	infantry_shock = 0.4
+}
+
+the_god_eaters_mod = {
+	warscore_cost_vs_other_religion = -0.15
+}
+
+gifts_for_fools_mod = {
+	ae_impact = -0.15
+}
+
+way_of_shadows_mod = {
+	spy_offence = 0.33
+	siege_ability = 0.2
+}
+
+means_to_an_end_mod = {
+	diplomats = 1
+	colonists = 1
+	missionaries = 1
+	merchants = 1
+	envoy_travel_time = -0.5
+}
+
+above_spirits_and_man_mod = {
+	free_adm_policy = 1
+	free_dip_policy = 1
+	free_mil_policy = 1
+}
+
+tether_the_weak_mod = {
+	morale_damage_received = -0.15
+}
+
+bleed_haless_dry_mod = {
+	global_trade_goods_size_modifier = 0.1
+	production_efficiency = 0.1
+}
+
+dvp_temple_devcost = {
+	local_development_cost = -0.1
+}
+
+origin_of_the_devouring_path = {
+	reverse_relation_with_same_religion = 50
+}
+
+two_rulers_one_people_modifier = {
+	religion = yes
+	local_tolerance_of_heretics = 5
+	local_religious_unity_contribution = -1
+	local_missionary_strength = -1
+}
+
+corinite_ardent_administrators = {
+	local_governing_cost_increase = -5
+}
+
+corinite_passionate_artisans = {
+	trade_value_modifier = 0.05
+}
+
+corinite_bastion_of_zealots = {
+	local_assault_fort_ability = -0.75
+}
+
+#HP Flavour
+HP_nam_labeda = {
+	global_missionary_strength = 0.015
+}
+HP_rule_mendab = {
+	legitimacy = 0.5
+	devotion = 0.5
+	republican_tradition = 0.15
+	horde_unity = 0.5
+}
+HP_convoke_idisarindat = {
+	global_unrest = -1
+}
+HP_proclaim_anjitaranga = {
+	prestige = 0.5
+}
+HP_reorganise_chalanevaala = {
+	global_heretic_missionary_strength = 0.01
+}
+HP_meditation_on_simrals_mirror = {
+	technology_cost = -0.05
+}
+HP_meditation_on_the_kamalkundal = {
+	siege_ability = 0.10
+}

@@ -1,0 +1,229 @@
+
+country_decisions = {
+	Y85_establish_hq = {
+		major = yes
+		potential = { has_country_flag = Y85_hq_allowed_flag }
+
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					ROOT = { has_country_flag = Y85_smouldering_hq_allowed_flag }
+					province_id = 4844
+				}
+				AND = {
+					ROOT = { has_country_flag = Y85_kindled_hq_allowed_flag }
+					province_id = 4974
+				}
+				AND = {
+					ROOT = { has_country_flag = Y85_teeming_hq_allowed_flag }
+					province_id = 4828
+				}
+				AND = {
+					ROOT = { has_country_flag = Y85_knowing_hq_allowed_flag }
+					province_id = 4976
+				}
+				AND = {
+					ROOT = { has_country_flag = Y85_golden_hq_allowed_flag }
+					province_id = 4859
+				}
+				AND = {
+					ROOT = { has_country_flag = Y85_grasping_hq_allowed_flag }
+					province_id = 4856
+				}
+			}
+		}
+
+		allow = {
+			hidden_trigger = {
+				has_country_flag = Y85_hq_allowed_flag
+				NOT = { has_country_flag = Y85_hq_menu_open }
+			}
+			OR = {
+				if = {
+					limit = { has_country_flag = Y85_smouldering_hq_allowed_flag }
+					if = {
+						limit = { ai = yes}
+						controls = 4844
+						owns_core_province = 4844
+						4844 = { base_manpower = 5 }
+						mil_power = 100
+					}
+					else = {
+						custom_trigger_tooltip = {
+							tooltip = Y85_control_smouldering_hq_tt
+							controls = 4844
+							owns_core_province = 4844
+						}
+					}
+				}
+				else = { hidden_trigger = { always = no } }
+				if = {
+					limit = { has_country_flag = Y85_kindled_hq_allowed_flag }
+					if = {
+						limit = { ai = yes }
+						4974 = { base_manpower = 5 }
+						mil_power = 100
+						controls = 4974
+						owns_core_province = 4974
+					}
+					else = {
+						custom_trigger_tooltip = {
+							tooltip = Y85_control_kindled_hq_tt
+							controls = 4974
+							owns_core_province = 4974
+						}
+					}
+				}
+				else = { hidden_trigger = { always = no } }
+				if = {
+					limit = { has_country_flag = Y85_teeming_hq_allowed_flag }
+					if = {
+						limit = { ai = yes }
+						4828 = { base_production = 9 }
+						adm_power = 100
+						controls = 4828
+						owns_core_province = 4828
+					}
+					else = {
+						custom_trigger_tooltip = {
+							tooltip = Y85_control_teeming_hq_tt
+							controls = 4828
+							owns_core_province = 4828
+						}
+					}
+				}
+				else = { hidden_trigger = { always = no } }
+				if = {
+					limit = { has_country_flag = Y85_knowing_hq_allowed_flag }
+					if = {
+						limit = { ai = yes }
+						adm_power = 100
+						4976 = {
+							has_building = mage_tower
+							base_tax = 10
+						}
+						controls = 4976
+						owns_core_province = 4976
+					}
+					else = {
+						custom_trigger_tooltip = {
+							tooltip = Y85_control_knowing_hq_tt
+							controls = 4976
+							owns_core_province = 4976
+						}
+					}
+				}
+				else = { hidden_trigger = { always = no } }
+				if = {
+					limit = { has_country_flag = Y85_golden_hq_allowed_flag }
+					if = {
+						limit = { ai = yes }
+							controls = 4859
+							owns_core_province = 4859
+						dip_power = 100
+						4859 = { base_production = 10 }
+						accepted_culture = jiangszun
+					}
+					else = {
+						custom_trigger_tooltip = {
+							tooltip = Y85_control_golden_hq_tt
+							controls = 4859
+							owns_core_province = 4859
+						}
+					}
+				}
+				else = { hidden_trigger = { always = no } }
+				if = {
+					limit = { has_country_flag = Y85_grasping_hq_allowed_flag }
+					if = {
+						limit = { ai = yes }
+						dip_power = 100
+						4856 = {
+							base_production = 10
+							has_trade_building_trigger = yes
+						}
+						controls = 4856
+						owns_core_province = 4856
+					}
+					else = {
+						custom_trigger_tooltip = {
+							tooltip = Y85_control_grasping_hq_tt
+							controls = 4856
+							owns_core_province = 4856
+						}
+					}
+				}
+				else = { hidden_trigger = { always = no } }
+			}
+		}
+
+		effect = {
+			set_country_flag = Y85_hq_menu_open
+			country_event = { id = flavour_balrijin.100 }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	Y85_call_war_council_meeting = {
+		major = yes
+		potential = {
+			tag = Y85
+			ai = no
+			has_country_flag = Y85_military_council_flag
+		}
+		
+		provinces_to_highlight = {
+		}
+		
+		allow = {
+			hidden_trigger = { tag = Y85 }
+			is_at_war = no
+			Y05 = { is_at_war = no }
+			alliance_with = Y05
+			NOT = { 
+				Y05 = { war_exhaustion = 2 }
+			}
+		}
+		
+		effect = {
+			country_event = { id = flavour_balrijin.28 }
+		}
+		
+		ai_will_do = {
+			factor = 400
+		}
+	}
+	
+	Y85_elections_decision = {
+		major = yes
+		potential = {
+			tag = Y85
+			has_reform = golden_republic_reform
+		}
+
+		allow = {
+			hidden_trigger = { tag = Y85 }
+			if = { #easy tooltip this way
+				limit = { NOT = { has_ruler_modifier = Y85_suspended_election } }
+				is_at_war = yes
+			}
+		}
+
+		effect = {
+			if = {
+				limit = { has_ruler_modifier = Y85_suspended_election }
+				add_republican_tradition = 2
+				remove_country_modifier = Y85_suspended_election
+			}
+			else = {
+				add_republican_tradition = -5
+				add_ruler_modifier = { 
+					name = Y85_suspended_election
+					duration = -1
+				}
+			}
+		}
+
+		ai_will_do = { factor = 1 }
+	}
+}

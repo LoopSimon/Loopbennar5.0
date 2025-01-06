@@ -1,0 +1,72 @@
+
+setup_vision = yes
+government = republic
+add_government_reform = noble_elite_reform
+government_rank = 1
+primary_culture = ambhen
+add_accepted_culture = thekvrystana
+religion = kheionism
+technology_group = tech_kheionai
+capital = 2620
+fixed_capital = 2620
+
+historical_rival = G64 #Larankar
+
+1000.1.1 = { set_estate_privilege = estate_mages_organization_guilds }
+
+
+change_estate_land_share = {
+	estate = estate_nobles
+	share = 17 #Ameioni reliance on Nobility
+}
+change_estate_land_share = {
+	estate = estate_burghers
+	share = -17
+}
+
+1423.7.24 = {
+	leader = {
+		name = "Laskaris"
+		type = general
+
+		fire = 3
+		shock = 5
+		manuever = 4
+		siege = 3
+		death_date = 1430.2.4 #Becomes Ruler
+	}
+}
+
+1430.2.4 = {
+	monarch = {
+		name = "Laskaris 'the Conqueror'"
+		#dynasty = ""
+		birth_date = 1399.3.9
+		adm = 4
+		dip = 5
+		mil = 6
+		leader = {
+			name = "Laskaris the Conqueror"
+			type = general
+			fire = 2
+			shock = 6
+			manuever = 4
+			siege = 3
+		}
+	}
+	set_ruler_flag = G52_is_laskaris_flag
+	add_ruler_personality = lawgiver_personality
+	add_ruler_personality = inspiring_leader_personality
+	add_ruler_personality = conqueror_personality
+	add_government_reform = ameion_republic
+	set_estate_privilege = estate_nobles_levies
+}
+
+
+
+1444.1.1 = {
+	set_country_flag = has_laskaris_creed_kheionist_deity
+	set_country_flag = has_mil_kheionist_deity
+	change_personal_deity = laskaris_creed_deity_level_1
+}
+

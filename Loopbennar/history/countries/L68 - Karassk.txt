@@ -1,0 +1,34 @@
+setup_vision = yes
+government = monarchy
+add_government_reform = ikatara_reform
+government_rank = 2
+primary_culture = shagashay_lizardfolk
+religion = anzalkatsa
+religious_school = being_sculptors_school
+technology_group = tech_lizardfolk
+historical_rival = L69 #Zerat
+historical_rival = L50 #Tsanizadai
+historical_rival = L95 #Rayaz
+
+capital = 5898
+
+1000.1.1 = { 
+	set_country_flag = semi_monstrous
+	set_estate_privilege = estate_mages_organization_guilds
+	set_estate_privilege = estate_nobility_overreliance_on_mercenaries
+	set_estate_privilege = estate_burghers_merchants_of_narasad
+	set_estate_privilege = estate_church_memories_of_black_needles
+	set_estate_privilege = estate_church_naga_mutation
+}
+
+1444.1.1 = {
+	monarch = {
+		name = "Krorasz V"
+		dynasty = "Godseeker"
+		birth_date = 1428.6.19
+		adm = 1
+		dip = 3
+		mil = 2
+	}
+	add_ruler_personality = embezzler_personality
+}

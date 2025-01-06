@@ -1,0 +1,20 @@
+owner = Y02
+controller = Y02
+add_core = Y02
+add_core = Y22
+culture = jiangszun
+religion = devouring_path
+
+hre = no
+
+base_tax = 3
+base_production = 4
+base_manpower = 2
+
+trade_goods = paper
+
+capital = ""
+
+is_city = yes
+
+add_claim = Y09

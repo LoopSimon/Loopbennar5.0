@@ -1,0 +1,118 @@
+fervor_trade = {
+	cost = 6
+	potential = {
+		religion = the_jadd
+	}
+	trigger = {
+	}
+	effect = {
+		yearly_corruption = -0.1
+		advisor_cost = -0.1
+	}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 1.5
+			has_advisor = yes
+		}
+		modifier = {
+			factor = 1.25
+			corruption = 1
+		}	
+		modifier = {
+			factor = 1.25
+			corruption = 2
+		}
+		modifier = {
+			factor = 0
+			NOT = { fervor = 50 }
+			has_active_fervor = no
+		}	
+	}
+}
+
+fervor_war = {
+	cost = 6
+	potential = {
+		religion = the_jadd
+	}
+	trigger = {
+	}
+	effect = {
+		land_morale = 0.1
+		naval_morale = 0.1
+	}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 0
+			is_at_war = no
+		}
+		modifier = {
+			factor = 10
+			is_at_war = yes
+		}		
+	}	
+}
+
+fervor_stability = {
+	cost = 6
+	potential = {
+		religion = the_jadd
+	}
+	trigger = {
+	}
+	effect = {
+		reform_progress_growth = 0.15
+		manpower_in_true_faith_provinces = 0.15
+	}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 1.25
+			always = yes
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { trade_income_percentage = 0.1 }
+		}		
+		modifier = {
+			factor = 1.25
+			trade_income_percentage = 0.25
+		}
+		modifier = {
+			factor = 1.25
+			trade_income_percentage = 0.5
+		}			
+		modifier = {
+			factor = 0
+			NOT = { fervor = 50 }
+			has_active_fervor = no
+		}
+	}	
+}
+
+fervor_diplomacy = { #1.35
+	cost = 6
+	potential = {
+		religion = the_jadd
+	}
+	trigger = {
+	}
+	effect = {
+		diplomatic_reputation = 2
+		improve_relation_modifier = 0.2
+	}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 1.25
+			is_at_war = no
+		}
+		modifier = {
+			factor = 0
+			NOT = { fervor = 50 }
+			has_active_fervor = no
+		}	
+	}	
+}

@@ -1,0 +1,24 @@
+
+# No previous file for Banten #117
+owner = R38
+controller = R38
+add_claim = R38
+add_core = Y51
+add_core = R92
+culture = ranilau
+religion = high_philosophy
+
+hre = no
+
+base_tax = 3
+base_production = 3
+base_manpower = 2
+
+trade_goods = slaves
+
+capital = ""
+
+is_city = yes
+# No previous file for PROV4556
+
+add_core_construction = { speed = 1 cost = 0 }

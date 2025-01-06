@@ -1,0 +1,229 @@
+
+#Country Name: Please see filename.
+
+graphical_culture = westerngfx
+
+color = { 57  81  87 }
+
+revolutionary_colors = { 1  13  1 }
+
+historical_idea_groups = {
+	economic_ideas
+	offensive_ideas
+	exploration_ideas
+	defensive_ideas	
+	administrative_ideas	
+	maritime_ideas
+	quality_ideas
+	innovativeness_ideas
+}
+
+historical_units = {
+	cannorian_1_medieval_infantry
+	cannorian_1_medieval_knights
+	cannorian_5_men_at_arms
+	cannorian_9_adventurer_band
+	cannorian_10_gun_knights
+	cannorian_12_thorn_formation
+	cannorian_14_outriders
+	cannorian_15_volley_infantry
+	cannorian_18_reformed_outriders
+	cannorian_19_thorn_formation2
+	cannorian_23_dragoons
+	cannorian_23_line_infantry
+	cannorian_26_carabiners
+	cannorian_26_dovecoat_infantry
+	cannorian_28_impulse_infantry
+	cannorian_28_cuirassier
+	cannorian_30_drill_infantry
+}
+
+monarch_names = {
+
+	#Vertesker Name List
+	"Alan" = 10
+	"Aldelar" = 10
+	"Alder" = 10
+	"Alenn" = 10
+	"Alfred" = 10
+	"Alfred" = 10
+	"Alric" = 10
+	"Alvor" = 10
+	"Anders" = 10
+	"Arman" = 10
+	"Arthur" = 10
+	"Arthur" = 10
+	"Austin" = 10
+	"Barry" = 10
+	"Ben" = 10
+	"Brandon" = 10
+	"Brandon" = 10
+	"Brian" = 10
+	"Byrne" = 10
+	"Byron" = 10
+	"Carl" = 10
+	"Carsten" = 10
+	"Cassan" = 10
+	"Cecil" = 10
+	"Conric" = 10
+	"Dominic" = 10
+	"Dustin" = 10
+	"Edmund" = 10
+	"Emil" = 10
+	"Eric" = 10
+	"Fred" = 10
+	"Garrett" = 10
+	"Jon" = 10
+	"Kaylen" = 10
+	"Lawrence" = 10
+	"Lennic" = 10
+	"Lothane" = 10
+	"Nathaniel" = 10
+	"Otto" = 10
+	"Richard" = 10
+	"Robin" = 10
+	"Rodger" = 10
+	"Ryan" = 10
+	"Teagan" = 10
+	"Thomas" = 10
+	"Thorburn" = 10
+	"Tristan" = 10
+	"Tristan" = 10
+	"Vernon" = 10
+	"Welyam" = 10
+	"Wincent" = 10
+	"Adaen" = 10
+	"Agros" = 10
+	"Aldio" = 10
+	"Andres" = 10
+	"Armos" = 10
+	"Artan" = 10
+	"Audac" = 10
+	"Bardal" = 10
+	"Biren" = 10
+	"Caero" = 10
+	"Carlan" = 10
+	"Crovan" = 10
+	"Dalac" = 10
+	"Godeo" = 10
+	"Otomar" = 10
+	"Otrar" = 10
+	"Serdil" = 10
+	"Teagan" = 10
+	"Venac" = 10
+	
+	"Abigail" = -10
+	"Adeline" = -10
+	"Aldris" = -10
+	"Alice" = -10
+	"Alina" = -10
+	"Alina" = -10
+	"Alisa" = -10
+	"Allison" = -10
+	"Annabel" = -10
+	"Arabell" = -10
+	"Atara" = -10
+	"Belinda" = -10
+	"Bella" = -10
+	"Bridget" = -10
+	"Caroline" = -10
+	"Cassína" = -10
+	"Castana" = -10
+	"Cecilia" = -10
+	"Clarya" = -10
+	"Constance" = -10
+	"Cora" = -10
+	"Cybill" = -10
+	"Deidre" = -10
+	"Elenore" = -10
+	"Elizabeth" = -10
+	"Emily" = -10
+	"Heather" = -10
+	"Lauren" = -10
+	"Lisa" = -10
+	"Lisabeth" = -10
+	"Margeret" = -10
+	"Maria" = -10
+	"Maria" = -10
+	"Marian" = -10
+	"Mary" = -10
+	"Meade" = -10
+	"Melinda" = -10
+	"Mina" = -10
+	"Rianwyn" = -10
+	"Rosamond" = -10
+	"Sophie" = -10
+	"Valence" = -10
+	"Willemina" = -10
+	"Arabella" = -10
+	"Araia" = -10
+	"Audata" = -10
+	"Bella" = -10
+	"Birenna" = -10
+	"Caeria" = -10
+	"Crova" = -10
+	"Etua" = -10
+	"Lea" = -10
+	"Madala" = -10
+	"Otoia" = -10
+	"Otraria" = -10
+	"Seda" = -10
+	"Serdilla" = -10
+	"Sira" = -10
+	"Tea" = -10
+	"Teua" = -10
+
+}
+
+leader_names = {
+	#Country Specific
+	"of Vertesk" "of Dragondock" "of Black Tower" "of the Floodmarches" "of Highharbour"
+	
+	#Province Neighbours
+	"of Tenbury" "of Greenley" "of Fluddhill" "of Alenath" "of Aramar" "of Crothán" "of Crownsway" "of Wrothcross" "of Crodam" "of Ginnfield" "of Elwick" "of Talonmount" "of Gaweton" "of Drakesford"
+	"of Westmoors" "of Moorton"
+	
+	#Country Neighbours
+	"of Wex" "of Derwing" "of Arbaran" "of Gawed" "of Anbenncóst" "of Damescrown" "of Uelaire" "of Beepeck" "of Exwes" "of Ryalanar" "of Lorent" "of Deranne"
+	
+	#Geographic Neighbours
+	"of Esmaria" "of the Borders" "of the Dameshead" "of Damesneck" "of Lencenor" 
+	
+	#Noble Families
+	"of Vanbury" Gerwick Baldfather Greenley Tenbury 
+	Cottersea Cockerwall Beron Brontay Leapdon
+	Silcalas Silurion Silgarion Konwell "síl Themarenn" "síl Bennon"
+	
+	
+	#Generic Alenic names
+ 	Earman Roseman Wineman Esmari Vernman Redcoaster Wexonard Hylman Businori Dostan Grey Pearler Alen Arannese Escanni Adenner Farrani Marcher Vrorenmarcher Damerian Reachman Bulwari Khetari Akasi Moorman Rever Northman Silver Silver-blooded Mud Smallman Campman Priest Reaper Woodsman Vinter Judge Barrister Hireling Drudge Mason Parker Carpenter Steward Porter Lumberjack Shepherd Rancher Herder Potter Cook Cooper Farmer Bowyer Fletcher Shipwright Shipguide Barber Chapman Perfumer Cheesemaker Milkman Picker Chandler Cutler Rider Earl Smith Archer Housewright Carrier Arkwright Bannerman Brewer Carman Carver Doctor Dyer Fisher Fowler Gardener Garner Glazier Hoggard Horn Honeycut Jeweler Goldsmith Ironsmith Coppersmith Silversmith Brasssmith Mathers Ward Nurse Page Singer Bard Snider Tanner Toller Butcher Tailor Milkmaid Cowherd White Black Grey Pink Green Red Blue Orange Purple Brown Fox Bear Wolf Deer Bull Cow Lamb Hare Owl Stag Buck Robin Salmon Trout Bird Bee Hawk Drake Fawn Finch Colt Bass Perch Piker Otter Sable Raven Beverly Dove Lynx Acker  Adcock  Aitken Appleby Bailey Ball Barnes Beck Blythe Brasher Chance Chambers Chase Clemens Cobb Crewe Darwin Deadman Deering Fay Marshall Firmin Forrester Foster Frost Garlond Gates Gill Gore Griffin Hackett Haig Haggard Hale Hart Hobbes Hooker Huff Hyde Jack Jekyll Jernigan Joiner Kay Keen Kidd Kirby Kitchens Lee Longstaff Love Lum Marsh Martel Mercer Millhouse Millward Moon Moor Morris Moss Mutton Northman Norris Nye Ogden Peel Perry Pickler Piper Plank Pound Pratt Quick Rake Ramsey Ready Rey Roach Ross Rough Sander Sangster Savage Scarlet Seaver Seward Sharrow Short Shine Swift Snell Sommer Steed Stringer Sweet Teel Thorn Timberlake Tinker Tipton Trask Travers True Tucker Underhill Underwood Vance Vann Verity Wade Waller Waterman Way Wayne Wheeler Whitehead Witherspoon Wolfman Wood Woodcock Wray Wright Wine Yap Young Yates Yoxall 
+}
+
+ship_names = {
+	# Generic Cannorian
+	Castellos "The Dame" Halanna Yshtralania Agrados Adean Esmaryal Ryala Falah Nerat
+	Ara Minara "Munas Moonsinger" Nathalyne Begga Corin Balgar Uelos Draxos Aesanna
+	# Vertesker Cult
+	"Gold Coin" "Golden Lady" Fortune Trader Commerce "Ara’s Fortune" "Golden Luck" Regent Rule Order
+	"Castellos’ Mace" Authority Power Secret Shadow Trickster Shadowdancer Spymaster "Nathalyne’s Dagger" "Moon’s Shadow"
+	# Generic Republic
+	"Lord Mayor" "Lady Mayores" Mayor Mayores Caepas "Prince-Mayor" "Princess-Mayores" Elector Republican Governor
+	# Vertesk
+	Arnos Tordan Vertesker Vertesk Highharbour Floodmarshes Tenbury Greenley Dominion "Trade of Vertesk"
+	"Black Tower" Tower Citadel "Bal Vertesk" "High River" "Black Citadel" "High Tower" "Tower’s Shadow" "Eye of the Tower" "Watchful Tower"
+	"Tower’s Spy" "Ominous Tower" "Dragon’s Maw" "Tower’s Light" "Tower’s Watchful Eyes" Panopticon "Watchful Light" "No Secret Under the Tower Eyes" "Black Spire" "Black Iron"
+	"Soaring Tower" Obelisk "Dark Tower" "Black Ship" "Black Galley" "Great Shadow" "Casted Shadow" "Stalking Shadow" "Soaring Shadow" "Shadow over the Sea"
+	Surveillance "Three Empires" "Iron Chain" Slaver "Green Trade" "Price of Gold" "Invisible Hand" Watchful Spy Observant
+	Alen Alenic Opportunity Arsenal Marine Boarder Scrutiny "Slave Trader" "Sea Dog" Vigilant
+	Aware Ominous Jagged Constabulary Loyalty Sadist "Installer of Fear" "Constant Watch" "Black Chain" Chain
+	Shackles Bond "Black Bond" "Black Irons" Shackler Obedient Conformity "Duty to the Tower" Willing Silence
+
+}
+
+army_names = {
+	"Vertesker Army" "Army of the Marches" "Army of $PROVINCE$"
+}
+
+fleet_names = {
+	"Vertesker Fleet" "Damescrown Squadron" "Dameshead Squadron" "Damesneck Squadron" "Dragondock Squadron" "White Squadron" "Wing Squadron"
+}

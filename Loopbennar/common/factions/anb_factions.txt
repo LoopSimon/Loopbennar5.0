@@ -1,0 +1,661 @@
+
+########################################
+# Adventurer Factions
+########################################
+
+#Fighting
+adv_marchers = {
+	monarch_power = MIL
+	always = yes
+
+	modifier = {
+		diplomatic_upkeep = -1
+		idea_cost = 0.1
+		
+		diplomatic_reputation = 1
+		land_morale = 0.05
+		prestige_from_land = 0.5
+		land_forcelimit_modifier = 0.2
+	}
+}
+
+#Colonising and developing provinces
+adv_pioneers = {
+	monarch_power = DIP
+	always = yes
+
+	modifier = {
+		administrative_efficiency = -0.2
+		global_manpower_modifier = -0.2
+	
+		development_cost = -0.1
+		land_attrition = -0.1
+		global_colonial_growth = 20
+		colonist_placement_chance = 0.1
+		tribal_development_growth = 0.05
+	}
+}
+
+#Trading
+adv_fortune_seekers = {
+	monarch_power = ADM
+	always = yes
+
+	modifier = {
+		discipline = -0.05
+		diplomatic_reputation = -1
+		
+		caravan_power = 0.2
+		global_trade_goods_size_modifier = 0.10
+		diplomatic_upkeep = 1
+		build_cost = -0.10
+	}
+}
+
+########################################
+# Technocracy Factions
+########################################
+
+#brilliance
+tec_brilliance = {
+	monarch_power = MIL
+	always = yes
+
+	modifier = {
+		free_adm_policy = 1 #lots of different weird gizmos that can be used as one-offs to implement various ideas
+		technology_cost = -0.05 #mad scientists in the administration
+		global_regiment_cost = 0.1 #expensive and crazy tech means expensive armies
+	}
+}
+
+#technomancy
+tec_technomancy = {
+	monarch_power = DIP
+	always = yes
+
+	modifier = {
+		all_estate_loyalty_equilibrium = 0.1 #hooked into the existing magical text publication system, so their shit gets read more
+		improve_relation_modifier = 0.33 #get along with the ancien regime
+		production_efficiency = -0.1 #join the magocratic nobles in stifling some new methods that would enrich non-nobles
+	}
+}
+
+#machinery
+tec_mechanists = {
+	monarch_power = ADM
+	always = yes
+
+	modifier = {
+		global_trade_goods_size_modifier = 0.1 #They specialize in mass production
+		artillery_levels_available_vs_fort = 1 #mass produced artificer weaponry can be employed enmasse
+		manpower_recovery_speed = -0.1 #employs a lot of people, who don't go into the army?
+	}
+}
+
+########################################
+# Aelnar Factions
+########################################
+
+#Fighting
+aelnar_blaiddtar = {
+	monarch_power = MIL
+	always = yes
+
+	modifier = {
+		infantry_power = 0.1
+		land_morale = 0.05
+		free_leader_pool = 1
+		land_maintenance_modifier = 0.15
+		army_tradition = 0.5
+	}
+}
+
+#Navy Supremacy
+aelnar_cymscal = {
+	monarch_power = DIP
+	always = yes
+
+	modifier = {
+		naval_morale = 0.05
+		global_ship_trade_power = 0.25
+		naval_forcelimit_modifier = 0.1
+		navy_tradition = 0.5
+		naval_maintenance_modifier = 0.15
+	}
+}
+
+#Converting
+aelnar_suir = {
+	monarch_power = ADM
+	always = yes
+
+	modifier = {
+		diplomatic_reputation = -1
+		
+		culture_conversion_cost = -0.15
+		global_missionary_strength = 0.025
+		missionaries = 1
+		tolerance_own = 1
+		tolerance_heretic = -1
+		tolerance_heathen = -1
+	}
+}
+
+########################################
+# Hobgoblin Factions
+########################################
+
+
+########################################
+# Centaur Factions
+########################################
+
+#Bulwar
+burning_spear = {
+	monarch_power = MIL
+	allow = {
+		tag = I89
+		has_country_flag = burning_spear_flag
+		NOT = { has_country_flag = burning_spear_revolt }
+	}
+
+	modifier = {
+		caravan_power = 0.2
+		tolerance_heathen = 2
+		production_efficiency = -0.1
+	}
+}
+
+#Escann/Deepwoods
+verdant_bliss = {
+	monarch_power = MIL
+	allow = {
+		tag = I89
+		has_country_flag = verdant_bliss_flag
+		NOT = { has_country_flag = verdant_bliss_revolt }
+	}
+
+	modifier = {
+		global_unrest = -1
+		tolerance_heathen = -1
+		land_maintenance_modifier = 0.1
+	}
+}
+
+#Rahen
+tiger_bane = {
+	monarch_power = MIL
+	allow = {
+		tag = I89
+		has_country_flag = tiger_bane_flag
+		NOT = { has_country_flag = tiger_bane_revolt }
+	}
+	modifier = {
+		land_maintenance_modifier = -0.1
+		land_forcelimit_modifier = 0.15
+		global_trade_goods_size_modifier = -0.1
+	}
+}
+
+#Gerudia
+raging_blizzard = {
+	monarch_power = MIL
+	allow = {
+		tag = I89
+		has_country_flag = raging_blizzard_flag
+		NOT = { has_country_flag = raging_blizzard_revolt }
+	}
+	modifier = {
+		land_attrition = -0.1
+		shock_damage = 0.1
+		cavalry_cost = 0.2
+	}
+}
+
+#Sarhal
+vine_tearer = {
+	monarch_power = MIL
+	allow = {
+		tag = I89
+		has_country_flag = vine_tearer_flag
+		NOT = { has_country_flag = vine_tearer_revolt }
+	}
+	modifier = {
+		fire_damage_received = -0.1
+		manpower_recovery_speed = 0.1
+		global_trade_goods_size_modifier = 0.1
+	}
+}
+
+#Cannor
+rosen_rider = {
+	monarch_power = MIL
+	allow = {
+		tag = I89
+		has_country_flag = rosen_rider_flag
+		NOT = { has_country_flag = rosen_rider_revolt }
+	}
+	modifier = {
+		cavalry_power = 0.1
+		land_morale = 0.1
+		backrow_artillery_damage = -0.2
+	}
+}
+
+########################
+# Marlliande Factions
+########################
+
+#Clan Vilaechi
+vilaechi = {
+	monarch_power = ADM
+	always = yes
+
+	modifier = {
+		global_tax_modifier = 0.15
+		development_cost = -0.1
+		advisor_cost = -0.1
+		state_maintenance_modifier = -0.1
+		advisor_pool = -1
+		republican_tradition = -2
+	}
+}
+
+#Clan Rosrholych
+rosrholych = {
+	monarch_power = DIP
+	always = yes
+
+	modifier = {
+		improve_relation_modifier = 0.25
+		accept_vassalization_reasons = 10
+		trade_efficiency = 0.15
+		global_own_trade_power = 0.1
+		land_morale = -0.1
+		global_spy_defence = -0.15
+	}
+}
+
+#Clan Drominar
+drominar = {
+	monarch_power = MIL
+	always = yes
+
+	modifier = {
+		discipline = 0.075
+		army_tradition = 0.5
+		movement_speed = 0.15
+		global_colonial_growth = 15
+		diplomatic_upkeep = -2
+		global_manpower_modifier = -0.2
+	}
+}
+
+############################
+# Northern League Factions
+############################
+
+#this faction needs to be at the bottom of the file
+nl_cooperatists = {
+	monarch_power = ADM
+	always = yes
+
+	modifier = {
+		global_autonomy = -0.025
+		global_trade_goods_size_modifier = 0.10
+		global_manpower_modifier = -0.10
+	}
+}
+
+nl_trade_barons = {
+	monarch_power = DIP
+	always = yes
+
+	modifier = {
+		global_prov_trade_power_modifier = 0.15
+		build_cost = -0.10
+		stability_cost_modifier = 0.15
+	}
+}
+
+nl_old_guard = {
+	monarch_power = MIL
+	always = yes
+
+	modifier = {
+		discipline = 0.05
+		manpower_recovery_speed = 0.10
+		republican_tradition = -0.2
+	}
+}
+
+############################
+# Infernal Autocracy Factions
+############################
+
+inf_ildran_hedine = {
+	monarch_power = ADM
+	always = yes
+
+	modifier = {
+		country_admin_power = 1
+	}
+}
+
+inf_triad = {
+	monarch_power = DIP
+	always = yes
+
+	modifier = {
+		country_diplomatic_power = 1
+	}
+}
+
+inf_kaz_mesner = {
+	monarch_power = MIL
+	always = yes
+
+	modifier = 	{
+		country_military_power = 1
+	}
+}
+
+#this faction needs to be at the bottom of the file
+dummy_faction = {
+	monarch_power = DIP
+	always = yes
+
+	modifier = {
+	}
+}
+###################
+# Mykx Factions
+###################
+
+mykx_xhazobkult = {
+	monarch_power = ADM
+	always = yes
+	
+	modifier = {
+		religious_unity = 0.2
+		global_missionary_strength = 0.02
+		missionaries = 1
+		tolerance_heathen = -2
+		yearly_patriarch_authority = 0.02
+	}
+}
+
+###################
+# New Havoral Factions
+###################
+
+bandit_kingdom_havoric_homesteaders = {
+	monarch_power = ADM
+	always = yes
+	
+	modifier = {
+		global_colonial_growth = 20
+		build_cost = -0.10
+		reinforce_cost_modifier = 0.10
+	}
+}
+
+bandit_kingdom_falah_poachers = {
+	monarch_power = DIP
+	always = yes
+	
+	modifier = {
+		production_efficiency = 0.15
+		development_cost = 0.05
+		global_monthly_devastation = 0.04
+	}
+}
+
+bandit_kingdom_bandit_captains = {
+	monarch_power = MIL
+	allow = {
+		NOT = {
+			has_country_flag = H57_ynnic_loyalists_active_flag
+		}
+	}
+	
+	modifier = {
+		global_tax_modifier = -0.10
+		production_efficiency = -0.10
+		loot_amount = 0.25
+		discipline = 0.05
+	}
+}
+
+bandit_kingdom_ynnic_loyalists = {
+	monarch_power = MIL
+	allow = {
+		has_country_flag = H57_ynnic_loyalists_active_flag
+	}
+	
+	modifier = {
+		min_autonomy = 10
+		core_creation = -0.10
+		advisor_cost = -0.15
+	}
+}
+
+# Pentapandemonium Factions
+########################################
+
+#artificers
+pen_discombobulatorium = {
+	monarch_power = ADM
+	always = yes
+
+	modifier = {
+		idea_cost = -0.1
+		embracement_cost = -0.2
+		advisor_cost = 0.2
+	}
+}
+
+#builders
+pen_erectors = {
+	monarch_power = ADM
+	always = yes
+
+	modifier = {
+		build_cost = -0.05
+		global_trade_goods_size_modifier = 0.05
+		inflation_reduction = -0.25
+	}
+}
+
+#drugs
+pen_harmaceuticals = {
+	monarch_power = DIP
+	always = yes
+
+	modifier = {
+		improve_relation_modifier = 0.2
+		trade_efficiency = 0.1
+		global_monthly_devastation = 0.08
+	}
+}
+
+#war/espionage
+pen_cloak_and_swagger = {
+	monarch_power = MIL
+	always = yes
+
+	modifier = {
+		spy_offence = 0.15
+		discipline = 0.025
+		prestige_decay = 0.01
+	}
+}
+
+#bumpkins/adventurers
+pen_clodhoppers = {
+	monarch_power = MIL
+	always = yes
+
+	modifier = {
+		all_estate_loyalty_equilibrium = 0.05
+		cavalry_cost = -0.15
+		technology_cost = 0.05
+	}
+}
+
+#######################
+# Royakottar Factions #
+#######################
+
+four_families_kattyva = {
+	monarch_power = mil
+	always = yes
+
+	modifier = {
+		production_efficiency = 0.05
+		global_manpower_modifier = 0.05
+	}
+}
+
+four_families_nymkorai = {
+	monarch_power = dip
+	always = yes
+
+	modifier = {
+		trade_efficiency = 0.1
+		global_trade_power = 0.1
+	}
+}
+
+four_families_ursibadur = {
+	monarch_power = dip
+	always = yes
+
+	modifier = {
+		reduced_liberty_desire = 5
+		ae_impact = -0.1
+	}
+}
+
+four_families_vustarin = {
+	monarch_power = adm
+	always = yes
+
+	modifier = {
+		technology_cost = -0.025
+		embracement_cost = -0.2
+	}
+}
+
+#####################
+# Besolaki Factions #
+#####################
+
+beso_caribhen = { #Sci
+	monarch_power = adm
+	always = yes
+
+	modifier = {
+		innovativeness_gain = 0.25
+		advisor_cost = -0.1
+		reform_progress_growth = 0.05
+		all_estate_loyalty_equilibrium = -0.025
+	}
+}
+
+beso_kheinbhen = { #Dev
+	monarch_power = adm
+	always = yes
+
+	modifier = {
+		development_cost = -0.05
+		build_time = -0.1
+		reform_progress_growth = 0.05
+		reduced_liberty_desire = -5
+	}
+}
+
+ beso_nautabhen = { #Dip
+	monarch_power = dip
+	always = yes
+
+	modifier = {
+		diplomatic_reputation = 1
+		trade_steering = 0.1
+		reform_progress_growth = 0.05
+		land_morale = -0.05
+	}
+}
+
+beso_skighubhen = { #Spy
+	monarch_power = dip
+	always = yes
+
+	modifier = {
+		spy_offence = 0.2
+		vassal_income = 0.25
+		reform_progress_growth = 0.05
+		republican_tradition = -0.2
+	}
+}
+
+beso_dhorbhen = { #Mil
+	monarch_power = mil
+	always = yes
+
+	modifier = {
+		discipline = 0.025
+		ship_durability = 0.025
+		reform_progress_growth = 0.05
+		defensiveness = -0.1
+	}
+}
+
+########################################
+
+########################################
+# Kalsyto Constitutional Factions
+########################################
+
+kalsyto_dazjal_0 = { #Worker
+	monarch_power = adm
+	always = yes
+
+	modifier = {
+	}
+}
+kalsyto_sojdal_0 = { #Soldier
+	monarch_power = mil
+	always = yes
+
+	modifier = {
+	}
+}
+kalsyto_sovk_0 = { #Trader
+	monarch_power = dip
+	always = yes
+
+	modifier = {
+	}
+}
+kalsyto_bhu_0 = { #Guns
+	monarch_power = mil
+	always = yes
+
+	modifier = {
+	}
+}
+kalsyto_boshal_0 = { #Children
+	monarch_power = adm
+	always = yes
+
+	modifier = {
+	}
+}
+kalsyto_kasuk_0 = { #Citizens
+	monarch_power = dip
+	always = yes
+
+	modifier = {
+	}
+}

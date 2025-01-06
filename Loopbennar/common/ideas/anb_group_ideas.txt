@@ -1,0 +1,2716 @@
+
+# Hopefully this is loaded before anb_country_ideas!
+
+## Copied from zz_group_ideas.txt
+client_ideas = {
+	start = {
+		land_morale = 0.1
+		core_creation = -0.10
+	}
+	bonus = {
+		build_cost = -0.1
+	}
+	trigger = {
+		is_client_nation = yes
+	}
+	free = yes
+		
+	client_self_rule = {
+		global_unrest = -2
+	}
+	foreign_tax_collectors = {	
+		global_tax_modifier = 0.10
+	}
+	fortified_borders = {
+		defensiveness = 0.15
+	}
+	magnate_landowners = {
+		production_efficiency = 0.1
+	}	
+	mercantile_privileges = {
+		global_prov_trade_power_modifier = 0.15
+	}
+	mercenary_recruitment_center = {
+		merc_maintenance_modifier = -0.15
+	}	
+	foreign_advisors_client = {
+		advisor_pool = 1
+	}
+}
+
+## Copied from zz_group_ideas.txt
+colonial_ideas = {
+	start = {
+		development_cost = -0.1
+		no_religion_penalty = yes
+	}
+	bonus = {
+		land_morale = 0.10
+	}
+	trigger = {
+		is_colonial_nation = yes
+	}
+	free = yes
+	
+	founding_fathers = {
+		republican_tradition = 0.5
+	}
+	continental_trade = {
+		global_prov_trade_power_modifier = 0.25
+	}
+	manufacturing_center = {
+		build_cost = -0.1
+	}
+	free_thinkers = {
+		idea_cost = -0.1
+	}
+	colonial_militia = {
+		global_regiment_cost = -0.1
+	}
+	new_frontiers = {
+		auto_explore_adjacent_to_colony = yes
+		global_colonial_growth = 20
+	}
+	liberty_heroes = {
+		free_leader_pool = 1
+	}
+}
+
+##Dwarovar remnant ideas
+remnant_ideas = {
+	start = {
+		development_cost = -0.15
+		infantry_power = 0.1
+	}
+	
+	bonus = {
+		global_own_trade_power = 0.15
+	}
+	
+	trigger = {
+		culture_group = dwarven
+		has_reform = dwarovar_dwarven_clan_reform
+		capital_scope = {
+			continent = serpentspine
+		}
+	}
+	free = yes		#will be added at load.
+	
+	remnant_solid_as_stone = {
+		discipline = 0.03
+		shock_damage_received = -0.05
+	}
+	remnant_dwarven_craftsmanship = {
+		global_trade_goods_size_modifier = 0.1
+	}
+	remnant_reclaim_our_homeland = {
+		colonists = 1
+		global_colonial_growth = 30
+	}
+	remnant_masters_of_defense = {
+		defensiveness = 0.25
+	}
+	remnant_blackpowder_engineering = {
+		mil_tech_cost_modifier = -0.05
+	}
+	remnant_dwarven_resilience = {
+		land_morale = 0.1
+	}
+	remnant_master_builders = {
+		siege_ability = 0.10
+		build_time = -0.05
+	}
+}
+
+##Dwarovar Squatter
+squatter_ideas = {
+	start = {
+		land_morale = 0.1
+		manpower_recovery_speed = 0.15
+	}
+	
+	bonus = {
+		global_manpower_modifier = 0.33
+	}
+	
+	trigger = {
+		has_reform = dwarovar_squatter
+	}
+	free = yes
+	
+	squatter_life_under_the_sun = {
+		land_attrition = -0.2
+		leader_land_manuever = 1
+	}
+	squatter_infrastructure = {
+		build_cost = -0.15 
+	}
+	squatter_taking_what_is_ours = {
+		colonists = 1
+		may_establish_frontier = yes
+	}
+	squatter_maintain_the_tradition = {
+		army_tradition = 1 
+	}
+	squatter_the_dwarovar_toll = {
+		vassal_income = 0.2
+		vassal_forcelimit_bonus = 0.2
+	}
+	squatter_expert_squatter = {
+		state_maintenance_modifier = -0.25
+		garrison_size = 0.1
+	}
+	squatter_underground_king = {
+		governing_capacity_modifier = 0.1
+		max_absolutism = 10
+	}
+}
+
+##Dwarovar Warband
+warband_ideas = { #Orc
+	start = {
+		movement_speed = 0.1
+		infantry_power = 0.1
+	}
+	bonus = {
+		land_morale = 0.1
+	}
+	trigger = {
+		has_reform = dwarovar_warband
+		NOT = {tag = Z55 }# Kobolds should get kobold ideas
+	}
+	free = yes
+	
+	warband_savagery = {
+		shock_damage = 0.15
+	}
+	warband_zeal = {
+		church_power_modifier = 0.2
+		siege_ability = 0.1
+	}
+	warband_settlement = {
+		may_establish_frontier = yes
+		colonists = 1
+	}
+	warband_domination = {
+		native_assimilation = 0.25
+		native_uprising_chance = -0.75
+	}
+	warband_dwarovar_mysteries = {
+		innovativeness_gain = 0.33
+	}
+	warband_cavern_agriculture = {
+		global_trade_goods_size_modifier = 0.05
+	}
+	warband_leading_with_strength = {
+		legitimacy = 1
+	}
+}
+
+adventurer_ideas = {
+	start = {
+		land_maintenance_modifier = -0.10
+		land_attrition = -0.1
+		may_recruit_female_generals = yes
+		may_explore = yes
+	}
+	bonus = {
+		manpower_recovery_speed = 0.1
+	}
+	trigger = {
+		has_reform = adventurer_reform
+	}
+	free = yes
+	
+	adventurer_call_to_adventure = {
+		global_manpower_modifier = 0.1
+	}
+	adventurer_rebuilding_escann = {
+		tribal_development_growth = 0.04
+	}
+	adventurer_against_the_greentide = {
+		culture_conversion_cost = -0.2
+		war_exhaustion = -0.02
+	}
+	adventurer_fighting_spirit = {
+		land_morale = 0.1
+	}
+	adventurer_legacy_of_heroes = {
+		leader_land_shock = 1
+	}
+	adventurer_inheritors_of_escann = {
+		reform_progress_growth = 0.15
+	}
+	adventurer_people_from_all_walks_of_life = {
+		no_religion_penalty = yes
+	}
+}
+
+aelantir_adventurer_ideas = {
+	start = {
+		land_maintenance_modifier = -0.10
+		land_morale = 0.1
+		may_recruit_female_generals = yes
+		may_explore = yes
+	}
+	bonus = {
+		manpower_recovery_speed = 0.1
+	}
+	trigger = {
+		is_aelantiri_spawnable = yes
+	}
+	free = yes
+	
+	aelantir_adventurer_call_to_adventure = {
+		global_manpower_modifier = 0.1
+	}
+	aelantir_adventurer_braving_the_aelantiri_wilds = {
+		land_attrition = -0.10
+		auto_explore_adjacent_to_colony = yes
+	}
+	aelantir_adventurer_homesteader_initiatives = {
+		colonists = 1
+	}
+	aelantir_adventurer_cultural_dominance= {
+		culture_conversion_cost = -0.2
+		war_exhaustion = -0.02
+	}
+	aelantir_adventurer_foreign_trading_practices = {
+		placed_merchant_power = 5
+	}
+	aelantir_adventurer_the_aelantiri_dream = {
+		global_colonial_growth = 25
+	}
+	aelantir_adventurer_people_from_all_walks_of_life_2 = {
+		no_religion_penalty = yes
+	}
+}
+
+dwarovar_adventurer_ideas = {
+	start = {
+		land_attrition = -0.10
+		recover_army_morale_speed = 0.15
+		may_recruit_female_generals = yes
+	}
+	bonus = {
+		manpower_recovery_speed = 0.1
+	}
+	trigger = {
+		has_reform = dwarovar_adventurer_reform
+	}
+	free = yes
+	
+	dwarovar_adventurer_call_to_reclamation = {
+		manpower_in_true_faith_provinces = 0.1
+	}
+	dwarovar_adventurer_rebuild_what_was_lost = {
+		build_cost = -0.1
+	}
+	dwarovar_adventurer_blood_and_steel = {
+		land_morale = 0.1
+	}
+	dwarovar_adventurer_dig_deep = {
+		war_exhaustion = -0.05
+	}
+	dwarovar_adventurer_strike_the_earth = {
+		production_efficiency = 0.05
+		innovativeness_gain = 0.25
+	}
+	dwarovar_adventurer_the_ancestors_of_tomorrow = {
+		tolerance_own = 1
+	}
+	dwarovar_adventurer_dwarves_from_all_walks_of_life = {
+		advisor_pool = 1
+		female_advisor_chance = 0.25
+	}
+}
+
+gnollish_ideas = {
+	start = {
+		land_morale = 0.1
+		available_province_loot = 0.3
+	}
+	bonus = {
+		loot_amount = 0.25
+	}
+	trigger = {
+		culture_group = gnollish
+	}
+	free = yes
+	
+	a_race_of_scavengers_and_raiders = {
+		land_attrition = -0.1
+	}
+	pack_loyalty = {
+		horde_unity = 1
+		legitimacy = 1
+	}
+	demonic_rampage = {
+		war_exhaustion = -0.02
+		movement_speed = 0.1
+	}
+	kings_of_the_slave_trade = {
+		trade_efficiency = 0.05
+		production_efficiency = 0.05
+	}
+	tight_leash = {
+		global_unrest = -1
+		reduced_liberty_desire = 5
+	}
+	flesh_eaters = {
+		hostile_attrition = 1
+		land_maintenance_modifier = -0.10
+	}
+	legacy_of_the_xhazobine = {
+	 	morale_damage_received = -0.05
+		ae_impact = -0.1
+	}
+}	
+
+kobold_ideas = {
+	start = {
+		stability_cost_modifier = -0.15
+		manpower_recovery_speed = 0.15
+	}
+	bonus = {
+		global_regiment_recruit_speed = -0.33
+	}
+	trigger = {
+		culture_group = kobold
+	}
+	free = yes
+	
+	kobold_mining_community = {
+		production_efficiency = 0.1
+	}
+	kobold_war_against_the_tallfolk = {
+		war_exhaustion_cost = -0.10
+	}
+	kobold_entrenched_territories = {
+		fort_maintenance_modifier = -0.15
+	}
+	kobold_trapmasters = {
+		defensiveness = 0.15
+	}
+	kobold_makeshift_builders = {
+		build_cost = -0.1
+	}
+	kobold_rapid_breeders = {
+		global_manpower_modifier = 0.1
+	}
+	kobold_shanty_towns = {
+		development_cost = -0.1
+	}
+}	
+
+halfling_ideas = {
+	start = {
+		global_trade_goods_size_modifier = 0.1
+		trade_efficiency = 0.1
+	}
+	bonus = {
+		global_prov_trade_power_modifier = 0.1
+	}
+	trigger = {
+		is_cannorian_halfling_primary_culture = yes
+	}
+	free = yes
+	
+	halfling_quick_breeders = {
+		manpower_recovery_speed = 0.1
+	}
+	halfling_agricultural_tradition = {
+		production_efficiency = 0.1
+	}
+	halfling_guerrilla_warfare = {
+		hostile_attrition = 1
+	}
+	halfling_human_hired_help = {
+		merc_maintenance_modifier = -0.1
+	}
+	halfling_advice_of_retired_adventurers = {
+		same_culture_advisor_cost = -0.1
+	}
+	halfling_courage_bravery_and_valour = {
+		land_morale = 0.1
+	}
+	halfling_cuisine = {
+		prestige = 1
+	}
+}
+
+orcish_ideas = {
+	start = {
+		free_leader_pool = 1
+		leader_land_shock = 1
+	}
+	bonus = {
+		army_tradition_from_battle = 0.5
+	}
+	trigger = {
+		culture_group = orcish
+		NOT = {primary_culture = brown_orc }
+	}
+	free = yes
+	
+	orcish_beserker_frenzy = {
+		land_morale = 0.1
+	}
+	orcish_control_the_clans = {
+		horde_unity = 1
+		legitimacy = 1
+	}
+	orcish_teach_the_young = {
+		manpower_recovery_speed = 0.1
+	}
+	orcish_self_sustaining_warbands = {
+		land_attrition = -0.1
+		land_maintenance_modifier = -0.05
+	}
+	orcish_natural_camoflague = {
+		hostile_attrition = 1
+	}
+	orcish_orcish_legions = {
+		discipline = 0.05
+	}
+	orcish_veteran_mercenaries = {			#Mercenaries from abroad return home to impart advice
+		mercenary_discipline = 0.05
+		same_culture_advisor_cost = -0.15
+	}
+}
+
+goblin_ideas = { #stop colonizing the dwarovar with sib forntiers
+	start = {
+		global_manpower_modifier = 0.1
+		land_maintenance_modifier = -0.1
+	}
+	bonus = {
+		siege_ability = 0.10
+	}
+	trigger = {
+		culture_group = goblin
+		NOT = {primary_culture = common_goblin }
+	}
+	free = yes
+	
+	goblin_always_prepared = {
+		army_tradition_decay = -0.01
+	}
+	goblin_goblinic_austerity = {
+		state_maintenance_modifier = -0.15
+	}
+	goblin_shamans = {
+		legitimacy = 0.5
+		hostile_attrition = 1
+	}
+	goblin_social_mobility = {		#THIS MUST BE CHANGED FOR EXODUS GOBLIN ONLY
+		advisor_cost = -0.05
+		tolerance_heathen = 1
+	}
+	goblin_we_have_reserves = {
+		infantry_cost = -0.1
+		manpower_recovery_speed = 0.1
+	}
+	goblin_smug_pseudo_intellectuals = {
+		technology_cost = -0.05
+	}
+	goblin_cowardly_tactics = {
+		fire_damage = 0.10
+	}
+}
+
+common_goblin_ideas = {
+	start = {
+		loot_amount = 0.5
+		mil_advisor_cost = -0.25
+	}
+	bonus = {
+		global_trade_power = 0.1
+	}
+	trigger = {
+		primary_culture = common_goblin
+	}
+	free = yes
+	
+	goblin_sneaky_tactics = {
+		shock_damage_received = -0.10
+	}
+	goblin_life_under_the_blue_sky = {
+		global_unrest = -2
+	}
+	goblin_looting_for_knowledge = {
+		technology_cost = -0.025
+		idea_cost = -0.05
+	}
+	goblin_the_naegub = {
+		trade_efficiency = 0.1
+	}
+	goblin_always_prepared = { #When making a set of ideas for Common Goblin clans, ignore these last 3 ideas
+		army_tradition_decay = -0.01
+	}
+	goblin_shamans = {
+		legitimacy = 0.5
+		hostile_attrition = 1
+	}
+	goblin_we_have_reserves = {
+		infantry_cost = -0.1
+		manpower_recovery_speed = 0.1
+	}
+}	
+
+sun_elf_ideas = {
+	start = {
+		same_culture_advisor_cost = -0.2
+		diplomatic_upkeep = 1
+	}
+	bonus = {
+		free_leader_pool = 1
+	}
+	trigger = {
+		primary_culture = sun_elf
+	}
+	free = yes
+	
+	sun_elf_purity_of_blood = {
+		prestige = 0.5
+	}
+	sun_elf_flying_chariots = {
+		leader_land_manuever = 1
+		fire_damage = 0.10
+	}
+	sun_elf_discriminatory_magical_schooling = {
+		global_unrest = -1
+	}
+	sun_elf_centuries_of_experience = {
+		global_tax_modifier = 0.1
+	}
+	sun_elf_lavish_courts = {
+		advisor_pool = 1
+	}
+	sun_elf_long_educations = {
+		technology_cost = -0.10
+	}
+	sun_elf_experienced_plotters = {
+		spy_offence = 0.2
+	}
+}
+
+#Dwarven ideas - Tall militaristic playstyle. To be the stepping stone where empires trip and fall
+dwarven_ideas = {
+	start = {
+		development_cost = -0.1
+		infantry_power = 0.1
+	}
+	bonus = {
+		global_own_trade_power = 0.1
+	}
+	trigger = {
+		culture_group = dwarven
+	}
+	free = yes		#will be added at load.
+	
+	dwarven_solid_as_stone = {
+		discipline = 0.05
+	}
+	dwarven_dwarven_craftsmanship = {
+		global_trade_goods_size_modifier = 0.1
+	}
+	dwarven_masters_of_defense = {
+		defensiveness = 0.2
+	}
+	dwarven_blackpowder_engineering = {
+		mil_tech_cost_modifier = -0.1 #maybe a bit too much. Took it from berber ideas
+	}
+	dwarven_dwarven_resilience = {
+		shock_damage_received = -0.05
+		fire_damage_received = -0.05
+	}
+	dwarven_strongest_ale_in_the_world = {
+		global_spy_defence = 0.20
+		land_morale = 0.025
+	}
+	dwarven_master_builders = {
+		siege_ability = 0.05
+		build_time = -0.05
+	}
+}
+
+temple_ideas = {
+	start = {
+		manpower_recovery_speed = 0.15
+		missionaries = 1
+	}
+	bonus = {
+		culture_conversion_cost = -0.1
+	}
+	trigger = {
+		government = theocracy
+		religion_group = cannorian
+	}
+	free = yes
+	
+	temple_stewards_of_the_faith = {
+		global_tax_modifier = 0.10
+	}
+	temple_temple_administration = {
+		stability_cost_modifier = -0.10
+		core_creation = -0.10
+	}
+	temple_shield_of_the_pious = {
+		defensiveness = 0.25
+	}
+	temple_dogmatic_center = {
+		global_missionary_strength = 0.02
+	}
+	temple_fortified_temples = {
+		global_garrison_growth = 0.1
+		garrison_size = 0.1
+	}
+	temple_cultural_landmark = {
+		prestige = 1
+	}
+	temple_temple_city = {
+		development_cost = -0.1
+	}
+}
+
+esmari_ideas = {
+	start = {
+		manpower_recovery_speed = 0.15
+		heir_chance = 0.5
+	}
+	bonus = {
+		diplomatic_reputation = 1
+	}
+	trigger = {
+		primary_culture = esmari
+	}
+	free = yes		
+	
+	esmari_the_riverlords = {
+		global_spy_defence = 0.2
+ 	}
+	esmari_esmar_river_parties = {
+		prestige_decay = -0.01
+		improve_relation_modifier = 0.05
+	}
+	esmari_the_waterways = {
+		global_own_trade_power = 0.10
+		trade_efficiency = 0.05
+	}
+	esmari_esmari_free_nobles = {
+		merc_maintenance_modifier = -0.15
+	}
+	esmari_blessing_of_esmaryal = {
+		global_unrest = -0.5
+		stability_cost_modifier = -0.1
+	}
+	esmari_desire_for_peace = {
+		diplomats = 1
+	}
+	esmari_production_techniques = {
+		production_efficiency = 0.10
+	}
+}
+
+free_city_ideas = {
+	start = {
+		merc_maintenance_modifier = -0.15
+		development_cost = -0.1
+	}
+	bonus = {
+		prestige = 1
+	}
+	trigger = {
+		has_reform = free_city
+	}
+	free = yes
+	
+	free_city_imperial_privileges = {
+		global_trade_goods_size_modifier = 0.1
+	}
+	free_city_free_guardsmen = {
+		infantry_power = 0.1
+	}
+	free_city_urban_guilds = {
+		production_efficiency = 0.1
+	}
+	free_city_inland_trade = {
+		caravan_power = 0.2
+	}
+	free_city_imperial_immediacy = {
+		global_tax_modifier = 0.1
+	}
+	free_city_safe_haven = {
+		defensiveness = 0.2
+	}
+	free_city_promote_foreign_trade = {
+		merchants = 1
+	}
+}
+
+west_damerian_ideas = {
+	start = {
+		stability_cost_modifier = -0.1
+		land_forcelimit_modifier = 0.2
+	}
+	bonus = {
+		land_maintenance_modifier = -0.05
+	}
+	trigger = {
+		primary_culture = west_damerian 
+	}
+	free = yes
+	
+	west_damerian_ducal_veterans = {
+		infantry_cost = -0.10
+	}
+	west_damerian_land_cultivation = {
+		production_efficiency = 0.1	
+	}
+	west_damerian_lorentish_trade = {
+		global_trade_power = 0.1
+	}
+	west_damerian_melting_pot = {
+		num_accepted_cultures = 1
+		tolerance_heretic = 1		
+	}
+	west_damerian_on_both_sides = {
+		infantry_power = 0.1
+	}
+	west_damerian_enemy_of_my_enemy = {
+		diplomatic_reputation = 1
+	}
+	west_damerian_lessons_of_the_lilac_wars = {
+		leader_land_shock = 1
+	}
+}
+
+moonelf_ideas = {
+	start = {
+		defensiveness = 0.1
+		trade_efficiency = 0.1
+	}
+	bonus = {
+		legitimacy = 1
+		republican_tradition = 0.5
+		devotion = 1
+	}
+	trigger = {
+		primary_culture = moon_elf
+	}
+	free = yes
+	
+	moonelf_ingenuity = {
+		idea_cost = -0.05
+	}
+	moonelf_mercenaries_of_men = {
+		merc_maintenance_modifier = -0.15
+	}
+	moonelf_aristocracy = {
+		global_spy_defence = 0.2
+ 	}
+	moonelf_tolerance = {
+		num_accepted_cultures = 1
+		heir_chance = 0.2
+	}
+	moonelf_high_artistry = {
+		prestige = 1
+	}
+	moonelf_diplomacy = {
+		diplomatic_upkeep = 1
+		spy_offence = 0.1
+	}
+	moonelf_kinship = {
+		diplomatic_reputation = 1
+	}
+}
+
+woodelf_ideas = {
+	start = {
+		leader_land_manuever = 1
+		hostile_attrition = 1
+	}
+	bonus = {
+		innovativeness_gain = 0.5
+	}
+	trigger = {
+		primary_culture = wood_elf
+	}
+	free = yes
+	
+	woodelf_one_with_nature = {
+		movement_speed = 0.1
+		supply_limit_modifier = 0.25
+	}
+	woodelf_specialized_arrows = {
+		shock_damage = 0.1
+	}
+	woodelf_finest_carpenter = {
+		build_cost = -0.15
+ 	}
+	woodelf_shrewd_diplomats = {
+		diplomatic_reputation = 1
+	}
+	woodelf_the_ranger_art = {
+		army_tradition = 1
+	}
+	woodelf_gift_of_the_forest = {
+		global_trade_goods_size_modifier = 0.05
+	}
+	woodelf_renaissance = {
+		global_institution_spread = 0.1
+	}
+}
+
+lorentish_culture_ideas = {
+	start = {
+		fort_maintenance_modifier = -0.1
+		cavalry_cost = -0.1
+	}
+	
+	bonus = {
+		global_tax_modifier = 0.1
+	}
+	
+	trigger = {
+		culture_group = lencori
+	}
+	free = yes
+	
+	lorentish_luxury_trade = {
+		global_own_trade_power = 0.10
+	}
+	lorentish_vineyard_palaces = {
+		prestige_decay = -0.01 
+	}
+	lorentish_romantic_chivalry = {
+		cavalry_power = 0.1
+	}
+	lorentish_adroit_diplomacy = {
+		diplomatic_reputation = 1
+	}
+	lorentish_cuisine = {
+		prestige = 1
+	}
+	lorentish_enlightenment = {
+		diplomatic_upkeep = 1
+	}
+	lorentish_lilac_legacy = {
+		land_morale = 0.1
+	}
+}
+
+imperial_ideas = {
+	start = {
+		infantry_power = 0.1
+		merc_maintenance_modifier = -0.15
+	}
+	bonus = {
+		technology_cost = -0.05
+	}
+	
+	trigger = {
+		is_part_of_hre = yes
+	}
+	free = yes		#will be added at load.
+	
+	imperial_guilds = {
+		production_efficiency = 0.10
+	}
+	imperial_trade_and_transit = {
+		global_own_trade_power = 0.10
+		trade_efficiency = 0.05
+	}
+	imperial_strength_in_numbers = {
+		diplomatic_reputation = 1
+	}
+	imperial_law_and_order = {
+		global_unrest = -1
+	}
+	imperial_wars_of_religion = {
+		global_missionary_strength = 0.01
+	}
+	imperial_couriers = {
+		diplomatic_upkeep = 1
+	}
+	imperial_privileges = {
+		prestige = 1
+	}
+}
+
+reachman_ideas = {
+	start = {
+		global_sailors_modifier = 0.2
+		diplomatic_upkeep = 1
+	}
+	bonus = {
+		naval_morale = 0.1 
+	}
+	trigger = {
+		OR = {
+			primary_culture = blue_reachman
+			primary_culture = white_reachman
+		}
+	}
+	free = yes
+
+	reachman_fierce_independence = {
+		hostile_attrition = 1
+		fort_maintenance_modifier = -0.1 
+	}
+	reachman_chillsbay_traders = {
+		trade_efficiency = 0.1
+	}
+	reachman_purveyors_of_fur = {
+		global_trade_goods_size_modifier = 0.1
+	}
+	reachman_galleys_of_the_giants_grave = {
+		galley_power = 0.1
+	}
+	reachman_three_prongd_heritage = {
+		same_culture_advisor_cost = -0.25
+		advisor_pool = 1
+	}
+	reachman_fishy_diet = {
+		naval_forcelimit_modifier = 0.15
+		sailors_recovery_speed = 0.1
+	}
+	reachman_against_larger_odds = {
+		land_morale = 0.1
+	}
+}	
+
+escanni_ideas = {
+	start = {
+		colonists = 1
+		prestige_from_land = 1.0
+	}
+	bonus = {
+		diplomatic_upkeep = 1
+	}
+	trigger = {
+		OR = {
+			culture_group = escanni
+			primary_culture = marrodic
+		}
+	}
+	free = yes
+	
+	escanni_resettle = {
+		global_colonial_growth = 25
+	}
+	escanni_heavy_knights = {
+		cavalry_power = 0.2
+	}
+	escanni_castans_legacy = {
+		land_morale = 0.1
+	}
+	escanni_adversity_breeds = {
+		idea_cost = -0.1
+	}
+	escanni_till_fallow = {
+		production_efficiency = 0.1
+	}
+	escanni_castans_unity = {
+		stability_cost_modifier = -0.1
+	}
+	escanni_drafts = {
+		global_manpower_modifier = 0.20
+	}
+}
+
+gerudian_ideas = {
+	start = {
+		may_perform_slave_raid = yes
+		global_manpower_modifier = 0.10
+	}
+	bonus = {
+		shock_damage_received = -0.10
+	}
+	trigger = {
+		OR = {
+			primary_culture = west_dalr
+			primary_culture = east_dalr
+			primary_culture = olavish
+		}
+	}
+	free = yes
+	
+	gerudian_hardy_reavers = {
+		infantry_power = 0.10
+	}
+	gerudian_mead_halls = {
+		global_unrest = -1.0
+	}
+	gerudian_eager_recruits = {
+		sailors_recovery_speed = 0.05
+		manpower_recovery_speed = 0.10
+	}
+	gerudian_troll_hunters = {
+		war_exhaustion_cost = -0.15
+	}
+	gerudian_land_of_the_drowned_giants = {
+		tolerance_own = 1.0
+	}
+	gerudian_pickled_goods = {
+		trade_efficiency = 0.10
+	}
+	gerudian_naval_lifestyle = {
+		leader_naval_manuever = 1.0
+	}
+}
+
+harpy_ideas = {
+	start = {
+		same_culture_advisor_cost = -0.33
+		infantry_power = 0.1
+	}
+	bonus = {
+		leader_land_manuever = 1
+	}
+	trigger = {
+		culture_group = harpy
+		NOT = { has_country_flag = harpylen_restored_flag }
+	}
+	free = yes
+	
+	harpy_relishment = {
+		reinforce_cost_modifier = -0.2
+	}
+	harpy_shiny_things = {
+		global_tax_modifier = 0.05
+		loot_amount = 0.2
+	}
+	harpy_sporting_call = {
+		harsh_treatment_cost = -0.5
+	}
+	harpy_relieving_songs = {
+		war_exhaustion_cost = -0.25
+	}
+	harpy_the_odd_hunt = {
+		institution_spread_from_true_faith = 0.2
+	}
+	harpy_unmitigated_fire = {
+		fire_damage = 0.1
+	}
+	harpy_call_of_the_matriarch = {
+		leader_cost = -0.3
+	}
+}
+
+selpheregi_ideas = {
+	start = {
+		prestige_decay = -0.01
+		production_efficiency = 0.1
+	}
+	bonus = {
+		fire_damage = 0.1
+	}
+	trigger = {
+		primary_culture = selphereg
+	}
+	free = yes
+	
+	selpheregi_spring_court = {
+		fort_maintenance_modifier = -0.15
+	}
+	selpheregi_arcane_arts = {
+		leader_land_fire = 1
+	}
+	selpheregi_eordan_expeditions = {
+		missionaries = 1
+	}
+	selpheregi_age_of_renewal = {
+		technology_cost = -0.1
+	}
+	selpheregi_artifacts_trade = {
+		global_trade_goods_size_modifier = 0.1
+	}
+	selpheregi_restoration_of_the_hallowed_ruins = {
+		development_cost = -0.15
+	}
+	selpheregi_first_among_ruinborn = {
+		legitimacy = 1
+		republican_tradition = 0.3
+		devotion = 0.5
+	}
+}
+
+caamas_ideas = {
+	start = {
+		global_ship_cost = -0.1
+		trade_efficiency = 0.1
+	}
+	bonus = {
+		ship_durability = 0.05
+	}
+	trigger = {
+		primary_culture = caamas
+	}
+	free = yes
+	
+	caamas_call_of_the_sea = {
+		global_sailors_modifier = 0.25
+	}
+	caamas_steadfast_precursor_fortifications = {
+		defensiveness = 0.15
+	}
+	caamas_merchant_lord_fleets = {
+		naval_morale = 0.1
+		trade_steering = 0.05
+	}
+	caamas_summer_solstice_festival = {
+		global_unrest = -2
+	}
+	caamas_alecandi_relations = {
+		merchants = 1
+	}
+	caamas_reclamation_of_the_southern_lands = {
+		colonists = 1
+		native_assimilation = 0.25
+	}
+	caamas_summer_sea_enterprises = {
+		global_trade_power = 0.1
+	}
+}
+
+peitar_ideas = {
+	start = {
+		movement_speed = 0.1
+		hostile_attrition = 1
+	}
+	bonus = {
+		war_exhaustion = -0.05
+	}
+	trigger = {
+		primary_culture = peitar
+	}
+	free = yes
+	
+	peitar_deepwoods_loyalty = {
+		defensiveness = 0.15
+	}
+	peitar_feypoison = {
+		infantry_power = 0.1
+	}
+	peitar_four_seasons = {
+		diplomatic_reputation = 1
+	}
+	peitar_gladewardens = {
+		development_cost = -0.1
+		manpower_recovery_speed = 0.05
+	}
+	peitar_exotic_domandrod_goods = {
+		prestige = 0.5
+		global_trade_goods_size_modifier = 0.05
+	}
+	peitar_corrosive_magic = {
+		siege_ability = 0.1
+	}
+	peitar_fey_lords_tribute = {
+		global_tax_modifier = 0.10
+		yearly_absolutism = 0.5
+	}
+}
+
+tuathak_ideas = {
+	start = {
+		infantry_cost = -0.1
+		unjustified_demands = -0.1
+	}
+	bonus = {
+		build_cost = -0.1
+	}
+	trigger = {
+		primary_culture = tuathak
+	}
+	free = yes
+	
+	tuathak_autumn_court = {
+		state_maintenance_modifier = -0.25
+	}
+	tuathak_final_harvest = {
+		production_efficiency = 0.1
+	}
+	tuathak_marshals_of_the_north = {
+		army_tradition = 0.5
+	}
+	tuathak_praisegranting = {
+		diplomatic_reputation = 1
+	}
+	tuathak_warmwater_ports = {
+		global_ship_cost = -0.1
+	}
+	tuathak_cannorian_military_tactics = {
+		infantry_power = 0.1
+	}
+	tuathak_foreign_mercenaries = {
+		mercenary_discipline = 0.05
+		mercenary_manpower = 0.25
+	}
+}
+
+snecboth_ideas = {
+	start = {
+		hostile_attrition = 1
+		legitimacy = 1
+		devotion = 0.5
+		republican_tradition = 0.5
+	}
+	bonus = {
+		leader_land_shock = 1
+	}
+	trigger = {
+		primary_culture = snecboth
+	}
+	free = yes
+	
+	snecboth_glacial_bulwarks = {
+		defensiveness = 0.15
+	}
+	snecboth_icefishing = {
+		global_trade_goods_size_modifier = 0.05
+		land_attrition = -0.1
+	}
+	snecboth_patience_and_understanding = {
+		stability_cost_modifier = -0.15
+	}
+	snecboth_migratory_lifestyle = {
+		global_manpower_modifier = 0.05
+		global_sailors_modifier = 0.05
+	}
+	snecboth_boreal_cavalry = {
+		cavalry_flanking = 0.25
+		cavalry_cost = -0.10
+	}
+	snecboth_ice_sheet_exploration = {
+		colonists = 1
+		colonist_placement_chance = 0.1
+	}
+	snecboth_icebreaker_fleets = {
+		navy_tradition = 1
+	}
+}
+
+kheionai_ideas = {
+	start = {
+		garrison_size = 0.2
+		reduced_liberty_desire = 15
+	}
+	bonus = {
+		trade_efficiency = 0.1
+	}
+	trigger = {
+		culture_group = kheionai_ruinborn_elf
+	}
+	free = yes
+	
+	kheionai_development_of_the_city_state_copy = {
+		development_cost = -0.10
+	}
+	kheionai_cleaved_sea_galleycraft = {
+		galley_power = 0.1
+		galley_cost = -0.1
+	}
+	devandi_foundation_of_the_nekheis = {
+		global_colonial_growth = 15
+		global_unrest = -1
+	}
+	kheionai_great_works_of_south_aelantir = {
+		build_cost = -0.1
+		prestige_decay = -0.01
+	}
+	kheionai_modernize_the_kheionai_schools = {
+		idea_cost = -0.1
+	}
+	kheionai_andic_merchant_fleets = {
+		ship_power_propagation = 0.1
+	}
+	kheionai_secure_the_kheionai = { # against foreigners
+		global_own_trade_power = 0.1
+	}
+}
+
+ynnic_ideas = {
+	start = {
+		diplomatic_upkeep = 1
+		production_efficiency = 0.1
+	}
+	bonus = {
+		artillery_power = 0.1
+	}
+	trigger = {
+		culture_group = ynnic_ruinborn_elf
+	}
+	free = yes
+
+	ynnic_survivors_of_the_ending_flood = {
+		development_cost = -0.1
+	}
+	ynnic_ynnic_feudalism = {
+		vassal_income = 0.2
+		vassal_forcelimit_bonus = 0.5
+	}
+	ynnic_natural_besiegers = {
+		siege_ability = 0.1
+		leader_siege = 1
+	}
+	ynnic_influx_of_foreign_adventurers = {
+		merc_maintenance_modifier = -0.25
+	}
+	ynnic_trademasters_of_the_ynn = {
+		global_own_trade_power = 0.15
+	}
+	ynnic_integration_and_cannorization_act = {
+		promote_culture_cost = -0.25
+		embracement_cost = -0.25
+	}
+	ynnic_scions_of_the_ynnic_empire = {
+		colonists = 1
+		global_colonial_growth = 20
+	}
+}
+
+taychendi_ideas = {
+	start = {
+		land_maintenance_modifier = -0.1
+		general_cost = -0.15
+	}
+	bonus = {
+		fire_damage = 0.1
+	}
+	trigger = {
+		OR = {
+			culture_group = taychendi_ruinborn_elf
+			tag = J83
+			technology_group = tech_east_bharbhen
+		}
+	}
+	free = yes
+
+	taychendi_power_to_the_cities = { #big powerful merchant class
+		burghers_loyalty_modifier = 0.1
+	}
+	taychendi_the_bearded_elves = { #elf beards
+		same_culture_advisor_cost = -0.15
+	}
+	taychendi_unending_masses = { #most populous aelantir civilization
+		manpower_in_true_faith_provinces = 0.15
+	}
+	taychendi_pantheon_of_heroes = {
+		tolerance_own = 2
+	}
+	taychendi_land_of_tea = { #taychend literally means tea land
+		diplomatic_reputation = 1
+	}
+	taychendi_legitimacy_through_victory = {
+		prestige_from_land = 0.5
+		army_tradition_from_battle = 0.5
+	}
+	taychendi_the_great_cycle = { #warlordism cycle, generals heavily study the past
+		army_tradition = 0.5
+	}
+}
+
+mteibhar_ideas = {
+	start = {
+		diplomats = 1
+		tolerance_own = 2
+	}
+	
+	bonus = {
+		leader_land_fire = 1
+	}
+	
+	trigger = {
+		primary_culture = mteibhar
+	}
+	free = yes
+	
+	mteibhar_the_devandi_drift = {
+		global_autonomy = -0.05
+	}
+	
+	mteibhar_words_before_war = { 
+		stability_cost_modifier = -0.15
+	}
+
+	mteibhar_femezhkanz = {
+		shock_damage = 0.1
+	}
+
+	mteibhar_lost_in_the_valley = { 
+		hostile_attrition = 1
+	}
+
+	mteibhar_galvanizing_power = { 
+		fire_damage_received = -0.05 
+		shock_damage_received = -0.05
+
+	}
+	
+	mteibhar_earthern_great_works = {
+		build_cost = -0.1
+	}
+	
+	mteibhar_mountains_of_simmering_steel = { 
+		interest = -0.5
+	}
+}
+
+
+BULWARI_ideas = {
+	start = {
+		land_morale = 0.1
+		cavalry_power = 0.15
+	}
+	bonus = {
+		recover_army_morale_speed = 0.05
+	}
+	trigger = {
+		OR = {
+			primary_culture = zanite
+			primary_culture = surani
+		}
+	}
+	free = yes
+
+	bulwari_first_cities_of_humanity = {
+		republican_tradition = 0.3
+		legitimacy = 1 
+		devotion = 1
+	}
+	bulwari_ten_thousand_bazaars = {
+		trade_efficiency = 0.15
+	}
+	bulwari_the_order_of_judges = {
+		global_unrest = -2
+	}
+	bulwari_golden_spears = {
+		global_manpower_modifier = 0.15
+	}
+	bulwari_repairing_the_golden_road = {
+		caravan_power = 0.2
+	}
+	bulwari_encourage_resettlement = {
+		manpower_recovery_speed = 0.10
+	}
+	bulwari_reform_the_city_states = {
+		global_tax_modifier = 0.10
+	}
+}
+
+BAHARI_ideas = {
+	start = {
+		light_ship_cost = -0.2
+		land_morale = 0.1
+	}
+	bonus = {
+ 		global_trade_power = 0.1
+	}
+	trigger = {
+		OR = {
+			primary_culture = brasanni
+			primary_culture = bahari
+		}
+	}
+	free = yes
+	
+	bahari_idea_1 = {
+		naval_forcelimit_modifier = 0.25
+	}
+	bahari_idea_2 = {
+		embargo_efficiency = 0.1
+		privateer_efficiency = 0.15
+	}
+	bahari_idea_3 = {
+		merchants = 1
+	}
+	bahari_idea_4 = {
+		trade_steering = 0.25
+	}
+	bahari_idea_5 = {
+		tolerance_heathen = 2		
+	}
+	bahari_idea_6 = {
+		merc_maintenance_modifier = -0.15
+	}
+	bahari_idea_7 = {
+		trade_efficiency = 0.1
+	}
+	
+}
+
+hobgoblin_ideas = {
+	start = {
+		infantry_power = 0.15
+		global_autonomy = -0.05
+	}
+	bonus = {
+ 		army_tradition = 1
+	}
+	trigger = {
+		culture_group = hobgoblin
+	}
+	free = yes
+	
+	hobgoblin_forging_an_empire = {
+		core_creation = -0.15
+	}
+	hobgoblin_modern_drill_techniques = {
+		discipline = 0.05
+		drill_gain_modifier = 0.25
+	}
+	hobgoblin_warforged_culture = {
+		land_maintenance_modifier = -0.10
+	}
+	hobgoblin_honourable_service = {
+		global_spy_defence = 0.25
+	}
+	hobgoblin_expanded_ninyu_kikun = {
+		land_forcelimit_modifier = 0.25
+	}
+	hobgoblin_military_education = {
+		free_leader_pool = 1
+		general_cost = -0.2
+	}
+	hobgoblin_direct_control = {
+		governing_capacity_modifier = 0.20
+	}
+}
+
+xiaken_ideas = {
+	start = {
+		prestige_from_land = 0.5
+		reinforce_cost_modifier = -0.1
+	}
+	bonus = {
+		build_cost = -0.1
+	}
+	trigger = {
+		OR = {
+			has_reform = xiaken
+			has_reform = indep_xiaken
+			has_reform = wulin
+		}
+	}
+	free = yes
+	
+	xiaken_land_of_martial_arts = {
+		shock_damage = 0.1
+	}
+	xiaken_epicenter_of_the_righteous_path = {
+		global_missionary_strength = 0.02
+	}
+	xiaken_temples_of_incense = {
+		production_efficiency = 0.1
+	}
+	xiaken_sifuu_leaders = {
+		army_tradition_decay = -0.01
+	}
+	xiaken_the_karmic_principle = {
+		yearly_corruption = -0.1
+	}
+	xiaken_one_thousand_virtuous_tales = {
+		prestige_decay = -0.01
+	}
+	xiaken_alliance_against_conquerors = {
+		land_morale = 0.1
+	}
+}
+
+ghavaanaj_ideas = {
+	start = {
+		cavalry_power = 0.2
+		lowercastes_loyalty_modifier = 0.1
+	}
+	bonus = {
+ 		shock_damage = 0.1
+	}
+	trigger = {
+		primary_culture = ghavaanaj
+	}
+	free = yes
+	
+	ghavaanaj_elephantine_workforce = {
+		production_efficiency = 0.1
+	}
+	ghavaanaj_lumbering_caravans = {
+		caravan_power = 0.15
+	}
+	ghavaanaj_festival_of_colours = {
+		stability_cost_modifier = -0.2
+	}
+	ghavaanaj_local_regiments = {
+		land_maintenance_modifier = -0.1
+	}
+	ghavaanaj_prize_breeds = {
+		prestige = 1
+	}
+	ghavaanaj_champions_of_the_sharaajaghal_games = {
+		leader_land_manuever = 1
+	}
+	ghavaanaj_gun_turrets = {
+		cavalry_fire = 0.5
+	}
+}
+
+river_city_ideas = {
+	start = {
+		global_spy_defence = 0.5
+		garrison_size = 0.33
+	}
+	bonus = {
+ 		development_cost = -0.1
+	}
+	trigger = {
+		OR = {
+			primary_culture = muthadhaya
+			primary_culture = rasarhid
+		}
+	}
+	free = yes
+	
+	river_city_the_porcelain_cities = {
+		production_efficiency = 0.15
+	}
+	river_city_the_aorta_of_raheni_philosophy = {
+		idea_cost = -0.1
+	}
+	river_city_great_river_forts = {
+		defensiveness = 0.15
+	}
+	river_city_great_river_barges = {
+		caravan_power = 0.2
+	}
+	river_city_mobile_walls = {
+		fire_damage_received = -0.1
+		shock_damage_received = -0.1
+	}
+	river_city_patrol_duties = {
+		land_maintenance_modifier = -0.1
+	}
+	river_city_military_advancement = {
+		possible_mil_policy = 1
+	}
+}
+
+ruin_kingdom_ideas = {
+	start = {
+		global_tax_modifier = 0.1
+		land_maintenance_modifier = -0.15
+	}
+	bonus = {
+ 		same_culture_advisor_cost = -0.25
+	}
+	trigger = {
+		OR = {
+			tag = R10
+			tag = R97
+			culture_group = upper_raheni
+		}
+	}
+	free = yes
+	
+	ruin_kingdom_kingdoms_of_yore = {
+		prestige = 1
+	}
+	ruin_kingdom_reintegration_of_old_territories = {
+		diplomatic_annexation_cost = -0.2
+	}
+	ruin_kingdom_rahenraj_blades = {
+		discipline = 0.05
+	}
+	ruin_kingdom_great_palace_libraries = {
+		technology_cost = -0.05
+	}
+	ruin_kingdom_strengthen_ancient_bloodlines = { #! This should give nobility influence and loyalty
+		legitimacy = 1
+		monthly_splendor = 1
+		nobles_influence_modifier = 0.1
+		nobles_loyalty_modifier = 0.1
+		uppercastes_influence_modifier = 0.1
+		uppercastes_loyalty_modifier = 0.1
+	}
+	ruin_kingdom_slave_armies = {
+		global_manpower_modifier = 0.15
+	}
+	ruin_kingdom_production_quotas = {
+		global_trade_goods_size_modifier = 0.1
+	}
+}
+
+raghamidesh_ideas = {
+	start = {
+		naval_maintenance_modifier = -0.2
+		land_morale = 0.1
+	}
+	bonus = {
+ 		backrow_artillery_damage = 0.1
+	}
+	trigger = {
+		primary_culture = raghamidesh
+	}
+	free = yes
+	
+	raghamidesh_merchant_marines = {
+		allowed_marine_fraction = 0.25
+		global_ship_trade_power = 0.15
+	}
+	raghamidesh_rahen_coast_merchants = {
+		global_trade_power = 0.1
+	}
+	raghamidesh_great_harbours = {
+		naval_forcelimit_modifier = 0.25
+	}
+	raghamidesh_soldiers_at_sea = {
+		global_sailors_modifier = 0.1
+		naval_attrition = -0.15
+	}
+	raghamidesh_artillery_experts = {
+		leader_land_fire = 1
+		leader_naval_fire = 1
+	}
+	raghamidesh_alien_acceptance = {
+		tolerance_heathen = 2
+	}
+	raghamidesh_profit_margins = {
+		trade_efficiency = 0.1
+	}
+}
+ 
+orc_slave_ideas = {
+	start = {
+		land_forcelimit_modifier = 0.2 
+		land_maintenance_modifier = -0.05 
+	}
+	bonus = {
+ 		global_manpower_modifier = 0.2 
+	}
+	trigger = {
+		primary_culture = brown_orc
+		NOT = {tag = R64 }
+	}
+	free = yes
+
+	brown_orc_dishonored_but_united = {
+		global_unrest = -1
+		stability_cost_modifier = -0.1
+	}
+	brown_orc_conflict_with_locals = {
+		loot_amount = 0.2 
+		culture_conversion_cost = -0.2 
+	}
+	brown_orc_hobgoblin_advance_guard = {
+		infantry_cost = -0.1 
+	}
+	brown_orc_unbroken_spirit = {
+		land_morale = 0.1
+		shock_damage = 0.1
+	}
+	brown_orc_workers_of_all_kind = {
+		production_efficiency = 0.1
+	}
+	brown_orc_slave_diplomacy = {
+		diplomatic_upkeep = 1 
+	}
+	brown_orc_our_new_home = {
+		development_cost = -0.1 
+	}
+}
+
+prabhi_ideas = {
+	start = {
+		land_morale = 0.1
+		tolerance_own = 2
+	}
+	bonus = {
+ 		fort_maintenance_modifier = -0.1
+	}
+	trigger = {
+		OR = {
+			has_reform = prabhi_reform
+			has_reform = indep_prabhi_reform
+			has_reform = senapti_reform
+		}
+		culture_group = harimari
+	}
+	free = yes
+	
+	rahen_caste_system = {
+		global_unrest = -1
+	}
+	prabhi_tooth_and_claw = {
+		infantry_power = 0.1
+	}
+	prabhi_harimraj_conquests = {
+		core_creation = -0.1
+	}
+	prabhi_masters_of_the_homeland = {
+		hostile_attrition = 1
+	}
+	prabhi_philosopher_generals = {
+		idea_cost = -0.05
+		general_cost = -0.2
+	}
+	prabhi_the_lower_castes_contribution = {
+		global_tax_modifier = 0.1
+	}
+	prabhi_fighting_cubs = {
+		army_tradition = 0.5
+	}
+}
+
+ghankedhen_ideas = {
+	start = {
+		cavalry_power = 0.10
+		movement_speed = 0.1
+	}
+	bonus = {
+ 		mil_tech_cost_modifier = -0.1
+	}
+	trigger = {
+		primary_culture = ghankedhen
+	}
+	free = yes
+	
+	ghankedhen_herdsmen_warriors = {
+		cavalry_cost = -0.2
+	}
+	ghankedhen_tribal_alliances = {
+		diplomatic_upkeep = 1
+	}
+	ghankedhen_clan_retinues = {
+		global_manpower_modifier = 0.25
+	}
+	ghankedhen_large_families = {
+		heir_chance = 0.2
+		advisor_pool = 1
+	}
+	ghankedhen_dwarven_tax_code = {
+		global_tax_modifier = 0.1
+	}
+	ghankedhen_familial_nepotism = {
+		same_culture_advisor_cost = -0.25
+	}
+	ghankedhen_blackpowder_reforms = {
+		fire_damage = 0.1
+	}
+}
+
+south_raheni_ideas = {
+	start = {
+		global_tax_modifier = 0.1
+		tolerance_own = 2
+	}
+	bonus = {
+ 		fort_maintenance_modifier = -0.1
+	}
+	trigger = {
+		OR = {
+			primary_culture = sarniryabsad
+			primary_culture = dhukharuved
+			primary_culture = rabhidarubsad
+			primary_culture = pasindesh
+		}
+	}
+	free = yes
+	
+	south_raheni_land_of_palaces = {
+		prestige = 1
+	}
+	south_raheni_imperial_infrastructure = {
+		development_cost = -0.1
+	}
+	south_raheni_the_great_river_school = {
+		technology_cost = -0.05
+	}
+	south_raheni_disciples_of_the_harimari = {
+		infantry_power = 0.1
+		shock_damage = 0.05
+	}
+	south_raheni_masons_of_the_raj = {
+		build_cost = -0.1
+		build_time = -0.1
+	}
+	south_raheni_chosen_servants_of_harimar = {
+		land_morale = 0.1
+	}
+	south_raheni_the_edict_of_sardiphadin = {
+		global_unrest = -1
+	}
+}
+
+yanglam_ideas = {	#Rainforest King
+	start = {
+		hostile_attrition = 1 
+		shock_damage_received = -0.1
+	}
+	bonus = {
+		leader_naval_manuever = 1
+	}
+	trigger = {
+		culture_group = yanglam
+	}
+	free = yes
+	
+	yanglam_boats_of_the_interior = {
+		movement_speed = 0.1
+		land_attrition = -0.1
+	}
+	yanglam_yanglam_eagle_warriors = {
+		shock_damage = 0.1
+	}
+	yanglam_rule_of_the_rainforest_kings = {
+		nobles_loyalty_modifier = 0.1
+		legitimacy = 1
+	}
+	yanglam_stilt_houses = {
+		stability_cost_modifier = -0.1
+	}
+	yanglam_teak_artisanry = {	#teak is also used for boats but its good for exterior construction, veneer, furniture
+		production_efficiency = 0.1
+	}
+	yanglam_sailors_of_the_halessi_seas = {
+		global_ship_trade_power = 0.1
+		sailor_maintenance_modifer = -0.1
+	}
+	yanglam_community_of_spirits_and_humans = {	#People and Spirits are used to each other
+		reform_progress_growth = 0.15
+	}
+}
+
+hinphat_ideas = {
+	start = {
+		build_cost = -0.1
+		global_tax_modifier = 0.1
+	}
+	bonus = {
+		trade_efficiency = 0.1
+	}
+	trigger = {
+		primary_culture = hinphat
+	}
+	free = yes
+
+	hinphat_men_of_stone = { #Hinphat are notoriously strong and resilient
+		land_morale = 0.1
+	}
+	hinphat_rite_of_ozovar = { #Hinphat lords must make the trek to Verkal Ozovar to have their rule confirmed by the Nephrite dwarves
+		legitimacy = 1
+	}
+	hinphat_duandi_advisors = { #The Nephrite dwarves have served in the courts of the Hinphat lords as their advisors since their tribal days
+		advisor_cost = -0.1
+		army_tradition = 0.5
+	}
+	hinphat_mountain_rangers = { #Patrollers of the Phokhao foothills, skilled at traversing the rough terrain
+		movement_speed = 0.15
+	}
+	hinphat_wet_rice_farmers = { #Terrace farms along the Phokhao range, produce a lot of rice
+		global_supply_limit_modifier = 0.15
+	}
+	hinphat_hykhuwok = { #Jadechosen, elite regiment of warriors chosen by the dwarven king of Verkal Ozovar to protect the plains of Hinphat
+		discipline = 0.05
+	}
+	hinphat_guns_of_phokhao = { #Armed with cannons and firearms from Verkal Ozovar
+		artillery_power = 0.1
+	}
+}
+
+kai_ideas = {	
+	start = {
+		recover_army_morale_speed = 0.05
+		envoy_travel_time = -0.25
+	}
+	bonus = {
+		unjustified_demands = -0.2
+	}
+	trigger = {
+		culture_group = kai
+	}
+	free = yes
+	
+	kai_to_the_chagrin_of_harimar = {	#He led a great expedition with a great army to these lands but found very little temples - so its a meme that its a shithole
+		war_exhaustion = -0.03
+	}
+	kai_marathon_men = {
+		movement_speed = 0.2
+	}
+	kai_strength_in_division = {	#The Kai people are disparate and dont have a lot in common, but are proud of it
+		discipline = 0.05
+	}
+	kai_thidinkai_thoroughbred = {	#fantastic race horses, good for war and pageantry
+		cavalry_flanking = 0.25
+		prestige = 0.5
+	}
+	kai_warlords_of_the_thidinkai = {
+		war_exhaustion_cost = -0.1
+	}
+	kai_emigrant_traders = {	#Many Thidinkai become traders elsewhere as the land is quite meh for trade
+		merchants = 1
+	}
+	kai_the_kai_step = {	#marching style like goosestep
+		infantry_power = 0.1
+	}
+}
+
+bom_ideas = {	
+	start = {
+		build_time = -0.2
+		infantry_cost = -0.1
+	}
+	bonus = {
+		rival_change_cost = -0.25
+	}
+	trigger = {
+		culture_group = bom
+	}
+	free = yes
+	
+	bom_learning_from_bim_lau = { #The fortification techniques developed by the engineers of Bim Lau have informed the general style of forts and towers throughout Bomdan
+		defensiveness = 0.1
+		fort_maintenance_modifier = -0.05
+	}
+	bom_the_river_merchants = { #The Bom have 3 major rivers flowing through their lands, the trade passing through their lands has established a thriving merchant class along those banks
+		burghers_loyalty_modifier = 0.1
+		dip_advisor_cost = -0.1
+	}
+	bom_gold_bound_by_blood = { #Unlike other folks, coin has a value in blood for the Bom and it is not lightly spent or squandered
+		inflation_reduction = 0.1
+	}
+	bom_the_haunting_flutes = { #Many travellers through Bomdan's jungles have been spooked by the howling sound of the Bom pipes. And in battle the haunting sound of the instrument has stopped enemy charges
+		shock_damage_received = -0.1
+	}
+	bom_rituals_of_fire_and_salt = { #The traditions of the forest are to be maintained in order to show that it is our shelter and friend, but also to show it our strength in case it misbehaves
+		stability_cost_modifier = -0.15
+	}
+	bom_over_the_walls = { #While others laugh at their short stature and the nimbleness with which they move through the trees, the 'monkeys' of Bomdan know very well how climb anything, including walls
+		leader_siege = 1
+	}
+	bom_tongues_both_quick_and_sharp = { #The Bom are known for their quick tongues and are capable of both deep insults and honeyed words at a moments notice
+		power_projection_from_insults = 0.5
+		improve_relation_modifier = 0.05
+	}
+}
+
+#Triunic ideas
+triunic_ideas = {
+	start = {
+		defensiveness = 0.1
+		production_efficiency = 0.1
+	}
+	bonus = {
+		global_own_trade_power = 0.2
+	}
+	trigger = {
+		culture_group = triunic
+	}
+	free = yes		#will be added at load.
+	
+	triunic_bountifull_land = {
+		global_manpower_modifier = 0.1
+		global_sailors_modifier = 0.1
+	}
+	triunic_the_trinuc_guard = {
+		infantry_power = 0.1
+	}
+	triunic_take_the_step = {
+		colonists = 1
+	}
+	triunic_trade_center = {
+		trade_efficiency = 0.1
+	}
+	triunic_projected_trade_power = {
+		global_foreign_trade_power = 0.1
+	}
+	triunic_the_great_lakes = {
+		global_trade_goods_size_modifier = 0.05
+	}
+	triunic_numerous_merchants = {
+		merchants = 1
+	}
+}
+
+#Centaur ideas
+centaur_ideas = {
+	start = {
+		land_morale = 0.1
+		raze_power_gain = 0.25
+	}
+	bonus = {
+		land_forcelimit_modifier = 0.2
+	}
+	trigger = {
+		culture_group = centaur
+	}
+	free = yes		#will be added at load.
+	
+	centaur_glory_in_battle = {
+		prestige_from_land = 0.5
+		army_tradition_from_battle = 0.5
+	}
+	centaur_take_the_step = {
+		colonists = 1
+	}
+	centaur_horde_host = {
+		reduced_liberty_desire_on_same_continent = 10
+	}
+	centaur_ruthless_conqueror = {
+		core_creation = -0.1
+	}
+	centaur_khan_blood = {
+		heir_chance = 0.5
+	}
+	centaur_death_by_the_hoof = {
+		leader_land_manuever = 1
+		leader_land_shock = 1
+	}
+	centaur_breed_the_strong = {
+		cavalry_power = 0.2
+	}
+}
+
+fathide_ideas = {
+	start = {
+		defensiveness = 0.1
+		build_cost = -0.1
+	}
+	bonus = {
+		siege_ability = 0.1
+	}
+	trigger = {
+		primary_culture = fathide_ogre
+	}
+	free = yes
+	
+	fathide_eight_great_clans = {
+		prestige = 1
+	}
+	fathide_ogrish_diplomacy = {
+		warscore_cost_vs_other_religion = -0.2
+		power_projection_from_insults = 0.5
+	}
+	fathide_the_kelaktar = {
+		fort_maintenance_modifier = -0.1
+	}
+	fathide_the_chosen_ogres = {
+		land_morale = 0.1
+	}
+	fathide_consume_the_fallen = {
+		land_attrition = -0.1
+		infantry_power = 0.075
+	}
+	fathide_great_warlords = {
+		free_leader_pool = 2
+	}
+	fathide_feasting_halls = {
+		global_manpower_modifier = 0.1
+	}
+}
+
+birb_ideas = {
+	start = {
+		land_maintenance_modifier = -0.15
+		years_of_nationalism = -5
+	}
+	bonus = {
+		land_morale = 0.1
+	}
+	trigger = {
+		OR = {
+			primary_culture = shuvuush
+			tag = V03
+		}
+	}
+	free = yes
+	
+	birb_the_bird_riders = {
+		cavalry_power = 0.15
+		loot_amount = 0.1
+	}
+	birb_we_do_not_sow = {
+		unjustified_demands = -0.2
+	}
+	birb_legacy_of_the_husuusing = { #Ash March, their migration after their old homeland went fallow
+		land_attrition = -0.15
+	}
+	birb_stone_eggs_of_odheongu = {
+		cavalry_cost = -0.1
+	}
+	birb_three_families = {
+		land_forcelimit_modifier = 0.2
+	}
+	birb_zoungh = { #Sport where riders joust each other on birdback
+		leader_land_manuever = 1
+	}
+	birb_the_faceless_one = {
+		global_unrest = -1
+		legitimacy = 1
+		horde_unity = 1
+	}
+}
+
+beikling_ideas = {
+	start = {
+		global_missionary_strength = 0.02
+		hostile_attrition = 1.5
+	}
+	bonus = {
+		ae_impact = -0.1
+	}
+	trigger = {
+		primary_culture = beikling
+	}
+	free = yes
+	
+	beikling_moguren = { #Frequent raiders of civilized Yanshen, seen as more demon than man
+		loot_amount = 0.5
+		available_province_loot = 0.1
+	}
+	beikling_the_iron_mounds = { #There's a fuckton of iron in their hills
+		infantry_power = 0.1
+	}
+	beikling_swift_as_the_shadows = { #Traversing their hills has made them extremely quick on the move
+		movement_speed = 0.1
+	}
+	beikling_sheng_shan = { #The most sacred hills of the Hill Yan, featuring isolated temples and shrines
+		tolerance_own = 1
+		missionaries = 1
+	}
+	beikling_masters_of_darkness = { #The Hill Yan have long practiced magics taught to them by dark entities and Oni
+		shock_damage = 0.1
+	}
+	beikling_legacy_of_great_luyixu = { #Luyixu was an ancient Hill Yan kingdom that ravaged many neighboring River Yan kingdoms before being dismantled by Harimar
+		unjustified_demands = -0.2
+	}
+	beikling_qiuzu_castes = { #Society is split into 4 castes, slaves, warriors, rulers, and mages at the top
+		global_unrest = -1
+	}
+}
+
+# Parura generic ideas
+parura_ideas = {
+	start = {
+		infantry_power = 0.1 # Proficient warriors/warrior culture
+		build_cost = -0.1 # Lumber from the Effelai
+	}
+	bonus = {
+		tolerance_own = 2 # Worshippers of Effelai now all see each other as bretheren, all working to serve the same goddess
+	}
+	trigger = {
+		primary_culture = parura
+	}
+	free = yes		#will be added at load.
+	
+	parura_ritualistic_hunts = {
+		prestige_from_land = 1.0 # Combat during hunts is how they prove themselves to the parura society
+		stability_cost_modifier = -0.1 # This rigid warrior culture actually leads to there being very little conflict within the tribes, and the hunts can be used to solve many social issues
+	}
+	parura_navigators_of_effelai = {
+		caravan_power = 0.2 # Can travel throughout Effelai un/less hindered than anyone else
+	}
+	parura_huntmaster_crowns	= {
+		monarch_military_power = 1 # Rulers are proven warriors who have obtained the most trophies
+	}
+	parura_trials_of_assimilation = {
+		native_assimilation = 0.25 # Assimilates other cultures based on how honorable and proficient they are in combat (must still worship effelai)
+		manpower_recovery_speed = 0.1 # The parura make use of assimilated peoples that embrace the worship of their goddess
+	}
+	parura_chahinanito_crafters = {
+		production_efficiency = 0.1 # Using parts of the monstrous Leechmen they hunt, high quality materials gifted by their goddess, and dyes. They are able to craft some of the most wonderous and durable tools in the Effelai
+	}
+	parura_zealots_of_chahinanito = {
+		land_morale = 0.1 #Zealous warriors empowered by Effelai (maybe add missionary strength too)
+	}
+	parura_floating_trade_cities = {
+		global_own_trade_power = 0.1 # Floating cities where outsider countries can come due trade since they aren't allowed into Effelai (Nor want to be there)
+	}
+}
+
+# Mengi Culture ideas by JayBean
+yeteferen_ideas = {
+	start = {
+		development_cost = -0.1	#just cool city guys
+		adm_advisor_cost = -0.2	#as a whole the yeteferen have been civilization builder types
+	}
+	bonus = {
+		tolerance_own = 2 # just to push the melekmengi idea of holy empire later on and yeteferen's general religiousness
+	}
+	trigger = {
+		primary_culture = yeteferen
+	}
+	free = yes		#will be added at load.
+	
+	yeteferen_holy_land = {	#concept that mengi lands is holy in their religion. and yeteferen lands is the very heart of it
+		manpower_in_true_faith_provinces= 0.15
+	}
+	yeteferen_the_prosperous_ones = {	#translation of yeteferen means this as they got awesome genie boons. general stuff about them being most richest, with most cities, best farms, etc
+		global_tax_modifier = 0.1
+	}
+	yeteferen_orators_of_myth_and_faith = { #
+		prestige_per_development_from_conversion = 0.5
+	}
+	yeteferen_cities_on_the_river_yet = {	#that river is the civilization central of the mengi and theres lots of cities there
+		build_cost = -0.1
+	}
+	yeteferen_rain_prayers	= {	#their God is a sky god of rain and shizz, so they pray a lot to them which makes their farms bountiful
+		global_trade_goods_size_modifier = 0.1
+	}
+	yeteferen_market_processions = { #mimicry of the ardimya the genie's great procession, yeteferen lords whenever they travel do a procession, but its less giving away stuff but its a walking market of everything for sale from that kingdom
+		caravan_power = 0.1
+		legitimacy = 1
+	}
+	yeteferen_curse_of_the_unrepentant_slave = {	#being a slave is a holy duty, but in yeteferen they are worked hard in the farms and gem mines and no stranger to being mistreated by yeteferen lords. it is said that slaves who are unfaithful and suicide will reanimate as zombies and have their souls eternally damned - while zombies do exist, this seems like a fabrication by yeteferen shamans
+		harsh_treatment_cost = -0.2
+		morale_damage = 0.1
+	}
+}
+
+talilibeti_ideas = {
+	start = {
+		land_attrition = -0.1
+		global_unrest = -1
+	}
+	bonus = {
+		war_exhaustion_cost = -0.15
+	}
+	trigger = {
+		primary_culture = talilibeti
+	}
+	free = yes		#will be added at load.
+	
+	talilibeti_the_great_test = {	#mengi myth as a whole believe that life is a test we need to endure, and dying goes to a spiritual heaven. none more so than the Talilibeti believe this tenet due to the hardships of being at the frontier of the shadow swamp and slavery by their neighbours (this is a rastafari belief)
+		global_monthly_devastation = -0.02
+	}
+	talilibeti_guineafowl_breeders = {	#guineafowl is all over the place here, and is a good food source, they also get fat due to insects. Due to proximity to the swamp, many talilibeti keep domesticated guineafowl on them at all times so they can throw it as a distraction. It is said that the talilibeti tribal kings have lots of them on retainer 
+		production_efficiency = 0.1
+	}
+	talilibeti_ditchfields = {	#roaming trolls are very dangerous, so a lot of the Talilibeti lands have Ditchfields which are big holes hidden that trolls can fall through.
+		hostile_attrition = 1
+	}
+	talilibeti_a_talili_at_every_court	= {	#theres one at every court across the mengi to relay messages about latest goings on of the frontier and to allow talilibeti lands to be defended via alliances
+		diplomats = 1
+	}
+	talilibeti_earthworks = {	#later they built simple but effective dirt earthworks to actually hold their ground from trolls, instead of running away
+		fort_maintenance_modifier = -0.10
+	}
+	talilibeti_necromantic_healers = {	#talilibeti shamans, or witch-doctors as later Cannorians called them, have over time made deals and pacts with hags for knowledge of magics of the shadow plane. combining that with their religious practices have created a strange often macabre blend of shamanism that has led to the strangest phenomenon of the most powerful witch-doctors being able to heal wounds with a touch - something Cannorian scholars say is the first since the elf Alaria Lifehand
+		manpower_recovery_speed = 0.10
+	}
+	talilibeti_shadowmarked_deathsworn = {	#elite warriors of the tribes, mostly orphans from troll attacks, who now venture the swamps on purpose to kill trolls
+		land_morale = 0.10
+	}
+}
+
+sitewosi_ideas = {
+	start = {
+		morale_damage_received = -0.1
+		reinforce_cost_modifier = -0.10
+	}
+	bonus = {
+		prestige = 1
+	}
+	trigger = {
+		primary_culture = sitewosi
+	}
+	free = yes		#will be added at load.
+	
+	sitewosi_weavers_of_the_mengi = {	#they are renowned for their weaving and nets and hammocks. Also useful to disable trolls too which allows them to move faster
+		movement_speed = 0.10
+	}
+	sitewosi_in_defeat_glory_found = {	#sitewosi are usually outmatched against tanizu shapeshifters, trolls or more organized mengi kingdoms, but in their culture even defeat is glorious
+		army_tradition_from_battle = 1
+	}
+	sitewosi_trolltree_wards = {	#captured trolls are fixed snd stapled to trees to act as a ward against would-be invaders
+		hostile_attrition = 1
+	}
+	sitewosi_the_tanizu_exchange = {	#they trade with those dudes. special envoys who usually take in their customs and live with the tanizu, hence why placed merchant
+		placed_merchant_power = 5
+	}
+	sitewosi_twin_lake_towns = {	#most of sitewosi civilization are towns and villages around them lakes, but also villages along the rivers leading to it - shared ecosystem around water
+		production_efficiency = 0.1
+	}
+	sitewosi_sitewosi_ebony = {	#its a elder scrolls ref, but ye. while most know about ebony armour, the ebony axes made with the ebony wood of the forest once refined by Sitewosi craftsmen are incredibly sharp and potent vs troll limbs as well as a cool collectors item for others
+		shock_damage = 0.10
+	}
+	sitewosi_rule_of_the_accorded_kings = {	#sitewosi has had to put a unified front vs would be trespassers and invaders, which later on allowed powerful monarchs to thrive
+		yearly_absolutism = 1
+	}
+}
+
+metobesebi_ideas = {
+	start = {
+		manpower_in_own_culture_provinces = 0.2
+		warscore_cost_vs_other_religion = -0.15
+	}
+	bonus = {
+		missionary_maintenance_cost = -0.1
+	}
+	trigger = {
+		primary_culture = metobesebi
+	}
+	free = yes		#will be added at load.
+	
+	metobesebi_black_maned_lion_dreadlocks = {	#black maned lions are in these mountains, and are imitated by metobesebi and later on mengi warriors as a whole. Its dreadlocks
+		shock_damage = 0.10
+	}
+	metobesebi_hundred_families	= {	#metobesebi means this. they are tight-knit families and bonds throughout the land. despite opportunities elsewhere, the most important thing here is FAMILY a la vin diesel
+		same_culture_advisor_cost = -0.15
+	}
+	metobesebi_terrace_palaces = {	#the many clans of the Metosebi divide themselves in farming communities centered in palaces ruled by local lords which grow wheat in the mountains and hills
+		production_efficiency = 0.1
+	}
+	metobesebi_myth_tablets = {	#said to be first written by former followers of Ardimya-That-Was (genie who led followers form Bulwar to Ardimya, doing a mansa musa thing) the Metobesebi are into writing a lot mainly about religion and law. they helped establish basis of mengi myth religion, as well a codified governance and teachings derived from djinn manuscripts. even after the advent of paper and trade with the Raheni, because of the myth-tablets the Mengi retained their own written language which is a mixture of Raheni script and ancient djinn.
+		reform_progress_growth = 0.15
+	}
+	metobesebi_lip_disks_of_the_sky_god = {	#metobesebi are on high mountains and see themselves as closest to the mengy myth sky God (one god). As such they have those circle lip disks as well as those big circle earrings because they really like circles - which is what the sun and moon is
+		tolerance_own = 2
+	}
+	metobesebi_green_kingdoms = {	#they are vegetarians and have good recipes and food growing there that by the 19th century was renowned around the world (ethiopia is awesome for veggies apparently)
+		prestige = 1
+	}
+	metobesebi_hundred_dialects = {	#each of the hundred clans have their own dialect of mengi language that makes it hard for anyone to imitate
+		global_spy_defence = 0.2
+	}
+}
+
+ofehibi_ideas = {
+	start = {
+		embracement_cost = -0.2	#culture thats most open and recipient of new ideas
+		cavalry_power = 0.15	#much of ofehibi land is savannah and steppe. relates to their hold ideas of rhino and elephant cav
+	}
+	bonus = {
+		may_perform_slave_raid = yes	#based 
+	}
+	trigger = {
+		primary_culture = ofehibi
+	}
+	free = yes		#will be added at load.
+	
+	ofehibi_exodus_to_madriamilak = {	#when harimar rose in 35 AA lots of Raheni fled to the Ofehibi city states that Raheni had been trading with. nowadays they are blended with the native folk
+		idea_cost = -0.1
+	}
+	ofehibi_hub_of_the_gulf_slave_trade = {	#gnoll slaver caravans from the west sell slaves to ofehibi, who then sell to rest of mengi or ship to Rahen
+		global_trade_power = 0.1
+	}
+	ofehibi_in_defence_of_the_holy_land = {	#according to mengi myth the mengi land is holy and blessed and their heaven on earth. ofehibi are forefront of holy land vs sinful land (shadow swamp) and also the lands in between (everywhere else)
+		defensiveness = 0.15
+	}
+	ofehibi_riverfort_dominance = {	#much of mengi borders to shadowswamp and western savannah is dictated by rivers, which ofehibi control and use as merchant places
+		trade_efficiency = 0.1
+	}
+	ofehibi_the_roundhead_nobility = {	#the ofehibi merchant-nobles wear turbans imitating their ancient ancestors and also raheni merchants they deal with
+		nobles_loyalty_modifier = 0.05
+		burghers_loyalty_modifier = 0.05
+	}
+	ofehibi_absolution_of_slaves_duty_of_slavers = {	#idea of being a slave wipes away your sins. you are a pure being. being a slaver is a holy duty too. Also mention that mengi cannot enslave other mengi as they are all sacred, so they need to get slaves elsewhere
+		stability_cost_modifier = -0.1
+	}
+	ofehibi_every_dhow_armed = {	#all ofehibi trading ships on gulf have weapons to protect vs pirates and stronger raheni navies
+		galley_power = 0.1
+	}
+}
+
+#tribal lizardfolk
+lizardfolk_ideas = {
+	start = {
+		hostile_attrition = 1
+		defensiveness = 0.15
+	}
+	bonus = {
+		free_leader_pool = 1
+	}
+	trigger = {
+		AND = {
+			culture_group = lizardfolk
+			government = tribal
+			NOT = {
+				culture = cyazizeta_lizardfolk
+			}
+		}
+	}
+	free = yes
+	
+	lizardfolk_naga_guidance = {
+		idea_cost = -0.1
+	}
+	lizardfolk_hunters = {
+		global_manpower_modifier = 0.15
+	}
+	lizardfolk_tangle_of_snakes = {
+		diplomatic_upkeep = 1
+	}
+	lizardfolk_cycle_of_empires = {
+		global_autonomy = -0.025
+		years_of_nationalism = -5
+	}
+	lizardfolk_legacy_of_anzara_empire = {
+		ae_impact = -0.1
+	}
+	lizardfolk_use_everything = {
+		production_efficiency = 0.05
+		global_own_trade_power = 0.05
+	}
+	lizardfolk_times_change_warriors_do_not = {
+		land_morale = 0.1
+	}
+}
+
+#River Tribes Ideas
+three_river_ideas = {
+	start = {
+		hostile_attrition = 1
+		land_morale = 0.15
+	}
+	bonus = {
+		development_cost = -0.1
+	}
+	trigger = {
+		OR = {
+			tag = L95 #Rayaz
+			tag = L96 #Asarta
+		}
+	}
+	free = yes
+	
+	river_three_river_tribes = { # Asarta, Arazin and Rayaz tribes are three ancient tribes, that inhabited the area between Zerat and Karassk for centuries. While for most of their history they were dependent on one of the great cities, and sometimes their overlords were different, tribes never forgot their bonds, which tied them close throughout centuries
+		diplomatic_reputation = 1
+	}
+	river_between_great_cities = { # All three tribes are located between Karassk and Zerat, which allows them control the trade between two wealthiest lizardfolk cities.
+		caravan_power = 0.2
+	}
+	river_zianysha_warfare = { # Zianysha - are thin river boats lizardfolk learned to craft since time immemorial. However, river tribes learned to use them for quick movement and raids on their enemies, which allowed them to be a fearsome force near rivers.
+		movement_speed = 0.10
+		infantry_power = 0.05
+	}
+	river_destined_conquerors = { # An old tale prophesies that once all three river tribes will be granted leaders, which will unite both Karassk and Zerat under their rule.
+		land_forcelimit_modifier = 0.10
+		global_manpower_modifier = 0.10
+	}
+	river_boat_markets = { #Wondering bazaars on boats.
+		merchants = 1
+	}
+	river_naga_storytellers = { # Nagas educate youth of river tribes since time immemorial, and that earns them loyalty of river tribes
+		tolerance_own = 2
+	}
+	river_metalworking_traditions = { # Huge deposits of metals supported long tradition of metalworking
+		shock_damage = 0.05
+		production_efficiency = 0.05
+	}
+}
+
+#Ashhana Lizardfolk 
+ashhana_ideas = {
+	start = {
+		hostile_attrition = 1
+		shock_damage = 0.15
+	}
+	bonus = {
+		land_maintenance_modifier = -0.1
+	}
+	trigger = {
+		primary_culture = ashhana_lizardfolk
+	}
+	free = yes
+	
+	ashhana_beasts_of_war = { # While most Ashhana manage to control their bloodthirsty urges, on battlefield they go loose
+		land_morale = 0.1
+	}
+	ashhana_everyone_is_a_warrior = { #When time of war comes, every Ashhana stops to hunt and goes to join the levy, expecting to live off their enemies
+		global_manpower_modifier = 0.15
+		loot_amount = 0.25
+	}
+	ashhana_ready_for_war = { #Ashhana are very warmongering and eager for new battles and wars
+		war_exhaustion = -0.03
+	}
+	ashhana_rule_of_art = { #Ashhana were an uncontrollable calamity at first, which stormed through lizardfolk lands. But then their blood madness faded away with the help of bards, and now Ashhana value the power of art and beauty above all.
+		prestige = 1
+	}
+	ashhana_land_of_bards = { #crocs no longer kill everyone they conquer mindlessly. They established a taxation system, which makes conquered supply them with tribute and living sacrifices
+		advisor_pool = 1
+		dip_advisor_cost = -0.15
+	}
+	ashhana_struggle_for_power = { #Ashhana might have no longer be wild beasts, but they still believe in supremacy of the strongest above all. Political intrigues and civil wars are quickly replaced with relatively stable times, when someone takes over the power
+		stability_cost_modifier = -0.15
+	}
+	ashhana_influx_of_ideas = { #Due to being ruled by creative people, Ashhana are quick to adapt new ideas in the world.
+		global_institution_spread = 0.25
+	}
+}
+
+vyzemby_ideas = {
+	start = {
+		merchants = 1
+		mercenary_cost = -0.10
+	}
+	bonus = {
+		hostile_attrition = 1
+	}
+	trigger = {
+		is_vyzemby_primary_culture = yes
+	}
+	free = yes
+	
+	vyzemby_halflings_of_sarhal = { #talks about how these dudes are the hobbits of sarhal. They were always here and like being here
+		global_unrest = -2
+	}
+	vyzemby_crops = { #the sort of plants that grow on the islands, like cloves. 
+		production_efficiency = 0.1
+	}
+	vyzemby_sailors_and_fishermen = { #fishing and sailor stuff is a common trade for Vyzemby.
+		global_sailors_modifier = 0.2
+	}
+	vyzemby_trading = { #trade and stuff, with humans and among themselves.
+		global_own_trade_power = 0.1
+	}
+	vyzemby_mihipha = { #the Vyzemby equivalent to a bard, inspirational in war and everyday life
+		land_morale = 0.05
+		naval_morale = 0.05
+	}
+	vyzemby_sea_dogs = { #the vyzemby love dogs. Be it as pets or as beasts of war. Ridden for cavalry stuff, and maybe some other detail.
+		cavalry_power = 0.15
+	}
+	vyzemby_animal_shrines = { #different animals are seen as sacred and are associated with specific gods. Such shrines commonplace in the islands
+		tolerance_own = 2
+	}
+}
+
+#Tanizu Lizards
+beastfolk_ideas = {
+	start = {
+		land_forcelimit_modifier = 0.15
+		num_accepted_cultures = 2
+	}
+	bonus = {
+		global_unrest = -2
+	}
+	trigger = { 
+		culture = cyazizeta_lizardfolk 
+		NOT = { tag = S83 } #Katiradiga
+	}
+	free = yes
+	
+	beastfolk_lizards_and_tanizu = {
+		idea_cost = -0.1
+	}
+	beastfolk_the_storyscales = {
+		stability_cost_modifier = -0.15
+	}
+	beastfolk_warrior_prowess = {
+		discipline = 0.025
+		shock_damage_received = -0.05
+	}
+	beastfolk_sacred_bond = {
+		diplomatic_upkeep = 1
+	}
+	beastfolk_nomadic_tradition = {
+		movement_speed = 0.15
+	}
+	beastfolk_friendship_drink = {
+		improve_relation_modifier = 0.2
+	}
+	beastfolk_kin_wars = {
+		war_exhaustion = -0.03
+	}
+}

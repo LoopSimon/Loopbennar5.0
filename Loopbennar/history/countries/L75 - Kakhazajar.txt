@@ -1,0 +1,27 @@
+setup_vision = yes
+government = tribal
+add_government_reform = tribal_kingdom
+government_rank = 1
+primary_culture = ashhana_lizardfolk
+religion = zaradyrra
+religious_school = blade_and_needle_school
+technology_group = tech_lizardfolk
+
+capital = 5970
+
+1000.1.1 = {
+	set_estate_privilege = estate_burghers_ashhana_mutation
+	set_estate_privilege = estate_mages_organization_guilds
+}
+
+1444.1.1 = {
+	monarch = {
+		name = "Teran"
+		dynasty = "Swampstalker"
+		birth_date = 1405.5.10
+		adm = 2
+		dip = 5
+		mil = 5
+	}
+	add_ruler_personality = calm_personality
+}

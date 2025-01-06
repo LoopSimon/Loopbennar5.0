@@ -1,0 +1,25 @@
+
+#93 - Liege | 4
+
+owner = A21
+controller = A21
+add_core = A21
+culture = moon_elf
+religion = elven_forebears
+
+hre = no
+
+base_tax = 8
+base_production = 7
+base_manpower = 4
+
+trade_goods = paper
+capital = ""
+
+is_city = yes
+
+
+
+
+
+

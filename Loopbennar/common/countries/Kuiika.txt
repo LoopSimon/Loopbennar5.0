@@ -1,0 +1,140 @@
+#Country Name: Please see filename.
+
+graphical_culture = muslimgfx
+
+color = { 204  130  0 }
+
+
+
+historical_idea_groups = {
+	economic_ideas
+	offensive_ideas
+	exploration_ideas
+	defensive_ideas	
+	administrative_ideas	
+	maritime_ideas
+	quality_ideas
+	innovativeness_ideas
+}
+
+historical_units = {
+	west_sarhaly_1_massed_bowmen
+	west_sarhaly_1_mounted_slingers
+	west_sarhaly_5_horasheshi_hunters
+	west_sarhaly_6_donkey_chargers
+	west_sarhaly_9_isagumze_expeditionaries
+	west_sarhaly_10_cannorian_horse_riders
+	west_sarhaly_12_zuvavim_musketeers
+	west_sarhaly_14_skirmish_cavalry
+	west_sarhaly_15_vurebindu_volley
+	west_sarhaly_18_gun_riders
+	west_sarhaly_19_iqhekabi_gunners
+	west_sarhaly_23_kudemtu_grenadiers
+	west_sarhaly_23_wind_raiders
+	west_sarhaly_26_asigareg_regiments
+	west_sarhaly_28_fangaulan_dragoons
+	west_sarhaly_30_zuvunwa_professionals
+}
+
+monarch_names = {
+
+	#Generic Vurebindu Name List
+	"Bastirai #0" = 10
+	"Chidao #0" = 10
+	"Damyikoi #0" = 10
+	"Ibei #0" = 10
+	"Idai #0" = 10
+	"Iseanesu #0" = 10
+	"Jekubindu #0" = 10
+	"Karakogai #0" = 10
+	"Kumbirai #0" = 10
+	"Kuzokai #0" = 10
+	"Mambai #0" = 10
+	"Meyavirei #0" = 10
+	"Munakei #0" = 10
+	"Onai #0" = 10
+	"Rukozao #0" = 10
+	"Sumbai #0" = 10
+	"Tadishowei #0" = 10
+	"Tamai #0" = 10
+	"Tangaikupasai #0" = 10
+	"Tariroi #0" = 10
+	"Taurai #0" = 10
+	"Terereai #0" = 10
+	"Tiriganei #0" = 10
+	"Tirivanai #0" = 10
+	"Uchei #0" = 10
+	"Wananganeo #0" = 10
+	"Wonai #0" = 10
+	"Zivorashai #0" = 10
+	"Zonu #0" = 10
+	"Zuvirei #0" = 10
+	
+	"Anase #0" = -1
+	"Anoona #0" = -1
+	"Anotida #0" = -1
+	"Dadise #0" = -1
+	"Fadza #0" = -1
+	"Gamucha #0" = -1
+	"Ida #0" = -1
+	"Iwe #0" = -1
+	"Katsura #0" = -1
+	"Kuzenka #0" = -1
+	"Maira #0" = -1
+	"Malanga #0" = -1
+	"Mari #0" = -1
+	"Meva #0" = -1
+	"Nenganyena #0" = -1
+	"Nenyedzi #0" = -1
+	"Netsi #0" = -1
+	"Ona #0" = -1
+	"Pepuka #0" = -1
+	"Shindi #0" = -1
+	"Sumba #0" = -1
+	"Tadiwa #0" = -1
+	"Tama #0" = -1
+	"Tauya #0" = -1
+	"Tazeiko #0" = -1
+	"Twana #0" = -1
+	"Wadzine #0" = -1
+	"Wona #0" = -1
+	"Yemauri #0" = -1
+	"Zuvi #0" = -1
+}
+
+leader_names = {
+	
+	#Province Neighbours
+	"ye Murom Wakar" "ye Chutibu" "ye Gamyi" "ye Ruchiwak" "ye Umbali Kuno" "ye Huni Gwana" "ye Bivuzena" "ye Zugvuma" "ye Ovekafa"
+	
+	#Country Neighbours
+	"ye Kuiika" "ye Gomuvuri" "ye Zena" "ye Zuvavim"
+	
+	#Geographic Neighbours
+	"ye Unior" "ye Zuvaziva" "ye Chibuswa" "ye Zenavuma"
+	
+	#Noble Families
+	Amaru Anduwe Benrba Chisa Kazuru Matawe Matot Motap
+	Nahanda Nasoro Nedza Retswa Rusuru Sama Sitawe Totakuma
+	Charamiwe Dawyaw Debele Gomokuvu Imbiswa Kambe Kaniri
+	Makazi Marenga Muru Mutuwa Nororebi Rozwe Torawe Uramunda
+	Wadembe Wilowe
+}
+
+
+ship_names = {
+	#Generic Vurebindu
+	Anoyevedza Asigareg Bodamo Bodkaz Fumo Gomo
+	Gwana Hem Hopkumashet Imbis Kuya Mapapiro
+	Mhanda Mibwe Moto Njere Noro Nyung Ropa
+	Simba Svuku Uchenjeri Ushid Utu Vakazimuka Vama
+	Zisirzuva Zvirir Zvisha
+}
+
+army_names = {
+	"Hondo Yendarama" "Hondo Yesirivha" "Hondo Yendarira" "Hondo ye $PROVINCE$"
+}
+
+fleet_names = {
+	"Boka Yendarama" "Boka Yesirivha" "Boka Yendarira"
+}

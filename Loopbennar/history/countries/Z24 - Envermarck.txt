@@ -1,0 +1,28 @@
+
+setup_vision = yes
+government = republic
+add_government_reform = merchants_reform
+government_rank = 1
+mercantilism = 25
+primary_culture = blue_reachman
+religion = regent_court
+technology_group = tech_gerudian
+capital = 724
+
+
+1000.1.1 = { set_estate_privilege = estate_mages_organization_guilds }
+
+1439.12.2 = {
+	monarch = {
+		name = "Toste"
+		dynasty = "Northman"
+		birth_date = 1400.3.6
+		adm = 0
+		dip = 3
+		mil = 1
+	}
+	add_ruler_personality = babbling_buffoon_personality
+	add_ruler_personality = embezzler_personality
+}
+
+#Toste Northman: By giving Envermarck quality seals to the highest bidder, he has damaged not only the country but also his family and is ensured to be kicked in the next elections. 

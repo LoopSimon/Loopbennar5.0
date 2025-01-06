@@ -1,0 +1,29 @@
+
+setup_vision = yes
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = arannese
+religion = regent_court
+technology_group = tech_cannorian
+
+capital = 326
+
+1000.1.1 = { 
+	set_estate_privilege = estate_mages_organization_magisterium 
+	set_country_flag = new_imperial_candidate_gain_magisterium
+}
+
+1422.1.1 = { set_country_flag = lilac_wars_rose_party }
+
+1439.5.2 = {
+	monarch = {
+		name = "Benar V"
+		dynasty = "of Gisden"
+		birth_date = 1428.1.6
+		adm = 0
+		dip = 2
+		mil = 1
+	}
+	add_ruler_personality = scholar_personality
+}

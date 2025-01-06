@@ -1,0 +1,40 @@
+
+setup_vision = yes
+government = republic
+government_rank = 1
+primary_culture = metsamic
+add_government_reform = lake_republic
+religion = kodave_followers
+technology_group = tech_triunic
+capital = 5293
+fixed_capital = 5293
+
+historical_rival = J26 #Raattakod
+
+1430.1.1 = {
+	add_country_modifier = {
+		name = lake_federation_member
+		duration = -1
+	}
+	set_variable = {
+		which = FederationPoints
+		value = 6
+	}
+	set_country_flag = LF_mages_banned
+}
+
+1433.12.12 = {
+	monarch = {
+		name = "Jurva"
+		dynasty = "Lehntnst"
+		birth_date = 1395.10.29
+		adm = 4
+		dip = 2
+		mil = 1
+	}
+	add_ruler_personality = architectural_visionary_personality
+	add_ruler_personality = craven_personality
+
+}
+
+#Personal rivalry with Lankinas president as they wanted to waste his soldiers defending their city, will be ousted soon during the next elections.

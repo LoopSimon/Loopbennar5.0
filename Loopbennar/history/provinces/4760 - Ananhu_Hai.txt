@@ -1,0 +1,21 @@
+# No previous file for Anbennar4760
+owner = Y97
+controller = Y97
+add_core = Y97
+add_core = Y70
+culture = phonan
+religion = transmutative_path
+#131
+hre = no
+
+base_tax = 3
+base_production = 2
+base_manpower = 2
+
+trade_goods = sugar
+
+capital = ""
+
+is_city = yes
+
+#Ananhu - sugar river

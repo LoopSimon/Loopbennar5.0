@@ -1,0 +1,395 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_holy_orders_button"
+		texturefile = "gfx/interface/holy_orders_button.dds"		
+	}
+
+	spriteType = {
+		name = "GFX_holy_order_jesuits"
+		texturefile = "gfx/interface/holy_orders/jesuits.dds"
+		noOfFrames = 4
+	}
+
+	spriteType = {
+		name = "GFX_holy_order_dominicans"
+		texturefile = "gfx/interface/holy_orders/dominicans.dds"
+		noOfFrames = 4
+	}
+
+	spriteType = {
+		name = "GFX_holy_order_franciscans"
+		texturefile = "gfx/interface/holy_orders/franciscans.dds"
+		noOfFrames = 4
+	}
+
+	spriteType = {
+		name = "GFX_holy_order_shadhili"
+		texturefile = "gfx/interface/holy_orders/Shadhili.dds"
+		noOfFrames = 4
+	}
+
+	spriteType = {
+		name = "GFX_holy_order_qadiri"
+		texturefile = "gfx/interface/holy_orders/Qadiri.dds"
+		noOfFrames = 4
+	}
+
+	spriteType = {
+		name = "GFX_holy_order_aissawa"
+		texturefile = "gfx/interface/holy_orders/Aissawa.dds"
+		noOfFrames = 4
+	}
+
+		### DOMINATION
+	spriteType = {
+		name = "GFX_holy_order_buzhengshi"
+		texturefile = "gfx/interface/holy_orders/dlc/domination/buzhengshi.dds"
+		noOfFrames = 4
+	}
+
+	spriteType = {
+		name = "GFX_holy_order_anchasi"
+		texturefile = "gfx/interface/holy_orders/dlc/domination/anchasi.dds"
+		noOfFrames = 4
+	}
+
+	spriteType = {
+		name = "GFX_holy_order_du_si"
+		texturefile = "gfx/interface/holy_orders/dlc/domination/du_si.dds"
+		noOfFrames = 4
+	}
+
+	spriteType = {
+		name = "GFX_holy_order_mevlevi"
+		texturefile = "gfx/interface/holy_orders/dlc/domination/mevlevi.dds"
+		noOfFrames = 4
+	}
+
+	spriteType = {
+		name = "GFX_holy_order_bektashi"
+		texturefile = "gfx/interface/holy_orders/dlc/domination/bektashi.dds"
+		noOfFrames = 4
+	}
+
+	## GC (1.35)
+
+	spriteType = {
+		name = "GFX_holy_order_benedictines"
+		texturefile = "gfx/interface/holy_orders/dlc/golden_century/benedictines.dds"
+		noOfFrames = 4
+	}
+
+	spriteType = {
+		name = "GFX_holy_order_carthusians"
+		texturefile = "gfx/interface/holy_orders/dlc/golden_century/carthusians.dds"
+		noOfFrames = 4
+	}
+
+	spriteType = {
+		name = "GFX_holy_order_hieronymites"
+		texturefile = "gfx/interface/holy_orders/dlc/golden_century/hieronymites.dds"
+		noOfFrames = 4
+	}
+
+	spriteType = {
+		name = "GFX_holy_order_augustinians"
+		texturefile = "gfx/interface/holy_orders/dlc/golden_century/augustinians.dds"
+		noOfFrames = 4
+	}
+
+	spriteType = {
+		name = "GFX_holy_order_carmelites"
+		texturefile = "gfx/interface/holy_orders/dlc/golden_century/carmelites.dds"
+		noOfFrames = 4
+	}
+
+	spriteType = {
+		name = "GFX_holy_order_calatrava"
+		texturefile = "gfx/interface/holy_orders/dlc/golden_century/calatrava.dds"
+		noOfFrames = 4
+	}
+
+	spriteType = {
+		name = "GFX_holy_order_avis"
+		texturefile = "gfx/interface/holy_orders/dlc/golden_century/avis.dds"
+		noOfFrames = 4
+	}
+
+	spriteType = {
+		name = "GFX_holy_order_montesa"
+		texturefile = "gfx/interface/holy_orders/dlc/golden_century/montesa.dds"
+		noOfFrames = 4
+	}
+
+	spriteType = {
+		name = "GFX_holy_order_santiago"
+		texturefile = "gfx/interface/holy_orders/dlc/golden_century/santiago.dds"
+		noOfFrames = 4
+	}
+
+	spriteType = {
+		name = "GFX_holy_order_san_juan"
+		texturefile = "gfx/interface/holy_orders/dlc/golden_century/san_juan.dds"
+		noOfFrames = 4
+	}
+
+	spriteType = {
+		name = "GFX_holy_order_alcantara"
+		texturefile = "gfx/interface/holy_orders/dlc/golden_century/alcantara.dds"
+		noOfFrames = 4
+	}
+	
+	
+	# King of Kings
+
+
+	spriteType = {
+		name = "GFX_holy_order_savafid_order"
+		texturefile = "gfx/interface/holy_orders/dlc/king_of_kings/savafid_order.dds"
+		noOfFrames = 4
+	}
+
+	spriteType = {
+		name = "GFX_holy_order_zahediyeh_order"
+		texturefile = "gfx/interface/holy_orders/dlc/king_of_kings/zahediyeh_order.dds"
+		noOfFrames = 4
+	}
+
+	spriteType = {
+		name = "GFX_holy_order_kashifs"
+		texturefile = "gfx/interface/holy_orders/dlc/king_of_kings/kashifs.dds"
+		noOfFrames = 4
+	}
+
+	#Anbennar
+	spriteType = {
+		name = "GFX_holy_order_lightbringers"
+		texturefile = "gfx/interface/holy_orders/Lightbringers.dds"
+		noOfFrames = 4
+	}
+	spriteType = {
+		name = "GFX_holy_order_militant_jadd"
+		texturefile = "gfx/interface/holy_orders/Militant_jadd.dds"
+		noOfFrames = 4
+	}
+	spriteType = {
+		name = "GFX_holy_order_judges"
+		texturefile = "gfx/interface/holy_orders/Judges.dds"
+		noOfFrames = 4
+	}
+	spriteType = {
+		name = "GFX_holy_order_servants_of_surael"
+		texturefile = "gfx/interface/holy_orders/Servants_of_surael.dds"
+		noOfFrames = 4
+	}
+	spriteType = {
+		name = "GFX_holy_order_jasienes_daughters"
+		texturefile = "gfx/interface/holy_orders/Jasienes_daughters.dds"
+		noOfFrames = 4
+	}
+	spriteType = {
+		name = "GFX_holy_order_exemplars"
+		texturefile = "gfx/interface/holy_orders/Exemplars.dds"
+		noOfFrames = 4
+	}
+	spriteType = {
+		name = "GFX_holy_order_eduz_nabari"
+		texturefile = "gfx/interface/holy_orders/Eduz-Nabari.dds"
+		noOfFrames = 4
+	}
+	spriteType = {
+		name = "GFX_holy_order_unforgivable"
+		texturefile = "gfx/interface/holy_orders/Unforgivable.dds"
+		noOfFrames = 4
+	}
+	spriteType = {
+		name = "GFX_holy_order_passionates"
+		texturefile = "gfx/interface/holy_orders/Passionates_of_Agrados.dds"
+		noOfFrames = 4
+	}
+	spriteType = {
+		name = "GFX_holy_order_devotees"
+		texturefile = "gfx/interface/holy_orders/Triadic_Devotees.dds"
+		noOfFrames = 4
+	}
+	spriteType = {
+		name = "GFX_holy_order_grudgeknights"
+		texturefile = "gfx/interface/holy_orders/Grudgeknights.dds"
+		noOfFrames = 4
+	}
+	spriteType = {
+		name = "GFX_holy_order_Corinite_Adm_Order"
+		texturefile = "gfx/interface/holy_orders/Corinite_Adm_Order.dds"
+		noOfFrames = 4
+	}
+	spriteType = {
+		name = "GFX_holy_order_Corinite_Dip_Order"
+		texturefile = "gfx/interface/holy_orders/Corinite_Dip_Order.dds"
+		noOfFrames = 4
+	}
+	spriteType = {
+		name = "GFX_holy_order_Corinite_Mil_Order"
+		texturefile = "gfx/interface/holy_orders/Corinite_Mil_Order.dds"
+		noOfFrames = 4
+	}
+	spriteType = {
+		name = "GFX_holy_order_clan_shadowhammer"
+		texturefile = "gfx/interface/holy_orders/runefather_shadowhammer.dds"
+		noOfFrames = 4
+	}
+	spriteType = {
+		name = "GFX_holy_order_clan_darkstone"
+		texturefile = "gfx/interface/holy_orders/runefather_darkstone.dds"
+		noOfFrames = 4
+	}
+	spriteType = {
+		name = "GFX_holy_order_groedi_az_an"
+		texturefile = "gfx/interface/holy_orders/runefather_groedi_az_an.dds"
+		noOfFrames = 4
+	}
+	spriteType = {
+		name = "GFX_holy_order_amlruzskappa"
+		texturefile = "gfx/interface/holy_orders/runefather_amlruzskappa.dds"
+		noOfFrames = 4
+	}
+	spriteType = {
+		name = "GFX_holy_order_furdanhund"
+		texturefile = "gfx/interface/holy_orders/runefather_furdanhund.dds"
+		noOfFrames = 4
+	}
+	spriteType = {
+		name = "GFX_holy_order_maederitic_rule_1"
+		texturefile = "gfx/interface/holy_orders/Maederitic_Rule_Order_1.dds"
+		noOfFrames = 4
+	}
+	spriteType = {
+		name = "GFX_holy_order_maederitic_rule_2"
+		texturefile = "gfx/interface/holy_orders/Maederitic_Rule_Order_2.dds"
+		noOfFrames = 4
+	}
+	spriteType = {
+		name = "GFX_holy_order_maederitic_rule_3"
+		texturefile = "gfx/interface/holy_orders/Maederitic_Rule_Order_3.dds"
+		noOfFrames = 4
+	}
+	spriteType = {
+		name = "GFX_holy_order_schaal_onitheia_1"
+		texturefile = "gfx/interface/holy_orders/Schaal_Onitheia_Order_1.dds"
+		noOfFrames = 4
+	}
+	spriteType = {
+		name = "GFX_holy_order_schaal_onitheia_2"
+		texturefile = "gfx/interface/holy_orders/Schaal_Onitheia_Order_2.dds"
+		noOfFrames = 4
+	}
+	spriteType = {
+		name = "GFX_holy_order_schaal_onitheia_3"
+		texturefile = "gfx/interface/holy_orders/Schaal_Onitheia_Order_3.dds"
+		noOfFrames = 4
+	}
+	spriteType = {
+		name = "GFX_holy_order_teachings_of_varamelas_1"
+		texturefile = "gfx/interface/holy_orders/Teachings_of_Varamelas_Order_1.dds"
+		noOfFrames = 4
+	}
+	spriteType = {
+		name = "GFX_holy_order_teachings_of_varamelas_2"
+		texturefile = "gfx/interface/holy_orders/Teachings_of_Varamelas_Order_2.dds"
+		noOfFrames = 4
+	}
+	spriteType = {
+		name = "GFX_holy_order_teachings_of_varamelas_3"
+		texturefile = "gfx/interface/holy_orders/Teachings_of_Varamelas_Order_3.dds"
+		noOfFrames = 4
+	}
+	spriteType = {
+		name = "GFX_holy_order_dictats_of_isparokaeus_1"
+		texturefile = "gfx/interface/holy_orders/Dictats_of_Isparokaeus_Order_1.dds"
+		noOfFrames = 4
+	}
+	spriteType = {
+		name = "GFX_holy_order_dictats_of_isparokaeus_2"
+		texturefile = "gfx/interface/holy_orders/Dictats_of_Isparokaeus_Order_2.dds"
+		noOfFrames = 4
+	}
+	spriteType = {
+		name = "GFX_holy_order_dictats_of_isparokaeus_3"
+		texturefile = "gfx/interface/holy_orders/Dictats_of_Isparokaeus_Order_3.dds"
+		noOfFrames = 4
+	}
+	spriteType = {
+		name = "GFX_holy_order_archatiradist_doctrine_1"
+		texturefile = "gfx/interface/holy_orders/Archatiradist_Doctrine_Order_1.dds"
+		noOfFrames = 4
+	}
+	spriteType = {
+		name = "GFX_holy_order_archatiradist_doctrine_2"
+		texturefile = "gfx/interface/holy_orders/Archatiradist_Doctrine_Order_2.dds"
+		noOfFrames = 4
+	}
+	spriteType = {
+		name = "GFX_holy_order_archatiradist_doctrine_3"
+		texturefile = "gfx/interface/holy_orders/Archatiradist_Doctrine_Order_3.dds"
+		noOfFrames = 4
+	}
+	spriteType = {
+		name = "GFX_holy_order_anagbheism_1"
+		texturefile = "gfx/interface/holy_orders/Anagbheism_Order_1.dds"
+		noOfFrames = 4
+	}
+	spriteType = {
+		name = "GFX_holy_order_anagbheism_2"
+		texturefile = "gfx/interface/holy_orders/Anagbheism_Order_2.dds"
+		noOfFrames = 4
+	}
+	spriteType = {
+		name = "GFX_holy_order_anagbheism_3"
+		texturefile = "gfx/interface/holy_orders/Anagbheism_Order_3.dds"
+		noOfFrames = 4
+	}
+	spriteType = {
+		name = "GFX_holy_order_axierophonic_mandate_1"
+		texturefile = "gfx/interface/holy_orders/Axierophonic_Mandate_Order_1.dds"
+		noOfFrames = 4
+	}
+	spriteType = {
+		name = "GFX_holy_order_axierophonic_mandate_2"
+		texturefile = "gfx/interface/holy_orders/Axierophonic_Mandate_Order_2.dds"
+		noOfFrames = 4
+	}
+	spriteType = {
+		name = "GFX_holy_order_axierophonic_mandate_3"
+		texturefile = "gfx/interface/holy_orders/Axierophonic_Mandate_Order_3.dds"
+		noOfFrames = 4
+	}
+	spriteType = {
+		name = "GFX_holy_order_drivos_rochos_1"
+		texturefile = "gfx/interface/holy_orders/Drivos_Rochos_Order_1.dds"
+		noOfFrames = 4
+	}
+	spriteType = {
+		name = "GFX_holy_order_drivos_rochos_2"
+		texturefile = "gfx/interface/holy_orders/Drivos_Rochos_Order_2.dds"
+		noOfFrames = 4
+	}
+	spriteType = {
+		name = "GFX_holy_order_drivos_rochos_3"
+		texturefile = "gfx/interface/holy_orders/Drivos_Rochos_Order_3.dds"
+		noOfFrames = 4
+	}
+	spriteType = {
+		name = "GFX_holy_order_laskaris_creed_1"
+		texturefile = "gfx/interface/holy_orders/Laskaris_Creed_Order_1.dds"
+		noOfFrames = 4
+	}
+	spriteType = {
+		name = "GFX_holy_order_laskaris_creed_2"
+		texturefile = "gfx/interface/holy_orders/Laskaris_Creed_Order_2.dds"
+		noOfFrames = 4
+	}
+	spriteType = {
+		name = "GFX_holy_order_laskaris_creed_3"
+		texturefile = "gfx/interface/holy_orders/Laskaris_Creed_Order_3.dds"
+		noOfFrames = 4
+	}
+}

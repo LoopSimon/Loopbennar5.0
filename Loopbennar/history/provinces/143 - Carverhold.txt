@@ -1,0 +1,25 @@
+
+#143 - Vlore | 2
+
+owner = A05 #Reveria
+controller = A05
+add_core = A05
+culture = reverian
+religion = regent_court
+
+hre = no
+
+base_tax = 4
+base_production = 3
+base_manpower = 3
+
+trade_goods = livestock
+capital = ""
+
+is_city = yes
+fort_15th = yes 
+
+
+
+
+

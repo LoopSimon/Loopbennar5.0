@@ -1,0 +1,759 @@
+estate_nobles = {
+	icon = 2
+
+	# If true, country will get estate
+	trigger = {
+		#NOT = { has_government_attribute = is_merchant_republic }
+		#NOT = { has_reform = veche_republic }
+		#NOT = { has_reform = trading_city }
+		NOT = { has_government_attribute = disables_estate_nobles }
+		NOT = { has_country_flag = disables_estate_nobles_flag }
+		OR = {
+			has_government_attribute = enables_estate_nobles
+			has_country_flag = enables_estate_nobles_flag
+			AND = {
+				NOT = { has_government_attribute = disables_regular_estates } #anbennar
+				#NOT = { has_government_attribute = is_pirate_republic_reform }
+				#NOT = { has_reform = cossacks_reform } # Anbennar - We don't have this reform
+				NOT = { government = native }
+				NOT = { has_reform = siberian_tribe }
+				#NOT = { is_revolutionary_republic_trigger = yes }
+				#NOT = { has_reform = revolutionary_empire_reform }
+				NOT = { has_government_attribute = is_peasants_republic }
+				#NOT = { has_reform = kongsi_federation } # Anbennar - We don't have this reform
+				#NOT = { has_reform = american_republic } # Anbennar - We don't have this reform
+				#NOT = { has_reform = federal_republic } # Anbennar - We don't have this reform
+				NOT = { has_reform = pentapandemonium_reform }
+				is_nomad = no
+				is_colonial_nation = no
+				# Anbennar - we don't have these religions
+				# if = {
+					# limit = {
+						# NOT = { religion_group = muslim }
+						# NOT = { religion = sikhism }
+						# NOT = { religion = buddhism }
+						# NOT = { religion = vajrayana }
+						# NOT = { religion = mahayana }
+					# }
+					# NOT = { has_estate = estate_maratha }
+					# NOT = { has_estate = estate_rajput }
+				# }
+				#Anbennar - We don't use this
+				# OR = {
+					# NOT = { has_country_flag = ikko_ikki_peasants_flag }
+					# AND = {
+						# NOT = { has_reform = leading_clergy_reform }
+						# NOT = { has_reform = monastic_order_reform }
+						# NOT = { has_government_attribute = is_peasants_republic }
+					# }
+				# }
+
+				#Raheni cultures have castes, if they have the correct flag (set in history files):
+				NOT = { has_country_flag = has_caste_estates }
+
+				is_monstrous_horde = no
+			}
+		}
+		#OR = {
+		#	NOT = { is_emperor_of_china = yes }
+		#	has_dlc = "Mandate of Heaven"
+		#}
+
+		# OR = {
+			# has_reform = feiten_silken_jellyfish_council
+			# NOT = { has_government_attribute = is_merchant_republic }
+		# }
+	}
+
+	country_modifier_happy = {
+		manpower_recovery_speed = 0.2
+		land_maintenance_modifier = -0.1
+		rr_royalists_influence = 0.2
+	}
+	country_modifier_neutral = {
+		manpower_recovery_speed = 0.2
+		rr_royalists_influence = 0.1
+	}
+	country_modifier_angry = {
+		manpower_recovery_speed = -0.1
+		land_maintenance_modifier = 0.1
+		global_unrest = 2
+		rr_royalists_influence = -0.1
+	}
+	land_ownership_modifier = {
+		nobles_loyalty_modifier = 0.2
+	}
+
+	province_independence_weight = {
+		factor = 1
+		modifier = {
+			factor = 1.5
+			culture_group = owner
+			religion_group = owner
+		}
+		modifier = {
+			factor = 1.5
+			base_manpower = 5
+		}
+		modifier = {
+			factor = 0.75
+			development = 20
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { is_state_core = owner }
+		}
+	}
+
+	# Influence modifiers
+	base_influence = 10
+	influence_modifier = {
+		desc = EST_VAMPIRIC_LORD
+		trigger = {
+			has_estate_privilege = estate_vampires_organization_vampires_lord
+		}
+		influence = -10
+	}
+	#Anbennar
+	# influence_modifier = {
+	# 	desc = EST_VAL_EASTERN_TECH
+	# 	trigger = {
+	# 		technology_group = eastern
+	# 	}
+	# 	influence = 5
+	# }
+
+	# Influence modifiers from Events:
+	# influence_modifier = {
+	# 	desc = EST_HUN_MAGNATES
+	# 	trigger = {
+	# 		has_ruler_modifier = hun_power_to_magnates
+	# 	}
+	# 	influence = 10
+	# }
+	influence_modifier = {
+		desc = EST_VAL_OTHER_ESTATE_IN_POWER
+		trigger = {
+			has_any_estate_disaster_active = yes
+			has_not_own_estate_disaster_active = { estate = estate_nobles }
+		}
+		influence = -40
+	}
+
+	loyalty_modifier = {
+		desc = EST_VAL_OTHER_ESTATE_IN_POWER_LOY
+		trigger = {
+			has_any_estate_disaster_active = yes
+			has_not_own_estate_disaster_active = { estate = estate_nobles }
+		}
+		loyalty = -20
+	}
+	loyalty_modifier = {
+		desc = EST_VAL_NOBLE_CONSORT
+		trigger = {
+			has_dlc = "Rights of Man"
+			has_consort = yes
+			is_origin_of_consort = ROOT
+		}
+		loyalty = 5
+	}
+	loyalty_modifier = {
+		desc = EST_VAL_ABYSMAL_LEGITIMACY_LOY
+		trigger = {
+			has_country_flag = orldhum_fickle
+			NOT = { legitimacy = 40 }
+		}
+		loyalty = -25.0
+	}
+	loyalty_modifier = {
+		desc = EST_VAL_VERY_LOW_LEGITIMACY_LOY
+		trigger = {
+			has_country_flag = orldhum_fickle
+			legitimacy = 40
+			NOT = { legitimacy = 50 }
+		}
+		loyalty = -20.0
+	}
+	loyalty_modifier = {
+		desc = EST_VAL_LOW_LEGITIMACY_LOY
+		trigger = {
+			has_country_flag = orldhum_fickle
+			legitimacy = 50
+			NOT = { legitimacy = 60 }
+		}
+		loyalty = -15.0
+	}
+	loyalty_modifier = {
+		desc = EST_VAL_MIDDLING_LEGITIMACY_LOY
+		trigger = {
+			has_country_flag = orldhum_fickle
+			legitimacy = 60
+			NOT = { legitimacy = 70 }
+		}
+		loyalty = -10.0
+	}
+	loyalty_modifier = {
+		desc = EST_VAL_HIGH_LEGITIMACY_LOY
+		trigger = {
+			has_country_flag = orldhum_fickle
+			legitimacy = 90
+		}
+		loyalty = 5.0
+	}
+	#Anbennar
+	# Great Peasants' War Modifiers
+
+	# influence_modifier = {
+	# 	desc = EST_VAL_GREAT_PEASANTS_WAR_NOBLES_WIN_MINOR_INFLUENCE
+	# 	trigger = {
+	# 		has_global_flag = gpw_nobles_win_minor
+	# 		is_part_of_hre = yes
+	# 	}
+	# 	influence = 5
+	# }
+
+	# loyalty_modifier = {
+	# 	desc = EST_VAL_GREAT_PEASANTS_WAR_NOBLES_WIN_MINOR_LOYALTY
+	# 	trigger = {
+	# 		has_global_flag = gpw_nobles_win_minor
+	# 		is_part_of_hre = yes
+	# 	}
+	# 	loyalty = 5
+	# }
+
+	# influence_modifier = {
+	# 	desc = EST_VAL_GREAT_PEASANTS_WAR_NOBLES_WIN_MAJOR_INFLUENCE
+	# 	trigger = {
+	# 		has_global_flag = gpw_nobles_win_major
+	# 		is_part_of_hre = yes
+	# 	}
+	# 	influence = 10
+	# }
+
+	# loyalty_modifier = {
+	# 	desc = EST_VAL_GREAT_PEASANTS_WAR_NOBLES_WIN_MAJOR_LOYALTY
+	# 	trigger = {
+	# 		has_global_flag = gpw_nobles_win_major
+	# 		is_part_of_hre = yes
+	# 	}
+	# 	loyalty = 10
+	# }
+
+	# influence_modifier = {
+	# 	desc = EST_VAL_GREAT_PEASANTS_WAR_NOBLES_LOSE_MINOR_INFLUENCE
+	# 	trigger = {
+	# 		has_global_flag = gpw_peasants_win_minor
+	# 		is_part_of_hre = yes
+	# 	}
+	# 	influence = -5
+	# }
+
+	# loyalty_modifier = {
+	# 	desc = EST_VAL_GREAT_PEASANTS_WAR_NOBLES_LOSE_MINOR_LOYALTY
+	# 	trigger = {
+	# 		has_global_flag = gpw_peasants_win_minor
+	# 		is_part_of_hre = yes
+	# 	}
+	# 	loyalty = -5
+	# }
+
+	# influence_modifier = {
+	# 	desc = EST_VAL_GREAT_PEASANTS_WAR_NOBLES_LOSE_MAJOR_INFLUENCE
+	# 	trigger = {
+	# 		has_global_flag = gpw_peasants_win_major
+	# 		is_part_of_hre = yes
+	# 	}
+	# 	influence = -10
+	# }
+
+	# loyalty_modifier = {
+	# 	desc = EST_VAL_GREAT_PEASANTS_WAR_NOBLES_LOSE_MAJOR_LOYALTY
+	# 	trigger = {
+	# 		has_global_flag = gpw_peasants_win_major
+	# 		is_part_of_hre = yes
+	# 	}
+	# 	loyalty = -10
+	# }
+
+	#Alternative naming of estates
+	custom_name = { #esmari stewards
+		desc = estate_esmari_stewards
+		trigger = {
+			tag = A95
+			has_country_flag = A95_esmari_stewards_name
+		}
+	}
+	custom_name = {
+		desc = estate_imperial_nobility
+		trigger = {
+			has_reform = revolutionary_empire_reform
+		}
+	}
+	custom_name = {
+		desc = estate_warriors
+		trigger = {
+			OR = {
+				government = native
+				has_reform = siberian_tribe
+				has_reform = native_basic_reform
+			}
+		}
+	}
+	#Anbennar
+	custom_name = {
+		desc = estate_warriors
+		trigger = {
+			OR = {
+				government = native
+				has_reform = siberian_tribe
+				has_reform = native_basic_reform
+			}
+		}
+	}
+		custom_name = {
+			desc = estate_hwalbaej
+			trigger = {
+				culture_group = odheongun
+			}
+		}
+		custom_name = {
+			desc = estate_companions
+			trigger = {
+				tag = G32
+			}
+		}
+		custom_name = {
+			desc = estate_aslaud
+			trigger = {
+				culture_group = eordan_ruinborn_elf
+			}
+		}
+		custom_name = { #Azkare Old Guard
+			desc = estate_aistszur
+			trigger = {
+				tag = Y86
+				has_country_modifier = azkare_modifier_aistszur
+			}
+		}
+		custom_name = { #Court of Officers
+			desc = estate_officer
+			trigger = {
+				has_country_flag = jiangdu_court_of_officer
+			}
+		}
+		custom_name = {
+			desc = estate_patronates
+			trigger = {
+				tag = Y63
+				mission_completed = Y63_king_of_kai
+			}
+		}
+
+		custom_name = {
+			desc = tanizu_warrior_lodges
+			trigger = {
+				OR = {
+					culture = tanizu
+					culture = cyazizeta_lizardfolk
+				}
+				NOT = { tag = S83 }
+			}
+		}
+
+		custom_name = {
+			desc = dakinshi_yagomo
+			trigger = {
+				OR = {
+					culture = kombedak
+					culture = umsozidak
+					culture = wakoodak
+					tag = S83
+				}
+			}
+		}
+
+		custom_name = {
+			desc = antmvura_captaincies
+			trigger = {
+				culture = antmvura
+			}
+		}
+
+		custom_name = {
+			desc = baashidi_estate_house_of_might
+			trigger = {
+				culture_group = baashidi
+			}
+		}
+		custom_name = {
+			desc = estate_second_sons
+			trigger = {
+				tag = A77
+			}
+		}
+
+		custom_desc = {
+			desc = estate_second_sons_desc
+			trigger = {
+				tag = A77
+			}
+		}
+
+		custom_name = { #Trollsbayer Planters
+			desc = estate_planters
+			trigger = {
+				OR = {
+					tag = H33
+					tag = G95
+					tag = H38
+					tag = G91
+					tag = G96
+					tag = H36
+				}
+			}
+		}
+		custom_name = { #Expanse Cattle Barons
+			desc = estate_cattle_barons
+			trigger = {
+				OR = {
+					tag = H34
+					tag = H65
+					tag = H53
+					tag = H49
+					tag = H61
+					tag = H45
+				}
+			}
+		}
+		custom_name = { #Mengi Lesser Kings
+			desc = estate_mengi_yenaze_mezhi
+			trigger = {
+				culture_group = mengi
+			}
+		}
+
+		custom_name = {
+			desc = estate_barkabti
+			trigger = {
+				or = {
+					culture_group = bulwari
+					culture = desert_elf
+					culture = zanlibi
+				}
+			}
+		}
+
+		custom_desc = {
+			desc = estate_barkabti_desc
+			trigger = {
+				or = {
+					culture_group = bulwari
+					culture = desert_elf
+					culture = zanlibi
+				}
+			}
+		}
+
+		custom_name = {
+			desc = estate_ralkadezim
+			trigger = {
+				or = {
+					culture = sun_elf
+					culture = dawn_elf
+				}
+			}
+		}
+
+		custom_desc = {
+			desc = estate_ralkadezim_desc
+			trigger = {
+				or = {
+					culture = sun_elf
+					culture = dawn_elf
+				}
+			}
+		}
+
+		custom_name = {
+			desc = estate_flocks
+			trigger = {
+				or = {
+					culture = siadunan_harpy
+					culture = firanyan_harpy
+				}
+			}
+		}
+
+		custom_desc = {
+			desc = estate_flocks_desc
+			trigger = {
+				or = {
+					culture = siadunan_harpy
+					culture = firanyan_harpy
+				}
+			}
+		}
+
+		custom_name = {
+			desc = estate_panykorun
+			trigger = {
+				has_country_flag = G84_panykorun
+				OR = {
+					tag = G84
+					was_tag = G84
+				}
+			}
+		}
+
+		custom_name = {
+			desc = estate_ynn_lords
+			trigger = {
+				OR = {
+					culture_group = ynnic_ruinborn_elf
+					culture = sarnik
+				}
+			}
+		}
+		custom_name = {
+			desc = estate_minor_salla
+			trigger = { culture = wood_elf }
+		}
+		custom_name = {
+			desc = estate_veykodan_nobles
+			trigger = {
+				culture = veykodan
+			}
+		}
+
+		custom_name = {
+			desc = estate_ankashyi
+			trigger = {
+				culture_is_lizardfolk = yes
+				NOT = {  culture = cyazizeta_lizardfolk }
+			}
+		}
+
+		custom_name = {
+			desc = estate_sword_covenant
+			trigger = {
+				tag = Z37
+			}
+		}
+
+	color = { 200 0 50 }
+
+	privileges = {
+		estate_nobles_land_rights
+		estate_nobles_nobility_primacy
+		estate_nobles_officer_corp
+		estate_nobles_jiangdu_officer_corp # Jiangdu version
+		estate_nobles_themarenn_sailors #themarenn levies
+		estate_nobles_levies
+		estate_nobles_advisors
+		estate_nobles_right_of_counsel
+		# estate_nobles_french_strong_duchies
+		estate_nobles_supremacy_over_crown
+		# estate_nobles_junker_primacy
+		estate_nobles_strong_duchies
+		estate_nobles_golden_liberty
+		estate_nobles_veto_heir_apparent
+		estate_nobles_nieszawa_privileges
+		estate_nobles_pacta_conventa
+		estate_nobles_monopoly_of_metals
+		estate_nobles_monopoly_of_livestock
+		estate_nobles_monopoly_of_gems
+		estate_nobles_statutory_rights
+		estate_nobles_command_of_the_military
+		estate_nobles_better_integration
+		estate_nobles_cawa_peace_keepers
+		estate_nobles_cawa_offensive_fighters
+		estate_nobles_neighbor_raids
+		estate_nobles_decentralized_tribe
+		estate_nobles_tribe_unification
+		estate_nobles_tribe_centralization
+		#estate_nobles_grant_power_to_the_bashorun
+		estate_nobles_danish_nobility
+		estate_nobles_nobles_instead_of_royal_court
+		estate_nobles_leidang_conscription
+		estate_nobles_carolean_march
+		estate_nobles_carolean_charge
+		estate_nobles_religious_conscription
+		estate_nobles_leidang_mass_conscription
+		estate_nobles_leidang_elite_conscription
+		# estate_nobles_sponsor_hussars
+		# estate_nobles_mansabdari_cav_maintenance
+		# estate_nobles_mansabdari_military_service
+		# estate_nobles_mansabdari_royal_rule
+		# estate_nobles_mestnichestvo
+		# estate_nobles_early_serfdom
+		# estate_nobles_legalized_serfdom
+		# estate_nobles_total_serfdom
+		# estate_nobles_restricted_serfdom
+		# estate_nobles_devastating_serfdom
+		# estate_nobles_increased_peasant_freedom
+		# estate_nobles_peasant_liberation
+		# estate_nobles_rynda
+		# estate_nobles_landed_army
+		# estate_nobles_factionalist_nobility
+		# estate_nobles_consolidated_noble_contracts
+		# estate_nobles_english_villeinage
+		# estate_nobles_english_copyhold_tenure
+		# estate_nobles_development_of_castles
+		# estate_nobles_statesman_servitude
+		# estate_nobles_royal_court_tasks
+		# estate_nobles_diet_right
+		# estate_nobles_force_conscription
+		# estate_nobles_noble_officer_right
+		# estate_nobles_expedition_rights
+		#1.36
+		# estate_nobles_highland_fortifications
+		# estate_nobles_emirs_of_baghdad
+		# estate_nobles_deteriorating_army
+		# estate_nobles_defensive_policy
+		# estate_nobles_tofangchi_regiment
+		# estate_nobles_tupchi_artillery_corps
+		# estate_nobles_qurchi_service
+		# estate_nobles_mamlukian_administration
+		# estate_nobles_enlist_the_mamluks
+
+		# ANBENNAR
+		estate_nobles_castanor_upgraded_strong_duchies
+		estate_nobility_yangban
+		estate_nobles_jiangdu_high_investments
+		estate_nobles_courtiers_shadow_daggers
+		estate_nobility_permanent_embassies
+		estate_nobles_patron_contribution # Verkal Ozovar
+		estate_nobles_right_of_embassy # Verkal Ozovar
+
+		estate_nobles_mansabdari_cav_maintenance
+		estate_nobles_mansabdari_military_service
+		estate_nobles_mansabdari_royal_rule
+		estate_nobles_mestnichestvo
+		# estate_nobles_early_serfdom
+		# estate_nobles_legalized_serfdom
+		# estate_nobles_total_serfdom
+		# estate_nobles_restricted_serfdom
+		# estate_nobles_devastating_serfdom
+		# estate_nobles_increased_peasant_freedom
+		# estate_nobles_peasant_liberation
+		estate_nobles_rynda
+		estate_nobles_landed_army
+		# estate_nobles_factionalist_nobility
+		estate_nobles_consolidated_noble_contracts
+		# estate_nobles_english_villeinage
+		# estate_nobles_english_copyhold_tenure
+		estate_nobles_development_of_castles
+		estate_nobles_statesman_servitude
+		estate_nobles_royal_court_tasks
+		estate_nobles_diet_right
+		estate_nobles_force_conscription
+		estate_nobles_noble_officer_right
+		estate_nobles_expedition_rights
+		estate_nobles_glozok_the_violent # Mountainshark MT
+		estate_nobles_glozok_the_liberator # Mountainshark MT
+		estate_nobles_glozok_the_destroyer # Mountainshark MT
+		estate_nobles_orldhum_adventurer_lords
+		estate_nobles_orldhum_ostentatious_overseers
+		estate_nobles_orldhum_platinum_liberty
+		estate_nobles_orldhum_platinum_control
+		estate_nobles_noble_acolytes	#Brelar MT
+		estate_nobles_myrsarnik_architects	#Brelar YE
+		estate_nobles_elizna_elven_nobility #Elizna MT
+		estate_nobles_vf_first_night # Vels Fadhecai
+		estate_nobles_entrenched_lorentish_nobility #Lorent
+		estate_nobles_sunijalla_enshrined_noblesse_oblige # Sunijalla
+		estate_nobles_sunijalla_aristocratic_academia # Sunijalla
+		estate_nobles_sunijalla_council_of_lords # Sunijalla
+		estate_nobles_sunijalla_rule_of_one # Sunijalla
+		estate_nobles_sunijalla_unified_aristocracy # Sunijalla
+		estate_nobles_sunijalla_triunic_nobles # Sunijalla
+		estate_nobles_isagumze_kulugi_abe_generals #Isagumze MT
+		estate_nobles_vb_riverblade #Vels Bacar MT
+		estate_nobles_vb_independent #Vels Bacar MT
+		estate_nobles_vb_fadhecatlar #Vels Bacar MT
+		estate_nobles_zamukaras_harpy_support #Bulwar Zamukaras
+		estate_nobles_xia_last_bastion
+		estate_nobles_factionalist_commanders #Orda Aldresia Debuff
+		estate_nobles_knighthood_of_the_spares
+		estate_nobles_lead_from_the_front
+
+		estate_nobility_overreliance_on_mercenaries # Karassk
+		estate_nobility_war_of_colours_defeated_red # Khugra
+		estate_nobility_graceful_rule # Zerat
+		estate_nobility_scaleguard_minor_houses # Zerat
+		estate_nobility_nazhyn_princes # Nazhni
+		estate_nobility_bulwark_against_ashhana # Yassa
+		estate_nobility_forgotten_city # Karshyr
+		estate_nobility_besieged_heart # Rhada
+		estate_noble_monopoly_of_fuel #Karakhanbar MT
+		estate_nobles_ironblood_officer_corp #Gophira
+
+		#Mutation Privileges
+		estate_nobility_boaga_mutation
+		estate_nobility_trazoskala_mutation
+		estate_nobility_gakhakaya_mutation
+		estate_nobility_shanyza_mutation
+		#Covenblad
+		estate_nobility_covenblad_black_tree
+		estate_nobility_covenblad_young_dragon
+		estate_nobility_covenblad_burning_sword
+		estate_nobility_covenblad_silver_reliquary
+		estate_nobility_covenblad_broken_chain
+		## Apikhoxi
+		estate_nobles_G57_emerald_waters
+		estate_nobles_G57_land_golden_ears
+
+		estate_nobility_nzeri_standard_bearers #duwarkani
+		estate_nobles_mengi_partners #Vandipha
+		#Averilibet
+		estate_nobility_S53_tanizu_tradition_blood
+		estate_nobility_S53_tanizu_tradition_water
+		estate_nobility_S53_tanizu_tradition_covenant
+		estate_nobles_rosande_noble_slaveowners #Rosande
+		estate_nobles_rosande_competent_slaveowners #Rosande
+	}
+
+	agendas = {
+		estate_nobles_develop_x
+		estate_nobles_build_army_building_in_y
+		estate_nobles_build_fort_building_in_y
+		estate_nobles_build_university_in_y
+		estate_nobles_build_manufactory_in_y
+		estate_nobles_get_allies
+		estate_nobles_befriend_rival_of_rival
+		estate_nobles_restore_legitimacy
+		estate_nobles_relations_with_X
+		estate_nobles_break_coalition
+		estate_nobles_condottieri_rivals
+		estate_nobles_support_independence
+		estate_nobles_retake_core
+		estate_nobles_crush_revolts
+		estate_nobles_regain_liberty
+		estate_nobles_convert_province_culture
+		estate_nobles_protect_our_culture
+		estate_nobles_vassalise_vulnerable_country
+		estate_nobles_expand_into_x
+		estate_nobles_complete_conquest_of_x
+		estate_nobles_annex_subject
+		estate_nobles_build_an_army
+		estate_nobles_bigger_army_than_rival
+		estate_nobles_build_up_manpower_reserves
+		estate_nobles_recover_abysmal_prestige
+		estate_nobles_improve_prestige
+		estate_nobles_hire_advisor
+		estate_nobles_fire_advisor
+		estate_nobles_wyvernheart_invest_in_burblood_production #Wyvernheart
+		estate_nobles_wyvernheart_procure_burnblood_candidates #Wyvernheart
+		estate_nobles_wyvernheart_choose_avenue_of_expansion #Wyvernheart
+		estate_nobles_wyvernheart_remove_corrupt_overseer #Wyvernheart
+		#1.36
+		#estate_nobles_mam_three_privileges
+		#estate_nobles_mam_recruit_mamluks
+		#estate_nobles_mam_develop_military_infrastructure
+		#estate_nobles_mam_increase_army_tradition
+		#estate_nobles_mam_increase_army_professionalism
+		#estate_nobles_mam_focus_on_military_matters
+	}
+
+	influence_from_dev_modifier = 1.0
+}

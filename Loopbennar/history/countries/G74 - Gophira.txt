@@ -1,0 +1,63 @@
+
+setup_vision = yes
+government = monarchy
+add_government_reform = taychend_duchy
+government_rank = 1
+primary_culture = yodhanpir
+religion = gods_of_the_taychend
+technology_group = tech_taychendi
+capital = 2530
+
+1000.1.1 = { set_estate_privilege = estate_mages_organization_guilds }
+
+
+
+1444.11.11 = {
+	monarch = {
+		name = "Harrihara X"
+		dynasty = "Sangamar"
+		birth_date = 1421.7.11
+		death_date = 1471.6.7
+		adm = 2
+		dip = 0
+		mil = 5
+		regent = no
+	}
+	add_ruler_personality = bold_fighter_personality
+	add_ruler_personality = cruel_personality
+	set_variable = {
+		which = TaychendGlory
+		value = 75
+	}
+	update_taychend_glory = yes
+	set_ruler_flag = gophira_ruler
+	
+	heir = {
+		name = "Thanal"
+		monarch_name = "Thanal"
+		dynasty = "Sangamar"
+		claim = 50
+		birth_date = 1443.1.1
+		death_date = 1480.1.1
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+	set_heir_flag = gophira_heir
+	
+	queen = {
+		country_of_origin = J72
+		name = "Azhera"
+		dynasty = "Vakhyrlana"
+		birth_date = 1425.1.25
+		death_date = 1492.6.8
+		female = yes
+		adm = 2
+		dip = 1
+		mil = 4
+	}
+	add_queen_personality = malevolent_personality
+	set_consort_flag = gophira_wife
+	set_country_flag = count_battles_won
+	set_country_flag = count_wars_won
+}

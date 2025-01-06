@@ -1,0 +1,741 @@
+
+namespace = lilac_wars
+
+country_event = { #Startup event handler
+	id = lilac_wars.0
+	title = lilac_wars.0.t
+	desc = lilac_wars.0.d
+	picture = LILAC_WARS_eventPicture
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = { owns = 8 }
+
+	immediate = {
+		every_country = {
+			limit = { capital_scope = { continent = europe } }
+			trigger_switch = {
+				on_trigger = has_country_flag
+				lilac_wars_moon_party = { country_event = { id = lilac_wars.1 } }
+				lilac_wars_rose_party = { country_event = { id = lilac_wars.2 } }
+			}
+			trigger_switch = {
+				on_trigger = tag
+				A01 = { country_event = { id = lilac_wars.30 days = 180 } } #Lorent
+				A30 = { country_event = { id = lilac_wars.31 days = 180 } } #Wex
+				A04 = { country_event = { id = lilac_wars.32 days = 180 } } #Wesdam
+				A45 = { country_event = { id = lilac_wars.33 days = 180 } } #Istralore
+				A60 = { country_event = { id = lilac_wars.34 days = 180 } } #Asheniande
+				A33 = { country_event = { id = lilac_wars.35 days = 180 } } #Verne
+				A73 = { country_event = { id = lilac_wars.47 days = 365 } } #Silverforge
+				A20 = { country_event = { id = lilac_wars.47 days = 365 } } #Rubyhold
+				A12 = { country_event = { id = lilac_wars.48 days = 365 } } #Beepeck
+			}
+			if = { 
+				limit = { 
+					culture_group = lencori
+					NOT = {
+						tag = B04 #Order of the Ashen Rose
+						tag = B11 #Company of the Thorn
+						tag = A10 #Minaran Temple
+						tag = A16 #Wineport
+					} 	
+				}
+				country_event = { id = lilac_wars.41 days = 365 }
+			}
+			else = {
+				trigger_switch = {
+					on_trigger = culture
+					esmari = {
+						if = {
+							limit = {
+								NOT = {
+									tag = A43 #Ryalan Temple
+									tag = B08 #Gallant Friends
+								}
+							}
+							country_event = { id = lilac_wars.42 days = 365 }
+						}
+					}
+					west_damerian = {
+						if = {
+							limit = {
+								NOT = {
+									tag = B06 #Warriors of Ancard
+									tag = A88 #Woodwell
+								}
+							}
+							country_event = { id = lilac_wars.43 days = 365 }
+						}
+					}
+					east_damerian = {
+						if = {
+							limit = {
+								NOT = {
+									tag = B07 #Sons of Dameria
+									tag = B05 #Pioneer's Guild
+									tag = A85 #Magisterium
+									tag = A41 #Damish Temple
+								}
+							}
+							country_event = { id = lilac_wars.43 days = 365 }
+						}
+					}
+					anbenncoster = {
+						if = {
+							limit = {
+								NOT = {
+									tag = B16 #Anbencost Expedition
+								}
+							}
+							country_event = { id = lilac_wars.43 days = 365 }
+						}
+					}
+					arbarani = {
+						country_event = { id = lilac_wars.44 days = 365 }
+					}
+					crownsman = {
+						if = {
+							limit = {
+								NOT = {
+									tag = B09 #House of Riches
+								}
+							}
+							country_event = { id = lilac_wars.44 days = 365 }
+						}
+					}
+					wexonard = {
+						country_event = { id = lilac_wars.45 days = 365 }
+					}
+					moon_elf = {
+						if = {
+							limit = {
+								NOT = {
+									tag = A83 #Silent Repose
+									tag = Z22 #Celmador
+								}
+							}
+							country_event = { id = lilac_wars.46 days = 365 }
+						}
+					}
+				}
+			}
+			if = {
+				limit = { tag = A95 }
+				hidden_effect = {
+					set_variable = {
+						which = a95_ryala_influence
+						value = 0
+					}
+					set_variable = {
+						which = a95_esmaryal_influence
+						value = 0
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = flavor_castanor_go_back
+		ai_chance = { factor = 1 }
+	}
+}
+
+country_event = { #Moon Party - Losers
+	id = lilac_wars.1
+	title = lilac_wars.1.t
+	desc = lilac_wars.1.d
+	picture = LILAC_WARS_eventPicture
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			country_event = { 
+				id = lilac_wars.10
+				days = 20
+				random = 20
+			}
+		}
+	}
+	option = {		
+		name = "lilac_wars.1.a"
+		custom_tooltip = ct_lilac_wars.1
+		#See CountrySetup for actual effects
+	}
+}
+
+country_event = { #Rose Party - Victors
+	id = lilac_wars.2
+	title = lilac_wars.2.t
+	desc = lilac_wars.2.d
+	picture = LILAC_WARS_eventPicture
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			country_event = { 
+				id = lilac_wars.11
+				days = 20
+				random = 20
+			}
+		}
+	}
+	option = {		
+		name = "lilac_wars.2.a"
+		custom_tooltip = ct_lilac_wars.2
+		#See CountrySetup for actual effects
+	}
+}
+
+
+country_event = { #Woe to the Vanquished
+	id = lilac_wars.10
+	title = lilac_wars.10.t
+	desc = lilac_wars.10.d
+	picture = LILAC_WARS_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {		
+		name = "lilac_wars.10.a"
+		add_country_modifier = {
+			name = lilac_wars_moon_party_lost
+			duration = 1825
+		}
+		random_list = {
+			25 = {
+				country_event  = { id = lilac_wars.21 days = 365 }
+			}
+			25 = {
+				country_event  = { id = lilac_wars.22 days = 365 }
+			}
+			25 = {
+				country_event  = { id = lilac_wars.23 days = 365 }
+			}
+			25 = {
+				country_event  = { id = lilac_wars.25 days = 365 }
+			}
+		}
+	}
+}
+
+
+country_event = { #The Price of Victory
+	id = lilac_wars.11
+	title = lilac_wars.11.t
+	desc = lilac_wars.11.d
+	picture = LILAC_WARS_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {		
+		name = "lilac_wars.11.a"
+		add_prestige = 5
+		random_list = {
+			25 = {
+				country_event  = { id = lilac_wars.21 days = 365 }
+			}
+			25 = {
+				country_event  = { id = lilac_wars.22 days = 365 }
+			}
+			25 = {
+				country_event  = { id = lilac_wars.23 days = 365 }
+			}
+			25 = {
+				country_event  = { id = lilac_wars.25 days = 365 }
+			}
+		}
+	}
+}
+
+
+country_event = { #Soldiers Turn to Banditry
+	id = lilac_wars.21
+	title = lilac_wars.21.t
+	desc = lilac_wars.21.d
+	picture = LILAC_WARS_eventPicture
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			country_event = { 
+				id = lilac_wars.51
+				days = 7300
+				random = 20
+			}
+		}
+	}
+	option = {		
+		name = "lilac_wars.21.a"
+		random_owned_province = {
+			add_unrest = 5
+		}
+	}
+}
+country_event = { #A Quiet Place
+	id = lilac_wars.22
+	title = lilac_wars.22.t
+	desc = lilac_wars.22.d
+	picture = LILAC_WARS_eventPicture
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			country_event = { 
+				id = lilac_wars.52
+				days = 7300
+				random = 20
+			}
+		}
+	}
+	option = {		
+		name = "lilac_wars.22.a"
+		random_owned_province = {
+			add_devastation  = 15
+		}
+		random_owned_province = {
+			add_devastation  = 15
+		}
+	}
+}
+country_event = { #The Fallow Fields
+	id = lilac_wars.23
+	title = lilac_wars.23.t
+	desc = lilac_wars.23.d
+	picture = LILAC_WARS_eventPicture
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			country_event = { 
+				id = lilac_wars.53
+				days = 7300
+				random = 20
+			}
+		}
+	}
+	
+	option = {		
+		name = "lilac_wars.23.a"
+		add_country_modifier = {
+			name = lilac_wars_fallow_fields
+			duration = 1825
+		}
+	}
+}
+##country_event = { This one is being left undone due to Maffleet for now.
+##	id = lilac_wars.24
+##	title = lilac_wars.24.t
+##	desc = lilac_wars.24.d
+##	picture = LILAC_WARS_eventPicture
+	
+##	fire_only_once = yes
+##	is_triggered_only = yes
+	
+##	option = {		
+##		name = "lilac_wars.24.a"
+##		prestige = 5
+##	}
+##}
+
+country_event = { #Furnace of War
+	id = lilac_wars.25
+	title = lilac_wars.25.t
+	desc = lilac_wars.25.d
+	picture = LILAC_WARS_eventPicture
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			country_event = { 
+				id = lilac_wars.55
+				days = 7300
+				random = 20
+			}
+		}
+	}
+	
+	option = {		
+		name = "lilac_wars.25.a"
+		add_country_modifier = {
+			name = lilac_wars_furnace_war
+			duration = 7300
+		}
+	}
+}
+
+country_event = { #Disputes Over the Scraps - Lorent
+	id = lilac_wars.30
+	title = lilac_wars.30.t
+	desc = lilac_wars.30.d
+	picture = LILAC_WARS_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {		
+		name = "lilac_wars.30.a"
+		add_country_modifier = {
+			name = lilac_wars_scrap_disputes
+			duration = 1825
+		}
+	}
+}
+
+country_event = { #To Serve Man and Rule Over Him - Wex
+	id = lilac_wars.31
+	title = lilac_wars.31.t
+	desc = lilac_wars.31.d
+	picture = LILAC_WARS_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {		
+		name = "lilac_wars.31.a"
+		add_country_modifier = {
+			name = lilac_wars_serve_and_rule
+			duration = 1825
+		}
+	}
+}
+
+country_event = { #The Innocence of Duke Laurens - Wesdam
+	id = lilac_wars.32
+	title = lilac_wars.32.t
+	desc = lilac_wars.32.d
+	picture = LILAC_WARS_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {		
+		name = "lilac_wars.32.a"
+		add_country_modifier = {
+			name = lilac_wars_guilt_stricken
+			duration = 3650
+		}
+	}
+}
+
+country_event = { #Truly Tragic Opportunity - Istralore
+	id = lilac_wars.33
+	title = lilac_wars.33.t
+	desc = lilac_wars.33.d
+	picture = LILAC_WARS_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {		
+		name = "lilac_wars.33.a"
+		add_adm_power = 25
+		add_dip_power = 25
+		add_mil_power = 25
+	}
+}
+
+country_event = { #Night Shrouds the Moon - Asheniande
+	id = lilac_wars.34
+	title = lilac_wars.34.t
+	desc = lilac_wars.34.d
+	picture = LILAC_WARS_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {		
+		name = "lilac_wars.34.a"
+		add_country_modifier = {
+			name = lilac_wars_night_shrouds
+			duration = 3650
+		}
+	}
+}
+
+country_event = { #In Search of Myth and Wings - Verne
+	id = lilac_wars.35
+	title = lilac_wars.35.t
+	desc = lilac_wars.35.d
+	picture = LILAC_WARS_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {		
+		name = "lilac_wars.35.a"
+		add_prestige = -5
+		create_general = { tradition = 75 }
+		add_country_modifier = {
+			name = lilac_wars_myth_wings
+			duration = 3650
+		}
+	}
+}
+
+#Cultural Events
+country_event = { #Ruins of Chivalry - Lencori
+	id = lilac_wars.41
+	title = lilac_wars.41.t
+	desc = lilac_wars.41.d
+	picture = LILAC_WARS_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {		
+		name = "lilac_wars.41.a"
+		add_adm_power = -20
+		add_dip_power = -20
+		add_mil_power = -20
+	}
+}
+
+
+country_event = { #Thorned Moon Boat Festival - Esmari
+	id = lilac_wars.42
+	title = lilac_wars.42.t
+	desc = lilac_wars.42.d
+	picture = LILAC_WARS_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {		
+		name = "lilac_wars.42.a"
+		add_prestige = 10
+		add_legitimacy = 5
+	}
+}
+
+country_event = { #What Lies Broken - West/East Damerian, Anbenncoster
+	id = lilac_wars.43
+	title = lilac_wars.43.t
+	desc = lilac_wars.43.d
+	picture = LILAC_WARS_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {		
+		name = "lilac_wars.43.a"
+		add_country_modifier = {
+			name = lilac_wars_lies_broken
+			duration = 3650
+		}
+	}
+}
+
+country_event = { #Far from the Fame - Crownsman
+	id = lilac_wars.44
+	title = lilac_wars.44.t
+	desc = lilac_wars.44.d
+	picture = LILAC_WARS_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {		
+		name = "lilac_wars.44.a"
+		add_country_modifier = {
+			name = lilac_wars_far_fame
+			duration = 3650
+		}
+	}
+}
+
+country_event = { #The Old Ways of War - Wexonard
+	id = lilac_wars.45
+	title = lilac_wars.45.t
+	desc = lilac_wars.45.d
+	picture = LILAC_WARS_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {		
+		name = "lilac_wars.45.a"
+		add_country_modifier = {
+			name = lilac_wars_old_ways
+			duration = 3650
+		}
+	}
+}
+
+country_event = { #An End to the Dances of Death - Moon Elf
+	id = lilac_wars.46
+	title = lilac_wars.46.t
+	desc = lilac_wars.46.d
+	picture = LILAC_WARS_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {		
+		name = "lilac_wars.46.a"
+		add_manpower = -2.5
+	}
+}
+
+country_event = { #Spears into Ploughshares - Silverforge and Rubyhold
+	id = lilac_wars.47
+	title = lilac_wars.47.t
+	desc = lilac_wars.47.d
+	picture = LILAC_WARS_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {		
+		name = "lilac_wars.47.a"
+		add_prestige = 5
+		add_treasury = 50
+	}
+}
+
+country_event = { #A Broken Basket - Beepeck
+	id = lilac_wars.48
+	title = lilac_wars.48.t
+	desc = lilac_wars.48.d
+	picture = LILAC_WARS_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {		
+		name = "lilac_wars.48.a"
+		ai_chance = {
+			factor = 55
+		}
+		add_country_modifier = {
+			name = lilac_wars_farms_fields
+			duration = 5475
+		}
+	}
+	option = {		
+		name = "lilac_wars.48.b"
+		ai_chance = {
+			factor = 45
+		}
+		add_country_modifier = {
+			name = lilac_wars_defend_this
+			duration = 5475
+		}
+	}
+}
+
+country_event = { #New Beginnings
+	id = lilac_wars.51
+	title = lilac_wars.51.t
+	desc = lilac_wars.51.d
+	picture = LILAC_WARS_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {		
+		name = "lilac_wars.51.a"
+		ai_chance = {
+			factor = 55
+		}
+		create_general = { tradition = 25 }
+	}
+	option = {		
+		name = "lilac_wars.51.b"
+		ai_chance = {
+			factor = 45
+		}
+		define_advisor = {
+			type = grand_captain
+			skill = 2
+			discount = yes
+		}
+	}
+}
+
+country_event = { #A Gift from the Gone
+	id = lilac_wars.52
+	title = lilac_wars.52.t
+	desc = lilac_wars.52.d
+	picture = LILAC_WARS_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {		
+		name = "lilac_wars.52.a"
+		random_owned_area  = {
+			limit = {
+				NOT = { has_province_modifier = influential_power_holder }
+				owned_by = ROOT
+			}
+			add_province_modifier = {
+				name = "influential_power_holder"
+				duration = 5475
+			}
+		}
+	}
+	option = {		
+		name = "lilac_wars.52.b"
+		ai_chance = {
+			factor = 45
+		}
+		define_advisor = {
+			type = natural_scientist
+			skill = 2
+			discount = yes
+		}
+	}
+}
+
+country_event = { #Sudden Bumper Crop
+	id = lilac_wars.53
+	title = lilac_wars.53.t
+	desc = lilac_wars.53.d
+	picture = LILAC_WARS_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {		
+		name = "lilac_wars.53.a"
+		add_country_modifier = {
+			name = lilac_wars_bumper_constructs
+			duration = 1825
+		}
+	}
+	option = {		
+		name = "lilac_wars.53.b"
+		ai_chance = {
+			factor = 45
+		}
+		define_advisor = {
+			type = trader
+			skill = 2
+			discount = yes
+		}
+	}
+}
+
+#country_event = {
+#	id = lilac_wars.54
+#	title = lilac_wars.54.t
+#	desc = lilac_wars.54.d
+#	picture = LILAC_WARS_eventPicture
+#	
+#	fire_only_once = yes
+#	is_triggered_only = yes
+#	
+#	option = {		
+#		name = "lilac_wars.54.a"
+#		prestige = 5
+#	}
+#}
+
+country_event = { #As New Becomes Old
+	id = lilac_wars.55
+	title = lilac_wars.55.t
+	desc = lilac_wars.55.d
+	picture = LILAC_WARS_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {		
+		name = "lilac_wars.55.a"
+		add_adm_power = 5
+		add_dip_power = 5
+		add_mil_power = 5
+	}
+}

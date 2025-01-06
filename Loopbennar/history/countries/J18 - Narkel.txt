@@ -1,0 +1,44 @@
+
+setup_vision = yes
+government = republic
+government_rank = 1
+primary_culture = zabatlari
+add_government_reform = lake_republic
+religion = yukel_followers
+technology_group = tech_triunic
+capital = 5270
+fixed_capital = 5270
+
+historical_friend = J19 #Jungykaroy
+
+1000.1.1 = { set_estate_privilege = estate_mages_organization_guilds }
+1430.1.1 = {
+	add_country_modifier = {
+		name = lake_federation_member
+		duration = -1
+	}
+	set_variable = {
+		which = FederationPoints
+		value = 1
+	}
+}
+
+1444.10.24 = {
+	monarch = {
+		name = "Tuya"
+		dynasty = "Halghiruun"
+		birth_date = 1390.2.30
+		adm = 3
+		dip = 2
+		mil = 3
+		female = yes
+	}
+	add_ruler_personality = mage_personality
+	set_ruler_flag = conjuration_1
+	set_ruler_flag = abjuration_1
+	set_ruler_flag = evocation_1
+	set_ruler_flag = evocation_2
+	set_ruler_flag = initialized_magic_flags
+}
+
+#Killed several Centaur shamans during the Great Incursion

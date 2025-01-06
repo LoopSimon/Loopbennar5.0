@@ -1,0 +1,1747 @@
+
+namespace = vampires_estate_events
+
+#Emigre become Bloody Aristocracy
+country_event = {
+	id = vampires_estate_events.1
+	title = vampires_estate_events.1.t
+	desc = vampires_estate_events.1.d
+	picture = NOBLE_ESTATE_eventPicture
+	
+	trigger = {
+		has_estate = estate_vampires
+		has_estate_privilege = estate_vampires_organization_vampiric_emigres
+		estate_influence = {
+			estate = estate_vampires
+			influence = 40
+		}
+		estate_loyalty = {
+			estate = estate_vampires
+			loyalty = 50
+		}
+	}
+	
+	mean_time_to_happen = {
+		years = 12
+		modifier = {
+			factor = 0.5
+			estate_influence = {
+				estate = estate_vampires
+				influence = 50
+			}
+		}
+		modifier = {
+			factor = 0.5
+			estate_influence = {
+				estate = estate_vampires
+				influence = 60
+			}
+		}
+		modifier = {
+			factor = 0.5
+			NOT = {
+				total_development = 40
+			}
+		}
+		modifier = {
+			factor = 0.5
+			estate_loyalty = {
+				estate = estate_vampires
+				loyalty = 70
+			}
+		}
+	}
+
+	option = {
+		name = vampires_estate_events.1.a
+		ai_chance = { factor = 100 }
+		remove_estate_privilege = estate_vampires_organization_vampiric_emigres
+		set_estate_privilege = estate_vampires_organization_bloody_aristocracy
+		#aristocracy upgrade notification for the leader of the blood court
+		event_target:blood_court_founder = {
+			country_event = {
+				id = flavor_asheniande.9
+				days = 10
+			}
+		}
+		
+	}
+}
+
+#Emergence of a Vampiric Lord - Through country instability
+country_event = {
+	id = vampires_estate_events.2
+	title = vampires_estate_events.2.t
+	desc = vampires_estate_events.2.d
+	picture = NOBLE_ESTATE_eventPicture
+	
+	trigger = {
+		has_estate = estate_vampires
+		has_estate_privilege = estate_vampires_organization_bloody_aristocracy
+		NOT = {
+			estate_influence = {
+				estate = estate_vampires
+				influence = 40
+			}
+		}
+		OR = {
+			NOT = { stability = 1 }
+			average_unrest = 1
+			war_exhaustion = 8
+			is_at_war = yes
+		}
+	}
+	
+	mean_time_to_happen = {
+		years = 100
+		
+		modifier = {
+			factor = 0.6
+			NOT = {
+				estate_influence = {
+					estate = estate_vampires
+					influence = 30
+				}
+			}
+		}
+		modifier = {
+			factor = 0.6
+			NOT = {
+				estate_influence = {
+					estate = estate_vampires
+					influence = 20
+				}
+			}
+		}
+		modifier = {
+			factor = 0.6
+			NOT = {
+				estate_influence = {
+					estate = estate_vampires
+					influence = 10
+				}
+			}
+		}
+		modifier = {
+			factor = 0.8
+			is_at_war = yes
+		}
+	}
+
+	option = {
+		name = vampires_estate_events.2.a
+		ai_chance = { factor = 100 }
+		remove_estate_privilege = estate_vampires_organization_bloody_aristocracy
+		set_estate_privilege = estate_vampires_organization_vampires_lord
+	}
+}
+
+#A Sinister Offer
+country_event = {
+	id = vampires_estate_events.3
+	title = vampires_estate_events.3.t
+	desc = vampires_estate_events.3.d
+	picture = NOBLE_ESTATE_eventPicture
+	
+	trigger = {
+		has_estate = estate_vampires
+		has_estate_privilege = estate_vampires_law_traditional_masquerade
+		estate_influence = {
+			estate = estate_vampires
+			influence = 50
+		}
+		estate_loyalty = {
+			estate = estate_vampires
+			loyalty = 70
+		}
+	}
+	
+	mean_time_to_happen = {
+		years = 10
+		
+	}
+
+	#Accept the offer
+	option = {
+		name = vampires_estate_events.3.a
+		ai_chance = { factor = 80 }
+		reduce_stability_or_adm_power = yes
+		remove_estate_privilege = estate_vampires_law_traditional_masquerade
+		set_estate_privilege = estate_vampires_law_state_collusion_masquerade
+	}
+	
+	#Refuse the offer
+	option = {
+		name = vampires_estate_events.3.b
+		ai_chance = { factor = 20 }
+		add_prestige = 10
+		add_estate_loyalty_modifier = {
+			estate = estate_vampires
+			desc = EST_VAMPIRES_REFUSED_STATE_COLLUSION
+			loyalty = -30
+			duration = 7300
+		}
+	}
+}
+
+#The Blood Gift
+country_event = {
+	id = vampires_estate_events.4
+	title = vampires_estate_events.4.t
+	desc = vampires_estate_events.4.d
+	picture = NOBLE_ESTATE_eventPicture
+	
+	trigger = {
+		has_estate = estate_vampires
+		estate_influence = {
+			estate = estate_vampires
+			influence = 75
+		}
+		NOT = { has_estate_privilege = estate_vampires_organization_vampiric_emigres }
+		NOT = { has_estate_privilege = estate_vampires_neratic_inquisition }
+		NOT = { has_country_flag = mb_keepers_razor_flg }
+		#Hopefully this is easily achievable
+		estate_loyalty = {
+			estate = estate_vampires
+			loyalty = 75
+		}
+		NOT = { has_ruler_flag = is_a_vampire }
+		NOT = { has_ruler_flag = offered_blood_gift }
+		NOT = { ruler_is_immortal = yes }
+		NOT = { has_regency = yes }
+		is_lesser_in_union = no 
+	}
+	
+	immediate = {
+		hidden_effect = { set_ruler_flag = offered_blood_gift }
+	}
+	
+	mean_time_to_happen = {
+		years = 5
+	}
+
+	#Accept the offer
+	option = {
+		name = vampires_estate_events.4.a
+		ai_chance = { factor = 80 }
+		custom_tooltip = will_become_a_vampire_tooltip
+		ruler_become_vampire = yes
+	}
+	
+	#Refuse the offer
+	option = {
+		name = vampires_estate_events.4.b
+		ai_chance = { factor = 20 }
+		add_estate_loyalty_modifier = {
+			estate = estate_vampires
+			desc = EST_VAMPIRES_REFUSED_BLOOD_GIFT
+			loyalty = -10
+			duration = 7300
+		}
+	}
+}
+
+#Vampire Hunter in the Country
+country_event = {
+	id = vampires_estate_events.5
+	title = vampires_estate_events.5.t
+	desc = vampires_estate_events.5.d
+	picture = NOBLE_ESTATE_eventPicture
+	
+	trigger = {
+		has_estate = estate_vampires
+		has_estate = estate_adventurers
+		estate_influence = {
+			estate = estate_adventurers
+			influence = 50
+		}
+		NOT = {
+			has_estate_loyalty_modifier = {
+				estate = estate_adventurers
+				modifier = EST_VAMPIRES_SUPPORTED_HUNTERS
+			}
+		}
+		NOT = {
+			has_estate_loyalty_modifier = {
+				estate = estate_adventurers
+				modifier = EST_VAMPIRES_NOT_SUPPORTED_HUNTERS
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		years = 15
+	}
+
+	#Support them
+	option = {
+		name = vampires_estate_events.5.a
+		ai_chance = { 
+			factor = 20
+			
+			modifier = {
+				factor = 1000
+				#want_to_reduce_vampire_influence = yes
+				estate_influence = {
+					estate = estate_vampires
+					influence = 90
+				}
+				has_estate_privilege = estate_vampires_organization_vampires_lord
+				NOT = { has_ruler_flag = is_a_vampire }
+			}
+		}
+		add_estate_loyalty_modifier = {
+			estate = estate_adventurers
+			desc = EST_VAMPIRES_SUPPORTED_HUNTERS
+			loyalty = 10
+			duration = 7300
+		}
+		add_estate_loyalty_modifier = {
+			estate = estate_vampires
+			desc = EST_VAMPIRES_SUPPORTED_HUNTERS
+			loyalty = -10
+			duration = 7300
+		}
+		add_estate_influence_modifier = {
+			estate = estate_vampires
+			desc = EST_VAMPIRES_SUPPORTED_HUNTERS_INF
+			influence = -10
+			duration = 7300
+		}
+	}
+	
+	#Deny them
+	option = {
+		name = vampires_estate_events.5.b
+		ai_chance = { factor = 80 }
+		add_estate_loyalty_modifier = {
+			estate = estate_adventurers
+			desc = EST_VAMPIRES_NOT_SUPPORTED_HUNTERS
+			loyalty = -10
+			duration = 7300
+		}
+		add_estate_loyalty_modifier = {
+			estate = estate_vampires
+			desc = EST_VAMPIRES_PROTECTED_VAMPIRES
+			loyalty = 10
+			duration = 7300
+		}
+	}
+}
+
+#Vampire Blood Ritual in the Countryside
+country_event = {
+	id = vampires_estate_events.6
+	title = vampires_estate_events.6.t
+	desc = vampires_estate_events.6.d
+	picture = NOBLE_ESTATE_eventPicture
+	goto = province
+	
+	trigger = {
+		has_estate = estate_vampires
+		has_vampire_masquerade = yes
+		NOT = {
+			estate_influence = {
+				estate = estate_vampires
+				influence = 20
+			}
+		}
+		NOT = {
+			estate_loyalty = {
+				estate = estate_vampires
+				loyalty = 40
+			}
+		}
+		#NOT = { stability = -3 }
+		any_owned_province = {
+			is_capital = no
+			base_tax = 2
+			base_manpower = 2
+			base_production = 2
+		}
+	}
+	
+	immediate = {
+		random_owned_province = {
+			limit = { 
+				is_capital = no
+				base_tax = 2
+				base_manpower = 2
+				base_production = 2
+			}
+			save_event_target_as = province
+		}
+	}
+	
+	mean_time_to_happen = {
+		years = 8
+	}
+
+	#Damn them
+	option = {
+		name = vampires_estate_events.6.a
+		ai_chance = { factor = 20 }
+		reduce_stability_or_adm_power = yes
+		event_target:province = {
+			random_list = {
+				33 = { add_base_tax = -1 }
+				33 = { add_base_manpower = -1 }
+				33 = { add_base_production = -1 }
+			}
+		}
+	}
+}
+
+#Rogue Vampire openly kill our advisor
+country_event = {
+	id = vampires_estate_events.7
+	title = vampires_estate_events.7.t
+	desc = vampires_estate_events.7.d
+	picture = NOBLE_ESTATE_eventPicture
+	
+	trigger = {
+		has_estate = estate_vampires
+		has_vampire_masquerade = yes
+		NOT = {
+			estate_influence = {
+				estate = estate_vampires
+				influence = 20
+			}
+		}
+		NOT = {
+			estate_loyalty = {
+				estate = estate_vampires
+				loyalty = 40
+			}
+		}
+		has_advisor = yes
+	}
+	
+	mean_time_to_happen = {
+		years = 8
+	}
+
+	#Damn them
+	option = {
+		name = vampires_estate_events.7.a
+		ai_chance = { factor = 20 }
+		kill_advisor = random
+		reduce_stability_or_adm_power = yes
+	}
+}
+
+#Strange...Accident ?
+#Vampire kill your heir
+country_event = {
+	id = vampires_estate_events.8
+	title = vampires_estate_events.8.t
+	desc = vampires_estate_events.8.d
+	picture = NOBLE_ESTATE_eventPicture
+	
+	trigger = {
+		has_estate = estate_vampires
+		estate_influence = {
+			estate = estate_vampires
+			influence = 50
+		}
+		NOT = {
+			estate_loyalty = {
+				estate = estate_vampires
+				loyalty = 15
+			}
+		}
+		has_heir = yes
+	}
+	
+	mean_time_to_happen = {
+		years = 10
+	}
+
+	#Damn them
+	option = {
+		name = vampires_estate_events.8.a
+		ai_chance = { factor = 20 }
+		kill_heir = { allow_new_heir = no }
+		reduce_stability_or_adm_power = yes
+	}
+}
+
+#Vampiric Emigres take control of an area
+country_event = {
+	id = vampires_estate_events.9
+	title = vampires_estate_events.9.t
+	desc = vampires_estate_events.9.d
+	picture = NOBLE_ESTATE_eventPicture
+	
+	trigger = {
+		has_estate = estate_vampires
+		has_estate_privilege = estate_vampires_organization_vampiric_emigres
+		any_owned_province = {
+			is_capital = no
+		}
+		NOT = {
+			estate_influence = {
+    			estate = estate_vampires
+    			influence = 50
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		years = 30
+		modifier = {
+			factor = 0.6
+			has_country_flag = population_boom_buff
+		}
+	}
+
+	#Damn them
+	option = {
+		name = vampires_estate_events.9.a
+		ai_chance = { factor = 20 }
+		random_owned_area = {
+			limit = { is_capital = no }
+			add_base_tax = 1
+		}
+		add_estate_influence_modifier = {
+			estate = estate_vampires
+			desc = EST_VAMPIRES_EMIGRES_CONTROL_STATE
+			influence = 20
+			duration = 7300
+		}
+		change_estate_land_share = {
+			estate = estate_vampires
+			share = 2
+		}
+	}
+}
+
+#Vampiric Emigres population boom
+country_event = {
+	id = vampires_estate_events.10
+	title = vampires_estate_events.10.t
+	desc = vampires_estate_events.10.d
+	picture = NOBLE_ESTATE_eventPicture
+	
+	trigger = {
+		has_estate = estate_vampires
+		has_estate_privilege = estate_vampires_organization_vampiric_emigres
+		NOT = { 
+			has_estate_influence_modifier = {
+				estate = estate_vampires
+				modifier = EST_VAMPIRES_EMIGRES_POPULATION_BOOM
+			}
+		}
+		NOT = {
+			estate_influence = {
+    			estate = estate_vampires
+    			influence = 50
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		years = 25
+		modifier = {
+			factor = 0.6
+			has_country_flag = population_boom_buff
+		}
+	}
+
+	#Damn them
+	option = {
+		name = vampires_estate_events.10.a
+		ai_chance = { factor = 20 }
+		add_estate_influence_modifier = {
+			estate = estate_vampires
+			desc = EST_VAMPIRES_EMIGRES_POPULATION_BOOM
+			influence = 20
+			duration = 7300
+		}
+	}
+}
+
+#Vampiric Emigres arrival
+country_event = {
+	id = vampires_estate_events.11
+	title = vampires_estate_events.11.t
+	desc = vampires_estate_events.11.d
+	picture = NOBLE_ESTATE_eventPicture
+
+	is_triggered_only = yes
+
+	trigger = {
+		always = yes
+	}
+
+    immediate = {
+        hidden_effect = {
+			every_country = {
+				limit = {
+					has_country_flag = founded_blood_court
+				}
+				save_global_event_target_as = blood_court_founder
+			}
+            #CHANGEABLE - MIGRATION TYPE - Any province within my region - dont do area as those are too small. its essentially adjacent anyway
+            random_owned_province = {
+                limit = {
+                    is_city = yes
+					continent = europe
+
+                    NOT = { has_province_modifier = aw_vampires_1 }
+                    NOT = { has_province_modifier = aw_vampires_2 }
+                    NOT = { has_province_modifier = aw_vampires_3 }
+
+                }
+                save_event_target_as = aw_vampires_migration_target
+            }
+        }
+    }
+
+	#Chase them out
+	option = {
+		name = vampires_estate_events.11.a
+		ai_chance = { factor = 50 }
+		add_prestige = 5
+		hidden_effect = {
+			ROOT = { save_event_target_as = emigres_landing }
+
+			# random_neighbor_country = {		#used to be a thing so it goes on infinitely until it finds someone, not anymore due to Adventurers Wanted -Jay.
+				# limit = { NOT = { has_country_flag = has_vampires_estate } }
+				# country_event = { id = vampires_estate_events.11 days = 7 random = 5 }
+			# }
+
+			#fail notification
+
+			event_target:vampire_origin = {
+				country_event = {
+					id = flavor_asheniande.10 #emigres landing notification for spreader
+					days = 7
+				}
+				#uncomment to make failure reset the cooldown
+				#remove_country_modifier = vamp_spread_cooldown
+
+				#clr_country_flag = currently_spreading_vampires
+			}
+		}
+
+		event_target:aw_vampires_migration_target = {
+			if = {
+				limit = {
+					NOT = { has_province_modifier = aw_vampires_1 }
+                    NOT = { has_province_modifier = aw_vampires_2 }
+                    NOT = { has_province_modifier = aw_vampires_3 }
+				}
+				random = {
+					chance = 33
+					add_province_modifier = {
+						name = aw_vampires_1
+						duration = -1
+					}
+				}
+			}
+		}
+	}
+
+
+	#Let them stay and gain estate
+	option = {
+		name = vampires_estate_events.11.b
+		trigger = {
+			NOT = {
+				government = native
+				has_reform = siberian_tribe
+				is_colonial_nation = yes
+			}
+		}
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0.1
+				ROOT = {
+					NOT = { culture_is_human = yes }
+				}
+			}
+			modifier = {
+				factor = 1.25
+				capital_scope = {
+					region = the_borders_region
+				}
+			}
+		}
+		add_stability = -1
+		hidden_effect = { 
+			ROOT = { save_event_target_as = emigres_landing }
+			set_country_flag = has_vampires_estate
+			country_event = { id = vampires_estate_events.12 days = 2 }
+			event_target:vampire_origin = {
+				country_event = {
+					id = flavor_asheniande.8 #emigres landing notification for spreader
+					days = 7
+				}
+				#clr_country_flag = currently_spreading_vampires
+			}
+		}
+		custom_tooltip = estate_vampies_gain_tooltip
+
+		event_target:aw_vampires_migration_target = {
+			if = {
+				limit = {
+					NOT = { has_province_modifier = aw_vampires_1 }
+                    NOT = { has_province_modifier = aw_vampires_2 }
+                    NOT = { has_province_modifier = aw_vampires_3 }
+				}
+				random = {
+					chance = 33
+					add_province_modifier = {
+						name = aw_vampires_2
+						duration = -1
+					}
+				}
+			}
+		}
+	}
+}
+
+#Vampiric Emigres setup
+country_event = {
+	id = vampires_estate_events.12
+	title = vampires_estate_events.12.t
+	desc = vampires_estate_events.12.d
+	picture = NOBLE_ESTATE_eventPicture
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		always = yes
+	}
+
+	option = {
+		name = vampires_estate_events.12.a
+		ai_chance = { factor = 90 }
+		set_estate_privilege = estate_vampires_law_traditional_masquerade
+		set_estate_privilege = estate_vampires_organization_vampiric_emigres
+		add_estate_loyalty_modifier = {
+			estate = estate_vampires
+			desc = EST_VAMPIRES_ACCEPTED_EMIGRES
+			loyalty = 20
+			duration = 7300
+		}
+	}
+}
+
+#vampire Death - Regency Council
+country_event = {
+	id = vampires_estate_events.13
+	title = vampires_estate_events.13.t
+	desc = vampires_estate_events.13.d
+	picture = DEATH_OF_HEIR_eventPicture
+	
+	is_triggered_only = yes	#this should be triggered by other events like adventurers destroying phylactery
+	
+	trigger = {
+		has_country_flag = vampire_ruler
+		NOT = { has_country_flag = lich_ruler }				#Stop weird lich shenanigans going on (hopefully)
+		has_country_flag = vampire_ruler_has_coffin
+		NOT = { is_subject_of_type = acolyte_dominion }		#plz stop
+		NOT = { has_country_flag = interregnum }
+		
+		NOT = { has_ruler_flag = is_a_vampire }
+		
+		NOT = { government = republic }
+
+		is_lesser_in_union = no #Breaks PUs otherwise
+	}
+	
+	immediate = {
+		hidden_effect = {
+		
+			if = {
+				limit = { is_lesser_in_union = yes }
+			}
+		
+			set_country_flag = interregnum
+			
+			
+			# Govs with Heirs keep dynasty
+			if = {
+				limit = { has_government_attribute = heir }
+				
+				# Gimme dynastic ruler
+				set_ruler = dynastic_heir_@ROOT
+				
+				if = {
+					limit = { has_country_flag = B34_lucian }
+					define_ruler = {
+						age = 27
+						name = "Lucian"
+						dynasty = "síl na Toars"
+						male = yes
+						max_random_adm  = 0
+						max_random_dip  = 0
+						max_random_mil  = 0
+						hide_skills = yes
+					}
+				}
+				else_if = {
+					limit = { has_country_flag = vampire_ruler_female }
+					define_heir = {
+						age = 30
+						dynasty = ROOT
+						female = yes
+						max_random_adm  = 0
+						max_random_dip  = 0
+						max_random_mil  = 0
+						hide_skills = yes
+					}
+				}
+				else = {
+					define_heir = {
+						age = 30
+						dynasty = ROOT
+						male = yes
+						max_random_adm  = 0
+						max_random_dip  = 0
+						max_random_mil  = 0
+						hide_skills = yes
+					}
+				}
+				
+				set_heir_flag = is_a_vampire
+			}
+			
+			# Govs without Heirs straight ruler boy
+			else = {
+			
+				set_ruler = dynastic_heir_@ROOT
+				
+				if = {
+					limit = { has_country_flag = B34_lucian }
+					define_ruler = {
+						age = 27
+						name = "Lucian"
+						dynasty = "síl na Toars"
+						male = yes
+						max_random_adm  = 0
+						max_random_dip  = 0
+						max_random_mil  = 0
+						hide_skills = yes
+					}
+				}
+				else_if = {
+					limit = { has_country_flag = vampire_ruler_female }
+					define_ruler = {
+						age = 30
+						dynasty = ROOT
+						female = yes
+						max_random_adm  = 0
+						max_random_dip  = 0
+						max_random_mil  = 0
+						hide_skills = yes
+					}
+				}
+				else = {
+					define_ruler = {
+						age = 30
+						dynasty = ROOT
+						male = yes
+						max_random_adm  = 0
+						max_random_dip  = 0
+						max_random_mil  = 0
+						hide_skills = yes
+					}
+				}
+				
+				set_ruler_flag = is_a_vampire
+				add_stability = 1 # Ruler is dead		
+			}
+		}
+	}
+	
+	# Set Ruler
+	option = {
+		name = vampires_estate_events.13.a
+		ai_chance = {
+			factor = 50
+		}
+		add_stability = 1 # Ruler is dead								 
+		# Revied Rulers are slighlty worse than normal ones, you don't want your ruler to die
+		tooltip = {
+			if = {
+				limit = { has_country_flag = vampire_ruler_female }
+				define_ruler = {
+					age = 30
+					dynasty = ROOT
+					female = yes
+					max_random_adm  = 0
+					max_random_dip  = 0
+					max_random_mil  = 0
+					hide_skills = yes
+				}
+			}
+			else_if = {
+				limit = { has_country_flag = B34_lucian }
+				define_ruler = {
+					age = 27
+					name = "Lucian"
+					dynasty = "síl na Toars"
+					male = yes
+					max_random_adm  = 0
+					max_random_dip  = 0
+					max_random_mil  = 0
+					hide_skills = yes
+				}
+			}
+			else = {
+				define_ruler = {
+					age = 30
+					dynasty = ROOT
+					male = yes
+					max_random_adm  = 0
+					max_random_dip  = 0
+					max_random_mil  = 0
+					hide_skills = yes
+				}
+			}
+		}
+		
+		restore_ruler_stats = yes
+		revival_stat_loss = yes
+		
+		set_heir = old_heir
+		
+		set_ruler_flag = is_a_vampire
+		set_ruler_flag = new_vampire_setup
+		clr_country_flag = interregnum
+		
+		hidden_effect = { country_event = { id = vampires_estate_events.14 days = 3 } }
+	}
+	
+}
+
+#vampire Reborn - initialization giving spell schools ruler if nessecary
+country_event = {
+	id = vampires_estate_events.14
+	title = vampires_estate_events.14.t
+	desc = vampires_estate_events.14.d
+	picture = END_OF_TIME_eventPicture
+	
+	is_triggered_only = yes
+	
+	hidden = yes
+	
+	trigger = {
+		has_ruler_flag = is_a_vampire
+		NOT = { has_ruler_modifier = vampire_ruler }
+	}
+	
+	option = {
+		name = vampires_estate_events.14.a
+		ai_chance = {
+			factor = 50
+		}
+		clr_country_flag = interregnum
+		clr_heir_flag = new_vampire_setup
+		clr_ruler_flag = new_vampire_setup
+		
+		make_ruler_immortal = yes
+		
+		save_ruler_stats = yes
+		apply_saved_persistent_ruler_personalities = yes
+		save_persistent_ruler_personalities = yes
+
+		if = {
+			limit = { has_country_flag = mage_vampire }
+			force_add_ruler_personality = { personality = mage_personality }
+			ruler_give_saved_spell_schools = yes	# links to ruler_save_spell_schools
+			if = { # Keep Witch King on Revival
+				limit = { has_country_flag = witch_king_flag }
+				add_ruler_modifier = {
+					name = witch_king_modifier
+					duration = -1
+				}
+			}
+			# If not exposed people forget your misuse of magic
+			else_if = {
+				limit = { has_country_flag = hidden_ruler_vampire }
+				clear_witch_king_points = yes
+			}
+		}
+		
+		add_ruler_modifier = {
+			name = vampire_ruler
+			duration = -1
+		}
+	}
+}
+
+#Occupying army searches for coffin
+province_event = {
+	id = vampires_estate_events.15
+	title = vampires_estate_events.15.t
+	desc = vampires_estate_events.15.d
+	picture = END_OF_TIME_eventPicture
+	goto = root
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		owner = {
+			has_ruler_flag = is_a_vampire
+			has_country_flag = vampire_ruler
+			has_country_flag = vampire_ruler_has_coffin
+			has_country_flag = exposed_vampire_ruler
+		}
+		is_capital = yes
+		NOT = { controlled_by = ROOT }
+	}
+	
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					owner = { NOT = { has_ruler_flag = abjuration_1 } }
+				}
+				province_event = { id = vampires_estate_events.16 days = 30 random = 15 } #Vampire rulers are less likely to be mages, give them a safety net
+			}
+			else = {
+				owner = {
+					trigger_switch = {
+						on_trigger = has_ruler_flag
+						
+						abjuration_3 = { ROOT = { province_event = { id = vampires_estate_events.16 days = 75 random = 60 } } }
+						abjuration_2 = { ROOT = { province_event = { id = vampires_estate_events.16 days = 60 random = 45 } } }
+						abjuration_1 = { ROOT = { province_event = { id = vampires_estate_events.16 days = 45 random = 30 } } }
+					}
+				}
+			}
+			controller = { country_event = { id = vampires_estate_events.17 days = 1 } }
+		}
+	}
+	
+	#It is only a matter of time until the coffin is found
+	option = {
+		name = vampires_estate_events.15.a
+		trigger = {
+			owner = { NOT = { has_ruler_flag = abjuration_1 } }
+		}
+		ai_chance = {
+			factor = 100
+		}
+		
+		owner = { add_prestige = -10 }
+	}
+	
+	#Wards will slow them down
+	option = {
+		name = vampires_estate_events.15.b
+		trigger = {
+			owner = { has_ruler_flag = abjuration_1 }
+		}
+		ai_chance = {
+			factor = 100
+		}
+		
+		owner = { add_prestige = -5 }
+	}
+}
+
+#coffin found by occupiers if not retaken
+province_event = {
+	id = vampires_estate_events.16
+	title = vampires_estate_events.16.t
+	desc = vampires_estate_events.16.d
+	picture = END_OF_TIME_eventPicture
+	
+	is_triggered_only = yes
+	
+	hidden = yes
+	
+	trigger = {
+		owner = {
+			has_ruler_flag = is_a_vampire
+			has_country_flag = vampire_ruler
+			#has_country_flag = vampire_ruler_has_coffin
+		}
+		NOT = { controlled_by = ROOT }
+	}
+
+	#coffin destroyed
+	option = {
+		name = vampires_estate_events.16.a
+		ai_chance = {
+			factor = 100
+		}
+		
+		controller = { country_event = { id = vampires_estate_events.18 days = 1 } }
+		owner = { country_event = { id = vampires_estate_events.19 days = 1 } }
+	}
+}
+
+#Occupier coffin search notification
+country_event = {
+	id = vampires_estate_events.17
+	title = vampires_estate_events.17.t
+	desc = vampires_estate_events.17.d
+	picture = END_OF_TIME_eventPicture
+	
+	is_triggered_only = yes
+	
+	#Inform hold province to destroy coffin
+	option = {
+		name = vampires_estate_events.17.a
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+#Occupier destroys coffin
+country_event = {
+	id = vampires_estate_events.18
+	title = vampires_estate_events.18.t
+	desc = vampires_estate_events.18.d
+	picture = END_OF_TIME_eventPicture
+	
+	is_triggered_only = yes
+	
+	#Destroyed coffin
+	option = {
+		name = vampires_estate_events.18.a
+		ai_chance = {
+			factor = 100
+		}
+		
+		add_prestige = 20
+		add_country_modifier = {
+			name = vampire_destroyed_coffin
+			duration = 3650
+		}
+	}
+}
+
+#vampire Destruction - coffin destroyed
+country_event = {
+	id = vampires_estate_events.19
+	title = vampires_estate_events.19.t
+	desc = vampires_estate_events.19.d
+	picture = END_OF_TIME_eventPicture
+	
+	is_triggered_only = yes	#this should be triggered by other events like adventurers destroying coffin
+	
+	trigger = {
+		has_ruler_flag = is_a_vampire
+		has_country_flag = vampire_ruler
+		has_country_flag = vampire_ruler_has_coffin
+	}
+	
+	option = {
+		name = vampires_estate_events.19.a
+		ai_chance = {
+			factor = 50
+		}
+		
+		kill_vampire_ruler = yes
+		add_prestige = -20
+		add_stability = -1		#Less of a deal than a lich dying, there are likely more vampires about
+	}
+}
+#Vampiric Emigres take control of an area CAPITAL VERSION
+country_event = {
+	id = vampires_estate_events.20
+	title = vampires_estate_events.20.t
+	desc = vampires_estate_events.20.d
+	picture = NOBLE_ESTATE_eventPicture
+	
+	trigger = {
+		has_estate = estate_vampires
+		has_estate_privilege = estate_vampires_organization_vampiric_emigres
+		NOT = {
+			any_owned_province = {
+				is_in_capital_area = no
+			}
+		}
+		NOT = {
+			estate_influence = {
+    			estate = estate_vampires
+    			influence = 50
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		years = 40
+		modifier = {
+			factor = 0.5
+			has_country_flag = population_boom_buff
+		}
+	}
+
+	#Damn them
+	option = {
+		name = vampires_estate_events.20.a
+		ai_chance = { factor = 20 }
+		random_owned_area = {
+			limit = { is_capital = yes }
+			add_base_tax = 1
+		}
+		add_estate_influence_modifier = {
+			estate = estate_vampires
+			desc = EST_VAMPIRES_EMIGRES_CONTROL_STATE_CAP
+			influence = 30
+			duration = 7300
+		}
+		change_estate_land_share = {
+			estate = estate_vampires
+			share = 10
+		}
+	}
+}
+
+#Setup Integrate Vampires
+country_event = {
+	id = vampires_estate_events.1000
+	title = vampires_estate_events.1000.t
+	desc = vampires_estate_events.1000.d
+	picture = END_OF_TIME_eventPicture
+	
+	hidden = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = vampires_estate_events.1000.a
+		
+		clear_vampire_law = yes
+		clear_vampire_organization = yes
+		
+		if = {
+			limit = { has_country_flag = vampire_ruler }
+			set_estate_privilege = estate_vampires_organization_vampires_lord
+			set_estate_privilege = estate_vampires_law_state_collusion_masquerade
+		}
+		else = {
+			set_estate_privilege = estate_vampires_organization_bloody_aristocracy
+			set_estate_privilege = estate_vampires_law_traditional_masquerade
+			country_event = { id = vampires_estate_events.3 days = 30 }
+		}
+		set_country_flag = recent_masquerade_disaster
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+#Lady's Birds spying yields information
+country_event = {
+	id = vampires_estate_events.500
+	title = vampires_estate_events.500.t
+	desc = vampires_estate_events.500.d
+	picture = THE_COVENANT_eventPicture
+	
+	trigger = {
+		has_estate_privilege = estate_vampires_organization_ladys_birds
+		any_known_country = {
+			has_spy_network_from = {
+				who = B48
+				value = 50
+			}
+		}
+	}
+	mean_time_to_happen = {
+		years = 15
+		
+		modifier = {
+			factor = 0.6
+			estate_loyalty = {
+				estate = estate_vampires
+				loyalty = 50
+			}
+		}
+		modifier = {
+			factor = 0.6
+			estate_loyalty = {
+				estate = estate_vampires
+				loyalty = 70
+			}
+		}
+		modifier = {
+			factor = 2
+			NOT = {
+				estate_loyalty = {
+					estate = estate_vampires
+					loyalty = 40
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			NOT = {
+				estate_loyalty = {
+					estate = estate_vampires
+					loyalty = 20
+				}
+			}
+		}
+	}
+	
+	immediate = {
+		add_estate_loyalty = {
+			estate = estate_vampires
+			loyalty = 5
+		}
+		add_estate_influence_modifier = {
+			estate = estate_vampires
+			desc = EST_LADYS_BIRDS
+			influence = 5
+			duration = 3650
+		}
+	}
+	
+	option = { #steal crowns
+        name = vampires_estate_events.500.a
+        
+        every_known_country = {
+            limit = {
+                has_spy_network_from = {
+                    who = ROOT
+                    value = 65
+                }
+            }
+            add_spy_network_from = {
+                who = ROOT
+                value = -30
+            }
+            add_years_of_income = -1
+        }
+        add_years_of_income = 1
+        add_estate_influence_modifier = {
+            estate = estate_vampires
+            desc = EST_VAMPIRES_MINOR_OPERATIONS
+            influence = 5
+            duration = 1825
+        }
+    }
+	option = { #steal crowns
+		name = vampires_estate_events.500.a
+			
+		every_known_country = {
+			limit = {
+				has_spy_network_from = {
+					who = ROOT
+					value = 65
+				}
+			}
+			add_spy_network_from = {
+				who = ROOT
+				value = -30
+			}
+			export_to_variable = {
+				which = yearly_income
+				value = monthly_income
+			}
+			multiply_variable = {
+				which = yearly_trade_income
+				value = 12
+			}
+			while = {
+				limit = {
+					check_variable = {
+						which = yearly_income
+						value = 1
+					}
+				}
+				add_treasury = -1
+				ROOT = { add_treasury = 1 }
+				subtract_variable = {
+					which = yearly_income
+					value = 1
+				}
+			}
+		}
+		add_estate_influence_modifier = {
+			estate = estate_vampires
+			desc = EST_VAMPIRES_MINOR_OPERATIONS
+			influence = 5
+			duration = 1825
+		}
+	}
+	option = { #steal mana
+		name = vampires_estate_events.500.b
+		
+		every_known_country = {
+			limit = {
+				has_spy_network_from = {
+					who = ROOT
+					value = 65
+				}
+			}
+			add_spy_network_from = {
+				who = ROOT
+				value = -40
+			}
+			add_adm_power = -30
+			add_dip_power = -30
+			add_mil_power = -30
+		}
+		add_adm_power = 30
+		add_dip_power = 30
+		add_mil_power = 30
+		add_estate_influence_modifier = {
+			estate = estate_vampires
+			desc = EST_VAMPIRES_MAJOR_OPERATIONS
+			influence = 5
+			duration = 2555
+		}
+	}
+	option = { #spread corruption
+		name = vampires_estate_events.500.c
+		
+		every_known_country = {
+			limit = {
+				has_spy_network_from = {
+					who = ROOT
+					value = 65
+				}
+			}
+			add_spy_network_from = {
+				who = ROOT
+				value = -50
+			}
+			add_corruption = 3
+			add_country_modifier = { name = ravenmarch_ladysbirds_corrupt duration = 3650 }
+		}
+		add_estate_influence_modifier = {
+			estate = estate_vampires
+			desc = EST_VAMPIRES_MAJOR_OPERATIONS
+			influence = 10
+			duration = 2555
+		}
+		
+	}
+	option = { #assasinate advisor
+		name = vampires_estate_events.500.dd
+		
+		every_known_country = {
+			limit = {
+				has_spy_network_from = {
+					who = ROOT
+					value = 65
+				}
+			}
+			add_spy_network_from = {
+				who = ROOT
+				value = -65
+			}
+			kill_advisor = random
+			reduce_stability_or_adm_power = yes
+		}
+		add_estate_influence_modifier = {
+			estate = estate_vampires
+			desc = EST_VAMPIRES_MAJOR_OPERATIONS
+			influence = 10
+			duration = 2555
+		}
+	}
+}
+
+#Neratic Inquisition - Inquisition prosecutes scapegoat vampire for infestation
+country_event = {
+	id = vampires_estate_events.501
+	title = vampires_estate_events.501.t
+	desc = vampires_estate_events.501.d
+	picture = bonfire_of_the_vanities_eventpicture
+	
+	trigger = {
+		has_estate_privilege = estate_vampires_neratic_inquisition
+		any_owned_province = {
+			OR = {
+                has_province_modifier = aw_vampires_1
+                has_province_modifier = aw_vampires_2
+                has_province_modifier = aw_vampires_3
+            }
+		}
+		NOT = { 
+			has_estate_influence_modifier = {
+				estate = estate_church
+				modifier = EST_VAMPIRES_PURGING_THE_SHADOWS
+			} 
+		}
+		NOT = { 
+			has_estate_influence_modifier = {
+				estate = estate_church
+				modifier = EST_VAMPIRES_DENIED_OVERSIGHT
+			}		
+		}
+		NOT = { 
+			has_estate_loyalty_modifier = {
+				estate = estate_vampires
+				modifier = EST_VAMPIRES_FAIR_OVERSIGHT
+			}
+		}
+	}
+	mean_time_to_happen = {
+		years = 20
+		
+		modifier = {
+			factor = 0.75
+			NOT = {
+				estate_loyalty = {
+					estate = estate_church
+					loyalty = 30
+				}
+			}
+		}
+		modifier = {
+			factor = 0.5
+			NOT = {
+				estate_loyalty = {
+					estate = estate_church
+					loyalty = 20
+				}
+			}
+		}
+		modifier = {
+			factor = 0.75
+			any_owned_province = {
+				has_province_modifier = aw_vampires_1
+			}
+		}
+		modifier = {
+			factor = 0.5
+			any_owned_province = {
+				has_province_modifier = aw_vampires_2
+			}
+		}
+		modifier = {
+			factor = 0.25
+			any_owned_province = {
+				has_province_modifier = aw_vampires_3
+			}
+		}
+		modifier = {
+			factor = 2
+			estate_loyalty = {
+				estate = estate_church
+				loyalty = 60
+			}
+		}
+		modifier = {
+			factor = 4
+			estate_loyalty = {
+				estate = estate_church
+				loyalty = 80
+			}
+		}
+	}
+	
+	option = { #allow 
+		name = vampires_estate_events.501.a
+		add_estate_loyalty = {
+			estate = estate_vampires
+			loyalty = -10
+		}
+		add_estate_influence_modifier = {
+			estate = estate_church
+			influence = 5
+			desc = EST_VAMPIRES_PURGING_THE_SHADOWS
+			duration = 3650
+		}
+	}
+	option = { #pardon the vampire
+		name = vampires_estate_events.501.b
+		add_estate_loyalty = {
+			estate = estate_church
+			loyalty = -10
+		}
+		add_estate_influence_modifier = {
+			estate = estate_church
+			influence = -5
+			desc = EST_VAMPIRES_DENIED_OVERSIGHT
+			duration = 3650
+		}
+	}
+	option = { #have the trial under royal authority
+		name = vampires_estate_events.501.c
+		highlight = yes
+		trigger = {
+			OR = {
+				ruler_has_personality = just_personality
+				ruler_has_personality = lawgiver_personality
+				ruler_has_personality = incorruptible_personality
+			}
+		}
+		random_list = {
+			50 = { #found guilty, is guilty
+				custom_tooltip = ravenmarch_inquisition_trial_guilty
+				hidden_effect = {
+					add_estate_loyalty = {
+						estate = estate_vampires
+						loyalty = 5
+					}
+					add_estate_loyalty = {
+						estate = estate_church
+						loyalty = 5
+					}
+					add_estate_influence_modifier = {
+						estate = estate_church
+						influence = 5
+						desc = EST_VAMPIRES_PURGING_THE_SHADOWS
+						duration = 3650
+					}
+				}
+			}
+			25 = { #found not guilty, is not guilty
+				custom_tooltip = ravenmarch_inquisition_found_not_guilty
+				hidden_effect = {
+					add_estate_loyalty = {
+						estate = estate_vampires
+						loyalty = 5
+					}
+					add_estate_influence_modifier = {
+						estate = estate_church
+						influence = 5
+						desc = EST_VAMPIRES_PURGING_THE_SHADOWS
+						duration = 3650
+					}
+				}
+			}
+			13 = { #found guilty, is not guilty
+				custom_tooltip = ravenmarch_inquisition_found_guilty_is_not_guilty
+				hidden_effect = {
+					add_estate_loyalty = {
+						estate = estate_vampires
+						loyalty = -5
+					}
+					add_estate_influence_modifier = {
+						estate = estate_church
+						influence = 5
+						desc = EST_VAMPIRES_PURGING_THE_SHADOWS
+						duration = 3650
+					}
+				}
+			}
+			12 ={ #found not guilty, is guilty
+				custom_tooltip = ravenmarch_inquisition_found_not_guilty_is_guilty
+				hidden_effect = {
+					add_estate_loyalty = {
+						estate = estate_church
+						loyalty = -5
+					}
+					add_estate_influence_modifier = {
+						estate = estate_church
+						influence = -5
+						desc = EST_VAMPIRES_DENIED_OVERSIGHT
+						duration = 3650
+					}
+				}
+			}
+		}
+	}
+}
+
+#Neratic Inquisition - Fair Leadership
+country_event = {
+	id = vampires_estate_events.502
+	title = vampires_estate_events.502.t
+	desc = vampires_estate_events.502.d
+	picture = ANGLICAN_SERMON_eventPicture
+	
+	trigger = {
+		has_estate_privilege = estate_vampires_neratic_inquisition
+		NOT = { 
+			has_estate_influence_modifier = {
+				estate = estate_church
+				modifier = EST_VAMPIRES_DENIED_OVERSIGHT
+			}		
+		}
+		NOT = { 
+			has_estate_loyalty_modifier = {
+				estate = estate_vampires
+				modifier = EST_VAMPIRES_FAIR_OVERSIGHT
+			}
+		}
+		estate_loyalty = {
+			estate = estate_vampires
+			loyalty = 60
+		}
+		estate_loyalty = {
+			estate = estate_church
+			loyalty = 60
+		}
+	}
+	
+	mean_time_to_happen = {
+		years = 50
+		
+		modifier = {
+			factor = 0.75
+			estate_loyalty = {
+				estate = estate_vampires
+				loyalty = 70
+			}
+			estate_loyalty = {
+				estate = estate_church
+				loyalty = 70
+			}
+		}
+		modifier = {
+			factor = 0.9
+			NOT = {
+				any_owned_province = {
+					has_province_modifier = aw_vampires_1
+				}
+			}
+		}
+		modifier = {
+			factor = 0.9
+			NOT = {
+				any_owned_province = {
+					has_province_modifier = aw_vampires_2
+				}
+			}
+		}
+		modifier = {
+			factor = 0.9
+			NOT = {
+				any_owned_province = {
+					has_province_modifier = aw_vampires_3
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = vampires_estate_events.502.a
+		add_estate_loyalty_modifier = {
+			estate = estate_vampires
+			desc = EST_VAMPIRES_FAIR_OVERSIGHT
+			loyalty = 10
+			duration = 5475
+		}
+	}
+	option = {
+		name = vampires_estate_events.502.b
+		trigger = {
+			OR = {
+				ruler_has_personality = well_connected_personality
+				ruler_has_personality = secretive_personality
+				ruler_has_personality = well_advised_personality
+			}
+		}
+		highlight = yes
+		add_estate_loyalty_modifier = {
+			estate = estate_vampires
+			desc = EST_VAMPIRES_FAIR_OVERSIGHT
+			loyalty = 10
+			duration = 7300
+		}
+	}
+	option = {
+		name = vampires_estate_events.502.c
+		add_estate_loyalty = {
+			estate = estate_church
+			loyalty = 5
+		}
+	}
+}

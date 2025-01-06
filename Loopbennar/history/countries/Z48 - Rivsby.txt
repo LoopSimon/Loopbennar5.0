@@ -1,0 +1,22 @@
+
+setup_vision = yes
+government = monarchy
+add_government_reform = plutocratic_reform
+government_rank = 1
+primary_culture = white_reachman
+religion = regent_court
+technology_group = tech_gerudian
+capital = 718
+
+1000.1.1 = { set_estate_privilege = estate_mages_organization_guilds }
+
+1440.1.1 = {
+	monarch = {
+		name = "Alen III"
+		dynasty = "Alcarsson"
+		birth_date = 1405.10.7
+		adm = 3
+		dip = 1
+		mil = 4
+	}
+}

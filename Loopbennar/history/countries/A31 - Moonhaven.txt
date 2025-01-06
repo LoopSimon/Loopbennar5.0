@@ -1,0 +1,39 @@
+
+setup_vision = yes
+government = republic
+add_government_reform = oligarchy_reform
+government_rank = 1
+primary_culture = moon_elf
+add_accepted_culture = anbenncoster
+religion = regent_court
+technology_group = tech_elven
+capital = 53 # Moonhaven
+
+historical_friend = A45 #Istralore
+historical_friend = A58 #Dameria
+
+elector = yes
+
+1000.1.1 = { 
+	set_estate_privilege = estate_mages_organization_magisterium 
+	set_country_flag = new_imperial_candidate_gain_magisterium
+}
+
+1422.1.1 = { set_country_flag = lilac_wars_moon_party }
+
+1439.2.4 = {
+	monarch = {
+		name = "Varion 'the Young'"	#This is the grandson of Varilor Bluetongue
+		dynasty = "Bluetongue"
+		birth_date = 1203.9.3
+		adm = 6
+		dip = 1
+		mil = 4
+	}
+	
+	add_ruler_personality = industrious_personality
+	set_ruler_flag = long_lived_ruler
+}
+
+set_country_flag = owns_cannorian_holy_site
+set_country_flag = can_use_cannorian_holy_site

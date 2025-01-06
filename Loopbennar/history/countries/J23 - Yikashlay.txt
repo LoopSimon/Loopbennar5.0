@@ -1,0 +1,36 @@
+
+setup_vision = yes
+government = republic
+government_rank = 1
+primary_culture = zabatlari
+add_government_reform = lake_republic
+religion = yukel_followers
+technology_group = tech_triunic
+capital = 5287
+fixed_capital = 5287
+1430.1.1 = {
+	add_country_modifier = {
+		name = lake_federation_member
+		duration = -1
+	}
+	set_variable = {
+		which = FederationPoints
+		value = 3
+	}
+	set_country_flag = LF_mages_banned
+}
+
+1444.4.10 = {
+	monarch = {
+		name = "Chalqar"
+		dynasty = "Gaevazev"
+		birth_date = 1396.5.29
+		adm = 3
+		dip = 3
+		mil = 6
+	}
+	add_ruler_personality = cruel_personality
+	add_ruler_personality = tactical_genius_personality
+}
+
+#Personally responsable for one of the most brutal guerilla warfare periods against the centaurs during the great incursion, eventually was able to relief a big portion of the republic before the arrival of the Grand League forces

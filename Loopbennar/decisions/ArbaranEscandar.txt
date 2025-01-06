@@ -1,0 +1,45 @@
+
+country_decisions = {
+
+	reclaim_escandar = {
+		major = yes
+		
+		potential = { #Removed need to be Arbaran so it can also be used by Exwes
+			NOT = { owns = 316 }
+			has_country_flag = reclaim_escandar
+			NOT = { has_country_flag = escandar_negotiations_started }
+		}
+		
+		allow = {
+			treasury = 1000
+			NOT = {
+				316 = {
+					owner = {
+						ROOT = {
+							OR = {
+								truce_with = PREV
+								alliance_with = PREV #Probably shouldn't backstab your allies
+								overlord = {
+									alliance_with = PREV
+								}
+							}
+						}
+					}
+				}
+			}
+			is_free_or_tributary_trigger = yes #Probably shouldn't be able to do this as subject
+			316 = { #Probably shouldn't be able to do this on your own subject
+				NOT = {
+					owned_by_subject_of = ROOT
+				}
+			}
+		}
+		
+		effect = {
+			set_country_flag = escandar_negotiations_started
+			country_event = { id = arbaran.1 }
+		}
+	}
+}
+
+#Maybe add decisions to refurbish and improve Escandar and Aelcandar later tied to their missions

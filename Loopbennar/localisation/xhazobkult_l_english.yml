@@ -1,0 +1,114 @@
+﻿l_english:
+
+
+
+
+ xhazobkult_events.2.t:0 "A Kult of Many Faces"
+ xhazobkult_events.2.d:0 "As the saying goes, ask ten different gnolls what the Xhazobkult is and you will get eleven different answers. This is what the Xhazobkult truly is; a collection of folk traditions, rituals and practices rather than an organized religion. However, such details escape the civilized world. To them the Xhazobkult is merely a bastion of demon worship with no nuance or cultural history.\n\nAs we progress down the path towards joining the civilized world perhaps it would be best for us to abandon the more demonic elements of our faith.\n\nOur nation has long integrated elements of the so-called "civilized religions", and a public conversion to one of these faiths could enhance our standing in the world." 
+ xhazobkult_events.2.a:0 "Let us embrace the power of the Khet. For Elikhet!"
+ xhazobkult_events.2.b:0 "Let us embrace the power of the Khet. For Nirakhet!"
+ xhazobkult_events.2.c:0 "We shall claim the legacy of the ancient Suncrown kingdoms!"
+ xhazobkult_events.2.j:0 "Mercenary in practice, mercenary in faith. We will adopt the gods of the Regent Court"
+ xhazobkult_events.2.e:0 "From Goxma we come, and to her we shall return."
+ xhazobkult_events.2.f:0 "We have strayed far, but the warmth of Kvanga's forge calls to us again."
+ xhazobkult_events.2.g:0 "Forsake the demons, make a pact with the denizens of the Shadowswamp."
+ xhazobkult_events.2.h:0 "Who cares what the humans think, let the world burn in demonflame!"
+ xhazobkult_events.2.i:0 "We won't abandon our ancient traditions just to appease others."
+
+
+
+
+ xhazobkult_events.100.t:0 "Gnolls Do Their Own Ritual"
+ xhazobkult_events.100.d:0 "Urgent news, a pack of impatient gnolls in [event_province.GetName] have gathered some menials in order to enact a sacrifice of their own, they are already performing the initial rituals to prepare a pyre. Some have even taken to gorging their thirst for blood on a few hapless sacrifices.\n\nThe [Root.Monarch.GetTitle] must act quickly and decide on what to do with these unruly gnolls, as any sign of doubt and weakness could be a bad omen before a sacrifice."
+ xhazobkult_events.100.a:0 "Let the ritual continue."
+ xhazobkult_events.100.b:0 "I decide when sacrifices are made!"
+
+
+
+ ###Great Xhaz events
+ xhazobkult_events.3000.t:0 "Fair Is Foul, Foul Is Fair"
+ xhazobkult_events.3000.d:0 "The ritual pyres burned high, flames licking the darkened sky with tongues of crimson, amber, and black. [Root.Monarch.GetName] stood before the altar. Around [Root.Monarch.GetHerHis] feet, a circle of blood glistened. Screams and cries echoed in the surrounding night - pleas of the doomed, swallowed by ever-more-fervorous chants, building to a crescendo.\n\nAt first, silence. The wind stilled. The stars dimmed. The fires ceased their crackling. And then, a sound. A deep, guttural rasp, like claws dragging over stone.\n\n"You call to me, supplicant." The air twisted, though the smoke remained formless and twisted. "You come to beg for power, to claim dominion over mortal flesh and flame. But power is not given - it is bought with blood, with pain, with life."\n\n[Root.Monarch.GetName] knelt, baring [Root.Monarch.GetHerHis] claws to the great demon, voice steady despite the growing weight on [Root.Monarch.GetHerHis] chest.\n\n“I seek your favour, great Xhazob. Speak your price, and it will be paid.” As [Root.Monarch.GetSheHe] finished, a jagged, pulsating sigil burned itself into [Root.Monarch.GetName]’s chest. A torrent of demonic energy surged outward, siphoned from [Root.Monarch.GetHerHim] into the smoke, now shifting to form a gaping, grinning maw.\n\n"I demand strength, mortal. A river must flow from you to me. I will feed until I deem your meagre offerings enough. And know this: should you falter, your flesh will be my feast, your soul my toy for eternity."\n\n"Bring me the blood of a thousand thousand souls. Only then will my favour be yours."\n\nThe Xhazob vanished, the fires roaring back to life. [Root.Monarch.GetName] stood, breathing laboured, fur singed, but resolve unbroken, even as the air rang with the demon’s final question."
+ xhazobkult_events.3000.a:0 "§OWill you prove worthy?§!"
+ xhazobkult_events.3000.tooltip:0 "The initial tribute of §YDemonic Power§! has been given. Now we must maintain constant tribute for a period of §Y10 years§! for the ritual to §Gsucceed§!\nNew §Yprivileges§! are available in the §YMonstrous Tribes§! or §YChurch§! estates\n"
+
+
+ xhazobkult_events.3001.t:0 "Something Wicked This Way Comes"
+ xhazobkult_events.3001.d:0 "The roar of the pyre, the beating of the drums, the screams of the sacrifices, cackling laughter. A sinister symphony rings out across the vast camp, gnolls gathered in their tens of thousands to witness the birth of the next [Root.xhaz_gender_tt].\n\nFor days now they have cavorted, slaughtered and feasted amongst the many concentric circles of hellish green pyres that make up the ritual site. Lesser demons have crawled forth from these smaller pyres to join the carnage, summoned by the vile celebrations of the horde.\n\nIn the centre of this orchestra of sin lies the grand pyre unto which [Root.Monarch.GetName] has spent the last week casting thousands of sacrifices to their fiery doom. Their red-rimmed eyes flicker with madness as a dry cackle escapes their bloodstained maw. In a frenzy they turn upon one of the assembled shamans who have been aiding them, ripping out their throat with fang and claw. In a flash of blinding speed [Root.Monarch.GetName] has slain five  more of their number. Those that survive begin to flee but [Root.Monarch.GetName] snaps out a command in an unearthly tongue, compelling the shamans to turn and attend to them.\n\nThe six bodies of the slain shamans are thrown into the flames before [Root.Monarch.GetName] beckons over the ensorcelled survivors. Wordlessly they begin to bind the supplicant in blackened ironwood chains. [Root.Monarch.GetName] grins manically as they are trussed up and thrown into the pyre themselves. Silence descends briefly over the camp. All of Halann seems to hold its breath for a moment in time.\n\nThe earth shudders. A deafening explosion rocks the area. Blinding green light flares as the central pyre explodes outwards, engulfing those gathered around it. Luminous, blazing green eyes appear within the oily blackness of the smoke. A rumbling cackle echoes for miles around. [Root.Monarch.GetName] emerges from the darkness, their body monstrously swollen and warped by the demonic power of the Xhazob that now dwells within them, hellfire trailing in their wake.\n\nThe horde erupts into screams of exultation; for many miles around crops begin to wither and cattle keel over, spewing burning black bile. A [Root.xhaz_gender_tt] stalks the mortal world once more."
+ xhazobkult_events.3001.a:0 "All Halann trembles before the [Root.xhaz_gender_tt]!"
+
+ xhazobkult_events.3002.t:0 "Wrath of the Xhazob"
+ xhazobkult_events.3002.d:0 "Silence falls over the host of warriors and celebrants gathered to witness the birth of the new Xhazobine. Not a whisper is heard across the grand camp; all await the outcome with bated breath. The calm before the storm.\n\n[Root.Monarch.GetName] but moments ago threw themselves into the grand pyre at the centre of the camp, the apex of a week-long orgy of violence and debauchery in which sacrifices had been made to the great demonic spirit. Despite the scale of the event,  it must be said that the shamans have been uneasy about the relatively paltry offerings [Root.Monarch.GetName] has been able to gather.\n\nThe silence is broken. Not by a roar of triumph, but a scream of terror. Writhing in agony, [Root.Monarch.GetName] emerges from the flames burnt and twisted, held in the titanic jaws of a monstrous creature of shadow and flame. So incensed by this meagre sacrifice is the Xhazob that the mighty demon seeks to punish the upstart gnolls directly. \n\nDays later, the few survivors would describe the Xhazob wreaking an unspeakable slaughter upon the assembled horde, annihilating our leadership and leaving our armies in total disarray. Our realm is on the brink of disintegration and the many lesser packs held together by (dead monarch name) are already gathering their forces to try and seize power or break away."
+ xhazobkult_events.3002.a:0 "A curse on [Root.Monarch.GetName]!"
+ xhazobkult_events.3002.tooltip:0 "The ritual has §Rfailed§! and we now face the consequences"
+
+ xhazobkult_events.3003.t:0 "Survival of the Fittest"
+ xhazobkult_events.3003.d:0 "It would seem that the Xhazob with whom [Root.Monarch.GetName] struck a pact has been making deals with other gnollish leaders, and one of them has been chosen as the Xhazob's host.\n\nOur own erstwhile Xhazobine has not been so lucky. On the night before the latest Great Xhaz was declared, [Root.Monarch.GetName]'s profane brand ignited into emerald hellfire. A great bestial form spewed forth from their brow, tethered by a tendril of flame. The primal spirit of the Xhazob engulfed our [Root.Monarch.GetTitle] who died screaming in agony. Not even ash was left when the flames finally flickered out.\n\nOur realm is in disarray, and to add insult to injury, many of our warriors have already abandoned us and flocked to the banners of the new Xhazobine. [Root.Monarch.GetName] has failed us!"
+ xhazobkult_events.3003.a:0 "We can only hope to weather the coming storm."
+
+
+
+
+ xhazobkult_events.3004.t:0 "Hellfire Extinguished…"
+ xhazobkult_events.3004.d:0 "The [Root.xhaz_gender_tt] is dead, their infernal flame burns no longer! The Xhazob to which they played host has returned to the outer planes and has not seen fit to grace [Root.Monarch.GetName] with the same demonic gifts granted to their sire.\n\nWithout the blessings of the Xhazob it is unclear if [Root.Monarch.GetName] will be able to hold on to vast empire the [Root.xhaz_gender_tt] had established. Already, rebellious elements among the conquered peoples are beginning to cause chaos and gather their forces, supported by foreign powers seeking to "liberate them from evil"..."
+ xhazobkult_events.3004.a:0 "Bah, let them try, they will all burn!"
+
+ 
+ #modifiers
+ xhazobkult_tributaries_1:0 "Tributary Development"
+ xhazobkult_tributaries_2:0 "Tributary Development"
+ xhazobkult_tributaries_3:0 "Tributary Development"
+ xhazobkult_tributaries_4:0 "Tributary Development"
+ xhazobkult_tributaries_5:0 "Tributary Development"
+ xhazobkult_tributaries_6:0 "Tributary Development"
+ xhazobkult_tributaries_7:0 "Tributary Development"
+ xhazobkult_tributaries_8:0 "Tributary Development"
+ xhazobkult_tributaries_9:0 "Tributary Development"
+ xhazobkult_tributaries_10:0 "Tributary Development"
+ xhazobkult_great_xhaz_ritual:0 "The Ritual of Felflame"
+
+ #privileges
+ 
+ xhazobkult_organized_sacrifices:0 "Organized Sacrifices"
+ xhazobkult_organized_sacrifices_desc:0 "We will allow our shamans to conduct rituals at their discretion, taking their sacrifices out of our pool of slaves and other weak meat."
+ xhazobkult_flesh_of_flesh:0 "Blood Of My Flesh"
+ xhazobkult_flesh_of_flesh_desc:0 "Your bloodline might end, but the pact is eternal. A child’s fate, sealed. A legacy, devoured. Do not despair; the ichor of your lineage will fuel the profane tide."
+ xhazobkult_incinerate_weak:0 "Ash Of My Bone"
+ xhazobkult_incinerate_weak_desc:0 "Pyres rise across your lands, smoke carrying the hopes, dreams, despair, and screams of countless souls. From their ashen remains, power unending flows."
+
+
+ #temp patron stuff
+ patron_hellfire:0 "Boon of Hellfire"
+ patron_conquest:0 "Boon of Conquest"
+ patron_fury:0 "Boon of Fury"
+
+ 
+ #tooltips
+ xhazobkult_fail_effects_tt:0 "The aftershock causes widespread §Ydevastation§! and §Yunrest§! across our provinces"
+ xhazobkult_xhazobine_dies_tt:0 "§YUnrest§! will increase in all §Ynon-Xhazobkult§! provinces"
+ xhazobkult_too_late_tt:0 "We have §Rfailed§! and §YXhazob§! is very §Rdispleased§!"
+ xhazobkult_attempting_xhaz:0 "Is undergoing the §YRitual of Felflame§!."
+ xhazob_no_ritual_tt:0 "A §YGreat Xhaz§! does NOT already exist."
+ xhazob_no_immortal_tt:0 "Is NOT §Yimmortal§! or pursuing §Ylichdom§!."
+ not_xhazob_tt:0 "Is NOT undergoing the §YRitual of Felflame§!."
+ 
+ 
+ #decisions
+ xhazobkult_begin_xhazobine_ritual_title:0 "Summon a Xhazob"
+ xhazobkult_begin_xhazobine_ritual_desc:0 "The ultimate goal of any self respecting gnollish warlord should be to become the next Xhazobine, the demonically-empowered messianic figures around which the Xhazobkult is built. Our ruler is among the most powerful gnolls of the current era and has already carved a swathe of bloodshed and destruction across our corner of Halann. We should seek to contact one of the primal demonic spirits known as Xhazobs and take the next step on our ruler's journey to becoming the [Root.xhaz_gender_tt]."
+ xhaz_gender_tt_female:0 "Xhazobine"
+ xhaz_gender_tt_male:0 "Xhazobain"
+
+ 
+ 
+ #Great Xhaz names
+ GREAT_XHAZ:0 "Great Xhaz"
+ GREAT_XHAZ_ADJ:0 "Xhaz"
+ 
+ #Xhazobine CB
+ cb_demonic_invasion:0 "Demonic Invasion"
+ cb_demonic_invasion_desc: "All will fall before the might of the Xhazobine; let our hordes march forth unto our latest victim!"
+ DEMONIC_INVASION_WAR_NAME:0 "$ORDER$$FIRST$-$SECOND$ Demonic Invasion"
+ superiority_demonic_invasion:0 "Demonic Invasion"
+ superiority_demonic_invasion_desc:0 "All will fall before the might of the Xhazobine; let our hordes march forth unto our latest victim!"
+ PEACE_po_kill_xhazob:0 "Kill the Xhazob"
+ 

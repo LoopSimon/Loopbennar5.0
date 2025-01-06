@@ -1,0 +1,211 @@
+
+#Country Name: Please see filename.
+
+graphical_culture = westerngfx
+
+color = { 222  87  87 }
+
+
+
+historical_idea_groups = {
+	naval_ideas
+	trade_ideas
+	religious_ideas
+	offensive_ideas
+	maritime_ideas
+	economic_ideas
+	quality_ideas
+	exploration_ideas
+}
+
+historical_units = {
+	gerudian_1_mounted_jarls
+	gerudian_1_olavish_berserkers
+	gerudian_5_revrhavnic_reavers
+	gerudian_9_urvikstener_huscarls
+	gerudian_10_trolspeja
+	gerudian_12_sidaetti_rangers
+	gerudian_14_skyldbryti
+	gerudian_15_skaldic_guard
+	gerudian_18_bregginskot
+	gerudian_19_dalric_fusiliers
+	gerudian_23_gerudian_dragoons
+	gerudian_23_ursine_thanes
+	gerudian_26_taleseekers
+	gerudian_28_blackjackets
+	gerudian_30_reforged_ebonsteel
+}
+
+monarch_names = {
+
+	"Leiv #5" = 100	
+	"Olav #12" = 100
+	"Steinar #0" = 100	
+	"Sigrid#0" = -100
+
+	#Generic Gerudian Name List
+	"Alvor #0" = 10
+	"Askel #0" = 10
+	"Balder #0" = 10
+	"Baldrik #0" = 10
+	"Bjalvi #0" = 10
+	"Brok #0" = 10
+	"Bryntolv #0" = 10
+	"Drosten #0" = 10
+	"Edvard #0" = 10
+	"Eigal #0" = 10
+	"Einar #0" = 10
+	"Erik #0" = 10
+	"Vloki #0" = 10
+	"Vredrik #0" = 10
+	"Vreidar #0" = 10
+	"Garrek #0" = 10
+	"Gunnar #0" = 10
+	"Gurder #0" = 10
+	"Halvtar #0" = 10
+	"Halvolv #0" = 10
+	"Halvdal #0" = 10
+	"Halvcar #0" = 10
+	"Henrik #0" = 10
+	"Hravn #0" = 10
+	"Iver #0" = 10
+	"Jaborn #0" = 10
+	"Jansen #0" = 10
+	"Johan #0" = 10
+	"Jomar #0" = 10
+	"Jormun #0" = 10
+	"Karl #0" = 10
+	"Karradaig #0" = 10
+	"Knut #0" = 10	
+	"Lan #0" = 10
+	"Lars #0" = 10
+	"Leiv #0" = 10
+	"Lothan #0" = 10
+	"Magnar #0" = 10
+	"Magnus #0" = 10
+	"Mimir #0" = 10
+	"Modi #0" = 10
+	"Olav #0" = 10
+	"Olvir #0" = 10
+	"Ondott #0" = 10
+	"Oskar #0" = 10
+	"Patrik #0" = 10
+	"Ragnar #0" = 10
+	"Rangvald #0" = 10
+	"Rolv #0" = 10
+	"Sigvard #0" = 10
+	"Sindri #0" = 10
+	"Skald #0" = 10
+	"Skjal #0" = 10
+	"Skoll #0" = 10
+	"Skorri #0" = 10
+	"Snorri #0" = 10
+	"Steinar #0" = 10
+	"Steingrim #0" = 10
+	"Sten #0" = 10
+	"Svavar #0" = 10
+	"Svante #0" = 10
+	"Sven #0" = 10
+	"Thamer #0" = 10
+	"Thorvin #0" = 10
+	"Torbjold #0" = 10
+	"Ulrik #0" = 10
+	"Urvik #0" = 10
+	"Varmir #0" = 10
+	"Varmod #0" = 10
+	"Vebjorn #0" = 10
+	
+	"Aela #0" = -1
+	"Aldis #0" = -1
+	"Alva #0" = -1	
+	"Asvrid #0" = -1
+	"Ashild #0" = -1
+	"Asleiv #0" = -1
+	"Bera #0" = -1
+	"Dalla #0" = -1
+	"Durhilde #0" = -1
+	"Dotta #0" = -1
+	"Driva #0" = -1
+	"Estrid #0" = -1
+	"Vreydis #0" = -1
+	"Vrida #0" = -1
+	"Gurda #0" = -1
+	"Grethe #0" = -1
+	"Halldora #0" = -1
+	"Hurkja #0" = -1
+	"Ingrid #0" = -1
+	"Isgerd #0" = -1
+	"Jordis #0" = -1
+	"Jytte #0" = -1
+	"Karin #0" = -1	
+	"Klothilde #0" = -1	
+	"Lagertha #0" = -1
+	"Ljuva #0" = -1
+	"Luta #0" = -1
+	"Lydia #0" = -1
+	"Njada #0" = -1
+	"Saga #0" = -1
+	"Sigrid #0" = -1	
+	"Svala #0" = -1
+	"Svanhild #0" = -1
+	"Thordis #0" = -1
+	"Thorve #0" = -1
+	"Tola #0" = -1
+	"Tonna #0" = -1
+	"Totil #0" = -1
+	"Urvika #0" = -1
+}
+
+
+leader_names = {
+	#Country Specific
+	
+	#Province Neighbours
+	"av Glodborg" "av Jotunskol" "av Rosstavik" "av Redgarhavn" "av Skaldol" "av Olavsborg" "av Nyrvord" "av Avnkaup" "av Orstengard" "av Naugsvol" "av Silvrborg" "av Baldersby" "av Urviksten" "av Esvjall"
+	
+	
+	#Country Neighbours
+	"af Bjarnrík" "af Revrhavn" "af Sidaett"
+	
+	#Geographic Neighbours
+	"af Gerudia" "ava Giant's Grave" "afa Serpentshead" "of the Alen" "ava Titan's Walk" "af Fjordsbay"
+	
+	#Noble Families
+	
+	#Gerudian names
+	Bollisson Hermundsson Asbjornsson Hjaltisson Gislisson Halvtansson Ansson Hjorsson Thormodsson
+	Vrothisson Hallkelsson Kollsson Olavsson Erlendsson Ottarsson Bergsson Askelsson Baldursson
+	Mimirsson Olavsson Oskarsson Patriksson Sigvardsson Svantesson Tomasson Varmirsson Varmodsson
+	Vebjornsson Torbjornsson Skjalsson Ondottsson Olvirsson
+}
+
+ship_names = {
+	#Gerudian
+	Stadvastr Bati Avintyri Rad Svar Brennandi Vloti Storlatr Adstod Samtok Vullvissu Landakort Audvitad 
+	Bera Bjor "Svartur Galeid" "Svartur Hatindur" "Svartur Konungsson" "Svartur Blod" Voringi Einheri Kryning Hreysti Nadr Krona
+	Blom Vorn Trudi Varbjodr Tigli Leikstjori Hovrungur Dreki Ankbonde Hertogi Hertogaynja Orn Mammut Agatr Skipta Vor Tilraun
+	Valki Domr Uppahalds Velagsskapur Jokull Vlotti Dadra Agilegt Skogarmadur Drek Happ Bjarg Hnottur Gullhestr Gullenu Gullvonix Jotun Godvild Thane
+	Storvru Skjoldukona Storgeyja Storvramlag Storgaleid Storgipt Storhatindur Gullelgr Gronndreki Elghund Draugr Vylgja Valkyrie Lindworm Valravn Warg Halvmani Heri Harpa Haukr Hjarta
+	Hetja Vann Vannavintyri Hogvar Jagare Lysande Osigrandi Auka Oprjotandi Obojlig Oradda
+	Livleg Edla Leonu Storvelldur Reisiligr Tignarlegt Huldra Trol Konungr Tungl Myrr Nyrgeyja Sar 
+	Smilodon Pavagaukur Porcupine Grisi Vorseti Konungsson "Konungsson Hopur"
+	Vregt Vravisun Rannsoknir Panta Vidnam Upplausn Vidreisn Hevnd 
+	Lutevisk Savir Anagja Sjohestur Leitadu Sinnleika Skald Glasilegt Alvur Elgr Stadlad Arangur Sigur Solarljos Solargeisli Vrabr Svanr Vljotr
+	Atall Hrazla Dynja Tigrisdyr Givurlegur Spjot Mal Sigri Trur
+	Einhyrning Verkalydsvelag Eining Vaskr Vramhlid Adri Gudrakinn Oldungur Sigursal Vindvisandi Dyggd Vjola
+	Drengr Vandltur
+
+	Konnun Evtirlit Kor Uxa Vugl Herra Jarl
+
+	Riddari Krossvari Drekaslagari Presta Vantur Kappi Rresmadur Galdramadur Tovramadur Norn Munkur Druid
+	Styrkur Handlagni Stjornarskra Vitsmuni Viskan Personuleiki
+
+}
+
+army_names = {
+	"Redgarhavnic Herr" "Thrall Herr"  "Herr av $PROVINCE$"
+}
+
+fleet_names = {
+	"Giant's Grave Vloti" "Serpentback Coast Reavers" "Redgarhavner Vloti"
+}

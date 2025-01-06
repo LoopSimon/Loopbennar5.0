@@ -1,0 +1,19 @@
+
+# No previous file for Banten 194
+owner = R10
+controller = R10
+add_core = R10
+culture = rajnadhid
+religion = high_philosophy
+
+hre = no
+
+base_tax = 2
+base_production = 2
+base_manpower = 2
+
+trade_goods = livestock
+
+capital = ""
+
+is_city = yes

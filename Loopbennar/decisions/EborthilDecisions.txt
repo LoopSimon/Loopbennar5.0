@@ -1,0 +1,57 @@
+
+country_decisions = {
+
+	eborthil_defensive_improvements_decision = {
+		potential = {
+			has_country_flag = eborthil_reinforce_the_home_isles
+		}
+		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 35
+				province_id = 36
+				province_id = 369
+				province_id = 379
+				province_id = 380
+			}
+		}
+
+		allow = {
+			hidden_trigger = {
+				has_country_flag = eborthil_reinforce_the_home_isles
+				NOT = { has_country_flag = eborthil_defensive_improvements_menu_open }
+				OR = {
+					ai = no
+					AND = {
+						NOT = { has_country_flag = tefori_protection }
+						dip_power = 50
+					}
+					AND = {
+						treasury = 200
+						OR = {
+							has_country_flag = eborthil_space_cleared_out_unlock_flag
+							has_country_flag = eborthil_tower_of_tef_unlock_flag
+							has_country_flag = eborthil_tunnel_systems_unlock_flag
+							has_country_flag = eborthil_toref_citadel_unlock_flag
+						}
+					}
+					AND = {
+						has_country_flag = eborthil_delian_battery_unlock_flag
+						mil_tech = 5
+						treasury = 100
+					}
+				}
+			}
+			owns_core_province = 35			
+			owns_core_province = 36
+			owns_core_province = 369
+			owns_core_province = 379
+			owns_core_province = 380
+		}
+
+		effect = {
+			set_country_flag = eborthil_defensive_improvements_menu_open
+			country_event = { id = eborthil.2 }
+		}
+	}
+}

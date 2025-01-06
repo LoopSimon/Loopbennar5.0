@@ -1,0 +1,179 @@
+
+ameion_monarchist = {
+	potential = {
+		NOT = { has_global_flag = G52_G00_disaster_over }
+		has_global_flag = kamrayakvals_war_end
+		OR = {
+			AND = {
+				tag = G52
+				OR = {
+					AND = {
+						mission_completed = G52_nakyra_kheion
+						mission_completed = G52_echate_union
+					}
+					G00 = { has_disaster = ameion_monarchist }
+				}
+			}
+			tag = G00
+			has_country_flag = ameion_debug_g00
+		}
+		OR = {
+			AND = {
+				tag = G52
+				owns = 2497
+				owns = 2496
+				owns = 2495
+			}
+			G52 = { has_disaster = ameion_monarchist }
+			G00 = { has_disaster = ameion_monarchist }
+		}
+	}
+
+	
+	
+	can_start = {
+		OR = {
+			current_age = age_of_absolutism
+			NOT = { legitimacy_equivalent = 80 }
+			has_government_power = {
+				mechanic_type = ameion_keintagogists_mechanic
+				power_type = ameion_keintagogists_power
+				value = 33
+			}
+		}
+		has_any_disaster = no
+	}
+	
+	
+	can_stop = {
+		always = no
+	}
+		
+	
+	
+	progress = {
+		modifier = {
+			factor = 1
+			always = yes
+		}
+		modifier = {
+			factor = 0.5
+			absolutism = 80
+		}
+		modifier = {
+			factor = 0.5
+			absolutism = 60
+		}
+		modifier = {
+			factor = 0.5
+			absolutism = 40
+		}
+		modifier = {
+			factor = -0.5
+			NOT = { absolutism = 20 }
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { legitimacy_equivalent = 95 }
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { legitimacy_equivalent = 80 }
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { legitimacy_equivalent = 65 }
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { legitimacy_equivalent = 50 }
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { 
+				estate_loyalty = {
+					estate = estate_nobles
+					loyalty = 60
+				}
+			}
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { 
+				estate_loyalty = {
+					estate = estate_nobles
+					loyalty = 30
+				}
+			}
+		}
+		modifier = {
+			factor = 1
+			has_government_power = {
+				mechanic_type = ameion_keintagogists_mechanic
+				power_type = ameion_keintagogists_power
+				value = 50
+			}
+		}
+		modifier = {
+			factor = -1
+			NOT = {
+				has_government_power = {
+					mechanic_type = ameion_keintagogists_mechanic
+					power_type = ameion_keintagogists_power
+					value = -50
+				}
+			}
+		}
+	}
+	
+	
+	
+	can_end = {
+		if = {
+			limit = { has_global_flag = ameion_civil_war_2 }
+			custom_trigger_tooltip = {
+				tooltip = ameion_war_begining
+				NOT = { has_global_flag = ameion_civil_war_2 }
+			}
+		}
+		if = {
+			limit = { tag = G52 }
+			NOT = { exists = G00 }
+		}
+		else = { NOT = { exists = G52 } }
+	}
+	
+
+	modifier = {
+		global_unrest = 5
+		legitimacy = -1
+		republican_tradition = -0.5
+		reform_progress_growth = -1
+		all_estate_loyalty_equilibrium = -0.1
+		land_morale = -0.05
+		all_power_cost = 0.05
+		enemy_core_creation = 1
+		stability_cost_modifier = 1
+	}
+	
+	
+	on_start = flavor_ameion.530
+	on_end = flavor_ameion.69
+	
+	on_monthly = {
+		events = {
+		}
+		random_events = {
+			1500 = 0
+			100 = flavor_ameion.57 #Chendhyan seperatists.
+			100 = flavor_ameion.60 #Far away seperatists.
+			100 = flavor_ameion.62 #Opposition Rises
+			100 = flavor_ameion.63 #Merchants Carry Aid
+			100 = flavor_ameion.64 #Adventurers Rally
+			100 = flavor_ameion.65 #Clergy Rally Masses
+			100 = flavor_ameion.66 #Mages Seek Conessions
+			100 = flavor_ameion.67 #Nobles Seek Conessions
+		}
+	}
+}
+

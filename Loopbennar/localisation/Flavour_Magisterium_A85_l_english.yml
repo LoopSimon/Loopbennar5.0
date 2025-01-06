@@ -1,0 +1,268 @@
+﻿l_english:
+ flavor_magisterium.1.t:0 "Expedition Preparations..."
+ flavor_magisterium.1.d:0 "After several years of preparation, we have concentrated enough resources of the nation to mount a large-scale expedition. The goal is simple: To seize the secrets submerged beneath Damenath, salvage what can be salvaged, and discover secrets and relics of a time lost to ash."
+ flavor_magisterium.1.a:0 "Launch the operation!"
+ 
+ flavor_magisterium.2.t:0 "Diverging Opinions"
+ flavor_magisterium.2.d:0 "With the logistics of the operation put in place, two divergent opinions appeared among the leaders of the expedition. While some prefer to use large detection spells in order to spot any suspicious mechanism in the flooded area, others believe that sweeping the surrounding swamps and submerged land using a huge labor supply will bring better results."
+ flavor_magisterium.2.a:0 "We will scan the area"
+ flavor_magisterium.2.b:0 "We're not here for a chirurgical strike"
+ 
+ flavor_magisterium.3.t:0 "A Magic Mechanism"
+ flavor_magisterium.3.d:0 "What first looked like a large stone rising to the sky was actually an obelisk of unknown material, marking the location of a partially flooded underpass. Animated by a second wind after months of excavation, the expedition has begun to quickly unearth the secrets of this passage."
+ flavor_magisterium.3.a:0 "Forward!"
+ 
+ flavor_magisterium.4.t:0 "Mage Tomb"
+ flavor_magisterium.4.d:0 "What at first looked like a huge and dilapidated black room has been revealed to be a huge cache, filled with pristine treasures! Galvanized, the expedition picked up again, until they lifted the veil on a huge tomb, apparently belonging to an old and powerful mage... whose skeletal remains suggest elven bearing?!"
+ flavor_magisterium.4.a:0 "All these efforts finally pay off"
+ mage_stash:0 "Precursor Mage's Cache"
+ 
+ flavor_magisterium.5.t:0 "Swamp of Sorrows"
+ flavor_magisterium.5.d:0 "Within the marsh itself, there are a myriad of stinky charms, punctuated in the peat that appears as the area is emptied of any form of moisture. The permanent relay of various teams of mages and mowers finally revealed an entire part of the sunken city. Although most of these buildings are unusable or worthless, one of them, strangely well preserved, caught the attention of the expedition, which is now directing all its efforts towards this strange building."
+ flavor_magisterium.5.a:0 "Onward!"
+ 
+ flavor_magisterium.6.t:0 "Laboratory"
+ flavor_magisterium.6.d:0 "We quickly pierced the entrance of this strange, temple-seeming building, and disabled its magic golems. It has turned out to actually be a laboratory, filled with all kinds of curiosities dating from an age well older than anyone here present. With this discovery, the expedition finally comes to an end, allowing the Magisterium to access a whole lot of new knowledge and relics. At first glance, our leading historians suggest that the precursors may have been experimenting on the native Halanni humans?!"
+ flavor_magisterium.6.a:0 "Success!"
+ mag_big_laboratory:0 "Precursor Laboratory"
+ 
+ 
+ flavor_magisterium.7.t:0 "Skyfall"
+ flavor_magisterium.7.d:0 "Shattering the skies upon its arrival, a titanic sphere, coated with fire and flames tinged with a pearly blue, crosses the sky at full speed, crashing perpendicularly to the center of the altar created for the ritual. The blast of the explosion destroyed all the preemptive barriers set up, shaving plains and hills, tearing jungle and forest, vitrifying the sand, liquefying the rock. But no matter the means employed, the result is there: The largest Damestear deposit on the planet. Radiant with a twilight glow, and defying the beauty of the most beautiful women in Halann."
+ flavor_magisterium.7.a:0 "'And now, I am become Death.'"
+ skyfall_damestear:0 "Celestial Damestear"
+ 
+ flavor_magisterium.8.t:0 "Create Raid Team"
+ flavor_magisterium.8.d:0 "Launching the 'Make it Fall' operation requires a huge amount of preparation and resources. In order to start gathering these, it is necessary to assemble a rapid response team, able to respond effectively to all the needs that the operation requires."
+ flavor_magisterium.8.a:0 "Launch search notices"
+ 
+ flavor_magisterium.9.t:0 "Raid Team Operational"
+ flavor_magisterium.9.d:0 "Led by the famous adventurer Leeroy, our raid team of the best mages, warriors, rogues and treasure hunters at our disposal is now in place!"
+ flavor_magisterium.9.a:0 "Ready the Next Step"
+ 
+ flavor_magisterium.10.t:0 "Operation: Tellum's Box"
+ flavor_magisterium.10.d:0 "All the resources needed to establish a ritual site have been listed, and it is time to launch our men to their research."
+ flavor_magisterium.10.a:0 "Pray for they success"
+ 
+ flavor_magisterium.11.t:0 "Preparations Ready"
+ flavor_magisterium.11.d:0 "All the materials and ingredients necessary for the smooth running of the ritual have been brought together. Now that they have fulfilled their goal, it is time to send our men home, and bring in our most experienced Magicians."
+ flavor_magisterium.11.a:0 "To Adráil!"
+ 
+ flavor_magisterium.12.t:0 "Prepare the Site"
+ flavor_magisterium.12.d:0 "It is time to erect a building capable of defying the heavens. May our wards be strong, and our incantations unshakable, for we will need all the strength of the celestial planes to accomplish this task."
+ flavor_magisterium.12.a:0 "Make sure everything is perfect!"
+ 
+ flavor_magisterium.13.t:0 "The Ritual Site"
+ flavor_magisterium.13.d:0 "We are finally ready. After many years of work, we have set up a complex maze of wards and enchantments, ready to welcome the most powerful incantations of our most powerful magicians. The culmination of a decade of effort will finally pay off."
+ flavor_magisterium.13.a:0 "Let's bring the heavens down."
+ 
+ flavor_magisterium.15.t:0 "The Sack of Arca Aldresia"
+ flavor_magisterium.15.d:0 "With the fall of our main rivals: Orda Aldresia, it is time to move their resources to Damenath, where they will serve a much greater purpose."
+ flavor_magisterium.15.a:0 "Prepare the Carriage"
+ 
+ flavor_magisterium.16.t:0 "Anbenncóst Dilemma"
+ flavor_magisterium.16.d:0 "The largest metropolis on the continent, Anbenncóst stands proudly on our border, welcoming every ship to Dameshead. The strategic position, the economic value, and the cultural heritage of this city do not allow it to remain without a master powerful enough to guarantee its independence. As undisputed leader of the Damesear, it is our duty to present to the Emperor our candidacy as guardian of the city of cities."
+ flavor_magisterium.16.a:0 "Send the Proposal"
+ 
+ flavor_magisterium.17.t:0 "Proposal from Above"
+ flavor_magisterium.17.d:0 "With the support of the emperor, the Magisterium claims our independence. Should we accept this proposal, or refuse this ultimatum?"
+ flavor_magisterium.17.a:0 "Let's accept it"
+ flavor_magisterium.17.b:0 "Never!"
+ 
+ flavor_magisterium.18.t:0 "They Accept"
+ flavor_magisterium.18.d:0 "Illuminated by the superiority of our system, Anbenncóst accepted our offer and bent the knee."
+ flavor_magisterium.18.a:0 "Excellent!"
+ 
+ flavor_magisterium.19.t:0 "They Refuse"
+ flavor_magisterium.19.d:0 "These crazy Anbenncósters have lost their reason, decadent in their liberal ideals, and have refused our generous offer!"
+ flavor_magisterium.19.a:0 "Where's the nearest War Wizard?!"
+ 
+ flavor_magisterium.20.t:0 "Gems Excavated"
+ flavor_magisterium.20.d:0 "Our wizards were right, and under the Moonmount there was indeed a huge amount of precious stones. Although their purity is not the best, it remains sufficient to ensure income and materials for our projects."
+ flavor_magisterium.20.a:0 "Mine them all!"
+ 
+ flavor_magisterium.21.t:0 "Corinite Debate"
+ flavor_magisterium.21.d:0 "There is heavy debate among the magisters as to what to do about the recent upheaval of the Regent Court pantheon. Many magisters have come back from Escann after fighting in the Greentide, providing the majority of the support for placing Corin as the successor to Castellos. Other more traditional magisters, many of the same ones that forbid magisters leaving to fight the Greentide in the first place, still believe that Castellos' son Adean should be their next leader.\n\nAfter much deliberation, taking part over multiple days, the council has decided:"
+ flavor_magisterium.21.a:0 "Corin is the true successor to Castellos."
+ flavor_magisterium.21.b:0 "Castellos' son shall lead the Regent Court."
+ 
+ loca_skyfall_ritual:0 "§gThis will unlock decision to prepare the ritual§!"
+ 
+ A85_prepare_expedition_title:0 "Damenath Expedition"
+ A85_prepare_expedition_desc:0 "Damenath was once the capital of the ancient Damerian Republic... until half the city sank beneath the sea during the Day of Ashen Skies. Who knows what we might find there?\n\nPreparing for this expedition will take years, but the sooner the better!"
+ expedition_ready:0 "Expedition Ready"
+ 
+ A85_launch_expedition_title:0 "Launch the Expedition"
+ A85_launch_expedition_desc:0 "The resources necessary for the expedition have been prepared, both human and financial."
+ 
+ A85_start_excavation_title:0 "Moonmount Excavation"
+ A85_start_excavation_desc:0 "Our most eminent mages suspect the presence of gems in the heart of the Moonmount."
+ 
+ A85_skyfall_ritual_title:0 "Skyfall Ritual"
+ A85_skyfall_ritual_desc:0 "If we want to ensure the sustainability of our great project, we must be ready to use all the means at our disposal."
+ 
+ A85_make_it_fall_title:0 "Make. It. Fall."
+ A85_make_it_fall_desc:0 "We are ready to open a new chapter of magical prosperity for our nation. Whatever the risks."
+ 
+ A85_access_to_gems_title:0 "Access to Gems"
+ A85_access_to_gems_desc:0 "We need to secure an abundant amount of gems for the future of our nation"
+ 
+ A85_access_to_relics_title:0 "Access to Relics"
+ A85_access_to_relics_desc:0 "Untold ways of magic lie in the relics of the precursor elves. We need to secure an abundant amount of relics for the future of our nation."
+ 
+ A85_access_to_damestear_title:0 "Access to Damestear"
+ A85_access_to_damestear_desc:0 "Damestear is raw magic in meteorite form. We use it to enchant items, as reagents for spells and to empower magic wholesale. It is crucial for any mage to have a steady supply."
+ 
+ A85_adrail_has_damestear_title:0 "Radiant Rock"
+ A85_adrail_has_damestear_desc:0 "Now that we have access to a huge amount of energy on site, we can finally finish our biggest project."
+ 
+ A85_develop_adrail_title:0 "Prepare Adráil"
+ A85_develop_adrail_desc:0 "Adráil is an artificial island of our own making, but for now, it still lies empty and undeveloped. We must begin the construction of a set of titanic faculties to ensure the smooth progress of our project: the Tower of Eightfold Eminence."
+ 
+ A85_tower_one_title:0 "'First Fold'"
+ A85_tower_one_desc:0 "Abjuration: Spells that protect, block, or banish. An abjuration specialist is called an abjurer.\n\nAny mage tower worth its salt must be riddled with magical defenses."
+ 
+ A85_tower_two_title:0 "'Second Fold'"
+ A85_tower_two_desc:0 "Conjuration: Spells that bring creatures or materials to the caster. A conjuration specialist is called a conjurer.\n\nWhat is a mage tower without scores of magical servants and guardians?!"
+ 
+ A85_tower_three_title:0 "'Third Fold'"
+ A85_tower_three_desc:0 "Enchantment: Spells that imbue the recipient with some property or grant the caster power over another being. An enchantment specialist is called an enchanter.\n\nThe greatest orators in the world sit atop mage towers, empowering their spells' somatic components eightfold."
+ 
+ A85_breakthrought_title:0 "Magical Breakthrough"
+ A85_breakthrought_desc:0 "[Root.Monarch.GetTitle] [Root.Monarch.GetName] needs to find a solution to the building problems that the tower is currently facing."
+ mag_breakthrought:0 "Magical Breakthrough"
+ 
+ A85_tower_four_title:0 "'Fourth Fold'"
+ A85_tower_four_desc:0 "Divination: Spells that reveal information. A divination specialist is called a diviner. Unlike the other specialists, a diviner must give up only one other school.\n\nOur leading diviner has suggested a large observatory be fitted in the tower, in order to divine both this plane and the next."
+ 
+ A85_tower_five_title:0 "'Fifth Fold'"
+ A85_tower_five_desc:0 "Evocation: Spells that manipulate energy or create something from nothing. An evocation specialist is called an evoker.\n\nA fort may have its cannons, but a mage tower will have its fireballs."
+ 
+ A85_tower_six_title:0 "'Sixth Fold'"
+ A85_tower_six_desc:0 "Illusion: Spells that alter perception or create false images. An illusion specialist is called an illusionist.\n\nSometimes the greatest structures have need to hide themselves in plain sight, and inversely, create a mask of grandeur worth ten thousand kings."
+ 
+ A85_tower_seven_title:0 "'Seventh Fold'"
+ A85_tower_seven_desc:0 "Necromancy: Spells that manipulate, create, or destroy life or life force. A necromancy specialist is called a necromancer.\n\nThe darkest art can be made to light - let us use this dark school to empower the minds of the scholars that will call this place home!"
+ 
+ A85_tower_eight_title:0 "'Eighth Fold'"
+ A85_tower_eight_desc:0 "Transmutation: Spells that transform the recipient physically or change its properties in a more subtle way. A transmutation specialist is called a transmuter.\n\nTransmutation is all about creation. It is about creating the perfect being, in this case, the Tower of Eightfold Eminence."
+ mag_tower_base:0 "Starting Faculties"
+ mag_tower_one:0 "Tower: Stage I"
+ mag_tower_two:0 "Tower: Stage II"
+ mag_tower_three:0 "Tower: Stage III"
+ mag_tower_four:0 "Tower: Stage IV"
+ mag_tower_five:0 "Tower: Stage V"
+ mag_tower_six:0 "Tower: Stage VI"
+ mag_tower_seven:0 "Tower: Stage VII"
+ mag_tower_eight:0 "Tower of Eightfold Eminence"
+ magic_upsurge:0 "Magic Surge"
+ 
+ A85_prestige_title: "Prestigious Magicians"
+ A85_prestige_desc:0 "Obtaining the legitimacy necessary to achieve our goals will be the foundation stone of the huge castle we are going to build."
+ 
+ A85_conquer_damesear_title:0 "Conquer Damesear"
+ A85_conquer_damesear_desc:0 "We need to assert our dominance over the central island of Damesear. Whoever controls the Damesear, controls the Empire."
+ 
+ A85_fortify_enclave_title:0 "Fortify our Enclave"
+ A85_fortify_enclave_desc:0 "Solidifying our position within the empire is paramount for our future struggle."
+ magic_reinforced_wall:0 "Magically Imbued Fortress"
+ 
+ A85_secure_aranthil_title:0 "Secure Aranthíl"
+ A85_secure_aranthil_desc:0 "Aranthíl began its life as a warcamp, amidst the War of the Sorcerer-King. During the war many of the first human mages of Cannor were trained here under the elven sages."
+ 
+ A85_aldresia_downfall_title:0 "Aldresian Downfall"
+ A85_aldresia_downfall_desc:0 "The Orda Aldresia, the mage-knights sworn to protect the emperor, and our main magical rival within the empire, must be brought to heel."
+ 
+ A85_ally_the_emperor_title:0 "Ally the Emperor"
+ A85_ally_the_emperor_desc:0 "Our influence must also be political. And who is more politically powerful than the Emperor?"
+ 
+ A85_anbenncoast_dilemma_title:0 "Anbenncóst Dilemma"
+ A85_anbenncoast_dilemma_desc:0 "The jewels of the empire must be ours."
+ 
+ A85_secure_oldtower_title:0 "Secure Oldtower"
+ A85_secure_oldtower_desc:0 "Oldtower was once home to the Order of High Promise, which was responsible for the formation of Anbennar itself! We must secure the area and protect our ancestral origins."
+ 
+ A85_university_title:0 "Magical Universities"
+ A85_university_desc:0 "The Imperial Academy, the foremost magical institution in Anbennar, must grow. We must create chapter branches and subsidize admission!"
+ 
+ A85_gold_alchemy_title:0 "The Power of Alchemy"
+ A85_gold_alchemy_desc:0 "Although the amount of energy needed to accomplish such a task is stupid, and it previously destroyed the economy of Cannor... the benefits that we can draw from it might just be worth it."
+ 
+ A85_first_step_title:0 "Prepare the Team"
+ A85_first_step_desc:0 "We must hire the finest adventurers, and prepare our most able field-mages to meet the task ahead."
+ 
+ A85_second_step_title:0 "Bring the Components Together"
+ A85_second_step_desc:0 "Now that our investigative team is ready, it's time to assign them their mission."
+ 
+ A85_third_step_title:0 "Prepare the Ritual"
+ A85_third_step_desc:0 "All the ingredients are here, all we have to do is set up the ritual."
+ third_step:0 "Site Ready"
+ 
+ #magisterium polish elective modifiers and events
+ flavor_magisterium.25.t:0 "Crovan of Vinerick, Consummate Manipulator"
+ flavor_magisterium.25.desc:0 "Born in Vinerick, in the lands of Wex, like many other talented and influential mages, Crovan was taken into the Magisterium to study at the Imperial Academy at a young age, quickly distinguishing himself as one of the most naturally talented student in its history. He would later graduate from the academy and eventually, he was voted to lead it in 1419 at the age of 33 making him one of the youngest leaders of the Magisterium.\n\nCrovan's reign as grand magister began at the end of The Third Lilac War and just one year later after the death of Vincen "the Old Owl" Silmuna and the beginning of the Fourth Lilac War, Crovan would help change Cannorian history. The Silmuna Family halted the election process after the death of Vincen so Adenn "Skylance" Silmuna could rush home, getting there a day before the election. Adenn's Silmuna forces were ambushed by Lorentish and Wexonard forces and betrayed by many of his former allies in The Battle of the Moon Council. It isn't known how much Crovan was involved in the betrayal but many believe that his installment at such a young age and subsequent dealings with the new Wexonard Emperor were likely signs of conspiracy and political maneuvering. Following The Invasion of Damesear and the end of the war Crovan and the Magisterium was granted control over the western half of the Isle of Damesear. \n\nA master of both transmutation and enchantment schools, both Crovans lechery and wealth are vast in equal measure. He has sired numerous children, many who are set to become powerful mages in their own right.\n\nIt seems certain that Crovan's influence and magical prowess has secured the magisterial throne for his prodigious family for years to come."
+ flavor_magisterium.25.a:0 "Okay."
+
+ flavor_magisterium.26.t:0 "The Nepotism of the Vinericks'"
+ flavor_magisterium.26.desc:0 "The Vinerick's have once again secured the magisterial throne for one of there own. Some have denounced [Root.Monarch.GetName]'s ascension as corrupt and a sign of even deeper corruption within the Magisterium, despite the unquestionable magical prowess of the new magister. The new Grand Magister, for his part, has vowed to rule with... distinction."
+ flavor_magisterium.26.a:0 "Okay."
+
+ flavor_magisterium.28.t:0 "A Grand Magister of our Dynasty"
+ flavor_magisterium.28.d:0 "Our candidate has ascended to the Magisterial throne. We can expect further cooperation with them, as well as a better and more fruitful cooperation with the Mages within our land."
+ flavor_magisterium.28.a:0 "Excellent."
+
+ flavor_magisterium.31.t:0 "Vinerick Power Broken"
+ flavor_magisterium.31.d:0 "With the failure of one of their number to secure the Magistrial throne, and no longer able to secure temporal advantages for their 'benefactors' the Vinericks can no longer claim to have a un-contestable position within the Magisterium. Though they will remain a powerful force within magisterial politics, they will no longer be able to monopolize the roll of Grand Magister."
+ flavor_magisterium.31.a:0 "Finally"
+
+ incident_the_magisteriums_censorship:0 "The Magisterium's Censorship"
+ incident_the_magisteriums_censorship_member_alert:0 "A day ago, a secret decades-long investigation started by the Emperor’s office concluded. Called ‘The Aranthil Committee’, a small but trusted group of investigators worked diligently in gathering enough information and testimonies on their target, the Magisterium. They accuse the mage organization of willfully engaging in a conspiracy to censor the death of Castellos from the Empire! \n\n The Aranthil Committee claims that the Magisterium, upon learning of the death of Castellos, seized all evidence and vaulted it within the Imperial Archives away from the Emperor. They also accuse the mages of threatening the Order of Chroniclers, a sect within the organization that provides neutral fact-based information on a variety of subjects to the Empire, when they attempted to reveal such a conspiracy. And lastly, these investigators believe The Magisterium to this day continues in rewriting and censoring all information gathered by the Chroniclers to paint themselves in a better light."
+ incident_the_magisteriums_censorship_emperor_alert:0 "A day ago, a secret decades-long investigation started by the Emperor’s office concluded. Called ‘The Aranthil Committee’, a small but trusted group of investigators worked diligently in gathering enough information and testimonies on their target, the Magisterium. They accuse the mage organization of willfully engaging in a conspiracy to censor the death of Castellos from the Empire! \n\n The Aranthil Committee claims that the Magisterium, upon learning of the death of Castellos, seized all evidence and vaulted it within the Imperial Archives away from the Emperor. They also accuse the mages of threatening the Order of Chroniclers, a sect within the organization that provides neutral fact-based information on a variety of subjects to the Empire, when they attempted to reveal such a conspiracy. And lastly, these investigators believe The Magisterium to this day continues in rewriting and censoring all information gathered by the Chroniclers to paint themselves in a better light."
+
+ flavor_magisterium.32.t:0 "To Bury a Secret, and a God"
+ flavor_magisterium.32.d:0 "The night is cold. Almost as cold as it is dark. An abyssal inky void, starless and with only the sound of the shuffling of papers and hushed words to give it any life at all. Weeks of effort sunk into one singular all-consuming purpose; to hide the death of a god. A decision come to after long, long debate between the powers that be within the nation, that this information was too dangerous, too inflammatory. A revelation that could tear Cannor asunder.\n\n It is now, in the depths of this dark night, that the crux of this plan comes to fruition. They will hide the slowly piling evidence, censor it and bury it deep, deep within the capital to rot. A sound plan, to the minds who have desperately devised it.\n\n When [Root.Monarch.GetName] and their cadre of most trusted advisors and confidants arrive, they are shocked to find a haggard looking magister staring back at them. Instantly the magister launches into an explanation, that the magisterium has heard of what the [Root.Monarch.GetTitle] was planning, and has decided to assist them, agreeing with their principal theory. The information is too dangerous, and the Grand Magister insisted on taking the evidence to hide within the depths of the Imperial Archives, never to be found.\n\n Between [Root.Monarch.GetName] and the Magisterium, this terrible, terrible secret will surely remain hidden."
+ flavor_magisterium.32.a:0 "Hopefully, forever."
+
+ flavor_magisterium.33.t:0 "Cannor, Chroniclers and Castellos"
+ flavor_magisterium.33.d:0 "Our informants told us of the secret, held so tightly and whispered in the ears of a foreign ruler and a foreign court. A prince of the Empire has learned of a terrible truth. Castellos, king of the Regent Court, highest amongst the gods, is dead. The evidence collected proves inescapable, and is incredibly dangerous. It holds the power to shake the faith of the continent to its very core, to break it, even. Thus, in a secret and private meeting, the Magisterium comes to a decision.\n\n Days later, and a Magister returns with satchels full of documents, evidence. The terrible truth, written in plain text. As the papers are stored in the depths of the Imperial Archives, the universal edict is silently passed to each of the highest members of the Magisterium.\n\n No one must ever know.\n\n Despite protests from the Grand Chronicler, our decision stands absolute, and any internal dissent is squashed. Yet paranoia remains. The protest of the Chroniclers makes it apparent that they are the most likely to speak of this, to let the world know of the death of a God. Unacceptable. We’ve greatly increased our oversight of the Chroniclers, ensuring the information they are displaying is both accurate and, more crucially, does not even slightly infringe upon our good name, or the truth we are sparing Cannor from."
+ flavor_magisterium.33.a:0 "A secret so terrible that it could break even the greatest Unity."
+ flavor_magisterium.33.b:0 "It is not our place to intervene."
+
+ flavor_magisterium.34.t:0 "Of Mages and Muses"
+ flavor_magisterium.34.d:0 "The Magisterium is a complicated organization. It is composed of many smaller and fragmented parts, from the Magisterium proper to the Order of the Chroniclers. Whilst in theory all are a unified part of the greater organization, reality is rarely that simple. This has become more apparent to some of our court, who speak of the odd activity of the Order of the Chroniclers, speaking and informing of their discoveries less often, and doing so in more controlled and tamed language, as if their usual spirit of free thinking creativity was silenced, replaced by the careful words of a man toeing the line.\n\n Evidently, this has disturbed many of those who have noticed this trend, and some have suggested that it would be pertinent to look into this odd behavior and get to the bottom of it. Others still have suggested this to be an overreaction, and not worth time and resources."
+ flavor_magisterium.34.a:0 "We will found the Committee of Aranthil."
+ flavor_magisterium.34.b:0 "A waste of time. We must trust the Magisterium."
+
+ flavor_magisterium.35.t:0 "The Magisterium's Censorship"
+ flavor_magisterium.35.d:0 "The truth is plain and apparent. The word spreads across every court in Anbennar, nay Cannor! The Magisterium willfully engaged in a conspiracy to hide the most significant news in, potentially, the history of Halann. Castellos, head of the Regent Court, king of the gods, is dead. Slain in an attempt to prevent the ruin of Aelantir, and the Day of Ashen Skies. The princes are in uproar. A secret committee was formed by the Emperor of Anbennar decades ago, known as the Committee of Aranthil, dedicated to investigating odd behavior from the Magisterium. Via rigorous study and investigation, it has found irrefutable evidence that the Magisterium engaged in a willful conspiracy to hide this information and forever bury it away from the public and the empire at large, whilst also conspiring to control the Chroniclers to rewrite history, to make the Magisterium’s role in history even greater than it already is..\n\n Already a special session of the Imperial Diet has been called, with every prince in the empire gathering to discuss and debate what to do with what many call an act of blatant treason. A few opinions eventually come to dominate the diet, and then fall to a vote. It is left to the emperor to both cast their own vote, and to guide the Empire towards the right path."
+ flavor_magisterium.35.a:0 "Enforce the Independence of the Order of Chroniclers."
+ flavor_magisterium.35.b:0 "Establish an Imperial Oversight Committee."
+ flavor_magisterium.35.c:0 "Denounce the Aranthil Committee’s findings."
+
+ flavor_magisterium.36.t:0 "The Curtain, Cast Aside."
+ flavor_magisterium.36.d:0 "There is panic in the Magisterium, pure raw unadulterated animal panic. Our work is ruined. Our good intentions were misunderstood. The empire hungers to dismantle our progress. Already the secret, the terrible truth about the death of Castellos, has spread across the empire, soundly out of our hands. Worse yet, our oversight of the Chroniclers has been misunderstood as propagandistic efforts to bolster our prestige and power!\n\n None of our explanations seem to be reaching past the fury of the princes, who have started to call to dismember our organization! To even splinter the Chroniclers away from us! It’s doubtful they will see any reason, and even less likely that we’ll be able to make it out of this terrible situation with no concessions.\n\n The world will scorn our names and believe us liars now, for many decades, lest they manage to see reason."
+ flavor_magisterium.36.a:0 "It’s hard not to feel that the Magisterium is crumbling around us…"
+
+ flavor_magisterium.37.t:0 "A Surviving Enemy"
+ flavor_magisterium.37.d:0 "We stayed neutral during the Lilac Wars unlike our ‘brothers’ in Orda Aldresia who rose their banners for a weak Emperor who died at the conflict’s end. Even uttering their name is demeaning, their existence is unnatural to the ecosystem of the Empire. We are the ones who train the Empire’s mages, enforce the rule of the Emperor, and are the authority on all things arcane. To even dream of the Aldresians being in the same league as us is unthinkable.\n\nAnd yet, they’ve survived the challenges set before them. Like cockroaches, they’ve lived to see another day under the leadership of their cowardly Grandmaster Delian sil Arannen. And now, they seek to challenge us, the Empire’s finest mages!\n\nWith their return to the court, they’ve taken a more active role in enforcing the Emperor’s tax laws. And using their position as the official Imperial Mediators, they’ve turned several of the imperial princes in the Damescrown against us! They are cutting us off from trade and even attempting to seize our lands. \n\nThis is not the end of it, only the beginning. We must be on guard for their antics. They will do everything in their capacity to usurp us. For now however, how will we deal with this coming economic calamity?"
+ flavor_magisterium.37.a:0 "Conjure more gold!"
+ flavor_magisterium.37.b:0 "We will sustain ourselves"
+
+
+ imperial_oversight_committee:0 "Imperial Oversight Committee"
+ neutral_imperial_archives:0 "Neutral Imperial Archives"
+ unimpeachable_mages:0 "Unimpeachable Mages"
+ independent_chronicler_order:0 "Independent Chronicler Order"
+ order_of_chroniclers:0 "Order of Chroniclers"
+ kept_faith_in_mages:0 "Kept faith in the mages"
+ trusted_magisterium:0 "Trusted The Magisterium"
+ established_imperial_oversight_committee:0 "Established Imperial Oversight Committee"
+ enforced_independence_of_chroniclers:0 "Enforced independence of the Order of Chroniclers"
+ aranthil_committee_accusations:0 "Accused of Conspiracy!"
+ aranthil_committee.1:0 "Begins the Aranthil Investigation. May take decades to complete."
+
+
+ 
+ magisterium_same_dynast_buff: "Grand Magister is of our Dynasty."
+ cannot_support_heir_TT: "We cannot support a candidate for the Magisterial throne whilst our mages are not organized under their principles "
+ 

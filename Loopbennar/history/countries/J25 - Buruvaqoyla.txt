@@ -1,0 +1,36 @@
+
+setup_vision = yes
+government = republic
+government_rank = 1
+primary_culture = zabatlari
+add_government_reform = lake_republic
+religion = kodave_followers
+technology_group = tech_triunic
+capital = 5284
+fixed_capital = 5284
+1430.1.1 = {
+	add_country_modifier = {
+		name = lake_federation_member
+		duration = -1
+	}
+	set_variable = {
+		which = FederationPoints
+		value = 1
+	}
+	set_country_flag = LF_mages_banned
+}
+
+1443.12.12 = {
+	monarch = {
+		name = "Daltur"
+		dynasty = "Iyazaz"
+		birth_date = 1400.8.11
+		adm = 2
+		dip = 2
+		mil = 4
+	}
+	add_ruler_personality = fierce_negotiator_personality
+
+}
+
+#Was a mercenary during the Great incursion

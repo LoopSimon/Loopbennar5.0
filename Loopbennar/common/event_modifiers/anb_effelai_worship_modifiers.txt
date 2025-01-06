@@ -1,0 +1,273 @@
+effelai_brain_visited = {
+	adm_tech_cost_modifier = -0.1
+}
+effelai_maw_visited = {
+	manpower_recovery_speed = 0.1
+}
+effelai_claw_visited = {
+	infantry_power = 0.1
+}
+effelai_desacration_visited = {
+	shock_damage_received = -0.1
+}
+effelai_spine_visited = {
+	global_monthly_devastation = -0.1
+}
+effelai_tumor_visited = {
+	global_trade_goods_size_modifier = 0.05
+}
+effelai_heart_visited = {
+	stability_cost_modifier = -0.25
+}
+effelai_explorers_of_effelai = {
+	may_explore = yes
+}
+effelai_ai_dont_settle_please = {
+	technology_cost = -0.1
+	idea_cost = -0.1
+}
+effelai_worship_settled_down = {
+	settle_cost = -0.5
+	technology_cost = -0.1
+	idea_cost = -0.1
+}
+effelai_worship_rapid_expansion = {
+	tribal_development_growth = 0.065
+	add_tribal_land_cost = -0.75
+	settle_cost = -0.15
+	technology_cost = -0.1
+	idea_cost = -0.1
+	land_forcelimit = 4
+}
+effelai_worship_tribal_adventurers = {
+	may_explore = yes
+	monthly_reform_progress_modifier = -1.5
+	land_forcelimit = 4
+	global_manpower = 4
+	infantry_cost = -0.75
+	technology_cost = 0.25
+	development_cost = 0.5
+	advisor_cost = -0.25
+}
+effelai_worhip_recent_leechmen_attack = {
+	land_morale = -0.025
+	manpower_recovery_speed = -0.05
+}
+effelai_worship_revenge_on_leechmen = {
+	land_morale = 0.1
+	manpower_recovery_speed = -0.05
+}
+effelai_worship_building_supplies = {
+	production_efficiency = 0.05
+	build_cost = -0.05
+	build_time = -0.05
+}
+effelai_worship_traded_for_mushrooms = {
+	manpower_recovery_speed = 0.15
+}
+effelai_worship_warnings_from_natives = {
+	global_unrest = 2
+	manpower_recovery_speed = -0.05
+	global_tax_modifier = -0.1
+}
+effelai_worship_ancient_relics = {
+	technology_cost = -0.025
+}
+effelai_ruler_medicine = {
+	monarch_lifespan = 0.25
+	monarch_military_power = 1
+}
+effelai_medicinal_seeds = {
+	global_prosperity_growth = 0.01
+}
+effelai_abundant_growth = {
+	trade_goods_size = 1
+	local_production_efficiency = 0.15
+	local_development_cost = -0.2
+}
+effelai_sturdy_materials = {
+	local_defensiveness = 0.15
+	local_build_cost = -0.2
+	local_build_time = -0.2
+	local_development_cost = -0.05
+}
+effelai_heart_construction = {
+	local_production_efficiency = -0.05
+	local_build_cost = 0.25
+	local_build_time = 0.25
+	trade_goods_size = 0.001
+}
+effelai_thavoii_unblooded = {
+	infantry_power = -0.05
+	infantry_cost = -0.1
+	global_manpower_modifier = 0.1
+}
+effelai_thavoii_bloodied = {
+	infantry_power = 0.05
+	army_tradition_from_battle = 0.5
+}
+effelai_thavoii_veterans = {
+	infantry_power = 0.05
+	discipline = 0.025
+	army_tradition_from_battle = 0.5
+}
+effelai_parura_leechmen_desolated = {
+	land_morale = 0.05
+}
+effelai_parura_showed_superiority = {
+	infantry_power = 0.05
+}
+effelai_parura_chahinanitos_chosen = {
+	land_morale = 0.05
+	infantry_power = 0.05
+	land_attrition = -0.05
+}
+effelai_soruinic_new_beginnings = {
+	land_morale = 0.025
+	production_efficiency = 0.05
+}
+effelai_soruinic_ambitions_achieved = {
+	land_morale = 0.05
+	production_efficiency = 0.1
+}
+effelai_soruinic_festival_of_unity = {
+	diplomatic_reputation = 2
+	diplomatic_upkeep = 3
+}
+effelai_soruinic_ancestors_eclipsed = {
+	land_morale = 0.05
+	morale_damage_received = -0.025
+	production_efficiency = 0.1
+	diplomatic_reputation = 2
+	diplomatic_upkeep = 3
+}
+effelai_soruinic_constant_overtures = {
+	country_diplomatic_power = -1
+}
+effelai_soruinic_festival_site = {
+	trade_goods_size = 0.001
+}
+effelai_soruinic_ancestral_veneration = {
+	local_unrest = -10
+	local_tax_modifier = 0.05
+	local_production_efficiency = 0.05
+	supply_limit = 5
+	trade_goods_size = 0.001
+}
+effelai_soruinic_art_festival = {
+	local_tax_modifier = 0.1
+	local_production_efficiency = 0.1
+	local_build_cost = -0.1
+	local_build_time = -0.1
+	trade_goods_size = 0.001
+}
+effelai_soruinic_martial_festival = {
+	local_manpower_modifier = 0.15
+	local_manpower = 10
+	regiment_recruit_speed = -0.5
+	supply_limit = 10
+	trade_goods_size = 0.001
+}
+effelai_laii_finishing_the_job = {
+	land_morale = 0.2
+	infantry_shock = 0.25
+}
+effelai_laii_bone_helms = {
+	infantry_power = 0.025
+}
+effelai_laii_bone_weaponry = {
+	shock_damage = 0.025
+}
+effelai_laii_bone_armor = {
+	fire_damage_received = -0.025
+}
+effelai_laii_bone_arsenal = {
+	infantry_shock = 0.1
+	infantry_power = 0.05
+	fire_damage_received = -0.05
+	leader_land_shock = 1
+	prestige_from_land = 0.5
+}
+effelai_effei_seeding = {
+	production_efficiency = 0.05
+	build_cost = -0.025
+	build_time = 0.05
+}
+effelai_effei_sprouting = {
+	production_efficiency = 0.1
+	build_cost = -0.05
+	build_time = -0.1
+}
+effelai_effei_flourishing = {
+	global_trade_goods_size_modifier = 0.05
+	development_cost = -0.05
+	build_cost = -0.1
+}
+effelai_effei_sapling_spot = {
+	trade_goods_size = 0.001
+}
+effelai_effei_planted_saplings = {
+	trade_goods_size = 0.001
+}
+effelai_nurturing_seedling_academy = {
+	technology_cost = -0.025
+	idea_cost = -0.05
+}
+effelai_surveying_our_lands = {
+	global_prosperity_growth = 0.1
+	global_monthly_devastation = -0.1
+	build_cost = 0.05
+	build_time = -0.1
+}
+effelai_harmonous_development = {
+	trade_goods_size_modifier = 0.1
+	local_tax_modifier = 0.1
+}
+effelai_cultivating_ideas = {
+	institution_growth = 21
+}
+effelai_hub_development_growth = {
+	local_development_cost = -0.25
+}
+effelai_construct_the_heart = {
+	great_project_upgrade_cost = -0.2
+	great_project_upgrade_time = -0.2
+}
+effelai_confederation_of_the_tribes_parura = {
+	infantry_power = 0.05
+	shock_damage = 0.05
+	shock_damage_received = -0.05
+	garrison_size = 0.05
+}
+effelai_confederation_of_the_tribes_soruinic = {
+	infantry_power = 0.05
+	shock_damage = 0.05
+	land_morale = 0.05
+	garrison_size = 0.05
+}
+effelai_confederation_of_the_tribes_effei = {
+	infantry_power = 0.05
+	shock_damage = 0.05
+	land_morale = 0.05
+	shock_damage_received = -0.05
+}
+effelai_confederation_of_the_tribes_laii = {
+	shock_damage = 0.05
+	land_morale = 0.05
+	shock_damage_received = -0.05
+	garrison_size = 0.05
+}
+effelai_confederation_of_the_tribes_thavoi = {
+	infantry_power = 0.05
+	land_morale = 0.05
+	shock_damage_received = -0.05
+	garrison_size = 0.05
+}
+effelai_bloom_reward = {
+	monthly_anb_effelai_attuned_resource = 1
+}
+effelai_unite_the_tribes_loyalty = {
+	reduced_liberty_desire_on_same_continent = 25
+	diplomatic_reputation = 2
+	diplomatic_upkeep = 2
+}

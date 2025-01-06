@@ -1,0 +1,1071 @@
+
+country_decisions = {
+
+	I01_nation = {	#Amldihr
+		major = yes
+		potential = {
+			owns = 4119 #Amldihr
+			has_reform = dwarovar_adventurer_reform
+			has_country_modifier = dwarven_administration
+			NOT = { has_country_flag = formed_diggy_formable }
+			NOT = { exists = I01 }
+		}
+		provinces_to_highlight = {
+			province_id = 4119
+			NOT = { is_core = ROOT }
+		}
+		allow = {
+			is_state_core = 4119
+			hidden_trigger = { has_reform = dwarovar_adventurer_reform }
+			adm_tech = 7	#around 1500
+			is_free_or_tributary_trigger = yes
+			is_at_war = no
+			num_of_cities = 3
+            dwarovar_special_formation_trigger = yes
+		}
+		effect = {
+			adventurer_hold_formation = { tag = I01 culture = kronium capital_id = 4119 }
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	
+	I02_nation = {
+		major = yes
+		potential = {
+			owns = 4208 
+			has_reform = dwarovar_adventurer_reform
+			has_country_modifier = dwarven_administration
+			NOT = { has_country_flag = formed_diggy_formable }
+			NOT = { exists = I02 }
+		}
+		provinces_to_highlight = {
+			province_id = 4208
+			NOT = { is_core = ROOT }
+		}
+		allow = {
+			is_state_core = 4208
+			hidden_trigger = { has_reform = dwarovar_adventurer_reform }
+			adm_tech = 7	#around 1500
+			is_free_or_tributary_trigger = yes
+			is_at_war = no
+			num_of_cities = 3
+            dwarovar_special_formation_trigger = yes
+		}
+		effect = {
+			adventurer_hold_formation = { tag = I02 culture = quartz capital_id = 4208 }
+			#no missions for reforming the hold
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	
+	I03_nation = {
+		major = yes
+		potential = {
+			owns = 4020 
+			has_reform = dwarovar_adventurer_reform
+			has_country_modifier = dwarven_administration
+			NOT = { has_country_flag = formed_diggy_formable }
+			NOT = { exists = I03 }
+		}
+		provinces_to_highlight = {
+			province_id = 4020
+			NOT = { is_core = ROOT }
+		}
+		allow = {
+			is_state_core = 4020
+			hidden_trigger = { has_reform = dwarovar_adventurer_reform }
+			adm_tech = 7	#around 1500
+			is_free_or_tributary_trigger = yes
+			is_at_war = no
+			num_of_cities = 3
+            dwarovar_special_formation_trigger = yes
+		}
+		effect = {
+			adventurer_hold_formation = { tag = I03 culture = sapphire capital_id = 4020 }
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	
+	I04_nation = {
+		major = yes
+		potential = {
+			owns = 4147 
+			has_reform = dwarovar_adventurer_reform
+			has_country_modifier = dwarven_administration
+			NOT = { has_country_flag = formed_diggy_formable }
+			NOT = { exists = I04 }
+		}
+		provinces_to_highlight = {
+			province_id = 4147
+			NOT = { is_core = ROOT }
+		}
+		allow = {
+			is_state_core = 4147
+			hidden_trigger = { has_reform = dwarovar_adventurer_reform }
+			adm_tech = 7	#around 1500
+			is_free_or_tributary_trigger = yes
+			is_at_war = no
+			num_of_cities = 3
+            dwarovar_special_formation_trigger = yes
+		}
+		effect = {
+			adventurer_hold_formation = { tag = I04 culture = ramsteel capital_id = 4147 }
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	
+	I05_nation = {
+		major = yes
+		potential = {
+			owns = 4236 
+			has_reform = dwarovar_adventurer_reform
+			has_country_modifier = dwarven_administration
+			NOT = { has_country_flag = formed_diggy_formable }
+			NOT = { exists = I05 }
+		}
+		provinces_to_highlight = {
+			province_id = 4236
+			NOT = { is_core = ROOT }
+		}
+		allow = {
+			is_state_core = 4236
+			hidden_trigger = { has_reform = dwarovar_adventurer_reform }
+			adm_tech = 7	#around 1500
+			is_free_or_tributary_trigger = yes
+			is_at_war = no
+			num_of_cities = 3
+            dwarovar_special_formation_trigger = yes
+		}
+		effect = {
+			adventurer_hold_formation = { tag = I05 culture = mithril capital_id = 4236 }
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	
+	I06_nation = {
+		major = yes
+		potential = {
+			owns = 2931 #Ernatvir
+			has_reform = dwarovar_adventurer_reform
+			has_country_modifier = dwarven_administration
+			NOT = { has_country_flag = formed_diggy_formable }
+			NOT = { exists = I06 }
+		}
+		provinces_to_highlight = {
+			province_id = 2931
+			NOT = { is_core = ROOT }
+		}
+		allow = {
+			is_state_core = 2931
+			hidden_trigger = { has_reform = dwarovar_adventurer_reform }
+			adm_tech = 7	#around 1500
+			is_free_or_tributary_trigger = yes
+			is_at_war = no
+			num_of_cities = 3
+            dwarovar_special_formation_trigger = yes
+		}
+		effect = {
+			adventurer_hold_formation = { tag = I06 culture = dagrite capital_id = 2931 }
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	
+	I07_nation = {  #Khugdihr
+		major = yes
+		potential = {
+			owns = 2863
+			has_reform = dwarovar_adventurer_reform
+			has_country_modifier = dwarven_administration
+			NOT = { has_country_flag = formed_diggy_formable }
+			NOT = { exists = I07 }
+		}
+		provinces_to_highlight = {
+			province_id = 2863
+			NOT = { is_core = ROOT }
+		}
+		allow = {
+			is_state_core = 2863
+			hidden_trigger = { has_reform = dwarovar_adventurer_reform }
+			adm_tech = 7	#around 1500
+			is_free_or_tributary_trigger = yes
+			is_at_war = no
+			num_of_cities = 3
+            dwarovar_special_formation_trigger = yes
+		}
+		effect = {
+			adventurer_hold_formation = { tag = I07 culture = agate capital_id = 2863 }
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	
+	I08_nation = {
+		major = yes
+		potential = {
+			owns = 2868 #Haraz Orldhum - NOT Asra Hold
+			has_reform = dwarovar_adventurer_reform
+			has_country_modifier = dwarven_administration
+			NOT = { has_country_flag = formed_diggy_formable }
+			NOT = { exists = I08 }
+		}
+		provinces_to_highlight = {
+			province_id = 2868
+			NOT = { is_core = ROOT }
+		}
+		allow = {
+			is_state_core = 2868
+			hidden_trigger = { has_reform = dwarovar_adventurer_reform }
+			adm_tech = 7	#around 1500
+			is_free_or_tributary_trigger = yes
+			is_at_war = no
+			num_of_cities = 3
+            dwarovar_special_formation_trigger = yes
+		}
+		effect = {
+			adventurer_hold_formation = { tag = I08 culture = platinum capital_id = 2868 }
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	
+	I09_nation = {
+		major = yes
+		potential = {
+			owns = 4056
+			has_reform = dwarovar_adventurer_reform
+			has_country_modifier = dwarven_administration
+			NOT = { has_country_flag = formed_diggy_formable }
+			NOT = { exists = I09 }
+		}
+		provinces_to_highlight = {
+			province_id = 4056
+			NOT = { is_core = ROOT }
+		}
+		allow = {
+			is_state_core = 4056
+			hidden_trigger = { has_reform = dwarovar_adventurer_reform }
+			adm_tech = 7	#around 1500
+			is_free_or_tributary_trigger = yes
+			is_at_war = no
+			num_of_cities = 3
+            dwarovar_special_formation_trigger = yes
+		}
+		effect = {
+			adventurer_hold_formation = { tag = I09 culture = opal capital_id = 4056 }
+			# swap_non_generic_missions = yes
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	
+	I10_nation = {
+		major = yes
+		potential = {
+			owns = 2963
+			has_reform = dwarovar_adventurer_reform
+			has_country_modifier = dwarven_administration
+			NOT = { has_country_flag = formed_diggy_formable }
+			NOT = { exists = I10 }
+		}
+		provinces_to_highlight = {
+			province_id = 2963
+			NOT = { is_core = ROOT }
+		}
+		allow = {
+			is_state_core = 2963
+			hidden_trigger = { has_reform = dwarovar_adventurer_reform }
+			adm_tech = 7	#around 1500
+			is_free_or_tributary_trigger = yes
+			is_at_war = no
+			num_of_cities = 3
+            dwarovar_special_formation_trigger = yes
+		}
+		effect = {
+			adventurer_hold_formation = { tag = I10 culture = lead capital_id = 2963 }
+			# swap_non_generic_missions = yes
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	
+	I11_nation = {
+		major = yes
+		potential = {
+			owns = 2942
+			has_reform = dwarovar_adventurer_reform
+			has_country_modifier = dwarven_administration
+			NOT = { has_country_flag = formed_diggy_formable }
+			NOT = { exists = I11 }
+		}
+		provinces_to_highlight = {
+			province_id = 2942
+			NOT = { is_core = ROOT }
+		}
+		allow = {
+			is_state_core = 2942
+			hidden_trigger = { has_reform = dwarovar_adventurer_reform }
+			adm_tech = 7	#around 1500
+			is_free_or_tributary_trigger = yes
+			is_at_war = no
+			num_of_cities = 3
+            dwarovar_special_formation_trigger = yes
+		}
+		effect = {
+			adventurer_hold_formation = { tag = I11 culture = marble capital_id = 2942 }
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	
+	I12_nation = {	#Orlghelovar
+		major = yes
+		potential = {
+			owns = 4238
+			has_reform = dwarovar_adventurer_reform
+			has_country_modifier = dwarven_administration
+			NOT = { has_country_flag = formed_diggy_formable }
+			NOT = { exists = I12 }
+		}
+		provinces_to_highlight = {
+			province_id = 4238
+			NOT = { is_core = ROOT }
+		}
+		allow = {
+			is_state_core = 4238
+			hidden_trigger = { has_reform = dwarovar_adventurer_reform }
+			adm_tech = 7	#around 1500
+			is_free_or_tributary_trigger = yes
+			is_at_war = no
+			num_of_cities = 3
+            dwarovar_special_formation_trigger = yes
+		}
+		effect = {
+			adventurer_hold_formation = { tag = I12 culture = cobalt capital_id = 4238 }
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	
+	I13_nation = {
+		major = yes
+		potential = {
+			owns = 4100
+			has_reform = dwarovar_adventurer_reform
+			has_country_modifier = dwarven_administration
+			NOT = { has_country_flag = formed_diggy_formable }
+			NOT = { exists = I13 }
+		}
+		provinces_to_highlight = {
+			province_id = 4100
+			NOT = { is_core = ROOT }
+		}
+		allow = {
+			is_state_core = 4100
+			hidden_trigger = { has_reform = dwarovar_adventurer_reform }
+			adm_tech = 7	#around 1500
+			is_free_or_tributary_trigger = yes
+			is_at_war = no
+			num_of_cities = 3
+            dwarovar_special_formation_trigger = yes
+		}
+		effect = {
+			adventurer_hold_formation = { tag = I13 culture = flint capital_id = 4100 }
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	
+	I14_nation = {
+		major = yes
+		potential = {
+			owns = 4217
+			has_reform = dwarovar_adventurer_reform
+			has_country_modifier = dwarven_administration
+			NOT = { has_country_flag = formed_diggy_formable }
+			NOT = { exists = I14 }
+		}
+		provinces_to_highlight = {
+			province_id = 4217
+			NOT = { is_core = ROOT }
+		}
+		allow = {
+			is_state_core = 4217
+			hidden_trigger = { has_reform = dwarovar_adventurer_reform }
+			adm_tech = 7	#around 1500
+			is_free_or_tributary_trigger = yes
+			is_at_war = no
+			num_of_cities = 3
+            dwarovar_special_formation_trigger = yes
+		}
+		effect = {
+			adventurer_hold_formation = { tag = I14 culture = titanium capital_id = 4217 }
+			# swap_non_generic_missions = yes
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	
+	I15_nation = {
+		major = yes
+		potential = {
+			owns = 4078
+			has_reform = dwarovar_adventurer_reform
+			has_country_modifier = dwarven_administration
+			NOT = { has_country_flag = formed_diggy_formable }
+			NOT = { exists = I15 }
+		}
+		provinces_to_highlight = {
+			province_id = 4078
+			NOT = { is_core = ROOT }
+		}
+		allow = {
+			is_state_core = 4078
+			hidden_trigger = { has_reform = dwarovar_adventurer_reform }
+			adm_tech = 7	#around 1500
+			is_free_or_tributary_trigger = yes
+			is_at_war = no
+			num_of_cities = 3
+            dwarovar_special_formation_trigger = yes
+		}
+		effect = {
+			adventurer_hold_formation = { tag = I15 culture = pyrite capital_id = 4078 }
+			# swap_non_generic_missions = yes
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	
+	I16_nation = {
+		major = yes
+		potential = {
+			owns = 4039
+			has_reform = dwarovar_adventurer_reform
+			has_country_modifier = dwarven_administration
+			NOT = { has_country_flag = formed_diggy_formable }
+			NOT = { exists = I16 }
+		}
+		provinces_to_highlight = {
+			province_id = 4039
+			NOT = { is_core = ROOT }
+		}
+		allow = {
+			is_state_core = 4039
+			hidden_trigger = { has_reform = dwarovar_adventurer_reform }
+			adm_tech = 7	#around 1500
+			is_free_or_tributary_trigger = yes
+			is_at_war = no
+			num_of_cities = 3
+            dwarovar_special_formation_trigger = yes
+		}
+		effect = {
+			adventurer_hold_formation = { tag = I16 culture = basalt capital_id = 4039 }
+			swap_non_generic_missions = yes
+			
+			hidden_effect = {
+				set_country_flag = gor_burad_rage_untamed
+				set_variable = {
+					which = gor_burad_var_basalt_rage_event_num
+					value = 0
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	
+	I17_nation = {
+		major = yes
+		potential = {
+			owns = 4218
+			has_reform = dwarovar_adventurer_reform
+			has_country_modifier = dwarven_administration
+			NOT = { has_country_flag = formed_diggy_formable }
+			NOT = { exists = I17 }
+		}
+		provinces_to_highlight = {
+			province_id = 4218
+			NOT = { is_core = ROOT }
+		}
+		allow = {
+			is_state_core = 4218
+			hidden_trigger = { has_reform = dwarovar_adventurer_reform }
+			adm_tech = 7	#around 1500
+			is_free_or_tributary_trigger = yes
+			is_at_war = no
+			num_of_cities = 3
+            dwarovar_special_formation_trigger = yes
+		}
+		effect = {
+			adventurer_hold_formation = { tag = I17 culture = topaz capital_id = 4218 }
+			# swap_non_generic_missions = yes
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	
+	I18_nation = {
+		major = yes
+		potential = {
+			owns = 4265
+			has_reform = dwarovar_adventurer_reform
+			has_country_modifier = dwarven_administration
+			NOT = { has_country_flag = formed_diggy_formable }
+			NOT = { exists = I18 }
+		}
+		provinces_to_highlight = {
+			province_id = 4265
+			NOT = { is_core = ROOT }
+		}
+		allow = {
+			is_state_core = 4265
+			hidden_trigger = { has_reform = dwarovar_adventurer_reform }
+			adm_tech = 7	#around 1500
+			is_free_or_tributary_trigger = yes
+			is_at_war = no
+			num_of_cities = 3
+            dwarovar_special_formation_trigger = yes
+		}
+		effect = {
+			adventurer_hold_formation = { tag = I18 culture = peridot capital_id = 4265 }
+			# swap_non_generic_missions = yes
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	
+	I19_nation = {
+		major = yes
+		potential = {
+			owns = 4284
+			has_reform = dwarovar_adventurer_reform
+			has_country_modifier = dwarven_administration
+			NOT = { has_country_flag = formed_diggy_formable }
+			NOT = { exists = I19 }
+		}
+		provinces_to_highlight = {
+			province_id = 4284
+			NOT = { is_core = ROOT }
+		}
+		allow = {
+			is_state_core = 4284
+			hidden_trigger = { has_reform = dwarovar_adventurer_reform }
+			adm_tech = 7	#around 1500
+			is_free_or_tributary_trigger = yes
+			is_at_war = no
+			num_of_cities = 3
+            dwarovar_special_formation_trigger = yes
+		}
+		effect = {
+			adventurer_hold_formation = { tag = I19 culture = granite capital_id = 4284 }
+			# swap_non_generic_missions = yes
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	
+	I20_nation = {
+		major = yes
+		potential = {
+			owns = 4266
+			has_reform = dwarovar_adventurer_reform
+			has_country_modifier = dwarven_administration
+			NOT = { has_country_flag = formed_diggy_formable }
+			NOT = { exists = I20 }
+		}
+		provinces_to_highlight = {
+			province_id = 4266
+			NOT = { is_core = ROOT }
+		}
+		allow = {
+			is_state_core = 4266
+			hidden_trigger = { has_reform = dwarovar_adventurer_reform }
+			adm_tech = 7	#around 1500
+			is_free_or_tributary_trigger = yes
+			is_at_war = no
+			num_of_cities = 3
+            dwarovar_special_formation_trigger = yes
+		}
+		effect = {
+			adventurer_hold_formation = { tag = I20 culture = amethyst capital_id = 4266 }
+			swap_non_generic_missions = yes
+			hidden_effect = { 
+				4266 = {
+					spawn_expedition = yes
+					set_province_flag = krakazol_key_expedition
+				}
+				4462 = {
+					owner = { 
+						if = {
+							limit = { NOT = { tag = R62 } }
+							add_historical_friend = ROOT
+							ROOT = { add_historical_friend = PREV }
+						}
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	
+	I21_nation = {
+		major = yes
+		potential = {
+			owns = 4350
+			has_reform = dwarovar_adventurer_reform
+			has_country_modifier = dwarven_administration
+			NOT = { has_country_flag = formed_diggy_formable }
+			NOT = { exists = I21 }
+		}
+		provinces_to_highlight = {
+			province_id = 4350
+			NOT = { is_core = ROOT }
+		}
+		allow = {
+			is_state_core = 4350
+			hidden_trigger = { has_reform = dwarovar_adventurer_reform }
+			adm_tech = 7	#around 1500
+			is_free_or_tributary_trigger = yes
+			is_at_war = no
+			num_of_cities = 3
+            dwarovar_special_formation_trigger = yes
+		}
+		effect = {
+			adventurer_hold_formation = { tag = I21 culture = emerald capital_id = 4350 }
+			# swap_non_generic_missions = yes
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	
+	I22_nation = {
+		major = yes
+		potential = {
+			owns = 4311
+			has_reform = dwarovar_adventurer_reform
+			has_country_modifier = dwarven_administration
+			NOT = { has_country_flag = formed_diggy_formable }
+			NOT = { exists = I22 }
+		}
+		provinces_to_highlight = {
+			province_id = 4311
+			NOT = { is_core = ROOT }
+		}
+		allow = {
+			is_state_core = 4311
+			hidden_trigger = { has_reform = dwarovar_adventurer_reform }
+			adm_tech = 7	#around 1500
+			is_free_or_tributary_trigger = yes
+			is_at_war = no
+			num_of_cities = 3
+            dwarovar_special_formation_trigger = yes
+		}
+		effect = {
+			adventurer_hold_formation = { tag = I22 culture = jade capital_id = 4311 }
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+
+	#Haraz Dhumankon
+	I23_nation = {
+		major = yes
+		potential = {
+			tag = H94
+		}
+		provinces_to_highlight = {
+			province_group = hold_province
+			NOT = {
+				ROOT = {
+					num_of_owned_provinces_with = {
+						value = 10
+						province_group = hold_province
+						is_city = yes
+					}
+				}
+			}
+			OR = {
+				NOT = { is_core = ROOT }
+				NOT = { owned_by = ROOT }
+				is_city = no
+			}
+		}
+		allow = {
+			tag = H94 # allow is checked regardless of potential
+			is_free_or_tributary_trigger = yes
+			is_at_war = no				
+			num_of_owned_provinces_with = {
+				value = 10
+				is_core = ROOT
+				is_city = yes
+				province_group = hold_province
+			}
+			dwarovar_special_formation_trigger = yes
+		}
+		effect = {
+			change_tag = I23
+			hidden_effect = { restore_country_name = yes }
+			swap_non_generic_missions = yes
+			remove_non_electors_emperors_from_empire_effect = yes
+
+			add_prestige = 25
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			custom_tooltip = I23_nation_claims_tooltip 
+			hidden_effect = {
+				serpentspine = {
+					limit = { is_wasteland = no }
+					add_permanent_claim = ROOT
+				}
+			}
+			change_government = republic
+			add_government_reform = obsidian_council_reform
+			hidden_effect = { add_republican_tradition = 50 }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	
+	#Aul-Dwarov
+	I24_nation = {
+		major = yes
+		potential = {
+			culture_group = dwarven
+			capital_scope = { continent = serpentspine }
+			NOT = { 
+				exists = I24
+				tag = I23 
+				tag = H94 
+			}
+			NOT = { has_reform = dwarovar_adventurer_reform }
+			if = {
+				limit = { ai = yes }
+				is_year = 1600
+			}
+			NOT = { has_country_flag = H76_skip_aul_dwarov }
+		}
+		provinces_to_highlight = {
+			province_group = hold_province
+			continent = serpentspine
+		}
+		allow = {
+			hidden_trigger = {
+				culture_group = dwarven
+			}
+			if = {
+				limit = { ai = yes }
+				is_year = 1600
+			}
+			is_free_or_tributary_trigger = yes
+			is_at_war = no				
+			has_country_modifier = dwarovkron_full
+			num_of_owned_provinces_with = {
+				value = 25
+				is_core = ROOT
+				is_city = yes
+				province_group = hold_province
+			}
+			is_state_core = 4119
+			dwarovar_special_formation_trigger = yes
+		}
+		effect = {
+			if = { #tell players they will lose ice-smiths
+				limit = { tag = I02 }
+				custom_tooltip = I24_nation_krak_tooltip
+			}
+			
+			if = { #astronomy disabled
+				limit = { tag = I03 }
+				custom_tooltip = vazhatun_disable_astronomy_completely_tt
+				hidden_effect = {
+					remove_country_modifier = vazhatun_astronomy_enabled
+					remove_country_modifier = vazhatun_terror_1
+					remove_country_modifier = vazhatun_terror_2
+					remove_country_modifier = vazhatun_terror_3
+				}
+			}
+
+			change_tag = I24
+			hidden_effect = { restore_country_name = yes }
+			remove_non_electors_emperors_from_empire_effect = yes
+
+			add_prestige = 25
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			
+			custom_tooltip = dwarov_claim_tt
+			hidden_effect = {
+				serpentspine = {
+					limit = { is_wasteland = no }
+					add_permanent_claim = ROOT
+				}
+				hold_province = { add_permanent_claim = ROOT }
+			}
+			lock_racial_admin = yes
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	
+	I25_nation = {
+		major = yes
+		potential = {
+			owns = 4323
+			has_reform = dwarovar_adventurer_reform
+			has_country_modifier = dwarven_administration
+			NOT = { has_country_flag = formed_diggy_formable }
+			NOT = { exists = I25 }
+		}
+		provinces_to_highlight = {
+			province_id = 4323
+			NOT = { is_core = ROOT }
+		}
+		allow = {
+			is_state_core = 4323
+			hidden_trigger = { has_reform = dwarovar_adventurer_reform }
+			adm_tech = 7	#around 1500
+			is_free_or_tributary_trigger = yes
+			is_at_war = no
+			num_of_cities = 3
+            dwarovar_special_formation_trigger = yes
+		}
+		effect = {
+			adventurer_hold_formation = { tag = I25 culture = malachite capital_id = 4323 }
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	
+	H79_nation = {
+		major = yes
+		potential = {
+			owns = 4247
+			has_reform = dwarovar_adventurer_reform
+			has_country_modifier = dwarven_administration
+			NOT = { has_country_flag = formed_diggy_formable }
+			NOT = { exists = H79 }
+		}
+		provinces_to_highlight = {
+			province_id = 4247
+			NOT = { is_core = ROOT }
+		}
+		allow = {
+			is_state_core = 4247
+			hidden_trigger = { has_reform = dwarovar_adventurer_reform }
+			adm_tech = 7	#around 1500
+			is_free_or_tributary_trigger = yes
+			is_at_war = no
+			num_of_cities = 3
+            dwarovar_special_formation_trigger = yes
+		}
+		effect = {
+			adventurer_hold_formation = { tag = H79 culture = amber capital_id = 4247 }
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	
+	F47_nation = {
+		major = yes
+		potential = {
+			owns = 2914
+			has_reform = dwarovar_adventurer_reform
+			has_country_modifier = dwarven_administration
+			NOT = { has_country_flag = formed_diggy_formable }
+			NOT = { exists = F47 }
+		}
+		provinces_to_highlight = {
+			province_id = 2914
+			NOT = { is_core = ROOT }
+		}
+		allow = {
+			is_state_core = 2914
+			hidden_trigger = { has_reform = dwarovar_adventurer_reform }
+			adm_tech = 7	#around 1500
+			is_free_or_tributary_trigger = yes
+			is_at_war = no
+			num_of_cities = 3
+            dwarovar_special_formation_trigger = yes
+		}
+		effect = {
+			adventurer_hold_formation = { tag = F47 culture = gold capital_id = 2914 }
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	
+	H78_nation = {
+		major = yes
+		potential = {
+			owns = 4124
+			has_reform = dwarovar_adventurer_reform
+			has_country_modifier = dwarven_administration
+			NOT = { has_country_flag = formed_diggy_formable }
+			NOT = { exists = H78 }
+		}
+		provinces_to_highlight = {
+			province_id = 4124
+			NOT = { is_core = ROOT }
+		}
+		allow = {
+			is_state_core = 4124
+			hidden_trigger = { has_reform = dwarovar_adventurer_reform }
+			adm_tech = 7	#around 1500
+			is_free_or_tributary_trigger = yes
+			is_at_war = no
+			num_of_cities = 3
+            dwarovar_special_formation_trigger = yes
+		}
+		effect = {
+			adventurer_hold_formation = { tag = H78 culture = citrine capital_id = 4124 }
+			#no missions for reforming the hold
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	
+	H77_nation = {
+		major = yes
+		potential = {
+			owns = 2973
+			has_reform = dwarovar_adventurer_reform
+			has_country_modifier = dwarven_administration
+			NOT = { has_country_flag = formed_diggy_formable }
+			NOT = { exists = H77 }
+		}
+		provinces_to_highlight = {
+			province_id = 2973
+			NOT = { is_core = ROOT }
+		}
+		allow = {
+			is_state_core = 2973
+			hidden_trigger = { has_reform = dwarovar_adventurer_reform }
+			adm_tech = 7	#around 1500
+			is_free_or_tributary_trigger = yes
+			is_at_war = no
+			num_of_cities = 3
+            dwarovar_special_formation_trigger = yes
+		}
+		effect = {
+			adventurer_hold_formation = { tag = H77 culture = garnet capital_id = 2973 }
+			#no missions for reforming the hold
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	
+	H76_nation = {
+		major = yes
+		potential = {
+			owns = 4093
+			has_reform = dwarovar_adventurer_reform
+			has_country_modifier = dwarven_administration
+			NOT = { has_country_flag = formed_diggy_formable }
+			NOT = { exists = H76 }
+		}
+		provinces_to_highlight = {
+			province_id = 4093
+			NOT = { is_core = ROOT }
+		}
+		allow = {
+			is_state_core = 4093
+			hidden_trigger = { has_reform = dwarovar_adventurer_reform }
+			adm_tech = 7	#around 1500
+			is_free_or_tributary_trigger = yes
+			is_at_war = no
+			num_of_cities = 3
+            dwarovar_special_formation_trigger = yes
+		}
+		effect = {
+			adventurer_hold_formation = { tag = H76 culture = diamond capital_id = 4093 }
+			#no missions for reforming the hold
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+}
+

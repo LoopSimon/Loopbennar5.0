@@ -1,0 +1,249 @@
+
+#Country Name: Please see filename.
+
+graphical_culture = westerngfx
+
+color = { 112  112  153 }
+
+
+
+historical_idea_groups = {
+	expansion_ideas
+	exploration_ideas
+	quantity_ideas
+	diplomatic_ideas	
+	offensive_ideas
+	defensive_ideas
+	economic_ideas	
+	innovativeness_ideas
+}
+
+historical_units = {
+	cannorian_1_medieval_infantry
+	cannorian_1_medieval_knights
+	cannorian_5_men_at_arms
+	cannorian_9_pike_and_shot
+	cannorian_10_gun_knights
+	cannorian_12_thorn_formation
+	cannorian_14_outriders
+	cannorian_15_volley_infantry
+	cannorian_18_reformed_outriders
+	cannorian_19_thorn_formation2
+	cannorian_23_dragoons
+	cannorian_23_line_infantry
+	cannorian_26_carabiners
+	cannorian_26_dragoncoat_infantry
+	cannorian_28_impulse_infantry
+	cannorian_28_cuirassier
+	cannorian_30_drill_infantry
+}
+
+monarch_names = {
+	"Adelan" = 10
+	"Adran" = 10
+	"Adrei" = 10
+	"Adrian" = 10
+	"Aldres" = 10
+	"Alfonse" = 10
+	"Alfrede" = 10
+	"Alfredu" = 10
+	"Alin" = 10
+	"Aloss" = 10
+	"Alveru" = 10
+	"Amolusan" = 10
+	"Andrel" = 10
+	"Ardac" = 10
+	"Ardoru" = 10
+	"Aril" = 10
+	"Armian" = 10
+	"Artori" = 10
+	"Arturu" = 10
+	"Austane" = 10
+	"Aweni" = 10
+	"Balan" = 10
+	"Blesan" = 10
+	"Bogan" = 10
+	"Borian" = 10
+	"Brandone" = 10
+	"Brayane" = 10
+	"Braydene" = 10
+	"Calan" = 10
+	"Calos" = 10
+	"Camir" = 10
+	"Camoliu" = 10
+	"Caran" = 10
+	"Carlean" = 10
+	"Castan" = 10
+	"Castin" = 10
+	"Ceciliu" = 10
+	"Coarin" = 10
+	"Colovan" = 10
+	"Danceimel" = 10
+	"Davan" = 10
+	"Delabas" = 10
+	"Delabas" = 10
+	"Devar" = 10
+	"Doloce" = 10
+	"Dominu" = 10
+	"Dostan" = 10
+	"Edmond" = 10
+	"Elrac" = 10
+	"Emile" = 10
+	"Erel" = 10
+	"Eren" = 10
+	"Erlac" = 10
+	"Evin" = 10
+	"Frederic" = 10
+	"Galin" = 10
+	"Gelmac" = 10
+	"Jergan" = 10
+	"Laurenti" = 10
+	"Lotranu" = 10
+	"Lucian" = 10
+	"Marcan" = 10
+	"Maron" = 10
+	"Moscion" = 10
+	"Ollore" = 10
+	"Ottron" = 10
+	"Petre" = 10
+	"Raubyn" = 10
+	"Rianu" = 10
+	"Rician" = 10
+	"Ricion" = 10
+	"Rogec" = 10
+	"Sandr" = 10
+	"Silmarcos" = 10
+	"Taelar" = 10
+	"Tal" = 10
+	"Tecian" = 10
+	"Tiren" = 10
+	"Tisiru" = 10
+	"Tomás" = 10
+	"Trianu" = 10
+	"Trystan" = 10
+	"Trystan" = 10
+	"Valen" = 10
+	"Valran" = 10
+	"Varian" = 10
+	"Varil" = 10
+	"Varin" = 10
+	"Varion" = 10
+	"Vasile" = 10
+	"Venal" = 10
+	"Vencant" = 10
+	"Welhem" = 10
+	
+	"Acara" = -10
+	"Adelina" = -10
+	"Adrana" = -10
+	"Alara" = -10
+	"Aldresia" = -10
+	"Alice" = -10
+	"Alina" = -10
+	"Aliza" = -10
+	"Amiona" = -10
+	"Amioriana" = -10
+	"Arya" = -10
+	"Azilina" = -10
+	"Bela" = -10
+	"Cala" = -10
+	"Calosa" = -10
+	"Camolta" = -10
+	"Castana" = -10
+	"Castiana" = -10
+	"Cecilia" = -10
+	"Celiedora" = -10
+	"Celina" = -10
+	"Cibila" = -10
+	"Clar" = -10
+	"Coara" = -10
+	"Coarina" = -10
+	"Coarinde" = -10
+	"Constanta" = -10
+	"Cotela" = -10
+	"Dasiene" = -10
+	"Drilgisa" = -10
+	"Elenior" = -10
+	"Emma" = -10
+	"Erelea" = -10
+	"Ezebel" = -10
+	"Ezebela" = -10
+	"Galindia" = -10
+	"Gebeliza" = -10
+	"Gerdaba" = -10
+	"Gisea" = -10
+	"Laurentia" = -10
+	"Lisbana" = -10
+	"Lizbet" = -10
+	"Lizolena" = -10
+	"Madalina" = -10
+	"Margere" = -10
+	"Mioara" = -10
+	"Mioaranne" = -10
+	"Mioarina" = -10
+	"Mioran" = -10
+	"Nara" = -10
+	"Puridora" = -10
+	"Reinia" = -10
+	"Rienon" = -10
+	"Sadicie" = -10
+	"Serma" = -10
+	"Sofina" = -10
+	"Tarbira" = -10
+	"Valenca" = -10
+	"Vara" = -10
+	"Vezina" = -10
+	"Welhemina" = -10
+	"Zia" = -10
+}
+
+leader_names = { 
+	
+	#Country Specific
+	Ravensworn "'of the Banner'" Ravenblade Bannerblade
+	
+	#Province Neighbours
+	"of Arca Corvur" "of Mihaela's Redoubt" "of Elderwright" "of Silcorvur" "of Kortir" "of Karn's Hold" "of Blackwood" "of the Blackwoods" "of Gablainé" "of Kaldere" "of Corvuria" "of Rasidiad" "of Cinuder"
+	"of Holstead" "of Aelantaire" "of the Marches" "of Ioan's Ford" "of Shroudfort" "of Ravenhill" "of Livergrave" "of Cestirbridge" "of Ashfield" "of the Dreadmire"
+	
+	"of Deadman's Hollow" "of the Wretched Keep" "of Hangman's Station" "of Gallowspeak" "of Death's Door" "of Crowsford" "of Ravenbeak" "of Blackfeather" "of the Village" "síl Corveld" "síl Lorest"
+	
+	#Country Neighbours
+	"of Corvuria" "of Asheniande" 
+	
+	#Geographic Neighbours
+	"of Dostanor" "of the Borders"
+	
+	#Noble Families
+	"síl Vivin" "síl Gablainé" "síl Cannmarion" "síl Kortir" "síl Kaldere" Karnoris Ioansford
+	
+	
+	#Generic Anbennarian/Elvenized
+	Auern Rósarn Fwinern Esmarn Jercostarn Redcoaster Hylern Hylman Leonarn Liatharn Dostan Grey Sfern Pearler Alen Aranern Aistern Adenern Eánarn Bladern Castanern Vrorenern Damern Reigharn Bulwarn Khetarn Lunarn Akasirn Caorarn Rever Arbern Pírandern Airge Silsuinairge Anben Báisdaerh Cestirn Dhíarn Dhenern Silvarn Fwinern Duchaelarn Pírduchaelern Séthírn Magairn Párnern Verenvítern Tenachern Dortem Trínvítern Ciobisern Ciobiscúniacern Cúwern Trédárn Crécócarn Cócarn Cúbaírn Thanasern Bocharn Aíthrn Árthavítrn Célodir Gwalvítl Annceí Deabílanneí Cuísern Mathúisern Hirn Cínndiheí Niodágern Avusrael Laoch Gaóhern Bochoch Tenachvítarn Suíréach Cófravítrn Mérgirn Grùdídhern Avusíllern Fílívítarn Cígalern Dathaí Iascirn Eúnech Flárnarn Riéntenachirn Dáineí Pígu Adarvítí Mielvítí Melefvítí Orgórn Afesgórn Eresgórn Airgegórn Eumhígórn Bíanoch Gàrd Altírí Pítse Seina Fíhl Adachí Seíththorimí Cístern Sílreianí Gal Teder Liath Deir Var Jer Cam Iruan Pash Bron Vulsin Aríth Badhál Díhr Búel Cúw Agnel Geária Oulhá Stamh 
+ Rogpid Bradá Breác Eúne Melilar Bhac Derdíl Fabhn Finúch Crodach Bogeán Véirse Liubán Óbehr Sábal Ritach Bíobar Colúm Lánchs "sina Arademele" "sina Minarsdemele" "sina Damesdemele" "sina Necropolis" "sina Adensdemele" "sina Balgarstenach" "sina Fiarndemele" "sina Gráidemele" "of Builderstemple" 
+}
+
+ship_names = {
+	# Generic Cannorian
+	Castellos "The Dame" Halanna Yshtralania Agrados Adean Esmaryal Ryala Falah Nerat
+	Ara Minara "Munas Moonsinger" Nathalyne Begga Corin Balgar Uelos Draxos Aesanna
+	# Court of Nerat
+	Honourbound Judge Law "Warden of Hell" Soul Reaper "Red Reaper" "Halls of Judgement" "Eternal War" Guard
+	Bravery "God of Death" Healer Neratic Knight Valor "High Judge" Justice Executioner Warden
+	# Generic Marcher
+	Freetower Widor Tederfremh Rohibon Tilwick "Aldainé" Turnmarket Nortmerewic Cannwic Acenvor
+	"Victor’s Path" Bradnath "Ionntrás" Theminath Mereham Bladeskeep Vernham Woodmarket Oldhaven Marrhold
+	"Marcher Lord" "Breaker of the Greentide" "Victory at Rottenstep" "Victory at Castonath" "Heir of Escann" Victory Summon Onslaught "Prince Jon" Ricard
+	# Modified Corvuria
+	Bloodline "Blood Oath" Raven Ritach Crow Corvid Corvus Magpie Rook Jackdaw
+	Masquerade Night Subterfuge "Lady of Night" Court "Dark Night" "Escanni Raven" Talon "Night’s Shade" "Night’s Heart" 
+
+}
+
+army_names = {
+	"Ravenbanner Army" "Black Army" "Army of $PROVINCE$"
+}
+
+fleet_names = {
+	"Ravenbanner Fleet" "Bay Squadron" "Dameshead Squadron" "Damescrown Squadron" "Damesneck Squadron" "Moon Squadron" "Blood Squadron"
+}
