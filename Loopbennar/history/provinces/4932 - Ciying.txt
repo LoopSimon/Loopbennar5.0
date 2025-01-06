@@ -1,9 +1,10 @@
-owner = Y05
-controller = Y05
+owner = Y13
+controller = Y13
 add_core = Y05
 add_core = Y13
 culture = jiangszun
 religion = accretive_path
+
 
 hre = no
 

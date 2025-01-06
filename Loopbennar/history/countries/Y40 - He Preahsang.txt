@@ -4,9 +4,9 @@ government = theocracy
 add_government_reform = xiaken
 government_rank = 1
 primary_culture = teplin
-religion = transmutative_path
+religion = accretive_path
 technology_group = tech_halessi
-capital = 4793
+capital = 4811
 
 1000.1.1 = { set_estate_privilege = estate_mages_organization_religious }
 
