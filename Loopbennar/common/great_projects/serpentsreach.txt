@@ -345,11 +345,11 @@ ovdal_lodhum_tunnel_of_love = {
 		area_modifier = {		
 		}
 		region_modifier = {
-			local_unrest = -1
+			local_unrest = -1	
 		}
 		country_modifiers = {
 			may_explore = yes
-			global_colonial_growth = 10
+			global_colonial_growth = 15
 			colonist_placement_chance = 0.035
 		}
 		on_upgraded = {
