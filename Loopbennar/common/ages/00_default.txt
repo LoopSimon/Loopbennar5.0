@@ -75,6 +75,9 @@ age_of_discovery = {
 		
 		obj_renaissance = {
 	 		has_institution = renaissance
+			all_state_province = {
+                 renaissance = 100
+             }
 		}
 		
 		obj_two_unions = {
