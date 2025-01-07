@@ -820,7 +820,6 @@ lizardfolk_port = {
 		on_upgraded = {
 			custom_tooltip = clove_price_tooltip
 			owner = {
-				hidden_effect = { country_event = { id = anb_price.54 } }
 				random_owned_province = {
 					limit = { area = ibibakely_area }
 					add_lizardfolk_minority_size_effect = yes
