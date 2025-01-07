@@ -724,7 +724,7 @@ RC_withdrawn_meditation = {
 # Infernal Court Favored by the Archdevils Event Modifiers
 ##########################################################
 IC_emulant_kazraiel_1 = {
-	country_military_power = 2
+	country_military_power = 1
 	religion = yes
 }
 IC_emulant_kazraiel_2 = {
@@ -736,11 +736,11 @@ IC_emulant_hedine_1 = {
 	religion = yes
 }
 IC_emulant_hedine_2 = {
-	country_diplomatic_power = 2
+	country_diplomatic_power = 1
 	religion = yes
 }
 IC_emulant_forsara_1 = {
-	merchants = 2
+	merchants = 1
 	religion = yes
 }
 IC_emulant_forsara_2 = {
@@ -748,11 +748,11 @@ IC_emulant_forsara_2 = {
 	religion = yes
 }
 IC_emulant_ildran_1 = {
-	build_cost = -0.25
+	build_cost = -0.2
 	religion = yes
 }
 IC_emulant_ildran_1_alt = {
-	build_cost = -0.15
+	build_cost = -0.1
 	religion = yes
 }
 IC_emulant_ildran_2 = {
@@ -1632,11 +1632,11 @@ IC_forsara_gift = {
 }
 
 IC_mesner_bene = {
-	technology_cost = -0.1
+	technology_cost = -0.05
 }
 
 IC_mesner_chosen = {
-	all_power_cost = -0.1
+	all_power_cost = -0.03
 }
 
 IC_hedine_chosen = {
@@ -1657,11 +1657,11 @@ IC_forsara_chosen_1 = {
 }
 
 IC_forsara_chosen_2 = {
-	inflation_reduction = 0.25
+	inflation_reduction = 0.2
 }
 
 IC_forsara_chosen_3 = {
-	interest = -2
+	interest = -0.5
 }
 
 IC_kazraiel_chosen = {
@@ -1682,7 +1682,7 @@ IC_berserker_corps = {
 }
 
 IC_devil_architects = {
-	development_cost = -0.1
+	development_cost = -0.05
 }
 
 #Goblinic Shamanism Primary Cults
