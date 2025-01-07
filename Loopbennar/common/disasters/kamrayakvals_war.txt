@@ -2,6 +2,7 @@ kamrayakvals_war = {
 
 	potential = {
 		is_religion_enabled = oren_nayiru
+		is_year = 1800
 		NOT = { tag = U39 } #Orenvalyam
 		NOT = { has_global_flag = kamrayakvals_war_end }
 		OR = {
