@@ -19,7 +19,7 @@ po_remove_evil_ruler = {
 		cancelled_subject = 0.0 
 		concede_colonial_region = 0.0
 	}
-	warscore_cap = 50 
+	warscore_cap = 25 
 	requires_demand_independence = yes 
 	is_make_subject = no
 	requires_is_allowed = yes
