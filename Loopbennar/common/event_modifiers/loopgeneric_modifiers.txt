@@ -133,5 +133,5 @@ loop_corin_defense = {
 }
 
 loop_corin_trade = {
-	trade_steering = 0.1
+	trade_efficiency = 0.05
 }
