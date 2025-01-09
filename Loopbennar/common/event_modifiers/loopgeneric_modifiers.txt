@@ -127,3 +127,11 @@ colonial_expansion_g = {
 	global_colonial_growth = 40
 	trade_steering = 0.1
 }
+
+loop_corin_defense = {
+	defensiveness = 0.5
+}
+
+loop_corin_trade = {
+	trade_steering = 0.1
+}

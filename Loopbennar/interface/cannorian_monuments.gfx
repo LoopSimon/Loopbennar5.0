@@ -19,6 +19,14 @@ spriteTypes = {
 		texturefile = "gfx/event_pictures/GIBERD_ARTIFICERS_eventPicture.dds"
 	}
 
+####################
+#Loop Monuments
+####################
+
+spriteType = {
+        name = "GFX_great_project_corins_temple"	
+        texturefile = "gfx//interface//great_projects//great_project_corins_temple.dds"
+    }
 
 ####################
 #Alenic Frontier

@@ -254,3 +254,36 @@ country_event = {
 	}
 
 }
+
+country_event = { 
+	id = flavor_loopgeneric.9
+	title = flavor_loopgeneric.9t
+	desc = flavor_loopgeneric.9d
+	picture = DIPLOMACY_eventPicture
+	
+	is_triggered_only = yes
+
+	trigger = {
+		#Monument
+
+	}
+	
+	option = { #
+			name = "flavor_loopgeneric.9.a" 
+			add_dip_power = 100
+			add_country_modifier = {
+				name = loop_corin_trade
+				duration = -1
+			}
+			
+	}
+	option = { #
+			name = "flavor_loopgeneric.9.b"
+			add_mil_power = 100
+			add_country_modifier = {
+				name = loop_corin_defense
+				duration = -1
+			}
+			
+	}
+}
