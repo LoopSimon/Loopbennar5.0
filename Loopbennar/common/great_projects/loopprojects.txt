@@ -94,10 +94,12 @@ corin_temple = {
 			local_development_cost = -0.05
 		}
 		area_modifier = {
+			local_unrest = -1
 			local_tax_modifier = 0.05
 		}
 		country_modifiers = {	
 			yearly_karma_decay = 0.05
+			land_forcelimit_modifier = 0.05
 		}
 		on_upgraded = {
 		}
@@ -119,7 +121,7 @@ corin_temple = {
 		country_modifiers = {
 			warscore_cost_vs_other_religion = -0.05
 			yearly_karma_decay = 0.075
-			land_forcelimit_modifier = 0.05
+			land_forcelimit_modifier = 0.075
 		}
 		on_upgraded = {
 			add_permanent_province_modifier = {

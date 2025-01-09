@@ -31,6 +31,15 @@ WITCH_KING_REQUIREMENT: "Ruler is a Witch-King" #For the Throne of the Sorceror-
 cannorian_monuments_permanent_damestear: "This §YDamestear§! is §ypermanent§!, and will not deplete over time."
 
 ####################
+#Loop Monuments
+####################
+
+corin_temple_title: "Temple of Corin"
+corin_temple: "Temple of Corin"
+great_project_corin_temple: "Temple of Corin"
+corin_temple_desc: "Corin is the ascended goddess of war as the Avatar of Agrados she brought the Greentide to the end in the Battle of Castonath when she and Korgus Dookanson killed each other within the great melee in the Imperial Quarter" 
+
+####################
 #Alenic Frontier
 ####################
 

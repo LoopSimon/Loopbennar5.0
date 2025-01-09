@@ -129,7 +129,7 @@ colonial_expansion_g = {
 }
 
 loop_corin_defense = {
-	defensiveness = 0.5
+	defensiveness = 0.05
 }
 
 loop_corin_trade = {

@@ -24,8 +24,8 @@ spriteTypes = {
 ####################
 
 spriteType = {
-        name = "GFX_great_project_corins_temple"	
-        texturefile = "gfx//interface//great_projects//great_project_corins_temple.dds"
+        name = "GFX_great_project_corin_temple"	
+        texturefile = "gfx//interface//great_projects//great_project_corin_temple.dds"
     }
 
 ####################
