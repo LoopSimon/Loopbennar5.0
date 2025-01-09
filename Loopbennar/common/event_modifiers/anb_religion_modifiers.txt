@@ -697,7 +697,7 @@ RC_emulant_nerat_2 = {
 	religion = yes
 }
 RC_emulant_nathalyne_1 = {
-	siege_ability  = 0.1
+	shock_damage_received = 0.075
 	religion = yes
 }
 RC_emulant_nathalyne_2 = {
@@ -709,7 +709,7 @@ RC_emulant_begga_1 = {
 	religion = yes
 }
 RC_emulant_begga_2 = {
-	global_autonomy = -0.10 
+	min_autonomy_in_territories = -0.1 
 	religion = yes
 }
 
