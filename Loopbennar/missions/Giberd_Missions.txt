@@ -1474,12 +1474,11 @@ giberd_ryalanar_conquest = {
 		trigger = {
 			calc_true_if = {
 				all_elector = {
-					has_opinion = {
-						who = ROOT
-						value = 150
+						has_10_opinion_sent_gift = {
+							target = ROOT
+						}
 					}
-				}
-				amount = 4
+				amount = 6
 			}
 			custom_trigger_tooltip = {
 				tooltip = hired_dip_advisor_of_level_3_tt
