@@ -141,7 +141,7 @@ countsleague_first_slot = {
 				every_known_country = {
 					if = {
 						limit = {
-							capital_scope = { region = inner_castanor_region }
+							capital_scope = { region = escann_superregion }
 							OR = {
 								has_opinion_modifier = {
 									who = B55
@@ -161,7 +161,7 @@ countsleague_first_slot = {
 					}
 					else_if = {
 						limit = {
-							capital_scope = { region = inner_castanor_region }
+							capital_scope = { region = escann_superregion }
 							AND = {
 								alliance_with = ROOT
 								has_opinion = {

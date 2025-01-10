@@ -641,7 +641,7 @@ RC_emulant_munas_2 = {
 	religion = yes
 }
 RC_emulant_ara_1 = {
-	discipline = 0.35
+	discipline = 0.035
 	religion = yes
 }
 RC_emulant_ara_2 = {
