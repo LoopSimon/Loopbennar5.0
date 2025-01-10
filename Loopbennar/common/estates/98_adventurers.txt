@@ -45,7 +45,7 @@ estate_adventurers = {
 		mercenary_cost = -0.2
 	}	
 	country_modifier_angry = {
-		mercenary_cost = 0.2^
+		mercenary_cost = 0.2
 	}
 	land_ownership_modifier = {
 		adventurers_loyalty_modifier = 0.2
