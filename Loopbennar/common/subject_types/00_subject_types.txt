@@ -4076,8 +4076,8 @@ seghdihr_syndicate = {
 	# Properties:
 	can_fight_independence_war = no
 	transfer_trade_power = yes
-	can_be_integrated = no
-	can_be_annexed = no
+	can_be_integrated = yes
+	can_be_annexed = yes
 	can_release_in_peace = no
 	can_transfer_in_peace = no
 	overlord_can_fabricate_for = no
