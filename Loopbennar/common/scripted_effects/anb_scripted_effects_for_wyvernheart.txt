@@ -56,9 +56,9 @@ wyvernheart_define_war_wizard = {
 				NOT = { army_tradition = 30 }
 			}
 			define_general = {
-				fire = 2
-				shock = 7
-				manuever = 3
+				fire = 1
+				shock = 4
+				manuever = 0
 				siege = 1
 				trait = war_wizard_personality
 				name = wyvernheart_mage
@@ -71,9 +71,23 @@ wyvernheart_define_war_wizard = {
 			}
 			define_general = {
 				fire = 2
-				shock = 7
-				manuever = 4
-				siege = 2
+				shock = 5
+				manuever = 1
+				siege = 3
+				trait = war_wizard_personality
+				name = wyvernheart_mage
+			}
+		}
+		if = {
+			limit = {
+				army_tradition = 45
+				NOT = { army_tradition = 80 }
+			}
+			define_general = {
+				fire = 2
+				shock = 6
+				manuever = 1
+				siege = 3
 				trait = war_wizard_personality
 				name = wyvernheart_mage
 			}
@@ -84,10 +98,10 @@ wyvernheart_define_war_wizard = {
 				NOT = { army_tradition = 80 }
 			}
 			define_general = {
-				fire = 3
-				shock = 8
-				manuever = 5
-				siege = 3
+				fire = 2
+				shock = 7
+				manuever = 2
+				siege = 4
 				trait = war_wizard_personality
 				name = wyvernheart_mage
 			}
@@ -97,9 +111,9 @@ wyvernheart_define_war_wizard = {
 				army_tradition = 80
 			}
 			define_general = {
-				fire = 4
-				shock = 9
-				manuever = 7
+				fire = 3
+				shock = 8
+				manuever = 3
 				siege = 4
 				trait = war_wizard_personality
 				name = wyvernheart_mage
