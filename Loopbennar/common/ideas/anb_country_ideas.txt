@@ -10064,6 +10064,7 @@ A75_ideas = {
 	free = yes
 
 	start = {
+		improve_relation_modifier = 0.2
 		land_morale = 0.1
 	}
 	A75_freed_by_the_rose = {
