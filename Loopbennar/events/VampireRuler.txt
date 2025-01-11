@@ -467,7 +467,8 @@ country_event = {
 	picture = NOBLE_ESTATE_eventPicture
 	
 	trigger = {
-		NOT = { has_ruler_flag = no_sire } 
+		NOT = { tag = Y02 } 
+		NOT = { has_ruler_flag = no_sire }
 		NOT = { has_country_flag = J84_is_mihaela_flag }
 		has_ruler_modifier = vampire_ruler
 		NOT = {
