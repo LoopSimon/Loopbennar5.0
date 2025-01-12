@@ -1303,7 +1303,7 @@ A38_ideas = {
 		development_cost = -0.1
 	}
 	A38_heart_of_the_empire = {
-		infrantry_power = 0.10
+		infantry_power = 0.10
 	}
 	A38_city_of_adventures = {
 		merc_maintenance_modifier = -0.2
