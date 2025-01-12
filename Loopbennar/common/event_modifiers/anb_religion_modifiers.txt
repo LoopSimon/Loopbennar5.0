@@ -665,7 +665,7 @@ RC_emulant_esmaryal_2 = {
 	religion = yes
 }
 RC_emulant_ryala_1 = {
-	shock_damage  0.10
+	shock_damage = 0.10
 	religion = yes
 }
 RC_emulant_ryala_2 = {
