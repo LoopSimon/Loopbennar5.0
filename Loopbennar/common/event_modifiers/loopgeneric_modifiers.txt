@@ -1,4 +1,4 @@
-loop_modifier_1 = {
+floop_modifier_1 = {
 	global_missionary_strength = 0.05
 	missionaries = 1
 }
@@ -134,4 +134,7 @@ loop_corin_defense = {
 
 loop_corin_trade = {
 	trade_efficiency = 0.05
+}
+loopgitimacy = {
+	legitimacy = 1
 }
