@@ -1022,7 +1022,6 @@ province_event = {
 	trigger = {
 		has_global_flag = new_world_discovered
 		current_age = age_of_reformation
-		is_year = 1820
 		is_religion_enabled = corinite
 		NOT = { has_global_flag = delete_north_aelantir_region }
 		corinsfield_area = {
@@ -1108,7 +1107,7 @@ province_event = {
 					claim = 95
 					female = no
 				}
-
+				set_ruler_flag = h35_godwin_alive
 				country_event = { id = anb_miscevents.22 } # new country setup
 			}
 
@@ -1145,7 +1144,7 @@ province_event = {
 					claim = 95
 					female = no
 				}
-
+				set_ruler_flag = h35_godwin_alive
 				country_event = { id = anb_miscevents.22 } # new country setup
 			}
 
@@ -1156,13 +1155,18 @@ province_event = {
 			adventurer_spawnable_starting_bonus = { tag = H35 }
 			switch_tag = H35
 		}
+		H35 = {
+			country_event = {
+				id = flavour_corinsfield.87
+				days = 10
+			}
+		}
 	}
 	
 	after = { 
 		hidden_effect = { owner = { country_event = { id = anb_price.53 days = 105 } } }
 	}
 }
-
 
 #Valorpoint - Trollsbay
 province_event = {
