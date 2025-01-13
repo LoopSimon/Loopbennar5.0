@@ -1124,6 +1124,9 @@ godswall = {
 	can_use_modifiers_trigger = {
 		OR = {
 			province_is_or_accepts_or_harmonizes_religion_group = {
+				religion_group = faithless
+			}
+			province_is_or_accepts_or_harmonizes_religion_group = {
 				religion_group = raheni
 			}
 			province_is_or_accepts_or_harmonizes_religion_group = {
@@ -1138,6 +1141,9 @@ godswall = {
 
 	can_upgrade_trigger = {
 		OR = {
+			province_is_or_accepts_or_harmonizes_religion_group = {
+				religion_group = faithless
+			}
 			province_is_or_accepts_or_harmonizes_religion_group = {
 				religion_group = raheni
 			}
