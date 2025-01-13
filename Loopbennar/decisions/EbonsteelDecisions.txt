@@ -40,6 +40,9 @@ country_decisions = {
 					culture_group = gerudian
 					NOT = { primary_culture = reverian }			
 				}
+				
+				primary_culture = old_alenic
+				primary_culture = green_reachman
 				primary_culture = blue_reachman
 				primary_culture = fjord_troll
 				primary_culture = jarnklo_harpy
