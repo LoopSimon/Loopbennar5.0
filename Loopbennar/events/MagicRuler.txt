@@ -14165,6 +14165,7 @@ country_event = {
 		NOT = {
 			heir_has_mage_personality = yes
 			has_heir_flag = heir_consort_mage_personality
+			has_reform = peasants_theocracy_reform
 		}
 
 		NOT = { ruler_age = 60 }
@@ -14493,6 +14494,7 @@ country_event = {
 		NOT = {
 			heir_has_mage_personality = yes
 			has_heir_flag = heir_consort_mage_personality
+			has_reform = peasants_theocracy_reform
 		}
 
 		NOT = { heir_age = 16 }
