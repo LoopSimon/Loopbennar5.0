@@ -37,33 +37,15 @@ country_decisions = {
 		allow = {
 
 			culture_group = amadian_ruinborn_elf
-			adm_tech = 7
+			adm_tech = 12
 			owns = 2388
 			is_free_or_tributary_trigger = yes
 			is_at_war = no
 			
 			num_of_owned_provinces_with = {
-				value = 20
+				value = 30
 				region = amadia_region
-			}
-			any_owned_province  = {
-				culture = quchamar
-			}
-			any_owned_province  = {
-				culture = chaqanel
-			}
-			any_owned_province  = {
-				culture = quruwei
-			}
-			any_owned_province  = {
-				culture = chamullach
-			}
-			any_owned_province  = {
-				culture = banche
-			}
-			any_owned_province  = {
-				culture = faalte
-			}
+			}			
 		}
 
 		effect = {
