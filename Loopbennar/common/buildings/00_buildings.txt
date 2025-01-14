@@ -211,6 +211,14 @@ temple = {
 				duration = 7300
 			}
 		}
+		if = {
+			limit = {
+				FROM = {
+					has_estate_privilege = estate_church_corinsfield_church_raisings
+				}
+			}
+			add_base_tax = 1
+		}
 
 		owner = { accretive_path_harimari_chi_stacking_effect = { amount = 20 } }
 		owner = { accretive_path_goldscale_kobold_chi_stacking_effect = { amount = 20 } }
@@ -264,6 +272,14 @@ temple = {
 			building = temple
 			type = tax
 			value = 1 
+		}
+		if = {
+			limit = {
+				FROM = {
+					has_estate_privilege = estate_church_corinsfield_church_raisings
+				}
+			}
+			add_base_tax = -1
 		}
 		remove_province_modifier = I98_IRS_activities
 	}
@@ -1130,6 +1146,14 @@ cathedral = {
 				duration = -1
 			}
 		}
+		if = {
+			limit = {
+				FROM = {
+					has_estate_privilege = estate_church_corinsfield_church_raisings
+				}
+			}
+			add_base_tax = 2
+		}
 		
 		owner = { accretive_path_harimari_chi_stacking_effect = { amount = 20 } }
 		owner = { accretive_path_goldscale_kobold_chi_stacking_effect = { amount = 20 } }
@@ -1160,6 +1184,14 @@ cathedral = {
 			building = cathedral 
 			type = tax
 			value = 2 
+		}
+		if = {
+			limit = {
+				FROM = {
+					has_estate_privilege = estate_church_corinsfield_church_raisings
+				}
+			}
+			add_base_tax = -2
 		}
 		remove_province_modifier = I98_IRS_activities
 		remove_province_modifier = commmand_tiger_temple_buff
