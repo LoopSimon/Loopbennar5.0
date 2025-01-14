@@ -8,8 +8,207 @@ corinsfield_paranoia_mechanic = {
 			max = 100
 			min = 0
 			reset_on_new_ruler = no
-			base_monthly_growth = 1
+			base_monthly_growth = 0.75
 			is_good = no
+
+			scaled_modifier = {
+				modifier = {
+					land_morale = 0.2
+					monthly_corinsfield_paranoia_power = -0.3
+					global_unrest = 20
+					development_cost = 0.2
+					production_efficiency = -0.15
+					global_tax_modifier = -0.33
+				}
+			}
+			range_modifier = {
+				modifier = {
+					global_unrest = -2
+					production_efficiency = 0.1
+					development_cost = -0.1
+				}
+				start_value = 0
+				end_value = 33
+			}
+			range_modifier = {
+				trigger = {
+					stability = 1
+					NOT = { stability = 2 }
+				}
+				modifier = { 
+					monthly_corinsfield_paranoia_power = -0.05
+				}
+				start_value = 0
+				end_value = 100
+			}
+			range_modifier = {
+				trigger = {
+					stability = 2
+					NOT = { stability = 3 }
+				}
+				modifier = { 
+					monthly_corinsfield_paranoia_power = -0.1
+				}
+				start_value = 0
+				end_value = 100
+			}
+			range_modifier = {
+				trigger = {
+					stability = 3
+				}
+				modifier = { 
+					monthly_corinsfield_paranoia_power = -0.15
+				}
+				start_value = 0
+				end_value = 100
+			}
+			range_modifier = {
+				trigger = {
+					NOT = { stability = 0 }
+					stability = -1
+				}
+				modifier = { 
+					monthly_corinsfield_paranoia_power = 0.15
+				}
+				start_value = 0
+				end_value = 100
+			}
+			range_modifier = {
+				trigger = {
+					NOT = { stability = -1 }
+					stability = -2
+				}
+				modifier = { 
+					monthly_corinsfield_paranoia_power = 0.3
+				}
+				start_value = 0
+				end_value = 100
+			}
+			range_modifier = {
+				trigger = {
+					NOT = { stability = -2 }
+					stability = -3
+				}
+				modifier = { 
+					monthly_corinsfield_paranoia_power = 0.45
+				}
+			}
+			range_modifier = {
+				trigger = {
+					NOT = { num_of_allies = 2 }
+				}
+				modifier = { 
+					monthly_corinsfield_paranoia_power = -0.1
+				}
+			}
+			range_modifier = {
+				trigger = {
+					NOT = { num_of_allies = 1 }
+				}
+				modifier = { 
+					monthly_corinsfield_paranoia_power = -0.05
+				}
+			}
+			range_modifier = {
+				trigger = {
+					calc_true_if = {
+						amount = 3
+						all_neighbor_country = {
+							has_estate = estate_mages
+						}
+					}
+				}
+				modifier = { 
+					monthly_corinsfield_paranoia_power = 0.1
+				}
+			}
+		}
+	}
+	interactions = {
+		be_good_to_your_neighbour = {
+			gui = corinsfield_paranoia_button
+			icon = GFX_corinsfield_paranoia_be_good_to_your_neighbour
+			cost_type = corinsfield_paranoia_power
+			cost = 0
+			trigger = {
+				always = yes
+			}
+			effect = {
+				add_adm_power = 25
+				add_government_power = {
+					mechanic_type = corinsfield_paranoia_mechanic
+					power_type = corinsfield_paranoia_power
+					value = 10
+				}
+				add_country_modifier = {
+					name = h35_be_good_to_neighbour
+					duration = 1825
+				}
+			}
+			cooldown_years = 5
+			ai_chance = {
+				factor = 1
+			}
+		}
+		trust_no_one = {
+			gui = corinsfield_paranoia_button
+			icon = GFX_corinsfield_paranoia_trust_no_one
+			cost_type = corinsfield_paranoia_power
+			cost = 0
+			trigger = {
+				adm_power = 50
+				dip_power = 50
+			}
+			effect = {
+				add_adm_power = -50
+				add_dip_power = -50
+				add_government_power = {
+					mechanic_type = corinsfield_paranoia_mechanic
+					power_type = corinsfield_paranoia_power
+					value = -10
+				}
+				add_country_modifier = {
+					name = h35_trust_no_one
+					duration = 1825
+				}
+			}
+			cooldown_years = 5
+			ai_chance = {
+				factor = 1
+			}
+		}
+		commence_witch_trial = {
+			gui = corinsfield_paranoia_button
+			icon = GFX_corinsfield_paranoia_witch_hunt
+			cost_type = corinsfield_paranoia_power
+			cost = 0
+			trigger = {
+				adm_power = 50
+				custom_trigger_tooltip = {
+					tooltip = h35_hunt_active.tt
+					NOT = {
+						has_country_flag = h35_hunt_active
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = h35_paranoia_too_low
+					has_government_power = {
+						mechanic_type = corinsfield_paranoia_mechanic
+						power_type = corinsfield_paranoia_power
+						value = 20
+					}
+				}
+			}
+			effect = {
+				add_adm_power = -50
+				country_event = {
+					id = flavour_corinsfield.36
+				}
+			}
+			cooldown_years = 3
+			ai_chance = {
+				factor = 1
+			}
 		}
 	}
 }
