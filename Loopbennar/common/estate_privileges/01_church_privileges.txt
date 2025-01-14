@@ -35,6 +35,13 @@ estate_church_land_rights = {
 			max_absolutism = 5
 		}
 	}
+	conditional_modifier = {
+		trigger = { has_country_flag = h35_clergy_land_bonus }
+		modifier = { 
+			governing_capacity = 100
+			regiment_recruit_speed = -0.1
+		}
+	}
 	#conditional_modifier = {
 	#	trigger = { has_government_mechanic = ottoman_decadence_mechanic }
 	#	modifier = { monthly_ottoman_decadence = 0.02 }
@@ -1902,6 +1909,7 @@ estate_church_one_faith_one_culture = {
 	land_share = 5
 	is_valid = {
 		NOT = { has_estate_privilege = estate_wyvernheart_culture_of_the_heart }
+		hidden_trigger = { NOT = { has_estate_privilege = estate_church_corinsfield_society } }
 		NOT = { AND = { tag = Z99 was_tag = B39 } }
 	}
 	can_select = {
@@ -2038,6 +2046,150 @@ estate_church_one_faith_one_culture = {
 		modifier = { 
 			max_absolutism = 5
 			embracement_cost = -0.1
+		}
+	}
+	# conditional_modifier = {
+	# 	trigger = {
+	# 		has_global_flag = wahabism_founded
+	# 		religious_school = {
+	# 			group = muslim
+	# 			school = hanbali_school
+	# 		}
+	# 	}
+	# 	modifier = {
+	# 		tolerance_own = 2
+	# 	}
+	# }
+	conditional_modifier = {
+		trigger = { has_government_mechanic = russian_modernization_mechanic }
+		modifier = { monthly_russian_modernization = -0.03 }
+	}
+	#conditional_modifier = {
+	#	trigger = { has_government_mechanic = ottoman_decadence_mechanic }
+	#	modifier = { monthly_ottoman_decadence = 0.02 }
+	#}
+	cooldown_years = 15
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+			NOT = { dominant_religion = ROOT }
+		}
+		modifier = {
+			factor = 0
+			NOT = { dominant_culture = ROOT }
+		}
+		# Anbennar - changed this to Anbennar religions
+		modifier = {
+			factor = 0
+			NOT = { religion = the_thought }
+		}
+		modifier = {
+			factor = 100
+			NOT = { average_autonomy = 15 }
+			dominant_religion = ROOT
+			dominant_culture = ROOT
+		}
+		#Anbennar - no vanilla tags
+		# modifier = {
+			# factor = 10
+			# tag = PAP
+		# }
+		modifier = {
+			factor = 0.1
+			is_absolutism_active = yes
+		}
+	}
+}
+
+estate_church_corinsfield_society = {
+	icon = privilege_one_faith_one_culture
+	max_absolutism = 0
+	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 1 } }
+	influence = 0.1
+	loyalty = 0.1
+	land_share = 0
+	is_valid = {
+		has_country_flag = h35_upstanding_society
+		NOT = { has_estate_privilege = estate_church_one_faith_one_culture }
+	}
+	can_select = {
+		NOT = { has_estate_privilege = estate_church_one_faith_one_culture }
+	}
+	on_granted = {
+		custom_tooltip = h35_religious_society.tt
+	}
+	on_granted_province = {	
+		if = {
+			limit = {
+				religion = ROOT
+				OR = {
+					has_owner_accepted_culture = yes
+					culture_group = ROOT
+				}
+			}
+			remove_province_modifier = h35_downstanding_society
+			add_province_modifier = { name = h35_upstanding_society duration = -1 } 
+		}
+		else = {
+			remove_province_modifier = h35_upstanding_society
+			add_province_modifier = { name = h35_downstanding_society duration = -1 } 
+		}
+	}
+	on_revoked = {
+		custom_tooltip = estate_church_one_faith_one_culture_rta
+		custom_tooltip = estate_church_one_faith_one_culture_rtb
+	}
+	on_revoked_province = {
+		if = {
+			limit = {
+				has_province_modifier = h35_upstanding_society
+			}
+			remove_province_modifier = h35_upstanding_society
+		}
+		if = {
+			limit = {
+				has_province_modifier = h35_downstanding_society
+			}
+			remove_province_modifier = h35_downstanding_society
+		}
+	}
+	on_invalid = {
+		custom_tooltip = estate_church_one_faith_one_culture_rta
+		custom_tooltip = estate_church_one_faith_one_culture_rtb
+	}
+	on_invalid_province = {
+		if = {
+			limit = {
+				has_province_modifier = h35_upstanding_society
+			}
+			remove_province_modifier = h35_upstanding_society
+		}
+		if = {
+			limit = {
+				has_province_modifier = h35_downstanding_society
+			}
+			remove_province_modifier = h35_downstanding_society
+		}
+	}
+	penalties = {
+		tolerance_heathen = -2
+		tolerance_heretic = -2
+	}
+	benefits = {
+		global_missionary_strength = 0.02
+		monthly_corinsfield_paranoia_power = -0.25
+	}
+	conditional_modifier = {
+		trigger = { has_government_attribute = free_religious_culture }
+		modifier = {
+			church_influence_modifier = -0.2
+		}
+	}
+	conditional_modifier = {
+		trigger = { has_country_flag = J33_kukatodic_conversion }
+		modifier = {
+			global_missionary_strength = 0.02
 		}
 	}
 	# conditional_modifier = {
@@ -3176,5 +3328,37 @@ estate_church_beast_memory_guaranteed_autonomy = {
 	}
 	ai_will_do = {
 		factor = 1000
+	}
+}
+estate_church_corinsfield_church_raisings = {
+	icon = privilege_devotion_green
+	land_share = 0
+	max_absolutism = 0
+	loyalty = 0.15
+	influence = 0.1
+	is_valid = {
+		has_country_flag = h35_goodmen
+	}
+	can_select = {
+		has_country_flag = h35_goodmen
+	}
+	on_granted = {
+		custom_tooltip = h35_tax_from_temple.tt
+	}
+	penalties = {
+	}
+	benefits = {
+		build_time = 0.1
+		global_tax_modifier = 0.1
+	}
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 10000
+			OR = {
+				ruler_has_personality = pious_personality
+				ruler_has_personality = zealot_personality
+			}
+		}
 	}
 }
