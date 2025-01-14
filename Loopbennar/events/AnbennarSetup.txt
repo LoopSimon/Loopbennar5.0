@@ -1481,10 +1481,6 @@ country_event = {
 		always = yes
 	}
 	
-	trigger = {
-		NOT = { has_country_flag = h35_ban_all_artifice }
-	}
-	
 	immediate = {
 		set_up_artifice_system = yes
 	}
