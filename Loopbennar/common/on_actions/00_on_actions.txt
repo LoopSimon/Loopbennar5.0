@@ -11918,26 +11918,22 @@ on_parliament_debate_reset = {
 }
 
 #province 1.35
-on_parliament_seat_given = {
-	on_parliament_seat_given_effect = yes
-
-
-	if = {
-		limit = { 
-			province_group = hold_province
-			owner = { has_government_attribute = dwarovar_assembly_of_holds_effect }
-		}
-		add_province_modifier = { name = hold_has_parliament duration = -1 }
-	}
-}
-
-#province 1.35
 on_parliament_seat_lost = {
 	on_parliament_seat_lost_effect = yes
-
 	remove_province_modifier = hold_has_parliament
+	if = {
+		limit = {
+			owner = {
+				OR = {
+					tag = H35
+					was_tag = H35
+				}
+			}
+			has_province_modifier = h35_building_from_parliament
+		}
+		remove_province_modifier = h35_building_from_parliament
+	}
 }
-
 # country
 on_parliament_debate_failed = {
 	on_parliament_debate_failed_effect = yes #1.35
@@ -13582,6 +13578,14 @@ on_dependency_gained = {
 		# Apparently can crash if done immediately, so moved to an event for a small delay?
 		FROM = { country_event = { id = flavour_ovdal_tungr.9999 } }
 	}
+	if = {
+		limit = {
+			ROOT = H35
+		}
+		FROM = {
+			set_country_flag = h35_debarment_moment
+		}
+	}
 }
 # ROOT = Overlord, FROM = Minor
 on_dependency_lost = {
@@ -13786,6 +13790,16 @@ on_dependency_lost = {
 		add_country_modifier = { 
 			name = brambleskinner_minters_cartel_2
 			duration = -1
+		}
+	}
+	if = {
+		limit = {
+			FROM = {
+				has_country_flag = h35_debarment_moment
+			}
+		}
+		FROM = {
+			clr_country_flag = h35_debarment_moment
 		}
 	}
 }
