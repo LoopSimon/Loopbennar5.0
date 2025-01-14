@@ -2504,6 +2504,7 @@ education_of_the_bishop_reform = {
 	allow_normal_conversion = yes
 	potential = {
 		NOT = { has_adventurer_reform = yes } # Anbennar
+		NOT = { has_country_flag = h35_unlocked_blessed_theocracy } 
 	}
 	modifiers = {
 		monarch_lifespan = 0.2
@@ -5139,5 +5140,108 @@ raheni_divine_monarchy_reform = {
 		ae_impact = -0.1
 		all_estate_influence_modifier = -0.05
 		loyalty_change_on_revoked = -0.05
+	}
+}
+#corinsfield
+peasants_theocracy_reform = {
+	icon = "feuillant_reform"
+	potential = {
+		OR = {
+			tag = H35
+			was_tag = H35
+		}
+	}
+	valid_for_nation_designer = yes
+	nation_designer_cost = 20
+	lock_level_when_selected = yes
+	modifiers = {
+		same_religion_advisor_cost = -0.1
+		general_cost = -0.1
+		manpower_recovery_speed = 0.1
+	}
+	effect = {
+	}
+	removed_effect = {
+	}
+	heir = no
+	government_abilities = {
+		corinsfield_paranoia_mechanic
+	}
+	custom_attributes = {
+		enables_divine_idea_group = yes
+		locked_government_type = yes
+		disables_estate_nobles = yes
+	}
+}
+blessed_literacy_reform = {
+	icon = "reformer"
+	allow_normal_conversion = yes
+	potential = {
+		has_country_flag = h35_unlocked_blessed_theocracy
+	}
+	modifiers = {
+		idea_cost = -0.1
+		technology_cost = -0.05
+		monthly_karma_accelerator = 0.1
+	}
+	effect = {
+		hidden_effect = {
+			country_event = {
+				id = flavor_sca.2
+			}
+		}
+	}
+	removed_effect = {
+		hidden_effect = {
+			remove_country_modifier = sca_administrative_focus
+			remove_country_modifier = sca_diplomatic_focus
+			remove_country_modifier = sca_military_focus
+			remove_country_modifier = sca_administrative_focus_non_heir
+			remove_country_modifier = sca_diplomatic_focus_non_heir
+			remove_country_modifier = sca_military_focus_non_heir
+		}
+	}
+	custom_attributes = {
+		education_focus_enabled = yes
+	}
+}
+peasant_councils_reform = {
+	icon = "monastic_elections_reform"
+	allow_normal_conversion = yes
+	potential = {
+		has_country_flag = h35_unlock_peasant_councils
+	}
+	conditional = {
+		allow = { 
+			OR = {
+				has_dlc = "Common Sense"
+				has_dlc = "Domination"
+			} 
+		}
+		has_parliament = yes
+	}
+	modifiers = {
+		trade_goods_size_modifier = 0.05
+		church_loyalty_modifier = 0.1
+	}
+	effect = {
+		custom_tooltip = h35_primaryculture_parliament
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					has_seat_in_parliament = yes
+					is_capital = no
+				}
+				add_province_modifier = {
+					name = h35_building_from_parliament
+					duration = -1
+				}
+			}
+		}
+	}
+	removed_effect = {
+		every_owned_province = {
+			remove_province_modifier = h35_building_from_parliament
+		}
 	}
 }
