@@ -2772,6 +2772,9 @@ dwarovar_righting_the_oldest_grudge = {
 		recover_army_morale_speed = 0.15
 	}
 	custom_attributes = { dwarovar_righting_the_oldest_grudge_effect = yes }
+	ai = {
+		factor = 0
+	}
 }
 
 dwarovar_treasures_of_our_forefathers = {
