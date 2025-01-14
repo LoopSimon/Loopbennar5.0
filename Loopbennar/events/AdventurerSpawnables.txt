@@ -2083,7 +2083,7 @@ province_event = {
 		NOT = { has_global_flag = delete_south_aelantir_region }
 		NOT = { exists = U67 }
 		NOT = { exists = U68 }
-		#is_year = 1820
+		is_year = 1820
 		east_effelai_region = {
 			is_empty = yes
 			
