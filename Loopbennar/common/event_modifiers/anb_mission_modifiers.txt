@@ -31233,7 +31233,7 @@ origin_of_the_hehaine = {
 	local_tax_modifier = 0.10
 	improve_relation_modifier = 0.10
 }
-origin_of_the_logdoraine = {
+origin_of_the_logrodaine = {
 	local_production_efficiency = 0.25
 	development_cost_in_primary_culture = -0.05
 }
@@ -31257,7 +31257,7 @@ slow_great_palace_lake = {
 	local_great_project_upgrade_cost = 0.2
 }
 fast_great_palace_lake = {
-	local_great_project_upgrade_cost = 0.5
+	local_great_project_upgrade_cost = -0.25
 }
 stewards_of_the_rivers = {
 	prestige_decay = -0.01
