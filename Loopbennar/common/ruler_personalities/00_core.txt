@@ -4000,6 +4000,8 @@ mage_personality = {	#Powerful Mage
 				}
 			}
 			NOT = { has_country_flag = LF_mages_banned }
+			NOT = { OR = { tag = H35 was_tag = H35 } }
+
 		}
 	
 		chance = {
