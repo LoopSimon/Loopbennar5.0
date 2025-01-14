@@ -14,7 +14,7 @@ province_event = {
 	
 	trigger = {
 		has_global_flag = new_world_discovered
-		#is_year = 1520
+		is_year = 1820
 		NOT = { has_global_flag = delete_north_aelantir_region }
 		OR = {
 			gommiochand_area = {
@@ -226,7 +226,7 @@ province_event = {
 	
 	trigger = {
 		has_global_flag = new_world_discovered
-		#is_year = 1520
+		is_year = 1820
 		NOT = { has_global_flag = delete_north_aelantir_region }
 		OR = {
 			zurzumexia_area = {
@@ -438,7 +438,7 @@ province_event = {
 	
 	trigger = {
 		has_global_flag = new_world_discovered
-		#is_year = 1520
+		is_year = 1820
 		NOT = { has_global_flag = delete_north_aelantir_region }
 		OR = {
 			mestikardu_area = {
@@ -650,7 +650,7 @@ province_event = {
 
 	trigger = {
 		has_global_flag = new_world_discovered
-		#is_year = 1500
+		is_year = 1820
 		NOT = { has_global_flag = delete_north_aelantir_region }
 		OR = {
 			cestirmark_area = {
@@ -866,6 +866,7 @@ province_event = {
 	trigger = {
 		has_global_flag = new_world_discovered
 		current_age = age_of_reformation
+		is_year = 1820
 		NOT = { has_global_flag = delete_north_aelantir_region }
 		ebenmas_area = {
 			is_empty = yes
@@ -1167,7 +1168,6 @@ province_event = {
 	}
 }
 
-
 #Valorpoint - Trollsbay
 province_event = {
 	id = aelantirspawnables.7
@@ -1192,7 +1192,7 @@ province_event = {
 	
 	trigger = {
 		has_global_flag = new_world_discovered
-		#is_year = 1500
+		is_year = 1820
 		NOT = { has_global_flag = delete_north_aelantir_region }
 		OR = {
 			valorpoint_area = {
@@ -1400,6 +1400,7 @@ province_event = {
 	trigger = {
 		has_global_flag = new_world_discovered
 		current_age = age_of_reformation
+		is_year = 1820
 		NOT = { has_global_flag = delete_north_aelantir_region }
 		themaria_area = {
 			is_empty = yes
@@ -1615,7 +1616,7 @@ province_event = {
 	
 	trigger = {
 		has_global_flag = new_world_discovered
-		#is_year = 1500
+		is_year = 1820
 		NOT = { has_global_flag = delete_north_aelantir_region }
 		OR = {
 			zanlib_area = {
@@ -1827,6 +1828,7 @@ country_event = {
 		}
 		is_subject = no
 		has_global_flag = new_world_discovered
+		is_year = 1800
 		NOT = { has_global_flag = delete_south_aelantir_region }
 		greenfort_area = {
 			is_empty = yes
@@ -1994,7 +1996,7 @@ province_event = {
 	
 	trigger = {
 		has_global_flag = new_world_discovered
-		#is_year = 1500
+		is_year = 1820
 		NOT = { has_global_flag = delete_south_aelantir_region }
 		wanderers_gate_area = {
 			is_empty = yes
@@ -2137,7 +2139,7 @@ province_event = {
 	
 	trigger = {
 		has_global_flag = new_world_discovered
-		#is_year = 1500
+		is_year = 1820
 		NOT = { has_global_flag = delete_north_aelantir_region }
 		OR = {
 			coast_of_isobel_area = {
@@ -2366,7 +2368,7 @@ province_event = {
 	trigger = {
 		#NOT = { has_country_modifier = monstrous_nation }
 		has_global_flag = new_world_discovered
-		#is_year = 1500
+		is_year = 1820
 		NOT = { has_global_flag = delete_south_aelantir_region }
 		saamirses_area = {
 			is_empty = yes
@@ -2514,7 +2516,7 @@ province_event = {
 	
 	trigger = {
 		has_global_flag = new_world_discovered
-		#is_year = 1500
+		is_year = 1820
 		NOT = { has_global_flag = delete_south_aelantir_region }
 		mykx_isles_area = {
 			is_empty = yes
@@ -2658,6 +2660,7 @@ province_event = {
 	trigger = {
 		has_global_flag = new_world_discovered
 		current_age = age_of_reformation
+		is_year = 1820
 		NOT = { has_global_flag = delete_north_aelantir_region }
 		argezvale_area = {
 			is_empty = yes
@@ -2789,7 +2792,7 @@ province_event = {
 	
 	trigger = {
 		has_global_flag = new_world_discovered
-		#is_year = 1500
+		is_year = 1820
 		NOT = { has_global_flag = delete_north_aelantir_region }
 		OR = {
 			marlliande_area = {
@@ -3011,7 +3014,7 @@ province_event = {
 	
 	trigger = {
 		has_global_flag = new_world_discovered
-		#is_year = 1500
+		is_year = 1820
 		NOT = { has_global_flag = delete_north_aelantir_region }
 		OR = {
 			thilvis_area = {
@@ -3215,7 +3218,7 @@ province_event = {
 	
 	trigger = {
 		has_global_flag = new_world_discovered
-		#is_year = 1500
+		is_year = 1820
 		NOT = { has_global_flag = delete_north_aelantir_region }
 		north_vanburia_area = {
 			is_empty = yes
@@ -3374,7 +3377,7 @@ province_event = {
 	
 	trigger = {
 		has_global_flag = new_world_discovered
-		#is_year = 1500
+		is_year = 1820
 		NOT = { has_global_flag = delete_south_aelantir_region }
 		the_bend_area = {
 			is_empty = yes
@@ -3540,6 +3543,7 @@ country_event = {
 	
 	is_triggered_only = yes
 	fire_only_once = yes
+	is_year = 1820
 	
 	option = { # play as the settlers
 		name = aelantirspawnables.1.b
@@ -3597,7 +3601,7 @@ province_event = {
 	trigger = {
 		has_global_flag = new_world_discovered
 		current_age = age_of_reformation
-		#is_year = 1500
+		is_year = 1820
 		NOT = { has_global_flag = delete_north_aelantir_region }
 		cymailean_area = {
 			is_empty = yes
