@@ -8,7 +8,7 @@ guiTypes = {
 		iconType = { 
 			name = "government_power_bar"
 			spriteType = "GFX_corinsfield_paranoia_bar"
-			position = { x = 40 y = 3 }
+			position = { x = 40 y = -80 }
 		}	
 
 		# Progressbar Frame
@@ -16,7 +16,47 @@ guiTypes = {
 			name = "frame_background"
 			spriteType = "GFX_corinsfield_paranoia_bar_frame"
 			alwaystransparent = yes
-			position = { x = 40 y = 3 }
+			position = { x = 40 y = -80 }
+		}
+	}
+	windowType = {
+		name = "corinsfield_paranoia_button"
+		size = { x = 95 y = 120 }
+		position = { x = 7 y = 5 }
+		backGround = ""
+		moveable = 0
+		dontRender = ""
+		horizontalBorder = ""
+		Orientation = "UPPER_LEFT"
+
+		### interaction button
+		guiButtonType = {
+			name = "government_interaction_button"
+			quadTextureSprite = "GFX_russian_ability_ADM" #placeholder so we don't get an assert - you have to set something - but this will be overridden by the interaction's icon
+			position = { x = 7 y = 60 }
+			tooltip = ""
+			tooltipText = ""
+			delayedTooltipText = ""
+			buttonFont = "vic_18"
+			Orientation = "UPPER_LEFT"
+			clicksound = back_click
+			text = ""
+		}
+		
+		#bar and frame for the power type associated with this interaction (if it's unique to the interaction - if not, these will be hidden)
+		iconType = { 
+			name = "government_power_bar"
+			spriteType = "GFX_government_power_bar"
+			position = { x = 20 y = 77 }
+			Orientation = "UPPER_LEFT"
+		}
+		
+		iconType = {
+			name = "government_power_bar_frame"
+			spriteType = "GFX_government_power_bar_frame"
+			position = { x = 6 y = 77 }
+			Orientation = "UPPER_LEFT"
+			alwaystransparent = yes
 		}
 	}
 }

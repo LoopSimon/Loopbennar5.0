@@ -1126,29 +1126,29 @@ guiTypes = {
 			clicksound = back_click
 		}
 		
-		guiButtonType = {
-			name = "corinsfield_paranoia_be_good_to_your_neighbour"
-			position = { x= 55 y = 290 }
-			quadTextureSprite = "GFX_corinsfield_paranoia_be_good_to_your_neighbour" 
-			scripted = yes
-			clicksound = back_click
-		}
+		#guiButtonType = {
+		#	name = "corinsfield_paranoia_be_good_to_your_neighbour"
+		#	position = { x= 55 y = 290 }
+		#	quadTextureSprite = "GFX_corinsfield_paranoia_be_good_to_your_neighbour" 
+		#	scripted = yes
+		#	clicksound = back_click
+		#}
 		
-		guiButtonType = {
-			name = "corinsfield_paranoia_trust_no_one"
-			position = { x= 147 y = 290 }
-			quadTextureSprite = "GFX_corinsfield_paranoia_trust_no_one" 
-			scripted = yes
-			clicksound = back_click
-		}
+		#guiButtonType = {
+		#	name = "corinsfield_paranoia_trust_no_one"
+		#	position = { x= 147 y = 290 }
+		#	quadTextureSprite = "GFX_corinsfield_paranoia_trust_no_one" 
+		#	scripted = yes
+		#	clicksound = back_click
+		#}
 		
-		guiButtonType = {
-			name = "corinsfield_paranoia_witch_hunt"
-			position = { x= 239 y = 290 }
-			quadTextureSprite = "GFX_corinsfield_paranoia_witch_hunt" 
-			scripted = yes
-			clicksound = back_click
-		}
+		#guiButtonType = {
+		#	name = "corinsfield_paranoia_witch_hunt"
+		#	position = { x= 239 y = 290 }
+		#	quadTextureSprite = "GFX_corinsfield_paranoia_witch_hunt" 
+		#	scripted = yes
+		#	clicksound = back_click
+		#}
 
 		### MODIFIER VIEW (for when you click on the modifier list button in the top right)
 		windowType = {
