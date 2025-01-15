@@ -512,7 +512,6 @@ h35_branch_2 = {
 				cathedral = 10
 				temple = 20
 			}
-			is_great_power = yes
 			max_manpower = 150
 		}
 		effect = {
