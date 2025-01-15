@@ -187,7 +187,7 @@ magic_realm_divination_scrying_neighbours = {
 }
 
 magic_realm_divination_scrying_affairs = {
-	all_power_cost = -0.1
+	all_power_cost = -0.025
 
 	diplomatic_reputation = -1
 }
