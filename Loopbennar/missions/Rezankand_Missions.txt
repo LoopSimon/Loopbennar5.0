@@ -16,12 +16,6 @@ rezankand_1_a = {
 		trigger = {
 			ai = no
 			capital_scope = { region = dry_coast_region }
-			NOT = {
-				num_of_owned_provinces_with = {
-					value = 2
-					owned_by = ROOT
-				}
-			}
 			OR = {
 				army_size = 20
 				mil_power = 100
@@ -50,12 +44,6 @@ rezankand_1_a = {
 		
 		trigger = {
 			capital_scope = { region = dry_coast_region }
-			NOT = { 
-				num_of_owned_provinces_with = {
-					value = 2
-					owned_by = ROOT
-				}
-			}
 			mil_power = 75
 			dip_power = 75
 		}
@@ -66,11 +54,11 @@ rezankand_1_a = {
 			add_manpower = 15
 			add_treasury = 500
 			define_conquistador = {
-				name = "Kortazel"
-				fire = 5
-				shock = 8
+				name = "Kortazel with 1 arm"
+				fire = 4
+				shock = 6
 				manuever = 4
-				siege = 5
+				siege = 3
 			}
 			taychend_superregion = {
 				limit = {
