@@ -82,10 +82,6 @@ h35_branch_1 = {
 		provinces_to_highlight = {
 		}
 		trigger = {
-			custom_trigger_tooltip = {
-				tooltip = h35_veykodan_raids_happened
-				has_country_flag = h35_sentries_raid
-			}
 			has_mil_advisor_3 = yes
 			army_tradition = 20
 			land_forcelimit = 30
