@@ -80,12 +80,6 @@ rezankand_1_a = {
 		
 		trigger = {
 			capital_scope = { region = dry_coast_region }
-			NOT = { 
-				num_of_owned_provinces_with = {
-					value = 2
-					owned_by = ROOT
-				}
-			}
 			at_war_with_religious_enemy = yes
 		}
 		
