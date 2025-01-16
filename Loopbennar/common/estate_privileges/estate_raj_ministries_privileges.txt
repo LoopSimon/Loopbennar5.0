@@ -305,7 +305,7 @@ estate_raj_ministries_ministerial_tithes = {
 		global_tax_modifier = -0.1
 	}
 	modifier_by_land_ownership = {
-		build_cost = -0.5
+		build_cost = -0.25
 	}
 	ai_will_do = {
 		factor = 0
@@ -323,7 +323,7 @@ estate_raj_ministries_delegate_territorial_management = {
 		development_cost = -0.05
 	}
 	modifier_by_land_ownership = {
-		state_maintenance_modifier = -0.5
+		state_maintenance_modifier = -0.4
 		vassal_income = 0.5
 	}
 	mechanics = {
