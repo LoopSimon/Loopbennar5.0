@@ -173,7 +173,7 @@ wyvernheart_define_war_wizard = {
 			}
 			define_general = {
 				fire = 3
-				shock = 9
+				shock = 8
 				manuever = 7
 				siege = 3
 				trait = war_wizard_personality
@@ -230,7 +230,7 @@ wyvernheart_define_war_wizard = {
 			}
 			define_general = {
 				fire = 3
-				shock = 9
+				shock = 8
 				manuever = 6
 				siege = 3
 				trait = war_wizard_personality

@@ -59,7 +59,7 @@ namespace = magocracy
 			# }
 			# define_heir_to_general = {
 				# fire = 2
-				# shock = 9
+				# shock = 8
 				# manuever = 2
 				# siege = 4
 			# }
@@ -70,7 +70,7 @@ namespace = magocracy
 			# }
 			# define_heir_to_general = {
 				# fire = 2
-				# shock = 10
+				# shock = 8
 				# manuever = 2
 				# siege = 4
 			# }
