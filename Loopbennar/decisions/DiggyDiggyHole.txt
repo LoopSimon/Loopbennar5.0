@@ -995,6 +995,13 @@ country_decisions = {
 				adm_tech = 14
 			}
 			else = { adm_tech = 16 }
+			OR = {
+						num_of_owned_provinces_with = {
+						value = 5
+						province_group = hold_province
+						}
+						tag = Y72
+					}
 			num_of_owned_provinces_with = {
 				value = 5
 				province_group = hold_province
