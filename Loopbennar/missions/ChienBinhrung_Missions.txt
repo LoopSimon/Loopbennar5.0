@@ -1884,7 +1884,6 @@ chien_4 = {
 
         trigger = {
             5424 = { #Verkal Ozovar
-				has_dwarven_hold_3 = yes
                 country_or_non_sovereign_subject_holds = ROOT
             }
 		}
@@ -1895,10 +1894,6 @@ chien_4 = {
             }
             5424 = {
                 change_religion = ROOT
-                add_province_modifier = {
-                    name = Y72_good_business
-                    duration = -1
-                }
             }
             custom_tooltip = Y72_hold_within_mine_effect_tt
             hidden_effect = {
@@ -1933,8 +1928,8 @@ chien_4 = {
         }
 
         trigger = {
+			treasury = 20000
             5424 = { #Verkal Ozovar
-				has_dwarven_hold_4 = yes
             }
             high_tolerance_dwarven_race_trigger = yes
             num_of_owned_provinces_with = {
@@ -1945,6 +1940,7 @@ chien_4 = {
 		}
 
         effect = {
+			add_treasury = 20000
             add_country_modifier = {
                 name = Y72_reformed_lamellar_armor
                 duration = -1
