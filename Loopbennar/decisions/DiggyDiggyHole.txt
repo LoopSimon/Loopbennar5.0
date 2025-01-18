@@ -970,7 +970,6 @@ country_decisions = {
 		major = yes
 		potential = {
 			ai = no
-			capital_scope = { continent = serpentspine }
 			NOT = { culture_group = orcish }
 			adm_tech = 10
 			NOT = { has_country_flag = hold_operation }
