@@ -3117,7 +3117,6 @@ on_monarch_death = {
 		limit = { has_government_attribute = no_stability_loss_on_monarch_death }
 		add_stability = 1
 	}
-
 	if = {
 		limit = {
 			is_subject_of_type = pronoia_subject_type
@@ -6517,10 +6516,9 @@ on_bi_yearly_pulse = {
 		500 = flavor_grombar.23
 		500 = flavor_grombar.24
 		500 = flavor_grombar.25
-		
+
 		#corinsfield
 		100 = flavour_corinsfield.32
-
 
 		# Jaddari disaster prelim
 
@@ -7635,7 +7633,6 @@ on_thri_yearly_pulse = {
 		300 = harpy_events.117
 		300 = harpy_events.118
 		300 = harpy_events.120
-
 		#corinsfield
 		100 = flavour_corinsfield.86
 		1000 = 0
@@ -9925,12 +9922,14 @@ on_five_year_pulse = {
 			}
 		}
 	}
+	
 	if = {
 		limit = {
 			OR = {
 				tag = H35
 				was_tag = H35
 			}
+
 		}
 		#goodman selgal
 		random = {
@@ -13865,6 +13864,16 @@ on_dependency_lost = {
 			duration = -1
 		}
 	}
+	if = {
+		limit = {
+			FROM = {
+				has_country_flag = h35_debarment_moment
+			}
+		}
+		FROM = {
+			clr_country_flag = h35_debarment_moment
+		}
+	}
 }
 
 # ROOT = New vassal, FROM = Overlord
@@ -15946,6 +15955,7 @@ on_institution_embracement = {
 			country_event = {
 				id = anbennar_setup.19
 			}
+		}
 	}
 	if = { #Anbennar - isobelin events
 		limit = {
