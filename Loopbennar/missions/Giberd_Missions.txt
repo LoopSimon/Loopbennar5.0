@@ -2430,11 +2430,8 @@ giberd_mercantile_shipping = {
 			num_military_artifice_inventions_active_tier_3 = {
 				VAL = 1
 			}
+			treasury = 11000
 			267 = {
-				has_great_project = {
-					type = the_lake_palace
-					tier = 3
-				}
 				num_free_building_slots = 1
 				has_manpower_building_trigger = yes
 				has_forcelimit_building_trigger = yes
@@ -2447,6 +2444,7 @@ giberd_mercantile_shipping = {
 					duration = -1
 				}
 				add_building = naval_battery
+				add_treasury = -11000
 			}
 		}
 	}

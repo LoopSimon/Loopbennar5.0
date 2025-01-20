@@ -1940,7 +1940,7 @@ chien_4 = {
 		}
 
         effect = {
-			add_treasury = 20000
+			add_treasury = -20000
             add_country_modifier = {
                 name = Y72_reformed_lamellar_armor
                 duration = -1
