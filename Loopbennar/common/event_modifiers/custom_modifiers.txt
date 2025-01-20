@@ -15,3 +15,12 @@
 		global_supply_limit_modifier = 0.5
 		monthly_splendor = 2
 	}
+	mank_remnant_spiner = {
+		land_maintenance_modifier = -0.1
+		global_manpower = 10
+		manpower_recovery_speed = 0.25
+		land_forcelimit = 2
+		land_morale = 0.1
+		global_supply_limit_modifier = 0.5
+		monthly_splendor = 2
+	}
