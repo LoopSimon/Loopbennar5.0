@@ -203,6 +203,7 @@ the_lake_palace = {
 
 	on_destroyed = {
 	}
+
 	can_upgrade_trigger = {
 		owner = {
 			accepted_culture = esmari
