@@ -1,4 +1,5 @@
 country_decisions = {
+
 	warsforyou = {
 		potential= {
 			has_country_modifier = nowarsforyou
@@ -8,54 +9,26 @@ country_decisions = {
 			remove_country_modifier = nowarsforyou
 		}
 	}	
-	contribute_to_the_red_hoard = {
 	
-		potential = {
-			ai = no
-			OR = {	
-				tag = Z55
-				tag = Z56
-			}
-			NOT = { has_country_modifier = kobold_hoard_timer }
+	loopinfiltrate = {
+		potential= {
+			AI = no
 		}
-
 		allow = {
-			owns = 189
-			treasury = 250
-			if = {
-				limit = { ai = yes }
-				NOT = { num_of_loans = 1 }
-			}
-		}
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0
-				NOT = { treasury = 500 }
-			}
-			modifier = {
-				factor = 0
-				is_at_war = yes
-			}
-			modifier = {
-				factor = 0
-				num_of_loans = 10
-			}
-			modifier = {
-				factor = 0
-				is_bankrupt = yes
-			}
+			is_at_war = yes
+			dip_tech = 16
+			full_idea_group = spy_ideas
+			NOT = { has_country_modifier = loopinfiltrate_cooldown }
 		}
 		effect = {
-			country_event = { id = flavour_kobold_dragon_cult.2 }
-			hidden_effect = { set_country_flag = kobold_hoard_menu }
-			if = {
-				limit = { ai = yes }
-				add_country_modifier = {
-					name = kobold_hoard_timer
-					duration = 1825
-				}
+			every_country = {
+				limit = { war_with = ROOT }
+				remove_fow = 120
 			}
+			add_country_modifier = {
+							name = loopinfiltrate_cooldown
+							duration = 3650
+						}
 		}
 	}
 

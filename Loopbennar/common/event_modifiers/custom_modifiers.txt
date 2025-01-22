@@ -24,3 +24,4 @@
 		global_supply_limit_modifier = 0.5
 		monthly_splendor = 2
 	}
+	loopinfiltrate_cooldown = { }
