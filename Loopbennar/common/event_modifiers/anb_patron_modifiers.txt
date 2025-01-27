@@ -27,7 +27,7 @@ patron_seduction = {
 	diplomatic_reputation = 2
 }
 patron_death_dance = {
-	infantry_power = 0.15
+	infantry_power = 0.075
 }
 patron_cultivation = {
 	drill_gain_modifier = 0.50
@@ -54,20 +54,20 @@ patron_nightmares = {
 	global_unrest = -2
 }
 patron_scrimmage = {
-	shock_damage = 0.20
-	shock_damage_received = 0.10
+	shock_damage = 0.1
+	shock_damage_received = 0.05
 }
 patron_rebuke = {
 	global_spy_defence = 0.25
 }
 patron_benign_monsoon = {
-	development_cost = -0.15
+	development_cost = -0.05
 }
 patron_embrace_hearth = {
 	war_exhaustion = -0.10
 }
 patron_blinding_sun = {
-	fire_damage_received = -0.15
+	fire_damage_received = -0.1
 	morale_damage = 0.1
 }
 patron_honest_joy = {
@@ -79,7 +79,7 @@ patron_scholarship = {
 	advisor_pool = 1
 }
 patron_rekindle = {
-	technology_cost = -0.1
+	technology_cost = -0.05
 }
 patron_tidal_call = {
 	own_coast_naval_combat_bonus = 1
