@@ -1216,29 +1216,14 @@ kob_2_b = {
 			custom_trigger_tooltip = {
 				tooltip = subject_broken_sea_tt
 				any_subject_country = {
-					num_of_cities = 10 
-					capital_scope = {
-					colonial_region = colonial_broken_sea 
-					}
+					num_of_cities = 10
 				}	
 			}
 			custom_trigger_tooltip = {
 				tooltip = subject_eordand_tt
 				any_subject_country = {
-					num_of_cities = 10 
-					capital_scope = {
-					colonial_region = colonial_eordand
-					}
+					num_of_cities = 10
 				}
-			}
-			custom_trigger_tooltip = {
-				tooltip = subject_haraf_tt
-				any_subject_country = {
-					num_of_cities = 10 
-					capital_scope = {
-					colonial_region = colonial_haraf 
-					}
-				}	
 			}
 			has_country_modifier = racial_focus_ruinborn
 			H24 = {
@@ -1310,10 +1295,6 @@ kob_2_b = {
 					has_port = yes
 				}
 				AND = {
-					owned_by = H31
-					has_port = yes
-				}
-				AND = {
 					owned_by = H32
 					has_port = yes
 				}
@@ -1325,18 +1306,7 @@ kob_2_b = {
 		}
 
 		trigger = {
-			owns_or_subject_of = 2079
-			owns_or_subject_of = 2083
-			owns_or_subject_of = 2088
 			H30 = {
-				custom_trigger_tooltip = {
-					tooltip = no_ports_tt
-					NOT = {
-						any_owned_province = { has_port = yes }
-					}
-				}
-			}
-			H31 = {
 				custom_trigger_tooltip = {
 					tooltip = no_ports_tt
 					NOT = {
@@ -1390,13 +1360,6 @@ kob_2_b = {
 						random_owned_province = {
 							limit = { region = dragon_coast_region }
 							add_random_development = 1
-						}
-						random_subject_country = {
-							limit = { capital_scope = { region = haraf_region } }
-							random_owned_province = {
-								remove_random_development = yes
-								remove_random_development = yes
-							}
 						}
 						subtract_variable = {
 							which = artificer_malcontents_var
