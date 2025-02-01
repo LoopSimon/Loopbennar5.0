@@ -728,7 +728,7 @@ set_up_artifice_system = {
 					NOT = { primary_culture = goldscale_kobold }
 				}
 				AND = {
-					has_institution = manufactories
+					has_institution = global_trade
 					OR = {
 						NOT = { religion = bulwari_sun_cult }
 						is_chosen_country = no
